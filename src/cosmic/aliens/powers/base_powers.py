@@ -1,0 +1,282 @@
+"""
+Base/simple alien powers for Cosmic Encounter.
+"""
+
+from dataclasses import dataclass, field
+from typing import Optional, List, Dict, Any, TYPE_CHECKING
+
+from ..base import AlienPower, PowerCategory
+from ...types import PowerTiming, PowerType, Side, PlayerRole
+
+if TYPE_CHECKING:
+    from ...game import Game
+    from ...player import Player
+
+from ..registry import AlienRegistry
+
+
+@dataclass
+class Zombie(AlienPower):
+    """
+    Zombie - Ships never go to the warp.
+    Your ships that would go to the warp instead return to any of your colonies.
+    """
+    name: str = field(default="Zombie", init=False)
+    description: str = field(
+        default="Your ships never go to the warp. Instead, they return to your colonies.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def on_ships_to_warp(
+        self,
+        game: "Game",
+        player: "Player",
+        count: int,
+        source: str
+    ) -> int:
+        """Ships return to colonies instead of going to warp."""
+        if player.power_active:
+            # Return ships to home colonies
+            player.return_ships_to_colonies(count, player.home_planets)
+            return 0  # No ships actually go to warp
+        return count
+
+
+@dataclass
+class Healer(AlienPower):
+    """
+    Healer - Can heal other players' ships from the warp.
+    When any other player's ships would go to the warp, you may use this
+    power to heal them instead. You draw 1 card per ship healed.
+    """
+    name: str = field(default="Healer", init=False)
+    description: str = field(
+        default="Heal other players' ships for cards.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def should_use(
+        self,
+        game: "Game",
+        player: "Player",
+        context: Dict[str, Any]
+    ) -> bool:
+        """Healer usually wants to heal for cards."""
+        return player.hand_size() < 10  # Heal if we want more cards
+
+
+@dataclass
+class Symbiote(AlienPower):
+    """
+    Symbiote - Starts with double the normal number of ships.
+    You have 8 ships on each of your home planets instead of 4.
+    """
+    name: str = field(default="Symbiote", init=False)
+    description: str = field(
+        default="Start with double the normal ships (8 per planet).",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def on_game_start(self, game: "Game", player: "Player") -> None:
+        """Double the ships on each home planet."""
+        for planet in player.home_planets:
+            current = planet.get_ships(player.name)
+            planet.set_ships(player.name, current * 2)
+
+
+@dataclass
+class Pacifist(AlienPower):
+    """
+    Pacifist - Wins encounter if you play negotiate and opponent plays attack.
+    As a main player, if you reveal a negotiate card and your opponent
+    reveals an attack card, you win the encounter.
+    """
+    name: str = field(default="Pacifist", init=False)
+    description: str = field(
+        default="Win if you play negotiate against an attack card.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Shadow(AlienPower):
+    """
+    Shadow - When destiny is drawn, remove one ship from that player.
+    Whenever another player is determined to be a defense by the
+    destiny draw, you may remove one ship of your choice from any
+    colony belonging to that player.
+    """
+    name: str = field(default="Shadow", init=False)
+    description: str = field(
+        default="Remove a ship from the defense when destiny is drawn.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def on_destiny(
+        self,
+        game: "Game",
+        player: "Player",
+        role: PlayerRole,
+        destiny_player: "Player"
+    ) -> Optional["Player"]:
+        """Remove a ship from the defense player."""
+        if player.power_active and destiny_player != player:
+            # Remove one ship strategically (prefer single-ship colonies)
+            all_planets = game.planets
+            target_colonies = [
+                p for p in all_planets
+                if p.has_colony(destiny_player.name)
+            ]
+            if target_colonies:
+                # Prefer removing from single-ship foreign colonies
+                target_colonies.sort(
+                    key=lambda p: (
+                        not p.is_foreign_colony(destiny_player),
+                        p.get_ships(destiny_player.name)
+                    )
+                )
+                target = target_colonies[0]
+                target.remove_ships(destiny_player.name, 1)
+        return None
+
+
+@dataclass
+class Parasite(AlienPower):
+    """
+    Parasite - Can join either side whether invited or not.
+    You may ally on either side of any encounter, even if you
+    are not invited.
+    """
+    name: str = field(default="Parasite", init=False)
+    description: str = field(
+        default="Join any encounter as ally, invited or not.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def on_alliance_invite(
+        self,
+        game: "Game",
+        player: "Player",
+        role: PlayerRole,
+        invited_to: Side
+    ) -> Optional[bool]:
+        """Can join even if not invited."""
+        if player.power_active:
+            return True  # Always allowed to join
+        return None
+
+
+@dataclass
+class Machine(AlienPower):
+    """
+    Machine - May continue taking encounters as long as you have encounter cards.
+    At the start of any encounter, if you have at least one encounter
+    card in your hand, you may have another encounter.
+    """
+    name: str = field(default="Machine", init=False)
+    description: str = field(
+        default="Take extra encounters while you have encounter cards.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Warrior(AlienPower):
+    """
+    Warrior - Accumulate tokens that add to combat totals.
+    Start with 0 tokens. Gain 1 on wins, 2 on losses/failed deals.
+    Add tokens to your side's total in encounters.
+    """
+    name: str = field(default="Warrior", init=False)
+    description: str = field(
+        default="Accumulate tokens (+1 win, +2 loss) that add to combat.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
+        init=False
+    )
+
+    def modify_total(
+        self,
+        game: "Game",
+        player: "Player",
+        base_total: int,
+        side: Side
+    ) -> int:
+        """Add warrior tokens to combat total."""
+        if player.power_active:
+            return base_total + player.warrior_tokens
+        return base_total
+
+    def on_win_encounter(
+        self,
+        game: "Game",
+        player: "Player",
+        as_main_player: bool
+    ) -> None:
+        """Gain 1 token on win."""
+        if as_main_player:
+            player.warrior_tokens += 1
+
+    def on_lose_encounter(
+        self,
+        game: "Game",
+        player: "Player",
+        as_main_player: bool
+    ) -> None:
+        """Gain 2 tokens on loss."""
+        if as_main_player:
+            player.warrior_tokens += 2
+
+    def on_deal_failure(
+        self,
+        game: "Game",
+        player: "Player",
+        opponent: "Player"
+    ) -> None:
+        """Gain 2 tokens on failed deal."""
+        player.warrior_tokens += 2
+
+
+# Register all powers
+AlienRegistry.register(Zombie())
+AlienRegistry.register(Healer())
+AlienRegistry.register(Symbiote())
+AlienRegistry.register(Pacifist())
+AlienRegistry.register(Shadow())
+AlienRegistry.register(Parasite())
+AlienRegistry.register(Machine())
+AlienRegistry.register(Warrior())

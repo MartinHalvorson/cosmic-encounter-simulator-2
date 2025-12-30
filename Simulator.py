@@ -6,7 +6,7 @@ import time
 class Simulator:
     def __init__(self, num_of_games, names_dict, catch_errors=True, show_output=False):
 
-        start_time = time.clock()
+        start_time = time.perf_counter()
 
         # Keeps track of total wins by each player
         self.player_wins = {}
@@ -50,7 +50,7 @@ class Simulator:
             if i % 200 == 0:
                 print(i)
 
-        self.total_time = time.clock() - start_time
+        self.total_time = time.perf_counter() - start_time
         self.average_time = self.total_time / num_of_games
         self.total_wins = sum(self.power_wins.values())
         self.average_wins = self.total_wins / num_of_games
