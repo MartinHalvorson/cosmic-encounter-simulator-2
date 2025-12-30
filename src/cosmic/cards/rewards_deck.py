@@ -81,7 +81,10 @@ class RewardsDeck:
             self._reshuffle_discard()
 
         if not self.draw_pile:
-            raise RuntimeError("No cards available in rewards deck!")
+            # If deck is completely empty, regenerate it
+            # This can happen if all cards are in player hands
+            self._initialize_deck()
+            self.shuffle()
 
         return self.draw_pile.pop()
 

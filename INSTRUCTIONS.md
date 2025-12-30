@@ -121,3 +121,49 @@ cosmic-encounter-simulator/
 ## Progress Tracking
 
 Use the todo list to track progress through each component. Mark tasks complete as they are finished.
+
+---
+
+## Autonomous Development Session (2025-12-30)
+
+### Instructions from User
+1. **Work autonomously for extended period** - Build out the simulator comprehensively
+2. **Model the game as closely as possible** - Research and implement accurate rules
+3. **Use best judgment for AI decision-making** - Build intelligent, strategic AI
+4. **Regularly run simulations** - Update the README table with fresh statistics
+5. **Commit and push regularly** - Preserve progress frequently
+6. **Document decisions** - Keep track of reasoning and changes
+
+### Session Goals
+- [x] Create update_stats.py for automated README updates
+- [ ] Add ELO rating system with persistence
+- [ ] Implement missing card types (Reinforcement, Artifact, Flare)
+- [ ] Improve alliance and negotiation mechanics
+- [ ] Enhance AI decision making
+- [ ] Add more alien powers
+- [ ] Regular simulation runs with statistics updates
+
+### Key Rules Researched
+From official FFG rules and BoardGameGeek:
+
+**Eight Encounter Phases:**
+1. Start Turn - Check for encounter cards, draw if needed
+2. Regroup - Retrieve one ship from warp to any colony
+3. Destiny - Draw destiny card to determine defender
+4. Launch - Select planet and commit 1-4 ships
+5. Alliance - Both sides invite, players accept in clockwise order
+6. Planning - Secretly select encounter cards
+7. Reveal - Reveal cards and trigger powers
+8. Resolution - Determine winner, move ships, award rewards
+
+**Alliance Rewards (Defense Only):**
+- For each ship committed: draw 1 card OR retrieve 1 ship from warp
+
+**Compensation:**
+- When losing with Negotiate vs Attack: draw cards equal to ships lost to warp
+
+**Failed Deal Penalty:**
+- Both Negotiate cards: 1 minute to deal, or both lose 3 ships to warp
+
+**Second Encounter:**
+- Allowed if: (1) won or dealt first encounter, AND (2) have encounter cards
