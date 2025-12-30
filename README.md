@@ -4,7 +4,7 @@ A comprehensive simulation of the board game Cosmic Encounter, designed to analy
 
 ## Features
 
-- **90 Alien Powers** implemented with proper game mechanics
+- **129 Alien Powers** implemented with proper game mechanics
 - **Multiple AI Strategies**: Random, Basic, and Strategic AI for realistic gameplay
 - **Full Game Flow**: All 8 encounter phases (Start Turn, Regroup, Destiny, Launch, Alliance, Planning, Reveal, Resolution)
 - **Comprehensive Statistics**: Win rates, game length analysis, CSV/JSON export
@@ -97,7 +97,7 @@ src/cosmic/
 ├── planet.py         # Planet and colony mechanics
 ├── types.py          # Type definitions and enums
 ├── cards/            # Card system (Cosmic, Destiny, Rewards decks)
-├── aliens/           # 90 alien power implementations
+├── aliens/           # 129 alien power implementations
 ├── ai/               # AI strategies (Random, Basic, Strategic)
 └── simulation/       # Simulation runner and statistics
 ```
@@ -1583,6 +1583,65 @@ python update_stats.py --sort power --order asc
 ```
 
 </details>
+
+
+<!-- SIMULATION_RESULTS_START -->
+
+## Simulation Results
+
+**Total Games Simulated:** 5,000
+**Solo Victories:** 4,917
+**Shared Victories:** 83
+**Average Game Length:** 4.9 turns
+**Last Updated:** 2025-12-30T17:59:07
+
+### Alien Power Rankings (by ELO)
+
+| Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
+|------|-------|-----|----------|-------|-----------|--------|
+| 1 | Machine | 327 | 58.1% | 155 | 87 | 3 |
+| 2 | Aristocrat | 137 | 31.6% | 177 | 55 | 1 |
+| 3 | Parasite | 82 | 41.8% | 182 | 75 | 1 |
+| 4 | Mutant | 63 | 30.3% | 165 | 50 | 0 |
+| 5 | Tripler | 62 | 31.2% | 160 | 50 | 0 |
+| 6 | Vacuum | 55 | 23.1% | 143 | 33 | 0 |
+| 7 | Ethic | 40 | 23.9% | 176 | 40 | 2 |
+| 8 | Observer | 38 | 25.6% | 168 | 43 | 0 |
+| 9 | Grudge | 25 | 24.5% | 184 | 45 | 0 |
+| 10 | Seeker | 22 | 24.4% | 176 | 43 | 0 |
+| 11 | Connoisseur | 10 | 25.9% | 185 | 46 | 2 |
+| 12 | Doppelganger | 10 | 23.5% | 170 | 40 | 0 |
+| 13 | Patriot | 8 | 29.7% | 185 | 48 | 7 |
+| 14 | Invader | 3 | 23.4% | 175 | 41 | 0 |
+| 15 | Grief | 2 | 25.4% | 181 | 46 | 0 |
+| 16 | Altruist | -0 | 23.5% | 183 | 42 | 1 |
+| 17 | Rage | -2 | 23.2% | 168 | 38 | 1 |
+| 18 | Chronos | -3 | 22.4% | 161 | 32 | 4 |
+| 19 | Gambler | -6 | 24.8% | 157 | 38 | 1 |
+| 20 | Disease | -6 | 31.7% | 180 | 57 | 0 |
+| 21 | Siren | -7 | 24.4% | 176 | 41 | 2 |
+| 22 | Electron | -7 | 23.0% | 161 | 37 | 0 |
+| 23 | Zombie | -10 | 20.9% | 172 | 35 | 1 |
+| 24 | Spiff | -11 | 19.9% | 201 | 40 | 0 |
+| 25 | Prophet | -12 | 22.3% | 175 | 39 | 0 |
+| 26 | Mite | -18 | 19.0% | 147 | 27 | 1 |
+| 27 | Macron | -19 | 29.5% | 166 | 49 | 0 |
+| 28 | Glutton | -20 | 23.6% | 182 | 42 | 1 |
+| 29 | Delegator | -22 | 20.6% | 175 | 32 | 4 |
+| 30 | Miser | -23 | 23.6% | 178 | 41 | 1 |
+| 31 | Silencer | -24 | 23.8% | 160 | 36 | 2 |
+| 32 | Scout | -24 | 20.8% | 149 | 29 | 2 |
+| 33 | Sage | -25 | 20.1% | 189 | 37 | 1 |
+| 34 | Dragon | -26 | 19.0% | 174 | 32 | 1 |
+| 35 | Cavalry | -27 | 22.5% | 160 | 36 | 0 |
+| 36 | Vox | -28 | 20.5% | 176 | 34 | 2 |
+| 37 | Chrysalis | -28 | 23.8% | 164 | 39 | 0 |
+| 38 | Thief | -33 | 22.6% | 190 | 42 | 1 |
+| 39 | Jester | -33 | 26.0% | 169 | 42 | 2 |
+| 40 | Warpish | -33 | 26.3% | 186 | 48 | 1 |
+| ... | *89 more aliens* | ... | ... | ... | ... | ... |
+
+<!-- SIMULATION_RESULTS_END -->
 
 ## Legacy Version
 

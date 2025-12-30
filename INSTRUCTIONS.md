@@ -139,12 +139,14 @@ Use the todo list to track progress through each component. Mark tasks complete 
 - [x] Add ELO rating system for alien power balance tracking
 - [x] Create simulate_and_update.py for automated README updates
 - [x] Update README with simulation results table
-- [ ] Implement missing card types (Reinforcement usage, Artifact timing)
-- [ ] Improve alliance and negotiation mechanics
-- [ ] Enhance AI decision making
-- [ ] Add more alien powers (target: 100+)
-- [ ] Regular simulation runs with statistics updates
-- [ ] Commit and push after each major milestone
+- [x] Implement Reinforcement card usage during combat
+- [x] Improve alliance and negotiation mechanics (defensive ally reward choice)
+- [x] Enhance AI decision making (reinforcement strategy, ally rewards)
+- [x] Add more alien powers - NOW AT 129 POWERS!
+- [x] Regular simulation runs with statistics updates (22,000 games)
+- [x] Commit and push after each major milestone
+- [ ] Add Artifact card timing and usage
+- [ ] Add Flare card system
 
 ### Key Rules Researched
 From official FFG rules and BoardGameGeek:
