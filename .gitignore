@@ -107,7 +107,10 @@ venv.bak/
 
 # Output files
 *.csv
-*.json
-!package.json
 results/
 output/
+
+# JSON except specific files
+*.json
+!package.json
+!cumulative_stats.json

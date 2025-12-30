@@ -135,13 +135,16 @@ Use the todo list to track progress through each component. Mark tasks complete 
 6. **Document decisions** - Keep track of reasoning and changes
 
 ### Session Goals
-- [x] Create update_stats.py for automated README updates
-- [ ] Add ELO rating system with persistence
-- [ ] Implement missing card types (Reinforcement, Artifact, Flare)
+- [x] Create cumulative statistics system with JSON persistence
+- [x] Add ELO rating system for alien power balance tracking
+- [x] Create simulate_and_update.py for automated README updates
+- [x] Update README with simulation results table
+- [ ] Implement missing card types (Reinforcement usage, Artifact timing)
 - [ ] Improve alliance and negotiation mechanics
 - [ ] Enhance AI decision making
-- [ ] Add more alien powers
+- [ ] Add more alien powers (target: 100+)
 - [ ] Regular simulation runs with statistics updates
+- [ ] Commit and push after each major milestone
 
 ### Key Rules Researched
 From official FFG rules and BoardGameGeek:
