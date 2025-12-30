@@ -2,6 +2,16 @@ import random
 import time
 
 
+# ELO rating calculation functions
+def expected_score(rating_a, rating_b):
+    """Calculate expected score for player A against player B."""
+    return 1 / (1 + 10 ** ((rating_b - rating_a) / 400))
+
+def update_elo(rating, expected, actual, k=32):
+    """Update ELO rating based on expected vs actual outcome."""
+    return rating + k * (actual - expected)
+
+
 # Simulator class simulates num_of_games Game(s) and keeps track of results
 class Simulator:
     def __init__(self, num_of_games, names_dict, catch_errors=True, show_output=False):
@@ -16,6 +26,10 @@ class Simulator:
 
         # Keeps track of total games played by each power
         self.power_count = {}
+
+        # ELO ratings for each power (starting at 1500)
+        self.power_elo = {}
+        self.starting_elo = 1500
 
         # Keeps track of exception count
         self.exceptions = 0
@@ -33,6 +47,9 @@ class Simulator:
                             self.power_wins[player.power] = self.power_wins.get(player.power, 0) + 1
                         self.power_count[player.power] = self.power_count.get(player.power, 0) + 1
 
+                    # Update ELO ratings for this game
+                    self._update_elo_for_game(game)
+
                 except:
                     self.exceptions += 1
                     i -= 1
@@ -46,6 +63,9 @@ class Simulator:
                         self.power_wins[player.power] = self.power_wins.get(player.power, 0) + 1
                     self.power_count[player.power] = self.power_count.get(player.power, 0) + 1
 
+                # Update ELO ratings for this game
+                self._update_elo_for_game(game)
+
             # Shows progress every 200 games
             if i % 200 == 0:
                 print(i)
@@ -54,6 +74,60 @@ class Simulator:
         self.average_time = self.total_time / num_of_games
         self.total_wins = sum(self.power_wins.values())
         self.average_wins = self.total_wins / num_of_games
+
+    def _update_elo_for_game(self, game):
+        """Update ELO ratings based on game results using pairwise comparisons."""
+        # Initialize ELO for any new powers
+        for player in game.players:
+            if player.power not in self.power_elo:
+                self.power_elo[player.power] = self.starting_elo
+
+        num_winners = len(game.game_winners)
+        if num_winners == 0:
+            return
+
+        # Create mapping of player to actual score
+        player_scores = {}
+        for player in game.players:
+            if player in game.game_winners:
+                player_scores[player] = 1.0
+            else:
+                player_scores[player] = 0.0
+
+        # Update ELO using pairwise comparisons (each player vs each other)
+        elo_changes = {player.power: 0.0 for player in game.players}
+
+        for i, player_a in enumerate(game.players):
+            for player_b in game.players[i+1:]:
+                power_a = player_a.power
+                power_b = player_b.power
+
+                rating_a = self.power_elo[power_a]
+                rating_b = self.power_elo[power_b]
+
+                # Expected scores for this matchup
+                exp_a = expected_score(rating_a, rating_b)
+                exp_b = 1.0 - exp_a
+
+                # Actual scores: 1 if beat opponent, 0.5 if tied (both win/both lose), 0 if lost
+                score_a_raw = player_scores[player_a]
+                score_b_raw = player_scores[player_b]
+
+                if score_a_raw > score_b_raw:
+                    actual_a, actual_b = 1.0, 0.0
+                elif score_b_raw > score_a_raw:
+                    actual_a, actual_b = 0.0, 1.0
+                else:
+                    actual_a, actual_b = 0.5, 0.5
+
+                # Calculate ELO change for this matchup (smaller k for pairwise)
+                k = 8
+                elo_changes[power_a] += k * (actual_a - exp_a)
+                elo_changes[power_b] += k * (actual_b - exp_b)
+
+        # Apply accumulated changes
+        for power, change in elo_changes.items():
+            self.power_elo[power] += change
 
 # Game class represents a single game of Cosmic Encounter
 class Game:

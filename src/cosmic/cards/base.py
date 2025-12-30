@@ -12,11 +12,21 @@ if TYPE_CHECKING:
     from ..player import Player
 
 
-@dataclass
 class Card(ABC):
     """Base class for all cards."""
-    card_type: CardType
-    from_rewards_deck: bool = False
+
+    @property
+    @abstractmethod
+    def card_type(self) -> CardType:
+        pass
+
+    @property
+    def from_rewards_deck(self) -> bool:
+        return getattr(self, '_from_rewards_deck', False)
+
+    @from_rewards_deck.setter
+    def from_rewards_deck(self, value: bool) -> None:
+        self._from_rewards_deck = value
 
     @abstractmethod
     def __str__(self) -> str:
@@ -27,7 +37,6 @@ class Card(ABC):
         return self.card_type in (CardType.ATTACK, CardType.NEGOTIATE, CardType.MORPH)
 
 
-@dataclass
 class EncounterCard(Card):
     """Base class for encounter cards (Attack, Negotiate, Morph)."""
     pass
@@ -37,7 +46,12 @@ class EncounterCard(Card):
 class AttackCard(EncounterCard):
     """An attack card with a numeric value."""
     value: int
-    card_type: CardType = field(default=CardType.ATTACK, init=False)
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.ATTACK, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     def __str__(self) -> str:
         return f"Attack {self.value}"
@@ -54,7 +68,12 @@ class AttackCard(EncounterCard):
 @dataclass
 class NegotiateCard(EncounterCard):
     """A negotiate card (value 0 for combat, but triggers deal phase)."""
-    card_type: CardType = field(default=CardType.NEGOTIATE, init=False)
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.NEGOTIATE, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     @property
     def value(self) -> int:
@@ -67,7 +86,12 @@ class NegotiateCard(EncounterCard):
 @dataclass
 class MorphCard(EncounterCard):
     """A morph card that copies the opponent's card."""
-    card_type: CardType = field(default=CardType.MORPH, init=False)
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.MORPH, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     @property
     def value(self) -> int:
@@ -82,7 +106,12 @@ class MorphCard(EncounterCard):
 class ReinforcementCard(Card):
     """A reinforcement card that adds to encounter totals."""
     value: int
-    card_type: CardType = field(default=CardType.REINFORCEMENT, init=False)
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.REINFORCEMENT, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     def __str__(self) -> str:
         return f"Reinforcement +{self.value}"
@@ -92,7 +121,12 @@ class ReinforcementCard(Card):
 class KickerCard(Card):
     """A kicker card that multiplies encounter card value."""
     value: int  # Can be negative (like -1) or positive multiplier
-    card_type: CardType = field(default=CardType.KICKER, init=False)
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.KICKER, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     def __str__(self) -> str:
         if self.value < 0:
@@ -104,7 +138,12 @@ class KickerCard(Card):
 class ArtifactCard(Card):
     """An artifact card with a special effect."""
     artifact_type: ArtifactType
-    card_type: CardType = field(default=CardType.ARTIFACT, init=False)
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.ARTIFACT, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     def __str__(self) -> str:
         name = self.artifact_type.value.replace("_", " ").title()
@@ -115,10 +154,15 @@ class ArtifactCard(Card):
 class FlareCard(Card):
     """A flare card associated with an alien power."""
     alien_name: str
-    card_type: CardType = field(default=CardType.FLARE, init=False)
     # Wild effect can be used by anyone, super effect only by the matching alien
     wild_effect: str = ""
     super_effect: str = ""
+    _from_rewards_deck: bool = False
+    _card_type: CardType = field(default=CardType.FLARE, init=False)
+
+    @property
+    def card_type(self) -> CardType:
+        return self._card_type
 
     def __str__(self) -> str:
         return f"Flare: {self.alien_name}"

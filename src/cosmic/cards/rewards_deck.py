@@ -35,21 +35,21 @@ class RewardsDeck:
         # Attack cards - generally higher values, includes negative
         attack_values = [-7, -1, 10, 12, 14, 16, 18, 20, 23]
         for value in attack_values:
-            cards.append(AttackCard(value=value, from_rewards_deck=True))
+            cards.append(AttackCard(value=value, _from_rewards_deck=True))
 
         # Negotiate cards (can be special negotiates in expansions)
         for _ in range(4):
-            cards.append(NegotiateCard(from_rewards_deck=True))
+            cards.append(NegotiateCard(_from_rewards_deck=True))
 
         # Reinforcement cards - higher values
         reinforcement_values = [4, 4, 6, 6]
         for value in reinforcement_values:
-            cards.append(ReinforcementCard(value=value, from_rewards_deck=True))
+            cards.append(ReinforcementCard(value=value, _from_rewards_deck=True))
 
         # Kicker cards
         kicker_values = [-1, 0, 1, 2, 2, 3, 4]
         for value in kicker_values:
-            cards.append(KickerCard(value=value, from_rewards_deck=True))
+            cards.append(KickerCard(value=value, _from_rewards_deck=True))
 
         # Artifacts (powerful ones)
         reward_artifacts = [
@@ -66,7 +66,7 @@ class RewardsDeck:
         for artifact_type in reward_artifacts:
             cards.append(ArtifactCard(
                 artifact_type=artifact_type,
-                from_rewards_deck=True
+                _from_rewards_deck=True
             ))
 
         self.draw_pile = cards
