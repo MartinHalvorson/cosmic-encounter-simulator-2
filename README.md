@@ -1,22 +1,122 @@
-# Cosmic Encounter Simulator
+# Cosmic Encounter Simulator 2
 
-_This is a relatively old project from around 2016. Looking back, the code definitely isn't how I'd write it today... which I guess is growth, right? I loved making this at the time so I'm happy to keep it up on GitHub!_
+A comprehensive simulation of the board game Cosmic Encounter, designed to analyze alien power balance and game dynamics across various configurations.
 
-This simulator models the game of Cosmic Encounter with various alien powers. I use heuristics and some basic AI to model rational player interactions.
+## Features
 
-### Rules of the Game
+- **68 Alien Powers** implemented with proper game mechanics
+- **Multiple AI Strategies**: Random, Basic, and Strategic AI for realistic gameplay
+- **Full Game Flow**: All 8 encounter phases (Start Turn, Regroup, Destiny, Launch, Alliance, Planning, Reveal, Resolution)
+- **Comprehensive Statistics**: Win rates, game length analysis, CSV/JSON export
+- **Configurable Simulations**: Variable player counts (3-8), custom power sets, reproducible seeds
 
-"In Cosmic Encounter, each player becomes the leader of one of dozens of alien races, each with its own unique power. On a player's turn, he or she becomes the offense. The offense encounters another player on a planet by moving a group of his or her ships through the hyperspace gate to that planet. Both sides can invite allies and play cards to try and tip the encounter in their favor. The object of the game is to establish colonies in other players' planetary systems. The winner(s) are the first player(s) to have five colonies on any planets outside his or her home system. These colonies may all be in one system or scattered over multiple systems." - [Board Game Geek](https://boardgamegeek.com/boardgame/39463/cosmic-encounter)
+## Installation
 
-[Additional Game Rules](https://images-cdn.fantasyflightgames.com/filer_public/11/c6/11c61988-bb60-428f-b614-9c3a952f070b/cosmic-encounter-rulebook.pdf)
+```bash
+# Clone the repository
+git clone https://github.com/MartinHalvorson/cosmic-encounter-simulator-2.git
+cd cosmic-encounter-simulator-2
 
-## Results
+# No dependencies required - uses Python standard library only
+python3 run_simulation.py --help
+```
 
+## Usage
 
-![](https://github.com/14mthalvorson/cosmic-encounter-simulator/blob/master/table.png)
+### Basic Simulation
 
-###### _Note: This table just shows win rates. The absolute power is proportional to the win rate adjusted for the number of players in the game. (Individual player win rates will generally go down the more players in the game.)_
+```bash
+# Run 1000 games with 5 players
+python3 run_simulation.py -n 1000 -p 5
 
-This table shows how the absolute strength of each power changes based on the number of players in the game. Generally speaking, powers with "main player" interactions decrease in strength with more players in the game. Powers with "all player" or "per turn" or "not main player" interactions grow in strength the more players in the game.
+# Quick 100-game test
+python3 run_simulation.py -n 100
 
-![](https://github.com/14mthalvorson/cosmic-encounter-simulator/blob/master/Percentage%20Wins%20vs%20Number%20of%20Players.png)
+# Quiet mode (no progress output)
+python3 run_simulation.py -n 1000 -q
+```
+
+### List Available Powers
+
+```bash
+python3 run_simulation.py --list-powers
+```
+
+### Export Results
+
+```bash
+# Export to CSV
+python3 run_simulation.py -n 1000 -o results.csv
+
+# Export to JSON
+python3 run_simulation.py -n 1000 -o results.json
+```
+
+### Advanced Options
+
+```bash
+# Variable player counts (3-6 players)
+python3 run_simulation.py -n 1000 --min-players 3 --max-players 6
+
+# Set random seed for reproducibility
+python3 run_simulation.py -n 1000 --seed 42
+```
+
+## Example Output
+
+```
+============================================================
+COSMIC ENCOUNTER SIMULATION RESULTS
+============================================================
+
+Total Games: 1000
+Solo Victories: 986
+Shared Victories: 14
+Timeouts: 0
+Errors: 0
+
+Average Game Length: 4.8 turns
+Shortest Game: 1 turns
+Longest Game: 32 turns
+
+------------------------------------------------------------
+ALIEN POWER WIN RATES
+------------------------------------------------------------
+  1. Parasite              52.3% (32/61)
+  2. Machine               41.2% (28/68)
+  3. Symbiote              35.7% (25/70)
+  ...
+```
+
+## Project Structure
+
+```
+src/cosmic/
+├── game.py           # Main game logic
+├── player.py         # Player class
+├── planet.py         # Planet and colony mechanics
+├── types.py          # Type definitions and enums
+├── cards/            # Card system (Cosmic, Destiny, Rewards decks)
+├── aliens/           # 68 alien power implementations
+├── ai/               # AI strategies (Random, Basic, Strategic)
+└── simulation/       # Simulation runner and statistics
+```
+
+## Implemented Alien Powers (68)
+
+Amoeba, Altruist, Antimatter, Assassin, Butler, Calculator, Changeling, Chosen, Chronos, Citadel, Claw, Clone, Crone, Cudgel, Dictator, Disease, Empath, Ethic, Fido, Filch, Gambler, Genius, Ghoul, Giver, Grudge, Hacker, Healer, Human, Kamikazee, Leviathan, Loser, Machine, Macron, Masochist, Mirror, Mite, Mutant, Negator, Observer, Oracle, Pacifist, Parasite, Pentaform, Philanthropist, Pickpocket, Reincarnator, Remora, Reserve, Seeker, Shadow, Sheriff, Silencer, Sniveler, Sorcerer, Spiff, Surge, Symbiote, Tick-Tock, Trader, Tripler, Vacuum, Virus, Visionary, Void, Warpish, Warrior, Yin, Zombie
+
+## Game Rules Reference
+
+The simulator follows [Fantasy Flight Games Cosmic Encounter](https://www.fantasyflightgames.com/en/products/cosmic-encounter/) rules.
+
+Key mechanics implemented:
+- **Encounter Flow**: Full 8-phase encounter sequence
+- **Alliances**: Strategic invitation and acceptance
+- **Deals**: Colony swaps with failed deal penalties (3 ships to warp)
+- **Compensation**: Cards from attacker when negotiate loses to attack
+- **Alternate Win Conditions**: Masochist, Genius, Tick-Tock
+
+## Legacy Version
+
+The original 2016 simulator is preserved in `Simulator.py` and `main.py` for reference.
