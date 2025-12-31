@@ -1455,8 +1455,8 @@ class Anarchist(AlienPower):
                 self.disruptions_revealed += 1
 
     def check_alternate_win(self, game: "Game", player: "Player") -> bool:
-        # Requires 12 disruptions (increased from 8 for balance)
-        return self.disruptions_revealed >= 12
+        # Requires 20 disruptions (very hard to achieve)
+        return self.disruptions_revealed >= 20
 
 
 @dataclass
