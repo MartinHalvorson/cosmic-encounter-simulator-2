@@ -186,8 +186,23 @@ From official FFG rules and BoardGameGeek:
 - Added 61 new alien powers (now at 129 total)
 - Ran 22,000+ simulated games
 
-**Current Stats:**
-- 129 alien powers implemented
-- 22,000+ games simulated across 3-6 players
+**Final Session Stats (2025-12-30):**
+- 129 alien powers implemented (started with 68)
+- 34,000+ games simulated across 3-6 players
 - ELO ratings stable with meaningful tier differentiation
-- Top powers: Machine, Parasite, Disease, Warpish
+- Reinforcement cards now work in combat
+- Defensive ally rewards now offer choice (cards OR ships)
+- Comprehensive statistics with per-player-count breakdowns
+
+**Top Powers by ELO:**
+1. Machine (1564) - A tier, extra encounters are extremely powerful
+2. Parasite (1562) - A tier, can join any encounter uninvited
+3. Warpish (1525) - B tier, strong in 3-player games
+4. Disease (1524) - B tier, eliminates enemy colonies
+5. Symbiote (1522) - B tier, double starting ships
+
+**Observations:**
+- Powers that give extra encounters or attacks are strongest (Machine)
+- Powers that allow uninvited alliance participation are very strong (Parasite)
+- Powers that scale with ships in warp or colonies are situationally strong
+- Win rates decrease as player count increases (expected behavior)

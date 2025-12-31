@@ -1584,6 +1584,65 @@ python update_stats.py --sort power --order asc
 
 </details>
 
+
+<!-- SIMULATION_RESULTS_START -->
+
+## Simulation Results
+
+**Total Games Simulated:** 15,000
+**Solo Victories:** 14,733
+**Shared Victories:** 267
+**Average Game Length:** 5.0 turns
+**Last Updated:** 2025-12-30T18:01:28
+
+### Alien Power Rankings (by ELO)
+
+| Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
+|------|-------|-----|----------|-------|-----------|--------|
+| 1 | Machine | -2837 | 56.7% | 483 | 268 | 6 |
+| 2 | Macron | -2974 | 28.7% | 515 | 144 | 4 |
+| 3 | Parasite | -2984 | 44.8% | 511 | 227 | 2 |
+| 4 | Scout | -3007 | 24.8% | 468 | 113 | 3 |
+| 5 | Warpish | -3017 | 32.1% | 533 | 169 | 2 |
+| 6 | Changeling | -3045 | 17.5% | 521 | 89 | 2 |
+| 7 | Vox | -3053 | 20.7% | 523 | 101 | 7 |
+| 8 | Assassin | -3056 | 22.3% | 467 | 100 | 4 |
+| 9 | Philanthropist | -3064 | 21.8% | 523 | 109 | 5 |
+| 10 | Engineer | -3073 | 20.7% | 488 | 98 | 3 |
+| 11 | Chrysalis | -3079 | 25.6% | 511 | 127 | 4 |
+| 12 | Doppelganger | -3084 | 23.6% | 496 | 116 | 1 |
+| 13 | Foam | -3088 | 22.5% | 552 | 123 | 1 |
+| 14 | Tripler | -3092 | 28.2% | 503 | 138 | 4 |
+| 15 | Chronos | -3095 | 22.1% | 488 | 103 | 5 |
+| 16 | Seeker | -3098 | 23.9% | 531 | 123 | 4 |
+| 17 | Warlock | -3103 | 23.8% | 516 | 120 | 3 |
+| 18 | Insect | -3104 | 25.8% | 493 | 123 | 4 |
+| 19 | Barbarian | -3105 | 21.2% | 499 | 100 | 6 |
+| 20 | Oracle | -3106 | 23.5% | 477 | 109 | 3 |
+| 21 | Prophet | -3106 | 21.4% | 557 | 119 | 0 |
+| 22 | Symbiote | -3110 | 29.9% | 541 | 154 | 8 |
+| 23 | Converter | -3112 | 23.5% | 553 | 128 | 2 |
+| 24 | Fungus | -3116 | 24.2% | 504 | 120 | 2 |
+| 25 | Disease | -3118 | 28.6% | 528 | 144 | 7 |
+| 26 | Grief | -3120 | 23.1% | 510 | 114 | 4 |
+| 27 | Connoisseur | -3120 | 24.2% | 521 | 122 | 4 |
+| 28 | Yin | -3124 | 21.4% | 524 | 103 | 9 |
+| 29 | Ghast | -3124 | 21.3% | 521 | 104 | 7 |
+| 30 | Hacker | -3125 | 21.9% | 534 | 115 | 2 |
+| 31 | Healer | -3125 | 23.1% | 524 | 116 | 5 |
+| 32 | Masochist | -3125 | 21.3% | 531 | 108 | 5 |
+| 33 | Bully | -3126 | 24.3% | 522 | 124 | 3 |
+| 34 | Trader | -3126 | 25.3% | 513 | 127 | 3 |
+| 35 | Visionary | -3126 | 22.0% | 545 | 113 | 7 |
+| 36 | Mutant | -3127 | 27.0% | 507 | 136 | 1 |
+| 37 | Reserve | -3128 | 22.5% | 534 | 114 | 6 |
+| 38 | Architect | -3128 | 25.4% | 562 | 140 | 3 |
+| 39 | Silencer | -3129 | 22.9% | 502 | 112 | 3 |
+| 40 | Miser | -3130 | 26.5% | 529 | 137 | 3 |
+| ... | *89 more aliens* | ... | ... | ... | ... | ... |
+
+<!-- SIMULATION_RESULTS_END -->
+
 ## Legacy Version
 
 The original 2016 simulator is preserved in `Simulator.py` and `main.py` for reference.
