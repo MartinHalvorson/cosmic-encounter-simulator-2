@@ -588,9 +588,22 @@ From official FFG rules and BoardGameGeek:
 - **9,300,000+ cumulative games simulated**
 - Simulation speed: ~286 games/second
 
+### Session 20 Progress (2025-12-31) - 900 Aliens Milestone!
+- **Added Predator Powers (13 aliens):**
+  - Apex, Predator_Alt (+4 attack), Feral (random 0-8)
+  - Hunter_Alt, Lurker_Alt, Stalker, Prowler
+  - Pouncer, Savage, Viper, Devourer, Swarm_Alt, Scavenger_Alt
+- **Added Artifact Powers (14 aliens):**
+  - Crafter, Armorer, Smith (+3), Enchanter
+  - Collector_Alt, Curator, Finder, Salvager
+  - Wielder, Supplier, Looter, Keeper_Alt, Jeweler, Tinker
+- **900 alien powers now implemented!**
+- **9,350,000+ cumulative games simulated**
+- Simulation speed: ~322 games/second
+
 ### Final Project Summary (Updated):
-- **876 unique alien powers** across 51 power category files
-- **9.3+ million simulated games** with comprehensive statistics
+- **900 unique alien powers** across 53 power category files
+- **9.35+ million simulated games** with comprehensive statistics
 - **5 AI personality types**: Basic, Aggressive, Cautious, Opportunistic, Social, Adaptive
 - **Complete game mechanics**: Encounter phases, destiny, alliances, reinforcements, flares
 - **Tech cards, Hazard deck, Artifact system** from expansions
