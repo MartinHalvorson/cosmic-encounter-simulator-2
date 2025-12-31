@@ -732,33 +732,17 @@ class Game:
             self._log(f"{self.defense.name} plays {self.defense_kicker} (attack becomes {def_value})")
             self.cosmic_deck.discard(self.defense_kicker)
 
-        # Apply power modifications to card values
-        for player in [self.offense, self.defense]:
-            if player.alien and self.is_power_active(player):
-                if player == self.offense:
-                    off_value = player.alien.modify_attack_value(
-                        self, player, off_value, Side.OFFENSE
-                    )
-                else:
-                    def_value = player.alien.modify_attack_value(
-                        self, player, def_value, Side.DEFENSE
-                    )
+        # Apply power modifications to card values (supports dual powers in 2-player mode)
+        off_value = self.apply_power_modifications(self.offense, off_value, Side.OFFENSE, 'attack')
+        def_value = self.apply_power_modifications(self.defense, def_value, Side.DEFENSE, 'attack')
 
         # Calculate ship totals
         off_ships = sum(self.offense_ships.values())
         def_ships = sum(self.defense_ships.values())
 
-        # Apply power modifications to ship counts
-        for player in [self.offense, self.defense]:
-            if player.alien and self.is_power_active(player):
-                if player == self.offense:
-                    off_ships = player.alien.modify_ship_count(
-                        self, player, off_ships, Side.OFFENSE
-                    )
-                else:
-                    def_ships = player.alien.modify_ship_count(
-                        self, player, def_ships, Side.DEFENSE
-                    )
+        # Apply power modifications to ship counts (supports dual powers in 2-player mode)
+        off_ships = self.apply_power_modifications(self.offense, off_ships, Side.OFFENSE, 'ships')
+        def_ships = self.apply_power_modifications(self.defense, def_ships, Side.DEFENSE, 'ships')
 
         # Calculate base totals before reinforcements
         off_total = off_value + off_ships
@@ -768,19 +752,11 @@ class Game:
         self.offense_total = off_total
         self.defense_total = def_total
 
-        # Apply power modifications to totals
-        for player in [self.offense, self.defense]:
-            if player.alien and self.is_power_active(player):
-                if player == self.offense:
-                    off_total = player.alien.modify_total(
-                        self, player, off_total, Side.OFFENSE
-                    )
-                    self.offense_total = off_total
-                else:
-                    def_total = player.alien.modify_total(
-                        self, player, def_total, Side.DEFENSE
-                    )
-                    self.defense_total = def_total
+        # Apply power modifications to totals (supports dual powers in 2-player mode)
+        off_total = self.apply_power_modifications(self.offense, off_total, Side.OFFENSE, 'total')
+        def_total = self.apply_power_modifications(self.defense, def_total, Side.DEFENSE, 'total')
+        self.offense_total = off_total
+        self.defense_total = def_total
 
         # Allow reinforcement cards to be played
         off_reinforcements = self._get_reinforcements(self.offense, self.offense_allies, True, off_total, def_total)
@@ -1807,6 +1783,54 @@ class Game:
         if player in self.zapped_powers:
             return False
         return player.power_active
+
+    def get_active_powers(self, player: Player) -> list:
+        """
+        Get all active alien powers for a player.
+
+        In dual power mode (2-player variant), returns both primary and secondary powers.
+        Returns list of AlienPower objects that are currently active.
+        """
+        powers = []
+
+        if player.alien and self.is_power_active(player):
+            powers.append(player.alien)
+
+        # Include secondary alien for dual power mode
+        if self.config.dual_powers and hasattr(player, 'secondary_alien') and player.secondary_alien:
+            if player not in self.zapped_powers and player.power_active:
+                powers.append(player.secondary_alien)
+
+        return powers
+
+    def apply_power_modifications(
+        self,
+        player: Player,
+        value: int,
+        side: Side,
+        modification_type: str
+    ) -> int:
+        """
+        Apply all power modifications for a player (primary and secondary).
+
+        Args:
+            player: The player whose powers to check
+            value: Current value to modify
+            side: Which side the player is on (OFFENSE/DEFENSE)
+            modification_type: Type of modification ('attack', 'ships', 'total')
+
+        Returns:
+            Modified value after all applicable powers are applied
+        """
+        for power in self.get_active_powers(player):
+            if modification_type == 'attack':
+                value = power.modify_attack_value(self, player, value, side)
+            elif modification_type == 'ships':
+                value = power.modify_ship_count(self, player, value, side)
+            elif modification_type == 'total':
+                value = power.modify_total(self, player, value, side)
+
+        return value
 
     # ========== Hazard Methods ==========
 

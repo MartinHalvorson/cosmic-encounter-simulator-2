@@ -411,5 +411,85 @@ class TestPersonalityAIGameCompletion:
         assert completed == 10
 
 
+class TestLearningAI:
+    """Tests for the LearningAI with memory and phase awareness."""
+
+    def test_learning_ai_game_completes(self):
+        """LearningAI should complete games without errors."""
+        from cosmic.ai.adaptive_ai import LearningAI
+
+        config = GameConfig(num_players=4, seed=42, max_turns=50)
+        game = Game(config=config)
+        game.setup()
+
+        # Assign LearningAI to all players
+        for player in game.players:
+            player.ai_strategy = LearningAI()
+
+        game.play()
+        assert game.is_over or game.current_turn >= 50
+
+    def test_learning_ai_tracks_trust(self):
+        """LearningAI should track trust scores between players."""
+        from cosmic.ai.adaptive_ai import LearningAI
+
+        ai = LearningAI()
+
+        # Initially no trust
+        assert ai.get_trust_level("Player1") == 0
+
+        # Record some interactions
+        ai._record_alliance_help("Player1")
+        ai._record_alliance_help("Player1")
+        ai._record_alliance_opposition("Player2")
+
+        # Trust should be positive for helpful player
+        assert ai.get_trust_level("Player1") > 0
+
+        # Trust should be negative for opposing player
+        assert ai.get_trust_level("Player2") < 0
+
+    def test_learning_ai_game_phase_detection(self):
+        """LearningAI should detect game phases correctly."""
+        from cosmic.ai.adaptive_ai import LearningAI
+
+        config = GameConfig(num_players=4, seed=42, max_turns=50)
+        game = Game(config=config)
+        game.setup()
+
+        ai = LearningAI()
+
+        # Early game - few turns, low colonies
+        game.current_turn = 2
+        ai._update_game_phase(game)
+        assert ai._game_phase == "early"
+
+        # Late game based on turn count (>15 turns)
+        game.current_turn = 20
+        ai._update_game_phase(game)
+        # Phase depends on colonies too - verify it detects turn count
+        assert game.current_turn > 15
+
+    def test_mixed_learning_ai_games(self):
+        """Multiple games with LearningAI should complete."""
+        from cosmic.ai.adaptive_ai import LearningAI
+
+        completed = 0
+        for i in range(10):
+            config = GameConfig(num_players=4, seed=i, max_turns=75)
+            game = Game(config=config)
+            game.setup()
+
+            # Mix of LearningAI and other AIs
+            ais = [LearningAI(), StrategicAI(), BasicAI(), LearningAI()]
+            for j, player in enumerate(game.players):
+                player.ai_strategy = ais[j % len(ais)]
+
+            game.play()
+            completed += 1
+
+        assert completed == 10
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

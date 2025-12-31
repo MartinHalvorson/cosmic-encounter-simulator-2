@@ -73,3 +73,8 @@ from .insect_powers import *  # noqa: F401, F403
 from .weather_alt_powers import *  # noqa: F401, F403
 from .science_powers import *  # noqa: F401, F403
 from .sport_powers import *  # noqa: F401, F403
+from .quantum_powers import *  # noqa: F401, F403
+from .sound_powers import *  # noqa: F401, F403
+from .gravity_powers import *  # noqa: F401, F403
+from .light_powers import *  # noqa: F401, F403
+from .gaming_powers import *  # noqa: F401, F403

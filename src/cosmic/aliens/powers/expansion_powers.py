@@ -1436,9 +1436,11 @@ class Anarchist(AlienPower):
     Anarchist - Power of Chaos.
     Official FFG rules: When you lose or fail a deal as main player,
     reveal a rule disruption. Win when all 8 disruptions revealed.
+
+    Balance adjustment: Only count offensive losses (per FFG clarification).
     """
     name: str = field(default="Anarchist", init=False)
-    description: str = field(default="Disrupt rules on loss; win with 8 disruptions.", init=False)
+    description: str = field(default="Disrupt rules on offensive loss; win with 8 disruptions.", init=False)
     timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
@@ -1446,8 +1448,10 @@ class Anarchist(AlienPower):
     disruptions_revealed: int = field(default=0, init=False)
 
     def on_lose_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        # Only count losses as offense (per FFG clarification)
         if as_main_player and player.power_active:
-            self.disruptions_revealed += 1
+            if player == game.offense:
+                self.disruptions_revealed += 1
 
     def check_alternate_win(self, game: "Game", player: "Player") -> bool:
         return self.disruptions_revealed >= 8
@@ -1913,11 +1917,13 @@ class Joker(AlienPower):
 class Lizard(AlienPower):
     """
     Lizard - Power to Transmogrify.
-    Official FFG rules: After winning, morph ships into +2 bonus each.
+    Official FFG rules: After winning as offense, morph 1 ship into +2 bonus.
     Win when all ships morphed.
+
+    Balance adjustment: Only morph 1 ship per win, and only as offense.
     """
     name: str = field(default="Lizard", init=False)
-    description: str = field(default="Morph ships on wins; each adds +2.", init=False)
+    description: str = field(default="Morph 1 ship on offensive wins; each adds +2.", init=False)
     timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -1926,9 +1932,10 @@ class Lizard(AlienPower):
     normal_ships: int = field(default=20, init=False)
 
     def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
-        if as_main_player and player.power_active:
-            # Morph 1-4 ships
-            ships_to_morph = min(4, self.normal_ships)
+        # Only morph on offensive wins (per FFG rules)
+        if as_main_player and player.power_active and player == game.offense:
+            # Morph 1 ship per win (balanced)
+            ships_to_morph = min(1, self.normal_ships)
             self.morphed_ships += ships_to_morph
             self.normal_ships -= ships_to_morph
 
