@@ -113,3 +113,9 @@ from .action_powers import *  # noqa: F401, F403
 from .material_powers import *  # noqa: F401, F403
 from .celestial_powers import *  # noqa: F401, F403
 from .body_powers import *  # noqa: F401, F403
+from .gaming_alt_powers import *  # noqa: F401, F403
+from .relationship_powers import *  # noqa: F401, F403
+from .mythology_extended_powers import *  # noqa: F401, F403
+from .occupation_powers import *  # noqa: F401, F403
+from .emotion_extended_powers import *  # noqa: F401, F403
+from .nature_extended_powers import *  # noqa: F401, F403
