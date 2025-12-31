@@ -323,6 +323,14 @@ class Game:
         # Reset artifact state for this encounter
         self._reset_encounter_artifacts()
 
+        # Draw hazard for this encounter (Cosmic Storm expansion)
+        self._draw_hazard()
+
+        # Check for skip encounter hazard
+        if self.current_hazard and self._check_hazard_skip():
+            self._handle_turn_end()
+            return
+
         # Start turn phase
         if self.encounter_number == 1:
             self.current_turn += 1
@@ -366,6 +374,9 @@ class Game:
         for player in self.players:
             if player.alien:
                 player.alien.on_encounter_end(self, player)
+
+        # Discard hazard card at end of encounter
+        self._discard_hazard()
 
         # Determine if second encounter
         if not self.is_over:
@@ -688,6 +699,17 @@ class Game:
             off_total += flare_bonus
             self._log(f"Flare bonus: +{flare_bonus}")
 
+        # Apply tech bonuses (Cosmic Incursion expansion)
+        off_tech_bonus = self._get_tech_combat_bonus(self.offense, True, sum(self.offense_ships.values()))
+        def_tech_bonus = self._get_tech_combat_bonus(self.defense, False, sum(self.defense_ships.values()))
+        off_total += off_tech_bonus
+        def_total += def_tech_bonus
+
+        if off_tech_bonus > 0:
+            self._log(f"{self.offense.name} tech bonus: +{off_tech_bonus}")
+        if def_tech_bonus > 0:
+            self._log(f"{self.defense.name} tech bonus: +{def_tech_bonus}")
+
         self._log(f"Offense total: {off_total} ({off_value} + {sum(self.offense_ships.values())} ships{f' + {off_reinforce_bonus} reinforcement' if off_reinforce_bonus else ''})")
         self._log(f"Defense total: {def_total} ({def_value} + {sum(self.defense_ships.values())} ships{f' + {def_reinforce_bonus} reinforcement' if def_reinforce_bonus else ''})")
 
@@ -740,6 +762,9 @@ class Game:
         self.offense.alien and self.offense.alien.on_win_encounter(self, self.offense, True)
         self.defense.alien and self.defense.alien.on_lose_encounter(self, self.defense, True)
 
+        # Tech research progress for winner
+        self._apply_tech_research_progress(self.offense)
+
         # Discard encounter cards
         self._discard_encounter_cards()
 
@@ -786,6 +811,9 @@ class Game:
         # Win/lose hooks
         self.defense.alien and self.defense.alien.on_win_encounter(self, self.defense, True)
         self.offense.alien and self.offense.alien.on_lose_encounter(self, self.offense, True)
+
+        # Tech research progress for winner
+        self._apply_tech_research_progress(self.defense)
 
         # Discard encounter cards
         self._discard_encounter_cards()
@@ -1371,3 +1399,87 @@ class Game:
         if player in self.zapped_powers:
             return False
         return player.power_active
+
+    # ========== Hazard Methods ==========
+
+    def _draw_hazard(self) -> None:
+        """Draw a hazard card for this encounter if hazards are enabled."""
+        if not self.config.use_hazards or not self.hazard_deck:
+            self.current_hazard = None
+            return
+
+        self.current_hazard = self.hazard_deck.draw()
+        if self.current_hazard:
+            self._log(f"⚠️ Hazard: {self.current_hazard.name} - {self.current_hazard.description}")
+
+            # Apply immediate (START_ENCOUNTER) hazard effects
+            if self.current_hazard.timing == HazardTiming.START_ENCOUNTER:
+                apply_hazard_effect(self, self.current_hazard)
+
+    def _discard_hazard(self) -> None:
+        """Discard the current hazard card at the end of the encounter."""
+        if self.hazard_deck and self.current_hazard:
+            self.hazard_deck.discard(self.current_hazard)
+            self.current_hazard = None
+
+    def _check_hazard_skip(self) -> bool:
+        """Check if the current hazard causes the encounter to be skipped."""
+        if not self.current_hazard:
+            return False
+
+        effect_data = self.hazard_deck.get_effect(self.current_hazard) if self.hazard_deck else {}
+        if effect_data.get("effect") == "skip_encounter":
+            self._log("Time Warp - Encounter skipped!")
+            self._discard_hazard()
+            return True
+
+        return False
+
+    def _check_hazard_no_alliances(self) -> bool:
+        """Check if current hazard prevents alliances."""
+        if not self.current_hazard:
+            return False
+
+        if self.current_hazard.timing == HazardTiming.DURING_ALLIANCE:
+            effect_data = self.hazard_deck.get_effect(self.current_hazard) if self.hazard_deck else {}
+            return effect_data.get("effect") == "no_alliances"
+
+        return False
+
+    def _apply_hazard_reveal_effects(self) -> None:
+        """Apply hazard effects during reveal phase."""
+        if not self.current_hazard or self.current_hazard.timing != HazardTiming.DURING_REVEAL:
+            return
+
+        effect_data = self.hazard_deck.get_effect(self.current_hazard) if self.hazard_deck else {}
+        effect_type = effect_data.get("effect", "")
+
+        if effect_type == "halve_attacks":
+            # Attack values will be halved in resolution
+            self._log("Nebula Cloud - Attack values are halved!")
+
+    def _apply_hazard_resolution_effects(self) -> Tuple[bool, bool]:
+        """
+        Apply hazard effects during resolution.
+
+        Returns:
+            Tuple of (swap_outcome, permanent_loss)
+        """
+        swap_outcome = False
+        permanent_loss = False
+
+        if not self.current_hazard or self.current_hazard.timing != HazardTiming.DURING_RESOLUTION:
+            return swap_outcome, permanent_loss
+
+        effect_data = self.hazard_deck.get_effect(self.current_hazard) if self.hazard_deck else {}
+        effect_type = effect_data.get("effect", "")
+
+        if effect_type == "swap_outcome":
+            swap_outcome = True
+            self._log("Dimensional Rift - Winner and loser are swapped!")
+
+        if effect_type == "permanent_loss":
+            permanent_loss = True
+            self._log("Ships are permanently lost instead of going to warp!")
+
+        return swap_outcome, permanent_loss
