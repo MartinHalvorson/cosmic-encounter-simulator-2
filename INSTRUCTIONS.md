@@ -172,3 +172,22 @@ From official FFG rules and BoardGameGeek:
 
 **Second Encounter:**
 - Allowed if: (1) won or dealt first encounter, AND (2) have encounter cards
+
+### Session Progress Log
+
+**Session Start (2025-12-30):**
+- Began with 68 alien powers
+- Created update_stats.py and ELO rating system
+- Ran initial simulations
+
+**Mid-Session:**
+- Added reinforcement card support to combat
+- Implemented defensive ally reward choices (cards OR ships)
+- Added 61 new alien powers (now at 129 total)
+- Ran 22,000+ simulated games
+
+**Current Stats:**
+- 129 alien powers implemented
+- 22,000+ games simulated across 3-6 players
+- ELO ratings stable with meaningful tier differentiation
+- Top powers: Machine, Parasite, Disease, Warpish
