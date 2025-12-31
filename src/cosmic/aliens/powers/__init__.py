@@ -87,3 +87,5 @@ from .gambling_powers import *  # noqa: F401, F403
 from .mythology_powers import *  # noqa: F401, F403
 from .direction_powers import *  # noqa: F401, F403
 from .shape_powers import *  # noqa: F401, F403
+from .cooking_powers import *  # noqa: F401, F403
+from .celebration_powers import *  # noqa: F401, F403

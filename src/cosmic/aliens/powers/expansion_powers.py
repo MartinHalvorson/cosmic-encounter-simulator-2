@@ -1932,7 +1932,7 @@ class Lizard(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     has_alternate_win: bool = field(default=True, init=False)
     morphed_ships: int = field(default=0, init=False)
-    normal_ships: int = field(default=30, init=False)  # Increased from 20 for balance
+    normal_ships: int = field(default=50, init=False)  # Increased for balance (very hard alternate win)
 
     def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
         # Only morph on offensive wins (per FFG rules)
