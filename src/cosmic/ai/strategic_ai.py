@@ -23,25 +23,82 @@ if TYPE_CHECKING:
     from ..types import Side
 
 
-# Powers that are dangerous to let win
+# Powers that are dangerous to let win - tend to snowball or have strong late game
 DANGEROUS_POWERS = {
     "Machine", "Virus", "Void", "Parasite", "Loser", "Masochist",
-    "Zombie", "Oracle", "Tick-Tock", "Chosen", "Chronos"
+    "Zombie", "Oracle", "Tick-Tock", "Chosen", "Chronos", "Clone",
+    "Symbiote", "Horde", "Reincarnator", "Fury", "Genius", "Will"
 }
 
 # Powers that synergize well with negotiation
 NEGOTIATE_FRIENDLY_POWERS = {
-    "Pacifist", "Diplomat", "Trader", "Philanthropist", "Empath"
+    "Pacifist", "Diplomat", "Trader", "Philanthropist", "Empath",
+    "Negotiator", "Altruist", "Butler", "Connoisseur"
 }
 
 # Powers that benefit from high attack cards
 HIGH_CARD_POWERS = {
-    "Human", "Warrior", "Calculator", "Grudge", "Shadow"
+    "Human", "Warrior", "Calculator", "Grudge", "Shadow",
+    "Tripler", "Ace", "Battlemaster", "Captain", "Brute"
 }
 
 # Powers that benefit from low cards
 LOW_CARD_POWERS = {
-    "Loser", "Anti-Matter", "Underdog"
+    "Loser", "Anti-Matter", "Underdog", "Masochist", "Deuce"
+}
+
+# Combat modifier powers - change how combat math works
+COMBAT_MODIFIER_POWERS = {
+    "Virus": "multiply_ships",       # Multiplies ship count instead of adding
+    "Macron": "ships_as_4",          # Each ship counts as 4
+    "Human": "add_4",                # Adds +4 to total
+    "Tripler": "triple_card",        # Can triple encounter card
+    "Anti-Matter": "reverse_total",  # Lower total wins
+    "Loser": "loser_wins",           # Lower total wins (different mechanics)
+    "Calculator": "use_hand_size",   # Uses hand size as card value
+    "Mirror": "mirror_digits",       # Can reverse digits on attack card
+}
+
+# Powers that affect alliance decisions
+ALLIANCE_AFFECTING_POWERS = {
+    "Parasite": "forces_alliance",   # Joins encounters uninvited
+    "Philanthropist": "gives_cards", # Gives cards to allies
+    "Empath": "emotional_ally",      # Benefits from peaceful alliances
+    "Hate": "enemy_alliances",       # Draws enemies into alliances
+    "Observer": "watches_all",       # Can observe any encounter
+    "Barbarian": "steals_ships",     # Takes ships from allies
+}
+
+# Powers that manipulate ships
+SHIP_POWERS = {
+    "Zombie", "Healer", "Phantom", "Horde", "Symbiote",
+    "Warpish", "Vessel", "Cavalry", "Reincarnator", "Kamikaze"
+}
+
+# Powers that manipulate cards/hands
+CARD_MANIPULATION_POWERS = {
+    "Oracle", "Sorcerer", "Trader", "Gambler", "Clone", "Magician",
+    "Pickpocket", "Thief", "Daredevil", "Sneak", "Bandit", "Collector"
+}
+
+# Powers that alter win conditions or game flow
+GAME_FLOW_POWERS = {
+    "Machine", "Chronos", "Tick-Tock", "Will", "Chosen",
+    "Schizoid", "Visionary", "Prophet", "Seeker"
+}
+
+# Powers that work well as defensive allies
+GOOD_DEFENSIVE_ALLY_POWERS = {
+    "Zombie", "Warrior", "Human", "Macron", "Virus",
+    "Symbiote", "Horde", "Cavalry"
+}
+
+# Powers weak to certain strategies
+VULNERABLE_POWERS = {
+    "Calculator": ["low_hand_size"],  # Weak when hand is small
+    "Virus": ["high_ship_count"],     # Need to avoid high ship commitment vs them
+    "Macron": ["high_ship_count"],    # Each of their ships = 4
+    "Clone": ["card_zap"],            # Clone's advantage is reusing cards
 }
 
 
@@ -218,6 +275,65 @@ class StrategicAI(AIStrategy):
                     return v
                 return max(attack_cards, key=mirror_value)
 
+        if alien_name == "Warrior":
+            # Warrior gets bonus from ship count - play high cards with ship advantage
+            if attack_cards:
+                return max(attack_cards, key=lambda c: c.value)
+
+        if alien_name == "Deuce":
+            # Deuce benefits from playing 2s - look for low cards
+            if attack_cards:
+                twos = [c for c in attack_cards if c.value == 2]
+                if twos:
+                    return twos[0]
+                return min(attack_cards, key=lambda c: c.value)
+
+        if alien_name == "Ace":
+            # Ace benefits from playing 1s or high cards
+            if attack_cards:
+                ones = [c for c in attack_cards if c.value == 1]
+                if ones:
+                    return ones[0]
+                return max(attack_cards, key=lambda c: c.value)
+
+        if alien_name == "Diplomat" and negotiate_cards:
+            # Diplomat can redirect encounters after negotiate
+            if self._rng.random() < 0.5:
+                return negotiate_cards[0]
+
+        if alien_name == "Masochist":
+            # Masochist wants to lose - play lowest card
+            if attack_cards:
+                return min(attack_cards, key=lambda c: c.value)
+
+        if alien_name == "Underdog":
+            # Underdog gets bonus when behind - conserve high cards
+            if attack_cards and len(attack_cards) > 1:
+                sorted_attacks = sorted(attack_cards, key=lambda c: c.value)
+                return sorted_attacks[len(sorted_attacks) // 2]
+
+        if alien_name == "Cavalry":
+            # Cavalry can add ships after reveal - mid-range cards work well
+            if attack_cards and len(attack_cards) > 1:
+                sorted_attacks = sorted(attack_cards, key=lambda c: c.value)
+                return sorted_attacks[len(sorted_attacks) // 2]
+
+        if alien_name == "Battlemaster":
+            # Battlemaster excels in combat - play aggressive
+            if attack_cards:
+                return max(attack_cards, key=lambda c: c.value)
+
+        if alien_name == "Sneak":
+            # Sneak can steal cards - conserve high cards for when needed
+            if attack_cards and len(attack_cards) > 2:
+                sorted_attacks = sorted(attack_cards, key=lambda c: c.value)
+                return sorted_attacks[1]  # Second lowest
+
+        if alien_name == "Brute":
+            # Brute uses force - high cards always
+            if attack_cards:
+                return max(attack_cards, key=lambda c: c.value)
+
         # Use morph if we have one and no great attacks
         if morph_cards and attack_cards:
             best_attack = max(c.value for c in attack_cards)
@@ -237,12 +353,17 @@ class StrategicAI(AIStrategy):
             "play_aggressive": False,
             "play_defensive": False,
             "expect_low_card": False,
-            "expect_high_card": False
+            "expect_high_card": False,
+            "minimize_ships": False,      # Reduce ship commitment
+            "maximize_ships": False,      # Increase ship commitment
+            "expect_card_swap": False,    # Opponent might swap cards
+            "power_can_zap": False,       # Consider zapping their power
         }
 
         if not opp_alien:
             return modifier
 
+        # Low card powers
         if opp_alien == "Loser":
             modifier["expect_low_card"] = True
             modifier["play_defensive"] = True  # Low card often beats us
@@ -250,15 +371,64 @@ class StrategicAI(AIStrategy):
         if opp_alien == "Anti-Matter":
             modifier["expect_low_card"] = True
 
+        if opp_alien == "Masochist":
+            modifier["expect_low_card"] = True
+            modifier["play_defensive"] = True
+
+        if opp_alien == "Deuce":
+            modifier["expect_low_card"] = True
+
+        # High card/combat powers
         if opp_alien in {"Virus", "Macron", "Human"}:
             modifier["play_aggressive"] = True  # Need high cards
 
+        if opp_alien == "Warrior":
+            modifier["play_aggressive"] = True
+            modifier["minimize_ships"] = True  # Their power scales with our ships
+
+        if opp_alien == "Tripler":
+            modifier["play_aggressive"] = True
+            modifier["expect_high_card"] = True
+
+        if opp_alien == "Brute":
+            modifier["play_aggressive"] = True
+
+        if opp_alien == "Battlemaster":
+            modifier["play_aggressive"] = True
+
+        # Card swap/manipulation powers
         if opp_alien == "Sorcerer":
             # They'll swap if they're losing - play mid cards
             modifier["play_defensive"] = True
+            modifier["expect_card_swap"] = True
 
+        if opp_alien == "Gambler":
+            modifier["expect_card_swap"] = True
+
+        if opp_alien == "Oracle":
+            # They see our card first - be unpredictable
+            modifier["play_defensive"] = True
+
+        if opp_alien == "Clone":
+            # They can replay cards - expect high cards repeatedly
+            modifier["expect_high_card"] = True
+            modifier["power_can_zap"] = True
+
+        # Negotiation powers
         if opp_alien in NEGOTIATE_FRIENDLY_POWERS:
             modifier["avoid_negotiate"] = True  # They benefit from deals
+
+        # Ship manipulation powers
+        if opp_alien in {"Cavalry", "Horde", "Symbiote"}:
+            modifier["minimize_ships"] = True  # They can add more ships
+
+        if opp_alien == "Zombie":
+            modifier["play_aggressive"] = True  # Their ships don't stay dead
+            modifier["power_can_zap"] = True
+
+        # Dangerous game-flow powers worth zapping
+        if opp_alien in {"Machine", "Parasite", "Void"}:
+            modifier["power_can_zap"] = True
 
         return modifier
 
@@ -400,10 +570,16 @@ class StrategicAI(AIStrategy):
         - Colony count (more if going for win)
         - Hand strength
         - Opponent's likely response
+        - Opponent's power and combat modifiers
         """
         my_colonies = player.count_foreign_colonies(game.planets)
         total_ships = player.total_ships_in_play(game.planets)
         hand_strength = self.get_hand_strength(player)
+
+        # Determine if we're offense or defense and get opponent
+        is_offense = (game.offense == player)
+        opponent = game.defense if is_offense else game.offense
+        opp_alien = opponent.alien.name if opponent.alien and opponent.power_active else None
 
         # Going for win - commit max
         if my_colonies >= 4:
@@ -422,6 +598,43 @@ class StrategicAI(AIStrategy):
             base = max(2, base - 1)  # Strong hand, save ships
         elif hand_strength < 0.3:
             base = min(max_ships, base + 1)  # Weak hand, use more ships
+
+        # Power-based ship adjustments
+        if opp_alien:
+            # Against Virus - our ships become their multiplier, minimize commitment
+            if opp_alien == "Virus":
+                base = max(1, base - 2)
+
+            # Against Macron - each of their ships = 4, need more ships ourselves
+            elif opp_alien == "Macron":
+                base = min(max_ships, base + 1)
+
+            # Against Warrior - they benefit from our ship count
+            elif opp_alien == "Warrior":
+                base = max(1, base - 1)
+
+            # Against powers that add ships (Cavalry, Symbiote) - commit more upfront
+            elif opp_alien in {"Cavalry", "Symbiote", "Horde"}:
+                base = min(max_ships, base + 1)
+
+        # Player's own power adjustments
+        my_alien = player.alien.name if player.alien and player.power_active else None
+        if my_alien:
+            # Virus - more ships = higher multiplier
+            if my_alien == "Virus":
+                base = min(max_ships, base + 2)
+
+            # Macron - fewer ships needed (each = 4)
+            elif my_alien == "Macron":
+                base = max(1, base - 2)
+
+            # Zombie - ships are cheap (come back from warp)
+            elif my_alien == "Zombie":
+                base = min(max_ships, base + 1)
+
+            # Symbiote - has double ships, can commit more
+            elif my_alien == "Symbiote":
+                base = min(max_ships, base + 1)
 
         return min(base, max_ships)
 
