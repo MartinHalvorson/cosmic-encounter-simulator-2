@@ -353,7 +353,7 @@ class Strategist(AlienPower):
 
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
         if player.power_active:
-            bonus = min(10, game.turn_number)
+            bonus = min(10, game.current_turn)
             return base_total + bonus
         return base_total
 

@@ -140,3 +140,15 @@ from .pattern_powers import *  # noqa: F401, F403
 from .combat_extended_powers import *  # noqa: F401, F403
 from .motion_powers import *  # noqa: F401, F403
 from .horror_powers import *  # noqa: F401, F403
+from .warfare_powers import *  # noqa: F401, F403
+from .economy_powers import *  # noqa: F401, F403
+from .personality_powers import *  # noqa: F401, F403
+from .building_powers import *  # noqa: F401, F403
+from .combat_style_powers import *  # noqa: F401, F403
+from .nature_fauna_powers import *  # noqa: F401, F403
+from .trait_powers import *  # noqa: F401, F403
+from .milestone_2000_powers import *  # noqa: F401, F403
+from .final_powers import *  # noqa: F401, F403
+from .art_powers import *  # noqa: F401, F403
+from .literature_powers import *  # noqa: F401, F403
+from .film_powers import *  # noqa: F401, F403

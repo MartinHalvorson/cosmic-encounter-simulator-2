@@ -215,14 +215,14 @@ class GameRecorder:
         # Record game end
         self.record_event(EventType.GAME_END, details={
             "winners": [w.name for w in self.game.winners] if self.game.winners else [],
-            "turns": self.game.turn_number,
+            "turns": self.game.current_turn,
         })
 
         # Set result
         if self.recording:
             self.recording.result = {
                 "winners": [w.name for w in self.game.winners] if self.game.winners else [],
-                "total_turns": self.game.turn_number,
+                "total_turns": self.game.current_turn,
                 "final_colonies": {
                     p.name: p.count_foreign_colonies(self.game.planets)
                     for p in self.game.players
@@ -245,7 +245,7 @@ class GameRecorder:
 
         event = GameEvent(
             timestamp=time.time() - self.start_time,
-            turn=self.game.turn_number,
+            turn=self.game.current_turn,
             encounter=self.game.encounter_number,
             phase=self.game.phase.value if self.game.phase else "unknown",
             event_type=event_type.value,
@@ -261,7 +261,7 @@ class GameRecorder:
             return
 
         snapshot = GameSnapshot(
-            turn=self.game.turn_number,
+            turn=self.game.current_turn,
             encounter=self.game.encounter_number,
             phase=self.game.phase.value if self.game.phase else "unknown",
             offense=self.game.offense.name if self.game.offense else "None",

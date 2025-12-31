@@ -108,7 +108,7 @@ class TacticalAI(AIStrategy):
         relative_position = opp_progress - my_progress
 
         # Late game increases pressure
-        turn_pressure = min(1.0, game.turn_number / 50)
+        turn_pressure = min(1.0, game.current_turn / 50)
 
         # Combine factors
         pressure = 0.3 + (relative_position * 0.4) + (turn_pressure * 0.3)
@@ -254,7 +254,7 @@ class TacticalAI(AIStrategy):
         High cards should be saved early game, used late game.
         """
         # Late game progress
-        late_game_factor = min(1.0, game.turn_number / 30)
+        late_game_factor = min(1.0, game.current_turn / 30)
 
         # Card rarity (high cards are more valuable to save)
         rarity = card_value / 20.0
@@ -275,7 +275,7 @@ class TacticalAI(AIStrategy):
         Select ships based on win probability optimization.
         """
         # Get available ships
-        available = min(max_ships, player.ships_available_for_encounter(game.planets))
+        available = min(max_ships, player.total_ships_in_play(game.planets))
         if available <= 0:
             return 0
 
@@ -344,8 +344,8 @@ class TacticalAI(AIStrategy):
         """Evaluate how valuable an ally would be."""
         value = 0.0
 
-        # Ships they might commit
-        ally_ships = ally.ships_available_for_encounter(game.planets)
+        # Ships they might commit (estimate based on ships in play)
+        ally_ships = min(4, ally.total_ships_in_play(game.planets))
         value += ally_ships * 0.1
 
         # Their power's usefulness
@@ -444,7 +444,7 @@ class TacticalAI(AIStrategy):
         max_ships: int
     ) -> int:
         """Select ships to commit as ally."""
-        available = min(max_ships, player.ships_available_for_encounter(game.planets))
+        available = min(max_ships, player.total_ships_in_play(game.planets))
 
         # Commit moderate amount (1-2)
         return min(available, 2)
@@ -474,7 +474,7 @@ class TacticalAI(AIStrategy):
 
         for planet in defense_planets:
             # Ships defending
-            def_ships = planet.ship_counts.get(defense.name, 0)
+            def_ships = planet.get_ships(defense.name)
 
             # Value: lower defense = easier win
             value = 10 - def_ships

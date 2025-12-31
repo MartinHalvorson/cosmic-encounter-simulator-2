@@ -279,7 +279,7 @@ def select_optimal_ally_ships(
     - Risk tolerance (fewer ships if position is precarious)
     - Colony proximity (more ships if close to winning)
     """
-    available = min(max_ships, player.ships_available_for_encounter(game.planets) if hasattr(player, 'ships_available_for_encounter') else max_ships)
+    available = min(max_ships, player.total_ships_in_play(game.planets) if hasattr(player, 'total_ships_in_play') else max_ships)
 
     if available <= 0:
         return 0
