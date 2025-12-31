@@ -993,12 +993,19 @@ class Game:
     def _handle_turn_end(self) -> None:
         """Handle end of encounter, possibly allowing second encounter."""
         # Check if Machine power or won encounter
-        won_encounter = any(
-            player == self.offense and self.defense_planet.has_colony(player.name)
-            for player in [self.offense]
+        won_encounter = (
+            self.defense_planet is not None and
+            self.offense is not None and
+            self.defense_planet.has_colony(self.offense.name)
         )
 
         can_have_second = False
+
+        # Skip if no offense player set (encounter was skipped)
+        if self.offense is None:
+            self._player_index = (self._player_index + 1) % len(self._turn_order)
+            self.encounter_number = 1
+            return
 
         # Machine can always have another encounter if they have encounter cards
         if self.offense.alien and self.offense.alien.name == "Machine" and self.is_power_active(self.offense):
