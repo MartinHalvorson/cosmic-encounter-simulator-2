@@ -299,16 +299,18 @@ class Antimatter(AlienPower):
 @dataclass
 class Macron(AlienPower):
     """
-    Macron - Each ship counts as 4.
-    Each of your ships counts as 4 ships for combat totals
-    (but still only occupies 1 slot on planets).
+    Macron - Power of Mass.
+    Official FFG rules:
+    - As offense or ally, you may only send ONE ship into the encounter
+    - Each of your ships adds 4 to your side's total instead of 1
+    - When collecting compensation/rewards, each Macron ship counts as 2
     """
     name: str = field(default="Macron", init=False)
     description: str = field(
-        default="Each of your ships counts as 4.",
+        default="Send only 1 ship as offense/ally, but each ship counts as 4.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
@@ -319,7 +321,7 @@ class Macron(AlienPower):
         base_count: int,
         side: Side
     ) -> int:
-        """Each ship counts as 4."""
+        """Each ship counts as 4 (but Macron only sends 1 ship as offense/ally)."""
         if not player.power_active:
             return base_count
 

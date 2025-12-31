@@ -247,6 +247,67 @@ class AIStrategy(ABC):
 
         return cards_to_play
 
+    # ========== Kicker Cards ==========
+
+    def select_kicker_card(
+        self,
+        game: "Game",
+        player: "Player",
+        is_offense: bool,
+        attack_value: int,
+        opponent_total: int
+    ) -> Optional["Card"]:
+        """
+        Select a kicker card to play with the encounter card.
+
+        Kicker cards multiply the attack card value:
+        - x-1 (negative) turns attack into negative
+        - x0 makes attack 0
+        - x1 has no effect (don't play)
+        - x2, x3, x4 multiply attack value
+
+        Args:
+            game: Current game state
+            player: The player selecting a kicker
+            is_offense: Whether the player is offense
+            attack_value: The attack card value being played
+            opponent_total: Estimated opponent total
+
+        Returns:
+            KickerCard to play, or None
+        """
+        from ..cards.base import KickerCard
+
+        kickers = [c for c in player.hand if isinstance(c, KickerCard)]
+        if not kickers:
+            return None
+
+        # Only play kickers if we have a decent attack card
+        if attack_value < 6:
+            return None
+
+        # Sort by multiplier value (highest first)
+        kickers.sort(key=lambda c: c.value, reverse=True)
+
+        # Calculate if a kicker would help
+        my_ships = 4  # Approximate
+        my_total = attack_value + my_ships
+
+        for kicker in kickers:
+            # Don't play x0 or x1 kickers
+            if kicker.value <= 1:
+                continue
+
+            # Calculate new total with kicker
+            new_attack = attack_value * kicker.value
+            new_total = new_attack + my_ships
+
+            # Only play if it would likely help win
+            if new_total > opponent_total + 5:  # Margin for safety
+                return kicker
+
+        return None
+
     # ========== Second Encounter ==========
 
     @abstractmethod

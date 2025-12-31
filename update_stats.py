@@ -25,7 +25,7 @@ from cosmic.types import SimulationConfig, GameConfig
 
 STATS_FILE = Path(__file__).parent / "stats.json"
 README_FILE = Path(__file__).parent / "README.md"
-PLAYER_COUNTS = [3, 4, 5, 6]
+PLAYER_COUNTS = [2, 3, 4, 5, 6]
 
 
 def expected_score(rating_a: float, rating_b: float) -> float:
@@ -196,6 +196,7 @@ def generate_table(stats: dict, sort_by: str = "elo", ascending: bool = False) -
 <th align="left">Power</th>
 <th align="right">ELO</th>
 <th align="right">Overall</th>
+<th align="right">2P</th>
 <th align="right">3P</th>
 <th align="right">4P</th>
 <th align="right">5P</th>
@@ -225,6 +226,7 @@ def generate_table(stats: dict, sort_by: str = "elo", ascending: bool = False) -
 <td align="left">{tier} {row['name']}</td>
 <td align="right"><b>{row['elo']:.0f}</b></td>
 <td align="right">{row['overall']:.1f}%</td>
+<td align="right">{row['2p']:.1f}%</td>
 <td align="right">{row['3p']:.1f}%</td>
 <td align="right">{row['4p']:.1f}%</td>
 <td align="right">{row['5p']:.1f}%</td>
@@ -312,7 +314,7 @@ def main():
     parser.add_argument("--games", type=int, default=0,
                         help="Number of games to simulate per player count (0 = just regenerate table)")
     parser.add_argument("--sort", type=str, default="elo",
-                        choices=["power", "elo", "overall", "3p", "4p", "5p", "6p", "games"],
+                        choices=["power", "elo", "overall", "2p", "3p", "4p", "5p", "6p", "games"],
                         help="Column to sort by")
     parser.add_argument("--order", type=str, default="desc",
                         choices=["asc", "desc"],

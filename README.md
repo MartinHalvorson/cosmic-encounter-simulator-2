@@ -124,7 +124,7 @@ The simulator follows [Fantasy Flight Games Cosmic Encounter](https://www.fantas
 
 #### Core Game Flow
 - **Full 8-Phase Encounter Sequence**: Start Turn → Regroup → Destiny → Launch → Alliance → Planning → Reveal → Resolution
-- **Variable Player Count**: 3-6 players (configurable, extensible to 3-8)
+- **Variable Player Count**: 2-6 players (default simulation range, configurable up to 8)
 - **Turn Order**: Randomized turn order at game start
 - **Victory Condition**: 5 foreign colonies to win
 - **Shared Victory**: Multiple players can win simultaneously if they reach 5+ colonies on the same encounter
@@ -1674,57 +1674,57 @@ python update_stats.py --sort power --order asc
 
 ## Simulation Results
 
-**Total Games Simulated:** 4,999,988
-**Solo Victories:** 4,903,620
-**Shared Victories:** 96,368
+**Total Games Simulated:** 5,000,972
+**Solo Victories:** 4,904,587
+**Shared Victories:** 96,385
 **Average Game Length:** 4.9 turns
-**Last Updated:** 2025-12-30T21:28:39
+**Last Updated:** 2025-12-30T22:22:50
 
 ### Alien Power Rankings (by ELO)
 
 | Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
 |------|-------|-----|----------|-------|-----------|--------|
-| 1 | Exile | 170 | 28.3% | 101689 | 27800 | 1000 |
-| 2 | Gambit | 145 | 21.6% | 101543 | 21095 | 849 |
-| 3 | Parasite | 144 | 45.8% | 101667 | 45911 | 697 |
-| 4 | Judge | 142 | 21.3% | 101197 | 20759 | 824 |
-| 5 | Chosen | 142 | 21.5% | 102201 | 21049 | 882 |
-| 6 | Fury | 133 | 22.3% | 101311 | 21725 | 900 |
-| 7 | Ghost | 133 | 21.2% | 101421 | 20673 | 816 |
-| 8 | Machine | 133 | 57.1% | 101309 | 55948 | 1892 |
-| 9 | Ultra | 132 | 27.2% | 101943 | 26793 | 949 |
-| 10 | Knight | 132 | 21.8% | 101228 | 21197 | 839 |
-| 11 | Wrath | 132 | 21.4% | 31990 | 6577 | 271 |
-| 12 | Juggernaut | 132 | 23.7% | 31647 | 7213 | 273 |
-| 13 | Lancer | 132 | 24.6% | 101602 | 24069 | 914 |
-| 14 | Delegator | 131 | 21.4% | 101616 | 20819 | 881 |
-| 15 | Macron | 131 | 28.7% | 101638 | 28262 | 936 |
-| 16 | Pacifist | 131 | 29.2% | 101154 | 28494 | 1016 |
-| 17 | Jammer | 130 | 21.4% | 101828 | 20935 | 865 |
-| 18 | Glutton | 130 | 21.6% | 101842 | 21117 | 853 |
-| 19 | Doppelganger | 130 | 21.5% | 102203 | 21039 | 908 |
-| 20 | Keeper | 130 | 21.3% | 101212 | 20734 | 849 |
-| 21 | Coordinator | 127 | 21.3% | 101921 | 20794 | 880 |
-| 22 | Yin | 125 | 21.5% | 101341 | 20938 | 864 |
-| 23 | Schizoid | 121 | 23.0% | 101787 | 22545 | 890 |
-| 24 | Hacker | 118 | 22.4% | 102292 | 22052 | 858 |
-| 25 | Disease | 118 | 28.6% | 101385 | 27747 | 1252 |
-| 26 | Hawk | 117 | 21.6% | 102046 | 21206 | 857 |
-| 27 | Predator | 117 | 24.2% | 101995 | 23755 | 950 |
-| 28 | Reincarnator | 117 | 21.4% | 101856 | 20907 | 883 |
-| 29 | Fungus | 117 | 21.3% | 101243 | 20777 | 817 |
-| 30 | Tycoon | 117 | 25.4% | 101989 | 25301 | 576 |
-| 31 | Sentinel | 117 | 23.0% | 101701 | 22446 | 932 |
-| 32 | Human | 117 | 25.8% | 101511 | 25260 | 959 |
-| 33 | Guardian | 116 | 21.4% | 101843 | 20934 | 861 |
-| 34 | Crystal | 116 | 21.4% | 101851 | 20877 | 931 |
-| 35 | Sorcerer | 116 | 21.3% | 101215 | 20707 | 840 |
-| 36 | Queller | 116 | 21.3% | 102219 | 20927 | 843 |
-| 37 | Tyrant | 116 | 21.7% | 102053 | 21285 | 826 |
-| 38 | Monarch | 116 | 24.3% | 101367 | 24093 | 552 |
-| 39 | Warden | 116 | 21.7% | 102412 | 21376 | 870 |
-| 40 | Clone | 116 | 21.8% | 101224 | 21130 | 887 |
-| ... | *173 more aliens* | ... | ... | ... | ... | ... |
+| 1 | Deflector | 1326 | 57.1% | 14 | 8 | 0 |
+| 2 | Recycler | 1259 | 27.3% | 11 | 3 | 0 |
+| 3 | Broker | 1259 | 20.0% | 10 | 2 | 0 |
+| 4 | Quorum | 1257 | 20.0% | 10 | 2 | 0 |
+| 5 | Negotiator | 1222 | 0.0% | 9 | 0 | 0 |
+| 6 | Insider | 1165 | 21.4% | 14 | 3 | 0 |
+| 7 | Tactician | 1162 | 26.7% | 15 | 4 | 0 |
+| 8 | Forecaster | 1160 | 38.9% | 18 | 7 | 0 |
+| 9 | Embargo | 1137 | 29.4% | 17 | 5 | 0 |
+| 10 | Pragmatist | 1136 | 0.0% | 12 | 0 | 0 |
+| 11 | Locksmith | 1130 | 33.3% | 18 | 6 | 0 |
+| 12 | Kibitzer | 1127 | 20.0% | 15 | 3 | 0 |
+| 13 | Mentor | 1118 | 23.5% | 17 | 4 | 0 |
+| 14 | Analyst | 1114 | 13.3% | 15 | 2 | 0 |
+| 15 | Veto | 1111 | 23.5% | 17 | 4 | 0 |
+| 16 | Zealotry | 1109 | 35.0% | 20 | 7 | 0 |
+| 17 | Unifier | 1105 | 22.2% | 18 | 4 | 0 |
+| 18 | Conductor | 1093 | 26.3% | 19 | 5 | 0 |
+| 19 | Watcher | 1079 | 17.6% | 17 | 3 | 0 |
+| 20 | Supplier | 1077 | 39.1% | 23 | 9 | 0 |
+| 21 | Yardmaster | 1026 | 23.8% | 21 | 5 | 0 |
+| 22 | Obstinate | 1008 | 5.9% | 17 | 1 | 0 |
+| 23 | Xenophile | 985 | 5.6% | 18 | 1 | 0 |
+| 24 | Guarantor | 982 | 15.8% | 19 | 2 | 1 |
+| 25 | Machine | 229 | 57.1% | 101328 | 55962 | 1892 |
+| 26 | Symbiote | 212 | 30.7% | 101745 | 30125 | 1158 |
+| 27 | Parasite | 182 | 45.8% | 101684 | 45920 | 697 |
+| 28 | Aristocrat | 179 | 24.8% | 101180 | 24244 | 869 |
+| 29 | Ranger | 175 | 31.3% | 101763 | 30836 | 1016 |
+| 30 | Healer | 171 | 21.6% | 101293 | 21014 | 885 |
+| 31 | Reincarnator | 170 | 21.4% | 101873 | 20915 | 883 |
+| 32 | Virus | 167 | 27.2% | 101756 | 26732 | 903 |
+| 33 | Zenith | 167 | 23.6% | 102259 | 23287 | 873 |
+| 34 | Tyrant | 163 | 21.7% | 102069 | 21291 | 827 |
+| 35 | Calculator | 160 | 21.5% | 101408 | 20962 | 872 |
+| 36 | Mimic | 157 | 21.5% | 102097 | 21088 | 865 |
+| 37 | Mystic | 154 | 21.2% | 31579 | 6462 | 243 |
+| 38 | Rebel | 153 | 23.7% | 101781 | 23111 | 970 |
+| 39 | Connoisseur | 152 | 22.9% | 101570 | 22340 | 893 |
+| 40 | Sorcerer | 151 | 21.3% | 101231 | 20713 | 840 |
+| ... | *197 more aliens* | ... | ... | ... | ... | ... |
 
 <!-- SIMULATION_RESULTS_END -->
 

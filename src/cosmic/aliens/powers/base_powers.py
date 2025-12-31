@@ -18,16 +18,18 @@ from ..registry import AlienRegistry
 @dataclass
 class Zombie(AlienPower):
     """
-    Zombie - Ships never go to the warp.
-    Your ships that would go to the warp instead return to any of your colonies.
+    Zombie - Power of Undeath.
+    Each time you lose ships to the warp, you may prevent ONE of your ships
+    from going to the warp, instead returning it to one of your colonies.
+    (Official FFG rules - optional, saves only one ship per loss event)
     """
     name: str = field(default="Zombie", init=False)
     description: str = field(
-        default="Your ships never go to the warp. Instead, they return to your colonies.",
+        default="Prevent one ship from going to warp each time you lose ships.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def on_ships_to_warp(
@@ -37,11 +39,11 @@ class Zombie(AlienPower):
         count: int,
         source: str
     ) -> int:
-        """Ships return to colonies instead of going to warp."""
-        if player.power_active:
-            # Return ships to home colonies
-            player.return_ships_to_colonies(count, player.home_planets)
-            return 0  # No ships actually go to warp
+        """Prevent ONE ship from going to warp, return it to colonies."""
+        if player.power_active and count > 0:
+            # Return ONE ship to home colonies (official rules)
+            player.return_ships_to_colonies(1, player.home_planets)
+            return count - 1  # One fewer ship goes to warp
         return count
 
 

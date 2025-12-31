@@ -10,7 +10,7 @@ from .types import GamePhase, GameConfig, Side, PlayerRole, Color, ShipCount
 from .player import Player
 from .planet import Planet
 from .cards import CosmicDeck, DestinyDeck, RewardsDeck, FlareDeck
-from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard, ReinforcementCard, ArtifactCard
+from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard, ReinforcementCard, ArtifactCard, KickerCard
 from .types import ArtifactType
 from .aliens import AlienRegistry, AlienPower
 from .ai.basic_ai import BasicAI
@@ -41,6 +41,8 @@ class Game:
     defense_planet: Optional[Planet] = None
     offense_card: Optional[EncounterCard] = None
     defense_card: Optional[EncounterCard] = None
+    offense_kicker: Optional[KickerCard] = None
+    defense_kicker: Optional[KickerCard] = None
     offense_ships: Dict[str, int] = field(default_factory=dict)
     defense_ships: Dict[str, int] = field(default_factory=dict)
     offense_allies: List[Player] = field(default_factory=list)
@@ -420,6 +422,25 @@ class Game:
         self.defense_card = def_ai.select_encounter_card(self, self.defense, False)
         self.defense.remove_card(self.defense_card)
 
+        # Select kicker cards (optional)
+        if isinstance(self.offense_card, AttackCard):
+            off_kicker = off_ai.select_kicker_card(
+                self, self.offense, True,
+                self.offense_card.value, 15  # Estimate opponent total
+            )
+            if off_kicker:
+                self.offense_kicker = off_kicker
+                self.offense.remove_card(off_kicker)
+
+        if isinstance(self.defense_card, AttackCard):
+            def_kicker = def_ai.select_kicker_card(
+                self, self.defense, False,
+                self.defense_card.value, 15
+            )
+            if def_kicker:
+                self.defense_kicker = def_kicker
+                self.defense.remove_card(def_kicker)
+
         self._log(f"{self.offense.name} selects card")
         self._log(f"{self.defense.name} selects card")
 
@@ -489,6 +510,17 @@ class Game:
         # Get base values
         off_value = off_card.value if isinstance(off_card, AttackCard) else 0
         def_value = def_card.value if isinstance(def_card, AttackCard) else 0
+
+        # Apply kicker multipliers
+        if self.offense_kicker:
+            off_value *= self.offense_kicker.value
+            self._log(f"{self.offense.name} plays {self.offense_kicker} (attack becomes {off_value})")
+            self.cosmic_deck.discard(self.offense_kicker)
+
+        if self.defense_kicker:
+            def_value *= self.defense_kicker.value
+            self._log(f"{self.defense.name} plays {self.defense_kicker} (attack becomes {def_value})")
+            self.cosmic_deck.discard(self.defense_kicker)
 
         # Apply power modifications to card values
         for player in [self.offense, self.defense]:
@@ -799,6 +831,9 @@ class Game:
         if self.defense_card:
             self.cosmic_deck.discard(self.defense_card)
             self.defense_card = None
+        # Reset kicker cards (already discarded during combat if used)
+        self.offense_kicker = None
+        self.defense_kicker = None
 
     def _ensure_encounter_card(self, player: Player) -> None:
         """Ensure player has an encounter card, dealing new hand if needed."""

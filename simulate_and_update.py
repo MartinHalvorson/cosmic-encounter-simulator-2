@@ -168,8 +168,8 @@ def main():
     parser.add_argument(
         "--min-players",
         type=int,
-        default=3,
-        help="Minimum players per game (default: 3)"
+        default=2,
+        help="Minimum players per game (default: 2)"
     )
     parser.add_argument(
         "--max-players",
