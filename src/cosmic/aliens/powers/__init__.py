@@ -119,3 +119,9 @@ from .mythology_extended_powers import *  # noqa: F401, F403
 from .occupation_powers import *  # noqa: F401, F403
 from .emotion_extended_powers import *  # noqa: F401, F403
 from .nature_extended_powers import *  # noqa: F401, F403
+from .season_powers import *  # noqa: F401, F403
+from .sense_powers import *  # noqa: F401, F403
+from .justice_powers import *  # noqa: F401, F403
+from .dream_powers import *  # noqa: F401, F403
+from .weather_classic_powers import *  # noqa: F401, F403
+from .mineral_powers import *  # noqa: F401, F403
