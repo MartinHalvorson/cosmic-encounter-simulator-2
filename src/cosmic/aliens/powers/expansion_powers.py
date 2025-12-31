@@ -1441,7 +1441,7 @@ class Anarchist(AlienPower):
     counts offensive losses to prevent intentional losing strategies.
     """
     name: str = field(default="Anarchist", init=False)
-    description: str = field(default="Disrupt rules on offensive loss; win with 12 disruptions.", init=False)
+    description: str = field(default="Disrupt rules on offensive loss; win with 20 disruptions.", init=False)
     timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
@@ -1945,8 +1945,9 @@ class Lizard(AlienPower):
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
         if not player.power_active:
             return base_total
-        # Morphed ships add +1 each (reduced from +2 for balance)
-        return base_total + self.morphed_ships
+        # Morphed ships add +0.5 each (capped at +10 max, rounded down)
+        bonus = min(self.morphed_ships // 2, 10)
+        return base_total + bonus
 
     def check_alternate_win(self, game: "Game", player: "Player") -> bool:
         return self.normal_ships <= 0

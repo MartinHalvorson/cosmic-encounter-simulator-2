@@ -601,7 +601,7 @@ class TheMeek(AlienPower):
     """
     name: str = field(default="The Meek", init=False)
     description: str = field(
-        default="Win by losing - victories decrease score, 8 losses wins.",
+        default="Win by losing - victories decrease score, 15 losses wins.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
