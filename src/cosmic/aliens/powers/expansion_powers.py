@@ -1143,12 +1143,21 @@ class Arcade(AlienPower):
 
         opponent = game.defense if game.offense == player else game.offense
 
-        # Check if won by 10+ or opponent played negotiate
-        margin = abs(game.offense_total - game.defense_total)
-        opponent_negotiated = (
-            (game.offense == player and hasattr(game.defense_card, 'card_type') and game.defense_card.card_type == 'negotiate') or
-            (game.defense == player and hasattr(game.offense_card, 'card_type') and game.offense_card.card_type == 'negotiate')
-        )
+        # Check if opponent played negotiate
+        opp_card = game.defense_card if game.offense == player else game.offense_card
+        opponent_negotiated = hasattr(opp_card, 'card_type') and opp_card.card_type == 'negotiate'
+
+        # Calculate margin by comparing card values + ship counts
+        my_card = game.offense_card if game.offense == player else game.defense_card
+        my_card_value = getattr(my_card, 'value', 0) or 0
+        opp_card_value = getattr(opp_card, 'value', 0) or 0
+
+        my_ships = sum(game.offense_ships.values()) if game.offense == player else sum(game.defense_ships.values())
+        opp_ships = sum(game.defense_ships.values()) if game.offense == player else sum(game.offense_ships.values())
+
+        my_total = my_card_value + my_ships
+        opp_total = opp_card_value + opp_ships
+        margin = my_total - opp_total
 
         if margin >= 10 or opponent_negotiated:
             # Capture one ship from opponent
@@ -1225,17 +1234,17 @@ class Neighbor(AlienPower):
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        """Add +1 for each uninvolved ship in targeted system."""
+        """Add +1 for each uninvolved ship in targeted system (defender's planets)."""
         if not player.power_active:
             return base_total
 
-        # Count uninvolved ships in the targeted system
+        # Count uninvolved ships on defender's other home planets
         bonus = 0
-        if game.defense_planet:
-            system = game.defense_planet.system
-            for planet in system.planets:
+        if game.defense_planet and game.defense:
+            # The "targeted system" is the defender's home system
+            for planet in game.defense.home_planets:
                 if player.name in planet.ships:
-                    # Ships on planets not involved in encounter
+                    # Ships on defender's planets not involved in encounter
                     if planet != game.defense_planet:
                         bonus += planet.ships[player.name]
 
@@ -1274,20 +1283,27 @@ class Porcupine(AlienPower):
         if not player.power_active:
             return base_total
 
-        # Check if we're losing
+        # Use base_total as our current total since full totals aren't calculated yet
+        # Estimate opponent total from visible information
         if side == Side.OFFENSE:
-            my_total = game.offense_total
-            opp_total = game.defense_total
+            # Estimate defense total: card value + ships
+            opp_card = game.defense_card
+            opp_card_value = opp_card.value if hasattr(opp_card, 'value') and opp_card.value else 0
+            opp_ships = sum(game.defense_ships.values())
+            estimated_opp = opp_card_value + opp_ships
         else:
-            my_total = game.defense_total
-            opp_total = game.offense_total
+            # Estimate offense total
+            opp_card = game.offense_card
+            opp_card_value = opp_card.value if hasattr(opp_card, 'value') and opp_card.value else 0
+            opp_ships = sum(game.offense_ships.values())
+            estimated_opp = opp_card_value + opp_ships
 
-        # Only activate if losing
-        if my_total >= opp_total:
+        # Only activate if likely losing
+        if base_total >= estimated_opp:
             return base_total
 
         # Discard cards to make up the difference (AI decision)
-        deficit = opp_total - my_total + 1  # Need to win by at least 1
+        deficit = estimated_opp - base_total + 1  # Need to win by at least 1
         cards_to_discard = min(deficit, len(player.hand) // 2)  # Don't discard more than half
 
         return base_total + cards_to_discard

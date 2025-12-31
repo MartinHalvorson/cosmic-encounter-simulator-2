@@ -59,6 +59,10 @@ class Game:
     zapped_powers: List[Player] = field(default_factory=list)  # Players whose powers are zapped this encounter
     encounter_cancelled: bool = False  # Force Field was played
 
+    # Combat totals (set during resolution for powers that need them)
+    offense_total: int = 0
+    defense_total: int = 0
+
     # Game result
     is_over: bool = False
     winners: List[Player] = field(default_factory=list)
@@ -686,6 +690,10 @@ class Game:
         off_total = off_value + off_ships
         def_total = def_value + def_ships
 
+        # Store current totals on game object for powers that need to reference them
+        self.offense_total = off_total
+        self.defense_total = def_total
+
         # Apply power modifications to totals
         for player in [self.offense, self.defense]:
             if player.alien and self.is_power_active(player):
@@ -693,10 +701,12 @@ class Game:
                     off_total = player.alien.modify_total(
                         self, player, off_total, Side.OFFENSE
                     )
+                    self.offense_total = off_total
                 else:
                     def_total = player.alien.modify_total(
                         self, player, def_total, Side.DEFENSE
                     )
+                    self.defense_total = def_total
 
         # Allow reinforcement cards to be played
         off_reinforcements = self._get_reinforcements(self.offense, self.offense_allies, True, off_total, def_total)
@@ -736,6 +746,10 @@ class Game:
             self._log(f"{self.offense.name} tech bonus: +{off_tech_bonus}")
         if def_tech_bonus > 0:
             self._log(f"{self.defense.name} tech bonus: +{def_tech_bonus}")
+
+        # Update final totals on game object
+        self.offense_total = off_total
+        self.defense_total = def_total
 
         self._log(f"Offense total: {off_total} ({off_value} + {sum(self.offense_ships.values())} ships{f' + {off_reinforce_bonus} reinforcement' if off_reinforce_bonus else ''})")
         self._log(f"Defense total: {def_total} ({def_value} + {sum(self.defense_ships.values())} ships{f' + {def_reinforce_bonus} reinforcement' if def_reinforce_bonus else ''})")
