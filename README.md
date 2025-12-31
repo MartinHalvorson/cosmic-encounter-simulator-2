@@ -2,11 +2,11 @@
 
 <!-- NOTE: Only update the stats table below or feature implementation status. Do not modify other sections unless specifically requested. -->
 
-A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **259 alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI), and comprehensive statistics tracking across 2-6 player games.
+A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **1393+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
 
 ## Alien Power Rankings
 
-> **178,836** games simulated | Last updated: 2025-12-31 10:35
+> **21,092,360+** games simulated | Last updated: 2025-12-31
 >
 > **Tier Guide:** 🟣 S (1600+) | 🔵 A (1550+) | 🟢 B (1500+) | 🟡 C (1450+) | 🔴 D (<1450)
 
@@ -15766,56 +15766,56 @@ python update_stats.py --sort power --order asc
 
 ## Simulation Results
 
-**Total Games Simulated:** 21,092,360
-**Solo Victories:** 20,737,185
-**Shared Victories:** 351,965
+**Total Games Simulated:** 21,102,360
+**Solo Victories:** 20,746,994
+**Shared Victories:** 352,156
 **Average Game Length:** 5.1 turns
-**Last Updated:** 2025-12-31T10:42:32
+**Last Updated:** 2025-12-31T10:45:09
 
 ### Alien Power Rankings (by ELO)
 
 | Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
 |------|-------|-----|----------|-------|-----------|--------|
-| 1 | Lizard | 886 | 98.6% | 1947 | 1907 | 12 |
-| 2 | Anarchist | 693 | 97.6% | 2627 | 2549 | 14 |
-| 3 | The Meek | 675 | 94.4% | 1237 | 1154 | 14 |
-| 4 | Omnivore | 189 | 25.7% | 964 | 245 | 3 |
-| 5 | Masochist | 188 | 23.5% | 236887 | 53477 | 2283 |
-| 6 | Ranger | 186 | 33.6% | 236666 | 77169 | 2277 |
-| 7 | Hydra | 174 | 24.5% | 101783 | 24100 | 825 |
-| 8 | Engineer_Alt | 165 | 22.9% | 1097 | 238 | 13 |
-| 9 | Aristocrat | 160 | 26.7% | 235929 | 61008 | 2048 |
-| 10 | PackRat | 160 | 22.8% | 2697 | 600 | 16 |
-| 11 | Goalie | 159 | 23.9% | 527 | 117 | 9 |
-| 12 | Ripple | 159 | 24.4% | 101677 | 24022 | 834 |
-| 13 | Cloud | 156 | 26.7% | 1131 | 295 | 7 |
-| 14 | Crusher | 154 | 22.4% | 2595 | 566 | 16 |
-| 15 | Machine | 154 | 57.7% | 236010 | 132207 | 4031 |
-| 16 | Charmed | 153 | 24.9% | 2026 | 486 | 19 |
-| 17 | Genius | 152 | 23.1% | 236785 | 52846 | 1955 |
-| 18 | Hexagon | 149 | 37.6% | 133 | 49 | 1 |
-| 19 | Adapter | 149 | 22.5% | 1691 | 368 | 12 |
-| 20 | Jinxed | 149 | 23.7% | 2047 | 468 | 18 |
-| 21 | Yogi | 148 | 23.3% | 237105 | 53186 | 1950 |
-| 22 | Photon | 148 | 23.3% | 1164 | 265 | 6 |
-| 23 | Flood | 147 | 24.6% | 101694 | 24214 | 794 |
-| 24 | Earl | 147 | 24.2% | 1264 | 294 | 12 |
-| 25 | Garnet | 147 | 25.0% | 1081 | 261 | 9 |
-| 26 | Shatterer | 147 | 22.4% | 2685 | 578 | 23 |
-| 27 | Magician | 147 | 23.1% | 237260 | 53042 | 1824 |
-| 28 | Scavenger | 147 | 23.2% | 237210 | 53127 | 1895 |
-| 29 | Rapid | 146 | 21.8% | 1972 | 412 | 18 |
-| 30 | Regenerator | 146 | 24.7% | 78153 | 18708 | 595 |
-| 31 | Zinc | 146 | 30.8% | 143 | 43 | 1 |
-| 32 | Partner | 146 | 22.0% | 1644 | 348 | 14 |
-| 33 | Tinker | 146 | 22.2% | 1205 | 258 | 9 |
-| 34 | Tornado | 146 | 24.4% | 101574 | 24023 | 790 |
-| 35 | Thunder | 146 | 24.7% | 101642 | 24308 | 749 |
-| 36 | Demolisher | 145 | 22.7% | 2571 | 565 | 18 |
-| 37 | Parasite | 145 | 46.2% | 236058 | 107481 | 1554 |
-| 38 | Cultist | 145 | 34.6% | 884 | 306 | 0 |
-| 39 | Champion_Alt | 144 | 22.3% | 1750 | 375 | 16 |
-| 40 | Masochist_Alt | 144 | 25.9% | 1139 | 284 | 11 |
+| 1 | Lizard | 557 | 98.0% | 1967 | 1916 | 12 |
+| 2 | Anarchist | 319 | 97.1% | 2651 | 2559 | 14 |
+| 3 | Probability | 209 | 21.6% | 2059 | 429 | 16 |
+| 4 | Machine | 175 | 57.7% | 236031 | 132220 | 4031 |
+| 5 | Inferno | 168 | 24.6% | 101879 | 24200 | 816 |
+| 6 | Automaton | 166 | 24.5% | 101931 | 24116 | 858 |
+| 7 | Maui | 163 | 26.7% | 176 | 45 | 2 |
+| 8 | Root | 162 | 21.9% | 535 | 109 | 8 |
+| 9 | Deflect | 162 | 22.6% | 2707 | 586 | 26 |
+| 10 | Pioneer | 161 | 23.3% | 236328 | 53039 | 1913 |
+| 11 | Destroyer | 159 | 23.1% | 2615 | 582 | 23 |
+| 12 | Backward | 158 | 25.6% | 180 | 46 | 0 |
+| 13 | Encircle | 158 | 26.1% | 184 | 46 | 2 |
+| 14 | Charlatan | 157 | 21.8% | 1767 | 370 | 15 |
+| 15 | Compiler | 157 | 30.2% | 1213 | 366 | 0 |
+| 16 | Marathoner | 156 | 21.7% | 539 | 113 | 4 |
+| 17 | The Meek | 153 | 92.7% | 1273 | 1166 | 14 |
+| 18 | Vishnu | 152 | 23.8% | 172 | 38 | 3 |
+| 19 | Industrialist | 148 | 50.2% | 102171 | 50086 | 1238 |
+| 20 | Gust | 148 | 23.3% | 570 | 125 | 8 |
+| 21 | Turbulence | 148 | 24.6% | 78417 | 18741 | 576 |
+| 22 | Relic | 147 | 24.5% | 101438 | 24139 | 735 |
+| 23 | Blaster | 147 | 25.6% | 2705 | 674 | 18 |
+| 24 | Force | 147 | 21.8% | 1222 | 258 | 9 |
+| 25 | Runaway | 147 | 24.6% | 78104 | 18565 | 611 |
+| 26 | Ranger | 147 | 33.6% | 236697 | 77182 | 2277 |
+| 27 | Champion_Alt | 147 | 22.5% | 1782 | 385 | 16 |
+| 28 | Glacier | 147 | 27.7% | 101686 | 27283 | 864 |
+| 29 | Mentalist | 147 | 24.7% | 101710 | 24312 | 780 |
+| 30 | Pincer | 147 | 26.6% | 154 | 40 | 1 |
+| 31 | Eradicator | 146 | 23.9% | 2746 | 634 | 21 |
+| 32 | Annihilator | 146 | 22.5% | 2629 | 576 | 16 |
+| 33 | Wraith | 146 | 23.3% | 235900 | 52990 | 1889 |
+| 34 | Parasite | 146 | 46.2% | 236088 | 107492 | 1554 |
+| 35 | Sting | 145 | 24.8% | 102052 | 24480 | 786 |
+| 36 | Cockroach | 145 | 24.8% | 77993 | 18735 | 600 |
+| 37 | Magnet | 143 | 23.8% | 1760 | 407 | 12 |
+| 38 | Cloak | 143 | 22.5% | 1265 | 276 | 9 |
+| 39 | Djinn | 143 | 24.8% | 102094 | 24530 | 765 |
+| 40 | Quark | 142 | 23.2% | 1116 | 248 | 11 |
 | ... | *1353 more aliens* | ... | ... | ... | ... | ... |
 
 <!-- SIMULATION_RESULTS_END -->
