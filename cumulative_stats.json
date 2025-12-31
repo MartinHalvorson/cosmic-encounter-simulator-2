@@ -15,7 +15,7 @@
     "2": 3116852
   },
   "last_updated": "2025-12-31T10:54:41.789610",
-  "simulation_runs": 34,
+  "simulation_runs": 35,
   "alien_stats": {
     "Knight": {
       "name": "Knight",
@@ -15360,7 +15360,7 @@
       "shared_wins": 0,
       "elo_rating": 881.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.52
+      "avg_colonies": 3.48
     },
     "Winter": {
       "name": "Winter",
@@ -15404,7 +15404,7 @@
       "shared_wins": 0,
       "elo_rating": 1193.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.64
     },
     "Builder": {
       "name": "Builder",
@@ -15426,7 +15426,7 @@
       "shared_wins": 0,
       "elo_rating": 1174.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.46
+      "avg_colonies": 3.38
     },
     "Anesthesiologist": {
       "name": "Anesthesiologist",
@@ -15470,7 +15470,7 @@
       "shared_wins": 0,
       "elo_rating": 1141.8,
       "peak_elo": 1503.2,
-      "avg_colonies": 3.53
+      "avg_colonies": 3.47
     },
     "Tower": {
       "name": "Tower",
@@ -15481,7 +15481,7 @@
       "shared_wins": 0,
       "elo_rating": 1159.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.38
+      "avg_colonies": 3.31
     },
     "Seven": {
       "name": "Seven",
@@ -15492,7 +15492,7 @@
       "shared_wins": 1,
       "elo_rating": 1242.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.15
+      "avg_colonies": 4.08
     },
     "Monument": {
       "name": "Monument",
@@ -15503,7 +15503,7 @@
       "shared_wins": 0,
       "elo_rating": 1222.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.14
+      "avg_colonies": 4.07
     },
     "Optometrist": {
       "name": "Optometrist",
@@ -15525,7 +15525,7 @@
       "shared_wins": 0,
       "elo_rating": 1396.0,
       "peak_elo": 1508.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.67
     },
     "Improvisor": {
       "name": "Improvisor",
@@ -15558,7 +15558,7 @@
       "shared_wins": 0,
       "elo_rating": 1167.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.5
     },
     "Solstice": {
       "name": "Solstice",
@@ -15602,7 +15602,7 @@
       "shared_wins": 0,
       "elo_rating": 1180.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.11
+      "avg_colonies": 4.06
     },
     "Desert": {
       "name": "Desert",
@@ -15624,7 +15624,7 @@
       "shared_wins": 1,
       "elo_rating": 1201.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.06
+      "avg_colonies": 4.0
     },
     "Halver": {
       "name": "Halver",
@@ -15679,7 +15679,7 @@
       "shared_wins": 0,
       "elo_rating": 1152.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.5
     },
     "Nurse": {
       "name": "Nurse",
@@ -15712,7 +15712,7 @@
       "shared_wins": 1,
       "elo_rating": 1302.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.18
+      "avg_colonies": 4.09
     },
     "CardShark": {
       "name": "CardShark",
@@ -15811,7 +15811,7 @@
       "shared_wins": 0,
       "elo_rating": 1412.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.44
+      "avg_colonies": 4.33
     },
     "Understudy": {
       "name": "Understudy",
@@ -15822,7 +15822,7 @@
       "shared_wins": 0,
       "elo_rating": 1226.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.64
     },
     "Empiricist": {
       "name": "Empiricist",
@@ -15844,7 +15844,7 @@
       "shared_wins": 0,
       "elo_rating": 1276.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.33
+      "avg_colonies": 3.22
     },
     "Momentum": {
       "name": "Momentum",
@@ -15932,7 +15932,7 @@
       "shared_wins": 1,
       "elo_rating": 1147.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.75
     },
     "Toddler": {
       "name": "Toddler",
@@ -16009,7 +16009,7 @@
       "shared_wins": 0,
       "elo_rating": 1066.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.88
+      "avg_colonies": 3.82
     },
     "Blue": {
       "name": "Blue",
@@ -16020,7 +16020,7 @@
       "shared_wins": 0,
       "elo_rating": 1251.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.08
+      "avg_colonies": 4.0
     },
     "Intimidator": {
       "name": "Intimidator",
@@ -16064,7 +16064,7 @@
       "shared_wins": 1,
       "elo_rating": 1186.7,
       "peak_elo": 1503.2,
-      "avg_colonies": 3.33
+      "avg_colonies": 3.25
     },
     "Cardiologist": {
       "name": "Cardiologist",
@@ -16097,7 +16097,7 @@
       "shared_wins": 0,
       "elo_rating": 1224.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.67
     },
     "Geyser": {
       "name": "Geyser",
@@ -16108,7 +16108,7 @@
       "shared_wins": 0,
       "elo_rating": 1314.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.12
+      "avg_colonies": 4.0
     },
     "Inverter": {
       "name": "Inverter",
@@ -16185,7 +16185,7 @@
       "shared_wins": 0,
       "elo_rating": 1203.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.46
+      "avg_colonies": 3.38
     },
     "Skyscraper": {
       "name": "Skyscraper",
@@ -16229,7 +16229,7 @@
       "shared_wins": 0,
       "elo_rating": 1345.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.14
+      "avg_colonies": 4.0
     },
     "Philosopher": {
       "name": "Philosopher",
@@ -16240,7 +16240,7 @@
       "shared_wins": 0,
       "elo_rating": 1117.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.67
     },
     "One": {
       "name": "One",
@@ -16273,7 +16273,7 @@
       "shared_wins": 1,
       "elo_rating": 1136.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.06
+      "avg_colonies": 4.0
     },
     "Whirlpool": {
       "name": "Whirlpool",
@@ -16284,7 +16284,7 @@
       "shared_wins": 0,
       "elo_rating": 1215.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.07
+      "avg_colonies": 4.0
     },
     "Dentist": {
       "name": "Dentist",
@@ -16295,7 +16295,7 @@
       "shared_wins": 0,
       "elo_rating": 1134.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.75
     },
     "Monist": {
       "name": "Monist",
@@ -16361,7 +16361,7 @@
       "shared_wins": 0,
       "elo_rating": 1228.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.07
+      "avg_colonies": 4.0
     },
     "Warlord": {
       "name": "Warlord",
@@ -16383,7 +16383,7 @@
       "shared_wins": 0,
       "elo_rating": 1199.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.5
     },
     "Spire": {
       "name": "Spire",
@@ -16460,7 +16460,7 @@
       "shared_wins": 0,
       "elo_rating": 1163.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.07
+      "avg_colonies": 4.0
     },
     "Immunologist": {
       "name": "Immunologist",
@@ -16471,7 +16471,7 @@
       "shared_wins": 0,
       "elo_rating": 1227.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.36
+      "avg_colonies": 3.27
     },
     "Dome": {
       "name": "Dome",
@@ -16493,7 +16493,7 @@
       "shared_wins": 0,
       "elo_rating": 1232.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.92
+      "avg_colonies": 3.85
     },
     "Champion": {
       "name": "Champion",
@@ -16515,7 +16515,7 @@
       "shared_wins": 1,
       "elo_rating": 1077.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.89
+      "avg_colonies": 3.84
     },
     "Summer": {
       "name": "Summer",
@@ -16548,7 +16548,7 @@
       "shared_wins": 0,
       "elo_rating": 1242.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.64
+      "avg_colonies": 3.57
     },
     "Foundation": {
       "name": "Foundation",
@@ -16680,7 +16680,7 @@
       "shared_wins": 0,
       "elo_rating": 1258.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.09
+      "avg_colonies": 4.0
     }
   }
 }
