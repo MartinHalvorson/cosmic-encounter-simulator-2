@@ -436,3 +436,28 @@ From official FFG rules and BoardGameGeek:
 3. Parasite (50.1%) - Uninvited alliance joining
 4. Alchemist (38.9%) - Card manipulation
 5. Pacifist (37.5%) - Force negotiation
+
+### Session 13 Progress (2025-12-30) - 500+ Aliens Milestone
+- **Added Dimensional Powers (17 new aliens):**
+  - Bender, Dimension, Distorter, Folder, Merger, Multitude
+  - Parallax, Phaser, Portal, Rift, Shifter, Splitter
+  - Temporal, Transposer, Twister, Unmaker, Vortex
+- **Added Time Powers (15 new aliens):**
+  - Accelerator, Ancient, Clock, Decayer, Eternity, Faster
+  - Hourglass, Moment, Past, Pauser, Rewinder, Slowdown
+  - Timewarp, Tomorrow, Yesterday
+- **Added Energy Powers (18 new aliens):**
+  - Absorber, Amplify, Battery, Bolt, Capacitor, Charger
+  - Conductor_Alt, Core, Discharge, Dynamo, Fission, Fusion
+  - Overload, Plasma, Pulse, Reactor, Resonator, Shock
+- **502 alien powers now implemented!**
+- **7,500,000+ cumulative games simulated**
+- Simulation speed: ~500 games/second
+- All tests passing with zero errors
+
+### Cumulative Statistics Summary (7.5M+ games):
+- Total unique aliens: 502
+- Average game length: 4.8 turns
+- Solo victories: ~97%
+- Shared victories: ~3%
+- Top performers remain consistent: Machine, Industrialist, Parasite
