@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from typing import Optional, List, TYPE_CHECKING
 
 from ..base import AlienPower, PowerCategory
+from ..registry import AlienRegistry
 from ...types import PowerTiming, PowerType, PlayerRole
 
 if TYPE_CHECKING:
@@ -318,3 +319,10 @@ CLIMATE_POWERS = [
     Earthquake, Volcano, Tsunami, Avalanche, Geyser, Whirlpool,
     Spring, Summer, Autumn, Winter, Equinox, Solstice,
 ]
+
+# Auto-register all powers
+for power_class in CLIMATE_POWERS:
+    try:
+        AlienRegistry.register(power_class())
+    except ValueError:
+        pass  # Already registered

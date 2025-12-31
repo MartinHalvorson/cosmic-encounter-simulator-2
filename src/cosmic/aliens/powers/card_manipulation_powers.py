@@ -9,8 +9,8 @@ from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any, TYPE_CHECKING
 import random
 
-from ..base import AlienPower
-from ...types import PowerTiming, PowerType, PowerCategory, PlayerRole, Side
+from ..base import AlienPower, PowerCategory
+from ...types import PowerTiming, PowerType, PlayerRole, Side
 
 if TYPE_CHECKING:
     from ...game import Game
