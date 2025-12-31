@@ -180,6 +180,17 @@ class BasicAI(AIStrategy):
         """
         home_planets = [p for p in game.planets if p.owner == defense]
 
+        # Handle edge case: no home planets (should not happen normally)
+        if not home_planets:
+            # Fall back to any planet the defense has ships on
+            all_planets = [p for p in game.planets if p.get_ships(defense.name) > 0]
+            if all_planets:
+                return all_planets[0]
+            # Last resort: any planet
+            if game.planets:
+                return game.planets[0]
+            return None
+
         # Filter to planets we don't already have colonies on
         valid = [p for p in home_planets if not p.has_colony(player.name)]
         if not valid:
