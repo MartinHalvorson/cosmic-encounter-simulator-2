@@ -131,23 +131,43 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
 - Fixed ShipCount 'in' operator (eliminated simulation errors)
 - Total AI personalities: 10
 
+### 2025-12-31 Afternoon Session
+- Expanded flare effects from 46 to 169 definitions
+- Added flares for all official Cosmic Encounter expansions:
+  - Base Game (Fantasy Flight 2008 Edition)
+  - Cosmic Incursion
+  - Cosmic Conflict
+  - Cosmic Alliance
+  - Cosmic Storm
+  - Cosmic Dominion
+  - Cosmic Eons
+- Added flare power ranking system:
+  - S Tier (5.0): 6 flares (Anarchist, Machine, Virus, Loser, Chronos, Tick-Tock)
+  - A Tier (4.5): 10 flares (Zombie, Oracle, Sorcerer, Macron, etc.)
+  - B Tier (4.0): 13 flares (Human, Warrior, Pacifist, etc.)
+  - C/D/E Tiers: 44 additional ranked flares
+- Added utility functions: get_flare_power_rating(), get_top_flares(), get_flares_by_tier()
+- Added 5 new flare ranking tests
+- Total tests: 94 passing
+
 ### Current Statistics
 - **20.6+ million games simulated**
 - **844 alien powers** implemented
-- **89 unit tests** with pytest framework
-- **46 flare effects** defined
+- **94 unit tests** with pytest framework
+- **169 flare effects** defined with power rankings
 - Full encounter cycle (8 phases)
 - Multiple AI strategies (10 personalities)
 - Tech Cards and Hazard Deck expansions
 - 2-player variant with dual powers
 - Deal negotiation with multiple deal types
+- Flare power tier system (S/A/B/C/D/E)
 
 ### Remaining Gaps
-1. **More Flare Effects** - Only 46 of 844 powers have flares
-2. **Game.py Refactoring** - 1819 lines, should split into phase modules
-3. **Advanced Artifact Timing** - More robust artifact resolution
-4. **Alliance Mechanics** - Could be more sophisticated
-5. **Performance Optimization** - For very large simulation runs
+1. **Game.py Refactoring** - 1819 lines, could split into phase modules
+2. **Advanced Artifact Timing** - More robust artifact resolution
+3. **Alliance Mechanics** - Could be more sophisticated
+4. **Performance Optimization** - For very large simulation runs
+5. **Flare Implementation** - Many flare effects need game logic implementation
 
 ---
 
