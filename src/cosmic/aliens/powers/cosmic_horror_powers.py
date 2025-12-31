@@ -226,7 +226,7 @@ class Ancient(AlienPower):
         """Ships get stronger over time."""
         if not player.power_active:
             return base_count
-        rounds = game.turn_count // len(game.players)
+        rounds = game.current_turn // len(game.players)
         return base_count * (1 + rounds)
 
 

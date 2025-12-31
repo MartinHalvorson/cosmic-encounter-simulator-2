@@ -700,3 +700,17 @@ From official FFG rules and BoardGameGeek:
 - **All tests passing (122 unit tests)**
 - **Tournament Mode, Swiss tournaments, Monte Carlo estimation implemented**
 - **Synergy/Counter matrix analysis available**
+
+**Session 21 Continued Progress:**
+- **Added Cosmic Horror Powers (20 aliens):**
+  - Eldritch, Harbinger, Cthonic, Abomination, Lurker, Dreamer
+  - Formless, Watcher, Devourer, Ancient (+1/round)
+  - Mindflayer, Void_Horror, Nyarlathotep (copy powers), Shoggoth
+  - Cultist, DeepOne, Mi_Go, Byakhee, YogSothoth, Hastur
+- **Added Food Powers (15 aliens):**
+  - Gourmand, Nibbler, Chef, Famine, Baker (+2 cards)
+  - Cannibal, Predator_Food, Herbivore, Farmer
+  - Omnivore, Feast, Starvation, Forager, Glutton_Food, Saprophyte
+- **1120 alien powers now implemented!**
+- **Ran 100,000 game simulation batch**
+- **All official FFG aliens implemented (239/239)**
