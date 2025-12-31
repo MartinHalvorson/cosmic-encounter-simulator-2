@@ -44,3 +44,6 @@ from .transformation_powers import *  # noqa: F401, F403
 from .communication_powers import *  # noqa: F401, F403
 from .deception_powers import *  # noqa: F401, F403
 from .alliance_powers import *  # noqa: F401, F403
+from .weather_powers import *  # noqa: F401, F403
+from .trap_powers import *  # noqa: F401, F403
+from .territory_powers import *  # noqa: F401, F403

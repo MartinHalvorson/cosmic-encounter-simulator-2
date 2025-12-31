@@ -404,6 +404,42 @@ class Vulch(AlienPower):
         return False
 
 
+@dataclass
+class Will(AlienPower):
+    """
+    Will - Power of Choice.
+    Official FFG rules: After drawing destiny, encounter any alien on any planet
+    of your choice instead of the destiny-mandated one.
+    """
+    name: str = field(default="Will", init=False)
+    description: str = field(default="Choose any target instead of destiny.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Demon(AlienPower):
+    """
+    Demon - Power to Possess.
+    Official FFG rules: As main player before alliances, take possession of
+    another player's hand. Use their cards as if your own.
+    """
+    name: str = field(default="Demon", init=False)
+    description: str = field(default="Possess another player's hand.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
+        init=False
+    )
+
+
 # Register all powers
 AlienRegistry.register(Zombie())
 AlienRegistry.register(Healer())
@@ -416,3 +452,5 @@ AlienRegistry.register(Warrior())
 AlienRegistry.register(Guerrilla())
 AlienRegistry.register(Mind())
 AlienRegistry.register(Vulch())
+AlienRegistry.register(Will())
+AlienRegistry.register(Demon())
