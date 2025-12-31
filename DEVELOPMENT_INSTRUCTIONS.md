@@ -14,29 +14,33 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
 ## Current State (as of 2025-12-30)
 
 - **5+ million games simulated**
-- **276 alien powers** implemented
+- **317 alien powers** implemented
 - **Full encounter cycle** implemented (8 phases)
 - **Multiple AI strategies** (5+ personalities)
 - **ELO rating system** with persistent statistics
+- **Tech Cards system** integrated (Cosmic Incursion expansion)
+- **Hazard Deck system** integrated (Cosmic Storm expansion)
+- **46 unit tests** with pytest framework
 
 ## Identified Gaps (Priority Order)
 
-### High Priority
-1. **Unit Tests** - No tests exist; add comprehensive test coverage
-2. **Hazard Deck Integration** - File exists but not integrated into game flow
-3. **Tech Cards Integration** - Cosmic Incursion expansion not fully implemented
-4. **Power Interaction Edge Cases** - Complex power combos need testing
+### Completed
+1. ~~**Unit Tests**~~ - Added 46 tests covering game, expansions, and powers
+2. ~~**Hazard Deck Integration**~~ - Fully integrated into game flow
+3. ~~**Tech Cards Integration**~~ - Fully integrated with research progress
+4. ~~**Power Interaction Edge Cases**~~ - Added tests for key matchups
 
 ### Medium Priority
-5. **Game.py Refactoring** - 1302 lines, could be split into phase modules
+5. **Game.py Refactoring** - 1486 lines, could be split into phase modules
 6. **Advanced Artifact Timing** - More robust artifact resolution
 7. **Hyperspace Gate Mechanics** - Clarify and fully implement
 8. **2-Player Variant** - Currently only 3-6 players supported
+9. **AI Strategy Improvements** - More power-aware decision making
 
 ### Lower Priority
-9. **Documentation** - Power descriptions, AI strategy rationale
-10. **Performance Optimization** - Caching, vectorization for large runs
-11. **Structured Logging** - Better debugging capabilities
+10. **Documentation** - Power descriptions, AI strategy rationale
+11. **Performance Optimization** - Caching, vectorization for large runs
+12. **Structured Logging** - Better debugging capabilities
 
 ## Development Guidelines
 
@@ -79,6 +83,24 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
 - Explored codebase architecture
 - Identified gaps and priorities
 - Beginning systematic feature buildout
+
+### 2025-12-30 Progress Update
+- Created test framework with pytest
+- Added 46 unit tests (test_game.py, test_expansions.py, test_powers.py)
+- Integrated Tech Cards system (Cosmic Incursion expansion)
+  - Tech deck initialization
+  - Starting tech card distribution
+  - Research progress on encounter wins
+  - Combat bonuses from completed techs
+- Integrated Hazard Deck system (Cosmic Storm expansion)
+  - Hazard drawing at encounter start
+  - Immediate and timed hazard effects
+  - Skip encounter hazards
+  - No-alliance hazards
+- Fixed edge case in _handle_turn_end when encounters are skipped
+- Verified 317 alien powers are registered and working
+- Ran 500+ test games with no errors
+- All 46 tests passing
 
 ---
 
