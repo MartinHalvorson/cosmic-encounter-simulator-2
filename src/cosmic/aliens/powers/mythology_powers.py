@@ -1,10 +1,12 @@
 """
-Mythology and Legend themed alien powers for Cosmic Encounter.
+Mythology-themed alien powers.
+
+Aliens inspired by mythological figures and creatures from
+various world cultures and traditions.
 """
 
 from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any, TYPE_CHECKING
-import random
 
 from ..base import AlienPower, PowerCategory
 from ...types import PowerTiming, PowerType, Side, PlayerRole
@@ -16,113 +18,94 @@ if TYPE_CHECKING:
 from ..registry import AlienRegistry
 
 
-@dataclass
-class Hercules(AlienPower):
-    """
-    Hercules - Power of Strength.
-    +1 per ship you have in the encounter.
-    """
-    name: str = field(default="Hercules", init=False)
-    description: str = field(
-        default="+1 per ship in encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(
-        self,
-        game: "Game",
-        player: "Player",
-        base_total: int,
-        side: Side
-    ) -> int:
-        """Strength bonus."""
-        if not player.power_active:
-            return base_total
-
-        if side == Side.OFFENSE:
-            ships = game.offense_ships.get(player.name, 0)
-        else:
-            ships = game.defense_ships.get(player.name, 0)
-
-        return base_total + ships
-
+# ==============================================================================
+# GREEK MYTHOLOGY
+# ==============================================================================
 
 @dataclass
 class Zeus(AlienPower):
-    """
-    Zeus - Power of Lightning.
-    Once per encounter, destroy 1 opposing ship.
-    """
+    """Zeus - Power of the Sky."""
     name: str = field(default="Zeus", init=False)
     description: str = field(
-        default="Destroy 1 opposing ship per encounter.",
+        default="When winning as offense, zap 1 opponent ally ship to warp.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Athena(AlienPower):
-    """
-    Athena - Power of Wisdom.
-    See opponent's encounter card before playing yours.
-    """
-    name: str = field(default="Athena", init=False)
-    description: str = field(
-        default="See opponent's card before playing.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
 
 @dataclass
 class Poseidon(AlienPower):
-    """
-    Poseidon - Power of the Sea.
-    +3 when attacking from or defending a planet adjacent to warp.
-    """
+    """Poseidon - Power of the Sea."""
     name: str = field(default="Poseidon", init=False)
     description: str = field(
-        default="+3 for sea-adjacent planets.",
+        default="Commit ships from any number of your colonies.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
 class Hades(AlienPower):
-    """
-    Hades - Power of the Underworld.
-    Retrieve 2 ships from warp at the start of each turn.
-    """
+    """Hades - Power of the Underworld."""
     name: str = field(default="Hades", init=False)
     description: str = field(
-        default="Retrieve 2 ships from warp each turn.",
+        default="Use ships from warp for encounters.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Athena(AlienPower):
+    """Athena - Power of Wisdom."""
+    name: str = field(default="Athena", init=False)
+    description: str = field(
+        default="See opponent's top 3 cards before selecting.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
 class Apollo(AlienPower):
-    """
-    Apollo - Power of Light.
-    All encounter cards are revealed simultaneously (no hidden information).
-    """
+    """Apollo - Power of Light."""
     name: str = field(default="Apollo", init=False)
     description: str = field(
-        default="All cards revealed at once.",
+        default="Attack cards gain +2 per card in hand (max +8).",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Ares(AlienPower):
+    """Ares - Power of War."""
+    name: str = field(default="Ares", init=False)
+    description: str = field(
+        default="Win: draw 1 card. Lose: retrieve 1 ship from warp.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Medusa(AlienPower):
+    """Medusa - Power to Petrify."""
+    name: str = field(default="Medusa", init=False)
+    description: str = field(
+        default="After reveal, opponents cannot use reinforcements.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
@@ -130,31 +113,55 @@ class Apollo(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
+# ==============================================================================
+# NORSE MYTHOLOGY
+# ==============================================================================
+
 @dataclass
-class Ares(AlienPower):
-    """
-    Ares - Power of War.
-    +2 attack per encounter you've been in this turn.
-    """
-    name: str = field(default="Ares", init=False)
+class Odin(AlienPower):
+    """Odin - Power of All-Knowledge."""
+    name: str = field(default="Odin", init=False)
     description: str = field(
-        default="+2 per encounter this turn.",
+        default="See destiny deck's top card before each encounter.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.START_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Thor(AlienPower):
+    """Thor - Power of Thunder."""
+    name: str = field(default="Thor", init=False)
+    description: str = field(
+        default="Attack cards 20+ get +5 bonus.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Loki(AlienPower):
+    """Loki - Power of Mischief."""
+    name: str = field(default="Loki", init=False)
+    description: str = field(
+        default="Swap your encounter card with random opponent card.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
 @dataclass
-class Aphrodite(AlienPower):
-    """
-    Aphrodite - Power of Love.
-    Opponents must invite you to ally. You may always accept.
-    """
-    name: str = field(default="Aphrodite", init=False)
+class Freya(AlienPower):
+    """Freya - Power of Love."""
+    name: str = field(default="Freya", init=False)
     description: str = field(
-        default="Always invited to ally.",
+        default="Allies who join your side draw 1 card.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
@@ -163,84 +170,123 @@ class Aphrodite(AlienPower):
 
 
 @dataclass
-class Hermes(AlienPower):
-    """
-    Hermes - Power of Speed.
-    May have a second encounter if you win the first.
-    """
-    name: str = field(default="Hermes", init=False)
+class Fenrir(AlienPower):
+    """Fenrir - Power of the Wolf."""
+    name: str = field(default="Fenrir", init=False)
     description: str = field(
-        default="Extra encounter if you win.",
+        default="When winning as offense, devour 1 opponent ship forever.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+
+@dataclass
+class Valkyrie(AlienPower):
+    """Valkyrie - Power to Choose."""
+    name: str = field(default="Valkyrie", init=False)
+    description: str = field(
+        default="Redirect 1 ship from warp to any colony.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+# ==============================================================================
+# EGYPTIAN MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Ra(AlienPower):
+    """Ra - Power of the Sun."""
+    name: str = field(default="Ra", init=False)
+    description: str = field(
+        default="At turn start, all opponents discard lowest attack.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+
+@dataclass
+class Anubis(AlienPower):
+    """Anubis - Power of Death."""
+    name: str = field(default="Anubis", init=False)
+    description: str = field(
+        default="Use ships from warp in encounters.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Isis_Myth(AlienPower):
+    """Isis - Power of Magic."""
+    name: str = field(default="Isis_Myth", init=False)
+    description: str = field(
+        default="Copy any alien power for one encounter.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.START_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
 @dataclass
-class Odin(AlienPower):
-    """
-    Odin - Power of Wisdom.
-    Draw 3 cards, keep 1, discard 2 at the start of each turn.
-    """
-    name: str = field(default="Odin", init=False)
+class Osiris(AlienPower):
+    """Osiris - Power of Resurrection."""
+    name: str = field(default="Osiris", init=False)
     description: str = field(
-        default="Draw 3, keep 1 each turn.",
+        default="When losing, retrieve 2 ships from warp.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Sphinx(AlienPower):
+    """Sphinx - Power of Riddles."""
+    name: str = field(default="Sphinx", init=False)
+    description: str = field(
+        default="Name a value; if opponent played it, they discard it.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+# ==============================================================================
+# ASIAN MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Dragon_Myth(AlienPower):
+    """Dragon - Power of the Serpent."""
+    name: str = field(default="Dragon_Myth", init=False)
+    description: str = field(
+        default="Ships count as 2 each, but max 2 ships per encounter.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
 @dataclass
-class Thor(AlienPower):
-    """
-    Thor - Power of Thunder.
-    +4 when you have more ships than opponent.
-    """
-    name: str = field(default="Thor", init=False)
+class Kitsune(AlienPower):
+    """Kitsune - Power of the Fox Spirit."""
+    name: str = field(default="Kitsune", init=False)
     description: str = field(
-        default="+4 when more ships than opponent.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(
-        self,
-        game: "Game",
-        player: "Player",
-        base_total: int,
-        side: Side
-    ) -> int:
-        """Thunder bonus."""
-        if not player.power_active:
-            return base_total
-
-        if side == Side.OFFENSE:
-            my_ships = sum(game.offense_ships.values())
-            their_ships = sum(game.defense_ships.values())
-        else:
-            my_ships = sum(game.defense_ships.values())
-            their_ships = sum(game.offense_ships.values())
-
-        if my_ships > their_ships:
-            return base_total + 4
-        return base_total
-
-
-@dataclass
-class Loki(AlienPower):
-    """
-    Loki - Power of Mischief.
-    Once per encounter, swap encounter cards with opponent.
-    """
-    name: str = field(default="Loki", init=False)
-    description: str = field(
-        default="Swap encounter cards with opponent.",
+        default="Swap attack and negotiate after cards are played.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
@@ -249,164 +295,318 @@ class Loki(AlienPower):
 
 
 @dataclass
-class Ra(AlienPower):
-    """
-    Ra - Power of the Sun.
-    +2 during morning (turns 1-50), -1 during night (turns 51+).
-    """
-    name: str = field(default="Ra", init=False)
+class Oni(AlienPower):
+    """Oni - Power of the Demon."""
+    name: str = field(default="Oni", init=False)
     description: str = field(
-        default="+2 early game, -1 late game.",
+        default="Opponents must commit 2+ ships or auto-lose.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(
-        self,
-        game: "Game",
-        player: "Player",
-        base_total: int,
-        side: Side
-    ) -> int:
-        """Sun cycle."""
-        if not player.power_active:
-            return base_total
-
-        if game.current_turn <= 50:
-            return base_total + 2
-        return max(0, base_total - 1)
-
-
-@dataclass
-class Anubis(AlienPower):
-    """
-    Anubis - Power of Death.
-    Ships you destroy don't go to warp - they're removed from game.
-    """
-    name: str = field(default="Anubis", init=False)
-    description: str = field(
-        default="Destroyed ships removed from game.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
+    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
 
 @dataclass
-class Isis(AlienPower):
-    """
-    Isis - Power of Resurrection.
-    Once per turn, return all ships from warp to colonies.
-    """
-    name: str = field(default="Isis", init=False)
+class Tengu(AlienPower):
+    """Tengu - Power of the Crow."""
+    name: str = field(default="Tengu", init=False)
     description: str = field(
-        default="Return all ships from warp once per turn.",
+        default="When winning, steal 1 random card from loser.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
+    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
 @dataclass
-class Set_Myth(AlienPower):
-    """
-    Set - Power of Chaos.
-    Randomize one element of each encounter (determined by die roll).
-    """
-    name: str = field(default="Set_Myth", init=False)
+class Kappa_Myth(AlienPower):
+    """Kappa - Power of Water."""
+    name: str = field(default="Kappa_Myth", init=False)
     description: str = field(
-        default="Random chaos element each encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-
-@dataclass
-class Medusa(AlienPower):
-    """
-    Medusa - Power to Petrify.
-    One opposing ship per encounter is frozen and cannot participate.
-    """
-    name: str = field(default="Medusa", init=False)
-    description: str = field(
-        default="Freeze 1 opposing ship per encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Minotaur(AlienPower):
-    """
-    Minotaur - Power of the Labyrinth.
-    +3 when defending your home planets.
-    """
-    name: str = field(default="Minotaur", init=False)
-    description: str = field(
-        default="+3 home defense.",
+        default="Defending on home: +4 to total.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-    usable_as: List[PlayerRole] = field(
-        default_factory=lambda: [PlayerRole.DEFENSE], init=False
-    )
 
-    def modify_total(
-        self,
-        game: "Game",
-        player: "Player",
-        base_total: int,
-        side: Side
-    ) -> int:
-        """Home defense bonus."""
-        if not player.power_active or side != Side.DEFENSE:
-            return base_total
-        return base_total + 3
+
+# ==============================================================================
+# CELTIC MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Morrigan(AlienPower):
+    """Morrigan - Power of Battle."""
+    name: str = field(default="Morrigan", init=False)
+    description: str = field(
+        default="See both players' top cards before encounter.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.START_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
-class Phoenix_Myth(AlienPower):
-    """
-    Phoenix - Power of Rebirth.
-    When you lose all foreign colonies, draw 5 cards and gain 1 colony.
-    """
-    name: str = field(default="Phoenix_Myth", init=False)
+class Cernunnos(AlienPower):
+    """Cernunnos - Power of the Wild."""
+    name: str = field(default="Cernunnos", init=False)
     description: str = field(
-        default="Losing all colonies: draw 5 cards, gain 1.",
+        default="Turn start: place 1 ship from warp on colony.",
         init=False
     )
-    timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Banshee(AlienPower):
+    """Banshee - Power of the Wail."""
+    name: str = field(default="Banshee", init=False)
+    description: str = field(
+        default="Redirect ships from warp to colony once per encounter.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+# ==============================================================================
+# HINDU MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Vishnu(AlienPower):
+    """Vishnu - Power of Preservation."""
+    name: str = field(default="Vishnu", init=False)
+    description: str = field(
+        default="Prevent 1 ship per encounter from going to warp.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Shiva(AlienPower):
+    """Shiva - Power of Destruction."""
+    name: str = field(default="Shiva", init=False)
+    description: str = field(
+        default="When winning, remove 1 opponent ship from game entirely.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+
+@dataclass
+class Ganesha(AlienPower):
+    """Ganesha - Power of Obstacles."""
+    name: str = field(default="Ganesha", init=False)
+    description: str = field(
+        default="Once per encounter, opponent must discard 1 card.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
-# Register all aliens
-AlienRegistry.register(Hercules())
+@dataclass
+class Kali(AlienPower):
+    """Kali - Power of Time."""
+    name: str = field(default="Kali", init=False)
+    description: str = field(
+        default="Destroy all reinforcement cards after they are played.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+
+@dataclass
+class Hanuman(AlienPower):
+    """Hanuman - Power of Devotion."""
+    name: str = field(default="Hanuman", init=False)
+    description: str = field(
+        default="+2 for each ally on your side.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+# ==============================================================================
+# MESOAMERICAN MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Quetzalcoatl(AlienPower):
+    """Quetzalcoatl - Power of the Feathered Serpent."""
+    name: str = field(default="Quetzalcoatl", init=False)
+    description: str = field(
+        default="Ships count double in encounters you initiate.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE], init=False
+    )
+
+
+@dataclass
+class Tezcatlipoca(AlienPower):
+    """Tezcatlipoca - Power of the Smoking Mirror."""
+    name: str = field(default="Tezcatlipoca", init=False)
+    description: str = field(
+        default="See opponent's hand before selecting your card.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Huitzilopochtli(AlienPower):
+    """Huitzilopochtli - Power of War."""
+    name: str = field(default="Huitzilopochtli", init=False)
+    description: str = field(
+        default="Draw 1 card for each ship sent to warp.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+# ==============================================================================
+# SLAVIC MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Baba_Yaga(AlienPower):
+    """Baba Yaga - Power of the Witch."""
+    name: str = field(default="Baba_Yaga", init=False)
+    description: str = field(
+        default="Force opponent to play their lowest or highest card.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Perun(AlienPower):
+    """Perun - Power of Thunder."""
+    name: str = field(default="Perun", init=False)
+    description: str = field(
+        default="+3 when you have more cards than opponent.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+# ==============================================================================
+# POLYNESIAN MYTHOLOGY
+# ==============================================================================
+
+@dataclass
+class Maui(AlienPower):
+    """Maui - Power of the Trickster."""
+    name: str = field(default="Maui", init=False)
+    description: str = field(
+        default="Steal 1 card from opponent when you lose.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Pele(AlienPower):
+    """Pele - Power of Volcanoes."""
+    name: str = field(default="Pele", init=False)
+    description: str = field(
+        default="When losing, send 1 opponent ally ship to warp.",
+        init=False
+    )
+    timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+# ==============================================================================
+# REGISTER ALL MYTHOLOGY POWERS
+# ==============================================================================
+
+# Greek
 AlienRegistry.register(Zeus())
-AlienRegistry.register(Athena())
 AlienRegistry.register(Poseidon())
 AlienRegistry.register(Hades())
+AlienRegistry.register(Athena())
 AlienRegistry.register(Apollo())
 AlienRegistry.register(Ares())
-AlienRegistry.register(Aphrodite())
-AlienRegistry.register(Hermes())
+AlienRegistry.register(Medusa())
+
+# Norse
 AlienRegistry.register(Odin())
 AlienRegistry.register(Thor())
 AlienRegistry.register(Loki())
+AlienRegistry.register(Freya())
+AlienRegistry.register(Fenrir())
+AlienRegistry.register(Valkyrie())
+
+# Egyptian
 AlienRegistry.register(Ra())
 AlienRegistry.register(Anubis())
-AlienRegistry.register(Isis())
-AlienRegistry.register(Set_Myth())
-AlienRegistry.register(Medusa())
-AlienRegistry.register(Minotaur())
-AlienRegistry.register(Phoenix_Myth())
+AlienRegistry.register(Isis_Myth())
+AlienRegistry.register(Osiris())
+AlienRegistry.register(Sphinx())
+
+# Asian
+AlienRegistry.register(Dragon_Myth())
+AlienRegistry.register(Kitsune())
+AlienRegistry.register(Oni())
+AlienRegistry.register(Tengu())
+AlienRegistry.register(Kappa_Myth())
+
+# Celtic
+AlienRegistry.register(Morrigan())
+AlienRegistry.register(Cernunnos())
+AlienRegistry.register(Banshee())
+
+# Hindu
+AlienRegistry.register(Vishnu())
+AlienRegistry.register(Shiva())
+AlienRegistry.register(Ganesha())
+AlienRegistry.register(Kali())
+AlienRegistry.register(Hanuman())
+
+# Mesoamerican
+AlienRegistry.register(Quetzalcoatl())
+AlienRegistry.register(Tezcatlipoca())
+AlienRegistry.register(Huitzilopochtli())
+
+# Slavic
+AlienRegistry.register(Baba_Yaga())
+AlienRegistry.register(Perun())
+
+# Polynesian
+AlienRegistry.register(Maui())
+AlienRegistry.register(Pele())
