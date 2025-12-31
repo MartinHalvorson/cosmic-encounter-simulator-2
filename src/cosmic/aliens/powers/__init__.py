@@ -28,3 +28,5 @@ from .bonus_powers import *  # noqa: F401, F403
 from .dimensional_powers import *  # noqa: F401, F403
 from .time_powers import *  # noqa: F401, F403
 from .energy_powers import *  # noqa: F401, F403
+from .chaos_powers import *  # noqa: F401, F403
+from .cosmic_entity_powers import *  # noqa: F401, F403
