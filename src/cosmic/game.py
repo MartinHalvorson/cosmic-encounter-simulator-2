@@ -6,7 +6,7 @@ import random
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any, Tuple
 
-from .types import GamePhase, GameConfig, Side, PlayerRole, Color, ShipCount
+from .types import GamePhase, GameConfig, Side, PlayerRole, Color, ShipCount, DealType
 from .player import Player
 from .planet import Planet
 from .cards import CosmicDeck, DestinyDeck, RewardsDeck, FlareDeck
@@ -849,29 +849,20 @@ class Game:
         """Handle deal negotiation when both play negotiate."""
         self._log("Deal phase!")
 
+        # Get proposals from both players
         off_ai = self.offense.ai_strategy or BasicAI()
-        deal = off_ai.negotiate_deal(self, self.offense, self.defense)
+        def_ai = self.defense.ai_strategy or BasicAI()
+
+        off_proposal = off_ai.negotiate_deal(self, self.offense, self.defense)
+        def_proposal = def_ai.negotiate_deal(self, self.defense, self.offense)
+
+        # Both must agree for deal to succeed
+        # A deal succeeds if both propose (any valid deal)
+        deal = off_proposal if (off_proposal and def_proposal) else None
 
         if deal:
-            self._log("Deal successful - colony swap")
-            # Both gain colonies
-            # Offense lands on defense planet
-            off_ships = self.offense_ships.get(self.offense.name, 0)
-            self.defense_planet.add_ships(self.offense.name, off_ships)
-
-            # Defense lands on offense planet
-            def_ships = self.defense_ships.get(self.defense.name, 0)
-            if self.offense.home_planets:
-                off_planet = self._rng.choice(self.offense.home_planets)
-                off_planet.add_ships(self.defense.name, def_ships)
-
-            # Return ally ships to their colonies
-            for ally in self.offense_allies:
-                ally_ships = self.offense_ships.get(ally.name, 0)
-                ally.return_ships_to_colonies(ally_ships, ally.home_planets)
-            for ally in self.defense_allies:
-                ally_ships = self.defense_ships.get(ally.name, 0)
-                ally.return_ships_to_colonies(ally_ships, ally.home_planets)
+            deal_type = deal.get("type", "colony_swap")
+            self._apply_deal(deal_type, deal)
 
             # Deal success hooks
             for player in [self.offense, self.defense]:
@@ -879,22 +870,81 @@ class Game:
                     player.alien.on_deal_success(self, player, self.defense if player == self.offense else self.offense)
         else:
             self._log("Deal failed!")
-            # Per the rules: both main players lose 3 ships to the warp
-            # (not all ships in the encounter)
-            failed_deal_penalty = 3
+            self._apply_failed_deal_penalty()
 
-            for main_player in [self.offense, self.defense]:
-                ships_to_lose = min(failed_deal_penalty, main_player.total_ships_in_play(self.planets))
-                if ships_to_lose > 0:
-                    # Handle power modifications (like Zombie)
-                    actual_ships = ships_to_lose
-                    if main_player.alien and self.is_power_active(main_player):
-                        actual_ships = main_player.alien.on_ships_to_warp(
-                            self, main_player, ships_to_lose, "failed_deal"
-                        )
-                    if actual_ships > 0:
-                        main_player.get_ships_from_colonies(actual_ships, self.planets, exclude_last_ship=False)
-                        main_player.send_ships_to_warp(actual_ships)
+    def _apply_deal(self, deal_type: str, deal: Dict[str, Any]) -> None:
+        """Apply the effects of a successful deal."""
+        if deal_type == "colony_swap" or deal_type == DealType.COLONY_SWAP.value:
+            self._log("Deal successful - colony swap")
+            # Both gain colonies
+            off_ships = self.offense_ships.get(self.offense.name, 0)
+            self.defense_planet.add_ships(self.offense.name, off_ships)
+
+            def_ships = self.defense_ships.get(self.defense.name, 0)
+            if self.offense.home_planets:
+                off_planet = self._rng.choice(self.offense.home_planets)
+                off_planet.add_ships(self.defense.name, def_ships)
+
+        elif deal_type == "card_trade" or deal_type == DealType.CARD_TRADE.value:
+            self._log("Deal successful - card trade")
+            cards_to_trade = deal.get("cards", 1)
+            # Exchange cards (up to available)
+            off_tradeable = min(cards_to_trade, len(self.offense.hand))
+            def_tradeable = min(cards_to_trade, len(self.defense.hand))
+
+            # Swap random cards
+            off_cards = self._rng.sample(self.offense.hand, min(off_tradeable, def_tradeable))
+            def_cards = self._rng.sample(self.defense.hand, min(off_tradeable, def_tradeable))
+
+            for card in off_cards:
+                self.offense.remove_card(card)
+                self.defense.add_card(card)
+            for card in def_cards:
+                self.defense.remove_card(card)
+                self.offense.add_card(card)
+
+        elif deal_type == "one_colony" or deal_type == DealType.ONE_COLONY.value:
+            self._log("Deal successful - one colony")
+            # Only offense gets a colony
+            off_ships = self.offense_ships.get(self.offense.name, 0)
+            self.defense_planet.add_ships(self.offense.name, off_ships)
+
+        elif deal_type == "card_colony" or deal_type == DealType.CARD_FOR_COLONY.value:
+            self._log("Deal successful - cards for colony")
+            # Offense gets colony, defense gets cards
+            off_ships = self.offense_ships.get(self.offense.name, 0)
+            self.defense_planet.add_ships(self.offense.name, off_ships)
+            # Defense draws cards
+            cards_to_draw = deal.get("cards", 2)
+            for _ in range(cards_to_draw):
+                card = self.cosmic_deck.draw()
+                if card:
+                    self.defense.add_card(card)
+
+        # Return ally ships to their colonies
+        for ally in self.offense_allies:
+            ally_ships = self.offense_ships.get(ally.name, 0)
+            ally.return_ships_to_colonies(ally_ships, ally.home_planets)
+        for ally in self.defense_allies:
+            ally_ships = self.defense_ships.get(ally.name, 0)
+            ally.return_ships_to_colonies(ally_ships, ally.home_planets)
+
+    def _apply_failed_deal_penalty(self) -> None:
+        """Apply the 3-ship penalty for a failed deal."""
+        failed_deal_penalty = 3
+
+        for main_player in [self.offense, self.defense]:
+            ships_to_lose = min(failed_deal_penalty, main_player.total_ships_in_play(self.planets))
+            if ships_to_lose > 0:
+                # Handle power modifications (like Zombie)
+                actual_ships = ships_to_lose
+                if main_player.alien and self.is_power_active(main_player):
+                    actual_ships = main_player.alien.on_ships_to_warp(
+                        self, main_player, ships_to_lose, "failed_deal"
+                    )
+                if actual_ships > 0:
+                    main_player.get_ships_from_colonies(actual_ships, self.planets, exclude_last_ship=False)
+                    main_player.send_ships_to_warp(actual_ships)
 
             # Return all ships in the encounter (they weren't lost, just not used)
             # Ships from gate go back to colonies

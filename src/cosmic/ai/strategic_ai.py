@@ -830,12 +830,14 @@ class StrategicAI(AIStrategy):
     ) -> Optional[Dict[str, Any]]:
         """
         Strategic negotiation:
-        - Usually make deals (both get colonies)
-        - Fail if we're significantly ahead
-        - Consider card advantage
+        - Choose deal type based on game state
+        - Fail if significantly ahead or opponent would win
+        - Consider card and colony advantage
         """
         my_colonies = player.count_foreign_colonies(game.planets)
         opp_colonies = opponent.count_foreign_colonies(game.planets)
+        my_cards = len(player.hand)
+        opp_cards = len(opponent.hand)
 
         # If we're ahead by 2+ colonies, sometimes fail
         if my_colonies >= opp_colonies + 2:
@@ -847,7 +849,23 @@ class StrategicAI(AIStrategy):
             if self._rng.random() < 0.3:
                 return None
 
-        # Usually make the deal
+        # Choose deal type based on strategic situation
+        # If we have many cards but need colonies, prefer colony deals
+        if my_cards >= 8 and my_colonies < opp_colonies:
+            return {"type": "colony_swap", "cards": 0}
+
+        # If we have few cards, propose card trade
+        if my_cards < 4 and opp_cards >= 5:
+            if self._rng.random() < 0.3:
+                return {"type": "card_trade", "cards": 2}
+
+        # If we're the offense and ahead, propose one-sided colony
+        is_offense = (game.offense == player)
+        if is_offense and my_colonies > opp_colonies and my_cards < 5:
+            if self._rng.random() < 0.2:
+                return {"type": "card_colony", "cards": 2}
+
+        # Default: colony swap
         return {"type": "colony_swap", "cards": 0}
 
     def should_use_power(

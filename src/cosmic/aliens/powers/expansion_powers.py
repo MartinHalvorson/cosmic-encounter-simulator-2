@@ -1118,6 +1118,229 @@ class Winner(AlienPower):
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
+# =============================================================================
+# COSMIC STORM EXPANSION (25 aliens)
+# =============================================================================
+
+@dataclass
+class Arcade(AlienPower):
+    """
+    Arcade - Power to Pwn.
+    Official FFG rules: When you win by 10+ or win vs negotiate, capture one opponent ship.
+    Win the game if you collect 3 ships of same color or 5 total ships.
+    """
+    name: str = field(default="Arcade", init=False)
+    description: str = field(default="Capture ships to win; 3 same color or 5 total.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+    captured_ships: Dict[str, int] = field(default_factory=dict, init=False)
+
+    def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        """Capture a ship when winning big or vs negotiate."""
+        if not player.power_active or not as_main_player:
+            return
+
+        opponent = game.defense if game.offense == player else game.offense
+
+        # Check if won by 10+ or opponent played negotiate
+        margin = abs(game.offense_total - game.defense_total)
+        opponent_negotiated = (
+            (game.offense == player and hasattr(game.defense_card, 'card_type') and game.defense_card.card_type == 'negotiate') or
+            (game.defense == player and hasattr(game.offense_card, 'card_type') and game.offense_card.card_type == 'negotiate')
+        )
+
+        if margin >= 10 or opponent_negotiated:
+            # Capture one ship from opponent
+            color = opponent.name
+            self.captured_ships[color] = self.captured_ships.get(color, 0) + 1
+
+    def check_alternate_win(self, game: "Game", player: "Player") -> bool:
+        """Check if Arcade wins via captured ships."""
+        total_captured = sum(self.captured_ships.values())
+        if total_captured >= 5:
+            return True
+        for count in self.captured_ships.values():
+            if count >= 3:
+                return True
+        return False
+
+
+@dataclass
+class Bride(AlienPower):
+    """
+    Bride - Power to Marry.
+    Official FFG rules: Force opponent to place ship on your sheet (marriage).
+    Share alliances and cards with spouse. Divorce for half their cards.
+    """
+    name: str = field(default="Bride", init=False)
+    description: str = field(default="Marry opponent; share cards, divorce for alimony.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    spouse: Optional[str] = field(default=None, init=False)
+    divorced_players: List[str] = field(default_factory=list, init=False)
+
+
+@dataclass
+class Grumpus(AlienPower):
+    """
+    Grumpus - Power to Grump.
+    Official FFG rules: When your colony is removed from any planet,
+    every other player with a colony there loses one ship to warp.
+    """
+    name: str = field(default="Grumpus", init=False)
+    description: str = field(default="When colony removed, others on planet lose ship.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Mouth(AlienPower):
+    """
+    Mouth - Power to Gobble.
+    Official FFG rules: After alliances, collect cards opponent discards.
+    If 5+ cards collected, return one to hand; rest removed from game.
+    """
+    name: str = field(default="Mouth", init=False)
+    description: str = field(default="Gobble opponent discards; 5+ returns one to hand.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    gobbled_cards: List[Any] = field(default_factory=list, init=False)
+
+
+@dataclass
+class Neighbor(AlienPower):
+    """
+    Neighbor - Power of Community.
+    Official FFG rules: As main player or ally after revealing attack card,
+    add +1 for each of your uninvolved ships in the targeted system.
+    """
+    name: str = field(default="Neighbor", init=False)
+    description: str = field(default="+1 for each uninvolved ship in targeted system.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        """Add +1 for each uninvolved ship in targeted system."""
+        if not player.power_active:
+            return base_total
+
+        # Count uninvolved ships in the targeted system
+        bonus = 0
+        if game.defense_planet:
+            system = game.defense_planet.system
+            for planet in system.planets:
+                if player.name in planet.ships:
+                    # Ships on planets not involved in encounter
+                    if planet != game.defense_planet:
+                        bonus += planet.ships[player.name]
+
+        return base_total + bonus
+
+
+@dataclass
+class Outlaw(AlienPower):
+    """
+    Outlaw - Power to Waylay.
+    Official FFG rules: After alliances formed, as main player,
+    take one random card from opponent and each of their allies.
+    """
+    name: str = field(default="Outlaw", init=False)
+    description: str = field(default="Steal random card from opponent and their allies.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Porcupine(AlienPower):
+    """
+    Porcupine - Power to Needle.
+    Official FFG rules: When losing as main player or ally with attack cards revealed,
+    discard any cards from hand to add/subtract that amount from your total.
+    """
+    name: str = field(default="Porcupine", init=False)
+    description: str = field(default="Discard cards when losing to adjust total.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        """Discard cards to potentially turn a loss into a win."""
+        if not player.power_active:
+            return base_total
+
+        # Check if we're losing
+        if side == Side.OFFENSE:
+            my_total = game.offense_total
+            opp_total = game.defense_total
+        else:
+            my_total = game.defense_total
+            opp_total = game.offense_total
+
+        # Only activate if losing
+        if my_total >= opp_total:
+            return base_total
+
+        # Discard cards to make up the difference (AI decision)
+        deficit = opp_total - my_total + 1  # Need to win by at least 1
+        cards_to_discard = min(deficit, len(player.hand) // 2)  # Don't discard more than half
+
+        return base_total + cards_to_discard
+
+
+@dataclass
+class Sloth(AlienPower):
+    """
+    Sloth - Power of Laziness.
+    Official FFG rules: Instead of committing ships during launch,
+    place token. After card selection, replace with 0-4 ships.
+    """
+    name: str = field(default="Sloth", init=False)
+    description: str = field(default="Commit ships after card selection, not during launch.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Squee(AlienPower):
+    """
+    Squee - Power of Unimaginable Cuteness.
+    Official FFG rules: As defender after cards selected,
+    force offense to concede or send 3 ships to warp.
+    If they continue and win with attack, Squee gets compensation anyway.
+    """
+    name: str = field(default="Squee", init=False)
+    description: str = field(default="Force offense to concede or lose 3 ships.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.DEFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Swindler(AlienPower):
+    """
+    Swindler - Power of Identity Theft.
+    Official FFG rules: After defense determined, reveal mark and swap
+    everything with them - seats, powers, ships, hands, colonies.
+    """
+    name: str = field(default="Swindler", init=False)
+    description: str = field(default="Swap everything with secretly marked player.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+    marked_player: Optional[str] = field(default=None, init=False)
+
+
 # Register all powers
 AlienRegistry.register(Assassin())
 AlienRegistry.register(Butler())
@@ -1174,3 +1397,14 @@ AlienRegistry.register(Sapient())
 AlienRegistry.register(Skeptic())
 AlienRegistry.register(Sting())
 AlienRegistry.register(Winner())
+# Cosmic Storm expansion
+AlienRegistry.register(Arcade())
+AlienRegistry.register(Bride())
+AlienRegistry.register(Grumpus())
+AlienRegistry.register(Mouth())
+AlienRegistry.register(Neighbor())
+AlienRegistry.register(Outlaw())
+AlienRegistry.register(Porcupine())
+AlienRegistry.register(Sloth())
+AlienRegistry.register(Squee())
+AlienRegistry.register(Swindler())

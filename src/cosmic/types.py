@@ -103,6 +103,14 @@ class Side(Enum):
     DEFENSE = auto()
 
 
+class DealType(Enum):
+    """Types of deals that can be negotiated."""
+    COLONY_SWAP = "colony_swap"      # Both players exchange colonies
+    CARD_TRADE = "card_trade"        # Players exchange cards
+    ONE_COLONY = "one_colony"        # Only one player gets a colony
+    CARD_FOR_COLONY = "card_colony"  # Cards traded for colony rights
+
+
 class PlayerRole(Enum):
     """Role of a player in an encounter."""
     OFFENSE = auto()

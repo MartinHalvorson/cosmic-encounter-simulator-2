@@ -34,3 +34,5 @@ from .social_powers import *  # noqa: F401, F403
 from .survival_powers import *  # noqa: F401, F403
 from .stealth_powers import *  # noqa: F401, F403
 from .economic_powers import *  # noqa: F401, F403
+from .control_powers import *  # noqa: F401, F403
+from .growth_powers import *  # noqa: F401, F403
