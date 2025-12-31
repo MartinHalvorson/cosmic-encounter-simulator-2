@@ -94,7 +94,10 @@ class EloCalculator:
 
     def expected_score(self, player_elo: float, opponent_elo: float) -> float:
         """Calculate expected score against a single opponent."""
-        return 1.0 / (1.0 + 10 ** ((opponent_elo - player_elo) / self.base_k))
+        # Clamp the exponent to prevent overflow (very large ELO differences)
+        exponent = (opponent_elo - player_elo) / self.base_k
+        exponent = max(-700, min(700, exponent))  # Prevent 10^x overflow
+        return 1.0 / (1.0 + 10 ** exponent)
 
     def calculate_multiplayer_changes(
         self,
