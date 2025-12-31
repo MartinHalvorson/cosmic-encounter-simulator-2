@@ -310,7 +310,7 @@ class Game:
         # Power hooks (can redirect destiny)
         for player in self.players:
             role = self._get_player_role(player)
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 redirect = player.alien.on_destiny(self, player, role, self.defense)
                 if redirect and redirect != self.defense:
                     self._log(f"{player.name} redirects destiny to {redirect.name}")
@@ -366,7 +366,7 @@ class Game:
             invited_def = player in def_invites
 
             # Check for Parasite power (can join uninvited)
-            if player.alien and player.alien.name == "Parasite" and player.power_active:
+            if player.alien and player.alien.name == "Parasite" and self.is_power_active(player):
                 invited_off = True
                 invited_def = True
 
@@ -408,7 +408,7 @@ class Game:
         # Power hooks (Trader, Kamikazee, etc.)
         for player in [self.offense, self.defense]:
             role = self._get_player_role(player)
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 player.alien.on_planning(self, player, role)
 
         # Select cards
@@ -433,12 +433,17 @@ class Game:
         # Power hooks (Mirror, Sorcerer, etc.)
         for player in [self.offense, self.defense]:
             role = self._get_player_role(player)
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 player.alien.on_reveal(self, player, role)
 
     def _resolution_phase(self) -> None:
         """Handle the resolution phase."""
         self.phase = GamePhase.RESOLUTION
+
+        # Check if Force Field was played (encounter cancelled)
+        if self.encounter_cancelled:
+            self._resolve_force_field()
+            return
 
         off_card = self.offense_card
         def_card = self.defense_card
@@ -457,7 +462,7 @@ class Game:
         # One negotiate, one attack
         if off_is_neg and def_is_attack:
             # Check Pacifist
-            if self.offense.alien and self.offense.alien.name == "Pacifist" and self.offense.power_active:
+            if self.offense.alien and self.offense.alien.name == "Pacifist" and self.is_power_active(self.offense):
                 self._resolve_offense_wins()
             else:
                 self._resolve_defense_wins()
@@ -466,7 +471,7 @@ class Game:
 
         if def_is_neg and off_is_attack:
             # Check Pacifist
-            if self.defense.alien and self.defense.alien.name == "Pacifist" and self.defense.power_active:
+            if self.defense.alien and self.defense.alien.name == "Pacifist" and self.is_power_active(self.defense):
                 self._resolve_defense_wins()
             else:
                 self._resolve_offense_wins()
@@ -487,7 +492,7 @@ class Game:
 
         # Apply power modifications to card values
         for player in [self.offense, self.defense]:
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 if player == self.offense:
                     off_value = player.alien.modify_attack_value(
                         self, player, off_value, Side.OFFENSE
@@ -503,7 +508,7 @@ class Game:
 
         # Apply power modifications to ship counts
         for player in [self.offense, self.defense]:
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 if player == self.offense:
                     off_ships = player.alien.modify_ship_count(
                         self, player, off_ships, Side.OFFENSE
@@ -519,7 +524,7 @@ class Game:
 
         # Apply power modifications to totals
         for player in [self.offense, self.defense]:
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 if player == self.offense:
                     off_total = player.alien.modify_total(
                         self, player, off_total, Side.OFFENSE
@@ -555,7 +560,7 @@ class Game:
         # Check for Loser/Antimatter
         reverse_winner = False
         for player in [self.offense, self.defense]:
-            if player.alien and player.power_active:
+            if player.alien and self.is_power_active(player):
                 if player.alien.name in ["Loser", "Antimatter"]:
                     reverse_winner = True
                     break
@@ -581,7 +586,7 @@ class Game:
             player = self.get_player_by_name(name)
             if player:
                 ships_to_warp = count
-                if player.alien and player.power_active:
+                if player.alien and self.is_power_active(player):
                     ships_to_warp = player.alien.on_ships_to_warp(
                         self, player, ships_to_warp, "encounter_loss"
                     )
@@ -613,7 +618,7 @@ class Game:
             player = self.get_player_by_name(name)
             if player:
                 ships_to_warp = count
-                if player.alien and player.power_active:
+                if player.alien and self.is_power_active(player):
                     ships_to_warp = player.alien.on_ships_to_warp(
                         self, player, ships_to_warp, "encounter_loss"
                     )
@@ -694,7 +699,7 @@ class Game:
                 if ships_to_lose > 0:
                     # Handle power modifications (like Zombie)
                     actual_ships = ships_to_lose
-                    if main_player.alien and main_player.power_active:
+                    if main_player.alien and self.is_power_active(main_player):
                         actual_ships = main_player.alien.on_ships_to_warp(
                             self, main_player, ships_to_lose, "failed_deal"
                         )
@@ -831,7 +836,7 @@ class Game:
         can_have_second = False
 
         # Machine can always have another encounter if they have encounter cards
-        if self.offense.alien and self.offense.alien.name == "Machine" and self.offense.power_active:
+        if self.offense.alien and self.offense.alien.name == "Machine" and self.is_power_active(self.offense):
             if self.offense.has_encounter_card():
                 can_have_second = True
 
@@ -1015,6 +1020,25 @@ class Game:
         """Cancel a flare or artifact being played."""
         # Similar to cosmic zap but for cards
         self._log("Quash cancels the effect!")
+
+    def _resolve_force_field(self) -> None:
+        """Handle resolution when Force Field was played - encounter ends with no winner."""
+        self._log("Force Field ends encounter - all ships return to colonies")
+
+        # Return all offense ships to colonies
+        for name, count in self.offense_ships.items():
+            player = self.get_player_by_name(name)
+            if player:
+                player.return_ships_to_colonies(count, player.home_planets)
+
+        # Defense ships stay on planet (they were defending there)
+        # But allied defense ships return
+        for ally in self.defense_allies:
+            ally_ships = self.defense_ships.get(ally.name, 0)
+            ally.return_ships_to_colonies(ally_ships, ally.home_planets)
+
+        # Discard encounter cards
+        self._discard_encounter_cards()
 
     def is_power_active(self, player: Player) -> bool:
         """Check if a player's power is currently active (not zapped)."""
