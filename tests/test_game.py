@@ -130,22 +130,23 @@ class TestEncounterPhases:
 
     def test_regroup_returns_ship_from_warp(self):
         """Regroup should return 1 ship from warp."""
-        config = GameConfig(num_players=4, seed=42)
+        # Use Human alien which doesn't affect warp retrieval
+        config = GameConfig(num_players=4, seed=42, required_aliens=["Human"])
         game = Game(config=config)
         game.setup()
 
-        # Put a ship in warp for the first player
-        player = game._turn_order[0]
-        player.ships_in_warp = 5
+        # Find the Human player
+        human_player = next(p for p in game.players if p.alien.name == "Human")
+        human_player.ships_in_warp = 5
 
-        initial_warp = player.ships_in_warp
+        initial_warp = human_player.ships_in_warp
 
         # Start encounter (which does regroup)
-        game.offense = player
+        game.offense = human_player
         game.encounter_number = 1
         game._regroup_phase()
 
-        assert player.ships_in_warp == initial_warp - 1
+        assert human_player.ships_in_warp == initial_warp - 1
 
     def test_destiny_sets_defender(self):
         """Destiny phase should set a defender different from offense."""

@@ -1503,6 +1503,128 @@ class Game:
         elif alien_name == "Parasite":
             context["parasite_both_sides"] = True
 
+        # Shadow Super: Add 4 ships from colonies
+        elif alien_name == "Shadow":
+            taken = player.get_ships_from_colonies(4, self.planets)
+            if taken > 0:
+                if player == self.offense:
+                    self.offense_ships[player.name] = self.offense_ships.get(player.name, 0) + taken
+                elif player == self.defense:
+                    self.defense_ships[player.name] = self.defense_ships.get(player.name, 0) + taken
+
+        # Warpish Super: Send 4 opponent ships to warp
+        elif alien_name == "Warpish":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                if player == self.offense and self.defense:
+                    removed = min(4, self.defense_ships.get(self.defense.name, 0))
+                    self.defense_ships[self.defense.name] = self.defense_ships.get(self.defense.name, 0) - removed
+                    self.defense.ships_in_warp += removed
+                elif self.offense:
+                    removed = min(4, self.offense_ships.get(self.offense.name, 0))
+                    self.offense_ships[self.offense.name] = self.offense_ships.get(self.offense.name, 0) - removed
+                    self.offense.ships_in_warp += removed
+
+        # Spiff Super: Draw 2 from rewards deck
+        elif alien_name == "Spiff":
+            for _ in range(2):
+                card = self.rewards_deck.draw()
+                if card:
+                    player.add_card(card)
+
+        # Horde Super: Return 2 ships from warp
+        elif alien_name == "Horde":
+            ships = min(2, player.ships_in_warp)
+            if ships > 0:
+                player.retrieve_ships_from_warp(ships)
+                player.return_ships_to_colonies(ships, player.home_planets)
+
+        # Clone Super: Play same card again (give +4 bonus as approximation)
+        elif alien_name == "Clone":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 4
+
+        # Loser Super: Automatically lose and win
+        elif alien_name == "Loser":
+            context["loser_flare_super"] = True
+
+        # Pacifist Super: Extra colony on negotiate win
+        elif alien_name == "Pacifist":
+            context["pacifist_extra_colony"] = True
+            if player == self.offense and isinstance(self.offense_card, NegotiateCard):
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 10
+            elif player == self.defense and isinstance(self.defense_card, NegotiateCard):
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 10
+
+        # Assassin Super: Eliminate 3 opponent ships
+        elif alien_name == "Assassin":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                if player == self.offense:
+                    removed = min(3, self.defense_ships.get(opponent.name, 0))
+                    self.defense_ships[opponent.name] = self.defense_ships.get(opponent.name, 0) - removed
+                    opponent.ships_in_warp += removed
+                else:
+                    removed = min(3, self.offense_ships.get(opponent.name, 0))
+                    self.offense_ships[opponent.name] = self.offense_ships.get(opponent.name, 0) - removed
+                    opponent.ships_in_warp += removed
+
+        # Mutant Super: Draw 4 cards, keep 2
+        elif alien_name == "Mutant":
+            cards = [self.cosmic_deck.draw() for _ in range(4)]
+            cards = [c for c in cards if c]
+            if cards:
+                # Sort by value and keep best 2
+                cards.sort(key=lambda c: c.value if hasattr(c, 'value') and c.value else 0, reverse=True)
+                for i, c in enumerate(cards):
+                    if i < 2:
+                        player.add_card(c)
+                    else:
+                        self.cosmic_deck.discard(c)
+
+        # Fodder Super: Sacrifice any ships for +3 each
+        elif alien_name == "Fodder":
+            if player == self.offense:
+                ships_available = self.offense_ships.get(player.name, 0) - 1
+                sacrifice = min(ships_available, 2)  # Sacrifice up to 2
+                if sacrifice > 0:
+                    self.offense_ships[player.name] -= sacrifice
+                    player.ships_in_warp += sacrifice
+                    context["flare_bonus"] = context.get("flare_bonus", 0) + (sacrifice * 3)
+            elif player == self.defense:
+                ships_available = self.defense_ships.get(player.name, 0) - 1
+                sacrifice = min(ships_available, 2)
+                if sacrifice > 0:
+                    self.defense_ships[player.name] -= sacrifice
+                    player.ships_in_warp += sacrifice
+                    context["flare_bonus"] = context.get("flare_bonus", 0) + (sacrifice * 3)
+
+        # Grudge Super: +6 against attacker
+        elif alien_name == "Grudge":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 6
+
+        # Chosen Super: Add top 2 cards of deck to total
+        elif alien_name == "Chosen":
+            total_bonus = 0
+            for _ in range(2):
+                card = self.cosmic_deck.draw()
+                if card and hasattr(card, 'value') and card.value:
+                    total_bonus += card.value
+                if card:
+                    self.cosmic_deck.discard(card)
+            context["flare_bonus"] = context.get("flare_bonus", 0) + total_bonus
+
+        # Tripler Super: Triple attack card value
+        elif alien_name == "Tripler":
+            context["tripler_super"] = True  # Handled in combat resolution
+
+        # Chronos Super: Take two additional turns
+        elif alien_name == "Chronos":
+            context["chronos_extra_turns"] = 2
+
+        # Diplomat Super: Force deal success with 2 colonies
+        elif alien_name == "Diplomat":
+            context["diplomat_force_deal"] = True
+
         # Default: +4 to total (generic Super effect)
         else:
             context["flare_bonus"] = context.get("flare_bonus", 0) + 4
