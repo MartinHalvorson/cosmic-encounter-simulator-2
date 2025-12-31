@@ -16,3 +16,5 @@ from .cosmic_powers import *  # noqa: F401, F403
 from .ultimate_powers import *  # noqa: F401, F403
 from .strategic_powers import *  # noqa: F401, F403
 from .arcane_powers import *  # noqa: F401, F403
+from .dominion_powers import *  # noqa: F401, F403
+from .nature_powers import *  # noqa: F401, F403
