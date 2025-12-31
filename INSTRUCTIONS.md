@@ -300,3 +300,12 @@ From official FFG rules and BoardGameGeek:
 - **259 alien powers now implemented**
 - **5+ million cumulative games simulated**
 - Research sources: [Cosmic Encounter Wiki](https://cosmicencounter.fandom.com), [BoardGameGeek](https://boardgamegeek.com)
+
+### Session 6 Progress (2025-12-30) - Complete Base Game Aliens
+- **Added 3 missing official FFG base game aliens:**
+  - Guerrilla (Power of Attrition): When you lose, opponents lose all but one ship
+  - Mind (Power of Knowledge): Look at opponent's hand before allies invited
+  - Vulch (Power to Salvage): Collect artifact cards discarded by others
+- **262 alien powers now implemented** - Complete FFG base game coverage!
+- **5,011,972+ cumulative games simulated**
+- Simulation speed: ~720 games/second
