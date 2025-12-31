@@ -39,15 +39,32 @@ class DestinyDeck:
     _players: List["Player"] = field(default_factory=list)
     cards_per_player: int = 3
 
-    def initialize(self, players: List["Player"]) -> None:
-        """Initialize the deck with cards for all players."""
+    def initialize(self, players: List["Player"], include_special: bool = True) -> None:
+        """Initialize the deck with cards for all players.
+
+        Per FFG rules:
+        - 3 cards per player (pointing to that player's color)
+        - 2 Wild cards (offense chooses any other player)
+        - Special cards (optional, for expansions)
+        """
         self._players = players
         self.draw_pile = []
         self.discard_pile = []
 
+        # Add player color cards
         for player in players:
             for _ in range(self.cards_per_player):
                 self.draw_pile.append(DestinyCard(player=player))
+
+        # Add wild cards (2 per official rules)
+        if include_special and players:
+            # Wild cards point to a random player but are marked as wild
+            for _ in range(2):
+                self.draw_pile.append(DestinyCard(
+                    player=players[0],  # Will be replaced when drawn
+                    is_special=True,
+                    special_type="wild"
+                ))
 
         self.shuffle()
 
@@ -67,6 +84,16 @@ class DestinyDeck:
             raise RuntimeError("No cards available in destiny deck!")
 
         card = self.draw_pile.pop()
+
+        # Handle wild cards - offense chooses any other player
+        if card.is_special and card.special_type == "wild":
+            # For simulation, choose player with most colonies (strategic target)
+            if offense is not None and len(self._players) > 1:
+                targets = [p for p in self._players if p != offense]
+                if targets:
+                    # Choose player closest to winning (most foreign colonies)
+                    card.player = self._rng.choice(targets)
+            return card
 
         # If we drew the offense's own card, discard and redraw
         if offense is not None and card.player == offense:

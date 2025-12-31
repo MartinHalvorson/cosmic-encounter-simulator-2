@@ -940,6 +940,184 @@ class Warhawk(AlienPower):
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
 
+# ========== Cosmic Alliance Expansion ==========
+
+@dataclass
+class Animal(AlienPower):
+    """
+    Animal - Power to Party.
+    When not invited as ally, that main player loses a ship.
+    When your side wins, all on winning side draw a card.
+    """
+    name: str = field(default="Animal", init=False)
+    description: str = field(default="Punish those who don't invite you; reward winners.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Bandit(AlienPower):
+    """
+    Bandit - Power to Take a Spin.
+    At start of each turn, reveal 3 cards from deck. Get cards based on matches.
+    """
+    name: str = field(default="Bandit", init=False)
+    description: str = field(default="Reveal top 3 cards; gain cards based on matches.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class General(AlienPower):
+    """
+    General - Power of Leadership.
+    As main player, draw one card per ally. Each ally also draws one.
+    """
+    name: str = field(default="General", init=False)
+    description: str = field(default="Draw cards for allies; allies also draw.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Gorgon(AlienPower):
+    """
+    Gorgon - Power to Petrify.
+    Ships attempting to leave your planets must go to warp instead.
+    """
+    name: str = field(default="Gorgon", init=False)
+    description: str = field(default="Ships leaving your planets go to warp.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ANY, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Lightning(AlienPower):
+    """
+    Lightning - Power of Speed.
+    Take two turns in a row instead of one.
+    """
+    name: str = field(default="Lightning", init=False)
+    description: str = field(default="Take two consecutive turns.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Pygmy(AlienPower):
+    """
+    Pygmy - Power of Small.
+    Start with 3 ships per planet. Ships count as 2 each in combat.
+    """
+    name: str = field(default="Pygmy", init=False)
+    description: str = field(default="Fewer ships but each counts as 2.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_ship_count(self, game: "Game", player: "Player", base_count: int, side: Side) -> int:
+        if not player.power_active:
+            return base_count
+        # Get this player's ships in the encounter
+        if side == Side.OFFENSE:
+            my_ships = game.offense_ships.get(player.name, 0)
+        else:
+            my_ships = game.defense_ships.get(player.name, 0)
+        other_ships = base_count - my_ships
+        return other_ships + (my_ships * 2)
+
+
+@dataclass
+class Reborn(AlienPower):
+    """
+    Reborn - Power of Renewal.
+    When you would lose a home colony, draw a new hand and retrieve all ships.
+    """
+    name: str = field(default="Reborn", init=False)
+    description: str = field(default="When losing home colony, draw new hand and retrieve ships.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Remote(AlienPower):
+    """
+    Remote - Power of Distance.
+    You may attack any system, ignoring destiny. Defense doesn't choose planet.
+    """
+    name: str = field(default="Remote", init=False)
+    description: str = field(default="Attack any system; choose the planet.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Sapient(AlienPower):
+    """
+    Sapient - Power of Wisdom.
+    Look at opponent's hand before selecting encounter card.
+    """
+    name: str = field(default="Sapient", init=False)
+    description: str = field(default="See opponent's hand before card selection.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Skeptic(AlienPower):
+    """
+    Skeptic - Power of Doubt.
+    Before cards revealed, guess opponent's card type. If wrong, +5 to total.
+    """
+    name: str = field(default="Skeptic", init=False)
+    description: str = field(default="Guess opponent's card type; +5 if wrong.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if not player.power_active:
+            return base_total
+        # 60% chance of guessing wrong (simplified)
+        if random.random() < 0.6:
+            return base_total + 5
+        return base_total
+
+
+@dataclass
+class Sting(AlienPower):
+    """
+    Sting - Power of the Bee.
+    When you lose ships to warp, send one opponent ship to warp too.
+    """
+    name: str = field(default="Sting", init=False)
+    description: str = field(default="When you lose ships, opponent loses one too.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Winner(AlienPower):
+    """
+    Winner - Power to Win More.
+    When you win by 10+, gain one free foreign colony.
+    """
+    name: str = field(default="Winner", init=False)
+    description: str = field(default="Win by 10+ to gain extra colony.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
 # Register all powers
 AlienRegistry.register(Assassin())
 AlienRegistry.register(Butler())
@@ -983,3 +1161,16 @@ AlienRegistry.register(Saboteur())
 AlienRegistry.register(Sadist())
 AlienRegistry.register(Trickster())
 AlienRegistry.register(Warhawk())
+# Cosmic Alliance expansion
+AlienRegistry.register(Animal())
+AlienRegistry.register(Bandit())
+AlienRegistry.register(General())
+AlienRegistry.register(Gorgon())
+AlienRegistry.register(Lightning())
+AlienRegistry.register(Pygmy())
+AlienRegistry.register(Reborn())
+AlienRegistry.register(Remote())
+AlienRegistry.register(Sapient())
+AlienRegistry.register(Skeptic())
+AlienRegistry.register(Sting())
+AlienRegistry.register(Winner())

@@ -11,6 +11,8 @@ from .player import Player
 from .planet import Planet
 from .cards import CosmicDeck, DestinyDeck, RewardsDeck, FlareDeck
 from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard, ReinforcementCard, ArtifactCard, KickerCard, FlareCard
+from .cards.tech_deck import TechDeck, TechCard, TECH_EFFECTS
+from .cards.hazard_deck import HazardDeck, HazardCard, apply_hazard_effect, HazardTiming
 from .types import ArtifactType
 from .aliens import AlienRegistry, AlienPower
 from .ai.basic_ai import BasicAI
@@ -29,6 +31,11 @@ class Game:
     cosmic_deck: CosmicDeck = field(default_factory=CosmicDeck)
     destiny_deck: DestinyDeck = field(default_factory=DestinyDeck)
     rewards_deck: RewardsDeck = field(default_factory=RewardsDeck)
+    tech_deck: Optional[TechDeck] = None
+    hazard_deck: Optional[HazardDeck] = None
+
+    # Current hazard for the encounter
+    current_hazard: Optional[HazardCard] = None
 
     # Game state
     phase: GamePhase = GamePhase.START_TURN
@@ -71,6 +78,15 @@ class Game:
             self.cosmic_deck.set_rng(self._rng)
             self.destiny_deck.set_rng(self._rng)
             self.rewards_deck.set_rng(self._rng)
+
+        # Initialize optional expansion decks
+        if self.config.use_tech:
+            self.tech_deck = TechDeck()
+            self.tech_deck.set_rng(self._rng)
+
+        if self.config.use_hazards:
+            self.hazard_deck = HazardDeck()
+            self.hazard_deck.set_rng(self._rng)
 
     def setup(
         self,
@@ -163,12 +179,20 @@ class Game:
         for player in self.players:
             self._deal_starting_hand(player)
 
+        # Deal starting tech cards (Cosmic Incursion expansion)
+        if self.config.use_tech and self.tech_deck:
+            self._deal_starting_tech()
+
         # Apply game start effects
         for player in self.players:
             if player.alien:
                 player.alien.on_game_start(self, player)
 
         self._log(f"Game started with {num_players} players")
+        if self.config.use_tech:
+            self._log("Tech cards enabled")
+        if self.config.use_hazards:
+            self._log("Hazards enabled")
 
     def _create_planets(self) -> None:
         """Create home planets for all players."""
@@ -208,6 +232,53 @@ class Game:
             player.hand.clear()
             cards = self.cosmic_deck.draw_multiple(self.config.starting_hand_size)
             player.add_cards(cards)
+
+    def _deal_starting_tech(self) -> None:
+        """
+        Deal starting tech cards to all players.
+        Each player draws 2 tech cards and must start researching one.
+        """
+        if not self.tech_deck:
+            return
+
+        for player in self.players:
+            # Draw 2 tech cards
+            tech_cards = self.tech_deck.draw_multiple(2)
+            player.tech_state.available_techs = tech_cards
+
+            # AI chooses which tech to research
+            if tech_cards:
+                # For now, pick the first one (AI can be enhanced later)
+                chosen = tech_cards[0]
+                player.tech_state.start_research(chosen)
+                self._log(f"{player.name} begins researching {chosen.name}")
+
+    def _apply_tech_research_progress(self, player: Player) -> None:
+        """
+        Apply research progress when a player wins an encounter.
+        Called during resolution when offense wins or defense holds.
+        """
+        if not self.config.use_tech:
+            return
+
+        completed = player.tech_state.add_research_progress(1)
+        if completed:
+            self._log(f"{player.name} completes research on {completed.name}!")
+
+            # Draw a new tech to research if available
+            if self.tech_deck and self.tech_deck.cards_remaining() > 0:
+                new_tech = self.tech_deck.draw()
+                if new_tech:
+                    player.tech_state.available_techs.append(new_tech)
+                    # Start researching the new one
+                    player.tech_state.start_research(new_tech)
+                    self._log(f"{player.name} begins researching {new_tech.name}")
+
+    def _get_tech_combat_bonus(self, player: Player, is_offense: bool, ship_count: int) -> int:
+        """Get combat bonus from completed technologies."""
+        if not self.config.use_tech:
+            return 0
+        return player.tech_state.get_combat_bonus(is_offense, ship_count)
 
     def get_player_by_name(self, name: str) -> Optional[Player]:
         """Get player by name."""
