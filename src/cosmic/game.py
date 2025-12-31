@@ -1332,6 +1332,104 @@ class Game:
                     target.remove_card(stolen)
                     player.add_card(stolen)
 
+        # Shadow Wild: Add 2 ships from colonies
+        elif alien_name == "Shadow":
+            taken = player.get_ships_from_colonies(2, self.planets)
+            if taken > 0:
+                if player == self.offense:
+                    self.offense_ships[player.name] = self.offense_ships.get(player.name, 0) + taken
+                elif player == self.defense:
+                    self.defense_ships[player.name] = self.defense_ships.get(player.name, 0) + taken
+                context["flare_bonus"] = context.get("flare_bonus", 0)  # Ships add naturally
+
+        # Warpish Wild: Send 2 opponent ships to warp
+        elif alien_name == "Warpish":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                ships_to_remove = min(2, sum(self.defense_ships.values()) if player == self.offense else sum(self.offense_ships.values()))
+                if player == self.offense and self.defense:
+                    removed = min(ships_to_remove, self.defense_ships.get(self.defense.name, 0))
+                    self.defense_ships[self.defense.name] = self.defense_ships.get(self.defense.name, 0) - removed
+                    self.defense.ships_in_warp += removed
+                elif self.offense:
+                    removed = min(ships_to_remove, self.offense_ships.get(self.offense.name, 0))
+                    self.offense_ships[self.offense.name] = self.offense_ships.get(self.offense.name, 0) - removed
+                    self.offense.ships_in_warp += removed
+
+        # Spiff Wild: Draw 1 from rewards deck
+        elif alien_name == "Spiff":
+            card = self.rewards_deck.draw()
+            if card:
+                player.add_card(card)
+
+        # Horde Wild: Return 1 ship from warp
+        elif alien_name == "Horde":
+            if player.ships_in_warp >= 1:
+                player.retrieve_ships_from_warp(1)
+                player.return_ships_to_colonies(1, player.home_planets)
+
+        # Clone Wild: Copy card just played (give +2 bonus since we can't actually copy)
+        elif alien_name == "Clone":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 2
+
+        # Loser Wild: Win this encounter if you would lose
+        elif alien_name == "Loser":
+            context["loser_flare_wild"] = True
+
+        # Pacifist Wild: Add +10 if playing negotiate
+        elif alien_name == "Pacifist":
+            if player == self.offense and isinstance(self.offense_card, NegotiateCard):
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 10
+            elif player == self.defense and isinstance(self.defense_card, NegotiateCard):
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 10
+
+        # Assassin Wild: Eliminate 1 opponent ship
+        elif alien_name == "Assassin":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                if player == self.offense:
+                    removed = min(1, self.defense_ships.get(opponent.name, 0))
+                    self.defense_ships[opponent.name] = self.defense_ships.get(opponent.name, 0) - removed
+                    opponent.ships_in_warp += removed
+                else:
+                    removed = min(1, self.offense_ships.get(opponent.name, 0))
+                    self.offense_ships[opponent.name] = self.offense_ships.get(opponent.name, 0) - removed
+                    opponent.ships_in_warp += removed
+
+        # Mutant Wild: Draw 2 cards, keep 1
+        elif alien_name == "Mutant":
+            cards = [self.cosmic_deck.draw() for _ in range(2)]
+            cards = [c for c in cards if c]
+            if cards:
+                # Keep the better card (higher attack or any non-attack)
+                best = max(cards, key=lambda c: c.value if hasattr(c, 'value') and c.value else 0)
+                player.add_card(best)
+                for c in cards:
+                    if c != best:
+                        self.cosmic_deck.discard(c)
+
+        # Fodder Wild: Sacrifice 1 ship for +2
+        elif alien_name == "Fodder":
+            if player == self.offense and self.offense_ships.get(player.name, 0) > 1:
+                self.offense_ships[player.name] -= 1
+                player.ships_in_warp += 1
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 2
+            elif player == self.defense and self.defense_ships.get(player.name, 0) > 1:
+                self.defense_ships[player.name] -= 1
+                player.ships_in_warp += 1
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 2
+
+        # Grudge Wild: +3 against attacker
+        elif alien_name == "Grudge":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 3
+
+        # Chosen Wild: Add top card of deck to total
+        elif alien_name == "Chosen":
+            card = self.cosmic_deck.draw()
+            if card and hasattr(card, 'value') and card.value:
+                context["flare_bonus"] = context.get("flare_bonus", 0) + card.value
+            self.cosmic_deck.discard(card)
+
         # Default: +2 to total (generic Wild effect)
         else:
             context["flare_bonus"] = context.get("flare_bonus", 0) + 2
