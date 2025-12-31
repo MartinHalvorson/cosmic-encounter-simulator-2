@@ -192,3 +192,7 @@ from .biome_powers import *  # noqa: F401, F403
 from .academia_powers import *  # noqa: F401, F403
 from .martial_powers import *  # noqa: F401, F403
 from .beverage_powers import *  # noqa: F401, F403
+from .temperature_powers import *  # noqa: F401, F403
+from .emotion_alt_powers import *  # noqa: F401, F403
+from .texture_alt_powers import *  # noqa: F401, F403
+from .taste_powers import *  # noqa: F401, F403
