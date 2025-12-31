@@ -85,7 +85,5 @@ from .magic_powers import *  # noqa: F401, F403
 from .metal_powers import *  # noqa: F401, F403
 from .gambling_powers import *  # noqa: F401, F403
 from .mythology_powers import *  # noqa: F401, F403
-from .architecture_powers import *  # noqa: F401, F403
-from .philosophy_powers import *  # noqa: F401, F403
-from .medical_powers import *  # noqa: F401, F403
-from .theater_powers import *  # noqa: F401, F403
+from .direction_powers import *  # noqa: F401, F403
+from .shape_powers import *  # noqa: F401, F403
