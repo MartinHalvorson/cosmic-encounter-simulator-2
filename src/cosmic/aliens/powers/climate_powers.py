@@ -7,8 +7,8 @@ Powers based on weather phenomena, climate systems, and atmospheric events.
 from dataclasses import dataclass, field
 from typing import Optional, List, TYPE_CHECKING
 
-from ..base import AlienPower
-from ...types import PowerTiming, PowerType, PowerCategory, PlayerRole
+from ..base import AlienPower, PowerCategory
+from ...types import PowerTiming, PowerType, PlayerRole
 
 if TYPE_CHECKING:
     from ...game import Game
