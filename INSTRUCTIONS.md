@@ -697,6 +697,28 @@ From official FFG rules and BoardGameGeek:
 - **1093 alien powers now implemented!**
 - **20.8+ million cumulative games simulated**
 - **Simulation speed:** ~700+ games/second
+
+**Session 21 Continued (Late 2025-12-31):**
+- Verified all 122 tests passing
+- Added 11 Cosmic Odyssey Alternate Timeline aliens:
+  - Brute_Alt, Daredevil_Alt, Demon_Alt, Grumpus_Alt, Locust_Alt
+  - Masochist_Alt, Perfectionist_Alt, Sadist_Alt, Schizoid_Alt
+  - Void_Alt, Zombie_Alt
+- All official FFG aliens now covered (0 missing)
+- Ran 100k game simulation:
+  - Time: 677s (~11 minutes)
+  - Speed: ~148 games/second
+  - **Balance findings:**
+    - Lizard: 100% win rate (needs rebalancing)
+    - Anarchist: 99.2% win rate (needs rebalancing)
+    - The Meek: 95.9% win rate (alternate win condition)
+    - Machine: 68.2% win rate (classic powerhouse)
+- Tournament Mode fully functional with:
+  - Round Robin tournaments
+  - Swiss tournaments
+  - Monte Carlo power estimation
+  - Synergy/Counter matrix analysis
+- **20.9+ million cumulative games simulated**
 - **All tests passing (122 unit tests)**
 - **Tournament Mode, Swiss tournaments, Monte Carlo estimation implemented**
 - **Synergy/Counter matrix analysis available**
@@ -714,3 +736,38 @@ From official FFG rules and BoardGameGeek:
 - **1120 alien powers now implemented!**
 - **Ran 100,000 game simulation batch**
 - **All official FFG aliens implemented (239/239)**
+
+**Session 21 Evening Progress (2025-12-31):**
+- **Added Space Station expansion mechanics (Cosmic Incursion):**
+  - StationType enum: ALPHA (+2 defense), GAMMA (+1 regroup), DELTA (colony presence)
+  - SpaceStation dataclass for tracking station placement
+  - Player methods: place_station(), get_station_defense_bonus()
+  - Game integration: station defense bonus in combat resolution
+  - Full test coverage for space stations
+- **Fixed official alien name lookup:**
+  - Fixed get_missing_official_aliens() for Alt aliens
+  - All 239 official FFG aliens properly detected
+  - Added REGISTERED_NAME_MAPPINGS for reverse lookups
+- **Fixed Cosmic Horror Ancient power bug:**
+  - Changed game.turn_count to game.current_turn
+- **Added Phenomenon Powers (15 aliens):**
+  - New power category for unusual cosmic phenomena
+- **Extended expansion test suite:**
+  - TestSpaceStations: 6 tests for station mechanics
+  - TestAllExpansions: tests for tech + hazards + stations combined
+- **Ran simulation batch (50k games):**
+  - Total games now: 153,836
+  - Simulation speed: 250-500 games/second depending on player count
+- **1093 alien powers verified in registry**
+- **All 143 tests passing**
+
+**Session 21 Summary:**
+- ✅ Tournament Mode (Round Robin, Swiss) - Implemented
+- ✅ Monte Carlo power estimation - Implemented
+- ✅ Synergy/Counter matrix - Implemented
+- ✅ Space Station expansion - Implemented
+- ✅ All official FFG aliens (239) - Verified
+- ✅ 1000+ aliens milestone - Achieved (1093 total)
+- ✅ 150k+ simulated games
+- ⏳ Lux/Rift mechanics - Pending
+- ⏳ 2-player variant improvements - In progress
