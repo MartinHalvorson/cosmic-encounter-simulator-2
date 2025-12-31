@@ -78,3 +78,9 @@ from .sound_powers import *  # noqa: F401, F403
 from .gravity_powers import *  # noqa: F401, F403
 from .light_powers import *  # noqa: F401, F403
 from .gaming_powers import *  # noqa: F401, F403
+from .memory_powers import *  # noqa: F401, F403
+from .math_powers import *  # noqa: F401, F403
+from .strategy_powers import *  # noqa: F401, F403
+from .magic_powers import *  # noqa: F401, F403
+from .metal_powers import *  # noqa: F401, F403
+from .gambling_powers import *  # noqa: F401, F403
