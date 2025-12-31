@@ -40,6 +40,13 @@ from .replay import (
     record_game,
     analyze_recording,
 )
+from .analysis import (
+    SimulationAnalyzer,
+    PowerBalanceReport,
+    GameLengthReport,
+    EloDistributionReport,
+    analyze_stats_file,
+)
 
 __all__ = [
     "Simulator",
@@ -80,4 +87,10 @@ __all__ = [
     "EventType",
     "record_game",
     "analyze_recording",
+    # Analysis
+    "SimulationAnalyzer",
+    "PowerBalanceReport",
+    "GameLengthReport",
+    "EloDistributionReport",
+    "analyze_stats_file",
 ]

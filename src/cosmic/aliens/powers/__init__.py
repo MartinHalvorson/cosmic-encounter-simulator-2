@@ -156,3 +156,7 @@ from .bonus_extended_powers import *  # noqa: F401, F403
 from .weapon_powers import *  # noqa: F401, F403
 from .royalty_powers import *  # noqa: F401, F403
 from .constellation_powers import *  # noqa: F401, F403
+from .habitat_powers import *  # noqa: F401, F403
+from .rank_powers import *  # noqa: F401, F403
+from .terrain_powers import *  # noqa: F401, F403
+from .transport_powers import *  # noqa: F401, F403
