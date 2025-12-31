@@ -329,6 +329,6 @@ CARD_MANIPULATION_POWERS = [
 # Auto-register all powers
 for power_class in CARD_MANIPULATION_POWERS:
     try:
-        AlienRegistry.register(power_class)
+        AlienRegistry.register(power_class())
     except ValueError:
         pass  # Already registered

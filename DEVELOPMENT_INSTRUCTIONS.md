@@ -183,10 +183,10 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
   - Performance: ~310 games/second
 - Total registered aliens: 1093
 
-### Current Statistics
-- **20.8+ million games simulated**
-- **1093 alien powers** implemented (239 official + 854 custom)
-- **122 unit tests** with pytest framework
+### Current Statistics (Final)
+- **21.1+ million games simulated** (~310 games/second)
+- **1240+ alien powers** implemented (239 official + 1000+ custom)
+- **160 unit tests** with pytest framework
 - **169 flare effects** defined with power rankings
 - **239 official aliens** documented and implemented by expansion
 - Full encounter cycle (8 phases)
@@ -195,6 +195,8 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
 - 2-player variant with dual powers
 - Deal negotiation with multiple deal types
 - Flare power tier system (S/A/B/C/D/E)
+- ELO rating system with persistent statistics
+- Duplicate alien name prevention
 
 ### Remaining Gaps
 1. **Game.py Refactoring** - Could split into phase modules

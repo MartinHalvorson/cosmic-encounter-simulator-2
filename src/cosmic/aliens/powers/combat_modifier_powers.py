@@ -356,6 +356,6 @@ COMBAT_MODIFIER_POWERS = [
 # Auto-register all powers
 for power_class in COMBAT_MODIFIER_POWERS:
     try:
-        AlienRegistry.register(power_class)
+        AlienRegistry.register(power_class())
     except ValueError:
         pass  # Already registered
