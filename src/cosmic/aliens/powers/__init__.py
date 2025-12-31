@@ -40,3 +40,7 @@ from .destruction_powers import *  # noqa: F401, F403
 from .defense_powers import *  # noqa: F401, F403
 from .speed_powers import *  # noqa: F401, F403
 from .luck_powers import *  # noqa: F401, F403
+from .transformation_powers import *  # noqa: F401, F403
+from .communication_powers import *  # noqa: F401, F403
+from .deception_powers import *  # noqa: F401, F403
+from .alliance_powers import *  # noqa: F401, F403

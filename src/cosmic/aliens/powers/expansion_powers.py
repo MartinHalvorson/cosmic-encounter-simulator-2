@@ -2078,3 +2078,50 @@ AlienRegistry.register(Tourist())
 AlienRegistry.register(Voyager())
 AlienRegistry.register(Whirligig())
 AlienRegistry.register(YinYang())
+
+
+# =============================================================================
+# COSMIC ODYSSEY EXPANSION (42 aliens - adding documented ones)
+# =============================================================================
+
+@dataclass
+class Magnet(AlienPower):
+    """
+    Magnet - Power to Attract or Repel.
+    Official FFG rules: After alliances formed, force one non-main player
+    to join specified side or prevent them from allying.
+    """
+    name: str = field(default="Magnet", init=False)
+    description: str = field(default="Force or prevent player alliances.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Zilch(AlienPower):
+    """
+    Zilch - Power to Kibitz.
+    Official FFG rules: No game components. Predict winner at start.
+    If predicted player wins, Zilch wins instead. Can examine anything.
+    """
+    name: str = field(default="Zilch", init=False)
+    description: str = field(default="Predict winner; view everything; win if right.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+    has_alternate_win: bool = field(default=True, init=False)
+    predicted_winner: Optional[str] = field(default=None, init=False)
+
+    def check_alternate_win(self, game: "Game", player: "Player") -> bool:
+        # Zilch wins if their predicted player won
+        if self.predicted_winner and game.winners:
+            for winner in game.winners:
+                if winner.name == self.predicted_winner:
+                    return True
+        return False
+
+
+# Register Cosmic Odyssey aliens
+AlienRegistry.register(Magnet())
+AlienRegistry.register(Zilch())
