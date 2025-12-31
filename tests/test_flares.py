@@ -166,5 +166,97 @@ class TestFlareEffects:
         assert context["flare_bonus"] == 10  # +2 per ship
 
 
+class TestFlareRankings:
+    """Tests for flare power ranking system."""
+
+    def test_get_flare_power_rating(self):
+        """Should return correct power ratings for flares."""
+        from cosmic.cards.flare_deck import get_flare_power_rating
+
+        # S tier flares should be 5.0
+        assert get_flare_power_rating("Machine") == 5.0
+        assert get_flare_power_rating("Virus") == 5.0
+        assert get_flare_power_rating("Anarchist") == 5.0
+
+        # A tier flares should be 4.5
+        assert get_flare_power_rating("Zombie") == 4.5
+        assert get_flare_power_rating("Oracle") == 4.5
+
+        # Unknown flares should return default 3.0
+        assert get_flare_power_rating("UnknownAlien") == 3.0
+
+    def test_get_top_flares(self):
+        """Should return top N flares by power rating."""
+        from cosmic.cards.flare_deck import get_top_flares
+
+        top_10 = get_top_flares(10)
+        assert len(top_10) == 10
+
+        # All top 10 should have rating >= 4.5
+        for name, rating in top_10:
+            assert rating >= 4.5
+
+        # First ones should be S tier (5.0)
+        assert top_10[0][1] == 5.0
+
+    def test_get_flares_by_tier(self):
+        """Should organize flares by tier correctly."""
+        from cosmic.cards.flare_deck import get_flares_by_tier
+
+        tiers = get_flares_by_tier()
+
+        # Check tier keys exist
+        assert "S (5.0)" in tiers
+        assert "A (4.5)" in tiers
+        assert "B (4.0)" in tiers
+        assert "C (3.5)" in tiers
+        assert "D (3.0)" in tiers
+        assert "E (2.5)" in tiers
+
+        # S tier should have expected flares
+        assert "Machine" in tiers["S (5.0)"]
+        assert "Virus" in tiers["S (5.0)"]
+
+        # Each tier should have flares
+        for tier, flares in tiers.items():
+            assert len(flares) > 0
+
+    def test_flare_effects_count(self):
+        """Should have substantial number of flare effects defined."""
+        assert len(FLARE_EFFECTS) >= 100  # We should have many flare effects
+
+    def test_all_expansions_have_flares(self):
+        """Key aliens from all expansions should have flare effects."""
+        # Base game aliens
+        base_aliens = ["Machine", "Virus", "Zombie", "Oracle", "Loser", "Human"]
+        for alien in base_aliens:
+            assert alien in FLARE_EFFECTS, f"Base game alien {alien} missing flare"
+
+        # Cosmic Incursion aliens
+        incursion_aliens = ["Cavalry", "Saboteur", "Sniveler", "Spiff"]
+        for alien in incursion_aliens:
+            assert alien in FLARE_EFFECTS, f"Incursion alien {alien} missing flare"
+
+        # Cosmic Conflict aliens
+        conflict_aliens = ["Amoeba", "Changeling", "Kamikaze", "Reincarnator"]
+        for alien in conflict_aliens:
+            assert alien in FLARE_EFFECTS, f"Conflict alien {alien} missing flare"
+
+        # Cosmic Alliance aliens
+        alliance_aliens = ["Admiral", "Bully", "Crystal", "Empath"]
+        for alien in alliance_aliens:
+            assert alien in FLARE_EFFECTS, f"Alliance alien {alien} missing flare"
+
+        # Cosmic Storm aliens
+        storm_aliens = ["Arcade", "Berserker", "Booster", "Deuce"]
+        for alien in storm_aliens:
+            assert alien in FLARE_EFFECTS, f"Storm alien {alien} missing flare"
+
+        # Cosmic Dominion aliens
+        dominion_aliens = ["Anarchist", "Colonist", "Guerrilla", "Tyrant"]
+        for alien in dominion_aliens:
+            assert alien in FLARE_EFFECTS, f"Dominion alien {alien} missing flare"
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
