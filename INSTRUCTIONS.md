@@ -411,3 +411,28 @@ From official FFG rules and BoardGameGeek:
 - **405 alien powers now implemented!**
 - **7,390,000+ cumulative games simulated**
 - Simulation speed: ~450 games/second
+
+### Session 12 Progress (2025-12-30) - 450+ Aliens Milestone
+- **Added Psychic Powers (18 new aliens):**
+  - Clairvoyant, Dominator, Dreamer, Hypnotist, Illusory_Alt
+  - Mentalist, Perceiver, Projector, Psychic, Reader
+  - Seer, Sender, Telepath, Telekinetic, Thoughter
+  - Visionary_Alt, Warper, Whisperer
+- **Added Elemental Powers (21 new aliens):**
+  - Blaze, Breeze, Cinder, Current, Dust, Ember, Frost
+  - Gale, Glacier, Inferno, Magma, Mist, Quartz
+  - Ripple, Smoke, Spark, Steam, Stone, Thunder, Wave, Whirlwind
+- **Added Bonus Powers (8 new aliens):**
+  - Amplifier, Blocker, Climber, Equalizer, Finale
+  - Gatherer, Igniter, Jumper
+- **452 alien powers now implemented!**
+- **7,490,000+ cumulative games simulated**
+- Simulation speed: ~459 games/second
+- All 100k test games completed with zero errors
+
+### Top Aliens by Win Rate (452 aliens, 100k games):
+1. Machine (66.5%) - Extra encounters dominate
+2. Industrialist (52.4%) - Stacking attack bonuses
+3. Parasite (50.1%) - Uninvited alliance joining
+4. Alchemist (38.9%) - Card manipulation
+5. Pacifist (37.5%) - Force negotiation
