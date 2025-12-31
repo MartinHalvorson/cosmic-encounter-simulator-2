@@ -1089,4 +1089,44 @@ From official FFG rules and BoardGameGeek:
 - **Current alien count: 1872**
 - **All 160 tests passing**
 
+## Autonomous Development Session 27 (2025-12-31 Continued)
+
+### Session 27 Progress
+
+**Session Start:**
+- Starting with 1872+ alien powers
+- All tests passing
+- 21.3M+ games simulated total
+
+**Goals:**
+1. Improve AI decision-making with TacticalAI
+2. Add more themed alien powers (warfare, economy, personality)
+3. Run large simulation batches
+4. Fix bugs in alien powers
+
+**Accomplishments:**
+- **Created TacticalAI strategy:**
+  - Win probability calculations using sigmoid functions
+  - Threat assessment for opponents
+  - Expected value optimization for card selection
+  - Risk tolerance configuration
+  - Conservation value for high cards
+- **Added new alien power categories:**
+  - warfare_powers.py (22 aliens: Besieger, Flanker, Ambusher, Cavalry, Infantry, etc.)
+  - economy_powers.py (20 aliens: Miser, Tycoon, Merchant, Banker, etc.)
+  - personality_powers.py (20 aliens: Optimist, Hothead, Pacifist, etc.)
+- **Fixed bugs:**
+  - encounter_count attribute error in Marathon and Excitement powers
+  - planet.ship_counts -> planet.get_ships() in TacticalAI
+  - Edge case for non-standard cards (morphs) in TacticalAI
+- **Ran 100k simulation batch:**
+  - 99,999 games completed successfully
+  - Speed: ~280 games/second
+  - Top performers: Machine (59.2%), Parasite (51.0%), Mycelia (45.6%)
+- **Updated cumulative stats:**
+  - Total games: 21.4M+
+  - Simulation runs: 36
+- **Current alien count: 2133**
+- **All 189 tests passing**
+
 **Previous Session Accomplishments:**

@@ -162,3 +162,14 @@ from .terrain_powers import *  # noqa: F401, F403
 from .transport_powers import *  # noqa: F401, F403
 from .mythology_gods_powers import *  # noqa: F401, F403
 from .zodiac_powers import *  # noqa: F401, F403
+from .reptile_powers import *  # noqa: F401, F403
+from .bird_powers import *  # noqa: F401, F403
+from .dinosaur_powers import *  # noqa: F401, F403
+from .superhero_powers import *  # noqa: F401, F403
+from .martial_arts_powers import *  # noqa: F401, F403
+from .invention_powers import *  # noqa: F401, F403
+from .construction_powers import *  # noqa: F401, F403
+from .puzzle_powers import *  # noqa: F401, F403
+from .mythical_creature_powers import *  # noqa: F401, F403
+from .size_powers import *  # noqa: F401, F403
+from .temperament_powers import *  # noqa: F401, F403

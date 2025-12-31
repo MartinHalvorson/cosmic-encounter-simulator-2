@@ -1,5 +1,5 @@
 {
-  "total_games": 21347359,
+  "total_games": 21447359,
   "solo_victories": 20987352,
   "shared_victories": 356797,
   "timeouts": 3210,
@@ -10,12 +10,12 @@
   "games_by_player_count": {
     "3": 4548153,
     "4": 4596981,
-    "5": 4543251,
+    "5": 4643251,
     "6": 4542122,
     "2": 3116852
   },
-  "last_updated": "2025-12-31T11:29:24.802763",
-  "simulation_runs": 35,
+  "last_updated": "2025-12-31T11:30:36.780487",
+  "simulation_runs": 36,
   "alien_stats": {
     "Knight": {
       "name": "Knight",

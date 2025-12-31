@@ -2,11 +2,11 @@
 
 <!-- NOTE: Only update the stats table below or feature implementation status. Do not modify other sections unless specifically requested. -->
 
-A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **2133+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
+A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **2152+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
 
 ## Alien Power Rankings
 
-> **21,142,360+** games simulated | Last updated: 2025-12-31
+> **21,242,360+** games simulated | Last updated: 2025-12-31
 >
 > **Tier Guide:** 🟣 S (1600+) | 🔵 A (1550+) | 🟢 B (1500+) | 🟡 C (1450+) | 🔴 D (<1450)
 
