@@ -443,6 +443,81 @@ class AIStrategy(ABC):
 
         return None
 
+    # ========== Flare Usage ==========
+
+    def select_flare_to_play(
+        self,
+        game: "Game",
+        player: "Player",
+        phase: str,
+        context: Dict[str, Any]
+    ) -> Optional["Card"]:
+        """
+        Select a flare card to play (if any) during the current phase.
+
+        Flares have Wild effects (usable by anyone) and Super effects
+        (only usable by the matching alien).
+
+        Args:
+            game: Current game state
+            player: Player with flare cards
+            phase: Current phase name
+            context: Context for flare decision
+
+        Returns:
+            The flare card to play, or None
+        """
+        from ..cards.base import FlareCard
+
+        # Get flare cards in hand
+        flares = [c for c in player.hand if isinstance(c, FlareCard)]
+        if not flares:
+            return None
+
+        my_colonies = player.count_foreign_colonies(game.planets)
+        is_main_player = player in (game.offense, game.defense)
+
+        for flare in flares:
+            # Check if we can use Super (matching alien)
+            can_use_super = (
+                player.alien and
+                player.alien.name == flare.alien_name and
+                player.power_active
+            )
+
+            # Combat-boosting flares during reveal
+            if phase == "reveal" and is_main_player:
+                combat_flares = {"Human", "Warrior", "Macron", "Virus", "Tripler"}
+                if flare.alien_name in combat_flares:
+                    # Use if we need the boost or are close to winning
+                    if my_colonies >= 3 or context.get("need_boost", False):
+                        return flare
+
+            # Ship recovery flares during regroup
+            if phase == "regroup":
+                recovery_flares = {"Zombie", "Healer", "Phantom", "Horde"}
+                if flare.alien_name in recovery_flares:
+                    if player.ships_in_warp >= 4:
+                        return flare
+
+            # Offensive flares at start of encounter
+            if phase == "destiny":
+                extra_encounter_flares = {"Machine", "Chronos"}
+                if flare.alien_name in extra_encounter_flares:
+                    if can_use_super and my_colonies >= 3:
+                        return flare
+
+            # Super flares are worth using more aggressively
+            if can_use_super:
+                # Use Super if close to winning
+                if my_colonies >= 4:
+                    return flare
+                # Or if in trouble
+                if player.ships_in_warp >= 6:
+                    return flare
+
+        return None
+
     # ========== Utility Methods ==========
 
     def get_hand_strength(self, player: "Player") -> float:

@@ -10,7 +10,7 @@ from .types import GamePhase, GameConfig, Side, PlayerRole, Color, ShipCount
 from .player import Player
 from .planet import Planet
 from .cards import CosmicDeck, DestinyDeck, RewardsDeck, FlareDeck
-from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard, ReinforcementCard, ArtifactCard, KickerCard
+from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard, ReinforcementCard, ArtifactCard, KickerCard, FlareCard
 from .types import ArtifactType
 from .aliens import AlienRegistry, AlienPower
 from .ai.basic_ai import BasicAI
@@ -476,6 +476,10 @@ class Game:
             if player.alien and self.is_power_active(player):
                 player.alien.on_reveal(self, player, role)
 
+        # Check for flare card plays during reveal
+        self._flare_context = {"phase": "reveal", "flare_bonus": 0, "flare_ship_multiplier": 1}
+        self._check_flare_opportunity("reveal", self._flare_context)
+
     def _resolution_phase(self) -> None:
         """Handle the resolution phase."""
         self.phase = GamePhase.RESOLUTION
@@ -604,6 +608,14 @@ class Game:
             for card in def_reinforcements:
                 self._log(f"Defense plays {card}")
                 self.cosmic_deck.discard(card)
+
+        # Apply flare bonuses if any were played
+        flare_bonus = getattr(self, '_flare_context', {}).get('flare_bonus', 0)
+        if flare_bonus > 0:
+            # Apply flare bonus to main player who played the flare
+            # For simplicity, apply to offense (could be tracked more precisely)
+            off_total += flare_bonus
+            self._log(f"Flare bonus: +{flare_bonus}")
 
         self._log(f"Offense total: {off_total} ({off_value} + {sum(self.offense_ships.values())} ships{f' + {off_reinforce_bonus} reinforcement' if off_reinforce_bonus else ''})")
         self._log(f"Defense total: {def_total} ({def_value} + {sum(self.defense_ships.values())} ships{f' + {def_reinforce_bonus} reinforcement' if def_reinforce_bonus else ''})")
@@ -1074,6 +1086,195 @@ class Game:
         """Cancel a flare or artifact being played."""
         # Similar to cosmic zap but for cards
         self._log("Quash cancels the effect!")
+
+    # ========== Flare Card Methods ==========
+
+    def _check_flare_opportunity(self, phase: str, context: Dict[str, Any]) -> Optional[FlareCard]:
+        """
+        Check if any player wants to play a flare in the current context.
+
+        Args:
+            phase: Current phase name
+            context: Context information for flare decision
+
+        Returns:
+            The flare played, or None
+        """
+        # Check each player in turn order
+        check_order = [self.offense, self.defense] + [
+            p for p in self.players if p != self.offense and p != self.defense
+        ]
+
+        for player in check_order:
+            if player is None:
+                continue
+
+            ai = player.ai_strategy or BasicAI()
+            flare = ai.select_flare_to_play(self, player, phase, context)
+
+            if flare and flare in player.hand:
+                return self._play_flare(player, flare, context)
+
+        return None
+
+    def _play_flare(self, player: Player, flare: FlareCard, context: Dict[str, Any]) -> FlareCard:
+        """
+        Play a flare card and apply its effect.
+
+        Args:
+            player: Player playing the flare
+            flare: The flare card to play
+            context: Context for the effect
+
+        Returns:
+            The flare that was played
+        """
+        player.remove_card(flare)
+
+        # Check if player can use Super (matching alien)
+        can_use_super = (
+            player.alien and
+            player.alien.name == flare.alien_name and
+            player.power_active and
+            player not in self.zapped_powers
+        )
+
+        if can_use_super:
+            self._log(f"{player.name} plays {flare} (Super effect)!")
+            self._apply_flare_super(player, flare, context)
+        else:
+            self._log(f"{player.name} plays {flare} (Wild effect)!")
+            self._apply_flare_wild(player, flare, context)
+
+        self.cosmic_deck.discard(flare)
+        return flare
+
+    def _apply_flare_wild(self, player: Player, flare: FlareCard, context: Dict[str, Any]) -> None:
+        """Apply a flare's Wild effect (usable by anyone)."""
+        alien_name = flare.alien_name
+
+        # Machine Wild: Take one extra encounter
+        if alien_name == "Machine":
+            self._flare_extra_encounter = True
+
+        # Zombie Wild: Return 2 ships from warp
+        elif alien_name == "Zombie":
+            ships = min(2, player.ships_in_warp)
+            if ships > 0:
+                player.retrieve_ships_from_warp(ships)
+                player.return_ships_to_colonies(ships, player.home_planets)
+
+        # Human Wild: Add +3 to total
+        elif alien_name == "Human":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 3
+
+        # Warrior Wild: +1 per ship in warp
+        elif alien_name == "Warrior":
+            bonus = player.ships_in_warp
+            context["flare_bonus"] = context.get("flare_bonus", 0) + bonus
+
+        # Macron Wild: Ships count as 2 each
+        elif alien_name == "Macron":
+            context["flare_ship_multiplier"] = 2
+
+        # Healer Wild: Return 3 ships from any warp
+        elif alien_name == "Healer":
+            if player.ships_in_warp >= 3:
+                player.retrieve_ships_from_warp(3)
+                player.return_ships_to_colonies(3, player.home_planets)
+
+        # Trader Wild: Draw 2 cards
+        elif alien_name == "Trader":
+            for _ in range(2):
+                card = self.cosmic_deck.draw()
+                player.add_card(card)
+
+        # Filch Wild: Steal a random card
+        elif alien_name == "Filch":
+            opponents = [p for p in self.players if p != player and p.hand]
+            if opponents:
+                target = self._rng.choice(opponents)
+                if target.hand:
+                    stolen = self._rng.choice(target.hand)
+                    target.remove_card(stolen)
+                    player.add_card(stolen)
+
+        # Default: +2 to total (generic Wild effect)
+        else:
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 2
+
+    def _apply_flare_super(self, player: Player, flare: FlareCard, context: Dict[str, Any]) -> None:
+        """Apply a flare's Super effect (only for matching alien)."""
+        alien_name = flare.alien_name
+
+        # Machine Super: Take two extra encounters
+        if alien_name == "Machine":
+            self._flare_extra_encounter = True
+            self._flare_extra_encounter_count = 2
+
+        # Zombie Super: Return all ships from warp
+        elif alien_name == "Zombie":
+            ships = player.ships_in_warp
+            if ships > 0:
+                player.retrieve_ships_from_warp(ships)
+                player.return_ships_to_colonies(ships, player.home_planets)
+
+        # Human Super: Add +6 to total
+        elif alien_name == "Human":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 6
+
+        # Warrior Super: +2 per ship in warp
+        elif alien_name == "Warrior":
+            bonus = player.ships_in_warp * 2
+            context["flare_bonus"] = context.get("flare_bonus", 0) + bonus
+
+        # Macron Super: Ships count as 5 each
+        elif alien_name == "Macron":
+            context["flare_ship_multiplier"] = 5
+
+        # Healer Super: Return all ships from warp to colonies
+        elif alien_name == "Healer":
+            for p in self.players:
+                ships = p.ships_in_warp
+                if ships > 0:
+                    p.retrieve_ships_from_warp(ships)
+                    p.return_ships_to_colonies(ships, p.home_planets)
+
+        # Trader Super: Trade hands with any player
+        elif alien_name == "Trader":
+            opponents = [p for p in self.players if p != player]
+            if opponents:
+                # Trade with player who has most cards
+                target = max(opponents, key=lambda p: len(p.hand))
+                player.hand, target.hand = target.hand, player.hand
+
+        # Filch Super: Steal 2 cards
+        elif alien_name == "Filch":
+            opponents = [p for p in self.players if p != player and p.hand]
+            if opponents:
+                target = self._rng.choice(opponents)
+                for _ in range(min(2, len(target.hand))):
+                    if target.hand:
+                        stolen = self._rng.choice(target.hand)
+                        target.remove_card(stolen)
+                        player.add_card(stolen)
+
+        # Virus Super: Triple ship count when adding
+        elif alien_name == "Virus":
+            context["flare_ship_multiplier"] = 3
+
+        # Oracle Super: Look at and force different card
+        elif alien_name == "Oracle":
+            # Effect handled specially during planning
+            context["oracle_super"] = True
+
+        # Parasite Super: Join both sides
+        elif alien_name == "Parasite":
+            context["parasite_both_sides"] = True
+
+        # Default: +4 to total (generic Super effect)
+        else:
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 4
 
     def _resolve_force_field(self) -> None:
         """Handle resolution when Force Field was played - encounter ends with no winner."""

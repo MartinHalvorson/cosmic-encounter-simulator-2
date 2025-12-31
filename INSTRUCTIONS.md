@@ -309,3 +309,44 @@ From official FFG rules and BoardGameGeek:
 - **262 alien powers now implemented** - Complete FFG base game coverage!
 - **5,011,972+ cumulative games simulated**
 - Simulation speed: ~720 games/second
+
+### Session 7 Progress (2025-12-30) - AI Personalities & Matchups
+- **Added 51 new alien powers (now 259 verified):**
+  - strategic_powers.py: 26 strategic aliens (Analyst, Broker, Conductor, etc.)
+  - arcane_powers.py: 25 mystical aliens (Alchemist, Wizard, Sorcerer, etc.)
+- **Implemented Kicker Card Mechanics:**
+  - Added kicker card selection to AI base strategy
+  - Kickers multiply attack card values (x2, x3, x4)
+  - Integrated into combat resolution
+- **Created Head-to-Head Matchup Analysis:**
+  - MatchupAnalyzer class for comparing specific aliens
+  - Run targeted simulations between two aliens
+  - Find counters and favorable matchups
+  - Example: Loser counters Machine with 50% advantage
+- **Added 5 New AI Personality Profiles:**
+  - AggressiveAI: Maximum ships, highest cards, rarely negotiates
+  - CautiousAI: Conserves resources, negotiates more
+  - OpportunisticAI: Targets weak players, joins winning side
+  - SocialAI: Focuses on alliances and deals
+  - AdaptiveAI: Changes strategy based on game position
+- **5,101,972+ cumulative games simulated**
+- Simulation speed: ~380 games/second
+
+### Session 8 Progress (2025-12-30) - Flare Card Mechanics
+- **Implemented Complete Flare Card System:**
+  - Flares shuffled into cosmic deck at game start (one per alien in game)
+  - Wild effects usable by anyone (weaker effect)
+  - Super effects only for matching alien (stronger effect)
+  - AI decision-making for when to play flares
+- **Added flare effects for 42 aliens** including:
+  - Machine Wild/Super: Extra encounter(s)
+  - Zombie Wild: Return 2 ships / Super: Return all ships
+  - Human Wild: +3 / Super: +6 to total
+  - Trader Wild: Draw 2 / Super: Trade hands
+  - Healer Wild: Return 3 ships / Super: Return all from all players
+- **Flare integration:**
+  - Base AI `select_flare_to_play()` method for strategic decisions
+  - Game hooks in reveal phase for combat flares
+  - Flare bonus applied to combat totals
+- **5,111,972+ cumulative games simulated**
+- Simulation speed: ~600 games/second
