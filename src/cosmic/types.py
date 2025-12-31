@@ -89,6 +89,10 @@ class PowerTiming(Enum):
     GAIN_CARDS = auto()
     # Constant/passive effect
     CONSTANT = auto()
+    # Start of an encounter
+    START_ENCOUNTER = auto()
+    # End of an encounter
+    END_ENCOUNTER = auto()
 
 
 class PowerType(Enum):
@@ -187,6 +191,37 @@ class ShipCount:
         return self.get(player_name)
 
 
+class StationType(Enum):
+    """Types of space stations (Cosmic Incursion expansion)."""
+    STATION_ALPHA = "alpha"      # +2 to defensive total
+    STATION_BETA = "beta"        # Draw 1 extra card when using colonies to win
+    STATION_GAMMA = "gamma"      # Return 1 extra ship from warp during regroup
+    STATION_DELTA = "delta"      # Counts as having a colony for alliance purposes
+    STATION_OMEGA = "omega"      # May use planet for launch even without ships
+
+
+@dataclass
+class SpaceStation:
+    """
+    A space station placed on a planet (Cosmic Incursion expansion).
+    Stations provide benefits even without ships present.
+    """
+    owner: str  # Player name
+    station_type: StationType
+    planet_id: int  # Which planet it's on
+    active: bool = True  # Can be disabled by certain effects
+
+    def get_defense_bonus(self) -> int:
+        """Get defensive combat bonus from this station."""
+        if self.active and self.station_type == StationType.STATION_ALPHA:
+            return 2
+        return 0
+
+    def provides_colony_presence(self) -> bool:
+        """Whether this station counts as a colony presence."""
+        return self.active and self.station_type == StationType.STATION_DELTA
+
+
 @dataclass
 class GameConfig:
     """Configuration options for a game."""
@@ -200,6 +235,7 @@ class GameConfig:
     use_flares: bool = False
     use_tech: bool = False
     use_hazards: bool = False
+    use_space_stations: bool = False  # Cosmic Incursion expansion
     max_turns: int = 200  # Prevent infinite games
     seed: Optional[int] = None  # For reproducibility
     required_aliens: Optional[List[str]] = None  # Aliens that must be in the game

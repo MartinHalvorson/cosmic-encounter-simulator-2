@@ -6,7 +6,7 @@ import random
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any, Tuple
 
-from .types import GamePhase, GameConfig, Side, PlayerRole, Color, ShipCount, DealType
+from .types import GamePhase, GameConfig, Side, PlayerRole, Color, ShipCount, DealType, StationType
 from .player import Player
 from .planet import Planet
 from .cards import CosmicDeck, DestinyDeck, RewardsDeck, FlareDeck
@@ -207,6 +207,10 @@ class Game:
         if self.config.use_tech and self.tech_deck:
             self._deal_starting_tech()
 
+        # Initialize space stations (Cosmic Incursion expansion)
+        if self.config.use_space_stations:
+            self._initialize_space_stations()
+
         # Apply game start effects
         for player in self.players:
             if player.alien:
@@ -224,6 +228,8 @@ class Game:
             self._log("Tech cards enabled")
         if self.config.use_hazards:
             self._log("Hazards enabled")
+        if self.config.use_space_stations:
+            self._log("Space stations enabled")
 
     def _create_planets(self) -> None:
         """Create home planets for all players."""
@@ -310,6 +316,52 @@ class Game:
         if not self.config.use_tech:
             return 0
         return player.tech_state.get_combat_bonus(is_offense, ship_count)
+
+    def _initialize_space_stations(self) -> None:
+        """
+        Initialize space stations for all players (Cosmic Incursion expansion).
+        Each player gets 3 stations they can place during the game.
+        """
+        station_types = [
+            StationType.STATION_ALPHA,  # +2 defense
+            StationType.STATION_GAMMA,  # +1 regroup ship
+            StationType.STATION_DELTA,  # Colony presence
+        ]
+
+        for player in self.players:
+            player.available_stations = list(station_types)
+            player.space_stations = []
+            self._log(f"{player.name} receives 3 space station markers")
+
+    def _offer_station_placement(self, player: Player, planet: Planet) -> None:
+        """
+        Offer the winner a chance to place a station on the won planet.
+        Called when offense wins or makes a deal.
+        """
+        if not self.config.use_space_stations:
+            return
+
+        if not player.available_stations:
+            return  # No stations left
+
+        # AI decides whether to place a station
+        # Simple heuristic: place on foreign colonies (not home planets)
+        if planet.owner != player:
+            # Prefer Alpha (defense) on foreign planets
+            if StationType.STATION_ALPHA in player.available_stations:
+                station = player.place_station(StationType.STATION_ALPHA, planet.planet_id)
+                if station:
+                    self._log(f"{player.name} places Alpha Station on planet {planet.planet_id}")
+            elif StationType.STATION_DELTA in player.available_stations:
+                station = player.place_station(StationType.STATION_DELTA, planet.planet_id)
+                if station:
+                    self._log(f"{player.name} places Delta Station on planet {planet.planet_id}")
+
+    def _get_station_defense_bonus(self, player: Player, planet_id: int) -> int:
+        """Get defense bonus from space stations."""
+        if not self.config.use_space_stations:
+            return 0
+        return player.get_station_defense_bonus(planet_id)
 
     def get_player_by_name(self, name: str) -> Optional[Player]:
         """Get player by name."""

@@ -58,3 +58,11 @@ from .beast_powers import *  # noqa: F401, F403
 from .spirit_powers import *  # noqa: F401, F403
 from .royal_powers import *  # noqa: F401, F403
 from .odyssey_alt_powers import *  # noqa: F401, F403
+from .milestone_powers import *  # noqa: F401, F403
+from .ocean_powers import *  # noqa: F401, F403
+from .sky_powers import *  # noqa: F401, F403
+from .gem_powers import *  # noqa: F401, F403
+from .music_powers import *  # noqa: F401, F403
+from .profession_powers import *  # noqa: F401, F403
+from .emotion_powers import *  # noqa: F401, F403
+from .phenomenon_powers import *  # noqa: F401, F403

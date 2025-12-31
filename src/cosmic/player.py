@@ -5,7 +5,7 @@ Player representation for Cosmic Encounter.
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any, TYPE_CHECKING
 
-from .types import Color, PlayerRole
+from .types import Color, PlayerRole, SpaceStation, StationType
 from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard
 from .cards.tech_deck import PlayerTechState
 
@@ -42,6 +42,10 @@ class Player:
 
     # Technology research state (Cosmic Incursion expansion)
     tech_state: PlayerTechState = field(default_factory=PlayerTechState)
+
+    # Space stations (Cosmic Incursion expansion)
+    space_stations: List[SpaceStation] = field(default_factory=list)
+    available_stations: List[StationType] = field(default_factory=list)  # Unplaced stations
 
     # Reference to home planets (set by Game)
     _home_planets: List["Planet"] = field(default_factory=list)
@@ -255,6 +259,66 @@ class Player:
         Returns True if power is active and can be used.
         """
         return self.power_active and self.alien is not None
+
+    # ========== Space Station Management ==========
+
+    def place_station(
+        self,
+        station_type: StationType,
+        planet_id: int
+    ) -> Optional[SpaceStation]:
+        """
+        Place a space station on a planet.
+        Returns the station if successful, None otherwise.
+        """
+        # Check if we have this station type available
+        if station_type not in self.available_stations:
+            return None
+
+        # Check if we already have a station on this planet
+        for s in self.space_stations:
+            if s.planet_id == planet_id:
+                return None
+
+        # Create and place the station
+        station = SpaceStation(
+            owner=self.name,
+            station_type=station_type,
+            planet_id=planet_id
+        )
+        self.available_stations.remove(station_type)
+        self.space_stations.append(station)
+        return station
+
+    def get_station_on_planet(self, planet_id: int) -> Optional[SpaceStation]:
+        """Get the station on a specific planet, if any."""
+        for station in self.space_stations:
+            if station.planet_id == planet_id and station.active:
+                return station
+        return None
+
+    def has_station_on_planet(self, planet_id: int) -> bool:
+        """Check if player has an active station on a planet."""
+        return self.get_station_on_planet(planet_id) is not None
+
+    def get_station_defense_bonus(self, planet_id: int) -> int:
+        """Get defense bonus from station on a planet."""
+        station = self.get_station_on_planet(planet_id)
+        if station:
+            return station.get_defense_bonus()
+        return 0
+
+    def station_provides_colony(self, planet_id: int) -> bool:
+        """Check if station on planet counts as a colony."""
+        station = self.get_station_on_planet(planet_id)
+        return station.provides_colony_presence() if station else False
+
+    def get_regroup_bonus_from_stations(self) -> int:
+        """Get extra ships to retrieve during regroup from Gamma stations."""
+        return sum(
+            1 for s in self.space_stations
+            if s.active and s.station_type == StationType.STATION_GAMMA
+        )
 
     # ========== Comparison & Display ==========
 

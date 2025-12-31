@@ -117,11 +117,20 @@ class CosmicDeck:
 
     def _reshuffle_discard(self) -> None:
         """Shuffle the discard pile back into the draw pile."""
-        if not self.discard_pile:
-            return
-        self.draw_pile = self.discard_pile
-        self.discard_pile = []
-        self.shuffle()
+        if self.discard_pile:
+            self.draw_pile = self.discard_pile
+            self.discard_pile = []
+            self.shuffle()
+        elif not self.draw_pile:
+            # Emergency: both piles empty, regenerate basic cards
+            # This can happen in edge cases with certain power combinations
+            basic_cards = []
+            for value in [6, 6, 8, 8, 10, 12, 14]:
+                basic_cards.append(AttackCard(value=value))
+            for _ in range(3):
+                basic_cards.append(NegotiateCard())
+            self.draw_pile = basic_cards
+            self.shuffle()
 
     def peek(self, count: int = 1) -> List[Card]:
         """Look at the top cards without drawing them."""
