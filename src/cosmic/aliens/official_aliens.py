@@ -113,7 +113,7 @@ ALIEN_NAME_MAPPINGS: Dict[str, str] = {
     "Fire Dancer": "FireDancer",
     "Pack Rat": "PackRat",
     "Yin-Yang": "YinYang",
-    # Alt versions
+    # Alt versions - normalized for lookup
     "Brute (Alt)": "Brute_Alt",
     "Daredevil (Alt)": "Daredevil_Alt",
     "Demon (Alt)": "Demon_Alt",
@@ -125,6 +125,21 @@ ALIEN_NAME_MAPPINGS: Dict[str, str] = {
     "Schizoid (Alt)": "Schizoid_Alt",
     "Void (Alt)": "Void_Alt",
     "Zombie (Alt)": "Zombie_Alt",
+}
+
+# Add reverse mappings (Registered -> Official)
+REGISTERED_NAME_MAPPINGS = {
+    "brutealt": "brute (alt)",
+    "daredevilalt": "daredevil (alt)",
+    "demonalt": "demon (alt)",
+    "grumpusalt": "grumpus (alt)",
+    "locustalt": "locust (alt)",
+    "masochistalt": "masochist (alt)",
+    "perfectionistalt": "perfectionist (alt)",
+    "sadistalt": "sadist (alt)",
+    "schizoidalt": "schizoid (alt)",
+    "voidalt": "void (alt)",
+    "zombiealt": "zombie (alt)",
 }
 
 # Reverse mapping for lookup
@@ -485,9 +500,14 @@ def get_missing_official_aliens(registered_names: List[str]) -> List[str]:
             mapped = ALIEN_NAME_MAPPINGS.get(alien)
             mapped_normalized = _normalize_name(mapped) if mapped else None
 
+            # Also check underscored version for Alt aliens
+            underscored_normalized = _normalize_name(alien.replace(" (Alt)", "_Alt").replace("(", "").replace(")", ""))
+
             if normalized not in registered_normalized:
                 if not mapped_normalized or mapped_normalized not in registered_normalized:
-                    missing.append(f"{alien} ({expansion})")
+                    # Also check underscored version
+                    if underscored_normalized not in registered_normalized:
+                        missing.append(f"{alien} ({expansion})")
 
     return missing
 

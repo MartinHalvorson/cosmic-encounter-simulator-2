@@ -57,3 +57,4 @@ from .machine_powers import *  # noqa: F401, F403
 from .beast_powers import *  # noqa: F401, F403
 from .spirit_powers import *  # noqa: F401, F403
 from .royal_powers import *  # noqa: F401, F403
+from .odyssey_alt_powers import *  # noqa: F401, F403

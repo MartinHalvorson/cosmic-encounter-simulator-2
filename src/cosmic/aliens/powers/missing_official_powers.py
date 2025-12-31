@@ -152,7 +152,7 @@ class Sycophant(AlienPower):
         for p in game.players:
             if p != player:
                 foreign_colonies = sum(
-                    1 for planet in game.all_planets
+                    1 for planet in game.planets
                     if planet not in p.home_planets
                     and planet.has_colony(p.name)
                 )
