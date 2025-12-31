@@ -97,14 +97,24 @@ src/cosmic/
 ├── planet.py         # Planet and colony mechanics
 ├── types.py          # Type definitions and enums
 ├── cards/            # Card system (Cosmic, Destiny, Rewards decks)
-├── aliens/           # 129 alien power implementations
+├── aliens/           # 200 alien power implementations
 ├── ai/               # AI strategies (Random, Basic, Strategic)
 └── simulation/       # Simulation runner and statistics
 ```
 
-## Implemented Alien Powers (90)
+## Implemented Alien Powers (200)
 
-Altruist, Amoeba, Antimatter, Assassin, Barbarian, Boomerang, Brute, Butler, Calculator, Changeling, Chosen, Chronos, Citadel, Claw, Clone, Crone, Crystal, Cudgel, Deuce, Dictator, Disease, Dragon, Empath, Ethic, Fido, Filch, Fury, Gambler, Genius, Ghoul, Giver, Grudge, Hacker, Hate, Healer, Human, Kamikazee, Laser, Leviathan, Loser, Machine, Macron, Masochist, Mimic, Mirror, Mite, Mutant, Negator, Nightmare, Observer, Oracle, Pacifist, Parasite, Patriot, Pentaform, Philanthropist, Pickpocket, Pirate, Poison, Rage, Reincarnator, Remora, Reserve, Sage, Scout, Seeker, Shadow, Sheriff, Silencer, Sniveler, Sorcerer, Spiff, Surge, Symbiote, Thief, Tick-Tock, Trader, Tripler, Tyrant, Underdog, Vacuum, Virus, Visionary, Void, Vox, Warlock, Warpish, Warrior, Yin, Zombie
+The simulator includes 200 unique alien powers across multiple categories:
+
+**Base Powers:** Altruist, Amoeba, Antimatter, Assassin, Barbarian, Boomerang, Brute, Butler, Calculator, Changeling, Chosen, Chronos, Citadel, Claw, Clone, Crone, Crystal, Cudgel, Deuce, Dictator, Disease, Dragon, Empath, Ethic, Fido, Filch, Fury, Gambler, Genius, Ghoul, Giver, Grudge, Hacker, Hate, Healer, Human, Kamikazee, Laser, Leviathan, Loser, Machine, Macron, Masochist, Mimic, Mirror, Mite, Mutant, Negator, Nightmare, Observer, Oracle, Pacifist, Parasite, Patriot, Pentaform, Philanthropist, Pickpocket, Pirate, Poison, Rage, Reincarnator, Remora, Reserve, Sage, Scout, Seeker, Shadow, Sheriff, Silencer, Sniveler, Sorcerer, Spiff, Surge, Symbiote, Thief, Tick-Tock, Trader, Tripler, Tyrant, Underdog, Vacuum, Virus, Visionary, Void, Vox, Warlock, Warpish, Warrior, Yin, Zombie
+
+**Expansion Powers:** Aristocrat, Architect, Bulwark, Bully, Chrysalis, Connoisseur, Delegator, Doppelganger, Electron, Engineer, Extortionist, Feline, Foam, Fungus, Ghast, Grief, Guardian, Harbinger, Infiltrator, Insect, Invader, Jester, Magician, Miser, Phantom, Pincushion, Roach, Vulture, Battlemaster, Horde, Tempest, Exile
+
+**Advanced Powers:** Prophet, Schizoid, Cavalry, Glutton, Fodder, Converter, Sentinel, Siren, Berserker, Collector, Hawk, Rebel, Aura
+
+**Legendary Powers:** Ace, Basilisk, Coordinator, Diplomat, Emperor, Fortress, Gambit, Heretic, Immortal, Jinx, Knight, Leech, Monarch, Noble, Overlord, Predator, Queller, Ravager, Striker, Tycoon, Undertaker
+
+**Cosmic Powers:** Anchor, Beacon, Cyborg, Defender, Eclipse, Flux, Genesis, Harbinger, Illusionist, Juggernaut, Kinetic, Luminary, Mystic, Nebula, Orbiter, Pulse, Quantum, Ranger, Specter, Titan, Ultra, Vector, Warden, Xenophobe, Yeti, Zenith, Hunter, Fanatic, Decoy, Transporter
 
 ## Game Rules Reference
 
