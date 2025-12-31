@@ -1806,3 +1806,275 @@ AlienRegistry.register(Pretender())
 AlienRegistry.register(Surgeon())
 AlienRegistry.register(TheCult())
 AlienRegistry.register(Tortoise())
+
+
+# =============================================================================
+# COSMIC DOMINION EXPANSION (30 aliens - adding missing 15)
+# =============================================================================
+
+@dataclass
+class Angler(AlienPower):
+    """
+    Angler - Power to Fish.
+    Official FFG rules: As main player before cards selected, ask opponent for
+    specific card. They give it or you draw from deck.
+    """
+    name: str = field(default="Angler", init=False)
+    description: str = field(default="Fish for specific cards from opponents.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Daredevil(AlienPower):
+    """
+    Daredevil - Power to Risk.
+    Official FFG rules: After reveal, discard attack 01-08 to subtract from total.
+    Win by 4 or fewer = rewards equal to ships in encounter.
+    """
+    name: str = field(default="Daredevil", init=False)
+    description: str = field(default="Reduce attack for bigger rewards on close wins.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Explorer(AlienPower):
+    """
+    Explorer - Power of Discovery.
+    Official FFG rules: As offense after gate aimed, place new planet in system.
+    Gain bonuses based on discovered planets.
+    """
+    name: str = field(default="Explorer", init=False)
+    description: str = field(default="Discover new planets; gain bonuses from them.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    discovered_planets: int = field(default=0, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if not player.power_active:
+            return base_total
+        # Bonus based on discovered planets
+        return base_total + self.discovered_planets
+
+
+@dataclass
+class Greenhorn(AlienPower):
+    """
+    Greenhorn - Power of Ignorance.
+    Official FFG rules: Show cards and ask questions. Draw new hand when no attacks.
+    Play kickers after reveal. Flexible card timing.
+    """
+    name: str = field(default="Greenhorn", init=False)
+    description: str = field(default="Flexible card timing; draw hand when no attacks.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Host(AlienPower):
+    """
+    Host - Power to Welcome.
+    Official FFG rules: When defending, give gifts to attackers to discourage.
+    """
+    name: str = field(default="Host", init=False)
+    description: str = field(default="Give gifts to discourage attacks.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.DEFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Joker(AlienPower):
+    """
+    Joker - Power to Jest.
+    Official FFG rules: Play wild with card effects and timing.
+    """
+    name: str = field(default="Joker", init=False)
+    description: str = field(default="Play cards in unexpected ways.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ANY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+
+@dataclass
+class Lizard(AlienPower):
+    """
+    Lizard - Power to Transmogrify.
+    Official FFG rules: After winning, morph ships into +2 bonus each.
+    Win when all ships morphed.
+    """
+    name: str = field(default="Lizard", init=False)
+    description: str = field(default="Morph ships on wins; each adds +2.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    has_alternate_win: bool = field(default=True, init=False)
+    morphed_ships: int = field(default=0, init=False)
+    normal_ships: int = field(default=20, init=False)
+
+    def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        if as_main_player and player.power_active:
+            # Morph 1-4 ships
+            ships_to_morph = min(4, self.normal_ships)
+            self.morphed_ships += ships_to_morph
+            self.normal_ships -= ships_to_morph
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if not player.power_active:
+            return base_total
+        # Morphed ships add +2 each
+        return base_total + (self.morphed_ships * 2)
+
+    def check_alternate_win(self, game: "Game", player: "Player") -> bool:
+        return self.normal_ships <= 0
+
+
+@dataclass
+class Love(AlienPower):
+    """
+    Love - Power of Joy.
+    Official FFG rules: At turn start, discard card. Others who match type
+    release ships from warp. If not all match, get colony.
+    """
+    name: str = field(default="Love", init=False)
+    description: str = field(default="Match card types to release ships or gain colony.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Mesmer(AlienPower):
+    """
+    Mesmer - Power of Mass Hypnosis.
+    Official FFG rules: After revealing attack < 10, may change it to negotiate.
+    Play non-encounter cards as any artifact.
+    """
+    name: str = field(default="Mesmer", init=False)
+    description: str = field(default="Convert low attacks to negotiates.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
+        init=False
+    )
+
+
+@dataclass
+class Mirage(AlienPower):
+    """
+    Mirage - Power of Delusion.
+    Official FFG rules: After reveal, recalculate totals using different colonies'
+    ship counts instead of actual ships in encounter.
+    """
+    name: str = field(default="Mirage", init=False)
+    description: str = field(default="Use different colony ship counts for totals.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Muckraker(AlienPower):
+    """
+    Muckraker - Power to Slander.
+    Official FFG rules: At resolution start, accuse winning allies of misconduct.
+    They pay bribe or lose rewards and ships return.
+    """
+    name: str = field(default="Muckraker", init=False)
+    description: str = field(default="Accuse allies; they bribe or lose rewards.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Tourist(AlienPower):
+    """
+    Tourist - Power to Sightsee.
+    Official FFG rules: View hidden cards. Cruise liner moves between systems.
+    Disembark ships or send postcards home for cards.
+    """
+    name: str = field(default="Tourist", init=False)
+    description: str = field(default="Cruise liner travels; view hidden cards.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Voyager(AlienPower):
+    """
+    Voyager - Power to Journey.
+    Official FFG rules: At turn start, move home planet to warp. Ships there
+    count as both colony and warp location.
+    """
+    name: str = field(default="Voyager", init=False)
+    description: str = field(default="Move home planets to warp; dual location.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Whirligig(AlienPower):
+    """
+    Whirligig - Power to Swirl.
+    Official FFG rules: During planning, mix hands with opponent.
+    Choose distribution method, opponent draws randomly.
+    """
+    name: str = field(default="Whirligig", init=False)
+    description: str = field(default="Mix hands with opponent; redistribute.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    usable_as: List[PlayerRole] = field(
+        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
+        init=False
+    )
+
+
+@dataclass
+class YinYang(AlienPower):
+    """
+    Yin-Yang - Power of Balance.
+    Official FFG rules: Ally with both sides simultaneously. Losing defense
+    preserves ships. Losing offense gets rewards. Distribute penalty tokens.
+    """
+    name: str = field(default="YinYang", init=False)
+    description: str = field(default="Ally both sides; balance wins and losses.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+
+# Register Cosmic Dominion aliens
+AlienRegistry.register(Angler())
+AlienRegistry.register(Daredevil())
+AlienRegistry.register(Explorer())
+AlienRegistry.register(Greenhorn())
+AlienRegistry.register(Host())
+AlienRegistry.register(Joker())
+AlienRegistry.register(Lizard())
+AlienRegistry.register(Love())
+AlienRegistry.register(Mesmer())
+AlienRegistry.register(Mirage())
+AlienRegistry.register(Muckraker())
+AlienRegistry.register(Tourist())
+AlienRegistry.register(Voyager())
+AlienRegistry.register(Whirligig())
+AlienRegistry.register(YinYang())
