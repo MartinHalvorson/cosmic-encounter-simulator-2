@@ -178,6 +178,14 @@ class ShipCount:
     def copy(self) -> "ShipCount":
         return ShipCount(counts=dict(self.counts))
 
+    def __contains__(self, player_name: str) -> bool:
+        """Support 'in' operator: check if player has ships."""
+        return self.get(player_name) > 0
+
+    def __getitem__(self, player_name: str) -> int:
+        """Support bracket notation: ships[player_name]."""
+        return self.get(player_name)
+
 
 @dataclass
 class GameConfig:

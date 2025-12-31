@@ -38,3 +38,5 @@ from .control_powers import *  # noqa: F401, F403
 from .growth_powers import *  # noqa: F401, F403
 from .destruction_powers import *  # noqa: F401, F403
 from .defense_powers import *  # noqa: F401, F403
+from .speed_powers import *  # noqa: F401, F403
+from .luck_powers import *  # noqa: F401, F403
