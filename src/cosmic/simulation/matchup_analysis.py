@@ -242,15 +242,15 @@ class MatchupAnalyzer:
             try:
                 game = Game(config)
                 game.setup()
-                game.run()
+                winners = game.play()  # Returns list of winning players
 
                 # Get results
-                winners = [p.alien.name for p in game.winners if p.alien]
+                winner_aliens = [p.alien.name for p in winners if p.alien]
                 aliens_in_game = [p.alien.name for p in game.players if p.alien]
-                solo_win = len(game.winners) == 1
+                solo_win = len(winners) == 1
 
                 # Record result
-                self.matrix.record_game(aliens_in_game, winners, solo_win)
+                self.matrix.record_game(aliens_in_game, winner_aliens, solo_win)
 
             except Exception as e:
                 # Skip failed games
