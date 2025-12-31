@@ -156,8 +156,8 @@ class Underdog(AlienPower):
         if not player.power_active:
             return base_total
 
-        my_colonies = player.count_total_colonies(game.planets)
-        min_colonies = min(p.count_total_colonies(game.planets) for p in game.players)
+        my_colonies = player.count_foreign_colonies(game.planets)
+        min_colonies = min(p.count_foreign_colonies(game.planets) for p in game.players)
 
         if my_colonies == min_colonies:
             return base_total + 5

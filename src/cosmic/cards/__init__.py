@@ -40,4 +40,17 @@ __all__ = [
     "HazardSeverity",
     "HAZARD_EFFECTS",
     "apply_hazard_effect",
+    # Lux system (Cosmic Odyssey)
+    "LuxAction",
+    "LUX_COSTS",
+    "LuxToken",
+    "PlayerLuxState",
+    "LuxManager",
+    "LuxIncome",
+    # Rift cards (Cosmic Odyssey)
+    "RiftCard",
+    "RiftType",
+    "RiftDeck",
+    "is_rift_card",
+    "handle_card_taken",
 ]
