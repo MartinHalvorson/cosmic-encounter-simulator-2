@@ -351,3 +351,13 @@ from .climate_powers import *  # noqa: F401, F403
 from .geological_powers import *  # noqa: F401, F403
 from .mythical_creature_powers import *  # noqa: F401, F403
 from .music_style_powers import *  # noqa: F401, F403
+from .cooking_extended_powers import *  # noqa: F401, F403
+from .building_material_powers import *  # noqa: F401, F403
+from .tool_extended_powers import *  # noqa: F401, F403
+from .fabric_powers import *  # noqa: F401, F403
+from .laboratory_powers import *  # noqa: F401, F403
+from .garden_tools_powers import *  # noqa: F401, F403
+from .weather_seasons_powers import *  # noqa: F401, F403
+from .computing_powers import *  # noqa: F401, F403
+from .ocean_depth_powers import *  # noqa: F401, F403
+from .space_phenomena_powers import *  # noqa: F401, F403

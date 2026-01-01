@@ -15788,3 +15788,61 @@ python update_stats.py --sort power --order asc
 
 </details>
 
+
+<!-- SIMULATION_RESULTS_START -->
+
+## Simulation Results
+
+**Total Games Simulated:** 21,848,358
+**Solo Victories:** 21,234,084
+**Shared Victories:** 361,056
+**Average Game Length:** 5.0 turns
+**Last Updated:** 2025-12-31T20:21:27
+
+### Alien Power Rankings (by ELO)
+
+| Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
+|------|-------|-----|----------|-------|-----------|--------|
+| 1 | Pin | 562 | 32.6% | 46 | 14 | 1 |
+| 2 | Emerald_Alt | 538 | 38.9% | 54 | 20 | 1 |
+| 3 | Ares_Alt | 532 | 36.5% | 52 | 19 | 0 |
+| 4 | All_In | 496 | 27.7% | 47 | 12 | 1 |
+| 5 | Apollo_Alt | 494 | 20.9% | 43 | 8 | 1 |
+| 6 | Flush | 476 | 20.0% | 45 | 9 | 0 |
+| 7 | Athena_Alt | 457 | 21.3% | 47 | 10 | 0 |
+| 8 | Age_Forward | 435 | 19.6% | 46 | 9 | 0 |
+| 9 | Poseidon_Alt | 433 | 19.1% | 47 | 9 | 0 |
+| 10 | King_Piece | 426 | 23.5% | 51 | 12 | 0 |
+| 11 | Sapphire_Alt | 423 | 25.9% | 54 | 14 | 0 |
+| 12 | Gambler_Card | 402 | 15.9% | 44 | 6 | 1 |
+| 13 | Hermes_Alt | 399 | 20.8% | 48 | 10 | 0 |
+| 14 | Tornado_Alt | 390 | 25.5% | 55 | 14 | 0 |
+| 15 | Diamond_Alt | 377 | 18.0% | 50 | 9 | 0 |
+| 16 | Prometheus_Alt | 368 | 31.7% | 60 | 19 | 0 |
+| 17 | Hercules_Alt | 367 | 22.6% | 53 | 12 | 0 |
+| 18 | Straight | 360 | 24.5% | 53 | 13 | 0 |
+| 19 | Fold | 355 | 23.2% | 56 | 13 | 0 |
+| 20 | Rook_Piece | 341 | 29.3% | 58 | 17 | 0 |
+| 21 | Cloudburst | 319 | 25.0% | 56 | 13 | 1 |
+| 22 | Queen_Piece | 317 | 17.5% | 57 | 10 | 0 |
+| 23 | Time_Loop | 305 | 18.9% | 53 | 10 | 0 |
+| 24 | Fork | 304 | 25.0% | 60 | 15 | 0 |
+| 25 | Hurricane_Alt | 302 | 27.4% | 62 | 17 | 0 |
+| 26 | Tempo | 296 | 27.0% | 63 | 15 | 2 |
+| 27 | Zeus_Alt | 296 | 29.2% | 65 | 19 | 0 |
+| 28 | Future_Sight | 274 | 27.0% | 63 | 17 | 0 |
+| 29 | Pawn_Piece | 266 | 18.2% | 55 | 10 | 0 |
+| 30 | Pearl_Alt | 260 | 23.7% | 59 | 14 | 0 |
+| 31 | Babylonian | 258 | 34.3% | 67 | 23 | 0 |
+| 32 | Bishop_Piece | 256 | 20.7% | 58 | 12 | 0 |
+| 33 | Ruby_Alt | 254 | 19.3% | 57 | 11 | 0 |
+| 34 | Past_Echo | 253 | 27.7% | 65 | 18 | 0 |
+| 35 | Hades_Alt | 245 | 24.2% | 62 | 15 | 0 |
+| 36 | Amethyst_Alt | 236 | 21.1% | 57 | 12 | 0 |
+| 37 | Time_Warp | 224 | 23.7% | 59 | 14 | 0 |
+| 38 | Knight_Piece | 217 | 21.9% | 64 | 14 | 0 |
+| 39 | Alexandrite | 206 | 32.9% | 76 | 24 | 1 |
+| 40 | Pharaoh | 199 | 32.8% | 128 | 42 | 0 |
+| ... | *4189 more aliens* | ... | ... | ... | ... | ... |
+
+<!-- SIMULATION_RESULTS_END -->
