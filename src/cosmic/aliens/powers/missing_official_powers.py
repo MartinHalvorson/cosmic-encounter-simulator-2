@@ -612,6 +612,10 @@ class TheMeek(AlienPower):
     # Track losses for alternate win
     loss_count: int = 0
 
+    def on_game_start(self, game: "Game", player: "Player") -> None:
+        """Reset loss count at start of each game."""
+        self.loss_count = 0
+
     def on_lose_encounter(
         self,
         game: "Game",

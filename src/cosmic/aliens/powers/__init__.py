@@ -286,6 +286,7 @@ from .landform_powers import *  # noqa: F401, F403
 from .landmark_powers import *  # noqa: F401, F403
 from .landscape_powers import *  # noqa: F401, F403
 from .language_powers import *  # noqa: F401, F403
+from .language_type_powers import *  # noqa: F401, F403
 from .legal_profession_powers import *  # noqa: F401, F403
 from .legendary_heroes_powers import *  # noqa: F401, F403
 from .legendary_powers import *  # noqa: F401, F403
@@ -432,6 +433,7 @@ from .pottery_type_powers import *  # noqa: F401, F403
 from .predator_powers import *  # noqa: F401, F403
 from .prehistoric_powers import *  # noqa: F401, F403
 from .profession_powers import *  # noqa: F401, F403
+from .profession_type_powers import *  # noqa: F401, F403
 from .programming_powers import *  # noqa: F401, F403
 from .psychic_powers import *  # noqa: F401, F403
 from .puzzle_powers import *  # noqa: F401, F403
