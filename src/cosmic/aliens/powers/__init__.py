@@ -1,6 +1,5 @@
 """
-Individual alien power implementations.
-Only includes official Fantasy Flight Games aliens.
+Alien powers module - auto-generated imports.
 """
 
 from .aboriginal_powers import *  # noqa: F401, F403
@@ -67,6 +66,7 @@ from .candy_powers import *  # noqa: F401, F403
 from .card_game_powers import *  # noqa: F401, F403
 from .card_manipulation_powers import *  # noqa: F401, F403
 from .card_powers import *  # noqa: F401, F403
+from .card_suit_powers import *  # noqa: F401, F403
 from .career_powers import *  # noqa: F401, F403
 from .caribbean_powers import *  # noqa: F401, F403
 from .carnival_powers import *  # noqa: F401, F403
@@ -142,6 +142,7 @@ from .economy_powers import *  # noqa: F401, F403
 from .egyptian_mythology_powers import *  # noqa: F401, F403
 from .egyptian_powers import *  # noqa: F401, F403
 from .element_extended_powers import *  # noqa: F401, F403
+from .element_pack_powers import *  # noqa: F401, F403
 from .elemental_powers import *  # noqa: F401, F403
 from .emotion_alt2_powers import *  # noqa: F401, F403
 from .emotion_alt_powers import *  # noqa: F401, F403
@@ -256,6 +257,7 @@ from .magic_powers import *  # noqa: F401, F403
 from .magic_school_powers import *  # noqa: F401, F403
 from .maritime_powers import *  # noqa: F401, F403
 from .martial_arts_powers import *  # noqa: F401, F403
+from .martial_arts_style_powers import *  # noqa: F401, F403
 from .martial_powers import *  # noqa: F401, F403
 from .martial_weapon_powers import *  # noqa: F401, F403
 from .material_powers import *  # noqa: F401, F403
@@ -308,6 +310,7 @@ from .music_powers import *  # noqa: F401, F403
 from .music_style_powers import *  # noqa: F401, F403
 from .musical_genre_powers import *  # noqa: F401, F403
 from .musical_instrument_powers import *  # noqa: F401, F403
+from .musical_term_powers import *  # noqa: F401, F403
 from .mythical_artifact_powers import *  # noqa: F401, F403
 from .mythical_beast_powers import *  # noqa: F401, F403
 from .mythical_creature_powers import *  # noqa: F401, F403
@@ -511,3 +514,4 @@ from .wilderness_powers import *  # noqa: F401, F403
 from .winter_powers import *  # noqa: F401, F403
 from .writing_tool_powers import *  # noqa: F401, F403
 from .zodiac_powers import *  # noqa: F401, F403
+from .zodiac_sign_powers import *  # noqa: F401, F403
