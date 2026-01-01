@@ -30872,11 +30872,11 @@ python update_stats.py --sort power --order asc
 
 ## Simulation Results
 
-**Total Games Simulated:** 21,998,355
-**Solo Victories:** 21,381,554
-**Shared Victories:** 363,580
+**Total Games Simulated:** 22,098,355
+**Solo Victories:** 21,479,844
+**Shared Victories:** 365,288
 **Average Game Length:** 5.0 turns
-**Last Updated:** 2025-12-31T20:47:42
+**Last Updated:** 2025-12-31T21:00:27
 
 ### Alien Power Rankings (by ELO)
 
@@ -30886,43 +30886,43 @@ python update_stats.py --sort power --order asc
 | 2 | Quasar_Ast | 673 | 34.1% | 41 | 14 | 0 |
 | 3 | Pulsar_Ast | 657 | 41.7% | 48 | 19 | 1 |
 | 4 | SolarWind | 625 | 42.3% | 52 | 22 | 0 |
-| 5 | Nebula_Ast | 621 | 28.6% | 42 | 12 | 0 |
-| 6 | Barbecue | 616 | 26.2% | 42 | 11 | 0 |
-| 7 | Supernova_Ast | 602 | 31.8% | 44 | 14 | 0 |
-| 8 | Pin | 562 | 32.6% | 46 | 14 | 1 |
-| 9 | Asteroid_Ast | 545 | 33.3% | 51 | 17 | 0 |
-| 10 | Fortress_Arch | 540 | 25.0% | 44 | 11 | 0 |
-| 11 | Emerald_Alt | 538 | 38.9% | 54 | 20 | 1 |
-| 12 | Curer | 532 | 17.9% | 39 | 7 | 0 |
-| 13 | Ares_Alt | 532 | 36.5% | 52 | 19 | 0 |
-| 14 | All_In | 496 | 27.7% | 47 | 12 | 1 |
-| 15 | Apollo_Alt | 494 | 20.9% | 43 | 8 | 1 |
-| 16 | Flush | 476 | 20.0% | 45 | 9 | 0 |
-| 17 | Athena_Alt | 457 | 21.3% | 47 | 10 | 0 |
-| 18 | FiveThousand | 451 | 32.7% | 52 | 17 | 0 |
-| 19 | Pyramid_Arch | 438 | 23.4% | 47 | 10 | 1 |
-| 20 | Age_Forward | 435 | 19.6% | 46 | 9 | 0 |
-| 21 | Poseidon_Alt | 433 | 19.1% | 47 | 9 | 0 |
-| 22 | King_Piece | 426 | 23.5% | 51 | 12 | 0 |
-| 23 | Sapphire_Alt | 423 | 25.9% | 54 | 14 | 0 |
-| 24 | Gambler_Card | 402 | 15.9% | 44 | 6 | 1 |
-| 25 | Pickler | 401 | 31.0% | 58 | 17 | 1 |
-| 26 | Hermes_Alt | 399 | 20.8% | 48 | 10 | 0 |
-| 27 | Survival | 394 | 44.3% | 70 | 31 | 0 |
-| 28 | Tornado_Alt | 390 | 25.5% | 55 | 14 | 0 |
-| 29 | BlackHole_Ast | 379 | 22.0% | 50 | 10 | 1 |
-| 30 | Diamond_Alt | 377 | 18.0% | 50 | 9 | 0 |
-| 31 | Trillion | 373 | 42.7% | 75 | 32 | 0 |
-| 32 | Prometheus_Alt | 368 | 31.7% | 60 | 19 | 0 |
-| 33 | Hercules_Alt | 367 | 22.6% | 53 | 12 | 0 |
-| 34 | Palden_Lhamo | 365 | 37.1% | 62 | 23 | 0 |
-| 35 | Straight | 360 | 24.5% | 53 | 13 | 0 |
-| 36 | Fold | 355 | 23.2% | 56 | 13 | 0 |
-| 37 | Fermenter | 350 | 25.0% | 56 | 14 | 0 |
-| 38 | Rococo | 341 | 29.3% | 58 | 17 | 0 |
-| 39 | Rook_Piece | 341 | 29.3% | 58 | 17 | 0 |
-| 40 | Incalculable | 334 | 40.0% | 70 | 28 | 0 |
-| ... | *5334 more aliens* | ... | ... | ... | ... | ... |
+| 5 | Wrench_New | 625 | 45.1% | 51 | 22 | 1 |
+| 6 | Nebula_Ast | 621 | 28.6% | 42 | 12 | 0 |
+| 7 | Barbecue | 616 | 26.2% | 42 | 11 | 0 |
+| 8 | Supernova_Ast | 602 | 31.8% | 44 | 14 | 0 |
+| 9 | Pin | 562 | 32.6% | 46 | 14 | 1 |
+| 10 | Asteroid_Ast | 545 | 33.3% | 51 | 17 | 0 |
+| 11 | Fortress_Arch | 540 | 25.0% | 44 | 11 | 0 |
+| 12 | Emerald_Alt | 538 | 38.9% | 54 | 20 | 1 |
+| 13 | BrideGoddess | 534 | 43.6% | 55 | 23 | 1 |
+| 14 | Curer | 532 | 17.9% | 39 | 7 | 0 |
+| 15 | Ares_Alt | 532 | 36.5% | 52 | 19 | 0 |
+| 16 | BeanNighe | 500 | 46.0% | 63 | 28 | 1 |
+| 17 | All_In | 496 | 27.7% | 47 | 12 | 1 |
+| 18 | Apollo_Alt | 494 | 20.9% | 43 | 8 | 1 |
+| 19 | Flush | 476 | 20.0% | 45 | 9 | 0 |
+| 20 | Hope_Emotion | 470 | 40.4% | 57 | 22 | 1 |
+| 21 | Sun_5K | 467 | 43.8% | 64 | 28 | 0 |
+| 22 | Athena_Alt | 457 | 21.3% | 47 | 10 | 0 |
+| 23 | Catcher_Position | 449 | 32.1% | 53 | 17 | 0 |
+| 24 | Courageous_5K | 445 | 32.1% | 53 | 17 | 0 |
+| 25 | Pyramid_Arch | 438 | 23.4% | 47 | 10 | 1 |
+| 26 | Fear_Emotion | 438 | 26.5% | 49 | 13 | 0 |
+| 27 | Age_Forward | 435 | 19.6% | 46 | 9 | 0 |
+| 28 | Bathala | 435 | 34.0% | 53 | 17 | 1 |
+| 29 | Poseidon_Alt | 433 | 19.1% | 47 | 9 | 0 |
+| 30 | Turmeric | 430 | 29.4% | 51 | 15 | 0 |
+| 31 | Mantis_Shrimp | 430 | 38.6% | 57 | 20 | 2 |
+| 32 | King_Piece | 426 | 23.5% | 51 | 12 | 0 |
+| 33 | Mango | 425 | 41.3% | 63 | 25 | 1 |
+| 34 | Sapphire_Alt | 423 | 25.9% | 54 | 14 | 0 |
+| 35 | Kinnara | 418 | 30.2% | 53 | 16 | 0 |
+| 36 | Juicer | 412 | 33.9% | 56 | 19 | 0 |
+| 37 | Vanguard_5K | 411 | 41.0% | 61 | 23 | 2 |
+| 38 | Prickly_Texture | 408 | 27.5% | 51 | 13 | 1 |
+| 39 | Tart_Dessert | 403 | 32.1% | 56 | 17 | 1 |
+| 40 | Gambler_Card | 402 | 15.9% | 44 | 6 | 1 |
+| ... | *5988 more aliens* | ... | ... | ... | ... | ... |
 
 <!-- SIMULATION_RESULTS_END -->
 
