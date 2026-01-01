@@ -16,6 +16,7 @@ from .ancient_civilizations_powers import *  # noqa: F401, F403
 from .ancient_powers import *  # noqa: F401, F403
 from .ancient_wonder_powers import *  # noqa: F401, F403
 from .animal_pack_powers import *  # noqa: F401, F403
+from .animal_type_powers import *  # noqa: F401, F403
 from .apocalypse_powers import *  # noqa: F401, F403
 from .arcane_powers import *  # noqa: F401, F403
 from .architecture_new_powers import *  # noqa: F401, F403
@@ -25,6 +26,7 @@ from .arctic_powers import *  # noqa: F401, F403
 from .arena_powers import *  # noqa: F401, F403
 from .armor_powers import *  # noqa: F401, F403
 from .art_medium_powers import *  # noqa: F401, F403
+from .art_movement_powers import *  # noqa: F401, F403
 from .art_powers import *  # noqa: F401, F403
 from .art_style_powers import *  # noqa: F401, F403
 from .artform_powers import *  # noqa: F401, F403
@@ -60,6 +62,7 @@ from .bonus_powers import *  # noqa: F401, F403
 from .breakfast_powers import *  # noqa: F401, F403
 from .building_material_powers import *  # noqa: F401, F403
 from .building_powers import *  # noqa: F401, F403
+from .building_style_powers import *  # noqa: F401, F403
 from .building_type_powers import *  # noqa: F401, F403
 from .camping_powers import *  # noqa: F401, F403
 from .candy_powers import *  # noqa: F401, F403
@@ -401,6 +404,7 @@ from .school_role_powers import *  # noqa: F401, F403
 from .school_sport_powers import *  # noqa: F401, F403
 from .school_subject_powers import *  # noqa: F401, F403
 from .sci_fi_trope_powers import *  # noqa: F401, F403
+from .science_branch_powers import *  # noqa: F401, F403
 from .science_fiction_powers import *  # noqa: F401, F403
 from .science_field_powers import *  # noqa: F401, F403
 from .science_powers import *  # noqa: F401, F403
@@ -420,6 +424,7 @@ from .social_media_powers import *  # noqa: F401, F403
 from .social_powers import *  # noqa: F401, F403
 from .soda_powers import *  # noqa: F401, F403
 from .software_powers import *  # noqa: F401, F403
+from .songbird_powers import *  # noqa: F401, F403
 from .sound_powers import *  # noqa: F401, F403
 from .soup_powers import *  # noqa: F401, F403
 from .space_age_powers import *  # noqa: F401, F403
@@ -459,6 +464,7 @@ from .technology_powers import *  # noqa: F401, F403
 from .temperament_powers import *  # noqa: F401, F403
 from .temperature_powers import *  # noqa: F401, F403
 from .terrain_powers import *  # noqa: F401, F403
+from .terrain_type_powers import *  # noqa: F401, F403
 from .territory_powers import *  # noqa: F401, F403
 from .textile_powers import *  # noqa: F401, F403
 from .texture_alt_powers import *  # noqa: F401, F403
@@ -513,6 +519,7 @@ from .weather_type_powers import *  # noqa: F401, F403
 from .welsh_powers import *  # noqa: F401, F403
 from .western_powers import *  # noqa: F401, F403
 from .wilderness_powers import *  # noqa: F401, F403
+from .wind_instrument_powers import *  # noqa: F401, F403
 from .winter_powers import *  # noqa: F401, F403
 from .writing_tool_powers import *  # noqa: F401, F403
 from .zodiac_powers import *  # noqa: F401, F403

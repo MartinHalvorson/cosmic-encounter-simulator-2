@@ -1,186 +1,236 @@
-"""
-Language and Linguistics themed alien powers for Cosmic Encounter.
-"""
+"""Language themed alien powers."""
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+import random
 
 from ..base import AlienPower, PowerCategory
-from ...types import PowerTiming, PowerType, Side, PlayerRole
+from ..registry import AlienRegistry
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
     from ...player import Player
 
-from ..registry import AlienRegistry
-
 
 @dataclass
-class Translator(AlienPower):
-    """Translator - Power of Understanding."""
-    name: str = field(default="Translator", init=False)
-    description: str = field(
-        default="See opponent's intended card type before playing.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Linguist(AlienPower):
-    """Linguist - Power of Words."""
-    name: str = field(default="Linguist", init=False)
-    description: str = field(
-        default="+1 for each different alien power in the game.",
-        init=False
-    )
+class English(AlienPower):
+    name: str = field(default="English", init=False)
+    description: str = field(default="+4 universal.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
-@dataclass
-class Poet(AlienPower):
-    """Poet - Power of Verse."""
-    name: str = field(default="Poet", init=False)
-    description: str = field(
-        default="Win negotiations by default.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
 
 
 @dataclass
-class Orator(AlienPower):
-    """Orator - Power of Speech."""
-    name: str = field(default="Orator", init=False)
-    description: str = field(
-        default="Invite 2 extra allies each encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Scribe(AlienPower):
-    """Scribe - Power of Records."""
-    name: str = field(default="Scribe", init=False)
-    description: str = field(
-        default="Draw 1 card at the start of each turn.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Stutterer(AlienPower):
-    """Stutterer - Power of Delay."""
-    name: str = field(default="Stutterer", init=False)
-    description: str = field(
-        default="Opponent reveals card before you choose yours.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Whisperer(AlienPower):
-    """Whisperer - Power of Secrets."""
-    name: str = field(default="Whisperer", init=False)
-    description: str = field(
-        default="Look at any player's hand once per encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Shouter(AlienPower):
-    """Shouter - Power of Volume."""
-    name: str = field(default="Shouter", init=False)
-    description: str = field(
-        default="+3 when you have more allies than opponent.",
-        init=False
-    )
+class Spanish(AlienPower):
+    name: str = field(default="Spanish", init=False)
+    description: str = field(default="+4 widespread.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
-@dataclass
-class Narrator(AlienPower):
-    """Narrator - Power of Story."""
-    name: str = field(default="Narrator", init=False)
-    description: str = field(
-        default="Predict encounter outcome; if correct, draw 2 cards.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
 
 
 @dataclass
-class Liar_Language(AlienPower):
-    """Liar - Power of Falsehood."""
-    name: str = field(default="Liar_Language", init=False)
-    description: str = field(
-        default="Announce false card value; if believed, use it.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-
-@dataclass
-class Interpreter(AlienPower):
-    """Interpreter - Power of Meaning."""
-    name: str = field(default="Interpreter", init=False)
-    description: str = field(
-        default="Change negotiate to attack or vice versa.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Etymologist(AlienPower):
-    """Etymologist - Power of Origins."""
-    name: str = field(default="Etymologist", init=False)
-    description: str = field(
-        default="+2 for each home colony you still control.",
-        init=False
-    )
+class Mandarin(AlienPower):
+    name: str = field(default="Mandarin", init=False)
+    description: str = field(default="+5 most speakers.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 5
+        return base_total
 
-# Register all powers
-AlienRegistry.register(Translator())
-AlienRegistry.register(Linguist())
-AlienRegistry.register(Poet())
-AlienRegistry.register(Orator())
-AlienRegistry.register(Scribe())
-AlienRegistry.register(Stutterer())
-AlienRegistry.register(Whisperer())
-AlienRegistry.register(Shouter())
-AlienRegistry.register(Narrator())
-AlienRegistry.register(Liar_Language())
-AlienRegistry.register(Interpreter())
-AlienRegistry.register(Etymologist())
+
+@dataclass
+class French(AlienPower):
+    name: str = field(default="French", init=False)
+    description: str = field(default="+4 diplomatic.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class German(AlienPower):
+    name: str = field(default="German", init=False)
+    description: str = field(default="+4 precise.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Japanese(AlienPower):
+    name: str = field(default="Japanese", init=False)
+    description: str = field(default="+4 complex.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Russian(AlienPower):
+    name: str = field(default="Russian", init=False)
+    description: str = field(default="+5 powerful.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 5
+        return base_total
+
+
+@dataclass
+class Arabic(AlienPower):
+    name: str = field(default="Arabic", init=False)
+    description: str = field(default="+4 flowing.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Portuguese(AlienPower):
+    name: str = field(default="Portuguese", init=False)
+    description: str = field(default="+4 melodic.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Italian(AlienPower):
+    name: str = field(default="Italian", init=False)
+    description: str = field(default="+4 expressive.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Korean(AlienPower):
+    name: str = field(default="Korean", init=False)
+    description: str = field(default="+4 modern.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Hindi(AlienPower):
+    name: str = field(default="Hindi", init=False)
+    description: str = field(default="+4 rich.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Latin(AlienPower):
+    name: str = field(default="Latin", init=False)
+    description: str = field(default="+5 classical.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 5
+        return base_total
+
+
+@dataclass
+class Greek(AlienPower):
+    name: str = field(default="Greek_Lang", init=False)
+    description: str = field(default="+5 ancient.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 5
+        return base_total
+
+
+@dataclass
+class Hebrew(AlienPower):
+    name: str = field(default="Hebrew", init=False)
+    description: str = field(default="+4 ancient.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+LANGUAGE_POWERS = [
+    English, Spanish, Mandarin, French, German,
+    Japanese, Russian, Arabic, Portuguese, Italian,
+    Korean, Hindi, Latin, Greek, Hebrew,
+]
+
+for power_class in LANGUAGE_POWERS:
+    try:
+        AlienRegistry.register(power_class())
+    except ValueError:
+        pass

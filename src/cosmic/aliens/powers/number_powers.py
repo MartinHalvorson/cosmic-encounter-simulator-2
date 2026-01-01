@@ -1,13 +1,12 @@
-"""
-Number Powers - Number-themed aliens.
-"""
+"""Number themed alien powers."""
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+import random
 
 from ..base import AlienPower, PowerCategory
 from ..registry import AlienRegistry
-from ...types import PowerTiming, PowerType, Side, PlayerRole
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
@@ -16,198 +15,226 @@ if TYPE_CHECKING:
 
 @dataclass
 class One(AlienPower):
-    """One - First number. +1 always."""
     name: str = field(default="One", init=False)
-    description: str = field(default="+1 to all encounters.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+1 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
         if player.power_active:
-            return total + 1
-        return total
+            return base_total + 1
+        return base_total
 
 
 @dataclass
 class Two(AlienPower):
-    """Two - Double. Ships count double."""
     name: str = field(default="Two", init=False)
-    description: str = field(default="Ships count double.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+2 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 2
+        return base_total
 
 
 @dataclass
 class Three(AlienPower):
-    """Three - Triple. +3 when attacking."""
     name: str = field(default="Three", init=False)
-    description: str = field(default="+3 on offense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+3 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 3
-        return total
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 3
+        return base_total
 
 
 @dataclass
 class Four(AlienPower):
-    """Four - Quadruple. +4 when defending."""
     name: str = field(default="Four", init=False)
-    description: str = field(default="+4 on defense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+4 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
 
 
 @dataclass
 class Five(AlienPower):
-    """Five - Quintuple. +5 on first encounter."""
     name: str = field(default="Five", init=False)
-    description: str = field(default="+5 on first encounter.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+5 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and game.encounter_number == 1:
-            return total + 5
-        return total
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 5
+        return base_total
 
 
 @dataclass
 class Six(AlienPower):
-    """Six - Hex. -3 to opponent's total."""
     name: str = field(default="Six", init=False)
-    description: str = field(default="-3 to opponent.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+6 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 6
+        return base_total
 
 
 @dataclass
 class Seven(AlienPower):
-    """Seven - Lucky. Win ties."""
     name: str = field(default="Seven", init=False)
-    description: str = field(default="Win all ties.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+7 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 7
+        return base_total
 
 
 @dataclass
 class Eight(AlienPower):
-    """Eight - Octuple. Launch up to 8 ships."""
     name: str = field(default="Eight", init=False)
-    description: str = field(default="Launch up to 8 ships.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
+    description: str = field(default="+8 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 8
+        return base_total
 
 
 @dataclass
 class Nine(AlienPower):
-    """Nine - Near ten. +2 per home colony."""
     name: str = field(default="Nine", init=False)
-    description: str = field(default="+2 per home colony.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+9 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
         if player.power_active:
-            home_count = len([p for p in player.home_planets if player.name in p.ships])
-            return total + (home_count * 2)
-        return total
+            return base_total + 9
+        return base_total
 
 
 @dataclass
 class Ten(AlienPower):
-    """Ten - Perfect score. +10 when ahead in colonies."""
     name: str = field(default="Ten", init=False)
-    description: str = field(default="+10 when leading.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+10 flat.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 10
+        return base_total
 
 
 @dataclass
 class Zero(AlienPower):
-    """Zero - Nothing. Opponent's kickers don't work."""
     name: str = field(default="Zero", init=False)
-    description: str = field(default="Ignore opponent's kickers.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    description: str = field(default="+0 but opponent -2.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Dozen(AlienPower):
-    """Dozen - Twelve. +1 per card in hand."""
-    name: str = field(default="Dozen", init=False)
-    description: str = field(default="+1 per card in hand.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + len(player.hand)
-        return total
-
-
-@dataclass
-class Hundred(AlienPower):
-    """Hundred - Century. Draw 2 cards when winning."""
-    name: str = field(default="Hundred", init=False)
-    description: str = field(default="Draw 2 cards on win.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Infinity(AlienPower):
-    """Infinity - Endless. Retrieve all ships from warp."""
-    name: str = field(default="Infinity", init=False)
-    description: str = field(default="Retrieve all ships on turn.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
 
 @dataclass
-class Prime(AlienPower):
-    """Prime - Special number. +1 per ship committed."""
-    name: str = field(default="Prime", init=False)
-    description: str = field(default="+1 per ship.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+class Dozen(AlienPower):
+    name: str = field(default="Dozen", init=False)
+    description: str = field(default="+12 but requires 4+ ships.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            if side == Side.OFFENSE:
+                ships = len(game.offense_ships) if hasattr(game, 'offense_ships') else 0
+            else:
+                ships = len(game.defense_ships) if hasattr(game, 'defense_ships') else 0
+            if ships >= 4:
+                return base_total + 12
+        return base_total
 
 
-# Register all powers
-AlienRegistry.register(One())
-AlienRegistry.register(Two())
-AlienRegistry.register(Three())
-AlienRegistry.register(Four())
-AlienRegistry.register(Five())
-AlienRegistry.register(Six())
-AlienRegistry.register(Seven())
-AlienRegistry.register(Eight())
-AlienRegistry.register(Nine())
-AlienRegistry.register(Ten())
-AlienRegistry.register(Zero())
-AlienRegistry.register(Dozen())
-AlienRegistry.register(Hundred())
-AlienRegistry.register(Infinity())
-AlienRegistry.register(Prime())
+@dataclass
+class Hundred(AlienPower):
+    name: str = field(default="Hundred", init=False)
+    description: str = field(default="+10 but only in late game.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active and game.current_turn >= 10:
+            return base_total + 10
+        return base_total
+
+
+@dataclass
+class Prime(AlienPower):
+    name: str = field(default="Prime", init=False)
+    description: str = field(default="+5 on prime turns (2,3,5,7,11,13).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29}
+            if game.current_turn in primes:
+                return base_total + 5
+        return base_total
+
+
+@dataclass
+class Fibonacci(AlienPower):
+    name: str = field(default="Fibonacci", init=False)
+    description: str = field(default="+fib(turn mod 8).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            fib = [0, 1, 1, 2, 3, 5, 8, 13]
+            idx = game.current_turn % 8
+            return base_total + fib[idx]
+        return base_total
+
+
+NUMBER_POWERS = [
+    One, Two, Three, Four, Five,
+    Six, Seven, Eight, Nine, Ten,
+    Zero, Dozen, Hundred, Prime, Fibonacci,
+]
+
+for power_class in NUMBER_POWERS:
+    try:
+        AlienRegistry.register(power_class())
+    except ValueError:
+        pass

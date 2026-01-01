@@ -267,7 +267,7 @@ class Kuiper_Belt(AlienPower):
 
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
         if player.power_active:
-            return base_total + player.count_foreign_colonies()
+            return base_total + player.count_foreign_colonies(game.planets)
         return base_total
 
 
