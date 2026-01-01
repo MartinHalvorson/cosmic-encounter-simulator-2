@@ -205,3 +205,14 @@ from .pirate_powers import *  # noqa: F401, F403
 from .weather_final_powers import *  # noqa: F401, F403
 from .geology_powers import *  # noqa: F401, F403
 from .chemistry_powers import *  # noqa: F401, F403
+from .samurai_powers import *  # noqa: F401, F403
+from .knight_powers import *  # noqa: F401, F403
+from .viking_powers import *  # noqa: F401, F403
+from .cowboy_powers import *  # noqa: F401, F403
+from .spy_powers import *  # noqa: F401, F403
+from .detective_powers import *  # noqa: F401, F403
+from .merchant_powers import *  # noqa: F401, F403
+from .sailor_powers import *  # noqa: F401, F403
+from .biology_powers import *  # noqa: F401, F403
+from .physics_powers import *  # noqa: F401, F403
+from .astronomy_alt_powers import *  # noqa: F401, F403
