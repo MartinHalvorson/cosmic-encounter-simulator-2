@@ -1,5 +1,5 @@
 """
-Garden Plant Powers - Garden plant themed aliens.
+Percussion Instrument Powers - Percussion themed aliens.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Rose_Garden(AlienPower):
-    """Rose_Garden - Classic beauty."""
-    name: str = field(default="Rose_Garden", init=False)
+class Drum_Kit_Percussion(AlienPower):
+    """Drum_Kit_Percussion - Full rhythm."""
+    name: str = field(default="Drum_Kit_Percussion", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,54 +31,84 @@ class Rose_Garden(AlienPower):
 
 
 @dataclass
-class Tulip_Garden(AlienPower):
-    """Tulip_Garden - Spring color."""
-    name: str = field(default="Tulip_Garden", init=False)
-    description: str = field(default="+4 on early turns (1-3).", init=False)
+class Snare_Drum_Percussion(AlienPower):
+    """Snare_Drum_Percussion - Marching beat."""
+    name: str = field(default="Snare_Drum_Percussion", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and game.current_turn <= 3:
-            return total + 4
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
         return total
 
 
 @dataclass
-class Sunflower_Garden(AlienPower):
-    """Sunflower_Garden - Tall and bright."""
-    name: str = field(default="Sunflower_Garden", init=False)
-    description: str = field(default="+1 per turn (max +6).", init=False)
+class Bass_Drum_Percussion(AlienPower):
+    """Bass_Drum_Percussion - Deep thump."""
+    name: str = field(default="Bass_Drum_Percussion", init=False)
+    description: str = field(default="+6 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + min(6, game.current_turn)
+            return total + 6
         return total
 
 
 @dataclass
-class Daisy_Garden(AlienPower):
-    """Daisy_Garden - Simple charm."""
-    name: str = field(default="Daisy_Garden", init=False)
-    description: str = field(default="+3 constant.", init=False)
+class Cymbal_Percussion(AlienPower):
+    """Cymbal_Percussion - Crashing accent."""
+    name: str = field(default="Cymbal_Percussion", init=False)
+    description: str = field(default="+2 plus random +0-4.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2 + random.randint(0, 4)
+        return total
+
+
+@dataclass
+class Xylophone_Percussion(AlienPower):
+    """Xylophone_Percussion - Wooden melody."""
+    name: str = field(default="Xylophone_Percussion", init=False)
+    description: str = field(default="+1 per card (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 3
+            return total + min(6, len(player.hand))
         return total
 
 
 @dataclass
-class Lily_Garden(AlienPower):
-    """Lily_Garden - Elegant trumpet."""
-    name: str = field(default="Lily_Garden", init=False)
+class Timpani_Percussion(AlienPower):
+    """Timpani_Percussion - Orchestral thunder."""
+    name: str = field(default="Timpani_Percussion", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Bongo_Percussion(AlienPower):
+    """Bongo_Percussion - Hand drums."""
+    name: str = field(default="Bongo_Percussion", init=False)
     description: str = field(default="+4 with allies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -98,121 +128,9 @@ class Lily_Garden(AlienPower):
 
 
 @dataclass
-class Orchid_Garden(AlienPower):
-    """Orchid_Garden - Exotic beauty."""
-    name: str = field(default="Orchid_Garden", init=False)
-    description: str = field(default="+6 with 5+ cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and len(player.hand) >= 5:
-            return total + 6
-        return total
-
-
-@dataclass
-class Lavender_Garden(AlienPower):
-    """Lavender_Garden - Purple calm."""
-    name: str = field(default="Lavender_Garden", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Peony_Garden(AlienPower):
-    """Peony_Garden - Full bloom."""
-    name: str = field(default="Peony_Garden", init=False)
-    description: str = field(default="+5 with 3+ colonies.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            colonies = player.count_foreign_colonies(game.planets)
-            if colonies >= 3:
-                return total + 5
-        return total
-
-
-@dataclass
-class Hydrangea_Garden(AlienPower):
-    """Hydrangea_Garden - Ball clusters."""
-    name: str = field(default="Hydrangea_Garden", init=False)
-    description: str = field(default="+2 per ally (max +6).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if not player.power_active:
-            return total
-        ally_count = 0
-        if side == Side.OFFENSE:
-            ally_count = len([p for p in game.offense_allies if p != player.name])
-        else:
-            ally_count = len([p for p in game.defense_allies if p != player.name])
-        return total + min(6, ally_count * 2)
-
-
-@dataclass
-class Iris_Garden(AlienPower):
-    """Iris_Garden - Rainbow flag."""
-    name: str = field(default="Iris_Garden", init=False)
-    description: str = field(default="+2 plus random +0-4.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 2 + random.randint(0, 4)
-        return total
-
-
-@dataclass
-class Dahlia_Garden(AlienPower):
-    """Dahlia_Garden - Spiral petals."""
-    name: str = field(default="Dahlia_Garden", init=False)
-    description: str = field(default="+1 per card (max +6).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + min(6, len(player.hand))
-        return total
-
-
-@dataclass
-class Chrysanthemum_Garden(AlienPower):
-    """Chrysanthemum_Garden - Fall glory."""
-    name: str = field(default="Chrysanthemum_Garden", init=False)
-    description: str = field(default="+5 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Carnation_Garden(AlienPower):
-    """Carnation_Garden - Ruffled edge."""
-    name: str = field(default="Carnation_Garden", init=False)
+class Conga_Percussion(AlienPower):
+    """Conga_Percussion - Latin beat."""
+    name: str = field(default="Conga_Percussion", init=False)
     description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -225,9 +143,39 @@ class Carnation_Garden(AlienPower):
 
 
 @dataclass
-class Marigold_Garden(AlienPower):
-    """Marigold_Garden - Golden fire."""
-    name: str = field(default="Marigold_Garden", init=False)
+class Maracas_Percussion(AlienPower):
+    """Maracas_Percussion - Shaking rhythm."""
+    name: str = field(default="Maracas_Percussion", init=False)
+    description: str = field(default="+3 on even turns.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and game.current_turn % 2 == 0:
+            return total + 3
+        return total
+
+
+@dataclass
+class Tambourine_Percussion(AlienPower):
+    """Tambourine_Percussion - Jingling beat."""
+    name: str = field(default="Tambourine_Percussion", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Triangle_Percussion(AlienPower):
+    """Triangle_Percussion - Bright ting."""
+    name: str = field(default="Triangle_Percussion", init=False)
     description: str = field(default="+5 when alone.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -247,28 +195,81 @@ class Marigold_Garden(AlienPower):
 
 
 @dataclass
-class Violet_Garden(AlienPower):
-    """Violet_Garden - Shy bloom."""
-    name: str = field(default="Violet_Garden", init=False)
-    description: str = field(default="+5 when defending.", init=False)
+class Vibraphone_Percussion(AlienPower):
+    """Vibraphone_Percussion - Metallic melody."""
+    name: str = field(default="Vibraphone_Percussion", init=False)
+    description: str = field(default="+5 with 5+ cards.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
+        if player.power_active and len(player.hand) >= 5:
             return total + 5
         return total
 
 
-GARDEN_PLANT_POWERS = [
-    Rose_Garden, Tulip_Garden, Sunflower_Garden, Daisy_Garden, Lily_Garden,
-    Orchid_Garden, Lavender_Garden, Peony_Garden, Hydrangea_Garden, Iris_Garden,
-    Dahlia_Garden, Chrysanthemum_Garden, Carnation_Garden, Marigold_Garden,
-    Violet_Garden
+@dataclass
+class Glockenspiel_Percussion(AlienPower):
+    """Glockenspiel_Percussion - Bell tones."""
+    name: str = field(default="Glockenspiel_Percussion", init=False)
+    description: str = field(default="+1 per turn (max +5).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + min(5, game.current_turn)
+        return total
+
+
+@dataclass
+class Cowbell_Percussion(AlienPower):
+    """Cowbell_Percussion - More cowbell."""
+    name: str = field(default="Cowbell_Percussion", init=False)
+    description: str = field(default="+5 with 3+ colonies.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            colonies = player.count_foreign_colonies(game.planets)
+            if colonies >= 3:
+                return total + 5
+        return total
+
+
+@dataclass
+class Djembe_Percussion(AlienPower):
+    """Djembe_Percussion - African rhythm."""
+    name: str = field(default="Djembe_Percussion", init=False)
+    description: str = field(default="+2 per ally (max +6).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if not player.power_active:
+            return total
+        ally_count = 0
+        if side == Side.OFFENSE:
+            ally_count = len([p for p in game.offense_allies if p != player.name])
+        else:
+            ally_count = len([p for p in game.defense_allies if p != player.name])
+        return total + min(6, ally_count * 2)
+
+
+PERCUSSION_INSTRUMENT_POWERS = [
+    Drum_Kit_Percussion, Snare_Drum_Percussion, Bass_Drum_Percussion,
+    Cymbal_Percussion, Xylophone_Percussion, Timpani_Percussion,
+    Bongo_Percussion, Conga_Percussion, Maracas_Percussion, Tambourine_Percussion,
+    Triangle_Percussion, Vibraphone_Percussion, Glockenspiel_Percussion,
+    Cowbell_Percussion, Djembe_Percussion
 ]
 
-for power_class in GARDEN_PLANT_POWERS:
+for power_class in PERCUSSION_INSTRUMENT_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

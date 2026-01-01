@@ -65,6 +65,7 @@ from .building_material_powers import *  # noqa: F401, F403
 from .building_powers import *  # noqa: F401, F403
 from .building_style_powers import *  # noqa: F401, F403
 from .building_type_powers import *  # noqa: F401, F403
+from .camping_gear_powers import *  # noqa: F401, F403
 from .camping_powers import *  # noqa: F401, F403
 from .candy_powers import *  # noqa: F401, F403
 from .card_game_powers import *  # noqa: F401, F403
@@ -112,6 +113,7 @@ from .condiment_powers import *  # noqa: F401, F403
 from .constellation_powers import *  # noqa: F401, F403
 from .construction_powers import *  # noqa: F401, F403
 from .container_powers import *  # noqa: F401, F403
+from .continent_powers import *  # noqa: F401, F403
 from .control_powers import *  # noqa: F401, F403
 from .cooking_extended_powers import *  # noqa: F401, F403
 from .cooking_powers import *  # noqa: F401, F403
@@ -270,6 +272,7 @@ from .language_powers import *  # noqa: F401, F403
 from .legal_profession_powers import *  # noqa: F401, F403
 from .legendary_heroes_powers import *  # noqa: F401, F403
 from .legendary_powers import *  # noqa: F401, F403
+from .letter_powers import *  # noqa: F401, F403
 from .light_powers import *  # noqa: F401, F403
 from .literary_powers import *  # noqa: F401, F403
 from .literature_powers import *  # noqa: F401, F403
@@ -387,6 +390,7 @@ from .pasta_powers import *  # noqa: F401, F403
 from .pasta_shape_powers import *  # noqa: F401, F403
 from .pasta_type_powers import *  # noqa: F401, F403
 from .pattern_powers import *  # noqa: F401, F403
+from .percussion_instrument_powers import *  # noqa: F401, F403
 from .periodic_element_powers import *  # noqa: F401, F403
 from .persian_mythology_powers import *  # noqa: F401, F403
 from .personality_powers import *  # noqa: F401, F403
