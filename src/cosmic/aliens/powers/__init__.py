@@ -395,3 +395,10 @@ from .internet_culture_powers import *  # noqa: F401, F403
 from .kitchen_extended_powers import *  # noqa: F401, F403
 from .video_game_powers import *  # noqa: F401, F403
 from .milestone_4500_powers import *  # noqa: F401, F403
+from .measurement_powers import *  # noqa: F401, F403
+from .astronomy_powers import *  # noqa: F401, F403
+from .native_american_powers import *  # noqa: F401, F403
+from .cooking_extended_powers import *  # noqa: F401, F403
+from .technology_new_powers import *  # noqa: F401, F403
+from .milestone_5000_powers import *  # noqa: F401, F403
+from .architecture_new_powers import *  # noqa: F401, F403
