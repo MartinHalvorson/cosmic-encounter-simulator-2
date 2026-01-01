@@ -251,3 +251,5 @@ from .time_travel_powers import *  # noqa: F401, F403
 from .mythology_greek_powers import *  # noqa: F401, F403
 from .card_game_powers import *  # noqa: F401, F403
 from .chess_powers import *  # noqa: F401, F403
+from .clothing_powers import *  # noqa: F401, F403
+from .office_items_powers import *  # noqa: F401, F403

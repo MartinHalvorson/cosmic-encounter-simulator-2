@@ -20,6 +20,73 @@ from .ai.basic_ai import BasicAI
 
 
 @dataclass
+class HyperspaceGate:
+    """
+    The hyperspace gate - a conduit for moving ships to attack foreign colonies.
+
+    Per official rules:
+    - Offense aims the gate at a planet in the defense's system
+    - Offense places 1-4 ships from any of their colonies onto the gate
+    - Gate can be re-aimed by certain alien powers or cards
+    - Ships in the gate participate in the encounter
+    - After encounter, ships either establish colony or return home (or go to warp)
+    """
+    target_planet: Optional[Planet] = None
+    ships: Dict[str, int] = field(default_factory=dict)  # player_name -> ship count
+    is_aimed: bool = False
+    can_be_reaimed: bool = True  # Some effects prevent re-aiming
+
+    def aim(self, planet: Planet) -> None:
+        """Aim the gate at a target planet."""
+        self.target_planet = planet
+        self.is_aimed = True
+
+    def reaim(self, new_planet: Planet) -> bool:
+        """Re-aim the gate to a different planet in the same system."""
+        if not self.can_be_reaimed:
+            return False
+        if not self.target_planet:
+            return False
+        # Must be in same player's system
+        if new_planet.owner != self.target_planet.owner:
+            return False
+        self.target_planet = new_planet
+        return True
+
+    def add_ships(self, player_name: str, count: int) -> None:
+        """Add ships to the gate."""
+        self.ships[player_name] = self.ships.get(player_name, 0) + count
+
+    def remove_ships(self, player_name: str, count: int) -> int:
+        """Remove ships from the gate. Returns actual ships removed."""
+        current = self.ships.get(player_name, 0)
+        removed = min(count, current)
+        self.ships[player_name] = current - removed
+        if self.ships[player_name] <= 0:
+            del self.ships[player_name]
+        return removed
+
+    def get_ships(self, player_name: str) -> int:
+        """Get number of ships a player has in the gate."""
+        return self.ships.get(player_name, 0)
+
+    def total_ships(self) -> int:
+        """Get total ships in the gate."""
+        return sum(self.ships.values())
+
+    def clear(self) -> None:
+        """Clear all ships and reset gate state."""
+        self.ships.clear()
+        self.target_planet = None
+        self.is_aimed = False
+        self.can_be_reaimed = True
+
+    def get_all_ships(self) -> Dict[str, int]:
+        """Get a copy of all ships in the gate."""
+        return dict(self.ships)
+
+
+@dataclass
 class Game:
     """
     A single game of Cosmic Encounter.
@@ -55,6 +122,9 @@ class Game:
     defense_ships: Dict[str, int] = field(default_factory=dict)
     offense_allies: List[Player] = field(default_factory=list)
     defense_allies: List[Player] = field(default_factory=list)
+
+    # Hyperspace gate (tracks ships traveling to encounter)
+    hyperspace_gate: HyperspaceGate = field(default_factory=HyperspaceGate)
 
     # Artifact tracking
     zapped_powers: List[Player] = field(default_factory=list)  # Players whose powers are zapped this encounter
@@ -515,7 +585,14 @@ class Game:
                     self.defense = redirect
 
     def _launch_phase(self) -> None:
-        """Handle the launch phase."""
+        """
+        Handle the launch phase.
+
+        Per official rules:
+        1. Offense aims the hyperspace gate at a planet in the defense's system
+        2. Offense places 1-4 ships from any colonies onto the gate
+        3. Certain powers or cards can re-aim the gate at this point
+        """
         self.phase = GamePhase.LAUNCH
 
         # Reset encounter state
@@ -524,24 +601,89 @@ class Game:
         self.offense_allies = []
         self.defense_allies = []
 
-        # Select planet to attack
+        # Clear and prepare the hyperspace gate
+        self.hyperspace_gate.clear()
+
+        # Select planet to attack (aim the gate)
         ai = self.offense.ai_strategy or BasicAI()
         self.defense_planet = ai.select_attack_planet(self, self.offense, self.defense)
+        self.hyperspace_gate.aim(self.defense_planet)
 
-        # Select ships to commit
+        # Check for powers that affect gate aiming (e.g., Solar Wind artifact already in context)
+        self._check_gate_redirect_powers()
+
+        # Select ships to commit to the gate
         max_ships = self.config.max_ships_per_encounter
         ship_count = ai.select_ships_for_encounter(self, self.offense, max_ships)
 
-        # Take ships from colonies
+        # Take ships from colonies and place on gate
         taken = self.offense.get_ships_from_colonies(ship_count, self.planets)
+        self.hyperspace_gate.add_ships(self.offense.name, taken)
+
+        # Sync gate ships with offense_ships for compatibility
         self.offense_ships[self.offense.name] = taken
 
-        # Defense ships are those on the planet
+        # Defense ships are those on the planet (not in gate, they're defending)
         def_ships = self.defense_planet.get_ships(self.defense.name)
         self.defense_ships[self.defense.name] = def_ships
 
-        self._log(f"Attack: {self.defense_planet} with {taken} ships")
-        self._log(f"Defense: {def_ships} ships")
+        self._log(f"Gate aimed at {self.defense_planet} with {taken} ships")
+        self._log(f"Defense: {def_ships} ships on planet")
+
+    def _check_gate_redirect_powers(self) -> None:
+        """Check for powers that can redirect the gate to a different planet."""
+        # Check if defense has a power that can redirect
+        if self.defense and self.defense.alien and self.is_power_active(self.defense):
+            power_name = self.defense.alien.name
+
+            # Navigator can redirect attacks
+            if power_name == "Navigator":
+                valid_planets = [p for p in self.planets
+                               if p.owner == self.defense and p != self.defense_planet]
+                if valid_planets:
+                    # Choose planet with fewest ships (strategic redirection)
+                    new_target = min(valid_planets, key=lambda p: p.get_ships(self.defense.name))
+                    if self.hyperspace_gate.reaim(new_target):
+                        self.defense_planet = new_target
+                        self._log(f"Navigator redirects attack to {new_target}!")
+
+            # Bulwark protects strongest planet
+            elif power_name == "Bulwark":
+                # Find player's strongest planet
+                strongest = max(
+                    [p for p in self.planets if p.owner == self.defense],
+                    key=lambda p: p.get_ships(self.defense.name),
+                    default=None
+                )
+                if strongest and strongest == self.defense_planet:
+                    # Redirect to a different planet
+                    other_planets = [p for p in self.planets
+                                   if p.owner == self.defense and p != strongest]
+                    if other_planets:
+                        new_target = self._rng.choice(other_planets)
+                        if self.hyperspace_gate.reaim(new_target):
+                            self.defense_planet = new_target
+                            self._log(f"Bulwark protects strongest planet, attack redirected!")
+
+    def reaim_gate(self, new_planet: Planet) -> bool:
+        """
+        Attempt to re-aim the hyperspace gate to a different planet.
+
+        Returns True if successful, False if re-aiming is blocked or invalid.
+        """
+        if not self.hyperspace_gate.can_be_reaimed:
+            return False
+
+        if self.hyperspace_gate.reaim(new_planet):
+            self.defense_planet = new_planet
+            self._log(f"Gate re-aimed to {new_planet}")
+            return True
+        return False
+
+    def lock_gate(self) -> None:
+        """Prevent the gate from being re-aimed (used by certain powers)."""
+        self.hyperspace_gate.can_be_reaimed = False
+        self._log("Gate is now locked - cannot be re-aimed")
 
     def _alliance_phase(self) -> None:
         """Handle the alliance phase."""

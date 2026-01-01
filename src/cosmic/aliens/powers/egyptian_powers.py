@@ -1,249 +1,223 @@
 """
-Egyptian-themed alien powers for Cosmic Encounter.
-
-Powers inspired by ancient Egypt.
+Egyptian Powers - Egyptian mythology themed aliens.
 """
 
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING
+from typing import Optional, List, Dict, Any, TYPE_CHECKING
+import random
 
 from ..base import AlienPower, PowerCategory
-from ...types import PowerTiming, PowerType, Side
+from ..registry import AlienRegistry
+from ...types import PowerTiming, PowerType, PlayerRole, Side
 
 if TYPE_CHECKING:
     from ...game import Game
     from ...player import Player
 
-from ..registry import AlienRegistry
-
-
-@dataclass
-class Pharaoh(AlienPower):
-    """Pharaoh - Power of Divinity. God-king."""
-    name: str = field(default="Pharaoh", init=False)
-    description: str = field(default="+4 offense, +4 defense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + 4
-        return base_total
-
-
-@dataclass
-class Pyramid(AlienPower):
-    """Pyramid - Power of Monument. Eternal tomb."""
-    name: str = field(default="Pyramid", init=False)
-    description: str = field(default="+6 defending home planets.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            if game.defense_planet and game.defense_planet.owner == player:
-                return base_total + 6
-        return base_total
-
-
-@dataclass
-class Mummy(AlienPower):
-    """Mummy - Power of Preservation. Undying guardian."""
-    name: str = field(default="Mummy", init=False)
-    description: str = field(default="+3 per ship in warp.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + (player.ships_in_warp * 3)
-        return base_total
-
-
-@dataclass
-class Scribe(AlienPower):
-    """Scribe - Power of Records. Knowledge keeper."""
-    name: str = field(default="Scribe", init=False)
-    description: str = field(default="+1 per card in hand (max +7).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            bonus = min(7, player.hand_size())
-            return base_total + bonus
-        return base_total
-
-
-@dataclass
-class Scarab(AlienPower):
-    """Scarab - Power of Rebirth. Sacred beetle."""
-    name: str = field(default="Scarab", init=False)
-    description: str = field(default="Retrieve 1 ship from warp on win.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Anubis(AlienPower):
-    """Anubis - Power of Death. Jackal god."""
-    name: str = field(default="Anubis", init=False)
-    description: str = field(default="+5 on offense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return base_total + 5
-        return base_total
-
 
 @dataclass
 class Ra(AlienPower):
-    """Ra - Power of Sun. Solar deity."""
+    """Ra - Sun God. +6 always."""
     name: str = field(default="Ra", init=False)
-    description: str = field(default="+1 per turn (max +8).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    description: str = field(default="+6 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            bonus = min(8, game.current_turn)
-            return base_total + bonus
-        return base_total
+            return total + 6
+        return total
 
 
 @dataclass
 class Osiris(AlienPower):
-    """Osiris - Power of Afterlife. Ruler of dead."""
+    """Osiris - Underworld God. Return 1 ship from warp."""
     name: str = field(default="Osiris", init=False)
-    description: str = field(default="+2 per colony.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    description: str = field(default="Return 1 ship from warp.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            colonies = sum(1 for p in game.planets if p.has_colony(player.name))
-            return base_total + (colonies * 2)
-        return base_total
 
 
 @dataclass
 class Isis(AlienPower):
-    """Isis - Power of Magic. Divine sorceress."""
+    """Isis - Magic Goddess. +5 always."""
     name: str = field(default="Isis", init=False)
-    description: str = field(default="See opponent's card before playing.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
-@dataclass
-class Nile(AlienPower):
-    """Nile - Power of River. Life-giving waters."""
-    name: str = field(default="Nile", init=False)
-    description: str = field(default="+2 per ship.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if not player.power_active:
-            return base_total
-        if side == Side.OFFENSE:
-            ships = game.offense_ships.get(player.name, 0)
-        else:
-            ships = game.defense_ships.get(player.name, 0)
-        return base_total + (ships * 2)
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
 
 
 @dataclass
-class Sphinx_Egypt(AlienPower):
-    """Sphinx_Egypt - Power of Riddle. Ancient guardian."""
-    name: str = field(default="Sphinx_Egypt", init=False)
-    description: str = field(default="+5 on defense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Horus(AlienPower):
+    """Horus - Sky God. +5 on offense."""
+    name: str = field(default="Horus", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Set(AlienPower):
+    """Set - Chaos God. Random +/- 4."""
+    name: str = field(default="Set", init=False)
+    description: str = field(default="Random -4 to +4.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return max(0, total + random.randint(-4, 4))
+        return total
+
+
+@dataclass
+class Anubis(AlienPower):
+    """Anubis - Death God. -3 to opponent."""
+    name: str = field(default="Anubis", init=False)
+    description: str = field(default="Opponent gets -3.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+
+@dataclass
+class Thoth(AlienPower):
+    """Thoth - Knowledge God. See opponent card."""
+    name: str = field(default="Thoth", init=False)
+    description: str = field(default="View opponent's card.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
+    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Bastet(AlienPower):
+    """Bastet - Cat Goddess. +4 on defense."""
+    name: str = field(default="Bastet", init=False)
+    description: str = field(default="+4 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active and side == Side.DEFENSE:
-            return base_total + 5
-        return base_total
+            return total + 4
+        return total
 
 
 @dataclass
-class Obelisk(AlienPower):
-    """Obelisk - Power of Monument. Stone pillar."""
-    name: str = field(default="Obelisk", init=False)
-    description: str = field(default="+5 with 4 ships.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Sekhmet(AlienPower):
+    """Sekhmet - War Goddess. +5 on offense."""
+    name: str = field(default="Sekhmet", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if not player.power_active:
-            return base_total
-        if side == Side.OFFENSE:
-            ships = game.offense_ships.get(player.name, 0)
-        else:
-            ships = game.defense_ships.get(player.name, 0)
-        if ships >= 4:
-            return base_total + 5
-        return base_total
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
 
 
 @dataclass
-class Hieroglyph(AlienPower):
-    """Hieroglyph - Power of Writing. Sacred script."""
-    name: str = field(default="Hieroglyph", init=False)
-    description: str = field(default="+3 per ally.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Sobek(AlienPower):
+    """Sobek - Crocodile God. +4 on offense."""
+    name: str = field(default="Sobek", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if not player.power_active:
-            return base_total
-        if side == Side.OFFENSE:
-            allies = len([p for p in game.offense_ships if p != player.name])
-        else:
-            allies = len([p for p in game.defense_ships if p != player.name])
-        return base_total + (allies * 3)
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
 
 
 @dataclass
-class Sarcophagus(AlienPower):
-    """Sarcophagus - Power of Burial. Final resting place."""
-    name: str = field(default="Sarcophagus", init=False)
-    description: str = field(default="+5 with no ships in warp.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Hathor(AlienPower):
+    """Hathor - Love Goddess. +2 per ally."""
+    name: str = field(default="Hathor", init=False)
+    description: str = field(default="+2 per ally.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and player.ships_in_warp == 0:
-            return base_total + 5
-        return base_total
+
+@dataclass
+class Nut(AlienPower):
+    """Nut - Sky Goddess. Ships escape."""
+    name: str = field(default="Nut", init=False)
+    description: str = field(default="Ships go home not warp.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
-# Register all egyptian powers
+@dataclass
+class Geb(AlienPower):
+    """Geb - Earth God. +4 always."""
+    name: str = field(default="Geb", init=False)
+    description: str = field(default="+4 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
+
+
+@dataclass
+class Ptah(AlienPower):
+    """Ptah - Creator God. +3 always."""
+    name: str = field(default="Ptah", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Scarab(AlienPower):
+    """Scarab - Sacred Beetle. Extra card draw."""
+    name: str = field(default="Scarab", init=False)
+    description: str = field(default="Draw extra card each turn.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+# Register all powers
 EGYPTIAN_POWERS = [
-    Pharaoh, Pyramid, Mummy, Scribe, Scarab,
-    Anubis, Ra, Osiris, Isis, Nile,
-    Sphinx_Egypt, Obelisk, Hieroglyph, Sarcophagus,
+    Ra, Osiris, Isis, Horus, Set, Anubis, Thoth, Bastet, Sekhmet,
+    Sobek, Hathor, Nut, Geb, Ptah, Scarab,
 ]
 
 for power_class in EGYPTIAN_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:
-        pass  # Already registered
+        pass
