@@ -1,5 +1,5 @@
 """
-Ocean Creature Powers for Cosmic Encounter.
+Bird Feature Powers for Cosmic Encounter.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,24 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Shark_Ocean(AlienPower):
-    """Shark_Ocean - Power of Predator. +5 on offense"""
-    name: str = field(default="Shark_Ocean", init=False)
+class Feather_Bird(AlienPower):
+    """Feather_Bird - Power of Light. +5 always"""
+    name: str = field(default="Feather_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Beak_Bird(AlienPower):
+    """Beak_Bird - Power of Peck. +5 on offense"""
+    name: str = field(default="Beak_Bird", init=False)
     description: str = field(default="+5 on offense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,54 +46,9 @@ class Shark_Ocean(AlienPower):
 
 
 @dataclass
-class Whale_Ocean(AlienPower):
-    """Whale_Ocean - Power of Giant. +5 always"""
-    name: str = field(default="Whale_Ocean", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Dolphin_Ocean(AlienPower):
-    """Dolphin_Ocean - Power of Smart. +5 always"""
-    name: str = field(default="Dolphin_Ocean", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Octopus_Ocean(AlienPower):
-    """Octopus_Ocean - Power of Flexible. +5 always"""
-    name: str = field(default="Octopus_Ocean", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Jellyfish_Ocean(AlienPower):
-    """Jellyfish_Ocean - Power of Sting. +5 on offense"""
-    name: str = field(default="Jellyfish_Ocean", init=False)
+class Talon_Bird(AlienPower):
+    """Talon_Bird - Power of Grip. +5 on offense"""
+    name: str = field(default="Talon_Bird", init=False)
     description: str = field(default="+5 on offense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -91,9 +61,9 @@ class Jellyfish_Ocean(AlienPower):
 
 
 @dataclass
-class Seahorse_Ocean(AlienPower):
-    """Seahorse_Ocean - Power of Unique. +5 always"""
-    name: str = field(default="Seahorse_Ocean", init=False)
+class Wing_Bird(AlienPower):
+    """Wing_Bird - Power of Fly. +5 always"""
+    name: str = field(default="Wing_Bird", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -106,9 +76,9 @@ class Seahorse_Ocean(AlienPower):
 
 
 @dataclass
-class Starfish_Ocean(AlienPower):
-    """Starfish_Ocean - Power of Regenerate. +5 on defense"""
-    name: str = field(default="Starfish_Ocean", init=False)
+class Nest_Bird(AlienPower):
+    """Nest_Bird - Power of Home. +5 on defense"""
+    name: str = field(default="Nest_Bird", init=False)
     description: str = field(default="+5 on defense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -121,69 +91,9 @@ class Starfish_Ocean(AlienPower):
 
 
 @dataclass
-class Crab_Ocean(AlienPower):
-    """Crab_Ocean - Power of Sideways. +5 always"""
-    name: str = field(default="Crab_Ocean", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Lobster_Ocean(AlienPower):
-    """Lobster_Ocean - Power of Armor. +5 on defense"""
-    name: str = field(default="Lobster_Ocean", init=False)
-    description: str = field(default="+5 on defense", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Turtle_Sea(AlienPower):
-    """Turtle_Sea - Power of Shell. +5 on defense"""
-    name: str = field(default="Turtle_Sea", init=False)
-    description: str = field(default="+5 on defense", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Eel_Ocean(AlienPower):
-    """Eel_Ocean - Power of Electric. +5 on offense"""
-    name: str = field(default="Eel_Ocean", init=False)
-    description: str = field(default="+5 on offense", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Ray_Ocean(AlienPower):
-    """Ray_Ocean - Power of Glide. +4 always"""
-    name: str = field(default="Ray_Ocean", init=False)
+class Egg_Bird(AlienPower):
+    """Egg_Bird - Power of Begin. +4 always"""
+    name: str = field(default="Egg_Bird", init=False)
     description: str = field(default="+4 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -196,9 +106,9 @@ class Ray_Ocean(AlienPower):
 
 
 @dataclass
-class Squid_Ocean(AlienPower):
-    """Squid_Ocean - Power of Ink. +5 always"""
-    name: str = field(default="Squid_Ocean", init=False)
+class Plumage_Bird(AlienPower):
+    """Plumage_Bird - Power of Display. +5 always"""
+    name: str = field(default="Plumage_Bird", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -211,26 +121,116 @@ class Squid_Ocean(AlienPower):
 
 
 @dataclass
-class Orca_Ocean(AlienPower):
-    """Orca_Ocean - Power of Apex. +6 on offense"""
-    name: str = field(default="Orca_Ocean", init=False)
-    description: str = field(default="+6 on offense", init=False)
+class Crest_Bird(AlienPower):
+    """Crest_Bird - Power of Crown. +5 always"""
+    name: str = field(default="Crest_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Gizzard_Bird(AlienPower):
+    """Gizzard_Bird - Power of Digest. +5 always"""
+    name: str = field(default="Gizzard_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Syrinx_Bird(AlienPower):
+    """Syrinx_Bird - Power of Song. +5 always"""
+    name: str = field(default="Syrinx_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Crop_Bird(AlienPower):
+    """Crop_Bird - Power of Store. +5 always"""
+    name: str = field(default="Crop_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Keel_Bird(AlienPower):
+    """Keel_Bird - Power of Muscle. +5 always"""
+    name: str = field(default="Keel_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Wishbone_Bird(AlienPower):
+    """Wishbone_Bird - Power of Luck. +5 always"""
+    name: str = field(default="Wishbone_Bird", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Quill_Bird(AlienPower):
+    """Quill_Bird - Power of Write. +6 always"""
+    name: str = field(default="Quill_Bird", init=False)
+    description: str = field(default="+6 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
+        if player.power_active:
             return total + 6
         return total
 
 
-OCEAN_CREATURE_POWERS = [
-    Shark_Ocean, Whale_Ocean, Dolphin_Ocean, Octopus_Ocean, Jellyfish_Ocean, Seahorse_Ocean, Starfish_Ocean,
-    Crab_Ocean, Lobster_Ocean, Turtle_Sea, Eel_Ocean, Ray_Ocean, Squid_Ocean, Orca_Ocean,
+BIRD_FEATURE_POWERS = [
+    Feather_Bird, Beak_Bird, Talon_Bird, Wing_Bird, Nest_Bird, Egg_Bird, Plumage_Bird,
+    Crest_Bird, Gizzard_Bird, Syrinx_Bird, Crop_Bird, Keel_Bird, Wishbone_Bird, Quill_Bird,
 ]
 
-for power_class in OCEAN_CREATURE_POWERS:
+for power_class in BIRD_FEATURE_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

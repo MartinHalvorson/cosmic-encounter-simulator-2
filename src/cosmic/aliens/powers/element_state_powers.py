@@ -16,10 +16,10 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Solid_Element(AlienPower):
-    """Solid_Element - Power of Firm. +5 on defense."""
-    name: str = field(default="Solid_Element", init=False)
-    description: str = field(default="+5 on defense.", init=False)
+class Solid_State(AlienPower):
+    """Solid_State - Power of Hard. +5 on defense"""
+    name: str = field(default="Solid_State", init=False)
+    description: str = field(default="+5 on defense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -31,10 +31,10 @@ class Solid_Element(AlienPower):
 
 
 @dataclass
-class Liquid_Element(AlienPower):
-    """Liquid_Element - Power of Flow. +5 always."""
-    name: str = field(default="Liquid_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
+class Liquid_State(AlienPower):
+    """Liquid_State - Power of Flow. +5 always"""
+    name: str = field(default="Liquid_State", init=False)
+    description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -46,10 +46,10 @@ class Liquid_Element(AlienPower):
 
 
 @dataclass
-class Gas_Element(AlienPower):
-    """Gas_Element - Power of Expand. +5 always."""
-    name: str = field(default="Gas_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
+class Gas_State(AlienPower):
+    """Gas_State - Power of Expand. +5 always"""
+    name: str = field(default="Gas_State", init=False)
+    description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -61,85 +61,10 @@ class Gas_Element(AlienPower):
 
 
 @dataclass
-class Plasma_Element(AlienPower):
-    """Plasma_Element - Power of Hot. +6 on offense."""
-    name: str = field(default="Plasma_Element", init=False)
-    description: str = field(default="+6 on offense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Crystalline_Element(AlienPower):
-    """Crystalline_Element - Power of Structure. +5 always."""
-    name: str = field(default="Crystalline_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Amorphous_Element(AlienPower):
-    """Amorphous_Element - Power of Random. +5 always."""
-    name: str = field(default="Amorphous_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Metallic_Element(AlienPower):
-    """Metallic_Element - Power of Conduct. +5 always."""
-    name: str = field(default="Metallic_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Noble_Element(AlienPower):
-    """Noble_Element - Power of Inert. +5 on defense."""
-    name: str = field(default="Noble_Element", init=False)
-    description: str = field(default="+5 on defense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Reactive_Element(AlienPower):
-    """Reactive_Element - Power of Bond. +5 on offense."""
-    name: str = field(default="Reactive_Element", init=False)
-    description: str = field(default="+5 on offense.", init=False)
+class Plasma_State(AlienPower):
+    """Plasma_State - Power of Hot. +5 on offense"""
+    name: str = field(default="Plasma_State", init=False)
+    description: str = field(default="+5 on offense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -151,25 +76,10 @@ class Reactive_Element(AlienPower):
 
 
 @dataclass
-class Radioactive_Element(AlienPower):
-    """Radioactive_Element - Power of Decay. +6 on offense."""
-    name: str = field(default="Radioactive_Element", init=False)
-    description: str = field(default="+6 on offense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Magnetic_Element(AlienPower):
-    """Magnetic_Element - Power of Attract. +5 always."""
-    name: str = field(default="Magnetic_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
+class Crystalline_State(AlienPower):
+    """Crystalline_State - Power of Order. +5 always"""
+    name: str = field(default="Crystalline_State", init=False)
+    description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -181,25 +91,10 @@ class Magnetic_Element(AlienPower):
 
 
 @dataclass
-class Superconducting_Element(AlienPower):
-    """Superconducting_Element - Power of Zero. +6 always."""
-    name: str = field(default="Superconducting_Element", init=False)
-    description: str = field(default="+6 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 6
-        return total
-
-
-@dataclass
-class Superfluid_Element(AlienPower):
-    """Superfluid_Element - Power of Viscous. +5 always."""
-    name: str = field(default="Superfluid_Element", init=False)
-    description: str = field(default="+5 always.", init=False)
+class Amorphous_State(AlienPower):
+    """Amorphous_State - Power of Chaos. +5 always"""
+    name: str = field(default="Amorphous_State", init=False)
+    description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
@@ -211,10 +106,115 @@ class Superfluid_Element(AlienPower):
 
 
 @dataclass
-class Bose_Einstein_Element(AlienPower):
-    """Bose_Einstein_Element - Power of Quantum. +6 always."""
-    name: str = field(default="Bose_Einstein_Element", init=False)
-    description: str = field(default="+6 always.", init=False)
+class Colloid_State(AlienPower):
+    """Colloid_State - Power of Mix. +5 always"""
+    name: str = field(default="Colloid_State", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Suspension_State(AlienPower):
+    """Suspension_State - Power of Float. +5 always"""
+    name: str = field(default="Suspension_State", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Solution_State(AlienPower):
+    """Solution_State - Power of Dissolve. +5 always"""
+    name: str = field(default="Solution_State", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Emulsion_State(AlienPower):
+    """Emulsion_State - Power of Blend. +5 always"""
+    name: str = field(default="Emulsion_State", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Gel_State(AlienPower):
+    """Gel_State - Power of Thick. +5 always"""
+    name: str = field(default="Gel_State", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Foam_State(AlienPower):
+    """Foam_State - Power of Bubble. +4 always"""
+    name: str = field(default="Foam_State", init=False)
+    description: str = field(default="+4 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
+
+
+@dataclass
+class Aerosol_State(AlienPower):
+    """Aerosol_State - Power of Spray. +5 always"""
+    name: str = field(default="Aerosol_State", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Supercritical_State(AlienPower):
+    """Supercritical_State - Power of Beyond. +6 always"""
+    name: str = field(default="Supercritical_State", init=False)
+    description: str = field(default="+6 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
@@ -226,8 +226,8 @@ class Bose_Einstein_Element(AlienPower):
 
 
 ELEMENT_STATE_POWERS = [
-    Solid_Element, Liquid_Element, Gas_Element, Plasma_Element, Crystalline_Element, Amorphous_Element, Metallic_Element,
-    Noble_Element, Reactive_Element, Radioactive_Element, Magnetic_Element, Superconducting_Element, Superfluid_Element, Bose_Einstein_Element,
+    Solid_State, Liquid_State, Gas_State, Plasma_State, Crystalline_State, Amorphous_State, Colloid_State,
+    Suspension_State, Solution_State, Emulsion_State, Gel_State, Foam_State, Aerosol_State, Supercritical_State,
 ]
 
 for power_class in ELEMENT_STATE_POWERS:
