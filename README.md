@@ -2,7 +2,7 @@
 
 <!-- NOTE: Only update the stats table below or feature implementation status. Do not modify other sections unless specifically requested. -->
 
-A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **5089+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
+A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **5500+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
 
 ## Basic Game Rules / Flow of the Simulator
 

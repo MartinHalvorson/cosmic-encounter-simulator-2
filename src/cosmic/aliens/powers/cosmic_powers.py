@@ -455,6 +455,10 @@ class Veteran(AlienPower):
         init=False
     )
 
+    def on_game_start(self, game: "Game", player: "Player") -> None:
+        """Reset wins at start of each game."""
+        self._wins = 0
+
     def on_win_encounter(self, game: "Game", player: "Player", as_main: bool) -> None:
         if as_main:
             self._wins += 1

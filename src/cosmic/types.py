@@ -136,6 +136,35 @@ class Color(Enum):
     WHITE = "White"
 
 
+class Expansion(Enum):
+    """Cosmic Encounter expansions and content sources."""
+    # Base game (2008) - always included
+    BASE = "base"
+    # Official FFG Expansions
+    COSMIC_INCURSION = "cosmic_incursion"      # 2010 - Tech, Rewards, 20 aliens
+    COSMIC_CONFLICT = "cosmic_conflict"        # 2011 - Hazards, 20 aliens
+    COSMIC_ALLIANCE = "cosmic_alliance"        # 2012 - Team variant, 20 aliens
+    COSMIC_STORM = "cosmic_storm"              # 2013 - Space stations, 25 aliens
+    COSMIC_DOMINION = "cosmic_dominion"        # 2014 - Rewards, 30 aliens
+    COSMIC_EONS = "cosmic_eons"                # 2016 - Essences, 30 aliens
+    COSMIC_ODYSSEY = "cosmic_odyssey"          # 2022 - Lux, Rifts, 42 aliens
+    # Homebrew/Custom content
+    HOMEBREW = "homebrew"
+
+
+# Mapping of expansion features to their source expansion
+EXPANSION_FEATURES = {
+    "flares": Expansion.BASE,
+    "tech": Expansion.COSMIC_INCURSION,
+    "rewards": Expansion.COSMIC_INCURSION,
+    "hazards": Expansion.COSMIC_CONFLICT,
+    "team_mode": Expansion.COSMIC_ALLIANCE,
+    "space_stations": Expansion.COSMIC_STORM,
+    "lux": Expansion.COSMIC_ODYSSEY,
+    "rifts": Expansion.COSMIC_ODYSSEY,
+}
+
+
 @dataclass
 class EncounterResult:
     """Result of an encounter."""

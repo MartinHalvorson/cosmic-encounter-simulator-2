@@ -485,3 +485,21 @@ from .brazilian_powers import *
 from .shape_powers import *  # noqa: F401, F403
 from .direction_powers import *  # noqa: F401, F403
 from .texture_powers import *  # noqa: F401, F403
+from .milestone_5k_batch5_powers import *  # noqa: F401, F403
+from .nature_phenomenon_powers import *  # noqa: F401, F403
+from .extreme_sports_powers import *  # noqa: F401, F403
+from .cuisine_style_powers import *  # noqa: F401, F403
+from .art_style_powers import *  # noqa: F401, F403
+from .literary_genre_powers import *  # noqa: F401, F403
+from .sport_position_powers import *  # noqa: F401, F403
+from .size_powers import *  # noqa: F401, F403
+from .candy_powers import *  # noqa: F401, F403
+from .spice_powers import *  # noqa: F401, F403
+from .cooking_method_powers import *  # noqa: F401, F403
+from .storage_container_powers import *  # noqa: F401, F403
+from .weather_conditions_powers import *  # noqa: F401, F403
+from .ocean_creatures_powers import *  # noqa: F401, F403
+from .thai_powers import *
+from .hawaiian_powers import *
+from .maori_powers import *
+from .philippine_powers import *
