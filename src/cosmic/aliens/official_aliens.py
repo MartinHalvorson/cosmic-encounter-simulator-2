@@ -22,6 +22,21 @@ Sources:
 
 from typing import Dict, List, Set, Optional
 
+from ..types import Expansion
+
+# Mapping from expansion string names to Expansion enum
+EXPANSION_NAME_TO_ENUM: Dict[str, Expansion] = {
+    "Base Game": Expansion.BASE,
+    "Cosmic Incursion": Expansion.COSMIC_INCURSION,
+    "Cosmic Conflict": Expansion.COSMIC_CONFLICT,
+    "Cosmic Alliance": Expansion.COSMIC_ALLIANCE,
+    "Cosmic Storm": Expansion.COSMIC_STORM,
+    "Cosmic Dominion": Expansion.COSMIC_DOMINION,
+    "Cosmic Eons": Expansion.COSMIC_EONS,
+    "Cosmic Odyssey": Expansion.COSMIC_ODYSSEY,
+    "Promo": Expansion.BASE,  # Promos count as base game
+}
+
 # Official aliens by expansion
 OFFICIAL_ALIENS: Dict[str, List[str]] = {
     "Base Game": [

@@ -314,6 +314,13 @@ class GameConfig:
     seed: Optional[int] = None  # For reproducibility
     required_aliens: Optional[List[str]] = None  # Aliens that must be in the game
 
+    # Expansion selection (None = random selection per game)
+    expansions: Optional[List[Expansion]] = None  # Specific expansions to use
+    random_expansions: bool = True  # Randomly select expansions per game
+    min_expansions: int = 0  # Minimum number of expansions (besides base)
+    max_expansions: int = 3  # Maximum number of expansions (besides base)
+    include_homebrew: bool = True  # Include homebrew aliens in random selection
+
     # 2-player variant settings
     two_player_mode: bool = False  # Enables 2-player variant rules
     dual_powers: bool = False  # Each player gets 2 alien powers (for 2P variant)
