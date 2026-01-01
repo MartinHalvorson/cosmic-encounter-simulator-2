@@ -368,3 +368,15 @@ from .finnish_mythology_powers import *  # noqa: F401, F403
 from .maritime_powers import *  # noqa: F401, F403
 from .aviation_powers import *  # noqa: F401, F403
 from .astronomy_new_powers import *  # noqa: F401, F403
+from .fantasy_element_powers import *  # noqa: F401, F403
+from .time_concept_powers import *  # noqa: F401, F403
+from .astronomy_final_powers import *  # noqa: F401, F403
+from .programming_powers import *  # noqa: F401, F403
+from .restaurant_powers import *  # noqa: F401, F403
+from .architecture_powers import *  # noqa: F401, F403
+from .color_powers import *  # noqa: F401, F403
+from .mathematics_powers import *  # noqa: F401, F403
+from .computer_powers import *  # noqa: F401, F403
+from .weather_condition_powers import *  # noqa: F401, F403
+from .landscape_powers import *  # noqa: F401, F403
+from .space_body_powers import *  # noqa: F401, F403

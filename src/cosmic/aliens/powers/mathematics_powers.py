@@ -1,12 +1,11 @@
 """
-Color Powers for Cosmic Encounter.
+Mathematics Powers for Cosmic Encounter.
 
-Aliens inspired by colors.
+Aliens inspired by mathematical concepts.
 """
 
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
-import random
 
 from ..base import AlienPower, PowerCategory
 from ...types import PowerTiming, PowerType, Side
@@ -19,24 +18,44 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Crimson(AlienPower):
-    """Crimson - Power of Blood."""
-    name: str = field(default="Crimson", init=False)
-    description: str = field(default="+5 on offense.", init=False)
+class Prime(AlienPower):
+    """Prime - Power of Indivisibility."""
+    name: str = field(default="Prime", init=False)
+    description: str = field(default="+3 with no allies.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Infinity_Math(AlienPower):
+    """Infinity_Math - Power of Endless."""
+    name: str = field(default="Infinity_Math", init=False)
+    description: str = field(default="+5 always.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
+        if player.power_active:
             return base_total + 5
         return base_total
 
 
 @dataclass
-class Cerulean(AlienPower):
-    """Cerulean - Power of Sky."""
-    name: str = field(default="Cerulean", init=False)
+class Fibonacci(AlienPower):
+    """Fibonacci - Power of Sequence."""
+    name: str = field(default="Fibonacci", init=False)
+    description: str = field(default="+1, +2, +3 per turn.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+
+@dataclass
+class Pi_Math(AlienPower):
+    """Pi_Math - Power of Circles."""
+    name: str = field(default="Pi_Math", init=False)
     description: str = field(default="+3 always.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -49,9 +68,9 @@ class Cerulean(AlienPower):
 
 
 @dataclass
-class Emerald_Color(AlienPower):
-    """Emerald_Color - Power of Nature."""
-    name: str = field(default="Emerald_Color", init=False)
+class Exponential(AlienPower):
+    """Exponential - Power of Growth."""
+    name: str = field(default="Exponential", init=False)
     description: str = field(default="+4 always.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -64,29 +83,9 @@ class Emerald_Color(AlienPower):
 
 
 @dataclass
-class Violet(AlienPower):
-    """Violet - Power of Mystery."""
-    name: str = field(default="Violet", init=False)
-    description: str = field(default="Hide card value.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Amber_Color(AlienPower):
-    """Amber_Color - Power of Warning."""
-    name: str = field(default="Amber_Color", init=False)
-    description: str = field(default="See opponent card.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Ivory(AlienPower):
-    """Ivory - Power of Purity."""
-    name: str = field(default="Ivory", init=False)
+class Logarithm(AlienPower):
+    """Logarithm - Power of Inverse."""
+    name: str = field(default="Logarithm", init=False)
     description: str = field(default="+3 on defense.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -99,9 +98,34 @@ class Ivory(AlienPower):
 
 
 @dataclass
-class Obsidian_Color(AlienPower):
-    """Obsidian_Color - Power of Darkness."""
-    name: str = field(default="Obsidian_Color", init=False)
+class Factorial(AlienPower):
+    """Factorial - Power of Multiplication."""
+    name: str = field(default="Factorial", init=False)
+    description: str = field(default="+1 per ship.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Fractal(AlienPower):
+    """Fractal - Power of Pattern."""
+    name: str = field(default="Fractal", init=False)
+    description: str = field(default="+4 always.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        if player.power_active:
+            return base_total + 4
+        return base_total
+
+
+@dataclass
+class Vector(AlienPower):
+    """Vector - Power of Direction."""
+    name: str = field(default="Vector", init=False)
     description: str = field(default="+4 on offense.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -114,84 +138,50 @@ class Obsidian_Color(AlienPower):
 
 
 @dataclass
-class Scarlet(AlienPower):
-    """Scarlet - Power of Passion."""
-    name: str = field(default="Scarlet", init=False)
-    description: str = field(default="+4 on offense.", init=False)
+class Matrix_Math(AlienPower):
+    """Matrix_Math - Power of Arrays."""
+    name: str = field(default="Matrix_Math", init=False)
+    description: str = field(default="+2 per ally.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return base_total + 4
-        return base_total
-
 
 @dataclass
-class Azure(AlienPower):
-    """Azure - Power of Calm."""
-    name: str = field(default="Azure", init=False)
-    description: str = field(default="+3 on defense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Algorithm_Math(AlienPower):
+    """Algorithm_Math - Power of Process."""
+    name: str = field(default="Algorithm_Math", init=False)
+    description: str = field(default="Draw extra card.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return base_total + 3
-        return base_total
+    def on_turn_start(self, game: "Game", player: "Player") -> None:
+        if player.power_active:
+            card = game.cosmic_deck.draw()
+            if card:
+                player.add_card(card)
 
 
 @dataclass
-class Vermillion(AlienPower):
-    """Vermillion - Power of Fire."""
-    name: str = field(default="Vermillion", init=False)
-    description: str = field(default="+5 on offense.", init=False)
+class Theorem(AlienPower):
+    """Theorem - Power of Proof."""
+    name: str = field(default="Theorem", init=False)
+    description: str = field(default="+5 always.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
+        if player.power_active:
             return base_total + 5
-        return base_total
-
-
-@dataclass
-class Indigo_Color(AlienPower):
-    """Indigo_Color - Power of Depth."""
-    name: str = field(default="Indigo_Color", init=False)
-    description: str = field(default="+4 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + 4
-        return base_total
-
-
-@dataclass
-class Prismatic(AlienPower):
-    """Prismatic - Power of Rainbow."""
-    name: str = field(default="Prismatic", init=False)
-    description: str = field(default="Random +2 to +6.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + random.randint(2, 6)
         return base_total
 
 
 # Register all aliens
 for alien_class in [
-    Crimson, Cerulean, Emerald_Color, Violet, Amber_Color,
-    Ivory, Obsidian_Color, Scarlet, Azure, Vermillion,
-    Indigo_Color, Prismatic,
+    Prime, Infinity_Math, Fibonacci, Pi_Math, Exponential,
+    Logarithm, Factorial, Fractal, Vector, Matrix_Math,
+    Algorithm_Math, Theorem,
 ]:
     AlienRegistry.register(alien_class())
