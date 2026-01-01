@@ -472,4 +472,6 @@ from .writing_tool_powers import *  # noqa: F401, F403
 from .zodiac_powers import *  # noqa: F401, F403
 from .norse_god_powers import *  # noqa: F401, F403
 from .industrial_age_powers import *  # noqa: F401, F403
+from .space_age_powers import *  # noqa: F401, F403
+from .digital_age_powers import *  # noqa: F401, F403
 
