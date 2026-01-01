@@ -1,228 +1,314 @@
 """
-Tool and Equipment themed alien powers for Cosmic Encounter.
+Tool Powers - Hand tool and equipment themed aliens.
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
+import random
 
 from ..base import AlienPower, PowerCategory
-from ...types import PowerTiming, PowerType, Side, PlayerRole
+from ..registry import AlienRegistry
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
     from ...player import Player
 
-from ..registry import AlienRegistry
-
 
 @dataclass
-class Hammer(AlienPower):
-    """Hammer - Power of Force."""
-    name: str = field(default="Hammer", init=False)
-    description: str = field(
-        default="+5 when you play attack 20 or higher.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Wrench(AlienPower):
-    """Wrench - Power of Fixing."""
-    name: str = field(default="Wrench", init=False)
-    description: str = field(
-        default="Retrieve 1 ship from warp at start of each encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Saw(AlienPower):
-    """Saw - Power of Cutting."""
-    name: str = field(default="Saw", init=False)
-    description: str = field(
-        default="Cut opponent's card value in half.",
-        init=False
-    )
+class Hammer_Tool(AlienPower):
+    """Hammer_Tool - Strike hard. +4 on offense."""
+    name: str = field(default="Hammer_Tool", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-
-@dataclass
-class Drill(AlienPower):
-    """Drill - Power of Penetration."""
-    name: str = field(default="Drill", init=False)
-    description: str = field(
-        default="Ignore defender's reinforcement cards.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
 
 
 @dataclass
 class Screwdriver(AlienPower):
-    """Screwdriver - Power of Adjustment."""
+    """Screwdriver - Precise work. +3 always."""
     name: str = field(default="Screwdriver", init=False)
-    description: str = field(
-        default="Modify your card value by +/- 3.",
-        init=False
-    )
+    description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Wrench(AlienPower):
+    """Wrench - Tighten. +3 on defense."""
+    name: str = field(default="Wrench", init=False)
+    description: str = field(default="+3 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Saw(AlienPower):
+    """Saw - Cut through. +3 on offense."""
+    name: str = field(default="Saw", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
 
 
 @dataclass
 class Pliers(AlienPower):
-    """Pliers - Power of Grip."""
+    """Pliers - Grip tight. +2 always."""
     name: str = field(default="Pliers", init=False)
-    description: str = field(
-        default="Hold onto cards; can't be forced to discard.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
+    description: str = field(default="+2 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2
+        return total
+
+
+@dataclass
+class Drill(AlienPower):
+    """Drill - Penetrate. +5 on offense."""
+    name: str = field(default="Drill", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
-@dataclass
-class Knife(AlienPower):
-    """Knife - Power of Precision."""
-    name: str = field(default="Knife", init=False)
-    description: str = field(
-        default="Remove 1 specific ship from encounter before combat.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
 
 
 @dataclass
-class Lever(AlienPower):
-    """Lever - Power of Advantage."""
-    name: str = field(default="Lever", init=False)
-    description: str = field(
-        default="Your ships count as 1.5x (rounded down).",
-        init=False
-    )
+class Level(AlienPower):
+    """Level - Balance. Win ties."""
+    name: str = field(default="Level", init=False)
+    description: str = field(default="Win all ties.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Tape(AlienPower):
+    """Tape - Bind together. +2 per ally."""
+    name: str = field(default="Tape", init=False)
+    description: str = field(default="+2 per ally.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
 class Chisel(AlienPower):
-    """Chisel - Power of Shaping."""
+    """Chisel - Shape carefully. +2 on defense."""
     name: str = field(default="Chisel", init=False)
-    description: str = field(
-        default="Change any negotiate to attack 10.",
-        init=False
-    )
+    description: str = field(default="+2 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Shovel(AlienPower):
-    """Shovel - Power of Digging."""
-    name: str = field(default="Shovel", init=False)
-    description: str = field(
-        default="Draw bottom card of cosmic deck instead of top.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.GAIN_CARDS, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
-@dataclass
-class Axe(AlienPower):
-    """Axe - Power of Chopping."""
-    name: str = field(default="Axe", init=False)
-    description: str = field(
-        default="Destroy 2 ships when you win as offense.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 2
+        return total
 
 
 @dataclass
 class Clamp(AlienPower):
-    """Clamp - Power of Holding."""
+    """Clamp - Hold fast. +4 on defense."""
     name: str = field(default="Clamp", init=False)
-    description: str = field(
-        default="Opponent can't retrieve ships from warp next turn.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    description: str = field(default="+4 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 4
+        return total
 
 
 @dataclass
-class Brush(AlienPower):
-    """Brush - Power of Cleaning."""
-    name: str = field(default="Brush", init=False)
-    description: str = field(
-        default="Remove 1 card from any discard pile.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+class Sandpaper(AlienPower):
+    """Sandpaper - Smooth edges. -2 to opponent."""
+    name: str = field(default="Sandpaper", init=False)
+    description: str = field(default="Opponent gets -2.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
-class Compass(AlienPower):
-    """Compass - Power of Direction."""
-    name: str = field(default="Compass", init=False)
-    description: str = field(
-        default="See top 3 destiny cards before drawing.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+class Ladder(AlienPower):
+    """Ladder - Climb high. +3 on offense."""
+    name: str = field(default="Ladder", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
 
 
 @dataclass
-class Wrench_Alt(AlienPower):
-    """Wrench Alt - Power of Repair."""
-    name: str = field(default="Wrench_Alt", init=False)
-    description: str = field(
-        default="Restore lost power once per game.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+class Ruler(AlienPower):
+    """Ruler - Measure. +2 always."""
+    name: str = field(default="Ruler", init=False)
+    description: str = field(default="+2 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2
+        return total
+
+
+@dataclass
+class Axe(AlienPower):
+    """Axe - Chop. +5 on offense."""
+    name: str = field(default="Axe", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Shovel(AlienPower):
+    """Shovel - Dig deep. +3 always."""
+    name: str = field(default="Shovel", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Pickaxe(AlienPower):
+    """Pickaxe - Break through. +4 on offense."""
+    name: str = field(default="Pickaxe", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Vise(AlienPower):
+    """Vise - Crush. +4 on defense."""
+    name: str = field(default="Vise", init=False)
+    description: str = field(default="+4 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Crowbar(AlienPower):
+    """Crowbar - Pry open. +4 on offense."""
+    name: str = field(default="Crowbar", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Mallet(AlienPower):
+    """Mallet - Pound. +3 on offense."""
+    name: str = field(default="Mallet", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Scissors(AlienPower):
+    """Scissors - Cut. +2 on offense."""
+    name: str = field(default="Scissors", init=False)
+    description: str = field(default="+2 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 2
+        return total
 
 
 # Register all powers
-AlienRegistry.register(Hammer())
-AlienRegistry.register(Wrench())
-AlienRegistry.register(Saw())
-AlienRegistry.register(Drill())
-AlienRegistry.register(Screwdriver())
-AlienRegistry.register(Pliers())
-AlienRegistry.register(Knife())
-AlienRegistry.register(Lever())
-AlienRegistry.register(Chisel())
-AlienRegistry.register(Shovel())
-AlienRegistry.register(Axe())
-AlienRegistry.register(Clamp())
-AlienRegistry.register(Brush())
-AlienRegistry.register(Compass())
-AlienRegistry.register(Wrench_Alt())
+TOOL_POWERS = [
+    Hammer_Tool, Screwdriver, Wrench, Saw, Pliers, Drill, Level, Tape, Chisel,
+    Clamp, Sandpaper, Ladder, Ruler, Axe, Shovel, Pickaxe, Vise, Crowbar,
+    Mallet, Scissors,
+]
+
+for power_class in TOOL_POWERS:
+    try:
+        AlienRegistry.register(power_class())
+    except ValueError:
+        pass
