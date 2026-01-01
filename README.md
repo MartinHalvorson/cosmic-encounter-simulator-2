@@ -2,7 +2,7 @@
 
 <!-- NOTE: Only update the stats table below or feature implementation status. Do not modify other sections unless specifically requested. -->
 
-A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **4022+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
+A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **4509+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
 
 ## Alien Power Rankings
 
@@ -15793,56 +15793,56 @@ python update_stats.py --sort power --order asc
 
 ## Simulation Results
 
-**Total Games Simulated:** 21,848,858
-**Solo Victories:** 21,234,574
-**Shared Victories:** 361,066
+**Total Games Simulated:** 21,898,356
+**Solo Victories:** 21,283,276
+**Shared Victories:** 361,861
 **Average Game Length:** 5.0 turns
-**Last Updated:** 2025-12-31T20:28:02
+**Last Updated:** 2025-12-31T20:28:45
 
 ### Alien Power Rankings (by ELO)
 
 | Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
 |------|-------|-----|----------|-------|-----------|--------|
-| 1 | Vent | 1505 | 100.0% | 1 | 1 | 0 |
-| 2 | Volcano_Island | 1505 | 100.0% | 1 | 1 | 0 |
-| 3 | Decade | 1505 | 100.0% | 1 | 1 | 0 |
-| 4 | Hero_Char | 1504 | 100.0% | 1 | 1 | 0 |
-| 5 | Exoplanet | 1504 | 100.0% | 1 | 1 | 0 |
-| 6 | Formula | 1504 | 100.0% | 1 | 1 | 0 |
-| 7 | Sampsa | 1503 | 100.0% | 1 | 1 | 0 |
-| 8 | Thermal_Energy | 1503 | 100.0% | 1 | 1 | 0 |
-| 9 | Amber_Color | 1503 | 100.0% | 1 | 1 | 0 |
-| 10 | Continental | 1500 | 100.0% | 2 | 2 | 0 |
-| 11 | Megalodon | 1500 | 100.0% | 2 | 2 | 0 |
-| 12 | Cartridge | 1500 | 100.0% | 2 | 2 | 0 |
-| 13 | Black_Hole | 1500 | 100.0% | 1 | 1 | 0 |
-| 14 | Variable | 1500 | 100.0% | 1 | 1 | 0 |
-| 15 | Fast_Food | 1500 | 100.0% | 1 | 1 | 0 |
-| 16 | Pteranodon | 1500 | 100.0% | 1 | 1 | 0 |
-| 17 | Altimeter | 1500 | 100.0% | 1 | 1 | 0 |
-| 18 | Fermenter | 1500 | 100.0% | 1 | 1 | 0 |
-| 19 | Selkie_Myth | 1500 | 100.0% | 1 | 1 | 0 |
-| 20 | Paladin_Char | 1500 | 100.0% | 1 | 1 | 0 |
-| 21 | Louhi | 1500 | 100.0% | 1 | 1 | 0 |
-| 22 | Captain_Maritime | 1500 | 100.0% | 1 | 1 | 0 |
-| 23 | Present | 1500 | 100.0% | 1 | 1 | 0 |
-| 24 | Array | 1500 | 100.0% | 1 | 1 | 0 |
-| 25 | Ammonite | 1500 | 100.0% | 1 | 1 | 0 |
-| 26 | Fortress_Arch | 1500 | 100.0% | 1 | 1 | 0 |
-| 27 | Goblin_Myth | 1500 | 100.0% | 1 | 1 | 0 |
-| 28 | Roasting | 1500 | 100.0% | 1 | 1 | 0 |
-| 29 | Binary_Tree | 1500 | 100.0% | 1 | 1 | 0 |
-| 30 | Biathlon | 1500 | 100.0% | 1 | 1 | 0 |
-| 31 | Hydro_Energy | 1500 | 100.0% | 1 | 1 | 0 |
-| 32 | Hazy | 1500 | 100.0% | 1 | 1 | 0 |
-| 33 | Multiplayer | 1500 | 100.0% | 1 | 1 | 0 |
-| 34 | Hydra_Myth | 1500 | 100.0% | 1 | 1 | 0 |
-| 35 | Wing | 1500 | 100.0% | 1 | 1 | 0 |
-| 36 | Mokosh | 1500 | 100.0% | 1 | 1 | 0 |
-| 37 | Canvas | 1500 | 100.0% | 1 | 1 | 0 |
-| 38 | Familiar | 1500 | 100.0% | 1 | 1 | 0 |
-| 39 | Sled | 1500 | 100.0% | 1 | 1 | 0 |
-| 40 | Cashmere | 1500 | 100.0% | 1 | 1 | 0 |
-| ... | *4375 more aliens* | ... | ... | ... | ... | ... |
+| 1 | Oarfish | 1051 | 46.4% | 28 | 13 | 0 |
+| 2 | Aether | 886 | 37.5% | 32 | 12 | 0 |
+| 3 | Lemminkainen | 883 | 35.5% | 31 | 11 | 0 |
+| 4 | SSD | 877 | 37.5% | 32 | 11 | 1 |
+| 5 | Leshy | 862 | 19.2% | 26 | 5 | 0 |
+| 6 | Wing | 856 | 40.0% | 35 | 14 | 0 |
+| 7 | Coelacanth | 841 | 45.0% | 40 | 18 | 0 |
+| 8 | Winter_Solstice | 823 | 40.5% | 37 | 14 | 1 |
+| 9 | Hibernation | 821 | 32.4% | 34 | 11 | 0 |
+| 10 | Wok | 819 | 32.4% | 34 | 11 | 0 |
+| 11 | Centrifuge | 804 | 42.1% | 38 | 15 | 1 |
+| 12 | Eruption | 799 | 25.8% | 31 | 8 | 0 |
+| 13 | Linen | 798 | 42.5% | 40 | 17 | 0 |
+| 14 | Ilmarinen | 798 | 36.1% | 36 | 13 | 0 |
+| 15 | Antivirus | 798 | 41.0% | 39 | 16 | 0 |
+| 16 | Level | 772 | 36.1% | 36 | 12 | 1 |
+| 17 | Mokosh | 771 | 46.5% | 43 | 18 | 2 |
+| 18 | Habitable_Zone | 769 | 38.5% | 39 | 15 | 0 |
+| 19 | Matrix_Math | 768 | 20.0% | 30 | 6 | 0 |
+| 20 | Poaching | 766 | 39.0% | 41 | 16 | 0 |
+| 21 | Jacheongbi | 765 | 30.6% | 36 | 10 | 1 |
+| 22 | Palm | 762 | 30.6% | 36 | 11 | 0 |
+| 23 | Seondnyeo | 758 | 31.6% | 38 | 12 | 0 |
+| 24 | Diner | 754 | 35.9% | 39 | 14 | 0 |
+| 25 | Command_Module | 751 | 47.9% | 48 | 23 | 0 |
+| 26 | Chef_Rest | 751 | 34.2% | 38 | 13 | 0 |
+| 27 | Bonghwang | 745 | 19.4% | 31 | 6 | 0 |
+| 28 | Helm | 743 | 43.2% | 44 | 18 | 1 |
+| 29 | Quintessence | 736 | 21.9% | 32 | 7 | 0 |
+| 30 | Hedge_Trimmer | 736 | 25.7% | 35 | 9 | 0 |
+| 31 | Variable | 735 | 38.1% | 42 | 16 | 0 |
+| 32 | Jarilo | 734 | 37.5% | 40 | 14 | 1 |
+| 33 | Planetarium | 734 | 28.6% | 35 | 10 | 0 |
+| 34 | Yeomra | 727 | 21.9% | 32 | 7 | 0 |
+| 35 | Romanesque | 726 | 26.5% | 34 | 9 | 0 |
+| 36 | Icicle | 723 | 41.3% | 46 | 19 | 0 |
+| 37 | Function | 717 | 36.6% | 41 | 15 | 0 |
+| 38 | Lathe | 716 | 35.0% | 40 | 13 | 1 |
+| 39 | Fine_Dining | 715 | 21.2% | 33 | 7 | 0 |
+| 40 | Megalodon | 714 | 18.8% | 32 | 6 | 0 |
+| ... | *4618 more aliens* | ... | ... | ... | ... | ... |
 
 <!-- SIMULATION_RESULTS_END -->
