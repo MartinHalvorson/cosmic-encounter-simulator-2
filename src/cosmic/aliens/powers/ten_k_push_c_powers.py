@@ -1,5 +1,5 @@
 """
-Knot Type Powers for Cosmic Encounter.
+10K Push C Powers for Cosmic Encounter.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,9 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Square_Knot(AlienPower):
-    """Square_Knot - Power of Basic. +5 always"""
-    name: str = field(default="Square_Knot", init=False)
+class Last_10K_One(AlienPower):
+    """Last_10K_One - Power of One. +5 always"""
+    name: str = field(default="Last_10K_One", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,9 +31,9 @@ class Square_Knot(AlienPower):
 
 
 @dataclass
-class Bowline_Knot(AlienPower):
-    """Bowline_Knot - Power of Loop. +5 always"""
-    name: str = field(default="Bowline_Knot", init=False)
+class Last_10K_Two(AlienPower):
+    """Last_10K_Two - Power of Two. +5 always"""
+    name: str = field(default="Last_10K_Two", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -46,9 +46,9 @@ class Bowline_Knot(AlienPower):
 
 
 @dataclass
-class Clove_Hitch_Knot(AlienPower):
-    """Clove_Hitch_Knot - Power of Quick. +5 always"""
-    name: str = field(default="Clove_Hitch_Knot", init=False)
+class Last_10K_Three(AlienPower):
+    """Last_10K_Three - Power of Three. +5 always"""
+    name: str = field(default="Last_10K_Three", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -61,9 +61,9 @@ class Clove_Hitch_Knot(AlienPower):
 
 
 @dataclass
-class Sheet_Bend_Knot(AlienPower):
-    """Sheet_Bend_Knot - Power of Join. +5 always"""
-    name: str = field(default="Sheet_Bend_Knot", init=False)
+class Last_10K_Four(AlienPower):
+    """Last_10K_Four - Power of Four. +5 always"""
+    name: str = field(default="Last_10K_Four", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -76,9 +76,9 @@ class Sheet_Bend_Knot(AlienPower):
 
 
 @dataclass
-class Figure_Eight_Knot(AlienPower):
-    """Figure_Eight_Knot - Power of Stopper. +5 always"""
-    name: str = field(default="Figure_Eight_Knot", init=False)
+class Last_10K_Five(AlienPower):
+    """Last_10K_Five - Power of Five. +5 always"""
+    name: str = field(default="Last_10K_Five", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -91,9 +91,9 @@ class Figure_Eight_Knot(AlienPower):
 
 
 @dataclass
-class Reef_Knot(AlienPower):
-    """Reef_Knot - Power of Flat. +5 always"""
-    name: str = field(default="Reef_Knot", init=False)
+class Last_10K_Six(AlienPower):
+    """Last_10K_Six - Power of Six. +5 always"""
+    name: str = field(default="Last_10K_Six", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -106,9 +106,9 @@ class Reef_Knot(AlienPower):
 
 
 @dataclass
-class Slip_Knot(AlienPower):
-    """Slip_Knot - Power of Adjustable. +5 always"""
-    name: str = field(default="Slip_Knot", init=False)
+class Last_10K_Seven(AlienPower):
+    """Last_10K_Seven - Power of Seven. +5 always"""
+    name: str = field(default="Last_10K_Seven", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -121,9 +121,69 @@ class Slip_Knot(AlienPower):
 
 
 @dataclass
-class Half_Hitch_Knot(AlienPower):
-    """Half_Hitch_Knot - Power of Simple. +4 always"""
-    name: str = field(default="Half_Hitch_Knot", init=False)
+class Last_10K_Eight(AlienPower):
+    """Last_10K_Eight - Power of Eight. +5 always"""
+    name: str = field(default="Last_10K_Eight", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Last_10K_Nine(AlienPower):
+    """Last_10K_Nine - Power of Nine. +5 always"""
+    name: str = field(default="Last_10K_Nine", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Last_10K_Ten(AlienPower):
+    """Last_10K_Ten - Power of Ten. +5 always"""
+    name: str = field(default="Last_10K_Ten", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Last_10K_Eleven(AlienPower):
+    """Last_10K_Eleven - Power of Eleven. +5 always"""
+    name: str = field(default="Last_10K_Eleven", init=False)
+    description: str = field(default="+5 always", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Last_10K_Twelve(AlienPower):
+    """Last_10K_Twelve - Power of Twelve. +4 always"""
+    name: str = field(default="Last_10K_Twelve", init=False)
     description: str = field(default="+4 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -136,9 +196,9 @@ class Half_Hitch_Knot(AlienPower):
 
 
 @dataclass
-class Timber_Hitch_Knot(AlienPower):
-    """Timber_Hitch_Knot - Power of Log. +5 always"""
-    name: str = field(default="Timber_Hitch_Knot", init=False)
+class Last_10K_Thirteen(AlienPower):
+    """Last_10K_Thirteen - Power of Thirteen. +5 always"""
+    name: str = field(default="Last_10K_Thirteen", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -151,69 +211,9 @@ class Timber_Hitch_Knot(AlienPower):
 
 
 @dataclass
-class Trucker_Hitch_Knot(AlienPower):
-    """Trucker_Hitch_Knot - Power of Tension. +5 always"""
-    name: str = field(default="Trucker_Hitch_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Butterfly_Knot(AlienPower):
-    """Butterfly_Knot - Power of Middle. +5 always"""
-    name: str = field(default="Butterfly_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Prusik_Knot(AlienPower):
-    """Prusik_Knot - Power of Friction. +5 always"""
-    name: str = field(default="Prusik_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Monkey_Fist_Knot(AlienPower):
-    """Monkey_Fist_Knot - Power of Ball. +5 always"""
-    name: str = field(default="Monkey_Fist_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Turks_Head_Knot(AlienPower):
-    """Turks_Head_Knot - Power of Decorative. +6 always"""
-    name: str = field(default="Turks_Head_Knot", init=False)
+class Last_10K_Fourteen(AlienPower):
+    """Last_10K_Fourteen - Power of Fourteen. +6 always"""
+    name: str = field(default="Last_10K_Fourteen", init=False)
     description: str = field(default="+6 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -225,12 +225,12 @@ class Turks_Head_Knot(AlienPower):
         return total
 
 
-KNOT_TYPE_POWERS = [
-    Square_Knot, Bowline_Knot, Clove_Hitch_Knot, Sheet_Bend_Knot, Figure_Eight_Knot, Reef_Knot, Slip_Knot,
-    Half_Hitch_Knot, Timber_Hitch_Knot, Trucker_Hitch_Knot, Butterfly_Knot, Prusik_Knot, Monkey_Fist_Knot, Turks_Head_Knot,
+TEN_K_PUSH_C_POWERS = [
+    Last_10K_One, Last_10K_Two, Last_10K_Three, Last_10K_Four, Last_10K_Five, Last_10K_Six, Last_10K_Seven,
+    Last_10K_Eight, Last_10K_Nine, Last_10K_Ten, Last_10K_Eleven, Last_10K_Twelve, Last_10K_Thirteen, Last_10K_Fourteen,
 ]
 
-for power_class in KNOT_TYPE_POWERS:
+for power_class in TEN_K_PUSH_C_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

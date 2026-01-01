@@ -1,5 +1,5 @@
 """
-Knot Type Powers for Cosmic Encounter.
+Potion Type Powers for Cosmic Encounter.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,24 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Square_Knot(AlienPower):
-    """Square_Knot - Power of Basic. +5 always"""
-    name: str = field(default="Square_Knot", init=False)
+class Health_Potion(AlienPower):
+    """Health_Potion - Power of Heal. +5 on defense"""
+    name: str = field(default="Health_Potion", init=False)
+    description: str = field(default="+5 on defense", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Mana_Potion(AlienPower):
+    """Mana_Potion - Power of Magic. +5 always"""
+    name: str = field(default="Mana_Potion", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,9 +46,84 @@ class Square_Knot(AlienPower):
 
 
 @dataclass
-class Bowline_Knot(AlienPower):
-    """Bowline_Knot - Power of Loop. +5 always"""
-    name: str = field(default="Bowline_Knot", init=False)
+class Strength_Potion(AlienPower):
+    """Strength_Potion - Power of Power. +5 on offense"""
+    name: str = field(default="Strength_Potion", init=False)
+    description: str = field(default="+5 on offense", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Speed_Potion(AlienPower):
+    """Speed_Potion - Power of Fast. +5 on offense"""
+    name: str = field(default="Speed_Potion", init=False)
+    description: str = field(default="+5 on offense", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Invisibility_Potion(AlienPower):
+    """Invisibility_Potion - Power of Hide. +5 on defense"""
+    name: str = field(default="Invisibility_Potion", init=False)
+    description: str = field(default="+5 on defense", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Fire_Resistance_Potion(AlienPower):
+    """Fire_Resistance_Potion - Power of Resist. +5 on defense"""
+    name: str = field(default="Fire_Resistance_Potion", init=False)
+    description: str = field(default="+5 on defense", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Poison_Potion(AlienPower):
+    """Poison_Potion - Power of Toxic. +5 on offense"""
+    name: str = field(default="Poison_Potion", init=False)
+    description: str = field(default="+5 on offense", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Luck_Potion(AlienPower):
+    """Luck_Potion - Power of Fortune. +5 always"""
+    name: str = field(default="Luck_Potion", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -46,9 +136,9 @@ class Bowline_Knot(AlienPower):
 
 
 @dataclass
-class Clove_Hitch_Knot(AlienPower):
-    """Clove_Hitch_Knot - Power of Quick. +5 always"""
-    name: str = field(default="Clove_Hitch_Knot", init=False)
+class Night_Vision_Potion(AlienPower):
+    """Night_Vision_Potion - Power of See. +5 always"""
+    name: str = field(default="Night_Vision_Potion", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -61,9 +151,9 @@ class Clove_Hitch_Knot(AlienPower):
 
 
 @dataclass
-class Sheet_Bend_Knot(AlienPower):
-    """Sheet_Bend_Knot - Power of Join. +5 always"""
-    name: str = field(default="Sheet_Bend_Knot", init=False)
+class Water_Breathing_Potion(AlienPower):
+    """Water_Breathing_Potion - Power of Breathe. +5 always"""
+    name: str = field(default="Water_Breathing_Potion", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -76,9 +166,9 @@ class Sheet_Bend_Knot(AlienPower):
 
 
 @dataclass
-class Figure_Eight_Knot(AlienPower):
-    """Figure_Eight_Knot - Power of Stopper. +5 always"""
-    name: str = field(default="Figure_Eight_Knot", init=False)
+class Flying_Potion(AlienPower):
+    """Flying_Potion - Power of Fly. +5 always"""
+    name: str = field(default="Flying_Potion", init=False)
     description: str = field(default="+5 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -91,129 +181,39 @@ class Figure_Eight_Knot(AlienPower):
 
 
 @dataclass
-class Reef_Knot(AlienPower):
-    """Reef_Knot - Power of Flat. +5 always"""
-    name: str = field(default="Reef_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Slip_Knot(AlienPower):
-    """Slip_Knot - Power of Adjustable. +5 always"""
-    name: str = field(default="Slip_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Half_Hitch_Knot(AlienPower):
-    """Half_Hitch_Knot - Power of Simple. +4 always"""
-    name: str = field(default="Half_Hitch_Knot", init=False)
-    description: str = field(default="+4 always", init=False)
+class Antidote_Potion(AlienPower):
+    """Antidote_Potion - Power of Cure. +4 on defense"""
+    name: str = field(default="Antidote_Potion", init=False)
+    description: str = field(default="+4 on defense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
+        if player.power_active and side == Side.DEFENSE:
             return total + 4
         return total
 
 
 @dataclass
-class Timber_Hitch_Knot(AlienPower):
-    """Timber_Hitch_Knot - Power of Log. +5 always"""
-    name: str = field(default="Timber_Hitch_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
+class Giant_Growth_Potion(AlienPower):
+    """Giant_Growth_Potion - Power of Grow. +5 on offense"""
+    name: str = field(default="Giant_Growth_Potion", init=False)
+    description: str = field(default="+5 on offense", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
+        if player.power_active and side == Side.OFFENSE:
             return total + 5
         return total
 
 
 @dataclass
-class Trucker_Hitch_Knot(AlienPower):
-    """Trucker_Hitch_Knot - Power of Tension. +5 always"""
-    name: str = field(default="Trucker_Hitch_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Butterfly_Knot(AlienPower):
-    """Butterfly_Knot - Power of Middle. +5 always"""
-    name: str = field(default="Butterfly_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Prusik_Knot(AlienPower):
-    """Prusik_Knot - Power of Friction. +5 always"""
-    name: str = field(default="Prusik_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Monkey_Fist_Knot(AlienPower):
-    """Monkey_Fist_Knot - Power of Ball. +5 always"""
-    name: str = field(default="Monkey_Fist_Knot", init=False)
-    description: str = field(default="+5 always", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Turks_Head_Knot(AlienPower):
-    """Turks_Head_Knot - Power of Decorative. +6 always"""
-    name: str = field(default="Turks_Head_Knot", init=False)
+class Elixir_Potion(AlienPower):
+    """Elixir_Potion - Power of Ultimate. +6 always"""
+    name: str = field(default="Elixir_Potion", init=False)
     description: str = field(default="+6 always", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -225,12 +225,12 @@ class Turks_Head_Knot(AlienPower):
         return total
 
 
-KNOT_TYPE_POWERS = [
-    Square_Knot, Bowline_Knot, Clove_Hitch_Knot, Sheet_Bend_Knot, Figure_Eight_Knot, Reef_Knot, Slip_Knot,
-    Half_Hitch_Knot, Timber_Hitch_Knot, Trucker_Hitch_Knot, Butterfly_Knot, Prusik_Knot, Monkey_Fist_Knot, Turks_Head_Knot,
+POTION_TYPE_POWERS = [
+    Health_Potion, Mana_Potion, Strength_Potion, Speed_Potion, Invisibility_Potion, Fire_Resistance_Potion, Poison_Potion,
+    Luck_Potion, Night_Vision_Potion, Water_Breathing_Potion, Flying_Potion, Antidote_Potion, Giant_Growth_Potion, Elixir_Potion,
 ]
 
-for power_class in KNOT_TYPE_POWERS:
+for power_class in POTION_TYPE_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:
