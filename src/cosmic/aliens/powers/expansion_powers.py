@@ -1448,10 +1448,6 @@ class Anarchist(AlienPower):
     has_alternate_win: bool = field(default=True, init=False)
     disruptions_revealed: int = field(default=0, init=False)
 
-    def on_game_start(self, game: "Game", player: "Player") -> None:
-        """Reset disruptions at start of each game."""
-        self.disruptions_revealed = 0
-
     def on_lose_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
         # Only count losses as offense (per FFG clarification)
         if as_main_player and player.power_active:
@@ -1938,11 +1934,6 @@ class Lizard(AlienPower):
     morphed_ships: int = field(default=0, init=False)
     normal_ships: int = field(default=50, init=False)  # Increased for balance (very hard alternate win)
 
-    def on_game_start(self, game: "Game", player: "Player") -> None:
-        """Reset morphed ships at start of each game."""
-        self.morphed_ships = 0
-        self.normal_ships = 50
-
     def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
         # Only morph on offensive wins (per FFG rules)
         if as_main_player and player.power_active and player == game.offense:
@@ -2132,10 +2123,6 @@ class Zilch(AlienPower):
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
     has_alternate_win: bool = field(default=True, init=False)
     predicted_winner: Optional[str] = field(default=None, init=False)
-
-    def on_game_start(self, game: "Game", player: "Player") -> None:
-        """Reset prediction at start of each game."""
-        self.predicted_winner = None
 
     def check_alternate_win(self, game: "Game", player: "Player") -> bool:
         # Zilch wins if their predicted player won
