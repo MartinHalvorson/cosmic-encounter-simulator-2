@@ -347,10 +347,12 @@ class TestDestinyDeckScaling:
         targets = {}
         for _ in range(20):
             card = game.destiny_deck.draw()
-            if card and hasattr(card, 'target_player'):
-                name = card.target_player.name if card.target_player else "Wild"
-                targets[name] = targets.get(name, 0) + 1
             if card:
+                if card.is_special:
+                    name = card.special_type or "special"
+                else:
+                    name = card.player.name if card.player else "Unknown"
+                targets[name] = targets.get(name, 0) + 1
                 game.destiny_deck.discard(card)
 
         # Should have multiple different targets
