@@ -365,3 +365,6 @@ from .astronomy_powers import *  # noqa: F401, F403
 from .sports_alt_powers import *  # noqa: F401, F403
 from .cooking_style_powers import *  # noqa: F401, F403
 from .finnish_mythology_powers import *  # noqa: F401, F403
+from .maritime_powers import *  # noqa: F401, F403
+from .aviation_powers import *  # noqa: F401, F403
+from .astronomy_new_powers import *  # noqa: F401, F403
