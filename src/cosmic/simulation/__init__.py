@@ -47,6 +47,13 @@ from .analysis import (
     EloDistributionReport,
     analyze_stats_file,
 )
+from .player_count_analysis import (
+    PlayerCountAnalyzer,
+    PlayerCountAnalysis,
+    PlayerCountStats,
+    run_player_count_analysis,
+    compare_player_counts,
+)
 
 __all__ = [
     "Simulator",
@@ -93,4 +100,10 @@ __all__ = [
     "GameLengthReport",
     "EloDistributionReport",
     "analyze_stats_file",
+    # Player Count Analysis
+    "PlayerCountAnalyzer",
+    "PlayerCountAnalysis",
+    "PlayerCountStats",
+    "run_player_count_analysis",
+    "compare_player_counts",
 ]

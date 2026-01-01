@@ -195,7 +195,7 @@ class Harvest(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def on_win_encounter(self, game: "Game", player: "Player") -> None:
+    def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
         if player.power_active:
             card = game.cosmic_deck.draw()
             if card:

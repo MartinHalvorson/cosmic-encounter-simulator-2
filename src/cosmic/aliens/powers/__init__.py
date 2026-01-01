@@ -322,3 +322,16 @@ from .holiday_powers import *  # noqa: F401, F403
 from .sensation_powers import *  # noqa: F401, F403
 from .profession_powers import *  # noqa: F401, F403
 from .material_powers import *  # noqa: F401, F403
+
+from .chinese_mythology_powers import *  # noqa: F401, F403
+from .african_mythology_powers import *  # noqa: F401, F403
+from .indian_mythology_powers import *  # noqa: F401, F403
+from .aztec_mythology_powers import *  # noqa: F401, F403
+from .polynesian_mythology_powers import *  # noqa: F401, F403
+from .mesopotamian_mythology_powers import *  # noqa: F401, F403
+from .fishing_powers import *  # noqa: F401, F403
+from .camping_powers import *  # noqa: F401, F403
+from .photography_powers import *  # noqa: F401, F403
+from .milestone_4000_powers import *  # noqa: F401, F403
+from .milestone_4k_celebration_powers import *  # noqa: F401, F403
+from .milestone_4001_powers import *  # noqa: F401, F403

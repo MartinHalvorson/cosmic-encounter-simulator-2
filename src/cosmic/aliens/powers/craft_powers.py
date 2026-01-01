@@ -213,7 +213,7 @@ class Clockmaker(AlienPower):
     """Clockmaker - Power of Time."""
     name: str = field(default="Clockmaker", init=False)
     description: str = field(default="Extra encounter.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.END_TURN, init=False)
+    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
