@@ -1282,6 +1282,20 @@ class Game:
             self._apply_emotion_control(context)
         elif artifact_type == ArtifactType.QUASH:
             self._apply_quash(context)
+        elif artifact_type == ArtifactType.OMNI_ZAP:
+            self._apply_omni_zap(context)
+        elif artifact_type == ArtifactType.SOLAR_WIND:
+            self._apply_solar_wind(context)
+        elif artifact_type == ArtifactType.REBIRTH:
+            self._apply_rebirth(player)
+        elif artifact_type == ArtifactType.SHIP_ZAP:
+            self._apply_ship_zap(context)
+        elif artifact_type == ArtifactType.HAND_ZAP:
+            self._apply_hand_zap(context)
+        elif artifact_type == ArtifactType.SPACE_JUNK:
+            self._apply_space_junk(context)
+        elif artifact_type == ArtifactType.VICTORY_BOON:
+            self._apply_victory_boon(player)
 
         self.cosmic_deck.discard(artifact)
         return artifact
@@ -1355,6 +1369,92 @@ class Game:
         """Cancel a flare or artifact being played."""
         # Similar to cosmic zap but for cards
         self._log("Quash cancels the effect!")
+
+    def _apply_omni_zap(self, context: Dict[str, Any]) -> None:
+        """Zap all alien powers for the remainder of this encounter."""
+        for player in self.players:
+            if player not in self.zapped_powers:
+                self.zapped_powers.append(player)
+        self._log("Omni-Zap cancels ALL alien powers this encounter!")
+
+    def _apply_solar_wind(self, context: Dict[str, Any]) -> None:
+        """Move the offense's ships from the gate to a different planet."""
+        if self.offense and self.defense_planet:
+            # Move offense ships to a random valid planet
+            valid_planets = [p for p in self.planets
+                           if p.owner == self.defense
+                           and p != self.defense_planet]
+            if valid_planets:
+                new_target = self._rng.choice(valid_planets)
+                self.defense_planet = new_target
+                self._log(f"Solar Wind redirects attack to {new_target}!")
+
+    def _apply_rebirth(self, player: Player) -> None:
+        """Return all of this player's ships from warp and give a new hand."""
+        ships = player.ships_in_warp
+        if ships > 0:
+            player.retrieve_ships_from_warp(ships)
+            player.return_ships_to_colonies(ships, player.home_planets)
+
+        # Discard current hand and draw a new one
+        old_hand_size = len(player.hand)
+        for card in list(player.hand):
+            player.remove_card(card)
+            self.cosmic_deck.discard(card)
+
+        for _ in range(max(old_hand_size, 8)):
+            card = self.cosmic_deck.draw()
+            if card:
+                player.add_card(card)
+
+        self._log(f"Rebirth restores {player.name}'s ships and hand!")
+
+    def _apply_ship_zap(self, context: Dict[str, Any]) -> None:
+        """Remove one ship from the encounter."""
+        target_player = context.get("target_player")
+        side = context.get("side")
+
+        if target_player and side:
+            if side == Side.OFFENSE:
+                ships = self.offense_ships.get(target_player.name, 0)
+                if ships > 0:
+                    self.offense_ships[target_player.name] = ships - 1
+                    target_player.ships_in_warp += 1
+                    self._log(f"Ship Zap removes a ship from {target_player.name}!")
+            else:
+                ships = self.defense_ships.get(target_player.name, 0)
+                if ships > 0:
+                    self.defense_ships[target_player.name] = ships - 1
+                    target_player.ships_in_warp += 1
+                    self._log(f"Ship Zap removes a ship from {target_player.name}!")
+
+    def _apply_hand_zap(self, context: Dict[str, Any]) -> None:
+        """Force a player to discard a random card."""
+        target_player = context.get("target_player")
+        if target_player and target_player.hand:
+            card = self._rng.choice(target_player.hand)
+            target_player.remove_card(card)
+            self.cosmic_deck.discard(card)
+            self._log(f"Hand Zap forces {target_player.name} to discard a card!")
+
+    def _apply_space_junk(self, context: Dict[str, Any]) -> None:
+        """Add +5 to one side's total."""
+        side = context.get("side", Side.OFFENSE)
+        if side == Side.OFFENSE:
+            context["offense_bonus"] = context.get("offense_bonus", 0) + 5
+            self._log("Space Junk adds +5 to offense!")
+        else:
+            context["defense_bonus"] = context.get("defense_bonus", 0) + 5
+            self._log("Space Junk adds +5 to defense!")
+
+    def _apply_victory_boon(self, player: Player) -> None:
+        """Draw cards equal to colonies the player has."""
+        colonies = player.count_foreign_colonies(self.planets)
+        for _ in range(colonies):
+            card = self.cosmic_deck.draw()
+            if card:
+                player.add_card(card)
+        self._log(f"Victory Boon gives {player.name} {colonies} cards!")
 
     # ========== Flare Card Methods ==========
 

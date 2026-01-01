@@ -413,6 +413,50 @@ class AIStrategy(ABC):
             # Use against player with many ships on one planet
             return False  # Rarely worth it in simulation
 
+        elif artifact_type == ArtifactType.OMNI_ZAP.value:
+            # Use when multiple dangerous powers are active
+            dangerous_active = sum(
+                1 for p in game.players
+                if p != player and p.alien and p.power_active
+                and p.alien.name in ["Machine", "Virus", "Parasite", "Void", "Oracle"]
+            )
+            return dangerous_active >= 2
+
+        elif artifact_type == ArtifactType.REBIRTH.value:
+            # Use when in a bad state (many ships in warp, weak hand)
+            weak_hand = len(player.hand) < 4 or not player.get_attack_cards()
+            return player.ships_in_warp >= 5 or (player.ships_in_warp >= 3 and weak_hand)
+
+        elif artifact_type == ArtifactType.SHIP_ZAP.value:
+            # Use against opponent with crucial ships in combat
+            if context.get("is_offense") or context.get("is_defense"):
+                opponent_ships = context.get("opponent_ship_count", 0)
+                return opponent_ships >= 4
+            return False
+
+        elif artifact_type == ArtifactType.HAND_ZAP.value:
+            # Use against player with strong hand or near winning
+            target = context.get("target_player")
+            if target:
+                target_colonies = target.count_foreign_colonies(game.planets)
+                return target_colonies >= 4 or len(target.hand) >= 10
+            return False
+
+        elif artifact_type == ArtifactType.SPACE_JUNK.value:
+            # Use when we need a combat boost
+            if context.get("is_offense") or context.get("is_defense"):
+                return context.get("combat_close", False)
+            return False
+
+        elif artifact_type == ArtifactType.VICTORY_BOON.value:
+            # Use when we have many colonies (max benefit)
+            colonies = player.count_foreign_colonies(game.planets)
+            return colonies >= 3
+
+        elif artifact_type == ArtifactType.SOLAR_WIND.value:
+            # Use to redirect attacks to weaker planets
+            return context.get("is_defense", False)
+
         # Default: don't use
         return False
 
