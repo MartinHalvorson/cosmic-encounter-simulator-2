@@ -282,3 +282,6 @@ from .adventure_powers import *  # noqa: F401, F403
 from .military_rank_powers import *  # noqa: F401, F403
 from .steampunk_powers import *  # noqa: F401, F403
 from .apocalypse_powers import *  # noqa: F401, F403
+from .medieval_powers import *  # noqa: F401, F403
+from .space_combat_powers import *  # noqa: F401, F403
+from .ancient_civilizations_powers import *  # noqa: F401, F403
