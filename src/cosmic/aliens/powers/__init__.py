@@ -278,3 +278,7 @@ from .dining_powers import *  # noqa: F401, F403
 from .musical_instrument_powers import *  # noqa: F401, F403
 from .architecture_style_powers import *  # noqa: F401, F403
 from .milestone_3500_powers import *  # noqa: F401, F403
+from .adventure_powers import *  # noqa: F401, F403
+from .military_rank_powers import *  # noqa: F401, F403
+from .steampunk_powers import *  # noqa: F401, F403
+from .apocalypse_powers import *  # noqa: F401, F403

@@ -1,14 +1,14 @@
 """
-Weather Powers - Aliens with climate and atmospheric abilities.
+Weather Powers - Weather phenomenon themed aliens.
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
 import random
 
 from ..base import AlienPower, PowerCategory
 from ..registry import AlienRegistry
-from ...types import PowerTiming, PowerType, PlayerRole, Side
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
@@ -16,231 +16,309 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Blizzard(AlienPower):
-    """
-    Blizzard - Freeze All.
-    Slow opponent's ships.
-    """
-    name: str = field(default="Blizzard", init=False)
-    description: str = field(default="Slow ships.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Clouder(AlienPower):
-    """
-    Clouder - Cover Field.
-    Hide encounter cards.
-    """
-    name: str = field(default="Clouder", init=False)
-    description: str = field(default="Hide cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Cyclone(AlienPower):
-    """
-    Cyclone - Scatter Ships.
-    Redistribute ships randomly.
-    """
-    name: str = field(default="Cyclone", init=False)
-    description: str = field(default="Scatter ships.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Drought(AlienPower):
-    """
-    Drought - Dry Up.
-    Opponent loses cards.
-    """
-    name: str = field(default="Drought", init=False)
-    description: str = field(default="Opponent loses cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Fogger(AlienPower):
-    """
-    Fogger - Create Fog.
-    Cards played face down.
-    """
-    name: str = field(default="Fogger", init=False)
-    description: str = field(default="Face down cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-
-@dataclass
-class Frost(AlienPower):
-    """
-    Frost - Freeze Ships.
-    One ship can't move.
-    """
-    name: str = field(default="Frost", init=False)
-    description: str = field(default="Freeze ship.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.LAUNCH, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Hail(AlienPower):
-    """
-    Hail - Damage All.
-    All sides lose 1 ship.
-    """
-    name: str = field(default="Hail", init=False)
-    description: str = field(default="All lose 1 ship.", init=False)
+class Hurricane(AlienPower):
+    """Hurricane - Destructive force. +5 on offense."""
+    name: str = field(default="Hurricane", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
 
 @dataclass
-class Hurricane(AlienPower):
-    """
-    Hurricane - Massive Force.
-    +5 or -5 randomly.
-    """
-    name: str = field(default="Hurricane", init=False)
-    description: str = field(default="+5 or -5.", init=False)
+class Tornado(AlienPower):
+    """Tornado - Whirlwind. Random +1 to +6."""
+    name: str = field(default="Tornado", init=False)
+    description: str = field(default="Random +1 to +6.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        """Add +5 or -5 randomly."""
-        return total + random.choice([5, -5])
+        if player.power_active:
+            return total + random.randint(1, 6)
+        return total
 
 
 @dataclass
-class Lightning(AlienPower):
-    """
-    Lightning - Strike Fast.
-    Instant kill one ship.
-    """
-    name: str = field(default="Lightning", init=False)
-    description: str = field(default="Kill one ship.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Monsoon(AlienPower):
-    """
-    Monsoon - Flood Zone.
-    Extra encounter after rain.
-    """
-    name: str = field(default="Monsoon", init=False)
-    description: str = field(default="Extra encounter.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Rainbow(AlienPower):
-    """
-    Rainbow - Good Fortune.
-    Draw card after win.
-    """
-    name: str = field(default="Rainbow", init=False)
-    description: str = field(default="Draw on win.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Stormer(AlienPower):
-    """
-    Stormer - Create Storm.
-    -2 to all opponents.
-    """
-    name: str = field(default="Stormer", init=False)
-    description: str = field(default="-2 opponents.", init=False)
+class Blizzard(AlienPower):
+    """Blizzard - Freezing storm. +4 on defense."""
+    name: str = field(default="Blizzard", init=False)
+    description: str = field(default="+4 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 4
+        return total
 
 
 @dataclass
 class Sunshine(AlienPower):
-    """
-    Sunshine - Bright Light.
-    Reveal hidden cards.
-    """
+    """Sunshine - Bright day. +3 always."""
     name: str = field(default="Sunshine", init=False)
-    description: str = field(default="Reveal hidden.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Rain(AlienPower):
+    """Rain - Steady drops. +2 always."""
+    name: str = field(default="Rain", init=False)
+    description: str = field(default="+2 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2
+        return total
+
+
+@dataclass
+class Lightning(AlienPower):
+    """Lightning - Sudden strike. +6 on offense."""
+    name: str = field(default="Lightning", init=False)
+    description: str = field(default="+6 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 6
+        return total
 
 
 @dataclass
 class Thunder(AlienPower):
-    """
-    Thunder - Loud Boom.
-    Cancel artifacts.
-    """
+    """Thunder - Booming sound. +4 always."""
     name: str = field(default="Thunder", init=False)
-    description: str = field(default="Cancel artifacts.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.ANY, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Tornado(AlienPower):
-    """
-    Tornado - Spin Attack.
-    Move opponent ships.
-    """
-    name: str = field(default="Tornado", init=False)
-    description: str = field(default="Move opponent.", init=False)
+    description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
 
 
 @dataclass
-class Wind(AlienPower):
-    """
-    Wind - Push Away.
-    Prevent one ally.
-    """
-    name: str = field(default="Wind", init=False)
-    description: str = field(default="Block one ally.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
+class Hail(AlienPower):
+    """Hail - Ice pellets. +3 on offense."""
+    name: str = field(default="Hail", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Mist(AlienPower):
+    """Mist - Concealing. +3 on defense."""
+    name: str = field(default="Mist", init=False)
+    description: str = field(default="+3 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Snow(AlienPower):
+    """Snow - Quiet fall. +2 on defense."""
+    name: str = field(default="Snow", init=False)
+    description: str = field(default="+2 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 2
+        return total
+
+
+@dataclass
+class Drought(AlienPower):
+    """Drought - Harsh conditions. -2 to opponent."""
+    name: str = field(default="Drought", init=False)
+    description: str = field(default="Opponent gets -2.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Flood(AlienPower):
+    """Flood - Overwhelming. +4 on offense."""
+    name: str = field(default="Flood", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Rainbow(AlienPower):
+    """Rainbow - Lucky. Random +2 to +7."""
+    name: str = field(default="Rainbow", init=False)
+    description: str = field(default="Random +2 to +7.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + random.randint(2, 7)
+        return total
+
+
+@dataclass
+class Breeze(AlienPower):
+    """Breeze - Gentle wind. +2 always."""
+    name: str = field(default="Breeze", init=False)
+    description: str = field(default="+2 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2
+        return total
+
+
+@dataclass
+class Gale(AlienPower):
+    """Gale - Strong wind. +3 on offense."""
+    name: str = field(default="Gale", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Sleet(AlienPower):
+    """Sleet - Icy rain. +2 on defense."""
+    name: str = field(default="Sleet", init=False)
+    description: str = field(default="+2 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 2
+        return total
+
+
+@dataclass
+class Aurora(AlienPower):
+    """Aurora - Northern lights. +3 always."""
+    name: str = field(default="Aurora", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Cyclone(AlienPower):
+    """Cyclone - Spinning storm. +4 on offense."""
+    name: str = field(default="Cyclone", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Monsoon(AlienPower):
+    """Monsoon - Seasonal storm. +5 on defense."""
+    name: str = field(default="Monsoon", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Tempest(AlienPower):
+    """Tempest - Violent storm. +5 always."""
+    name: str = field(default="Tempest", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
 
 
 # Register all powers
-AlienRegistry.register(Blizzard())
-AlienRegistry.register(Clouder())
-AlienRegistry.register(Cyclone())
-AlienRegistry.register(Drought())
-AlienRegistry.register(Fogger())
-AlienRegistry.register(Frost())
-AlienRegistry.register(Hail())
-AlienRegistry.register(Hurricane())
-AlienRegistry.register(Lightning())
-AlienRegistry.register(Monsoon())
-AlienRegistry.register(Rainbow())
-AlienRegistry.register(Stormer())
-AlienRegistry.register(Sunshine())
-AlienRegistry.register(Thunder())
-AlienRegistry.register(Tornado())
-AlienRegistry.register(Wind())
+WEATHER_POWERS = [
+    Hurricane, Tornado, Blizzard, Sunshine, Rain, Lightning, Thunder, Hail,
+    Mist, Snow, Drought, Flood, Rainbow, Breeze, Gale, Sleet, Aurora,
+    Cyclone, Monsoon, Tempest,
+]
+
+for power_class in WEATHER_POWERS:
+    try:
+        AlienRegistry.register(power_class())
+    except ValueError:
+        pass
