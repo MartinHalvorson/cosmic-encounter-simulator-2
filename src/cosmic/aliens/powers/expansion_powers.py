@@ -356,7 +356,7 @@ class Silencer(AlienPower):
     """
     name: str = field(default="Silencer", init=False)
     description: str = field(
-        default="Silence a player each encounter.",
+        default="Suppress a player's power each encounter.",
         init=False
     )
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)

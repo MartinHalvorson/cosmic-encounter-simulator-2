@@ -486,3 +486,8 @@ from .wilderness_powers import *  # noqa: F401, F403
 from .winter_powers import *  # noqa: F401, F403
 from .writing_tool_powers import *  # noqa: F401, F403
 from .zodiac_powers import *  # noqa: F401, F403
+from .greek_mythology_powers import *  # noqa: F401, F403
+from .roman_mythology_powers import *  # noqa: F401, F403
+from .scifi_theme_powers import *  # noqa: F401, F403
+from .medieval_fantasy_powers import *  # noqa: F401, F403
+from .milestone_6000_powers import *  # noqa: F401, F403
