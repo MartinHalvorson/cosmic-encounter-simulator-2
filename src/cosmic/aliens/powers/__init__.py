@@ -241,3 +241,13 @@ from .sports_extended_powers import *  # noqa: F401, F403
 from .nature_final_powers import *  # noqa: F401, F403
 from .music_extended_powers import *  # noqa: F401, F403
 from .milestone_3000_powers import *  # noqa: F401, F403
+from .ninja_powers import *  # noqa: F401, F403
+from .robot_powers import *  # noqa: F401, F403
+from .forest_powers import *  # noqa: F401, F403
+from .ocean_creature_powers import *  # noqa: F401, F403
+from .weather_storm_powers import *  # noqa: F401, F403
+from .gemstone_powers import *  # noqa: F401, F403
+from .time_travel_powers import *  # noqa: F401, F403
+from .mythology_greek_powers import *  # noqa: F401, F403
+from .card_game_powers import *  # noqa: F401, F403
+from .chess_powers import *  # noqa: F401, F403

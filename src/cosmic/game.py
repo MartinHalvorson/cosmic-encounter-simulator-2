@@ -2005,6 +2005,171 @@ class Game:
         elif alien_name == "Diplomat":
             context["diplomat_force_deal"] = True
 
+        # Sorcerer Super: Swap hands with any player
+        elif alien_name == "Sorcerer":
+            opponents = [p for p in self.players if p != player]
+            if opponents:
+                # Swap with player who has the best hand
+                target = max(opponents, key=lambda p: len(p.hand))
+                player.hand, target.hand = target.hand, player.hand
+                self._log(f"Sorcerer Super swaps hands with {target.name}!")
+
+        # Silencer Super: Cancel all alien powers this encounter
+        elif alien_name == "Silencer":
+            for p in self.players:
+                if p != player and p not in self.zapped_powers:
+                    self.zapped_powers.append(p)
+            self._log("Silencer Super cancels ALL alien powers!")
+
+        # Void Super: Remove all ships from one planet to the void
+        elif alien_name == "Void":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                if player == self.offense:
+                    ships = self.defense_ships.get(opponent.name, 0)
+                    self.defense_ships[opponent.name] = 0
+                    opponent.ships_in_void = getattr(opponent, 'ships_in_void', 0) + ships
+                else:
+                    ships = self.offense_ships.get(opponent.name, 0)
+                    self.offense_ships[opponent.name] = 0
+                    opponent.ships_in_void = getattr(opponent, 'ships_in_void', 0) + ships
+                if ships > 0:
+                    self._log(f"Void Super removes {ships} ships to the void!")
+
+        # Saboteur Super: Reduce opponent's card to 0
+        elif alien_name == "Saboteur":
+            if player == self.offense:
+                context["saboteur_zero_defense"] = True
+            else:
+                context["saboteur_zero_offense"] = True
+            self._log("Saboteur Super reduces opponent's card to 0!")
+
+        # Kamikaze Super: Sacrifice all ships for instant win
+        elif alien_name == "Kamikaze":
+            context["kamikaze_instant_win"] = True
+            # Sacrifice all ships
+            if player == self.offense:
+                ships = self.offense_ships.get(player.name, 0)
+                self.offense_ships[player.name] = 0
+                player.ships_in_warp += ships
+            elif player == self.defense:
+                ships = self.defense_ships.get(player.name, 0)
+                self.defense_ships[player.name] = 0
+                player.ships_in_warp += ships
+            self._log("Kamikaze Super: All ships sacrificed for instant win!")
+
+        # Dictator Super: Choose the encounter cards for both main players
+        elif alien_name == "Dictator":
+            context["dictator_control_both"] = True
+
+        # Anti-Matter Super: Your 0 attack cards count as 40
+        elif alien_name == "Anti-Matter":
+            if player == self.offense and isinstance(self.offense_card, AttackCard):
+                if self.offense_card.value == 0:
+                    context["anti_matter_zero_boost"] = 40
+            elif player == self.defense and isinstance(self.defense_card, AttackCard):
+                if self.defense_card.value == 0:
+                    context["anti_matter_zero_boost"] = 40
+
+        # Leviathan Super: Add +20, no ship loss
+        elif alien_name == "Leviathan":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 20
+
+        # Warhawk Super: Add +10 when attacking
+        elif alien_name == "Warhawk":
+            if player == self.offense:
+                context["flare_bonus"] = context.get("flare_bonus", 0) + 10
+
+        # Trickster Super: Negotiate counts as 30 attack
+        elif alien_name == "Trickster":
+            if player == self.offense and isinstance(self.offense_card, NegotiateCard):
+                context["trickster_negotiate_value"] = 30
+            elif player == self.defense and isinstance(self.defense_card, NegotiateCard):
+                context["trickster_negotiate_value"] = 30
+
+        # Amoeba Super: Add 4 ships from anywhere to encounter
+        elif alien_name == "Amoeba":
+            # First try warp, then colonies
+            ships_needed = 4
+            from_warp = min(ships_needed, player.ships_in_warp)
+            if from_warp > 0:
+                player.retrieve_ships_from_warp(from_warp)
+            remaining = ships_needed - from_warp
+            if remaining > 0:
+                from_colonies = player.get_ships_from_colonies(remaining, self.planets)
+            else:
+                from_colonies = 0
+            total_added = from_warp + from_colonies
+            if total_added > 0:
+                if player == self.offense:
+                    self.offense_ships[player.name] = self.offense_ships.get(player.name, 0) + total_added
+                elif player == self.defense:
+                    self.defense_ships[player.name] = self.defense_ships.get(player.name, 0) + total_added
+
+        # Changeling Super: Copy two alien powers for this encounter
+        elif alien_name == "Changeling":
+            other_aliens = [p.alien.name for p in self.players if p != player and p.alien]
+            if len(other_aliens) >= 2:
+                context["changeling_copied_powers"] = other_aliens[:2]
+            elif other_aliens:
+                context["changeling_copied_powers"] = other_aliens
+
+        # Nightmare Super: Opponent discards half their hand
+        elif alien_name == "Nightmare":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                discards = len(opponent.hand) // 2
+                for _ in range(discards):
+                    if opponent.hand:
+                        card = self._rng.choice(opponent.hand)
+                        opponent.remove_card(card)
+                        self.cosmic_deck.discard(card)
+
+        # Barbarian Super: Pillage 3 cards from loser
+        elif alien_name == "Barbarian":
+            context["barbarian_pillage"] = 3
+
+        # Bully Super: +8 against players with fewer colonies
+        elif alien_name == "Bully":
+            opponent = self.defense if player == self.offense else self.offense
+            if opponent:
+                my_colonies = player.count_foreign_colonies(self.planets)
+                opp_colonies = opponent.count_foreign_colonies(self.planets)
+                if opp_colonies < my_colonies:
+                    context["flare_bonus"] = context.get("flare_bonus", 0) + 8
+
+        # Calculator Super: Double card value based on cards in hand
+        elif alien_name == "Calculator":
+            bonus = len(player.hand) * 2
+            context["flare_bonus"] = context.get("flare_bonus", 0) + bonus
+
+        # Gambler Super: Triple card value on heads, normal on tails (choose the result)
+        elif alien_name == "Gambler":
+            context["gambler_triple"] = True
+            self._log("Gambler Super: Guaranteed triple!")
+
+        # Magician Super: Take best cards from all hands
+        elif alien_name == "Magician":
+            for p in self.players:
+                if p != player and p.hand:
+                    attack_cards = [c for c in p.hand if hasattr(c, 'value') and c.value]
+                    if attack_cards:
+                        best = max(attack_cards, key=lambda c: c.value)
+                        p.remove_card(best)
+                        player.add_card(best)
+
+        # Negator Super: Cancel all alien powers this encounter
+        elif alien_name == "Negator":
+            for p in self.players:
+                if p not in self.zapped_powers:
+                    self.zapped_powers.append(p)
+            self._log("Negator Super cancels ALL alien powers!")
+
+        # Anarchist Super: You make the rules this encounter (+10 bonus as approximation)
+        elif alien_name == "Anarchist":
+            context["flare_bonus"] = context.get("flare_bonus", 0) + 10
+            context["anarchist_super"] = True
+
         # Default: +4 to total (generic Super effect)
         else:
             context["flare_bonus"] = context.get("flare_bonus", 0) + 4
