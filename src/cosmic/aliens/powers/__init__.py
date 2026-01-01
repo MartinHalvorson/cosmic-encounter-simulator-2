@@ -1,5 +1,5 @@
 """
-Alien powers module - auto-generated imports.
+Official Fantasy Flight Games Cosmic Encounter alien powers.
 """
 
 from .aboriginal_powers import *  # noqa: F401, F403
@@ -113,6 +113,7 @@ from .cooking_style_powers import *  # noqa: F401, F403
 from .cosmic_entity_powers import *  # noqa: F401, F403
 from .cosmic_horror_powers import *  # noqa: F401, F403
 from .cosmic_powers import *  # noqa: F401, F403
+from .country_powers import *  # noqa: F401, F403
 from .cowboy_powers import *  # noqa: F401, F403
 from .craft_powers import *  # noqa: F401, F403
 from .crafting_powers import *  # noqa: F401, F403
@@ -149,8 +150,8 @@ from .egyptian_powers import *  # noqa: F401, F403
 from .element_extended_powers import *  # noqa: F401, F403
 from .element_pack_powers import *  # noqa: F401, F403
 from .elemental_powers import *  # noqa: F401, F403
-from .emotion_alt2_powers import *  # noqa: F401, F403
 from .emotion_alt_powers import *  # noqa: F401, F403
+from .emotion_alt2_powers import *  # noqa: F401, F403
 from .emotion_core_powers import *  # noqa: F401, F403
 from .emotion_extended_powers import *  # noqa: F401, F403
 from .emotion_final_powers import *  # noqa: F401, F403
@@ -175,11 +176,11 @@ from .film_powers import *  # noqa: F401, F403
 from .final_5_powers import *  # noqa: F401, F403
 from .final_6000_powers import *  # noqa: F401, F403
 from .final_powers import *  # noqa: F401, F403
-from .final_push2_powers import *  # noqa: F401, F403
-from .final_push3_powers import *  # noqa: F401, F403
 from .final_push_5000_powers import *  # noqa: F401, F403
 from .final_push_5k_powers import *  # noqa: F401, F403
 from .final_push_powers import *  # noqa: F401, F403
+from .final_push2_powers import *  # noqa: F401, F403
+from .final_push3_powers import *  # noqa: F401, F403
 from .finnish_mythology_powers import *  # noqa: F401, F403
 from .fishing_powers import *  # noqa: F401, F403
 from .flower_powers import *  # noqa: F401, F403
@@ -261,6 +262,7 @@ from .machine_powers import *  # noqa: F401, F403
 from .magic_powers import *  # noqa: F401, F403
 from .magic_school_powers import *  # noqa: F401, F403
 from .maritime_powers import *  # noqa: F401, F403
+from .martial_art_powers import *  # noqa: F401, F403
 from .martial_arts_powers import *  # noqa: F401, F403
 from .martial_arts_style_powers import *  # noqa: F401, F403
 from .martial_powers import *  # noqa: F401, F403
