@@ -1,6 +1,5 @@
 """
-Final Push Powers for Cosmic Encounter.
-The last push to reach 7500+ aliens!
+Brush Stroke Powers for Cosmic Encounter.
 """
 
 from dataclasses import dataclass, field
@@ -17,9 +16,99 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Determination(AlienPower):
-    """Determination - Power of Will. +6 always."""
-    name: str = field(default="Determination", init=False)
+class Stipple_Stroke(AlienPower):
+    """Stipple_Stroke - Power of Dots. +5 always."""
+    name: str = field(default="Stipple_Stroke", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Crosshatch_Stroke(AlienPower):
+    """Crosshatch_Stroke - Power of Lines. +5 always."""
+    name: str = field(default="Crosshatch_Stroke", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Dry_Brush_Stroke(AlienPower):
+    """Dry_Brush_Stroke - Power of Texture. +5 always."""
+    name: str = field(default="Dry_Brush_Stroke", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Wet_On_Wet_Stroke(AlienPower):
+    """Wet_On_Wet_Stroke - Power of Blend. +5 always."""
+    name: str = field(default="Wet_On_Wet_Stroke", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Scumble_Stroke(AlienPower):
+    """Scumble_Stroke - Power of Layer. +5 always."""
+    name: str = field(default="Scumble_Stroke", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Glazing_Stroke(AlienPower):
+    """Glazing_Stroke - Power of Transparency. +5 always."""
+    name: str = field(default="Glazing_Stroke", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Impasto_Stroke(AlienPower):
+    """Impasto_Stroke - Power of Thick. +6 always."""
+    name: str = field(default="Impasto_Stroke", init=False)
     description: str = field(default="+6 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -32,9 +121,24 @@ class Determination(AlienPower):
 
 
 @dataclass
-class Perseverance(AlienPower):
-    """Perseverance - Power of Endure. +5 on defense."""
-    name: str = field(default="Perseverance", init=False)
+class Wash_Stroke(AlienPower):
+    """Wash_Stroke - Power of Dilute. +4 always."""
+    name: str = field(default="Wash_Stroke", init=False)
+    description: str = field(default="+4 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
+
+
+@dataclass
+class Feathering_Stroke(AlienPower):
+    """Feathering_Stroke - Power of Soft. +5 on defense."""
+    name: str = field(default="Feathering_Stroke", init=False)
     description: str = field(default="+5 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -47,9 +151,24 @@ class Perseverance(AlienPower):
 
 
 @dataclass
-class Ambition(AlienPower):
-    """Ambition - Power of Drive. +6 on offense."""
-    name: str = field(default="Ambition", init=False)
+class Sgraffito_Stroke(AlienPower):
+    """Sgraffito_Stroke - Power of Scratch. +5 on offense."""
+    name: str = field(default="Sgraffito_Stroke", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Palette_Knife_Stroke(AlienPower):
+    """Palette_Knife_Stroke - Power of Scrape. +6 on offense."""
+    name: str = field(default="Palette_Knife_Stroke", init=False)
     description: str = field(default="+6 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -62,9 +181,9 @@ class Ambition(AlienPower):
 
 
 @dataclass
-class Dedication(AlienPower):
-    """Dedication - Power of Focus. +5 always."""
-    name: str = field(default="Dedication", init=False)
+class Splatter_Stroke(AlienPower):
+    """Splatter_Stroke - Power of Chaos. +5 always."""
+    name: str = field(default="Splatter_Stroke", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -77,9 +196,9 @@ class Dedication(AlienPower):
 
 
 @dataclass
-class Resolve(AlienPower):
-    """Resolve - Power of Strength. +5 always."""
-    name: str = field(default="Resolve", init=False)
+class Dabbing_Stroke(AlienPower):
+    """Dabbing_Stroke - Power of Press. +5 always."""
+    name: str = field(default="Dabbing_Stroke", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -92,24 +211,9 @@ class Resolve(AlienPower):
 
 
 @dataclass
-class Tenacity(AlienPower):
-    """Tenacity - Power of Grip. +5 on defense."""
-    name: str = field(default="Tenacity", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Fortitude(AlienPower):
-    """Fortitude - Power of Courage. +5 always."""
-    name: str = field(default="Fortitude", init=False)
+class Blending_Stroke(AlienPower):
+    """Blending_Stroke - Power of Smooth. +5 always."""
+    name: str = field(default="Blending_Stroke", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -121,88 +225,13 @@ class Fortitude(AlienPower):
         return total
 
 
-@dataclass
-class Grit(AlienPower):
-    """Grit - Power of Tough. +5 on defense."""
-    name: str = field(default="Grit", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Stamina(AlienPower):
-    """Stamina - Power of Last. +5 always."""
-    name: str = field(default="Stamina", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Resilience(AlienPower):
-    """Resilience - Power of Bounce. +6 on defense."""
-    name: str = field(default="Resilience", init=False)
-    description: str = field(default="+6 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Persistence(AlienPower):
-    """Persistence - Power of Continue. +5 always."""
-    name: str = field(default="Persistence", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Milestone_Marker(AlienPower):
-    """Milestone_Marker - Power of Achievement. +7 always."""
-    name: str = field(default="Milestone_Marker", init=False)
-    description: str = field(default="+7 constant milestone celebration!", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 7
-        return total
-
-
-FINAL_PUSH_POWERS = [
-    Determination, Perseverance, Ambition, Dedication, Resolve,
-    Tenacity, Fortitude, Grit, Stamina, Resilience,
-    Persistence, Milestone_Marker,
+BRUSH_STROKE_POWERS = [
+    Stipple_Stroke, Crosshatch_Stroke, Dry_Brush_Stroke, Wet_On_Wet_Stroke, Scumble_Stroke,
+    Glazing_Stroke, Impasto_Stroke, Wash_Stroke, Feathering_Stroke, Sgraffito_Stroke,
+    Palette_Knife_Stroke, Splatter_Stroke, Dabbing_Stroke, Blending_Stroke,
 ]
 
-for power_class in FINAL_PUSH_POWERS:
+for power_class in BRUSH_STROKE_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

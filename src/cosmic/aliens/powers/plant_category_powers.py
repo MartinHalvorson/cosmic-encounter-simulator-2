@@ -1,6 +1,5 @@
 """
-Final Push Powers for Cosmic Encounter.
-The last push to reach 7500+ aliens!
+Plant Category Powers for Cosmic Encounter.
 """
 
 from dataclasses import dataclass, field
@@ -17,54 +16,9 @@ from ..registry import AlienRegistry
 
 
 @dataclass
-class Determination(AlienPower):
-    """Determination - Power of Will. +6 always."""
-    name: str = field(default="Determination", init=False)
-    description: str = field(default="+6 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 6
-        return total
-
-
-@dataclass
-class Perseverance(AlienPower):
-    """Perseverance - Power of Endure. +5 on defense."""
-    name: str = field(default="Perseverance", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Ambition(AlienPower):
-    """Ambition - Power of Drive. +6 on offense."""
-    name: str = field(default="Ambition", init=False)
-    description: str = field(default="+6 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Dedication(AlienPower):
-    """Dedication - Power of Focus. +5 always."""
-    name: str = field(default="Dedication", init=False)
+class Fern_Plant(AlienPower):
+    """Fern_Plant - Power of Ancient. +5 always."""
+    name: str = field(default="Fern_Plant", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -77,84 +31,24 @@ class Dedication(AlienPower):
 
 
 @dataclass
-class Resolve(AlienPower):
-    """Resolve - Power of Strength. +5 always."""
-    name: str = field(default="Resolve", init=False)
-    description: str = field(default="+5 constant.", init=False)
+class Moss_Plant(AlienPower):
+    """Moss_Plant - Power of Spread. +4 always."""
+    name: str = field(default="Moss_Plant", init=False)
+    description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 5
+            return total + 4
         return total
 
 
 @dataclass
-class Tenacity(AlienPower):
-    """Tenacity - Power of Grip. +5 on defense."""
-    name: str = field(default="Tenacity", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Fortitude(AlienPower):
-    """Fortitude - Power of Courage. +5 always."""
-    name: str = field(default="Fortitude", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Grit(AlienPower):
-    """Grit - Power of Tough. +5 on defense."""
-    name: str = field(default="Grit", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Stamina(AlienPower):
-    """Stamina - Power of Last. +5 always."""
-    name: str = field(default="Stamina", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Resilience(AlienPower):
-    """Resilience - Power of Bounce. +6 on defense."""
-    name: str = field(default="Resilience", init=False)
+class Cactus_Plant(AlienPower):
+    """Cactus_Plant - Power of Defense. +6 on defense."""
+    name: str = field(default="Cactus_Plant", init=False)
     description: str = field(default="+6 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -167,9 +61,9 @@ class Resilience(AlienPower):
 
 
 @dataclass
-class Persistence(AlienPower):
-    """Persistence - Power of Continue. +5 always."""
-    name: str = field(default="Persistence", init=False)
+class Vine_Plant(AlienPower):
+    """Vine_Plant - Power of Climb. +5 always."""
+    name: str = field(default="Vine_Plant", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -182,27 +76,162 @@ class Persistence(AlienPower):
 
 
 @dataclass
-class Milestone_Marker(AlienPower):
-    """Milestone_Marker - Power of Achievement. +7 always."""
-    name: str = field(default="Milestone_Marker", init=False)
-    description: str = field(default="+7 constant milestone celebration!", init=False)
+class Succulent_Plant(AlienPower):
+    """Succulent_Plant - Power of Reserve. +5 on defense."""
+    name: str = field(default="Succulent_Plant", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Herb_Plant(AlienPower):
+    """Herb_Plant - Power of Flavor. +5 always."""
+    name: str = field(default="Herb_Plant", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Shrub_Plant(AlienPower):
+    """Shrub_Plant - Power of Cover. +5 on defense."""
+    name: str = field(default="Shrub_Plant", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Bamboo_Plant(AlienPower):
+    """Bamboo_Plant - Power of Growth. +6 always."""
+    name: str = field(default="Bamboo_Plant", init=False)
+    description: str = field(default="+6 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 7
+            return total + 6
         return total
 
 
-FINAL_PUSH_POWERS = [
-    Determination, Perseverance, Ambition, Dedication, Resolve,
-    Tenacity, Fortitude, Grit, Stamina, Resilience,
-    Persistence, Milestone_Marker,
+@dataclass
+class Palm_Plant(AlienPower):
+    """Palm_Plant - Power of Tropical. +5 always."""
+    name: str = field(default="Palm_Plant", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Grass_Plant(AlienPower):
+    """Grass_Plant - Power of Carpet. +4 always."""
+    name: str = field(default="Grass_Plant", init=False)
+    description: str = field(default="+4 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
+
+
+@dataclass
+class Ivy_Plant(AlienPower):
+    """Ivy_Plant - Power of Cling. +5 on defense."""
+    name: str = field(default="Ivy_Plant", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Lily_Plant(AlienPower):
+    """Lily_Plant - Power of Beauty. +5 always."""
+    name: str = field(default="Lily_Plant", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Orchid_Plant(AlienPower):
+    """Orchid_Plant - Power of Exotic. +6 always."""
+    name: str = field(default="Orchid_Plant", init=False)
+    description: str = field(default="+6 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.RED, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 6
+        return total
+
+
+@dataclass
+class Tulip_Plant(AlienPower):
+    """Tulip_Plant - Power of Spring. +5 on offense."""
+    name: str = field(default="Tulip_Plant", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+PLANT_CATEGORY_POWERS = [
+    Fern_Plant, Moss_Plant, Cactus_Plant, Vine_Plant, Succulent_Plant,
+    Herb_Plant, Shrub_Plant, Bamboo_Plant, Palm_Plant, Grass_Plant,
+    Ivy_Plant, Lily_Plant, Orchid_Plant, Tulip_Plant,
 ]
 
-for power_class in FINAL_PUSH_POWERS:
+for power_class in PLANT_CATEGORY_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:
