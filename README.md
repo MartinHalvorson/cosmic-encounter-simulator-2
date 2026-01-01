@@ -30872,57 +30872,57 @@ python update_stats.py --sort power --order asc
 
 ## Simulation Results
 
-**Total Games Simulated:** 22,098,455
-**Solo Victories:** 21,479,942
-**Shared Victories:** 365,290
+**Total Games Simulated:** 22,148,431
+**Solo Victories:** 21,529,130
+**Shared Victories:** 366,077
 **Average Game Length:** 5.0 turns
-**Last Updated:** 2025-12-31T21:18:11
+**Last Updated:** 2025-12-31T21:21:00
 
 ### Alien Power Rankings (by ELO)
 
 | Rank | Alien | ELO | Win Rate | Games | Solo Wins | Shared |
 |------|-------|-----|----------|-------|-----------|--------|
-| 1 | Linebacker_Sport | 1468 | 0.0% | 1 | 0 | 0 |
-| 2 | Spaceship_Transport | 1468 | 0.0% | 1 | 0 | 0 |
-| 3 | Wok | 818 | 32.4% | 34 | 11 | 0 |
-| 4 | Quasar_Ast | 673 | 34.1% | 41 | 14 | 0 |
-| 5 | Pulsar_Ast | 657 | 41.7% | 48 | 19 | 1 |
-| 6 | SolarWind | 625 | 42.3% | 52 | 22 | 0 |
-| 7 | Wrench_New | 625 | 45.1% | 51 | 22 | 1 |
-| 8 | Nebula_Ast | 621 | 28.6% | 42 | 12 | 0 |
-| 9 | Barbecue | 616 | 26.2% | 42 | 11 | 0 |
-| 10 | Supernova_Ast | 602 | 31.8% | 44 | 14 | 0 |
-| 11 | Pin | 562 | 32.6% | 46 | 14 | 1 |
-| 12 | Asteroid_Ast | 545 | 33.3% | 51 | 17 | 0 |
-| 13 | Fortress_Arch | 540 | 25.0% | 44 | 11 | 0 |
-| 14 | Emerald_Alt | 538 | 38.9% | 54 | 20 | 1 |
-| 15 | BrideGoddess | 534 | 43.6% | 55 | 23 | 1 |
-| 16 | Curer | 532 | 17.9% | 39 | 7 | 0 |
-| 17 | Ares_Alt | 532 | 36.5% | 52 | 19 | 0 |
-| 18 | BeanNighe | 500 | 46.0% | 63 | 28 | 1 |
-| 19 | All_In | 496 | 27.7% | 47 | 12 | 1 |
-| 20 | Apollo_Alt | 494 | 20.9% | 43 | 8 | 1 |
-| 21 | Flush | 476 | 20.0% | 45 | 9 | 0 |
-| 22 | Hope_Emotion | 470 | 40.4% | 57 | 22 | 1 |
-| 23 | Sun_5K | 467 | 43.8% | 64 | 28 | 0 |
-| 24 | Athena_Alt | 457 | 21.3% | 47 | 10 | 0 |
-| 25 | Catcher_Position | 449 | 32.1% | 53 | 17 | 0 |
-| 26 | Courageous_5K | 445 | 32.1% | 53 | 17 | 0 |
-| 27 | Pyramid_Arch | 438 | 23.4% | 47 | 10 | 1 |
-| 28 | Fear_Emotion | 438 | 26.5% | 49 | 13 | 0 |
-| 29 | Age_Forward | 435 | 19.6% | 46 | 9 | 0 |
-| 30 | Bathala | 435 | 34.0% | 53 | 17 | 1 |
-| 31 | Poseidon_Alt | 433 | 19.1% | 47 | 9 | 0 |
-| 32 | Turmeric | 430 | 29.4% | 51 | 15 | 0 |
-| 33 | Mantis_Shrimp | 430 | 38.6% | 57 | 20 | 2 |
-| 34 | Mango | 429 | 42.2% | 64 | 26 | 1 |
-| 35 | King_Piece | 426 | 23.5% | 51 | 12 | 0 |
-| 36 | Sapphire_Alt | 423 | 25.9% | 54 | 14 | 0 |
-| 37 | Kinnara | 418 | 30.2% | 53 | 16 | 0 |
-| 38 | Juicer | 412 | 33.9% | 56 | 19 | 0 |
-| 39 | Vanguard_5K | 411 | 41.0% | 61 | 23 | 2 |
-| 40 | Prickly_Texture | 408 | 27.5% | 51 | 13 | 1 |
-| ... | *5990 more aliens* | ... | ... | ... | ... | ... |
+| 1 | Brazilian_Food | 942 | 39.3% | 28 | 10 | 1 |
+| 2 | Bicycle_Transport | 926 | 45.5% | 33 | 15 | 0 |
+| 3 | Nephthys | 926 | 25.0% | 24 | 6 | 0 |
+| 4 | Kubera | 914 | 30.8% | 26 | 7 | 1 |
+| 5 | Quarterback_Sport | 907 | 36.7% | 30 | 11 | 0 |
+| 6 | Bus_Transport | 906 | 32.1% | 28 | 9 | 0 |
+| 7 | Krishna | 899 | 24.0% | 25 | 6 | 0 |
+| 8 | AI_SF | 898 | 13.6% | 22 | 3 | 0 |
+| 9 | Boat_Transport | 891 | 32.1% | 28 | 8 | 1 |
+| 10 | Goalkeeper_Sport | 867 | 37.5% | 32 | 12 | 0 |
+| 11 | Surya | 835 | 34.4% | 32 | 11 | 0 |
+| 12 | Wok | 818 | 32.4% | 34 | 11 | 0 |
+| 13 | Noir | 800 | 21.4% | 28 | 6 | 0 |
+| 14 | Aten | 788 | 36.1% | 36 | 13 | 0 |
+| 15 | Cyborg_SF | 780 | 34.3% | 35 | 12 | 0 |
+| 16 | Geb | 779 | 36.1% | 36 | 13 | 0 |
+| 17 | Point_Guard_Sport | 773 | 36.1% | 36 | 13 | 0 |
+| 18 | Alien_SF | 772 | 20.7% | 29 | 6 | 0 |
+| 19 | Marines | 744 | 31.4% | 35 | 11 | 0 |
+| 20 | Vayu | 743 | 25.0% | 32 | 8 | 0 |
+| 21 | Striker_Sport | 742 | 20.0% | 30 | 6 | 0 |
+| 22 | Airplane_Transport | 737 | 29.4% | 34 | 10 | 0 |
+| 23 | Indian_Food | 724 | 35.1% | 37 | 12 | 1 |
+| 24 | Mexican_Food | 708 | 28.6% | 35 | 10 | 0 |
+| 25 | Gunner | 708 | 30.6% | 36 | 11 | 0 |
+| 26 | Musical | 703 | 26.5% | 34 | 8 | 1 |
+| 27 | Greek_Food | 683 | 35.9% | 39 | 12 | 2 |
+| 28 | Psychic_SF | 682 | 25.7% | 35 | 9 | 0 |
+| 29 | Khepri | 681 | 31.6% | 38 | 12 | 0 |
+| 30 | Motorcycle_Transport | 679 | 25.7% | 35 | 9 | 0 |
+| 31 | Ryujin | 675 | 21.2% | 33 | 7 | 0 |
+| 32 | Quasar_Ast | 673 | 34.1% | 41 | 14 | 0 |
+| 33 | Pulsar_Ast | 657 | 41.7% | 48 | 19 | 1 |
+| 34 | Winger_Sport | 657 | 20.6% | 34 | 7 | 0 |
+| 35 | Terraform | 653 | 20.6% | 34 | 7 | 0 |
+| 36 | Tank_Corps | 647 | 18.2% | 33 | 6 | 0 |
+| 37 | Clone_SF | 628 | 28.2% | 39 | 11 | 0 |
+| 38 | Special_Forces | 627 | 20.0% | 35 | 7 | 0 |
+| 39 | Linebacker_Sport | 627 | 22.2% | 36 | 8 | 0 |
+| 40 | SolarWind | 625 | 42.3% | 52 | 22 | 0 |
+| ... | *6048 more aliens* | ... | ... | ... | ... | ... |
 
 <!-- SIMULATION_RESULTS_END -->
 

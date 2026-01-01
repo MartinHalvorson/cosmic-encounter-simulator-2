@@ -15,26 +15,6 @@ if TYPE_CHECKING:
 
 from ..registry import AlienRegistry
 
-
-@dataclass
-class Assassin(AlienPower):
-    """
-    Assassin - Target opponent's ships go to warp even if you lose.
-    """
-    name: str = field(default="Assassin", init=False)
-    description: str = field(
-        default="Defense ships go to warp even if you lose.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-    usable_as: List[PlayerRole] = field(
-        default_factory=lambda: [PlayerRole.OFFENSE],
-        init=False
-    )
-
-
 @dataclass
 class Butler(AlienPower):
     """
@@ -48,7 +28,6 @@ class Butler(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ANY, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Changeling(AlienPower):
@@ -68,7 +47,6 @@ class Changeling(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Chronos(AlienPower):
     """
@@ -86,7 +64,6 @@ class Chronos(AlienPower):
         default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
         init=False
     )
-
 
 @dataclass
 class Claw(AlienPower):
@@ -106,22 +83,6 @@ class Claw(AlienPower):
         init=False
     )
 
-
-@dataclass
-class Crone(AlienPower):
-    """
-    Crone - Curse opponents to lose power.
-    """
-    name: str = field(default="Crone", init=False)
-    description: str = field(
-        default="Disable an opponent's power for the encounter.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
 @dataclass
 class Dictator(AlienPower):
     """
@@ -139,7 +100,6 @@ class Dictator(AlienPower):
         default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
         init=False
     )
-
 
 @dataclass
 class Empath(AlienPower):
@@ -159,7 +119,6 @@ class Empath(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Ethic(AlienPower):
     """
@@ -177,7 +136,6 @@ class Ethic(AlienPower):
         default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
         init=False
     )
-
 
 @dataclass
 class Gambler(AlienPower):
@@ -197,7 +155,6 @@ class Gambler(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Grudge(AlienPower):
     """
@@ -215,7 +172,6 @@ class Grudge(AlienPower):
         default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
         init=False
     )
-
 
 @dataclass
 class Human(AlienPower):
@@ -242,7 +198,6 @@ class Human(AlienPower):
             return base_total + 4
         return base_total
 
-
 @dataclass
 class Mutant(AlienPower):
     """
@@ -263,7 +218,6 @@ class Mutant(AlienPower):
                 card = game.cosmic_deck.draw()
                 player.add_card(card)
 
-
 @dataclass
 class Negator(AlienPower):
     """
@@ -277,7 +231,6 @@ class Negator(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ANY, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Observer(AlienPower):
@@ -293,7 +246,6 @@ class Observer(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
 @dataclass
 class Pentaform(AlienPower):
     """
@@ -307,22 +259,6 @@ class Pentaform(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-
-@dataclass
-class Giver(AlienPower):
-    """
-    Giver - Draw extra cards for others.
-    """
-    name: str = field(default="Giver", init=False)
-    description: str = field(
-        default="Give extra drawn cards to other players.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.GAIN_CARDS, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Seeker(AlienPower):
@@ -338,7 +274,6 @@ class Seeker(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Sheriff(AlienPower):
     """
@@ -352,7 +287,6 @@ class Sheriff(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Sniveler(AlienPower):
@@ -371,45 +305,6 @@ class Sniveler(AlienPower):
         default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
         init=False
     )
-
-
-@dataclass
-class Surge(AlienPower):
-    """
-    Surge - Add extra ships mid-encounter.
-    """
-    name: str = field(default="Surge", init=False)
-    description: str = field(
-        default="Add ships after cards are revealed.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-    usable_as: List[PlayerRole] = field(
-        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
-        init=False
-    )
-
-
-@dataclass
-class Yin(AlienPower):
-    """
-    Yin - Win ties.
-    """
-    name: str = field(default="Yin", init=False)
-    description: str = field(
-        default="Win all ties.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-    usable_as: List[PlayerRole] = field(
-        default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
-        init=False
-    )
-
 
 @dataclass
 class Fido(AlienPower):
@@ -440,7 +335,6 @@ class Fido(AlienPower):
             retrieved = player.retrieve_ships_from_warp(ships)
             player.return_ships_to_colonies(retrieved, player.home_planets)
 
-
 @dataclass
 class Visionary(AlienPower):
     """
@@ -455,7 +349,6 @@ class Visionary(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Silencer(AlienPower):
     """
@@ -469,24 +362,6 @@ class Silencer(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-
-@dataclass
-class Philanthropist_Alt(AlienPower):
-    """
-    Altruist - Give away ships for cards.
-    """
-    name: str = field(default="Altruist", init=False)
-    description: str = field(
-        default="Give ships to others, draw cards.",
-        init=False
-    )
-    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
-    power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-# ========== Cosmic Incursion Expansion ==========
 
 @dataclass
 class Cryo(AlienPower):
@@ -543,7 +418,6 @@ class Cryo(AlienPower):
                     player.add_card(card)
                 self.cold_storage = []
 
-
 @dataclass
 class Locust(AlienPower):
     """
@@ -594,7 +468,6 @@ class Locust(AlienPower):
             if planet in game.planets:
                 game.planets.remove(planet)
             self.devoured_count += 1
-
 
 @dataclass
 class Mercenary(AlienPower):
@@ -648,7 +521,6 @@ class Mercenary(AlienPower):
                 player.retrieve_ships_from_warp(retrieved)
                 player.return_ships_to_colonies(retrieved, player.home_planets)
 
-
 @dataclass
 class Merchant(AlienPower):
     """
@@ -683,7 +555,6 @@ class Merchant(AlienPower):
         hired_ships = min(2, extra_cards)
 
         return base_count + hired_ships
-
 
 @dataclass
 class Plant(AlienPower):
@@ -723,7 +594,6 @@ class Plant(AlienPower):
                     # In simulation, this just means we could use their power
                     break
 
-
 # ========== Cosmic Conflict Expansion ==========
 
 @dataclass
@@ -741,7 +611,6 @@ class Filth(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Graviton(AlienPower):
@@ -772,7 +641,6 @@ class Graviton(AlienPower):
         # Use ones digit
         return base_value % 10
 
-
 @dataclass
 class Lunatic(AlienPower):
     """
@@ -788,7 +656,6 @@ class Lunatic(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Industrialist(AlienPower):
@@ -838,7 +705,6 @@ class Industrialist(AlienPower):
             return base_total + self.stack_bonus
         return base_total
 
-
 @dataclass
 class Relic(AlienPower):
     """
@@ -855,7 +721,6 @@ class Relic(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Saboteur(AlienPower):
     """
@@ -871,7 +736,6 @@ class Saboteur(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
 
 @dataclass
 class Sadist(AlienPower):
@@ -905,7 +769,6 @@ class Sadist(AlienPower):
                 return False
         return True
 
-
 @dataclass
 class Trickster(AlienPower):
     """
@@ -921,7 +784,6 @@ class Trickster(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Warhawk(AlienPower):
@@ -939,7 +801,6 @@ class Warhawk(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
-
 # ========== Cosmic Alliance Expansion ==========
 
 @dataclass
@@ -955,7 +816,6 @@ class Animal(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Bandit(AlienPower):
     """
@@ -967,7 +827,6 @@ class Bandit(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class General(AlienPower):
@@ -981,7 +840,6 @@ class General(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
 @dataclass
 class Gorgon(AlienPower):
     """
@@ -994,7 +852,6 @@ class Gorgon(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Lightning(AlienPower):
     """
@@ -1006,7 +863,6 @@ class Lightning(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Pygmy(AlienPower):
@@ -1031,7 +887,6 @@ class Pygmy(AlienPower):
         other_ships = base_count - my_ships
         return other_ships + (my_ships * 2)
 
-
 @dataclass
 class Reborn(AlienPower):
     """
@@ -1043,7 +898,6 @@ class Reborn(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.LOSE_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Remote(AlienPower):
@@ -1057,7 +911,6 @@ class Remote(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Sapient(AlienPower):
     """
@@ -1069,7 +922,6 @@ class Sapient(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Skeptic(AlienPower):
@@ -1091,7 +943,6 @@ class Skeptic(AlienPower):
             return base_total + 5
         return base_total
 
-
 @dataclass
 class Sting(AlienPower):
     """
@@ -1104,7 +955,6 @@ class Sting(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Winner(AlienPower):
     """
@@ -1116,7 +966,6 @@ class Winner(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.WIN_ENCOUNTER, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 # =============================================================================
 # COSMIC STORM EXPANSION (25 aliens)
@@ -1174,7 +1023,6 @@ class Arcade(AlienPower):
                 return True
         return False
 
-
 @dataclass
 class Bride(AlienPower):
     """
@@ -1190,7 +1038,6 @@ class Bride(AlienPower):
     spouse: Optional[str] = field(default=None, init=False)
     divorced_players: List[str] = field(default_factory=list, init=False)
 
-
 @dataclass
 class Grumpus(AlienPower):
     """
@@ -1203,7 +1050,6 @@ class Grumpus(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Mouth(AlienPower):
@@ -1218,7 +1064,6 @@ class Mouth(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     gobbled_cards: List[Any] = field(default_factory=list, init=False)
-
 
 @dataclass
 class Neighbor(AlienPower):
@@ -1250,7 +1095,6 @@ class Neighbor(AlienPower):
 
         return base_total + bonus
 
-
 @dataclass
 class Outlaw(AlienPower):
     """
@@ -1263,7 +1107,6 @@ class Outlaw(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Porcupine(AlienPower):
@@ -1308,7 +1151,6 @@ class Porcupine(AlienPower):
 
         return base_total + cards_to_discard
 
-
 @dataclass
 class Sloth(AlienPower):
     """
@@ -1321,7 +1163,6 @@ class Sloth(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.PLANNING, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Squee(AlienPower):
@@ -1341,7 +1182,6 @@ class Squee(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Swindler(AlienPower):
     """
@@ -1356,14 +1196,11 @@ class Swindler(AlienPower):
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
     marked_player: Optional[str] = field(default=None, init=False)
 
-
 # Register all powers
-AlienRegistry.register(Assassin())
 AlienRegistry.register(Butler())
 AlienRegistry.register(Changeling())
 AlienRegistry.register(Chronos())
 AlienRegistry.register(Claw())
-AlienRegistry.register(Crone())
 AlienRegistry.register(Dictator())
 AlienRegistry.register(Empath())
 AlienRegistry.register(Ethic())
@@ -1374,16 +1211,12 @@ AlienRegistry.register(Mutant())
 AlienRegistry.register(Negator())
 AlienRegistry.register(Observer())
 AlienRegistry.register(Pentaform())
-AlienRegistry.register(Giver())
 AlienRegistry.register(Seeker())
 AlienRegistry.register(Sheriff())
 AlienRegistry.register(Sniveler())
-AlienRegistry.register(Surge())
-AlienRegistry.register(Yin())
 AlienRegistry.register(Fido())
 AlienRegistry.register(Visionary())
 AlienRegistry.register(Silencer())
-AlienRegistry.register(Philanthropist_Alt())
 # Cosmic Incursion expansion
 AlienRegistry.register(Cryo())
 AlienRegistry.register(Locust())
@@ -1425,7 +1258,6 @@ AlienRegistry.register(Sloth())
 AlienRegistry.register(Squee())
 AlienRegistry.register(Swindler())
 
-
 # =============================================================================
 # COSMIC EONS EXPANSION (30 aliens)
 # =============================================================================
@@ -1458,7 +1290,6 @@ class Anarchist(AlienPower):
         # Requires 20 disruptions (very hard to achieve)
         return self.disruptions_revealed >= 20
 
-
 @dataclass
 class AssistantAlien(AlienPower):
     """
@@ -1470,7 +1301,6 @@ class AssistantAlien(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class BleedingHeart(AlienPower):
@@ -1484,7 +1314,6 @@ class BleedingHeart(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Coward(AlienPower):
@@ -1503,7 +1332,6 @@ class Coward(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Crusher(AlienPower):
     """
@@ -1521,7 +1349,6 @@ class Crusher(AlienPower):
         init=False
     )
 
-
 @dataclass
 class EvilTwin(AlienPower):
     """
@@ -1538,7 +1365,6 @@ class EvilTwin(AlienPower):
         default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE],
         init=False
     )
-
 
 @dataclass
 class FireDancer(AlienPower):
@@ -1562,7 +1388,6 @@ class FireDancer(AlienPower):
             return base_total + self.fire_bonus
         return base_total
 
-
 @dataclass
 class Hunger(AlienPower):
     """
@@ -1575,7 +1400,6 @@ class Hunger(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
 
 @dataclass
 class Hypochondriac(AlienPower):
@@ -1590,7 +1414,6 @@ class Hypochondriac(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Klutz(AlienPower):
     """
@@ -1603,7 +1426,6 @@ class Klutz(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Maven(AlienPower):
@@ -1618,7 +1440,6 @@ class Maven(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
-
 @dataclass
 class Moocher(AlienPower):
     """
@@ -1632,7 +1453,6 @@ class Moocher(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
 @dataclass
 class Oligarch(AlienPower):
     """
@@ -1645,7 +1465,6 @@ class Oligarch(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class PackRat(AlienPower):
@@ -1668,7 +1487,6 @@ class PackRat(AlienPower):
             return base_total + self.collected_items
         return base_total
 
-
 @dataclass
 class Peddler(AlienPower):
     """
@@ -1682,7 +1500,6 @@ class Peddler(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
 @dataclass
 class Surgeon(AlienPower):
     """
@@ -1695,7 +1512,6 @@ class Surgeon(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.DESTINY, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Tortoise(AlienPower):
@@ -1711,7 +1527,6 @@ class Tortoise(AlienPower):
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     shell_cards: int = field(default=0, init=False)
 
-
 @dataclass
 class Nanny(AlienPower):
     """
@@ -1724,7 +1539,6 @@ class Nanny(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Pretender(AlienPower):
@@ -1743,7 +1557,6 @@ class Pretender(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Perfectionist(AlienPower):
     """
@@ -1757,7 +1570,6 @@ class Perfectionist(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     rejected_cards: int = field(default=0, init=False)
-
 
 @dataclass
 class Particle(AlienPower):
@@ -1773,7 +1585,6 @@ class Particle(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     entangled_pairs: List[Any] = field(default_factory=list, init=False)
 
-
 @dataclass
 class TheCult(AlienPower):
     """
@@ -1787,7 +1598,6 @@ class TheCult(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
     members: List[str] = field(default_factory=list, init=False)
-
 
 # Register Cosmic Eons aliens
 AlienRegistry.register(Anarchist())
@@ -1813,7 +1623,6 @@ AlienRegistry.register(Surgeon())
 AlienRegistry.register(TheCult())
 AlienRegistry.register(Tortoise())
 
-
 # =============================================================================
 # COSMIC DOMINION EXPANSION (30 aliens - adding missing 15)
 # =============================================================================
@@ -1835,7 +1644,6 @@ class Angler(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Daredevil(AlienPower):
     """
@@ -1848,7 +1656,6 @@ class Daredevil(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Explorer(AlienPower):
@@ -1870,7 +1677,6 @@ class Explorer(AlienPower):
         # Bonus based on discovered planets
         return base_total + self.discovered_planets
 
-
 @dataclass
 class Greenhorn(AlienPower):
     """
@@ -1883,7 +1689,6 @@ class Greenhorn(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.CONSTANT, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
 
 @dataclass
 class Host(AlienPower):
@@ -1901,7 +1706,6 @@ class Host(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Joker(AlienPower):
     """
@@ -1913,7 +1717,6 @@ class Joker(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ANY, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
 
 @dataclass
 class Lizard(AlienPower):
@@ -1952,7 +1755,6 @@ class Lizard(AlienPower):
     def check_alternate_win(self, game: "Game", player: "Player") -> bool:
         return self.normal_ships <= 0
 
-
 @dataclass
 class Love(AlienPower):
     """
@@ -1965,7 +1767,6 @@ class Love(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Mesmer(AlienPower):
@@ -1984,7 +1785,6 @@ class Mesmer(AlienPower):
         init=False
     )
 
-
 @dataclass
 class Mirage(AlienPower):
     """
@@ -1997,7 +1797,6 @@ class Mirage(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Muckraker(AlienPower):
@@ -2012,7 +1811,6 @@ class Muckraker(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-
 @dataclass
 class Tourist(AlienPower):
     """
@@ -2026,7 +1824,6 @@ class Tourist(AlienPower):
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-
 @dataclass
 class Voyager(AlienPower):
     """
@@ -2039,7 +1836,6 @@ class Voyager(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Whirligig(AlienPower):
@@ -2058,7 +1854,6 @@ class Whirligig(AlienPower):
         init=False
     )
 
-
 @dataclass
 class YinYang(AlienPower):
     """
@@ -2071,7 +1866,6 @@ class YinYang(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
 
 # Register Cosmic Dominion aliens
 AlienRegistry.register(Angler())
@@ -2090,7 +1884,6 @@ AlienRegistry.register(Voyager())
 AlienRegistry.register(Whirligig())
 AlienRegistry.register(YinYang())
 
-
 # =============================================================================
 # COSMIC ODYSSEY EXPANSION (42 aliens - adding documented ones)
 # =============================================================================
@@ -2107,7 +1900,6 @@ class Magnet(AlienPower):
     timing: PowerTiming = field(default=PowerTiming.ALLIANCE, init=False)
     power_type: PowerType = field(default=PowerType.OPTIONAL, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
 
 @dataclass
 class Zilch(AlienPower):
@@ -2131,7 +1923,6 @@ class Zilch(AlienPower):
                 if winner.name == self.predicted_winner:
                     return True
         return False
-
 
 # Register Cosmic Odyssey aliens
 AlienRegistry.register(Magnet())
