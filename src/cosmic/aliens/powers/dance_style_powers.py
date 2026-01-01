@@ -1,14 +1,14 @@
 """
-Math Powers - Mathematics and numbers themed aliens.
+Dance Style Powers - Dance style themed aliens.
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
 import random
 
 from ..base import AlienPower, PowerCategory
 from ..registry import AlienRegistry
-from ...types import PowerTiming, PowerType, PlayerRole, Side
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
@@ -16,69 +16,24 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Algebra(AlienPower):
-    """Algebra - Variable Math. +4 always."""
-    name: str = field(default="Algebra", init=False)
-    description: str = field(default="+4 constant.", init=False)
+class Waltz_Dance(AlienPower):
+    """Waltz_Dance - Elegant dance. +3 always."""
+    name: str = field(default="Waltz_Dance", init=False)
+    description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 4
+            return total + 3
         return total
 
 
 @dataclass
-class Geometry(AlienPower):
-    """Geometry - Shape Math. +4 always."""
-    name: str = field(default="Geometry", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Calculus(AlienPower):
-    """Calculus - Advanced Math. +5 always."""
-    name: str = field(default="Calculus", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Statistics(AlienPower):
-    """Statistics - Probability Math. Random +2 to +6."""
-    name: str = field(default="Statistics", init=False)
-    description: str = field(default="Random +2 to +6.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + random.randint(2, 6)
-        return total
-
-
-@dataclass
-class Trigonometry(AlienPower):
-    """Trigonometry - Angle Math. +4 on offense."""
-    name: str = field(default="Trigonometry", init=False)
+class Tango_Dance(AlienPower):
+    """Tango_Dance - Passionate dance. +4 on offense."""
+    name: str = field(default="Tango_Dance", init=False)
     description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -91,9 +46,24 @@ class Trigonometry(AlienPower):
 
 
 @dataclass
-class Arithmetic(AlienPower):
-    """Arithmetic - Basic Math. +3 always."""
-    name: str = field(default="Arithmetic", init=False)
+class Salsa_Dance(AlienPower):
+    """Salsa_Dance - Energetic dance. +4 on offense."""
+    name: str = field(default="Salsa_Dance", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Foxtrot(AlienPower):
+    """Foxtrot - Smooth dance. +3 always."""
+    name: str = field(default="Foxtrot", init=False)
     description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -106,69 +76,24 @@ class Arithmetic(AlienPower):
 
 
 @dataclass
-class Prime_Math(AlienPower):
-    """Prime_Math - Indivisible. +4 on defense."""
-    name: str = field(default="Prime_Math", init=False)
-    description: str = field(default="+4 when defending.", init=False)
+class Quickstep(AlienPower):
+    """Quickstep - Fast dance. +4 on offense."""
+    name: str = field(default="Quickstep", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
+        if player.power_active and side == Side.OFFENSE:
             return total + 4
         return total
 
 
 @dataclass
-class Factorial(AlienPower):
-    """Factorial - Multiplying. +5 on offense."""
-    name: str = field(default="Factorial", init=False)
-    description: str = field(default="+5 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Logarithm(AlienPower):
-    """Logarithm - Power Math. +4 always."""
-    name: str = field(default="Logarithm", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Exponent_Math(AlienPower):
-    """Exponent_Math - Power Growth. +5 on offense."""
-    name: str = field(default="Exponent_Math", init=False)
-    description: str = field(default="+5 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Fraction_Math(AlienPower):
-    """Fraction_Math - Parts. +3 always."""
-    name: str = field(default="Fraction_Math", init=False)
+class Rumba(AlienPower):
+    """Rumba - Romantic dance. +3 always."""
+    name: str = field(default="Rumba", init=False)
     description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -181,39 +106,9 @@ class Fraction_Math(AlienPower):
 
 
 @dataclass
-class Infinity_Math(AlienPower):
-    """Infinity_Math - Endless. +6 always."""
-    name: str = field(default="Infinity_Math", init=False)
-    description: str = field(default="+6 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 6
-        return total
-
-
-@dataclass
-class Variable(AlienPower):
-    """Variable - Unknown. Random +1 to +5."""
-    name: str = field(default="Variable", init=False)
-    description: str = field(default="Random +1 to +5.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + random.randint(1, 5)
-        return total
-
-
-@dataclass
-class Equation(AlienPower):
-    """Equation - Balance. +4 always."""
-    name: str = field(default="Equation", init=False)
+class ChaCha(AlienPower):
+    """ChaCha - Lively dance. +4 always."""
+    name: str = field(default="ChaCha", init=False)
     description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -226,28 +121,87 @@ class Equation(AlienPower):
 
 
 @dataclass
-class Matrix_Math(AlienPower):
-    """Matrix_Math - Grid Numbers. +5 always."""
-    name: str = field(default="Matrix_Math", init=False)
-    description: str = field(default="+5 constant.", init=False)
+class Samba(AlienPower):
+    """Samba - Brazilian dance. +4 on offense."""
+    name: str = field(default="Samba", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Jive(AlienPower):
+    """Jive - Swing dance. +4 on offense."""
+    name: str = field(default="Jive", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class PasoDoble(AlienPower):
+    """PasoDoble - Dramatic dance. +5 on offense."""
+    name: str = field(default="PasoDoble", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class VienneseWaltz(AlienPower):
+    """VienneseWaltz - Classic dance. +4 always."""
+    name: str = field(default="VienneseWaltz", init=False)
+    description: str = field(default="+4 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
+            return total + 4
+        return total
+
+
+@dataclass
+class Breakdance(AlienPower):
+    """Breakdance - Athletic dance. +5 on offense."""
+    name: str = field(default="Breakdance", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
             return total + 5
         return total
 
 
 # Register all powers
-MATH_POWERS = [
-    Algebra, Geometry, Calculus, Statistics, Trigonometry, Arithmetic, Prime_Math,
-    Factorial, Logarithm, Exponent_Math, Fraction_Math, Infinity_Math, Variable,
-    Equation, Matrix_Math,
+DANCE_STYLE_POWERS = [
+    Waltz_Dance, Tango_Dance, Salsa_Dance, Foxtrot, Quickstep, Rumba,
+    ChaCha, Samba, Jive, PasoDoble, VienneseWaltz, Breakdance,
 ]
 
-for power_class in MATH_POWERS:
+for power_class in DANCE_STYLE_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

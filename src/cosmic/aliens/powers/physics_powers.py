@@ -1,5 +1,5 @@
 """
-Physics Powers - Physics concepts themed aliens.
+Physics Powers - Physics and forces themed aliens.
 """
 
 from dataclasses import dataclass, field
@@ -16,39 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Kinetic(AlienPower):
-    """Kinetic - Power of Motion. +4 on offense."""
-    name: str = field(default="Kinetic", init=False)
-    description: str = field(default="+4 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Potential(AlienPower):
-    """Potential - Power of Stored Energy. +4 on defense."""
-    name: str = field(default="Potential", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Inertial(AlienPower):
-    """Inertial - Power of Inertia. +5 on defense."""
-    name: str = field(default="Inertial", init=False)
+class Gravity_Physics(AlienPower):
+    """Gravity_Physics - Attraction Force. +5 on defense."""
+    name: str = field(default="Gravity_Physics", init=False)
     description: str = field(default="+5 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -61,9 +31,9 @@ class Inertial(AlienPower):
 
 
 @dataclass
-class Momentum(AlienPower):
-    """Momentum - Power of Force. +5 on offense."""
-    name: str = field(default="Momentum", init=False)
+class Momentum_Physics(AlienPower):
+    """Momentum_Physics - Moving Force. +5 on offense."""
+    name: str = field(default="Momentum_Physics", init=False)
     description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -76,139 +46,169 @@ class Momentum(AlienPower):
 
 
 @dataclass
-class Velocity(AlienPower):
-    """Velocity - Power of Speed. Ships escape."""
-    name: str = field(default="Velocity", init=False)
-    description: str = field(default="Ships go home not warp.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+class Inertia_Physics(AlienPower):
+    """Inertia_Physics - Resistance. +5 on defense."""
+    name: str = field(default="Inertia_Physics", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Friction_Physics(AlienPower):
+    """Friction_Physics - Opposing Force. -3 to opponent."""
+    name: str = field(default="Friction_Physics", init=False)
+    description: str = field(default="Opponent gets -3.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
-class Acceleration(AlienPower):
-    """Acceleration - Power of Speeding Up. +3 always."""
-    name: str = field(default="Acceleration", init=False)
-    description: str = field(default="+3 constant.", init=False)
+class Velocity_Physics(AlienPower):
+    """Velocity_Physics - Speed. +5 on offense."""
+    name: str = field(default="Velocity_Physics", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Acceleration_Physics(AlienPower):
+    """Acceleration_Physics - Speed Change. +4 on offense."""
+    name: str = field(default="Acceleration_Physics", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 3
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
         return total
 
 
 @dataclass
-class Friction(AlienPower):
-    """Friction - Power of Resistance. -2 to attacker."""
-    name: str = field(default="Friction", init=False)
-    description: str = field(default="Attacker gets -2.", init=False)
+class Pressure_Physics(AlienPower):
+    """Pressure_Physics - Force per Area. +4 on offense."""
+    name: str = field(default="Pressure_Physics", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
 
 @dataclass
-class Tension(AlienPower):
-    """Tension - Power of Stress. +3 on defense."""
-    name: str = field(default="Tension", init=False)
-    description: str = field(default="+3 when defending.", init=False)
+class Tension_Physics(AlienPower):
+    """Tension_Physics - Pulling Force. +4 on defense."""
+    name: str = field(default="Tension_Physics", init=False)
+    description: str = field(default="+4 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active and side == Side.DEFENSE:
-            return total + 3
-        return total
-
-
-@dataclass
-class Pressure(AlienPower):
-    """Pressure - Power of Force Per Area. +4 always."""
-    name: str = field(default="Pressure", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
             return total + 4
         return total
 
 
 @dataclass
-class Density(AlienPower):
-    """Density - Power of Mass. +1 per ship."""
-    name: str = field(default="Density", init=False)
-    description: str = field(default="+1 per ship in encounter.", init=False)
+class Torque_Physics(AlienPower):
+    """Torque_Physics - Rotational Force. +4 on offense."""
+    name: str = field(default="Torque_Physics", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
 
 @dataclass
-class Entropy(AlienPower):
-    """Entropy - Power of Disorder. Random +/- 5."""
-    name: str = field(default="Entropy", init=False)
-    description: str = field(default="Random -5 to +5.", init=False)
+class Entropy_Physics(AlienPower):
+    """Entropy_Physics - Disorder. Random +2 to +6."""
+    name: str = field(default="Entropy_Physics", init=False)
+    description: str = field(default="Random +2 to +6.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + random.randint(2, 6)
+        return total
+
+
+@dataclass
+class Kinetic_Physics(AlienPower):
+    """Kinetic_Physics - Motion Energy. +5 on offense."""
+    name: str = field(default="Kinetic_Physics", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Potential_Physics(AlienPower):
+    """Potential_Physics - Stored Energy. +4 on defense."""
+    name: str = field(default="Potential_Physics", init=False)
+    description: str = field(default="+4 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Quantum_Physics(AlienPower):
+    """Quantum_Physics - Subatomic. +6 always."""
+    name: str = field(default="Quantum_Physics", init=False)
+    description: str = field(default="+6 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.RED, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return max(0, total + random.randint(-5, 5))
+            return total + 6
         return total
 
 
 @dataclass
-class Equilibrium(AlienPower):
-    """Equilibrium - Power of Balance. +3 always."""
-    name: str = field(default="Equilibrium", init=False)
-    description: str = field(default="+3 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 3
-        return total
-
-
-@dataclass
-class Wavelength_Alt(AlienPower):
-    """Wavelength_Alt - Power of Waves. +2 per ally."""
-    name: str = field(default="Wavelength_Alt", init=False)
-    description: str = field(default="+2 per ally.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-
-@dataclass
-class Magnetic(AlienPower):
-    """Magnetic - Power of Magnetism. +4 always."""
-    name: str = field(default="Magnetic", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Electric(AlienPower):
-    """Electric - Power of Electricity. +5 always."""
-    name: str = field(default="Electric", init=False)
+class Relativity_Physics(AlienPower):
+    """Relativity_Physics - Space-Time. +5 always."""
+    name: str = field(default="Relativity_Physics", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -220,11 +220,27 @@ class Electric(AlienPower):
         return total
 
 
+@dataclass
+class Resonance_Physics(AlienPower):
+    """Resonance_Physics - Vibration. +4 always."""
+    name: str = field(default="Resonance_Physics", init=False)
+    description: str = field(default="+4 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
+
+
 # Register all powers
 PHYSICS_POWERS = [
-    Kinetic, Potential, Inertial, Momentum, Velocity, Acceleration, Friction,
-    Tension, Pressure, Density, Entropy, Equilibrium, Wavelength_Alt, Magnetic,
-    Electric,
+    Gravity_Physics, Momentum_Physics, Inertia_Physics, Friction_Physics,
+    Velocity_Physics, Acceleration_Physics, Pressure_Physics, Tension_Physics,
+    Torque_Physics, Entropy_Physics, Kinetic_Physics, Potential_Physics,
+    Quantum_Physics, Relativity_Physics, Resonance_Physics,
 ]
 
 for power_class in PHYSICS_POWERS:

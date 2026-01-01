@@ -427,3 +427,26 @@ from .ocean_life_powers import *  # noqa: F401, F403
 from .space_object_alt_powers import *  # noqa: F401, F403
 from .mythical_artifact_powers import *  # noqa: F401, F403
 from .time_period_powers import *  # noqa: F401, F403
+from .chemistry_powers import *  # noqa: F401, F403
+from .biology_powers import *  # noqa: F401, F403
+from .physics_powers import *  # noqa: F401, F403
+from .math_powers import *  # noqa: F401, F403
+from .tibetan_powers import *
+from .inuit_powers import *
+from .caribbean_powers import *
+from .landmark_powers import *  # noqa: F401, F403
+from .material_type_powers import *  # noqa: F401, F403
+from .plant_type_powers import *  # noqa: F401, F403
+from .gem_type_powers import *  # noqa: F401, F403
+from .milestone_5000_celebration_powers import *  # noqa: F401, F403
+from .geography_powers import *  # noqa: F401, F403
+from .architecture_powers import *  # noqa: F401, F403
+from .vehicle_powers import *  # noqa: F401, F403
+from .final_push_5000_powers import *  # noqa: F401, F403
+from .mythology_japanese_powers import *  # noqa: F401, F403
+from .game_mechanics_powers import *  # noqa: F401, F403
+from .science_fiction_powers import *  # noqa: F401, F403
+from .ethiopian_powers import *
+from .mongolian_powers import *
+from .vietnamese_powers import *
+from .milestone_5000_powers import *

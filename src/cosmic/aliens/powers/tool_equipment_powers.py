@@ -1,14 +1,14 @@
 """
-Architecture Powers - Architecture and building themed aliens.
+Tool Equipment Powers - Tools and equipment themed aliens.
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
 import random
 
 from ..base import AlienPower, PowerCategory
 from ..registry import AlienRegistry
-from ...types import PowerTiming, PowerType, PlayerRole, Side
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
@@ -16,84 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Arch_Build(AlienPower):
-    """Arch_Build - Curved Support. +4 on defense."""
-    name: str = field(default="Arch_Build", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Column_Build(AlienPower):
-    """Column_Build - Vertical Support. +4 on defense."""
-    name: str = field(default="Column_Build", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Beam_Build(AlienPower):
-    """Beam_Build - Horizontal Support. +4 on defense."""
-    name: str = field(default="Beam_Build", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Foundation_Build(AlienPower):
-    """Foundation_Build - Base. +5 on defense."""
-    name: str = field(default="Foundation_Build", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Dome_Build(AlienPower):
-    """Dome_Build - Curved Roof. +5 on defense."""
-    name: str = field(default="Dome_Build", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Spire_Build(AlienPower):
-    """Spire_Build - Pointed Top. +4 on offense."""
-    name: str = field(default="Spire_Build", init=False)
+class Hammer_New(AlienPower):
+    """Hammer_New - Striking power. +4 on offense."""
+    name: str = field(default="Hammer_New", init=False)
     description: str = field(default="+4 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -106,84 +31,9 @@ class Spire_Build(AlienPower):
 
 
 @dataclass
-class Vault_Build(AlienPower):
-    """Vault_Build - Arched Ceiling. +5 on defense."""
-    name: str = field(default="Vault_Build", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Buttress(AlienPower):
-    """Buttress - External Support. +4 on defense."""
-    name: str = field(default="Buttress", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Truss_Build(AlienPower):
-    """Truss_Build - Framework. +4 always."""
-    name: str = field(default="Truss_Build", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Facade(AlienPower):
-    """Facade - Building Front. +3 on defense."""
-    name: str = field(default="Facade", init=False)
-    description: str = field(default="+3 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 3
-        return total
-
-
-@dataclass
-class Parapet(AlienPower):
-    """Parapet - Wall Top. +4 on defense."""
-    name: str = field(default="Parapet", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Portico(AlienPower):
-    """Portico - Covered Entrance. +3 always."""
-    name: str = field(default="Portico", init=False)
+class Wrench_New(AlienPower):
+    """Wrench_New - Turning power. +3 always."""
+    name: str = field(default="Wrench_New", init=False)
     description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -196,9 +46,114 @@ class Portico(AlienPower):
 
 
 @dataclass
-class Turret_Build(AlienPower):
-    """Turret_Build - Tower. +4 on defense."""
-    name: str = field(default="Turret_Build", init=False)
+class Screwdriver(AlienPower):
+    """Screwdriver - Precision tool. +3 always."""
+    name: str = field(default="Screwdriver", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Pliers(AlienPower):
+    """Pliers - Gripping power. +3 on defense."""
+    name: str = field(default="Pliers", init=False)
+    description: str = field(default="+3 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Drill_Tool(AlienPower):
+    """Drill_Tool - Boring power. +4 on offense."""
+    name: str = field(default="Drill_Tool", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Saw_Tool(AlienPower):
+    """Saw_Tool - Cutting power. +4 on offense."""
+    name: str = field(default="Saw_Tool", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Level_Tool(AlienPower):
+    """Level_Tool - Balance tool. +3 always."""
+    name: str = field(default="Level_Tool", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Chisel(AlienPower):
+    """Chisel - Carving tool. +3 on offense."""
+    name: str = field(default="Chisel", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Mallet(AlienPower):
+    """Mallet - Soft striking. +3 always."""
+    name: str = field(default="Mallet", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Clamp(AlienPower):
+    """Clamp - Holding power. +4 on defense."""
+    name: str = field(default="Clamp", init=False)
     description: str = field(default="+4 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -211,9 +166,9 @@ class Turret_Build(AlienPower):
 
 
 @dataclass
-class Minaret(AlienPower):
-    """Minaret - Tall Tower. +5 on defense."""
-    name: str = field(default="Minaret", init=False)
+class Vise(AlienPower):
+    """Vise - Clamping power. +5 on defense."""
+    name: str = field(default="Vise", init=False)
     description: str = field(default="+5 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -226,28 +181,27 @@ class Minaret(AlienPower):
 
 
 @dataclass
-class Pilaster(AlienPower):
-    """Pilaster - Flat Column. +3 on defense."""
-    name: str = field(default="Pilaster", init=False)
-    description: str = field(default="+3 when defending.", init=False)
+class Anvil(AlienPower):
+    """Anvil - Forging base. +5 on defense."""
+    name: str = field(default="Anvil", init=False)
+    description: str = field(default="+5 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active and side == Side.DEFENSE:
-            return total + 3
+            return total + 5
         return total
 
 
 # Register all powers
-ARCHITECTURE_POWERS = [
-    Arch_Build, Column_Build, Beam_Build, Foundation_Build, Dome_Build,
-    Spire_Build, Vault_Build, Buttress, Truss_Build, Facade, Parapet,
-    Portico, Turret_Build, Minaret, Pilaster,
+TOOL_EQUIPMENT_POWERS = [
+    Hammer_New, Wrench_New, Screwdriver, Pliers, Drill_Tool, Saw_Tool,
+    Level_Tool, Chisel, Mallet, Clamp, Vise, Anvil,
 ]
 
-for power_class in ARCHITECTURE_POWERS:
+for power_class in TOOL_EQUIPMENT_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

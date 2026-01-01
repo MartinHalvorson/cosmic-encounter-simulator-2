@@ -1,7 +1,5 @@
 """
-Milestone 5000 Powers for Cosmic Encounter.
-
-Celebration aliens for reaching 5000 aliens!
+Milestone 5000 Powers - Celebration of reaching 5000 aliens!
 """
 
 from dataclasses import dataclass, field
@@ -9,168 +7,184 @@ from typing import TYPE_CHECKING
 import random
 
 from ..base import AlienPower, PowerCategory
-from ...types import PowerTiming, PowerType, Side
+from ..registry import AlienRegistry
+from ...types import PowerTiming, PowerType, Side, PlayerRole
 
 if TYPE_CHECKING:
     from ...game import Game
     from ...player import Player
 
-from ..registry import AlienRegistry
-
 
 @dataclass
 class FiveThousand(AlienPower):
-    """FiveThousand - Power of Milestone."""
+    """FiveThousand - 5000 milestone. +5 on offense."""
     name: str = field(default="FiveThousand", init=False)
-    description: str = field(default="+5 celebrating 5000.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    description: str = field(default="+5 attacking for 5000.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + 5
-        return base_total
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Quintuple(AlienPower):
+    """Quintuple - Five times power. +5 on defense."""
+    name: str = field(default="Quintuple", init=False)
+    description: str = field(default="+5 defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
 
 
 @dataclass
 class Pentad(AlienPower):
-    """Pentad - Power of Five."""
+    """Pentad - Group of five. +2 always."""
     name: str = field(default="Pentad", init=False)
-    description: str = field(default="+5 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + 5
-        return base_total
-
-
-@dataclass
-class Quintessence(AlienPower):
-    """Quintessence - Power of Essence."""
-    name: str = field(default="Quintessence", init=False)
-    description: str = field(default="+5 on offense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return base_total + 5
-        return base_total
-
-
-@dataclass
-class Centennial(AlienPower):
-    """Centennial - Power of Century."""
-    name: str = field(default="Centennial", init=False)
-    description: str = field(default="+4 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    description: str = field(default="+2 in encounters.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return base_total + 4
-        return base_total
+            return total + 2
+        return total
 
 
 @dataclass
-class Apex_5K(AlienPower):
-    """Apex_5K - Power of Peak."""
-    name: str = field(default="Apex_5K", init=False)
-    description: str = field(default="+6 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Quintet(AlienPower):
+    """Quintet - Musical five. Win ties."""
+    name: str = field(default="Quintet", init=False)
+    description: str = field(default="Win all ties.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + 6
-        return base_total
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
 
 @dataclass
-class Culmination(AlienPower):
-    """Culmination - Power of Climax."""
-    name: str = field(default="Culmination", init=False)
-    description: str = field(default="+5 on defense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+class Pentagon(AlienPower):
+    """Pentagon - Five-sided. +3 first encounter."""
+    name: str = field(default="Pentagon", init=False)
+    description: str = field(default="+3 first encounter.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and game.encounter_number == 1:
+            return total + 3
+        return total
+
+
+@dataclass
+class Pentathlon(AlienPower):
+    """Pentathlon - Five events. Random +0 to +5."""
+    name: str = field(default="Pentathlon", init=False)
+    description: str = field(default="Random +0 to +5.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + random.randint(0, 5)
+        return total
+
+
+@dataclass
+class Quintillion(AlienPower):
+    """Quintillion - Large number. +1 per card."""
+    name: str = field(default="Quintillion", init=False)
+    description: str = field(default="+1 per card.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + len(player.hand)
+        return total
+
+
+@dataclass
+class Pentagram(AlienPower):
+    """Pentagram - Five-pointed star. +2 per home colony."""
+    name: str = field(default="Pentagram", init=False)
+    description: str = field(default="+2 per home colony.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            home_count = len([p for p in player.home_planets if player.name in p.ships])
+            return total + (home_count * 2)
+        return total
+
+
+@dataclass
+class Quincunx(AlienPower):
+    """Quincunx - Five arrangement. +1 per ally."""
+    name: str = field(default="Quincunx", init=False)
+    description: str = field(default="+1 per ally.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Pentastar(AlienPower):
+    """Pentastar - Five-star power. Retrieve 5 ships."""
+    name: str = field(default="Pentastar", init=False)
+    description: str = field(default="Retrieve 5 ships from warp.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REGROUP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class FiveK(AlienPower):
+    """FiveK - 5K celebration. Ships go home."""
+    name: str = field(default="FiveK", init=False)
+    description: str = field(default="Ships return home.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.SHIPS_TO_WARP, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+
+@dataclass
+class Milestone5K(AlienPower):
+    """Milestone5K - 5000 achievement. +3 defending home."""
+    name: str = field(default="Milestone5K", init=False)
+    description: str = field(default="+3 defending home.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active and side == Side.DEFENSE:
-            return base_total + 5
-        return base_total
+            if game.defense_planet and game.defense_planet.is_home_planet:
+                return total + 3
+        return total
 
 
-@dataclass
-class Achievement_5K(AlienPower):
-    """Achievement_5K - Power of Success."""
-    name: str = field(default="Achievement_5K", init=False)
-    description: str = field(default="Draw 2 cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.START_TURN, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+# Register all powers
+MILESTONE_5000_POWERS = [
+    FiveThousand, Quintuple, Pentad, Quintet, Pentagon, Pentathlon,
+    Quintillion, Pentagram, Quincunx, Pentastar, FiveK, Milestone5K,
+]
 
-    def on_turn_start(self, game: "Game", player: "Player") -> None:
-        if player.power_active:
-            cards = game.cosmic_deck.draw_multiple(2)
-            player.add_cards(cards)
-
-
-@dataclass
-class Triumph(AlienPower):
-    """Triumph - Power of Victory."""
-    name: str = field(default="Triumph", init=False)
-    description: str = field(default="+5 on offense.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return base_total + 5
-        return base_total
-
-
-@dataclass
-class Milestone_5K(AlienPower):
-    """Milestone_5K - Power of Journey."""
-    name: str = field(default="Milestone_5K", init=False)
-    description: str = field(default="+4 always.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + 4
-        return base_total
-
-
-@dataclass
-class Epic(AlienPower):
-    """Epic - Power of Scale."""
-    name: str = field(default="Epic", init=False)
-    description: str = field(default="Random +4 to +7.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.RED, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
-        if player.power_active:
-            return base_total + random.randint(4, 7)
-        return base_total
-
-
-# Register all aliens
-for alien_class in [
-    FiveThousand, Pentad, Quintessence, Centennial, Apex_5K,
-    Culmination, Achievement_5K, Triumph, Milestone_5K, Epic,
-]:
-    AlienRegistry.register(alien_class())
+for power_class in MILESTONE_5000_POWERS:
+    try:
+        AlienRegistry.register(power_class())
+    except ValueError:
+        pass  # Already registered

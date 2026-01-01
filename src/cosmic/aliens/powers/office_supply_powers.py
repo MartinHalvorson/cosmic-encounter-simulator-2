@@ -1,14 +1,14 @@
 """
-Geography Powers - Geography and world regions themed aliens.
+Office Supply Powers - Office supply themed aliens.
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
 import random
 
 from ..base import AlienPower, PowerCategory
 from ..registry import AlienRegistry
-from ...types import PowerTiming, PowerType, PlayerRole, Side
+from ...types import PowerTiming, PowerType, Side
 
 if TYPE_CHECKING:
     from ...game import Game
@@ -16,174 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Continent(AlienPower):
-    """Continent - Large Land Mass. +5 always."""
-    name: str = field(default="Continent", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class Island_Geo(AlienPower):
-    """Island_Geo - Isolated Land. +4 on defense."""
-    name: str = field(default="Island_Geo", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Ocean_Geo(AlienPower):
-    """Ocean_Geo - Vast Water. +5 always."""
-    name: str = field(default="Ocean_Geo", init=False)
-    description: str = field(default="+5 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 5
-        return total
-
-
-@dataclass
-class River_Geo(AlienPower):
-    """River_Geo - Flowing Water. +4 always."""
-    name: str = field(default="River_Geo", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Lake_Geo(AlienPower):
-    """Lake_Geo - Inland Water. +3 on defense."""
-    name: str = field(default="Lake_Geo", init=False)
-    description: str = field(default="+3 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 3
-        return total
-
-
-@dataclass
-class Sea_Geo(AlienPower):
-    """Sea_Geo - Smaller Ocean. +4 always."""
-    name: str = field(default="Sea_Geo", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Strait(AlienPower):
-    """Strait - Narrow Passage. +4 on defense."""
-    name: str = field(default="Strait", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Gulf(AlienPower):
-    """Gulf - Coastal Inlet. +4 on defense."""
-    name: str = field(default="Gulf", init=False)
-    description: str = field(default="+4 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 4
-        return total
-
-
-@dataclass
-class Bay_Geo(AlienPower):
-    """Bay_Geo - Coastal Water. +3 on defense."""
-    name: str = field(default="Bay_Geo", init=False)
-    description: str = field(default="+3 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 3
-        return total
-
-
-@dataclass
-class Fjord(AlienPower):
-    """Fjord - Glacial Inlet. +5 on defense."""
-    name: str = field(default="Fjord", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Delta_Geo(AlienPower):
-    """Delta_Geo - River Mouth. +4 always."""
-    name: str = field(default="Delta_Geo", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Estuary(AlienPower):
-    """Estuary - Tidal Zone. +3 always."""
-    name: str = field(default="Estuary", init=False)
+class Stapler(AlienPower):
+    """Stapler - Binding tool. +3 always."""
+    name: str = field(default="Stapler", init=False)
     description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -196,39 +31,159 @@ class Estuary(AlienPower):
 
 
 @dataclass
-class Reef_Geo(AlienPower):
-    """Reef_Geo - Coral Formation. +4 on defense."""
-    name: str = field(default="Reef_Geo", init=False)
-    description: str = field(default="+4 when defending.", init=False)
+class Paperclip(AlienPower):
+    """Paperclip - Holding tool. +2 always."""
+    name: str = field(default="Paperclip", init=False)
+    description: str = field(default="+2 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2
+        return total
+
+
+@dataclass
+class Binder(AlienPower):
+    """Binder - Organization tool. +3 always."""
+    name: str = field(default="Binder", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Notebook(AlienPower):
+    """Notebook - Writing tool. +3 always."""
+    name: str = field(default="Notebook", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Pencil_Office(AlienPower):
+    """Pencil_Office - Writing tool. +2 always."""
+    name: str = field(default="Pencil_Office", init=False)
+    description: str = field(default="+2 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2
+        return total
+
+
+@dataclass
+class Marker(AlienPower):
+    """Marker - Highlighting tool. +3 on offense."""
+    name: str = field(default="Marker", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Highlighter(AlienPower):
+    """Highlighter - Emphasis tool. +3 always."""
+    name: str = field(default="Highlighter", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Eraser(AlienPower):
+    """Eraser - Correcting tool. +3 on defense."""
+    name: str = field(default="Eraser", init=False)
+    description: str = field(default="+3 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active and side == Side.DEFENSE:
-            return total + 4
+            return total + 3
         return total
 
 
 @dataclass
-class Atoll(AlienPower):
-    """Atoll - Ring Island. +4 on defense."""
-    name: str = field(default="Atoll", init=False)
-    description: str = field(default="+4 when defending.", init=False)
+class Calculator(AlienPower):
+    """Calculator - Computing tool. +4 always."""
+    name: str = field(default="Calculator", init=False)
+    description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
+        if player.power_active:
             return total + 4
         return total
 
 
 @dataclass
-class Lagoon(AlienPower):
-    """Lagoon - Shallow Water. +3 on defense."""
-    name: str = field(default="Lagoon", init=False)
+class Sharpener(AlienPower):
+    """Sharpener - Precision tool. +3 on offense."""
+    name: str = field(default="Sharpener", init=False)
+    description: str = field(default="+3 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 3
+        return total
+
+
+@dataclass
+class Scissors(AlienPower):
+    """Scissors - Cutting tool. +4 on offense."""
+    name: str = field(default="Scissors", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Tape(AlienPower):
+    """Tape - Adhesive tool. +3 on defense."""
+    name: str = field(default="Tape", init=False)
     description: str = field(default="+3 when defending.", init=False)
     timing: PowerTiming = field(default=PowerTiming.REVEAL, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -241,12 +196,12 @@ class Lagoon(AlienPower):
 
 
 # Register all powers
-GEOGRAPHY_POWERS = [
-    Continent, Island_Geo, Ocean_Geo, River_Geo, Lake_Geo, Sea_Geo, Strait,
-    Gulf, Bay_Geo, Fjord, Delta_Geo, Estuary, Reef_Geo, Atoll, Lagoon,
+OFFICE_SUPPLY_POWERS = [
+    Stapler, Paperclip, Binder, Notebook, Pencil_Office, Marker,
+    Highlighter, Eraser, Calculator, Sharpener, Scissors, Tape,
 ]
 
-for power_class in GEOGRAPHY_POWERS:
+for power_class in OFFICE_SUPPLY_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:
