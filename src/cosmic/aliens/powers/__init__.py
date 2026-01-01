@@ -253,3 +253,12 @@ from .card_game_powers import *  # noqa: F401, F403
 from .chess_powers import *  # noqa: F401, F403
 from .clothing_powers import *  # noqa: F401, F403
 from .office_items_powers import *  # noqa: F401, F403
+from .jewelry_powers import *  # noqa: F401, F403
+from .time_of_day_powers import *  # noqa: F401, F403
+from .household_powers import *  # noqa: F401, F403
+from .fantasy_race_powers import *  # noqa: F401, F403
+from .sport_equipment_powers import *  # noqa: F401, F403
+from .weather_phenomena_powers import *  # noqa: F401, F403
+from .school_subject_powers import *  # noqa: F401, F403
+from .container_powers import *  # noqa: F401, F403
+from .measurement_powers import *  # noqa: F401, F403
