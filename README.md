@@ -2,28 +2,28 @@
 
 <!-- NOTE: Only update the stats table below or feature implementation status. Do not modify other sections unless specifically requested. -->
 
-A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **3275+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
+A simulation of the board game Cosmic Encounter for analyzing alien power balance. Features **4022+ alien powers**, multiple AI strategies (including AggressiveAI, CautiousAI, OpportunisticAI, SocialAI, AdaptiveAI, LearningAI), and comprehensive statistics tracking across 2-6 player games.
 
 ## Alien Power Rankings
 
-> **21,827,359+** games simulated | Last updated: 2025-12-31
+> **21,800,000+** games simulated | Last updated: 2025-12-31
 >
 > **Tier Guide:** 🟣 S (1600+) | 🔵 A (1550+) | 🟢 B (1500+) | 🟡 C (1450+) | 🔴 D (<1450)
 
 
-<table>
+<table id="rankings">
 <thead>
 <tr>
-<th align="left">Rank</th>
-<th align="left">Power</th>
-<th align="right">ELO</th>
-<th align="right">Overall</th>
-<th align="right">2P</th>
-<th align="right">3P</th>
-<th align="right">4P</th>
-<th align="right">5P</th>
-<th align="right">6P</th>
-<th align="right">Games</th>
+<th align="left" data-sort="rank">Rank</th>
+<th align="left" data-sort="power">Power ⇅</th>
+<th align="right" data-sort="elo">ELO ⇅</th>
+<th align="right" data-sort="overall">Overall ⇅</th>
+<th align="right" data-sort="2p">2P ⇅</th>
+<th align="right" data-sort="3p">3P ⇅</th>
+<th align="right" data-sort="4p">4P ⇅</th>
+<th align="right" data-sort="5p">5P ⇅</th>
+<th align="right" data-sort="6p">6P ⇅</th>
+<th align="right" data-sort="games">Games ⇅</th>
 </tr>
 </thead>
 <tbody>
@@ -15738,6 +15738,33 @@ A simulation of the board game Cosmic Encounter for analyzing alien power balanc
 </tbody>
 </table>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const table = document.getElementById('rankings');
+  if (!table) return;
+  const headers = table.querySelectorAll('th[data-sort]');
+  headers.forEach(header => {
+    header.style.cursor = 'pointer';
+    header.addEventListener('click', () => {
+      const column = header.dataset.sort;
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const idx = Array.from(header.parentNode.children).indexOf(header);
+      const asc = header.dataset.order !== 'asc';
+      header.dataset.order = asc ? 'asc' : 'desc';
+      rows.sort((a, b) => {
+        let aVal = a.children[idx].textContent.replace(/[🟣🔵🟢🟡🔴%,]/g, '').trim();
+        let bVal = b.children[idx].textContent.replace(/[🟣🔵🟢🟡🔴%,]/g, '').trim();
+        const aNum = parseFloat(aVal), bNum = parseFloat(bVal);
+        if (!isNaN(aNum) && !isNaN(bNum)) return asc ? aNum - bNum : bNum - aNum;
+        return asc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      });
+      rows.forEach((row, i) => { row.children[0].textContent = i + 1; tbody.appendChild(row); });
+    });
+  });
+});
+</script>
+
 
 <details>
 <summary>How to update this table</summary>
@@ -15761,15 +15788,3 @@ python update_stats.py --sort power --order asc
 
 </details>
 
-
-<!-- SIMULATION_RESULTS_START -->
-
-## Simulation Results
-
-**Total Games Simulated:** 21,748,359
-**Solo Victories:** 21,135,742
-**Shared Victories:** 359,404
-**Average Game Length:** 5.0 turns
-**Last Updated:** 2025-12-31T20:03:03
-
-<!-- SIMULATION_RESULTS_END -->

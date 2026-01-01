@@ -82,12 +82,25 @@ def run_simulations(games_per_player_count: int = 500) -> dict:
     return results
 
 
+def normalize_power_name(name: str, existing_powers: dict) -> str:
+    """Normalize power name to prevent duplicates with different casings."""
+    # Check if a case-insensitive match already exists
+    name_lower = name.lower()
+    for existing in existing_powers:
+        if existing.lower() == name_lower:
+            return existing  # Use existing casing
+    return name  # New power, use as-is
+
+
 def update_stats(stats: dict, new_results: dict) -> dict:
     """Merge new simulation results into existing stats."""
     for num_players, data in new_results.items():
         player_key = f"{num_players}p"
 
         for power_name, power_data in data["power_data"].items():
+            # Normalize name to prevent case-insensitive duplicates
+            power_name = normalize_power_name(power_name, stats["powers"])
+
             if power_name not in stats["powers"]:
                 stats["powers"][power_name] = {
                     "elo": 1500,
@@ -244,6 +257,33 @@ def generate_table(stats: dict, sort_by: str = "elo", ascending: bool = False) -
 
     html += """</tbody>
 </table>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const table = document.getElementById('rankings');
+  if (!table) return;
+  const headers = table.querySelectorAll('th[data-sort]');
+  headers.forEach(header => {
+    header.style.cursor = 'pointer';
+    header.addEventListener('click', () => {
+      const column = header.dataset.sort;
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const idx = Array.from(header.parentNode.children).indexOf(header);
+      const asc = header.dataset.order !== 'asc';
+      header.dataset.order = asc ? 'asc' : 'desc';
+      rows.sort((a, b) => {
+        let aVal = a.children[idx].textContent.replace(/[🟣🔵🟢🟡🔴%,]/g, '').trim();
+        let bVal = b.children[idx].textContent.replace(/[🟣🔵🟢🟡🔴%,]/g, '').trim();
+        const aNum = parseFloat(aVal), bNum = parseFloat(bVal);
+        if (!isNaN(aNum) && !isNaN(bNum)) return asc ? aNum - bNum : bNum - aNum;
+        return asc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      });
+      rows.forEach((row, i) => { row.children[0].textContent = i + 1; tbody.appendChild(row); });
+    });
+  });
+});
+</script>
 """
     return html
 
