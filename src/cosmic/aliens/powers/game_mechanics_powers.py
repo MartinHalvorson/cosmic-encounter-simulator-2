@@ -172,6 +172,10 @@ class Combo(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     wins: int = 0
 
+    def on_game_start(self, game: "Game", player: "Player") -> None:
+        """Reset wins at start of each game."""
+        self.wins = 0
+
     def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
         if player.power_active:
             return base_total + min(8, self.wins * 2)
