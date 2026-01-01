@@ -450,3 +450,13 @@ from .ethiopian_powers import *
 from .mongolian_powers import *
 from .vietnamese_powers import *
 from .milestone_5000_powers import *
+from .weather_new_powers import *  # noqa: F401, F403
+from .vehicle_new_powers import *  # noqa: F401, F403
+from .tool_equipment_powers import *  # noqa: F401, F403
+from .fabric_material_powers import *  # noqa: F401, F403
+from .dessert_powers import *  # noqa: F401, F403
+from .office_supply_powers import *  # noqa: F401, F403
+from .dance_style_powers import *  # noqa: F401, F403
+from .milestone_5k_batch2_powers import *  # noqa: F401, F403
+from .milestone_5k_batch3_powers import *  # noqa: F401, F403
+from .milestone_5k_batch4_powers import *  # noqa: F401, F403
