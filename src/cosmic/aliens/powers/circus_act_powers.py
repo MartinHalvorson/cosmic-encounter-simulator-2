@@ -1,5 +1,5 @@
 """
-Art Movement Powers - Art movement themed aliens.
+Circus Act Powers - Circus performance themed aliens.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Renaissance_Art(AlienPower):
-    """Renaissance_Art - Classical rebirth."""
-    name: str = field(default="Renaissance_Art", init=False)
+class Trapeze_Artist_Circus(AlienPower):
+    """Trapeze_Artist_Circus - Flying high."""
+    name: str = field(default="Trapeze_Artist_Circus", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,24 +31,39 @@ class Renaissance_Art(AlienPower):
 
 
 @dataclass
-class Impressionism_Art(AlienPower):
-    """Impressionism_Art - Light capture."""
-    name: str = field(default="Impressionism_Art", init=False)
-    description: str = field(default="+2 plus random +0-4.", init=False)
+class Clown_Circus(AlienPower):
+    """Clown_Circus - Comic relief."""
+    name: str = field(default="Clown_Circus", init=False)
+    description: str = field(default="+2 plus random +0-5.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 2 + random.randint(0, 4)
+            return total + 2 + random.randint(0, 5)
         return total
 
 
 @dataclass
-class Cubism_Art(AlienPower):
-    """Cubism_Art - Geometric forms."""
-    name: str = field(default="Cubism_Art", init=False)
+class Lion_Tamer_Circus(AlienPower):
+    """Lion_Tamer_Circus - Beast master."""
+    name: str = field(default="Lion_Tamer_Circus", init=False)
+    description: str = field(default="+6 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 6
+        return total
+
+
+@dataclass
+class Acrobat_Circus(AlienPower):
+    """Acrobat_Circus - Flexible tumbler."""
+    name: str = field(default="Acrobat_Circus", init=False)
     description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -61,61 +76,24 @@ class Cubism_Art(AlienPower):
 
 
 @dataclass
-class Surrealism_Art(AlienPower):
-    """Surrealism_Art - Dream logic."""
-    name: str = field(default="Surrealism_Art", init=False)
-    description: str = field(default="+3 plus random +0-5.", init=False)
+class Juggler_Circus(AlienPower):
+    """Juggler_Circus - Many objects."""
+    name: str = field(default="Juggler_Circus", init=False)
+    description: str = field(default="+1 per card (max +7).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 3 + random.randint(0, 5)
+            return total + min(7, len(player.hand))
         return total
 
 
 @dataclass
-class Baroque_Art(AlienPower):
-    """Baroque_Art - Dramatic grandeur."""
-    name: str = field(default="Baroque_Art", init=False)
-    description: str = field(default="+6 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 6
-        return total
-
-
-@dataclass
-class Minimalism_Art(AlienPower):
-    """Minimalism_Art - Less is more."""
-    name: str = field(default="Minimalism_Art", init=False)
-    description: str = field(default="+5 when alone.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if not player.power_active:
-            return total
-        ally_count = 0
-        if side == Side.OFFENSE:
-            ally_count = len([p for p in game.offense_allies if p != player.name])
-        else:
-            ally_count = len([p for p in game.defense_allies if p != player.name])
-        if ally_count == 0:
-            return total + 5
-        return total
-
-
-@dataclass
-class Pop_Art(AlienPower):
-    """Pop_Art - Mass culture."""
-    name: str = field(default="Pop_Art", init=False)
+class Ringmaster_Circus(AlienPower):
+    """Ringmaster_Circus - Show director."""
+    name: str = field(default="Ringmaster_Circus", init=False)
     description: str = field(default="+4 with allies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -135,9 +113,24 @@ class Pop_Art(AlienPower):
 
 
 @dataclass
-class Abstract_Expressionism_Art(AlienPower):
-    """Abstract_Expressionism_Art - Emotion form."""
-    name: str = field(default="Abstract_Expressionism_Art", init=False)
+class Contortionist_Circus(AlienPower):
+    """Contortionist_Circus - Flexible body."""
+    name: str = field(default="Contortionist_Circus", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Fire_Breather_Circus(AlienPower):
+    """Fire_Breather_Circus - Flame artist."""
+    name: str = field(default="Fire_Breather_Circus", init=False)
     description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -150,24 +143,31 @@ class Abstract_Expressionism_Art(AlienPower):
 
 
 @dataclass
-class Art_Nouveau_Art(AlienPower):
-    """Art_Nouveau_Art - Organic curves."""
-    name: str = field(default="Art_Nouveau_Art", init=False)
-    description: str = field(default="+1 per turn (max +5).", init=False)
+class Magician_Circus(AlienPower):
+    """Magician_Circus - Illusion master."""
+    name: str = field(default="Magician_Circus", init=False)
+    description: str = field(default="+5 when alone.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + min(5, game.current_turn)
+        if not player.power_active:
+            return total
+        ally_count = 0
+        if side == Side.OFFENSE:
+            ally_count = len([p for p in game.offense_allies if p != player.name])
+        else:
+            ally_count = len([p for p in game.defense_allies if p != player.name])
+        if ally_count == 0:
+            return total + 5
         return total
 
 
 @dataclass
-class Art_Deco_Art(AlienPower):
-    """Art_Deco_Art - Geometric luxury."""
-    name: str = field(default="Art_Deco_Art", init=False)
+class Tightrope_Walker_Circus(AlienPower):
+    """Tightrope_Walker_Circus - Balanced step."""
+    name: str = field(default="Tightrope_Walker_Circus", init=False)
     description: str = field(default="+5 with 3+ colonies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -182,39 +182,24 @@ class Art_Deco_Art(AlienPower):
 
 
 @dataclass
-class Romanticism_Art(AlienPower):
-    """Romanticism_Art - Emotional power."""
-    name: str = field(default="Romanticism_Art", init=False)
-    description: str = field(default="+5 when defending.", init=False)
+class Strongman_Circus(AlienPower):
+    """Strongman_Circus - Raw power."""
+    name: str = field(default="Strongman_Circus", init=False)
+    description: str = field(default="+6 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Realism_Art(AlienPower):
-    """Realism_Art - Truth depiction."""
-    name: str = field(default="Realism_Art", init=False)
-    description: str = field(default="+1 per card (max +6).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + min(6, len(player.hand))
+            return total + 6
         return total
 
 
 @dataclass
-class Gothic_Art(AlienPower):
-    """Gothic_Art - Dark beauty."""
-    name: str = field(default="Gothic_Art", init=False)
+class Sword_Swallower_Circus(AlienPower):
+    """Sword_Swallower_Circus - Dangerous act."""
+    name: str = field(default="Sword_Swallower_Circus", init=False)
     description: str = field(default="+5 with 5+ cards.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -227,24 +212,24 @@ class Gothic_Art(AlienPower):
 
 
 @dataclass
-class Futurism_Art(AlienPower):
-    """Futurism_Art - Speed motion."""
-    name: str = field(default="Futurism_Art", init=False)
-    description: str = field(default="+6 when attacking.", init=False)
+class Cannon_Human_Circus(AlienPower):
+    """Cannon_Human_Circus - Launched performer."""
+    name: str = field(default="Cannon_Human_Circus", init=False)
+    description: str = field(default="+1 per turn (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
+        if player.power_active:
+            return total + min(6, game.current_turn)
         return total
 
 
 @dataclass
-class Dadaism_Art(AlienPower):
-    """Dadaism_Art - Anti-art chaos."""
-    name: str = field(default="Dadaism_Art", init=False)
+class Elephant_Rider_Circus(AlienPower):
+    """Elephant_Rider_Circus - Majestic mount."""
+    name: str = field(default="Elephant_Rider_Circus", init=False)
     description: str = field(default="+2 per ally (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -261,13 +246,29 @@ class Dadaism_Art(AlienPower):
         return total + min(6, ally_count * 2)
 
 
-ART_MOVEMENT_POWERS = [
-    Renaissance_Art, Impressionism_Art, Cubism_Art, Surrealism_Art, Baroque_Art,
-    Minimalism_Art, Pop_Art, Abstract_Expressionism_Art, Art_Nouveau_Art,
-    Art_Deco_Art, Romanticism_Art, Realism_Art, Gothic_Art, Futurism_Art, Dadaism_Art
+@dataclass
+class Unicyclist_Circus(AlienPower):
+    """Unicyclist_Circus - Single wheel."""
+    name: str = field(default="Unicyclist_Circus", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+CIRCUS_ACT_POWERS = [
+    Trapeze_Artist_Circus, Clown_Circus, Lion_Tamer_Circus, Acrobat_Circus,
+    Juggler_Circus, Ringmaster_Circus, Contortionist_Circus, Fire_Breather_Circus,
+    Magician_Circus, Tightrope_Walker_Circus, Strongman_Circus, Sword_Swallower_Circus,
+    Cannon_Human_Circus, Elephant_Rider_Circus, Unicyclist_Circus
 ]
 
-for power_class in ART_MOVEMENT_POWERS:
+for power_class in CIRCUS_ACT_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

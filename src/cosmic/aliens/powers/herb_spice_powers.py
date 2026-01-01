@@ -1,5 +1,5 @@
 """
-Art Movement Powers - Art movement themed aliens.
+Herb and Spice Powers - Herb and spice themed aliens.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Renaissance_Art(AlienPower):
-    """Renaissance_Art - Classical rebirth."""
-    name: str = field(default="Renaissance_Art", init=False)
+class Cinnamon_Spice(AlienPower):
+    """Cinnamon_Spice - Sweet warmth."""
+    name: str = field(default="Cinnamon_Spice", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,24 +31,9 @@ class Renaissance_Art(AlienPower):
 
 
 @dataclass
-class Impressionism_Art(AlienPower):
-    """Impressionism_Art - Light capture."""
-    name: str = field(default="Impressionism_Art", init=False)
-    description: str = field(default="+2 plus random +0-4.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 2 + random.randint(0, 4)
-        return total
-
-
-@dataclass
-class Cubism_Art(AlienPower):
-    """Cubism_Art - Geometric forms."""
-    name: str = field(default="Cubism_Art", init=False)
+class Oregano_Herb(AlienPower):
+    """Oregano_Herb - Pizza classic."""
+    name: str = field(default="Oregano_Herb", init=False)
     description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -61,39 +46,86 @@ class Cubism_Art(AlienPower):
 
 
 @dataclass
-class Surrealism_Art(AlienPower):
-    """Surrealism_Art - Dream logic."""
-    name: str = field(default="Surrealism_Art", init=False)
-    description: str = field(default="+3 plus random +0-5.", init=False)
+class Cayenne_Spice(AlienPower):
+    """Cayenne_Spice - Hot kick."""
+    name: str = field(default="Cayenne_Spice", init=False)
+    description: str = field(default="+6 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 3 + random.randint(0, 5)
-        return total
-
-
-@dataclass
-class Baroque_Art(AlienPower):
-    """Baroque_Art - Dramatic grandeur."""
-    name: str = field(default="Baroque_Art", init=False)
-    description: str = field(default="+6 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
+        if player.power_active and side == Side.OFFENSE:
             return total + 6
         return total
 
 
 @dataclass
-class Minimalism_Art(AlienPower):
-    """Minimalism_Art - Less is more."""
-    name: str = field(default="Minimalism_Art", init=False)
+class Thyme_Herb(AlienPower):
+    """Thyme_Herb - Subtle flavor."""
+    name: str = field(default="Thyme_Herb", init=False)
+    description: str = field(default="+1 per turn (max +5).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + min(5, game.current_turn)
+        return total
+
+
+@dataclass
+class Rosemary_Herb(AlienPower):
+    """Rosemary_Herb - Piney aroma."""
+    name: str = field(default="Rosemary_Herb", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Cumin_Spice(AlienPower):
+    """Cumin_Spice - Earthy depth."""
+    name: str = field(default="Cumin_Spice", init=False)
+    description: str = field(default="+5 with 3+ colonies.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            colonies = player.count_foreign_colonies(game.planets)
+            if colonies >= 3:
+                return total + 5
+        return total
+
+
+@dataclass
+class Paprika_Spice(AlienPower):
+    """Paprika_Spice - Smoky sweet."""
+    name: str = field(default="Paprika_Spice", init=False)
+    description: str = field(default="+2 plus random +0-4.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2 + random.randint(0, 4)
+        return total
+
+
+@dataclass
+class Mint_Herb(AlienPower):
+    """Mint_Herb - Cool fresh."""
+    name: str = field(default="Mint_Herb", init=False)
     description: str = field(default="+5 when alone.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -113,9 +145,24 @@ class Minimalism_Art(AlienPower):
 
 
 @dataclass
-class Pop_Art(AlienPower):
-    """Pop_Art - Mass culture."""
-    name: str = field(default="Pop_Art", init=False)
+class Sage_Herb(AlienPower):
+    """Sage_Herb - Wise flavor."""
+    name: str = field(default="Sage_Herb", init=False)
+    description: str = field(default="+5 with 5+ cards.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and len(player.hand) >= 5:
+            return total + 5
+        return total
+
+
+@dataclass
+class Turmeric_Spice(AlienPower):
+    """Turmeric_Spice - Golden color."""
+    name: str = field(default="Turmeric_Spice", init=False)
     description: str = field(default="+4 with allies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -135,9 +182,9 @@ class Pop_Art(AlienPower):
 
 
 @dataclass
-class Abstract_Expressionism_Art(AlienPower):
-    """Abstract_Expressionism_Art - Emotion form."""
-    name: str = field(default="Abstract_Expressionism_Art", init=False)
+class Ginger_Spice(AlienPower):
+    """Ginger_Spice - Zesty root."""
+    name: str = field(default="Ginger_Spice", init=False)
     description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -150,56 +197,39 @@ class Abstract_Expressionism_Art(AlienPower):
 
 
 @dataclass
-class Art_Nouveau_Art(AlienPower):
-    """Art_Nouveau_Art - Organic curves."""
-    name: str = field(default="Art_Nouveau_Art", init=False)
-    description: str = field(default="+1 per turn (max +5).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + min(5, game.current_turn)
-        return total
-
-
-@dataclass
-class Art_Deco_Art(AlienPower):
-    """Art_Deco_Art - Geometric luxury."""
-    name: str = field(default="Art_Deco_Art", init=False)
-    description: str = field(default="+5 with 3+ colonies.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            colonies = player.count_foreign_colonies(game.planets)
-            if colonies >= 3:
-                return total + 5
-        return total
-
-
-@dataclass
-class Romanticism_Art(AlienPower):
-    """Romanticism_Art - Emotional power."""
-    name: str = field(default="Romanticism_Art", init=False)
-    description: str = field(default="+5 when defending.", init=False)
+class Chive_Herb(AlienPower):
+    """Chive_Herb - Mild onion."""
+    name: str = field(default="Chive_Herb", init=False)
+    description: str = field(default="+3 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
+        if player.power_active:
+            return total + 3
         return total
 
 
 @dataclass
-class Realism_Art(AlienPower):
-    """Realism_Art - Truth depiction."""
-    name: str = field(default="Realism_Art", init=False)
+class Saffron_Spice(AlienPower):
+    """Saffron_Spice - Precious threads."""
+    name: str = field(default="Saffron_Spice", init=False)
+    description: str = field(default="+6 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 6
+        return total
+
+
+@dataclass
+class Dill_Herb(AlienPower):
+    """Dill_Herb - Feathery frond."""
+    name: str = field(default="Dill_Herb", init=False)
     description: str = field(default="+1 per card (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -212,39 +242,9 @@ class Realism_Art(AlienPower):
 
 
 @dataclass
-class Gothic_Art(AlienPower):
-    """Gothic_Art - Dark beauty."""
-    name: str = field(default="Gothic_Art", init=False)
-    description: str = field(default="+5 with 5+ cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and len(player.hand) >= 5:
-            return total + 5
-        return total
-
-
-@dataclass
-class Futurism_Art(AlienPower):
-    """Futurism_Art - Speed motion."""
-    name: str = field(default="Futurism_Art", init=False)
-    description: str = field(default="+6 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Dadaism_Art(AlienPower):
-    """Dadaism_Art - Anti-art chaos."""
-    name: str = field(default="Dadaism_Art", init=False)
+class Cardamom_Spice(AlienPower):
+    """Cardamom_Spice - Aromatic pod."""
+    name: str = field(default="Cardamom_Spice", init=False)
     description: str = field(default="+2 per ally (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -261,13 +261,13 @@ class Dadaism_Art(AlienPower):
         return total + min(6, ally_count * 2)
 
 
-ART_MOVEMENT_POWERS = [
-    Renaissance_Art, Impressionism_Art, Cubism_Art, Surrealism_Art, Baroque_Art,
-    Minimalism_Art, Pop_Art, Abstract_Expressionism_Art, Art_Nouveau_Art,
-    Art_Deco_Art, Romanticism_Art, Realism_Art, Gothic_Art, Futurism_Art, Dadaism_Art
+HERB_SPICE_POWERS = [
+    Cinnamon_Spice, Oregano_Herb, Cayenne_Spice, Thyme_Herb, Rosemary_Herb,
+    Cumin_Spice, Paprika_Spice, Mint_Herb, Sage_Herb, Turmeric_Spice,
+    Ginger_Spice, Chive_Herb, Saffron_Spice, Dill_Herb, Cardamom_Spice
 ]
 
-for power_class in ART_MOVEMENT_POWERS:
+for power_class in HERB_SPICE_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

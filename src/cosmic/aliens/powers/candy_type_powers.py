@@ -1,5 +1,5 @@
 """
-Art Movement Powers - Art movement themed aliens.
+Candy Type Powers - Candy themed aliens.
 """
 
 from dataclasses import dataclass, field
@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Renaissance_Art(AlienPower):
-    """Renaissance_Art - Classical rebirth."""
-    name: str = field(default="Renaissance_Art", init=False)
+class Chocolate_Bar_Candy(AlienPower):
+    """Chocolate_Bar_Candy - Sweet block."""
+    name: str = field(default="Chocolate_Bar_Candy", init=False)
     description: str = field(default="+5 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -31,91 +31,9 @@ class Renaissance_Art(AlienPower):
 
 
 @dataclass
-class Impressionism_Art(AlienPower):
-    """Impressionism_Art - Light capture."""
-    name: str = field(default="Impressionism_Art", init=False)
-    description: str = field(default="+2 plus random +0-4.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 2 + random.randint(0, 4)
-        return total
-
-
-@dataclass
-class Cubism_Art(AlienPower):
-    """Cubism_Art - Geometric forms."""
-    name: str = field(default="Cubism_Art", init=False)
-    description: str = field(default="+4 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 4
-        return total
-
-
-@dataclass
-class Surrealism_Art(AlienPower):
-    """Surrealism_Art - Dream logic."""
-    name: str = field(default="Surrealism_Art", init=False)
-    description: str = field(default="+3 plus random +0-5.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 3 + random.randint(0, 5)
-        return total
-
-
-@dataclass
-class Baroque_Art(AlienPower):
-    """Baroque_Art - Dramatic grandeur."""
-    name: str = field(default="Baroque_Art", init=False)
-    description: str = field(default="+6 constant.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 6
-        return total
-
-
-@dataclass
-class Minimalism_Art(AlienPower):
-    """Minimalism_Art - Less is more."""
-    name: str = field(default="Minimalism_Art", init=False)
-    description: str = field(default="+5 when alone.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if not player.power_active:
-            return total
-        ally_count = 0
-        if side == Side.OFFENSE:
-            ally_count = len([p for p in game.offense_allies if p != player.name])
-        else:
-            ally_count = len([p for p in game.defense_allies if p != player.name])
-        if ally_count == 0:
-            return total + 5
-        return total
-
-
-@dataclass
-class Pop_Art(AlienPower):
-    """Pop_Art - Mass culture."""
-    name: str = field(default="Pop_Art", init=False)
+class Gummy_Bear_Candy(AlienPower):
+    """Gummy_Bear_Candy - Chewy friend."""
+    name: str = field(default="Gummy_Bear_Candy", init=False)
     description: str = field(default="+4 with allies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -135,24 +53,9 @@ class Pop_Art(AlienPower):
 
 
 @dataclass
-class Abstract_Expressionism_Art(AlienPower):
-    """Abstract_Expressionism_Art - Emotion form."""
-    name: str = field(default="Abstract_Expressionism_Art", init=False)
-    description: str = field(default="+5 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Art_Nouveau_Art(AlienPower):
-    """Art_Nouveau_Art - Organic curves."""
-    name: str = field(default="Art_Nouveau_Art", init=False)
+class Lollipop_Candy(AlienPower):
+    """Lollipop_Candy - Stick sweet."""
+    name: str = field(default="Lollipop_Candy", init=False)
     description: str = field(default="+1 per turn (max +5).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -165,9 +68,54 @@ class Art_Nouveau_Art(AlienPower):
 
 
 @dataclass
-class Art_Deco_Art(AlienPower):
-    """Art_Deco_Art - Geometric luxury."""
-    name: str = field(default="Art_Deco_Art", init=False)
+class Licorice_Candy(AlienPower):
+    """Licorice_Candy - Twisted rope."""
+    name: str = field(default="Licorice_Candy", init=False)
+    description: str = field(default="+4 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 4
+        return total
+
+
+@dataclass
+class Candy_Cane_Candy(AlienPower):
+    """Candy_Cane_Candy - Hooked stripe."""
+    name: str = field(default="Candy_Cane_Candy", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Jelly_Bean_Candy(AlienPower):
+    """Jelly_Bean_Candy - Colorful bean."""
+    name: str = field(default="Jelly_Bean_Candy", init=False)
+    description: str = field(default="+2 plus random +0-4.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 2 + random.randint(0, 4)
+        return total
+
+
+@dataclass
+class Caramel_Candy(AlienPower):
+    """Caramel_Candy - Sticky sweet."""
+    name: str = field(default="Caramel_Candy", init=False)
     description: str = field(default="+5 with 3+ colonies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -182,24 +130,9 @@ class Art_Deco_Art(AlienPower):
 
 
 @dataclass
-class Romanticism_Art(AlienPower):
-    """Romanticism_Art - Emotional power."""
-    name: str = field(default="Romanticism_Art", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Realism_Art(AlienPower):
-    """Realism_Art - Truth depiction."""
-    name: str = field(default="Realism_Art", init=False)
+class Taffy_Candy(AlienPower):
+    """Taffy_Candy - Pulled stretch."""
+    name: str = field(default="Taffy_Candy", init=False)
     description: str = field(default="+1 per card (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -212,9 +145,76 @@ class Realism_Art(AlienPower):
 
 
 @dataclass
-class Gothic_Art(AlienPower):
-    """Gothic_Art - Dark beauty."""
-    name: str = field(default="Gothic_Art", init=False)
+class Peppermint_Candy(AlienPower):
+    """Peppermint_Candy - Cool mint."""
+    name: str = field(default="Peppermint_Candy", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Cotton_Candy_Candy(AlienPower):
+    """Cotton_Candy_Candy - Spun sugar."""
+    name: str = field(default="Cotton_Candy_Candy", init=False)
+    description: str = field(default="+5 when alone.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if not player.power_active:
+            return total
+        ally_count = 0
+        if side == Side.OFFENSE:
+            ally_count = len([p for p in game.offense_allies if p != player.name])
+        else:
+            ally_count = len([p for p in game.defense_allies if p != player.name])
+        if ally_count == 0:
+            return total + 5
+        return total
+
+
+@dataclass
+class Butterscotch_Candy(AlienPower):
+    """Butterscotch_Candy - Golden disc."""
+    name: str = field(default="Butterscotch_Candy", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Toffee_Candy(AlienPower):
+    """Toffee_Candy - Hard chew."""
+    name: str = field(default="Toffee_Candy", init=False)
+    description: str = field(default="+6 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 6
+        return total
+
+
+@dataclass
+class Marshmallow_Candy(AlienPower):
+    """Marshmallow_Candy - Soft puff."""
+    name: str = field(default="Marshmallow_Candy", init=False)
     description: str = field(default="+5 with 5+ cards.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -227,24 +227,9 @@ class Gothic_Art(AlienPower):
 
 
 @dataclass
-class Futurism_Art(AlienPower):
-    """Futurism_Art - Speed motion."""
-    name: str = field(default="Futurism_Art", init=False)
-    description: str = field(default="+6 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Dadaism_Art(AlienPower):
-    """Dadaism_Art - Anti-art chaos."""
-    name: str = field(default="Dadaism_Art", init=False)
+class Fudge_Candy(AlienPower):
+    """Fudge_Candy - Rich square."""
+    name: str = field(default="Fudge_Candy", init=False)
     description: str = field(default="+2 per ally (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -261,13 +246,29 @@ class Dadaism_Art(AlienPower):
         return total + min(6, ally_count * 2)
 
 
-ART_MOVEMENT_POWERS = [
-    Renaissance_Art, Impressionism_Art, Cubism_Art, Surrealism_Art, Baroque_Art,
-    Minimalism_Art, Pop_Art, Abstract_Expressionism_Art, Art_Nouveau_Art,
-    Art_Deco_Art, Romanticism_Art, Realism_Art, Gothic_Art, Futurism_Art, Dadaism_Art
+@dataclass
+class Nougat_Candy(AlienPower):
+    """Nougat_Candy - Nutty center."""
+    name: str = field(default="Nougat_Candy", init=False)
+    description: str = field(default="+4 on even turns.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and game.current_turn % 2 == 0:
+            return total + 4
+        return total
+
+
+CANDY_TYPE_POWERS = [
+    Chocolate_Bar_Candy, Gummy_Bear_Candy, Lollipop_Candy, Licorice_Candy,
+    Candy_Cane_Candy, Jelly_Bean_Candy, Caramel_Candy, Taffy_Candy,
+    Peppermint_Candy, Cotton_Candy_Candy, Butterscotch_Candy, Toffee_Candy,
+    Marshmallow_Candy, Fudge_Candy, Nougat_Candy
 ]
 
-for power_class in ART_MOVEMENT_POWERS:
+for power_class in CANDY_TYPE_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

@@ -1,5 +1,5 @@
 """
-Art Movement Powers - Art movement themed aliens.
+Kitchen Utensil Powers - Kitchen utensil themed aliens.
 """
 
 from dataclasses import dataclass, field
@@ -16,39 +16,24 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class Renaissance_Art(AlienPower):
-    """Renaissance_Art - Classical rebirth."""
-    name: str = field(default="Renaissance_Art", init=False)
-    description: str = field(default="+5 constant.", init=False)
+class Knife_Utensil(AlienPower):
+    """Knife_Utensil - Sharp edge."""
+    name: str = field(default="Knife_Utensil", init=False)
+    description: str = field(default="+5 when attacking.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
+        if player.power_active and side == Side.OFFENSE:
             return total + 5
         return total
 
 
 @dataclass
-class Impressionism_Art(AlienPower):
-    """Impressionism_Art - Light capture."""
-    name: str = field(default="Impressionism_Art", init=False)
-    description: str = field(default="+2 plus random +0-4.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + 2 + random.randint(0, 4)
-        return total
-
-
-@dataclass
-class Cubism_Art(AlienPower):
-    """Cubism_Art - Geometric forms."""
-    name: str = field(default="Cubism_Art", init=False)
+class Fork_Utensil(AlienPower):
+    """Fork_Utensil - Prong pierce."""
+    name: str = field(default="Fork_Utensil", init=False)
     description: str = field(default="+4 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -61,24 +46,131 @@ class Cubism_Art(AlienPower):
 
 
 @dataclass
-class Surrealism_Art(AlienPower):
-    """Surrealism_Art - Dream logic."""
-    name: str = field(default="Surrealism_Art", init=False)
-    description: str = field(default="+3 plus random +0-5.", init=False)
+class Spoon_Utensil(AlienPower):
+    """Spoon_Utensil - Scoop serve."""
+    name: str = field(default="Spoon_Utensil", init=False)
+    description: str = field(default="+3 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 3
+        return total
+
+
+@dataclass
+class Spatula_Utensil(AlienPower):
+    """Spatula_Utensil - Flip master."""
+    name: str = field(default="Spatula_Utensil", init=False)
+    description: str = field(default="+5 constant.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + 5
+        return total
+
+
+@dataclass
+class Whisk_Utensil(AlienPower):
+    """Whisk_Utensil - Mix blend."""
+    name: str = field(default="Whisk_Utensil", init=False)
+    description: str = field(default="+2 plus random +0-4.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
 
     def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
         if player.power_active:
-            return total + 3 + random.randint(0, 5)
+            return total + 2 + random.randint(0, 4)
         return total
 
 
 @dataclass
-class Baroque_Art(AlienPower):
-    """Baroque_Art - Dramatic grandeur."""
-    name: str = field(default="Baroque_Art", init=False)
+class Ladle_Utensil(AlienPower):
+    """Ladle_Utensil - Deep scoop."""
+    name: str = field(default="Ladle_Utensil", init=False)
+    description: str = field(default="+1 per card (max +6).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + min(6, len(player.hand))
+        return total
+
+
+@dataclass
+class Tongs_Utensil(AlienPower):
+    """Tongs_Utensil - Grip hold."""
+    name: str = field(default="Tongs_Utensil", init=False)
+    description: str = field(default="+5 with 3+ colonies.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            colonies = player.count_foreign_colonies(game.planets)
+            if colonies >= 3:
+                return total + 5
+        return total
+
+
+@dataclass
+class Peeler_Utensil(AlienPower):
+    """Peeler_Utensil - Skin stripper."""
+    name: str = field(default="Peeler_Utensil", init=False)
+    description: str = field(default="+4 when attacking.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.OFFENSE:
+            return total + 4
+        return total
+
+
+@dataclass
+class Colander_Utensil(AlienPower):
+    """Colander_Utensil - Drain strain."""
+    name: str = field(default="Colander_Utensil", init=False)
+    description: str = field(default="+5 when defending.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and side == Side.DEFENSE:
+            return total + 5
+        return total
+
+
+@dataclass
+class Grater_Utensil(AlienPower):
+    """Grater_Utensil - Shred fine."""
+    name: str = field(default="Grater_Utensil", init=False)
+    description: str = field(default="+1 per turn (max +5).", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active:
+            return total + min(5, game.current_turn)
+        return total
+
+
+@dataclass
+class Rolling_Pin_Utensil(AlienPower):
+    """Rolling_Pin_Utensil - Flatten dough."""
+    name: str = field(default="Rolling_Pin_Utensil", init=False)
     description: str = field(default="+6 constant.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -91,9 +183,24 @@ class Baroque_Art(AlienPower):
 
 
 @dataclass
-class Minimalism_Art(AlienPower):
-    """Minimalism_Art - Less is more."""
-    name: str = field(default="Minimalism_Art", init=False)
+class Measuring_Cup_Utensil(AlienPower):
+    """Measuring_Cup_Utensil - Exact amount."""
+    name: str = field(default="Measuring_Cup_Utensil", init=False)
+    description: str = field(default="+5 with 5+ cards.", init=False)
+    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
+    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
+    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
+
+    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
+        if player.power_active and len(player.hand) >= 5:
+            return total + 5
+        return total
+
+
+@dataclass
+class Can_Opener_Utensil(AlienPower):
+    """Can_Opener_Utensil - Lid lifter."""
+    name: str = field(default="Can_Opener_Utensil", init=False)
     description: str = field(default="+5 when alone.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -113,9 +220,9 @@ class Minimalism_Art(AlienPower):
 
 
 @dataclass
-class Pop_Art(AlienPower):
-    """Pop_Art - Mass culture."""
-    name: str = field(default="Pop_Art", init=False)
+class Mixing_Bowl_Utensil(AlienPower):
+    """Mixing_Bowl_Utensil - Combine vessel."""
+    name: str = field(default="Mixing_Bowl_Utensil", init=False)
     description: str = field(default="+4 with allies.", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -135,116 +242,9 @@ class Pop_Art(AlienPower):
 
 
 @dataclass
-class Abstract_Expressionism_Art(AlienPower):
-    """Abstract_Expressionism_Art - Emotion form."""
-    name: str = field(default="Abstract_Expressionism_Art", init=False)
-    description: str = field(default="+5 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Art_Nouveau_Art(AlienPower):
-    """Art_Nouveau_Art - Organic curves."""
-    name: str = field(default="Art_Nouveau_Art", init=False)
-    description: str = field(default="+1 per turn (max +5).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + min(5, game.current_turn)
-        return total
-
-
-@dataclass
-class Art_Deco_Art(AlienPower):
-    """Art_Deco_Art - Geometric luxury."""
-    name: str = field(default="Art_Deco_Art", init=False)
-    description: str = field(default="+5 with 3+ colonies.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            colonies = player.count_foreign_colonies(game.planets)
-            if colonies >= 3:
-                return total + 5
-        return total
-
-
-@dataclass
-class Romanticism_Art(AlienPower):
-    """Romanticism_Art - Emotional power."""
-    name: str = field(default="Romanticism_Art", init=False)
-    description: str = field(default="+5 when defending.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.DEFENSE:
-            return total + 5
-        return total
-
-
-@dataclass
-class Realism_Art(AlienPower):
-    """Realism_Art - Truth depiction."""
-    name: str = field(default="Realism_Art", init=False)
-    description: str = field(default="+1 per card (max +6).", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active:
-            return total + min(6, len(player.hand))
-        return total
-
-
-@dataclass
-class Gothic_Art(AlienPower):
-    """Gothic_Art - Dark beauty."""
-    name: str = field(default="Gothic_Art", init=False)
-    description: str = field(default="+5 with 5+ cards.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and len(player.hand) >= 5:
-            return total + 5
-        return total
-
-
-@dataclass
-class Futurism_Art(AlienPower):
-    """Futurism_Art - Speed motion."""
-    name: str = field(default="Futurism_Art", init=False)
-    description: str = field(default="+6 when attacking.", init=False)
-    timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
-    power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
-    category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
-
-    def modify_total(self, game: "Game", player: "Player", total: int, side: Side) -> int:
-        if player.power_active and side == Side.OFFENSE:
-            return total + 6
-        return total
-
-
-@dataclass
-class Dadaism_Art(AlienPower):
-    """Dadaism_Art - Anti-art chaos."""
-    name: str = field(default="Dadaism_Art", init=False)
+class Cutting_Board_Utensil(AlienPower):
+    """Cutting_Board_Utensil - Chop surface."""
+    name: str = field(default="Cutting_Board_Utensil", init=False)
     description: str = field(default="+2 per ally (max +6).", init=False)
     timing: PowerTiming = field(default=PowerTiming.RESOLUTION, init=False)
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
@@ -261,13 +261,14 @@ class Dadaism_Art(AlienPower):
         return total + min(6, ally_count * 2)
 
 
-ART_MOVEMENT_POWERS = [
-    Renaissance_Art, Impressionism_Art, Cubism_Art, Surrealism_Art, Baroque_Art,
-    Minimalism_Art, Pop_Art, Abstract_Expressionism_Art, Art_Nouveau_Art,
-    Art_Deco_Art, Romanticism_Art, Realism_Art, Gothic_Art, Futurism_Art, Dadaism_Art
+KITCHEN_UTENSIL_POWERS = [
+    Knife_Utensil, Fork_Utensil, Spoon_Utensil, Spatula_Utensil, Whisk_Utensil,
+    Ladle_Utensil, Tongs_Utensil, Peeler_Utensil, Colander_Utensil, Grater_Utensil,
+    Rolling_Pin_Utensil, Measuring_Cup_Utensil, Can_Opener_Utensil,
+    Mixing_Bowl_Utensil, Cutting_Board_Utensil
 ]
 
-for power_class in ART_MOVEMENT_POWERS:
+for power_class in KITCHEN_UTENSIL_POWERS:
     try:
         AlienRegistry.register(power_class())
     except ValueError:

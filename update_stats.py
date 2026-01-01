@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from cosmic.simulation.runner import Simulator
 from cosmic.types import SimulationConfig, GameConfig
+from cosmic.aliens.official_aliens import get_alien_expansion
 
 STATS_FILE = Path(__file__).parent / "stats.json"
 README_FILE = Path(__file__).parent / "README.md"
