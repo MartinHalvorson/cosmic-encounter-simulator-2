@@ -27,244 +27,244 @@
 
 | Rank | Power | Set | Overall | 2P | 3P | 4P | 5P | 6P | Games |
 |-----:|:------|:----|--------:|---:|---:|---:|---:|---:|------:|
-| 1 | [Machine](#machine) | Base Game | 57.7% | 81.0% | 77.0% | 54.9% | 55.8% | 44.4% | 848 |
-| 2 | [Parasite](#parasite) | Base Game | 45.2% | 42.4% | 39.7% | 50.0% | 48.9% | 42.0% | 897 |
-| 3 | [Warpish](#warpish) | Base Game | 37.5% | 72.7% | 59.0% | 38.5% | 31.0% | 21.0% | 816 |
-| 4 | [Symbiote](#symbiote) | Cosmic Incursion | 36.5% | 83.3% | 47.7% | 40.9% | 30.7% | 18.8% | 850 |
-| 5 | [Pacifist](#pacifist) | Base Game | 35.0% | 79.3% | 56.1% | 37.4% | 26.6% | 14.5% | 831 |
-| 6 | [Calculator](#calculator) | Base Game | 34.6% | 68.8% | 56.6% | 32.0% | 21.1% | 25.5% | 850 |
-| 7 | [Neighbor](#neighbor) | Cosmic Storm | 33.8% | 75.0% | 53.1% | 36.2% | 19.8% | 21.9% | 838 |
-| 8 | [Tripler](#tripler) | Base Game | 33.7% | 69.1% | 42.8% | 30.6% | 26.3% | 23.8% | 864 |
-| 9 | [Macron](#macron) | Base Game | 33.1% | 74.1% | 52.7% | 31.2% | 23.0% | 19.8% | 849 |
-| 10 | [Trader](#trader) | Base Game | 32.7% | 76.9% | 38.4% | 28.6% | 26.1% | 21.1% | 846 |
-| 11 | [Sheriff](#sheriff) | Cosmic Eons | 31.8% | 69.9% | 46.8% | 34.2% | 20.9% | 18.4% | 773 |
-| 12 | [Bulwark](#bulwark) | Cosmic Storm | 31.5% | 75.6% | 43.5% | 30.0% | 22.4% | 20.0% | 821 |
-| 13 | [Virus](#virus) | Base Game | 31.1% | 68.4% | 43.4% | 29.6% | 20.5% | 19.3% | 877 |
-| 14 | [Dervish](#dervish) | Cosmic Storm | 31.1% | 81.2% | 51.5% | 32.1% | 18.5% | 17.4% | 813 |
-| 15 | [Disease](#disease) | Cosmic Incursion | 30.9% | 57.5% | 47.5% | 34.2% | 20.2% | 21.7% | 847 |
-| 16 | [Vector](#vector) | Cosmic Odyssey | 30.6% | 49.3% | 43.4% | 34.2% | 24.1% | 20.8% | 821 |
-| 17 | [Shadow](#shadow) | Base Game | 30.5% | 56.2% | 48.6% | 34.3% | 21.7% | 19.5% | 911 |
-| 18 | [Industrialist](#industrialist) | Cosmic Conflict | 30.1% | 68.8% | 42.9% | 26.3% | 22.0% | 20.7% | 805 |
-| 19 | [Warrior](#warrior) | Base Game | 30.0% | 62.5% | 43.9% | 33.7% | 26.6% | 13.2% | 852 |
-| 20 | [Cyborg](#cyborg) | Cosmic Alliance | 29.6% | 63.5% | 39.7% | 34.9% | 19.6% | 19.0% | 857 |
-| 21 | [Aristocrat](#aristocrat) | Cosmic Dominion | 29.6% | 46.5% | 45.8% | 31.0% | 26.3% | 18.8% | 868 |
-| 22 | [Merchant](#merchant) | Cosmic Incursion | 29.5% | 60.2% | 37.1% | 29.1% | 28.4% | 17.4% | 850 |
-| 23 | [Ace](#ace) | Cosmic Dominion | 29.3% | 67.1% | 44.5% | 28.5% | 16.8% | 22.2% | 822 |
-| 24 | [Human](#human) | Base Game | 29.0% | 60.9% | 50.8% | 30.2% | 16.9% | 16.5% | 820 |
-| 25 | [Winner](#winner) | Cosmic Alliance | 28.7% | 64.0% | 31.0% | 28.9% | 24.1% | 20.0% | 940 |
-| 26 | [Lightning](#lightning) | Cosmic Alliance | 28.7% | 55.4% | 44.4% | 32.7% | 16.3% | 17.7% | 840 |
-| 27 | [Usurper](#usurper) | Cosmic Dominion | 28.6% | 62.9% | 30.5% | 30.5% | 24.1% | 20.2% | 857 |
-| 28 | [Tortoise](#tortoise) | Cosmic Eons | 28.3% | 63.0% | 37.1% | 26.7% | 22.2% | 20.1% | 847 |
-| 29 | [Tyrant](#tyrant) | Cosmic Storm | 27.9% | 55.4% | 33.3% | 31.4% | 19.2% | 18.6% | 832 |
-| 30 | [Mouth](#mouth) | Cosmic Storm | 27.9% | 45.7% | 39.1% | 29.4% | 23.3% | 19.1% | 836 |
-| 31 | [Sloth](#sloth) | Cosmic Storm | 27.6% | 61.2% | 30.0% | 33.3% | 23.1% | 16.8% | 868 |
-| 32 | [Pygmy](#pygmy) | Cosmic Alliance | 27.6% | 67.1% | 42.5% | 28.8% | 20.6% | 15.9% | 840 |
-| 33 | [Guardian](#guardian) | Cosmic Odyssey | 27.5% | 55.1% | 34.1% | 24.0% | 20.6% | 23.3% | 886 |
-| 34 | [Arcade](#arcade) | Cosmic Storm | 27.5% | 50.0% | 38.7% | 27.9% | 23.2% | 17.5% | 855 |
-| 35 | [Guerrilla](#guerrilla) | Cosmic Incursion | 27.4% | 53.0% | 40.4% | 33.1% | 18.7% | 14.9% | 831 |
-| 36 | [Negator](#negator) | Cosmic Odyssey | 27.4% | 49.3% | 38.5% | 32.3% | 24.4% | 14.9% | 821 |
-| 37 | [Tentacle](#tentacle) | Cosmic Odyssey | 27.3% | 42.4% | 35.5% | 30.1% | 23.3% | 18.8% | 855 |
-| 38 | [Siren](#siren) | Cosmic Conflict | 27.2% | 45.8% | 31.5% | 30.6% | 20.7% | 22.1% | 815 |
-| 39 | [Vacuum](#vacuum) | Base Game | 27.2% | 54.5% | 41.9% | 28.5% | 19.8% | 16.2% | 863 |
-| 40 | [Chrysalis](#chrysalis) | Cosmic Alliance | 27.2% | 58.5% | 38.5% | 22.2% | 23.3% | 16.4% | 841 |
-| 41 | [Mutant](#mutant) | Base Game | 27.2% | 56.1% | 36.7% | 26.3% | 21.6% | 20.4% | 883 |
-| 42 | [Converter](#converter) | Cosmic Storm | 27.0% | 50.0% | 31.1% | 31.2% | 22.9% | 17.1% | 803 |
-| 43 | [Silencer](#silencer) | Cosmic Odyssey | 26.9% | 50.0% | 40.7% | 20.2% | 21.2% | 18.6% | 828 |
-| 44 | [Phantasm](#phantasm) | Cosmic Storm | 26.9% | 56.7% | 36.7% | 21.6% | 23.3% | 17.7% | 856 |
-| 45 | [Phantom](#phantom) | Cosmic Odyssey | 26.9% | 54.8% | 31.5% | 30.9% | 20.9% | 16.6% | 793 |
-| 46 | [Multitude](#multitude) | Cosmic Eons | 26.8% | 44.3% | 34.9% | 25.7% | 24.9% | 17.7% | 838 |
-| 47 | [Cudgel](#cudgel) | Base Game | 26.8% | 55.4% | 37.8% | 24.9% | 18.4% | 18.3% | 828 |
-| 48 | [Muckraker](#muckraker) | Cosmic Dominion | 26.8% | 36.8% | 34.4% | 26.1% | 24.3% | 22.2% | 821 |
-| 49 | [Masochist](#masochist) | Base Game | 26.7% | 47.0% | 31.2% | 31.7% | 23.0% | 18.2% | 857 |
-| 50 | [Hate](#hate) | Base Game | 26.6% | 49.4% | 31.2% | 31.6% | 21.3% | 18.2% | 867 |
-| 51 | [Laser](#laser) | Cosmic Dominion | 26.6% | 59.4% | 34.9% | 19.5% | 20.2% | 18.8% | 804 |
-| 52 | [Outlaw](#outlaw) | Cosmic Storm | 26.6% | 52.7% | 32.5% | 26.2% | 21.1% | 19.6% | 885 |
-| 53 | [Filth](#filth) | Cosmic Conflict | 26.5% | 51.4% | 43.7% | 24.8% | 23.1% | 16.8% | 868 |
-| 54 | [Relic](#relic) | Cosmic Conflict | 26.5% | 49.5% | 27.3% | 28.3% | 26.5% | 16.8% | 857 |
-| 55 | [Tide](#tide) | Cosmic Storm | 26.5% | 55.6% | 38.5% | 25.9% | 20.6% | 16.0% | 854 |
-| 56 | [The Meek](#the-meek) | Cosmic Odyssey | 26.5% | 44.8% | 42.1% | 28.5% | 20.8% | 15.1% | 824 |
-| 57 | [Miser](#miser) | Base Game | 26.4% | 63.3% | 35.2% | 24.1% | 15.5% | 18.1% | 836 |
-| 58 | [Masochist_Alt](#masochist_alt) | Cosmic Odyssey | 26.4% | 60.0% | 33.6% | 28.6% | 18.8% | 16.0% | 814 |
-| 59 | [Sting](#sting) | Cosmic Alliance | 26.4% | 44.0% | 35.4% | 25.9% | 23.1% | 19.8% | 837 |
-| 60 | [Cavalry](#cavalry) | Cosmic Conflict | 26.4% | 49.4% | 43.8% | 23.9% | 18.1% | 17.9% | 834 |
-| 61 | [Void](#void) | Base Game | 26.4% | 46.8% | 30.8% | 19.5% | 24.6% | 24.3% | 846 |
-| 62 | [Ghoul](#ghoul) | Cosmic Incursion | 26.3% | 48.3% | 29.3% | 33.3% | 20.5% | 18.2% | 863 |
-| 63 | [Extortionist](#extortionist) | Cosmic Alliance | 26.3% | 50.5% | 35.6% | 23.8% | 20.5% | 16.7% | 845 |
-| 64 | [Zombie](#zombie) | Base Game | 26.2% | 53.1% | 39.0% | 22.1% | 19.4% | 19.0% | 855 |
-| 65 | [Bully](#bully) | Cosmic Incursion | 26.2% | 45.1% | 37.1% | 30.4% | 20.4% | 17.6% | 855 |
-| 66 | [Surgeon](#surgeon) | Cosmic Eons | 26.2% | 45.2% | 32.1% | 27.2% | 22.1% | 19.2% | 829 |
-| 67 | [FireDancer](#firedancer) | Cosmic Eons | 26.2% | 54.0% | 40.3% | 22.4% | 17.9% | 16.5% | 856 |
-| 68 | [Patriot](#patriot) | Cosmic Storm | 26.1% | 51.0% | 40.2% | 28.7% | 20.1% | 15.8% | 871 |
-| 69 | [Force](#force) | Cosmic Odyssey | 26.0% | 47.2% | 36.9% | 27.7% | 19.2% | 18.5% | 845 |
-| 70 | [Bride](#bride) | Cosmic Dominion | 26.0% | 46.2% | 38.2% | 20.9% | 19.3% | 19.5% | 792 |
-| 71 | [Love](#love) | Cosmic Dominion | 26.0% | 53.0% | 41.0% | 23.9% | 21.3% | 15.7% | 827 |
-| 72 | [BleedingHeart](#bleedingheart) | Cosmic Eons | 26.0% | 44.9% | 31.9% | 31.9% | 21.1% | 17.1% | 828 |
-| 73 | [Insect](#insect) | Cosmic Odyssey | 26.0% | 53.3% | 36.9% | 26.6% | 19.8% | 16.7% | 859 |
-| 74 | [Aura](#aura) | Cosmic Odyssey | 25.9% | 44.3% | 28.7% | 28.7% | 21.2% | 20.0% | 829 |
-| 75 | [Tourist](#tourist) | Cosmic Dominion | 25.8% | 45.9% | 31.6% | 27.5% | 22.6% | 19.1% | 770 |
-| 76 | [Assessor](#assessor) | Cosmic Odyssey | 25.8% | 53.2% | 36.3% | 23.5% | 19.9% | 17.5% | 833 |
-| 77 | [Gorgon](#gorgon) | Cosmic Alliance | 25.8% | 49.4% | 41.8% | 27.2% | 17.2% | 18.9% | 865 |
-| 78 | [Cosmos](#cosmos) | Cosmic Odyssey | 25.8% | 49.4% | 38.2% | 29.5% | 18.8% | 15.7% | 823 |
-| 79 | [Roach](#roach) | Cosmic Storm | 25.7% | 43.0% | 40.3% | 21.3% | 22.6% | 18.7% | 825 |
-| 80 | [Voyager](#voyager) | Cosmic Dominion | 25.7% | 61.7% | 36.3% | 24.7% | 18.8% | 15.9% | 868 |
-| 81 | [Inferno](#inferno) | Cosmic Odyssey | 25.7% | 49.4% | 32.5% | 25.0% | 21.2% | 19.4% | 818 |
-| 82 | [Brute_Alt](#brute_alt) | Cosmic Odyssey | 25.6% | 56.6% | 33.3% | 22.5% | 22.7% | 15.8% | 862 |
-| 83 | [Dictator](#dictator) | Base Game | 25.6% | 45.8% | 37.3% | 26.1% | 18.9% | 17.4% | 804 |
-| 84 | [Wormhole](#wormhole) | Cosmic Storm | 25.6% | 53.9% | 34.6% | 24.4% | 25.3% | 11.7% | 851 |
-| 85 | [Magician](#magician) | Cosmic Incursion | 25.6% | 47.1% | 30.1% | 24.8% | 24.4% | 15.7% | 832 |
-| 86 | [Pentaform](#pentaform) | Cosmic Dominion | 25.6% | 47.3% | 40.5% | 26.9% | 19.4% | 13.9% | 821 |
-| 87 | [Pretender](#pretender) | Cosmic Eons | 25.6% | 55.2% | 37.1% | 26.9% | 18.9% | 12.6% | 868 |
-| 88 | [Void_Alt](#void_alt) | Cosmic Odyssey | 25.6% | 57.1% | 36.1% | 19.2% | 19.9% | 15.6% | 845 |
-| 89 | [Doppelganger](#doppelganger) | Cosmic Dominion | 25.6% | 50.0% | 34.8% | 29.1% | 20.0% | 15.1% | 900 |
-| 90 | [Daredevil](#daredevil) | Cosmic Dominion | 25.5% | 48.0% | 32.3% | 22.6% | 20.5% | 18.6% | 830 |
-| 91 | [Barbarian](#barbarian) | Base Game | 25.5% | 48.5% | 39.7% | 21.3% | 24.8% | 12.8% | 839 |
-| 92 | [Booster](#booster) | Promo | 25.5% | 51.5% | 32.6% | 27.4% | 20.3% | 14.8% | 843 |
-| 93 | [Demon_Alt](#demon_alt) | Cosmic Odyssey | 25.5% | 62.0% | 31.2% | 22.2% | 19.8% | 17.8% | 797 |
-| 94 | [Engineer](#engineer) | Cosmic Dominion | 25.5% | 53.9% | 27.7% | 22.1% | 24.5% | 17.0% | 852 |
-| 95 | [Hunger](#hunger) | Cosmic Eons | 25.4% | 62.7% | 32.8% | 26.0% | 18.6% | 16.4% | 841 |
-| 96 | [Claw](#claw) | Cosmic Conflict | 25.4% | 45.6% | 29.9% | 27.0% | 20.3% | 19.4% | 798 |
-| 97 | [Porcupine](#porcupine) | Cosmic Storm | 25.4% | 53.9% | 36.7% | 28.1% | 17.5% | 15.4% | 846 |
-| 98 | [Hacker](#hacker) | Base Game | 25.4% | 46.7% | 31.9% | 27.8% | 22.7% | 16.5% | 867 |
-| 99 | [Squee](#squee) | Cosmic Storm | 25.4% | 47.9% | 29.5% | 21.0% | 22.2% | 20.1% | 820 |
-| 100 | [Anarchist](#anarchist) | Cosmic Eons | 25.4% | 51.4% | 29.5% | 30.4% | 20.3% | 16.0% | 832 |
-| 101 | [Daredevil_Alt](#daredevil_alt) | Cosmic Odyssey | 25.4% | 50.6% | 38.6% | 26.5% | 18.0% | 15.3% | 781 |
-| 102 | [Seeker](#seeker) | Cosmic Incursion | 25.3% | 56.1% | 27.7% | 23.3% | 24.0% | 15.6% | 793 |
-| 103 | [Schizoid](#schizoid) | Cosmic Alliance | 25.3% | 63.3% | 28.6% | 26.6% | 20.3% | 13.6% | 817 |
-| 104 | [Oracle](#oracle) | Base Game | 25.3% | 56.1% | 29.8% | 31.1% | 20.0% | 13.8% | 814 |
-| 105 | [Leviathan](#leviathan) | Cosmic Incursion | 25.3% | 57.7% | 33.3% | 23.2% | 20.6% | 16.6% | 830 |
-| 106 | [Animal](#animal) | Cosmic Alliance | 25.2% | 44.3% | 33.8% | 24.8% | 19.8% | 19.8% | 836 |
-| 107 | [Emperor](#emperor) | Cosmic Eons | 25.2% | 50.6% | 34.1% | 17.9% | 23.9% | 16.4% | 801 |
-| 108 | [Fury](#fury) | Cosmic Incursion | 25.2% | 41.3% | 34.7% | 25.9% | 21.1% | 18.6% | 819 |
-| 109 | [Diplomat](#diplomat) | Cosmic Dominion | 25.1% | 46.5% | 32.8% | 22.7% | 23.6% | 16.7% | 840 |
-| 110 | [Cryo](#cryo) | Cosmic Incursion | 25.1% | 50.0% | 35.9% | 25.3% | 17.9% | 16.8% | 785 |
-| 111 | [Mirage](#mirage) | Cosmic Dominion | 25.1% | 46.3% | 29.5% | 25.3% | 20.0% | 18.9% | 805 |
-| 112 | [Bandit](#bandit) | Cosmic Alliance | 25.1% | 47.1% | 31.5% | 27.5% | 18.3% | 18.7% | 874 |
-| 113 | [Witch](#witch) | Cosmic Odyssey | 25.0% | 46.5% | 32.0% | 24.5% | 23.9% | 16.0% | 840 |
-| 114 | [Lunatic](#lunatic) | Cosmic Conflict | 25.0% | 44.3% | 31.9% | 22.3% | 22.7% | 18.9% | 832 |
-| 115 | [Lizard](#lizard) | Cosmic Dominion | 25.0% | 51.8% | 38.2% | 21.8% | 19.1% | 15.9% | 861 |
-| 116 | [Tick-Tock](#tick-tock) | Base Game | 25.0% | 43.2% | 34.2% | 27.0% | 16.6% | 19.6% | 845 |
-| 117 | [Trickster](#trickster) | Cosmic Conflict | 24.9% | 50.0% | 31.0% | 22.5% | 19.8% | 20.5% | 850 |
-| 118 | [Pickpocket](#pickpocket) | Cosmic Dominion | 24.9% | 41.6% | 31.8% | 27.0% | 21.1% | 17.5% | 840 |
-| 119 | [Sneak](#sneak) | Cosmic Storm | 24.9% | 44.7% | 28.9% | 29.4% | 19.0% | 19.0% | 796 |
-| 120 | [Sadist_Alt](#sadist_alt) | Cosmic Odyssey | 24.8% | 45.9% | 32.1% | 29.2% | 18.9% | 16.5% | 829 |
-| 121 | [Spiff](#spiff) | Base Game | 24.8% | 55.3% | 37.5% | 22.7% | 20.3% | 13.0% | 907 |
-| 122 | [Glutton](#glutton) | Cosmic Conflict | 24.8% | 45.6% | 39.1% | 21.9% | 21.6% | 16.4% | 867 |
-| 123 | [Lloyd](#lloyd) | Cosmic Odyssey | 24.8% | 41.0% | 35.1% | 26.5% | 19.9% | 17.4% | 832 |
-| 124 | [Invader](#invader) | Cosmic Conflict | 24.7% | 51.2% | 30.3% | 26.1% | 20.9% | 17.1% | 865 |
-| 125 | [Whirligig](#whirligig) | Cosmic Dominion | 24.7% | 55.6% | 26.7% | 27.0% | 20.2% | 14.5% | 878 |
-| 126 | [Explorer](#explorer) | Cosmic Dominion | 24.7% | 47.1% | 36.0% | 26.1% | 21.6% | 13.4% | 858 |
-| 127 | [Zombie_Alt](#zombie_alt) | Cosmic Odyssey | 24.7% | 47.5% | 32.5% | 27.8% | 18.6% | 16.6% | 827 |
-| 128 | [Loser](#loser) | Base Game | 24.6% | 53.1% | 32.2% | 30.9% | 18.2% | 10.7% | 821 |
-| 129 | [Oligarch](#oligarch) | Cosmic Eons | 24.6% | 46.5% | 35.2% | 24.1% | 18.4% | 16.5% | 801 |
-| 130 | [Particle](#particle) | Cosmic Eons | 24.6% | 55.3% | 31.4% | 23.5% | 17.1% | 17.7% | 875 |
-| 131 | [Grudge](#grudge) | Base Game | 24.6% | 50.5% | 33.9% | 21.7% | 21.8% | 14.3% | 847 |
-| 132 | [Chosen](#chosen) | Base Game | 24.5% | 59.1% | 30.0% | 26.0% | 15.8% | 16.3% | 872 |
-| 133 | [Amoeba](#amoeba) | Base Game | 24.5% | 52.3% | 35.4% | 23.7% | 18.9% | 16.8% | 841 |
-| 134 | [Joker](#joker) | Cosmic Dominion | 24.5% | 51.3% | 40.9% | 29.8% | 12.8% | 13.5% | 825 |
-| 135 | [Reserve](#reserve) | Base Game | 24.4% | 56.6% | 29.3% | 28.1% | 15.4% | 11.9% | 855 |
-| 136 | [Nightmare](#nightmare) | Cosmic Eons | 24.4% | 49.4% | 30.5% | 25.6% | 17.8% | 17.2% | 896 |
-| 137 | [Genius](#genius) | Cosmic Incursion | 24.4% | 50.0% | 30.9% | 26.7% | 17.3% | 17.8% | 876 |
-| 138 | [Angler](#angler) | Cosmic Dominion | 24.4% | 59.5% | 35.2% | 20.4% | 19.8% | 14.6% | 816 |
-| 139 | [Perfectionist_Alt](#perfectionist_alt) | Cosmic Odyssey | 24.4% | 51.9% | 29.9% | 22.2% | 16.7% | 19.8% | 972 |
-| 140 | [Schizoid_Alt](#schizoid_alt) | Cosmic Odyssey | 24.4% | 50.6% | 27.3% | 23.9% | 20.6% | 17.2% | 796 |
-| 141 | [YinYang](#yinyang) | Cosmic Dominion | 24.4% | 46.6% | 36.8% | 26.6% | 13.5% | 19.4% | 862 |
-| 142 | [Fungus](#fungus) | Cosmic Incursion | 24.4% | 46.8% | 33.6% | 24.9% | 17.5% | 17.9% | 809 |
-| 143 | [Grumpus_Alt](#grumpus_alt) | Cosmic Odyssey | 24.3% | 52.9% | 30.6% | 24.2% | 20.6% | 17.3% | 838 |
-| 144 | [Wrack](#wrack) | Cosmic Odyssey | 24.3% | 54.1% | 31.5% | 25.9% | 19.8% | 14.6% | 827 |
-| 145 | [Mirror](#mirror) | Base Game | 24.3% | 35.4% | 30.4% | 28.7% | 20.0% | 16.1% | 886 |
-| 146 | [Lemming](#lemming) | Cosmic Odyssey | 24.3% | 43.3% | 25.2% | 29.1% | 17.5% | 18.3% | 783 |
-| 147 | [Extractor](#extractor) | Cosmic Odyssey | 24.3% | 51.1% | 33.0% | 18.4% | 22.4% | 16.3% | 837 |
-| 148 | [Chronos](#chronos) | Cosmic Incursion | 24.2% | 51.8% | 29.1% | 22.5% | 19.9% | 16.5% | 850 |
-| 149 | [General](#general) | Cosmic Alliance | 24.2% | 43.8% | 42.5% | 24.4% | 19.3% | 13.1% | 817 |
-| 150 | [Horde](#horde) | Cosmic Alliance | 24.2% | 48.1% | 36.1% | 22.5% | 17.2% | 18.2% | 838 |
-| 151 | [Vulch](#vulch) | Base Game | 24.2% | 43.0% | 30.1% | 25.6% | 20.9% | 16.9% | 860 |
-| 152 | [Greenhorn](#greenhorn) | Cosmic Dominion | 24.2% | 45.1% | 29.9% | 24.0% | 20.8% | 17.0% | 857 |
-| 153 | [Vox](#vox) | Cosmic Storm | 24.1% | 58.9% | 31.5% | 26.9% | 18.3% | 14.0% | 762 |
-| 154 | [Perfectionist](#perfectionist) | Cosmic Eons | 24.1% | 46.3% | 31.9% | 24.1% | 16.1% | 18.6% | 783 |
-| 155 | [Cloak](#cloak) | Cosmic Eons | 24.1% | 42.3% | 36.1% | 25.6% | 24.1% | 11.2% | 866 |
-| 156 | [Pirate](#pirate) | Cosmic Dominion | 24.1% | 48.6% | 25.4% | 25.4% | 16.7% | 19.1% | 887 |
-| 157 | [EvilTwin](#eviltwin) | Cosmic Eons | 24.1% | 42.9% | 30.7% | 25.5% | 20.0% | 18.1% | 858 |
-| 158 | [Mesmer](#mesmer) | Cosmic Dominion | 24.1% | 51.5% | 30.1% | 23.4% | 20.1% | 17.1% | 829 |
-| 159 | [Boomerang](#boomerang) | Cosmic Odyssey | 24.1% | 41.2% | 32.0% | 24.3% | 23.5% | 15.0% | 850 |
-| 160 | [Antimatter](#antimatter) | Base Game | 24.1% | 54.1% | 28.0% | 29.5% | 21.1% | 10.2% | 846 |
-| 161 | [Geek](#geek) | Cosmic Odyssey | 24.1% | 44.6% | 30.7% | 23.9% | 22.0% | 15.3% | 789 |
-| 162 | [Warhawk](#warhawk) | Cosmic Conflict | 24.0% | 43.4% | 31.8% | 24.6% | 20.3% | 16.7% | 828 |
-| 163 | [Kamikaze](#kamikaze) | Base Game | 24.0% | 45.6% | 36.8% | 22.1% | 20.4% | 15.3% | 816 |
-| 164 | [Moocher](#moocher) | Cosmic Eons | 24.0% | 45.3% | 40.7% | 21.5% | 19.1% | 15.2% | 818 |
-| 165 | [Crystal](#crystal) | Cosmic Alliance | 23.9% | 51.1% | 36.2% | 29.9% | 13.5% | 14.1% | 832 |
-| 166 | [Ethic](#ethic) | Cosmic Incursion | 23.9% | 51.3% | 29.4% | 28.8% | 21.5% | 10.8% | 817 |
-| 167 | [Coward](#coward) | Cosmic Eons | 23.8% | 47.0% | 35.1% | 21.4% | 17.8% | 16.9% | 781 |
-| 168 | [Magnet](#magnet) | Cosmic Odyssey | 23.8% | 47.1% | 33.1% | 23.8% | 19.5% | 15.2% | 837 |
-| 169 | [Sycophant](#sycophant) | Cosmic Storm | 23.7% | 50.7% | 25.6% | 18.8% | 28.1% | 13.9% | 785 |
-| 170 | [Mite](#mite) | Base Game | 23.7% | 41.3% | 35.1% | 25.6% | 19.6% | 12.0% | 816 |
-| 171 | [Reactor](#reactor) | Cosmic Dominion | 23.6% | 48.9% | 31.4% | 23.5% | 20.7% | 13.7% | 859 |
-| 172 | [Filch](#filch) | Base Game | 23.6% | 52.8% | 36.3% | 21.2% | 19.4% | 14.4% | 834 |
-| 173 | [Gremlin](#gremlin) | Cosmic Odyssey | 23.6% | 46.6% | 28.9% | 23.5% | 22.2% | 15.7% | 851 |
-| 174 | [Gambler](#gambler) | Base Game | 23.6% | 36.3% | 36.2% | 18.5% | 19.1% | 19.8% | 856 |
-| 175 | [Zilch](#zilch) | Cosmic Odyssey | 23.6% | 41.5% | 30.2% | 21.1% | 26.1% | 14.4% | 814 |
-| 176 | [Saboteur](#saboteur) | Cosmic Conflict | 23.6% | 52.3% | 28.7% | 24.0% | 17.4% | 16.0% | 806 |
-| 177 | [Brute](#brute) | Cosmic Storm | 23.6% | 44.8% | 36.8% | 29.5% | 14.5% | 11.6% | 802 |
-| 178 | [Healer](#healer) | Base Game | 23.6% | 56.4% | 35.4% | 19.4% | 16.8% | 15.4% | 828 |
-| 179 | [Quartermaster](#quartermaster) | Cosmic Dominion | 23.5% | 50.5% | 33.3% | 18.7% | 18.0% | 16.4% | 888 |
-| 180 | [Will](#will) | Base Game | 23.4% | 44.3% | 31.1% | 22.4% | 19.6% | 16.5% | 845 |
-| 181 | [Citadel](#citadel) | Base Game | 23.4% | 56.5% | 27.0% | 23.2% | 16.4% | 18.6% | 845 |
-| 182 | [Alchemist](#alchemist) | Cosmic Dominion | 23.4% | 39.5% | 35.2% | 24.0% | 19.5% | 15.3% | 842 |
-| 183 | [Alien](#alien) | Cosmic Eons | 23.4% | 48.8% | 29.5% | 24.7% | 22.5% | 12.6% | 834 |
-| 184 | [Clone](#clone) | Base Game | 23.4% | 34.6% | 33.1% | 24.7% | 20.8% | 16.4% | 830 |
-| 185 | [Fodder](#fodder) | Base Game | 23.4% | 50.0% | 31.1% | 16.0% | 20.2% | 17.6% | 830 |
-| 186 | [TheCult](#thecult) | Cosmic Eons | 23.4% | 48.3% | 29.5% | 23.8% | 15.5% | 17.1% | 826 |
-| 187 | [Scavenger](#scavenger) | Cosmic Storm | 23.3% | 44.7% | 32.2% | 20.8% | 15.8% | 18.4% | 811 |
-| 188 | [Coordinator](#coordinator) | Cosmic Storm | 23.3% | 45.8% | 29.8% | 23.2% | 20.3% | 15.3% | 833 |
-| 189 | [Reincarnator](#reincarnator) | Base Game | 23.3% | 41.9% | 33.0% | 17.8% | 22.4% | 18.1% | 803 |
-| 190 | [Xenophile](#xenophile) | Cosmic Conflict | 23.3% | 50.0% | 26.4% | 25.0% | 17.1% | 15.3% | 821 |
-| 191 | [Reborn](#reborn) | Cosmic Alliance | 23.3% | 45.7% | 27.1% | 29.1% | 18.4% | 13.9% | 873 |
-| 192 | [Skeptic](#skeptic) | Cosmic Alliance | 23.2% | 47.4% | 27.8% | 22.3% | 22.9% | 14.6% | 835 |
-| 193 | [Philanthropist](#philanthropist) | Base Game | 23.2% | 50.6% | 36.0% | 22.9% | 17.1% | 12.5% | 866 |
-| 194 | [Mercenary](#mercenary) | Cosmic Incursion | 23.2% | 52.9% | 33.3% | 23.2% | 16.1% | 14.0% | 850 |
-| 195 | [Sorcerer](#sorcerer) | Base Game | 23.2% | 58.7% | 34.4% | 23.2% | 14.7% | 14.7% | 850 |
-| 196 | [Butler](#butler) | Cosmic Alliance | 23.1% | 45.8% | 36.6% | 21.3% | 15.5% | 15.5% | 809 |
-| 197 | [Grumpus](#grumpus) | Cosmic Storm | 23.1% | 60.0% | 30.4% | 22.7% | 15.9% | 14.0% | 863 |
-| 198 | [Demon](#demon) | Promo | 23.0% | 39.2% | 37.2% | 24.8% | 14.2% | 16.3% | 833 |
-| 199 | [Host](#host) | Cosmic Dominion | 23.0% | 41.0% | 37.5% | 22.9% | 19.5% | 14.5% | 833 |
-| 200 | [Changeling](#changeling) | Cosmic Conflict | 22.9% | 47.0% | 27.4% | 24.4% | 21.4% | 14.1% | 855 |
-| 201 | [Mind](#mind) | Base Game | 22.9% | 56.9% | 28.6% | 24.4% | 16.2% | 16.2% | 864 |
-| 202 | [Assistant](#assistant) | Cosmic Eons | 22.9% | 44.3% | 30.2% | 22.6% | 17.5% | 16.5% | 847 |
-| 203 | [Remora](#remora) | Base Game | 22.9% | 47.5% | 33.3% | 23.0% | 18.7% | 13.0% | 861 |
-| 204 | [Hypochondriac](#hypochondriac) | Cosmic Eons | 22.9% | 41.8% | 30.2% | 26.6% | 17.5% | 13.5% | 857 |
-| 205 | [Delegator](#delegator) | Cosmic Odyssey | 22.8% | 41.6% | 34.1% | 21.7% | 18.7% | 14.9% | 816 |
-| 206 | [Sadist](#sadist) | Cosmic Conflict | 22.8% | 43.0% | 33.3% | 24.0% | 19.0% | 13.8% | 813 |
-| 207 | [Nanny](#nanny) | Cosmic Eons | 22.7% | 45.7% | 32.7% | 24.5% | 19.8% | 13.1% | 849 |
-| 208 | [Empath](#empath) | Cosmic Conflict | 22.7% | 46.0% | 31.0% | 19.3% | 19.4% | 15.1% | 895 |
-| 209 | [Mimic](#mimic) | Cosmic Conflict | 22.7% | 48.7% | 29.3% | 24.5% | 16.7% | 16.4% | 869 |
-| 210 | [Poison](#poison) | Cosmic Alliance | 22.7% | 46.1% | 26.7% | 22.5% | 18.2% | 16.2% | 847 |
-| 211 | [Sniveler](#sniveler) | Cosmic Incursion | 22.7% | 56.5% | 26.9% | 23.5% | 19.9% | 13.6% | 852 |
-| 212 | [Prophet](#prophet) | Cosmic Conflict | 22.6% | 51.7% | 32.0% | 25.7% | 14.1% | 13.9% | 850 |
-| 213 | [Locust_Alt](#locust_alt) | Cosmic Odyssey | 22.5% | 42.0% | 36.5% | 21.7% | 18.1% | 14.1% | 861 |
-| 214 | [Bubble](#bubble) | Cosmic Odyssey | 22.5% | 44.8% | 27.5% | 21.1% | 19.7% | 15.1% | 901 |
-| 215 | [Klutz](#klutz) | Cosmic Eons | 22.4% | 48.8% | 30.8% | 26.4% | 17.7% | 12.9% | 834 |
-| 216 | [Architect](#architect) | Cosmic Eons | 22.4% | 40.0% | 36.6% | 20.2% | 18.2% | 15.1% | 871 |
-| 217 | [Peddler](#peddler) | Cosmic Eons | 22.4% | 40.0% | 31.0% | 24.2% | 17.0% | 16.2% | 827 |
-| 218 | [Visionary](#visionary) | Cosmic Conflict | 22.3% | 36.7% | 29.1% | 27.0% | 16.5% | 15.9% | 839 |
-| 219 | [Sapient](#sapient) | Cosmic Alliance | 22.2% | 42.4% | 23.4% | 22.7% | 19.9% | 14.8% | 845 |
-| 220 | [PackRat](#packrat) | Cosmic Eons | 22.2% | 48.2% | 26.5% | 18.5% | 21.7% | 14.6% | 869 |
-| 221 | [AI](#ai) | Cosmic Eons | 22.1% | 45.3% | 34.5% | 19.6% | 14.9% | 15.6% | 850 |
-| 222 | [Maven](#maven) | Cosmic Eons | 22.1% | 47.9% | 32.6% | 24.3% | 12.3% | 16.5% | 869 |
-| 223 | [Judge](#judge) | Cosmic Dominion | 22.0% | 48.6% | 23.6% | 23.3% | 18.6% | 15.6% | 861 |
-| 224 | [Remote](#remote) | Cosmic Alliance | 21.9% | 48.8% | 30.5% | 17.7% | 16.8% | 15.3% | 812 |
-| 225 | [Dragon](#dragon) | Cosmic Odyssey | 21.9% | 38.7% | 33.6% | 21.4% | 17.6% | 15.2% | 882 |
-| 226 | [Decoy](#decoy) | Cosmic Odyssey | 21.8% | 44.3% | 29.2% | 20.2% | 17.7% | 14.2% | 857 |
-| 227 | [Micron](#micron) | Cosmic Odyssey | 21.6% | 51.3% | 25.0% | 19.9% | 18.1% | 15.6% | 878 |
-| 228 | [Hurtz](#hurtz) | Cosmic Odyssey | 21.6% | 47.0% | 34.3% | 22.9% | 17.7% | 11.3% | 778 |
-| 229 | [Crusher](#crusher) | Cosmic Eons | 21.5% | 43.5% | 24.8% | 23.6% | 17.5% | 13.3% | 809 |
-| 230 | [Observer](#observer) | Base Game | 21.5% | 41.9% | 31.2% | 17.4% | 13.6% | 16.9% | 829 |
-| 231 | [Plant](#plant) | Cosmic Incursion | 21.4% | 45.9% | 28.1% | 21.6% | 18.3% | 12.4% | 851 |
-| 232 | [Swindler](#swindler) | Cosmic Storm | 21.2% | 39.8% | 27.6% | 20.6% | 17.7% | 13.8% | 817 |
-| 233 | [Fido](#fido) | Base Game | 21.1% | 44.9% | 21.2% | 22.8% | 23.4% | 11.3% | 825 |
-| 234 | [Deuce](#deuce) | Cosmic Incursion | 21.1% | 41.3% | 28.6% | 19.5% | 21.0% | 12.4% | 811 |
-| 235 | [Throwback](#throwback) | Cosmic Odyssey | 21.0% | 36.4% | 30.1% | 21.6% | 14.6% | 16.0% | 856 |
-| 236 | [Worm](#worm) | Cosmic Storm | 20.3% | 45.5% | 35.1% | 18.3% | 14.8% | 12.5% | 852 |
-| 237 | [Locust](#locust) | Cosmic Incursion | 16.8% | - | 29.8% | 18.1% | 16.0% | 15.4% | 875 |
-| 238 | [Graviton](#graviton) | Cosmic Conflict | 12.6% | 22.9% | 13.9% | 15.0% | 11.1% | 7.3% | 827 |
+| 1 | [Machine](#machine) | Base Game | 56.5% | 72.7% | 66.6% | 62.1% | 53.3% | 45.3% | 8,289 |
+| 2 | [Parasite](#parasite) | Base Game | 46.1% | 49.0% | 45.9% | 48.3% | 46.5% | 43.1% | 8,547 |
+| 3 | [Pacifist](#pacifist) | Base Game | 34.3% | 73.7% | 53.6% | 36.0% | 24.2% | 18.4% | 8,464 |
+| 4 | [Neighbor](#neighbor) | Cosmic Storm | 34.0% | 73.5% | 50.2% | 31.5% | 25.3% | 21.8% | 8,427 |
+| 5 | [Dervish](#dervish) | Cosmic Storm | 33.0% | 76.8% | 49.1% | 33.3% | 22.6% | 18.5% | 8,399 |
+| 6 | [Disease](#disease) | Cosmic Incursion | 31.6% | 49.5% | 42.9% | 32.3% | 26.2% | 23.5% | 8,252 |
+| 7 | [Dragon](#dragon) | Cosmic Odyssey | 31.5% | 69.0% | 46.8% | 29.9% | 22.5% | 19.8% | 8,268 |
+| 8 | [Industrialist](#industrialist) | Cosmic Conflict | 31.1% | 67.0% | 47.2% | 30.1% | 23.5% | 18.6% | 8,432 |
+| 9 | [Winner](#winner) | Cosmic Alliance | 30.0% | 61.4% | 42.2% | 30.0% | 22.8% | 18.9% | 8,334 |
+| 10 | [Locust_Alt](#locust_alt) | Cosmic Odyssey | 29.5% | 63.6% | 40.7% | 30.7% | 22.5% | 17.5% | 8,271 |
+| 11 | [Pygmy](#pygmy) | Cosmic Alliance | 29.4% | 62.8% | 42.3% | 27.1% | 23.2% | 18.1% | 8,294 |
+| 12 | [Usurper](#usurper) | Cosmic Dominion | 29.0% | 57.5% | 41.4% | 28.7% | 22.6% | 18.8% | 8,375 |
+| 13 | [Mutant](#mutant) | Base Game | 28.9% | 58.3% | 40.6% | 30.3% | 21.8% | 18.8% | 8,602 |
+| 14 | [Tortoise](#tortoise) | Cosmic Eons | 28.3% | 55.8% | 40.8% | 28.5% | 22.2% | 18.0% | 8,348 |
+| 15 | [Arcade](#arcade) | Cosmic Storm | 27.9% | 53.4% | 39.9% | 27.8% | 20.9% | 18.9% | 8,471 |
+| 16 | [Bulwark](#bulwark) | Cosmic Storm | 27.8% | 60.0% | 39.4% | 27.8% | 21.0% | 17.1% | 8,453 |
+| 17 | [Symbiote](#symbiote) | Cosmic Incursion | 27.8% | 59.2% | 38.3% | 26.4% | 21.3% | 17.5% | 8,345 |
+| 18 | [Masochist_Alt](#masochist_alt) | Cosmic Odyssey | 27.7% | 59.5% | 37.0% | 28.7% | 20.5% | 17.7% | 8,372 |
+| 19 | [Hunger](#hunger) | Cosmic Eons | 27.5% | 53.6% | 41.2% | 25.9% | 20.4% | 19.3% | 8,411 |
+| 20 | [Lightning](#lightning) | Cosmic Alliance | 27.5% | 56.9% | 39.6% | 25.8% | 21.4% | 17.5% | 8,444 |
+| 21 | [Tyrant](#tyrant) | Cosmic Storm | 27.4% | 54.3% | 35.2% | 27.5% | 22.1% | 18.7% | 8,407 |
+| 22 | [Angler](#angler) | Cosmic Dominion | 27.4% | 55.1% | 37.5% | 28.2% | 20.9% | 16.9% | 8,403 |
+| 23 | [Patriot](#patriot) | Cosmic Storm | 27.3% | 58.4% | 39.6% | 26.3% | 21.1% | 16.9% | 8,372 |
+| 24 | [Invader](#invader) | Cosmic Conflict | 27.3% | 52.2% | 36.7% | 28.4% | 23.0% | 17.2% | 8,364 |
+| 25 | [Gorgon](#gorgon) | Cosmic Alliance | 27.1% | 57.7% | 36.3% | 28.5% | 20.0% | 17.9% | 8,245 |
+| 26 | [Cyborg](#cyborg) | Cosmic Alliance | 27.0% | 56.7% | 36.6% | 27.7% | 21.3% | 17.0% | 8,493 |
+| 27 | [Brute](#brute) | Cosmic Storm | 26.9% | 51.0% | 37.1% | 26.0% | 23.3% | 17.5% | 8,399 |
+| 28 | [Voyager](#voyager) | Cosmic Dominion | 26.8% | 53.8% | 36.6% | 26.3% | 20.8% | 18.4% | 8,365 |
+| 29 | [Outlaw](#outlaw) | Cosmic Storm | 26.8% | 50.0% | 37.0% | 26.8% | 21.9% | 17.7% | 8,377 |
+| 30 | [Guerrilla](#guerrilla) | Cosmic Incursion | 26.8% | 53.1% | 38.2% | 26.0% | 21.5% | 17.3% | 8,372 |
+| 31 | [Citadel](#citadel) | Base Game | 26.5% | 58.0% | 37.7% | 25.6% | 20.9% | 15.7% | 8,358 |
+| 32 | [Reactor](#reactor) | Cosmic Dominion | 26.4% | 58.5% | 35.4% | 27.6% | 19.5% | 15.5% | 8,327 |
+| 33 | [Cavalry](#cavalry) | Cosmic Conflict | 26.2% | 54.3% | 34.6% | 25.5% | 21.4% | 18.1% | 8,282 |
+| 34 | [Engineer](#engineer) | Cosmic Dominion | 26.2% | 52.0% | 36.0% | 27.0% | 20.2% | 17.2% | 8,405 |
+| 35 | [Void](#void) | Base Game | 26.1% | 51.7% | 34.5% | 25.7% | 20.9% | 18.0% | 8,353 |
+| 36 | [Porcupine](#porcupine) | Cosmic Storm | 26.1% | 52.6% | 36.0% | 25.9% | 20.3% | 17.4% | 8,454 |
+| 37 | [Reincarnator](#reincarnator) | Base Game | 26.0% | 52.8% | 35.7% | 25.2% | 20.4% | 17.2% | 8,390 |
+| 38 | [Hurtz](#hurtz) | Cosmic Odyssey | 26.0% | 51.9% | 33.8% | 28.4% | 20.3% | 16.5% | 8,421 |
+| 39 | [Sheriff](#sheriff) | Cosmic Eons | 25.9% | 55.9% | 34.5% | 27.0% | 19.7% | 16.5% | 8,418 |
+| 40 | [Reborn](#reborn) | Cosmic Alliance | 25.8% | 52.1% | 35.9% | 25.8% | 19.7% | 16.5% | 8,475 |
+| 41 | [Grumpus_Alt](#grumpus_alt) | Cosmic Odyssey | 25.8% | 50.3% | 34.0% | 26.1% | 22.7% | 16.4% | 8,359 |
+| 42 | [Healer](#healer) | Base Game | 25.8% | 52.7% | 37.3% | 26.4% | 20.0% | 16.1% | 8,442 |
+| 43 | [FireDancer](#firedancer) | Cosmic Eons | 25.7% | 48.2% | 35.0% | 26.1% | 21.0% | 17.4% | 8,453 |
+| 44 | [Remora](#remora) | Base Game | 25.7% | 48.0% | 33.6% | 26.0% | 20.7% | 17.8% | 8,387 |
+| 45 | [Laser](#laser) | Cosmic Dominion | 25.6% | 55.1% | 34.3% | 22.9% | 21.4% | 17.0% | 8,258 |
+| 46 | [Greenhorn](#greenhorn) | Cosmic Dominion | 25.6% | 49.3% | 34.8% | 27.3% | 19.2% | 16.7% | 8,506 |
+| 47 | [Dictator](#dictator) | Base Game | 25.6% | 50.5% | 33.7% | 25.6% | 20.3% | 17.9% | 8,398 |
+| 48 | [Squee](#squee) | Cosmic Storm | 25.6% | 47.2% | 32.3% | 26.6% | 22.7% | 17.0% | 8,384 |
+| 49 | [Gremlin](#gremlin) | Cosmic Odyssey | 25.6% | 47.9% | 33.8% | 27.2% | 21.1% | 16.3% | 8,401 |
+| 50 | [Chrysalis](#chrysalis) | Cosmic Alliance | 25.5% | 48.8% | 32.2% | 27.4% | 20.2% | 17.4% | 8,393 |
+| 51 | [Claw](#claw) | Cosmic Conflict | 25.5% | 54.0% | 33.4% | 25.8% | 19.4% | 16.6% | 8,394 |
+| 52 | [Warpish](#warpish) | Base Game | 25.5% | 52.8% | 33.6% | 24.7% | 21.2% | 16.8% | 8,457 |
+| 53 | [Cloak](#cloak) | Cosmic Eons | 25.5% | 48.7% | 36.7% | 26.6% | 19.6% | 16.3% | 8,432 |
+| 54 | [Phantom](#phantom) | Cosmic Odyssey | 25.4% | 51.4% | 34.4% | 26.5% | 20.8% | 15.4% | 8,479 |
+| 55 | [Trickster](#trickster) | Cosmic Conflict | 25.4% | 50.8% | 34.9% | 26.6% | 19.3% | 16.1% | 8,484 |
+| 56 | [Wrack](#wrack) | Cosmic Odyssey | 25.4% | 48.5% | 34.8% | 26.2% | 20.5% | 16.8% | 8,406 |
+| 57 | [The Meek](#the-meek) | Cosmic Odyssey | 25.4% | 52.0% | 33.5% | 24.2% | 20.0% | 17.2% | 8,392 |
+| 58 | [EvilTwin](#eviltwin) | Cosmic Eons | 25.4% | 52.6% | 32.6% | 25.4% | 18.9% | 17.3% | 8,342 |
+| 59 | [Pentaform](#pentaform) | Cosmic Dominion | 25.4% | 49.3% | 34.3% | 25.9% | 20.0% | 16.9% | 8,547 |
+| 60 | [Crusher](#crusher) | Cosmic Eons | 25.4% | 49.9% | 33.7% | 26.0% | 20.7% | 16.1% | 8,419 |
+| 61 | [Cryo](#cryo) | Cosmic Incursion | 25.4% | 51.5% | 33.9% | 24.7% | 20.7% | 16.0% | 8,294 |
+| 62 | [Amoeba](#amoeba) | Base Game | 25.4% | 50.7% | 34.6% | 25.7% | 19.9% | 16.8% | 8,449 |
+| 63 | [Judge](#judge) | Cosmic Dominion | 25.3% | 46.7% | 35.5% | 23.9% | 20.1% | 17.7% | 8,345 |
+| 64 | [Roach](#roach) | Cosmic Storm | 25.3% | 49.3% | 33.8% | 24.8% | 21.5% | 17.2% | 8,385 |
+| 65 | [YinYang](#yinyang) | Cosmic Dominion | 25.3% | 52.0% | 35.5% | 25.7% | 18.7% | 16.8% | 8,384 |
+| 66 | [BleedingHeart](#bleedingheart) | Cosmic Eons | 25.3% | 49.6% | 34.0% | 26.5% | 20.2% | 16.3% | 8,358 |
+| 67 | [Micron](#micron) | Cosmic Odyssey | 25.3% | 48.6% | 35.1% | 25.0% | 20.5% | 16.5% | 8,187 |
+| 68 | [Locust](#locust) | Cosmic Incursion | 25.3% | 49.7% | 34.2% | 25.8% | 20.7% | 16.0% | 8,298 |
+| 69 | [Brute_Alt](#brute_alt) | Cosmic Odyssey | 25.3% | 49.2% | 34.2% | 25.2% | 19.0% | 18.1% | 8,448 |
+| 70 | [Chosen](#chosen) | Base Game | 25.2% | 48.7% | 33.1% | 25.5% | 19.8% | 17.8% | 8,322 |
+| 71 | [Nanny](#nanny) | Cosmic Eons | 25.2% | 49.1% | 34.6% | 24.8% | 21.2% | 16.2% | 8,498 |
+| 72 | [Lizard](#lizard) | Cosmic Dominion | 25.2% | 52.0% | 35.3% | 22.7% | 21.3% | 16.2% | 8,358 |
+| 73 | [Assistant](#assistant) | Cosmic Eons | 25.2% | 46.8% | 34.9% | 25.7% | 20.2% | 16.9% | 8,478 |
+| 74 | [Horde](#horde) | Cosmic Alliance | 25.2% | 53.0% | 34.7% | 23.5% | 21.1% | 16.1% | 8,451 |
+| 75 | [Muckraker](#muckraker) | Cosmic Dominion | 25.2% | 49.7% | 34.1% | 27.0% | 20.1% | 15.2% | 8,590 |
+| 76 | [Hacker](#hacker) | Base Game | 25.2% | 51.3% | 36.0% | 25.2% | 19.0% | 16.6% | 8,461 |
+| 77 | [Genius](#genius) | Cosmic Incursion | 25.2% | 50.6% | 34.3% | 23.3% | 21.1% | 16.7% | 8,606 |
+| 78 | [Sadist](#sadist) | Cosmic Conflict | 25.2% | 51.6% | 34.4% | 25.9% | 20.1% | 15.3% | 8,520 |
+| 79 | [Bandit](#bandit) | Cosmic Alliance | 25.2% | 49.3% | 31.9% | 26.5% | 20.3% | 17.3% | 8,337 |
+| 80 | [TheCult](#thecult) | Cosmic Eons | 25.2% | 48.6% | 33.8% | 25.3% | 20.1% | 16.9% | 8,443 |
+| 81 | [Filth](#filth) | Cosmic Conflict | 25.2% | 50.3% | 33.3% | 26.9% | 19.9% | 16.1% | 8,206 |
+| 82 | [Saboteur](#saboteur) | Cosmic Conflict | 25.1% | 48.8% | 32.9% | 25.7% | 20.0% | 17.1% | 8,455 |
+| 83 | [Miser](#miser) | Base Game | 25.1% | 50.4% | 31.9% | 25.7% | 20.9% | 16.3% | 8,416 |
+| 84 | [Xenophile](#xenophile) | Cosmic Conflict | 25.1% | 49.6% | 33.1% | 24.7% | 19.9% | 17.8% | 8,384 |
+| 85 | [Gambler](#gambler) | Base Game | 25.1% | 53.7% | 31.9% | 25.2% | 20.0% | 16.4% | 8,347 |
+| 86 | [Mite](#mite) | Base Game | 25.1% | 52.2% | 32.5% | 25.3% | 20.8% | 15.3% | 8,515 |
+| 87 | [Ethic](#ethic) | Cosmic Incursion | 25.1% | 53.0% | 34.1% | 24.8% | 20.1% | 16.5% | 8,384 |
+| 88 | [Magician](#magician) | Cosmic Incursion | 25.1% | 50.2% | 33.3% | 25.7% | 19.6% | 15.9% | 8,284 |
+| 89 | [Negator](#negator) | Cosmic Odyssey | 25.1% | 48.5% | 33.2% | 25.4% | 18.9% | 18.3% | 8,443 |
+| 90 | [Anarchist](#anarchist) | Cosmic Eons | 25.1% | 50.3% | 31.6% | 22.4% | 22.2% | 17.5% | 8,409 |
+| 91 | [Macron](#macron) | Base Game | 25.1% | 49.8% | 32.0% | 25.4% | 19.4% | 17.9% | 8,459 |
+| 92 | [Wormhole](#wormhole) | Cosmic Storm | 25.0% | 51.5% | 34.2% | 24.8% | 19.5% | 17.4% | 8,376 |
+| 93 | [Animal](#animal) | Cosmic Alliance | 25.0% | 48.5% | 34.9% | 25.5% | 19.1% | 16.9% | 8,380 |
+| 94 | [Oracle](#oracle) | Base Game | 25.0% | 50.2% | 34.0% | 25.0% | 19.8% | 16.4% | 8,373 |
+| 95 | [Sorcerer](#sorcerer) | Base Game | 25.0% | 49.1% | 31.1% | 26.1% | 20.6% | 16.8% | 8,302 |
+| 96 | [Observer](#observer) | Base Game | 25.0% | 51.6% | 33.1% | 25.0% | 20.3% | 16.2% | 8,335 |
+| 97 | [Surgeon](#surgeon) | Cosmic Eons | 25.0% | 50.7% | 33.1% | 23.8% | 20.5% | 16.9% | 8,224 |
+| 98 | [Lemming](#lemming) | Cosmic Odyssey | 25.0% | 49.8% | 31.1% | 26.3% | 19.6% | 17.5% | 8,281 |
+| 99 | [Moocher](#moocher) | Cosmic Eons | 25.0% | 48.5% | 37.8% | 24.3% | 18.4% | 16.6% | 8,354 |
+| 100 | [Warhawk](#warhawk) | Cosmic Conflict | 25.0% | 47.6% | 31.9% | 28.2% | 18.8% | 16.9% | 8,659 |
+| 101 | [Sycophant](#sycophant) | Cosmic Storm | 25.0% | 47.4% | 33.8% | 24.7% | 20.2% | 17.0% | 8,386 |
+| 102 | [Fungus](#fungus) | Cosmic Incursion | 25.0% | 47.1% | 34.1% | 26.2% | 19.4% | 16.6% | 8,567 |
+| 103 | [Oligarch](#oligarch) | Cosmic Eons | 25.0% | 44.9% | 34.4% | 25.2% | 20.2% | 17.1% | 8,503 |
+| 104 | [Architect](#architect) | Cosmic Eons | 25.0% | 52.9% | 32.5% | 24.2% | 19.7% | 16.5% | 8,432 |
+| 105 | [Witch](#witch) | Cosmic Odyssey | 25.0% | 48.0% | 33.0% | 24.9% | 20.2% | 16.7% | 8,381 |
+| 106 | [Leviathan](#leviathan) | Cosmic Incursion | 25.0% | 51.5% | 33.3% | 24.9% | 20.3% | 16.4% | 8,495 |
+| 107 | [Deuce](#deuce) | Cosmic Incursion | 25.0% | 52.9% | 31.3% | 25.2% | 18.9% | 18.2% | 8,324 |
+| 108 | [Boomerang](#boomerang) | Cosmic Odyssey | 25.0% | 52.0% | 32.9% | 24.4% | 20.7% | 15.7% | 8,490 |
+| 109 | [Vacuum](#vacuum) | Base Game | 25.0% | 48.3% | 34.8% | 25.4% | 19.9% | 16.4% | 8,291 |
+| 110 | [Virus](#virus) | Base Game | 24.9% | 48.4% | 35.7% | 24.4% | 20.3% | 16.3% | 8,457 |
+| 111 | [Emperor](#emperor) | Cosmic Eons | 24.9% | 49.9% | 35.5% | 24.9% | 20.0% | 15.4% | 8,317 |
+| 112 | [Mirage](#mirage) | Cosmic Dominion | 24.9% | 49.2% | 33.2% | 24.7% | 20.4% | 16.7% | 8,383 |
+| 113 | [Particle](#particle) | Cosmic Eons | 24.9% | 51.0% | 34.4% | 24.9% | 19.8% | 16.2% | 8,313 |
+| 114 | [Grumpus](#grumpus) | Cosmic Storm | 24.9% | 47.9% | 33.9% | 24.0% | 18.9% | 18.4% | 8,544 |
+| 115 | [Sadist_Alt](#sadist_alt) | Cosmic Odyssey | 24.9% | 49.3% | 34.8% | 24.8% | 18.8% | 17.0% | 8,336 |
+| 116 | [Grudge](#grudge) | Base Game | 24.9% | 53.2% | 33.7% | 23.6% | 19.3% | 16.3% | 8,369 |
+| 117 | [Vulch](#vulch) | Base Game | 24.9% | 49.3% | 34.3% | 26.1% | 20.9% | 15.1% | 8,330 |
+| 118 | [Poison](#poison) | Cosmic Alliance | 24.9% | 51.7% | 32.7% | 23.7% | 20.5% | 16.7% | 8,427 |
+| 119 | [Ace](#ace) | Cosmic Dominion | 24.9% | 50.1% | 34.9% | 24.8% | 20.1% | 16.0% | 8,278 |
+| 120 | [Extortionist](#extortionist) | Cosmic Alliance | 24.9% | 49.4% | 35.4% | 23.9% | 19.5% | 16.8% | 8,447 |
+| 121 | [Tentacle](#tentacle) | Cosmic Odyssey | 24.9% | 50.4% | 31.8% | 24.5% | 20.4% | 17.2% | 8,593 |
+| 122 | [Inferno](#inferno) | Cosmic Odyssey | 24.9% | 50.6% | 33.7% | 23.4% | 20.7% | 15.7% | 8,237 |
+| 123 | [Schizoid](#schizoid) | Cosmic Alliance | 24.9% | 49.3% | 34.6% | 24.9% | 19.8% | 16.2% | 8,272 |
+| 124 | [Seeker](#seeker) | Cosmic Incursion | 24.9% | 48.3% | 33.3% | 23.3% | 21.6% | 16.5% | 8,341 |
+| 125 | [Aristocrat](#aristocrat) | Cosmic Dominion | 24.9% | 51.3% | 32.1% | 24.6% | 20.1% | 17.1% | 8,289 |
+| 126 | [Sloth](#sloth) | Cosmic Storm | 24.9% | 49.6% | 33.1% | 26.3% | 19.0% | 16.5% | 8,378 |
+| 127 | [Mesmer](#mesmer) | Cosmic Dominion | 24.9% | 50.2% | 32.3% | 24.4% | 20.3% | 16.9% | 8,415 |
+| 128 | [Daredevil_Alt](#daredevil_alt) | Cosmic Odyssey | 24.9% | 51.3% | 32.5% | 24.8% | 20.9% | 15.5% | 8,411 |
+| 129 | [Diplomat](#diplomat) | Cosmic Dominion | 24.9% | 51.0% | 34.2% | 25.4% | 19.2% | 15.9% | 8,476 |
+| 130 | [Quartermaster](#quartermaster) | Cosmic Dominion | 24.9% | 51.6% | 32.2% | 23.7% | 19.6% | 17.3% | 8,497 |
+| 131 | [Schizoid_Alt](#schizoid_alt) | Cosmic Odyssey | 24.9% | 46.4% | 31.6% | 24.3% | 21.8% | 17.0% | 8,421 |
+| 132 | [Mind](#mind) | Base Game | 24.9% | 48.3% | 33.5% | 24.1% | 20.9% | 16.4% | 8,594 |
+| 133 | [Alchemist](#alchemist) | Cosmic Dominion | 24.8% | 47.7% | 31.1% | 26.2% | 18.9% | 17.5% | 8,364 |
+| 134 | [Fodder](#fodder) | Base Game | 24.8% | 50.4% | 34.0% | 24.1% | 20.2% | 16.3% | 8,319 |
+| 135 | [Alien](#alien) | Cosmic Eons | 24.8% | 50.9% | 34.7% | 24.4% | 17.9% | 17.5% | 8,253 |
+| 136 | [Plant](#plant) | Cosmic Incursion | 24.8% | 48.7% | 34.4% | 22.9% | 20.5% | 17.2% | 8,617 |
+| 137 | [Assessor](#assessor) | Cosmic Odyssey | 24.8% | 48.7% | 35.8% | 24.7% | 19.9% | 16.2% | 8,393 |
+| 138 | [Relic](#relic) | Cosmic Conflict | 24.8% | 51.9% | 31.9% | 25.3% | 19.0% | 16.7% | 8,409 |
+| 139 | [Will](#will) | Base Game | 24.8% | 48.9% | 31.5% | 25.0% | 20.7% | 16.1% | 8,245 |
+| 140 | [Zilch](#zilch) | Cosmic Odyssey | 24.8% | 47.1% | 34.1% | 23.8% | 19.8% | 17.1% | 8,307 |
+| 141 | [Perfectionist](#perfectionist) | Cosmic Eons | 24.8% | 49.0% | 32.9% | 25.1% | 20.4% | 16.6% | 8,420 |
+| 142 | [Sting](#sting) | Cosmic Alliance | 24.8% | 49.5% | 32.4% | 24.8% | 20.6% | 15.6% | 8,288 |
+| 143 | [Merchant](#merchant) | Cosmic Incursion | 24.8% | 47.9% | 33.3% | 24.3% | 20.7% | 16.5% | 8,566 |
+| 144 | [Siren](#siren) | Cosmic Conflict | 24.8% | 50.6% | 33.7% | 26.0% | 18.0% | 16.2% | 8,570 |
+| 145 | [Nightmare](#nightmare) | Cosmic Eons | 24.8% | 47.3% | 33.6% | 24.8% | 19.8% | 17.0% | 8,482 |
+| 146 | [PackRat](#packrat) | Cosmic Eons | 24.8% | 50.2% | 33.5% | 24.9% | 19.8% | 16.1% | 8,470 |
+| 147 | [Chronos](#chronos) | Cosmic Incursion | 24.8% | 50.7% | 33.1% | 23.5% | 19.9% | 16.3% | 8,394 |
+| 148 | [Tourist](#tourist) | Cosmic Dominion | 24.7% | 51.2% | 33.5% | 25.1% | 19.7% | 14.9% | 8,561 |
+| 149 | [Decoy](#decoy) | Cosmic Odyssey | 24.7% | 47.9% | 32.2% | 24.7% | 19.3% | 17.9% | 8,417 |
+| 150 | [Host](#host) | Cosmic Dominion | 24.7% | 47.5% | 32.6% | 26.8% | 20.3% | 15.6% | 8,333 |
+| 151 | [Fido](#fido) | Base Game | 24.7% | 49.6% | 31.6% | 25.7% | 19.2% | 17.1% | 8,404 |
+| 152 | [Mimic](#mimic) | Cosmic Conflict | 24.7% | 46.3% | 32.6% | 27.1% | 19.8% | 15.8% | 8,476 |
+| 153 | [Swindler](#swindler) | Cosmic Storm | 24.7% | 52.2% | 32.5% | 24.3% | 17.9% | 17.2% | 8,460 |
+| 154 | [Empath](#empath) | Cosmic Conflict | 24.7% | 49.8% | 31.7% | 26.8% | 19.3% | 16.2% | 8,481 |
+| 155 | [Mirror](#mirror) | Base Game | 24.7% | 50.4% | 32.3% | 24.7% | 20.0% | 16.5% | 8,413 |
+| 156 | [Extractor](#extractor) | Cosmic Odyssey | 24.7% | 48.0% | 35.4% | 24.5% | 19.8% | 15.5% | 8,396 |
+| 157 | [Tide](#tide) | Cosmic Storm | 24.7% | 48.9% | 32.3% | 24.6% | 20.9% | 16.2% | 8,310 |
+| 158 | [Zombie_Alt](#zombie_alt) | Cosmic Odyssey | 24.6% | 47.3% | 32.6% | 24.7% | 20.0% | 16.2% | 8,261 |
+| 159 | [AI](#ai) | Cosmic Eons | 24.6% | 49.1% | 34.5% | 24.2% | 19.1% | 16.5% | 8,331 |
+| 160 | [Hate](#hate) | Base Game | 24.6% | 51.7% | 33.0% | 25.1% | 18.3% | 17.1% | 8,439 |
+| 161 | [Daredevil](#daredevil) | Cosmic Dominion | 24.6% | 49.7% | 32.3% | 25.6% | 18.4% | 17.5% | 8,380 |
+| 162 | [Filch](#filch) | Base Game | 24.6% | 48.4% | 34.2% | 26.9% | 17.6% | 16.3% | 8,369 |
+| 163 | [Pretender](#pretender) | Cosmic Eons | 24.6% | 50.1% | 33.3% | 24.1% | 18.2% | 16.5% | 8,459 |
+| 164 | [Reserve](#reserve) | Base Game | 24.6% | 49.5% | 32.4% | 24.6% | 19.9% | 16.5% | 8,411 |
+| 165 | [Coward](#coward) | Cosmic Eons | 24.6% | 48.5% | 35.1% | 25.0% | 18.9% | 16.1% | 8,162 |
+| 166 | [Shadow](#shadow) | Base Game | 24.6% | 49.0% | 33.1% | 24.0% | 19.7% | 16.4% | 8,337 |
+| 167 | [Ghoul](#ghoul) | Cosmic Incursion | 24.6% | 47.1% | 31.4% | 25.8% | 20.1% | 16.0% | 8,312 |
+| 168 | [Warrior](#warrior) | Base Game | 24.6% | 49.4% | 34.0% | 23.7% | 18.8% | 17.0% | 8,286 |
+| 169 | [Calculator](#calculator) | Base Game | 24.6% | 49.6% | 33.7% | 24.9% | 17.3% | 17.4% | 8,366 |
+| 170 | [Trader](#trader) | Base Game | 24.5% | 51.1% | 33.5% | 23.6% | 19.4% | 16.2% | 8,453 |
+| 171 | [Skeptic](#skeptic) | Cosmic Alliance | 24.5% | 51.8% | 31.6% | 24.3% | 18.9% | 16.5% | 8,434 |
+| 172 | [Maven](#maven) | Cosmic Eons | 24.5% | 47.5% | 33.2% | 25.3% | 19.7% | 15.5% | 8,424 |
+| 173 | [Sapient](#sapient) | Cosmic Alliance | 24.5% | 48.4% | 31.8% | 26.5% | 18.1% | 17.0% | 8,349 |
+| 174 | [Converter](#converter) | Cosmic Storm | 24.5% | 47.6% | 31.4% | 24.5% | 20.5% | 17.0% | 8,401 |
+| 175 | [Force](#force) | Cosmic Odyssey | 24.5% | 48.2% | 32.7% | 24.8% | 18.6% | 17.4% | 8,502 |
+| 176 | [Zombie](#zombie) | Base Game | 24.5% | 46.8% | 32.3% | 24.4% | 20.2% | 17.3% | 8,271 |
+| 177 | [Lunatic](#lunatic) | Cosmic Conflict | 24.5% | 48.6% | 32.5% | 23.2% | 20.0% | 16.6% | 8,313 |
+| 178 | [Barbarian](#barbarian) | Base Game | 24.5% | 47.4% | 32.6% | 23.8% | 21.0% | 16.5% | 8,425 |
+| 179 | [Clone](#clone) | Base Game | 24.5% | 46.4% | 34.1% | 24.1% | 20.1% | 16.7% | 8,193 |
+| 180 | [Void_Alt](#void_alt) | Cosmic Odyssey | 24.5% | 48.2% | 32.7% | 24.6% | 19.9% | 16.2% | 8,549 |
+| 181 | [Delegator](#delegator) | Cosmic Odyssey | 24.5% | 50.6% | 32.6% | 24.9% | 19.3% | 15.8% | 8,542 |
+| 182 | [Perfectionist_Alt](#perfectionist_alt) | Cosmic Odyssey | 24.5% | 47.8% | 32.8% | 25.2% | 19.5% | 16.1% | 8,354 |
+| 183 | [Booster](#booster) | Promo | 24.5% | 48.9% | 32.9% | 24.8% | 18.0% | 17.5% | 8,295 |
+| 184 | [Human](#human) | Base Game | 24.5% | 49.1% | 34.6% | 23.8% | 19.9% | 15.9% | 8,430 |
+| 185 | [Fury](#fury) | Cosmic Incursion | 24.5% | 49.9% | 34.0% | 24.2% | 19.2% | 15.6% | 8,413 |
+| 186 | [Remote](#remote) | Cosmic Alliance | 24.4% | 47.0% | 30.7% | 24.6% | 20.6% | 17.0% | 8,356 |
+| 187 | [Masochist](#masochist) | Base Game | 24.4% | 48.1% | 35.0% | 24.8% | 19.5% | 15.5% | 8,459 |
+| 188 | [Visionary](#visionary) | Cosmic Conflict | 24.4% | 48.4% | 33.8% | 22.9% | 21.6% | 14.9% | 8,321 |
+| 189 | [Tick-Tock](#tick-tock) | Base Game | 24.4% | 48.8% | 33.0% | 23.1% | 20.6% | 15.9% | 8,424 |
+| 190 | [Bride](#bride) | Cosmic Dominion | 24.4% | 47.9% | 33.3% | 25.6% | 19.7% | 15.4% | 8,331 |
+| 191 | [Demon_Alt](#demon_alt) | Cosmic Odyssey | 24.4% | 47.4% | 32.0% | 25.2% | 20.0% | 16.1% | 8,460 |
+| 192 | [Vector](#vector) | Cosmic Odyssey | 24.4% | 47.7% | 34.1% | 24.5% | 19.4% | 16.0% | 8,427 |
+| 193 | [Glutton](#glutton) | Cosmic Conflict | 24.4% | 50.4% | 34.6% | 24.8% | 19.3% | 15.3% | 8,544 |
+| 194 | [Multitude](#multitude) | Cosmic Eons | 24.4% | 47.8% | 31.5% | 25.1% | 18.3% | 17.3% | 8,581 |
+| 195 | [Explorer](#explorer) | Cosmic Dominion | 24.4% | 50.6% | 33.5% | 24.6% | 19.6% | 15.5% | 8,537 |
+| 196 | [Coordinator](#coordinator) | Cosmic Storm | 24.4% | 48.4% | 32.9% | 24.2% | 18.7% | 16.3% | 8,597 |
+| 197 | [Bubble](#bubble) | Cosmic Odyssey | 24.4% | 49.8% | 32.7% | 22.8% | 20.6% | 16.3% | 8,275 |
+| 198 | [Cosmos](#cosmos) | Cosmic Odyssey | 24.3% | 48.5% | 33.1% | 25.7% | 18.1% | 16.0% | 8,369 |
+| 199 | [Crystal](#crystal) | Cosmic Alliance | 24.3% | 48.2% | 32.8% | 22.3% | 20.4% | 16.5% | 8,468 |
+| 200 | [Peddler](#peddler) | Cosmic Eons | 24.3% | 47.3% | 33.3% | 25.5% | 19.1% | 15.3% | 8,383 |
+| 201 | [Hypochondriac](#hypochondriac) | Cosmic Eons | 24.3% | 49.2% | 33.6% | 24.2% | 19.6% | 15.8% | 8,375 |
+| 202 | [Throwback](#throwback) | Cosmic Odyssey | 24.3% | 50.4% | 30.6% | 25.6% | 18.6% | 16.8% | 8,445 |
+| 203 | [Magnet](#magnet) | Cosmic Odyssey | 24.3% | 47.5% | 33.2% | 25.4% | 18.6% | 15.8% | 8,400 |
+| 204 | [Doppelganger](#doppelganger) | Cosmic Dominion | 24.3% | 50.2% | 31.7% | 24.1% | 19.1% | 15.8% | 8,428 |
+| 205 | [Mercenary](#mercenary) | Cosmic Incursion | 24.3% | 47.1% | 30.5% | 26.5% | 19.6% | 15.9% | 8,473 |
+| 206 | [Butler](#butler) | Cosmic Alliance | 24.3% | 48.7% | 34.3% | 22.9% | 19.8% | 16.3% | 8,362 |
+| 207 | [Klutz](#klutz) | Cosmic Eons | 24.2% | 49.8% | 31.4% | 25.0% | 18.7% | 16.5% | 8,508 |
+| 208 | [Insect](#insect) | Cosmic Odyssey | 24.2% | 49.7% | 32.8% | 24.1% | 18.5% | 15.6% | 8,429 |
+| 209 | [Silencer](#silencer) | Cosmic Odyssey | 24.2% | 50.1% | 33.3% | 24.1% | 19.2% | 15.6% | 8,451 |
+| 210 | [General](#general) | Cosmic Alliance | 24.1% | 50.0% | 32.7% | 24.6% | 19.0% | 14.7% | 8,459 |
+| 211 | [Pickpocket](#pickpocket) | Cosmic Dominion | 24.1% | 48.1% | 30.4% | 24.9% | 19.2% | 16.5% | 8,359 |
+| 212 | [Prophet](#prophet) | Cosmic Conflict | 24.1% | 49.7% | 30.0% | 24.9% | 19.0% | 16.2% | 8,438 |
+| 213 | [Aura](#aura) | Cosmic Odyssey | 24.1% | 48.2% | 32.2% | 25.4% | 18.2% | 15.9% | 8,506 |
+| 214 | [Love](#love) | Cosmic Dominion | 24.1% | 46.4% | 32.7% | 25.1% | 19.0% | 16.0% | 8,664 |
+| 215 | [Bully](#bully) | Cosmic Incursion | 24.1% | 48.0% | 31.5% | 25.0% | 19.6% | 15.7% | 8,451 |
+| 216 | [Guardian](#guardian) | Cosmic Odyssey | 24.0% | 49.8% | 31.8% | 24.0% | 20.3% | 14.7% | 8,414 |
+| 217 | [Sniveler](#sniveler) | Cosmic Incursion | 24.0% | 46.6% | 33.4% | 22.8% | 20.5% | 15.6% | 8,366 |
+| 218 | [Pirate](#pirate) | Cosmic Dominion | 24.0% | 47.8% | 31.0% | 24.1% | 20.0% | 15.9% | 8,479 |
+| 219 | [Whirligig](#whirligig) | Cosmic Dominion | 24.0% | 47.7% | 30.5% | 23.9% | 19.7% | 17.0% | 8,314 |
+| 220 | [Cudgel](#cudgel) | Base Game | 24.0% | 46.5% | 29.6% | 25.3% | 20.1% | 16.4% | 8,393 |
+| 221 | [Philanthropist](#philanthropist) | Base Game | 24.0% | 46.8% | 32.1% | 25.8% | 18.5% | 15.7% | 8,574 |
+| 222 | [Demon](#demon) | Promo | 24.0% | 48.4% | 34.2% | 23.8% | 19.5% | 15.2% | 8,262 |
+| 223 | [Worm](#worm) | Cosmic Storm | 24.0% | 50.7% | 31.6% | 25.0% | 19.5% | 15.0% | 8,407 |
+| 224 | [Phantasm](#phantasm) | Cosmic Storm | 24.0% | 48.0% | 33.0% | 23.0% | 19.6% | 15.7% | 8,255 |
+| 225 | [Geek](#geek) | Cosmic Odyssey | 23.9% | 46.5% | 32.1% | 23.6% | 18.9% | 16.5% | 8,397 |
+| 226 | [Lloyd](#lloyd) | Cosmic Odyssey | 23.9% | 49.6% | 29.9% | 23.6% | 20.2% | 15.7% | 8,318 |
+| 227 | [Spiff](#spiff) | Base Game | 23.9% | 48.8% | 32.6% | 23.0% | 18.3% | 16.0% | 8,360 |
+| 228 | [Sneak](#sneak) | Cosmic Storm | 23.9% | 52.9% | 32.6% | 23.7% | 19.3% | 15.0% | 8,398 |
+| 229 | [Changeling](#changeling) | Cosmic Conflict | 23.9% | 51.6% | 30.4% | 23.7% | 18.8% | 16.0% | 8,460 |
+| 230 | [Joker](#joker) | Cosmic Dominion | 23.9% | 48.3% | 32.9% | 23.5% | 18.5% | 16.0% | 8,303 |
+| 231 | [Vox](#vox) | Cosmic Storm | 23.8% | 47.5% | 32.7% | 25.2% | 18.8% | 14.5% | 8,406 |
+| 232 | [Mouth](#mouth) | Cosmic Storm | 23.8% | 45.7% | 33.2% | 23.8% | 19.5% | 16.1% | 8,413 |
+| 233 | [Tripler](#tripler) | Base Game | 23.3% | 45.0% | 33.3% | 25.3% | 18.3% | 13.9% | 8,382 |
+| 234 | [Scavenger](#scavenger) | Cosmic Storm | 23.3% | 44.4% | 30.3% | 25.3% | 18.9% | 15.8% | 8,539 |
+| 235 | [Kamikaze](#kamikaze) | Base Game | 22.6% | 48.6% | 30.4% | 21.3% | 18.6% | 14.9% | 8,412 |
+| 236 | [Loser](#loser) | Base Game | 22.0% | 51.6% | 29.3% | 25.5% | 17.4% | 9.5% | 8,485 |
+| 237 | [Antimatter](#antimatter) | Base Game | 22.0% | 49.9% | 33.3% | 27.1% | 17.1% | 8.3% | 8,413 |
+| 238 | [Graviton](#graviton) | Cosmic Conflict | 13.4% | 19.8% | 18.4% | 17.2% | 11.3% | 8.0% | 8,555 |
 
 ---
 
@@ -277,13 +277,13 @@
 **Power:** Power of Continuity - May have extra encounters
 
 **Statistics:**
-- Overall Win Rate: 57.7%
-- Total Games: 848
-- 2P: 81.0% (64/79)
-- 3P: 77.0% (94/122)
-- 4P: 54.9% (106/193)
-- 5P: 55.8% (115/206)
-- 6P: 44.4% (110/248)
+- Overall Win Rate: 56.5%
+- Total Games: 8,289
+- 2P: 72.7% (583/802)
+- 3P: 66.6% (832/1249)
+- 4P: 62.1% (1047/1686)
+- 5P: 53.3% (1077/2020)
+- 6P: 45.3% (1146/2532)
 
 ### Parasite
 
@@ -292,43 +292,13 @@
 **Power:** Power to Infest - May join either side uninvited
 
 **Statistics:**
-- Overall Win Rate: 45.2%
-- Total Games: 897
-- 2P: 42.4% (39/92)
-- 3P: 39.7% (52/131)
-- 4P: 50.0% (92/184)
-- 5P: 48.9% (114/233)
-- 6P: 42.0% (108/257)
-
-### Warpish
-
-**Set:** Base Game
-
-**Power:** Power of Warp Speed - Uses ships in warp for encounters
-
-**Statistics:**
-- Overall Win Rate: 37.5%
-- Total Games: 816
-- 2P: 72.7% (64/88)
-- 3P: 59.0% (62/105)
-- 4P: 38.5% (62/161)
-- 5P: 31.0% (65/210)
-- 6P: 21.0% (53/252)
-
-### Symbiote
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Bonding - Shares colonies with another player
-
-**Statistics:**
-- Overall Win Rate: 36.5%
-- Total Games: 850
-- 2P: 83.3% (65/78)
-- 3P: 47.7% (53/111)
-- 4P: 40.9% (76/186)
-- 5P: 30.7% (69/225)
-- 6P: 18.8% (47/250)
+- Overall Win Rate: 46.1%
+- Total Games: 8,547
+- 2P: 49.0% (445/908)
+- 3P: 45.9% (591/1287)
+- 4P: 48.3% (819/1694)
+- 5P: 46.5% (1021/2197)
+- 6P: 43.1% (1060/2461)
 
 ### Pacifist
 
@@ -337,28 +307,13 @@
 **Power:** Power of Peace - Wins if both sides play negotiate
 
 **Statistics:**
-- Overall Win Rate: 35.0%
-- Total Games: 831
-- 2P: 79.3% (69/87)
-- 3P: 56.1% (64/114)
-- 4P: 37.4% (68/182)
-- 5P: 26.6% (55/207)
-- 6P: 14.5% (35/241)
-
-### Calculator
-
-**Set:** Base Game
-
-**Power:** Power to Calculate - Announces encounter total before cards played
-
-**Statistics:**
-- Overall Win Rate: 34.6%
-- Total Games: 850
-- 2P: 68.8% (55/80)
-- 3P: 56.6% (73/129)
-- 4P: 32.0% (58/181)
-- 5P: 21.1% (44/209)
-- 6P: 25.5% (64/251)
+- Overall Win Rate: 34.3%
+- Total Games: 8,464
+- 2P: 73.7% (644/874)
+- 3P: 53.6% (681/1271)
+- 4P: 36.0% (603/1677)
+- 5P: 24.2% (511/2111)
+- 6P: 18.4% (466/2531)
 
 ### Neighbor
 
@@ -367,103 +322,13 @@
 **Power:** Power of Proximity - Benefits from adjacent players
 
 **Statistics:**
-- Overall Win Rate: 33.8%
-- Total Games: 838
-- 2P: 75.0% (57/76)
-- 3P: 53.1% (68/128)
-- 4P: 36.2% (59/163)
-- 5P: 19.8% (39/197)
-- 6P: 21.9% (60/274)
-
-### Tripler
-
-**Set:** Base Game
-
-**Power:** Power to Triple - Encounter card value tripled
-
-**Statistics:**
-- Overall Win Rate: 33.7%
-- Total Games: 864
-- 2P: 69.1% (65/94)
-- 3P: 42.8% (62/145)
-- 4P: 30.6% (45/147)
-- 5P: 26.3% (54/205)
-- 6P: 23.8% (65/273)
-
-### Macron
-
-**Set:** Base Game
-
-**Power:** Power of Mass - Ships worth 4 each instead of 1
-
-**Statistics:**
-- Overall Win Rate: 33.1%
-- Total Games: 849
-- 2P: 74.1% (60/81)
-- 3P: 52.7% (69/131)
-- 4P: 31.2% (53/170)
-- 5P: 23.0% (48/209)
-- 6P: 19.8% (51/258)
-
-### Trader
-
-**Set:** Base Game
-
-**Power:** Power to Trade - May swap hands with any player
-
-**Statistics:**
-- Overall Win Rate: 32.7%
-- Total Games: 846
-- 2P: 76.9% (70/91)
-- 3P: 38.4% (53/138)
-- 4P: 28.6% (52/182)
-- 5P: 26.1% (53/203)
-- 6P: 21.1% (49/232)
-
-### Sheriff
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Enforce - Punishes rule violations
-
-**Statistics:**
-- Overall Win Rate: 31.8%
-- Total Games: 773
-- 2P: 69.9% (58/83)
-- 3P: 46.8% (51/109)
-- 4P: 34.2% (54/158)
-- 5P: 20.9% (44/211)
-- 6P: 18.4% (39/212)
-
-### Bulwark
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Defend - Strong defensive capabilities
-
-**Statistics:**
-- Overall Win Rate: 31.5%
-- Total Games: 821
-- 2P: 75.6% (62/82)
-- 3P: 43.5% (50/115)
-- 4P: 30.0% (51/170)
-- 5P: 22.4% (48/214)
-- 6P: 20.0% (48/240)
-
-### Virus
-
-**Set:** Base Game
-
-**Power:** Power to Multiply - Multiplies card value by ships instead of adding
-
-**Statistics:**
-- Overall Win Rate: 31.1%
-- Total Games: 877
-- 2P: 68.4% (65/95)
-- 3P: 43.4% (63/145)
-- 4P: 29.6% (56/189)
-- 5P: 20.5% (42/205)
-- 6P: 19.3% (47/243)
+- Overall Win Rate: 34.0%
+- Total Games: 8,427
+- 2P: 73.5% (613/834)
+- 3P: 50.2% (634/1264)
+- 4P: 31.5% (530/1680)
+- 5P: 25.3% (513/2024)
+- 6P: 21.8% (573/2625)
 
 ### Dervish
 
@@ -472,13 +337,13 @@
 **Power:** Power to Spin - Confuses with rapid movement
 
 **Statistics:**
-- Overall Win Rate: 31.1%
-- Total Games: 813
-- 2P: 81.2% (65/80)
-- 3P: 51.5% (52/101)
-- 4P: 32.1% (52/162)
-- 5P: 18.5% (39/211)
-- 6P: 17.4% (45/259)
+- Overall Win Rate: 33.0%
+- Total Games: 8,399
+- 2P: 76.8% (657/855)
+- 3P: 49.1% (610/1242)
+- 4P: 33.3% (564/1694)
+- 5P: 22.6% (466/2062)
+- 6P: 18.5% (472/2546)
 
 ### Disease
 
@@ -487,43 +352,28 @@
 **Power:** Power of Contagion - Spreads tokens that weaken opponents
 
 **Statistics:**
-- Overall Win Rate: 30.9%
-- Total Games: 847
-- 2P: 57.5% (42/73)
-- 3P: 47.5% (66/139)
-- 4P: 34.2% (53/155)
-- 5P: 20.2% (43/213)
-- 6P: 21.7% (58/267)
+- Overall Win Rate: 31.6%
+- Total Games: 8,252
+- 2P: 49.5% (431/870)
+- 3P: 42.9% (523/1219)
+- 4P: 32.3% (537/1660)
+- 5P: 26.2% (528/2013)
+- 6P: 23.5% (585/2490)
 
-### Vector
+### Dragon
 
 **Set:** Cosmic Odyssey
 
-**Power:** Power of Direction - Controls movement
+**Power:** Power to Devastate - Powerful destruction
 
 **Statistics:**
-- Overall Win Rate: 30.6%
-- Total Games: 821
-- 2P: 49.3% (33/67)
-- 3P: 43.4% (63/145)
-- 4P: 34.2% (55/161)
-- 5P: 24.1% (49/203)
-- 6P: 20.8% (51/245)
-
-### Shadow
-
-**Set:** Base Game
-
-**Power:** Power to Shadow - May join winning side after cards revealed
-
-**Statistics:**
-- Overall Win Rate: 30.5%
-- Total Games: 911
-- 2P: 56.2% (45/80)
-- 3P: 48.6% (68/140)
-- 4P: 34.3% (59/172)
-- 5P: 21.7% (48/221)
-- 6P: 19.5% (58/298)
+- Overall Win Rate: 31.5%
+- Total Games: 8,268
+- 2P: 69.0% (566/820)
+- 3P: 46.8% (592/1264)
+- 4P: 29.9% (488/1632)
+- 5P: 22.5% (459/2044)
+- 6P: 19.8% (496/2508)
 
 ### Industrialist
 
@@ -532,103 +382,13 @@
 **Power:** Power to Build - Creates colony tokens
 
 **Statistics:**
-- Overall Win Rate: 30.1%
-- Total Games: 805
-- 2P: 68.8% (55/80)
-- 3P: 42.9% (51/119)
-- 4P: 26.3% (36/137)
-- 5P: 22.0% (48/218)
-- 6P: 20.7% (52/251)
-
-### Warrior
-
-**Set:** Base Game
-
-**Power:** Power of Bonus - Gets +1 for each ship in warp
-
-**Statistics:**
-- Overall Win Rate: 30.0%
-- Total Games: 852
-- 2P: 62.5% (45/72)
-- 3P: 43.9% (65/148)
-- 4P: 33.7% (58/172)
-- 5P: 26.6% (54/203)
-- 6P: 13.2% (34/257)
-
-### Cyborg
-
-**Set:** Cosmic Alliance
-
-**Power:** Power of Bionics - Enhanced mechanical abilities
-
-**Statistics:**
-- Overall Win Rate: 29.6%
-- Total Games: 857
-- 2P: 63.5% (54/85)
-- 3P: 39.7% (48/121)
-- 4P: 34.9% (59/169)
-- 5P: 19.6% (44/224)
-- 6P: 19.0% (49/258)
-
-### Aristocrat
-
-**Set:** Cosmic Dominion
-
-**Power:** Power of Nobility - Superior status benefits
-
-**Statistics:**
-- Overall Win Rate: 29.6%
-- Total Games: 868
-- 2P: 46.5% (40/86)
-- 3P: 45.8% (54/118)
-- 4P: 31.0% (52/168)
-- 5P: 26.3% (62/236)
-- 6P: 18.8% (49/260)
-
-### Merchant
-
-**Set:** Cosmic Incursion
-
-**Power:** Power to Hire - Buys ships and cards
-
-**Statistics:**
-- Overall Win Rate: 29.5%
-- Total Games: 850
-- 2P: 60.2% (53/88)
-- 3P: 37.1% (43/116)
-- 4P: 29.1% (53/182)
-- 5P: 28.4% (55/194)
-- 6P: 17.4% (47/270)
-
-### Ace
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Triumph - Exceptional at winning
-
-**Statistics:**
-- Overall Win Rate: 29.3%
-- Total Games: 822
-- 2P: 67.1% (53/79)
-- 3P: 44.5% (49/110)
-- 4P: 28.5% (45/158)
-- 5P: 16.8% (36/214)
-- 6P: 22.2% (58/261)
-
-### Human
-
-**Set:** Base Game
-
-**Power:** Power of Humanity - Gets +4 combat bonus
-
-**Statistics:**
-- Overall Win Rate: 29.0%
-- Total Games: 820
-- 2P: 60.9% (56/92)
-- 3P: 50.8% (60/118)
-- 4P: 30.2% (45/149)
-- 5P: 16.9% (33/195)
-- 6P: 16.5% (44/266)
+- Overall Win Rate: 31.1%
+- Total Games: 8,432
+- 2P: 67.0% (540/806)
+- 3P: 47.2% (593/1257)
+- 4P: 30.1% (522/1732)
+- 5P: 23.5% (506/2152)
+- 6P: 18.6% (461/2485)
 
 ### Winner
 
@@ -637,28 +397,41 @@
 **Power:** Power to Win - Wins ties and close encounters
 
 **Statistics:**
-- Overall Win Rate: 28.7%
-- Total Games: 940
-- 2P: 64.0% (57/89)
-- 3P: 31.0% (40/129)
-- 4P: 28.9% (61/211)
-- 5P: 24.1% (58/241)
-- 6P: 20.0% (54/270)
+- Overall Win Rate: 30.0%
+- Total Games: 8,334
+- 2P: 61.4% (521/848)
+- 3P: 42.2% (535/1268)
+- 4P: 30.0% (517/1724)
+- 5P: 22.8% (459/2015)
+- 6P: 18.9% (468/2479)
 
-### Lightning
+### Locust_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 29.5%
+- Total Games: 8,271
+- 2P: 63.6% (524/824)
+- 3P: 40.7% (518/1274)
+- 4P: 30.7% (506/1648)
+- 5P: 22.5% (461/2048)
+- 6P: 17.5% (434/2477)
+
+### Pygmy
 
 **Set:** Cosmic Alliance
 
-**Power:** Power to Strike - Fast, unexpected attacks
+**Power:** Power of Smallness - Small but numerous
 
 **Statistics:**
-- Overall Win Rate: 28.7%
-- Total Games: 840
-- 2P: 55.4% (46/83)
-- 3P: 44.4% (63/142)
-- 4P: 32.7% (56/171)
-- 5P: 16.3% (32/196)
-- 6P: 17.7% (44/248)
+- Overall Win Rate: 29.4%
+- Total Games: 8,294
+- 2P: 62.8% (516/822)
+- 3P: 42.3% (538/1273)
+- 4P: 27.1% (452/1670)
+- 5P: 23.2% (490/2108)
+- 6P: 18.1% (439/2421)
 
 ### Usurper
 
@@ -667,13 +440,28 @@
 **Power:** Power to Overthrow - Takes others' positions
 
 **Statistics:**
-- Overall Win Rate: 28.6%
-- Total Games: 857
-- 2P: 62.9% (44/70)
-- 3P: 30.5% (46/151)
-- 4P: 30.5% (54/177)
-- 5P: 24.1% (52/216)
-- 6P: 20.2% (49/243)
+- Overall Win Rate: 29.0%
+- Total Games: 8,375
+- 2P: 57.5% (473/822)
+- 3P: 41.4% (543/1312)
+- 4P: 28.7% (471/1640)
+- 5P: 22.6% (465/2058)
+- 6P: 18.8% (477/2543)
+
+### Mutant
+
+**Set:** Base Game
+
+**Power:** Power to Mutate - May draw new hand anytime
+
+**Statistics:**
+- Overall Win Rate: 28.9%
+- Total Games: 8,602
+- 2P: 58.3% (476/817)
+- 3P: 40.6% (533/1313)
+- 4P: 30.3% (511/1689)
+- 5P: 21.8% (483/2215)
+- 6P: 18.8% (482/2568)
 
 ### Tortoise
 
@@ -683,87 +471,12 @@
 
 **Statistics:**
 - Overall Win Rate: 28.3%
-- Total Games: 847
-- 2P: 63.0% (51/81)
-- 3P: 37.1% (43/116)
-- 4P: 26.7% (43/161)
-- 5P: 22.2% (50/225)
-- 6P: 20.1% (53/264)
-
-### Tyrant
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Oppress - Controls other players
-
-**Statistics:**
-- Overall Win Rate: 27.9%
-- Total Games: 832
-- 2P: 55.4% (51/92)
-- 3P: 33.3% (39/117)
-- 4P: 31.4% (61/194)
-- 5P: 19.2% (39/203)
-- 6P: 18.6% (42/226)
-
-### Mouth
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Talk - Convinces others through speech
-
-**Statistics:**
-- Overall Win Rate: 27.9%
-- Total Games: 836
-- 2P: 45.7% (37/81)
-- 3P: 39.1% (54/138)
-- 4P: 29.4% (45/153)
-- 5P: 23.3% (47/202)
-- 6P: 19.1% (50/262)
-
-### Sloth
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Delay - Slows down game pace
-
-**Statistics:**
-- Overall Win Rate: 27.6%
-- Total Games: 868
-- 2P: 61.2% (52/85)
-- 3P: 30.0% (39/130)
-- 4P: 33.3% (51/153)
-- 5P: 23.1% (51/221)
-- 6P: 16.8% (47/279)
-
-### Pygmy
-
-**Set:** Cosmic Alliance
-
-**Power:** Power of Smallness - Small but numerous
-
-**Statistics:**
-- Overall Win Rate: 27.6%
-- Total Games: 840
-- 2P: 67.1% (53/79)
-- 3P: 42.5% (45/106)
-- 4P: 28.8% (45/156)
-- 5P: 20.6% (42/204)
-- 6P: 15.9% (47/295)
-
-### Guardian
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Guard - Protects assets
-
-**Statistics:**
-- Overall Win Rate: 27.5%
-- Total Games: 886
-- 2P: 55.1% (49/89)
-- 3P: 34.1% (43/126)
-- 4P: 24.0% (43/179)
-- 5P: 20.6% (43/209)
-- 6P: 23.3% (66/283)
+- Total Games: 8,348
+- 2P: 55.8% (453/812)
+- 3P: 40.8% (516/1265)
+- 4P: 28.5% (472/1654)
+- 5P: 22.2% (470/2117)
+- 6P: 18.0% (449/2500)
 
 ### Arcade
 
@@ -772,504 +485,116 @@
 **Power:** Power to Play - Uses mini-game mechanics
 
 **Statistics:**
-- Overall Win Rate: 27.5%
-- Total Games: 855
-- 2P: 50.0% (43/86)
-- 3P: 38.7% (46/119)
-- 4P: 27.9% (55/197)
-- 5P: 23.2% (48/207)
-- 6P: 17.5% (43/246)
+- Overall Win Rate: 27.9%
+- Total Games: 8,471
+- 2P: 53.4% (458/857)
+- 3P: 39.9% (541/1356)
+- 4P: 27.8% (450/1621)
+- 5P: 20.9% (441/2114)
+- 6P: 18.9% (476/2523)
 
-### Guerrilla
+### Bulwark
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Defend - Strong defensive capabilities
+
+**Statistics:**
+- Overall Win Rate: 27.8%
+- Total Games: 8,453
+- 2P: 60.0% (512/854)
+- 3P: 39.4% (504/1279)
+- 4P: 27.8% (457/1642)
+- 5P: 21.0% (441/2105)
+- 6P: 17.1% (439/2573)
+
+### Symbiote
 
 **Set:** Cosmic Incursion
 
-**Power:** Power of Attrition - Slowly erodes opponent's forces
+**Power:** Power of Bonding - Shares colonies with another player
 
 **Statistics:**
-- Overall Win Rate: 27.4%
-- Total Games: 831
-- 2P: 53.0% (44/83)
-- 3P: 40.4% (57/141)
-- 4P: 33.1% (52/157)
-- 5P: 18.7% (39/209)
-- 6P: 14.9% (36/241)
-
-### Negator
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Negate - Cancels effects
-
-**Statistics:**
-- Overall Win Rate: 27.4%
-- Total Games: 821
-- 2P: 49.3% (36/73)
-- 3P: 38.5% (45/117)
-- 4P: 32.3% (53/164)
-- 5P: 24.4% (55/225)
-- 6P: 14.9% (36/242)
-
-### Tentacle
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Grasp - Grabs multiple things
-
-**Statistics:**
-- Overall Win Rate: 27.3%
-- Total Games: 855
-- 2P: 42.4% (39/92)
-- 3P: 35.5% (50/141)
-- 4P: 30.1% (47/156)
-- 5P: 23.3% (49/210)
-- 6P: 18.8% (48/256)
-
-### Siren
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Lure - Draws ships to bad situations
-
-**Statistics:**
-- Overall Win Rate: 27.2%
-- Total Games: 815
-- 2P: 45.8% (38/83)
-- 3P: 31.5% (40/127)
-- 4P: 30.6% (48/157)
-- 5P: 20.7% (44/213)
-- 6P: 22.1% (52/235)
-
-### Vacuum
-
-**Set:** Base Game
-
-**Power:** Power to Suck In - Takes losing ships prisoner
-
-**Statistics:**
-- Overall Win Rate: 27.2%
-- Total Games: 863
-- 2P: 54.5% (48/88)
-- 3P: 41.9% (52/124)
-- 4P: 28.5% (51/179)
-- 5P: 19.8% (41/207)
-- 6P: 16.2% (43/265)
-
-### Chrysalis
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Emerge - Transforms during game
-
-**Statistics:**
-- Overall Win Rate: 27.2%
-- Total Games: 841
-- 2P: 58.5% (48/82)
-- 3P: 38.5% (55/143)
-- 4P: 22.2% (39/176)
-- 5P: 23.3% (50/215)
-- 6P: 16.4% (37/225)
-
-### Mutant
-
-**Set:** Base Game
-
-**Power:** Power to Mutate - May draw new hand anytime
-
-**Statistics:**
-- Overall Win Rate: 27.2%
-- Total Games: 883
-- 2P: 56.1% (37/66)
-- 3P: 36.7% (51/139)
-- 4P: 26.3% (49/186)
-- 5P: 21.6% (48/222)
-- 6P: 20.4% (55/270)
-
-### Converter
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Convert - Changes card types
-
-**Statistics:**
-- Overall Win Rate: 27.0%
-- Total Games: 803
-- 2P: 50.0% (44/88)
-- 3P: 31.1% (38/122)
-- 4P: 31.2% (50/160)
-- 5P: 22.9% (43/188)
-- 6P: 17.1% (42/245)
-
-### Silencer
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Quiet - Stops powers/effects
-
-**Statistics:**
-- Overall Win Rate: 26.9%
-- Total Games: 828
-- 2P: 50.0% (55/110)
-- 3P: 40.7% (50/123)
-- 4P: 20.2% (26/129)
-- 5P: 21.2% (44/208)
-- 6P: 18.6% (48/258)
-
-### Phantasm
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Haunt - Ghostly presence affects play
-
-**Statistics:**
-- Overall Win Rate: 26.9%
-- Total Games: 856
-- 2P: 56.7% (55/97)
-- 3P: 36.7% (40/109)
-- 4P: 21.6% (42/194)
-- 5P: 23.3% (51/219)
-- 6P: 17.7% (42/237)
-
-### Phantom
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Phase - Intangible presence
-
-**Statistics:**
-- Overall Win Rate: 26.9%
-- Total Games: 793
-- 2P: 54.8% (46/84)
-- 3P: 31.5% (34/108)
-- 4P: 30.9% (51/165)
-- 5P: 20.9% (47/225)
-- 6P: 16.6% (35/211)
-
-### Multitude
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Many - Represents multiple beings
-
-**Statistics:**
-- Overall Win Rate: 26.8%
-- Total Games: 838
-- 2P: 44.3% (43/97)
-- 3P: 34.9% (45/129)
-- 4P: 25.7% (46/179)
-- 5P: 24.9% (50/201)
-- 6P: 17.7% (41/232)
-
-### Cudgel
-
-**Set:** Base Game
-
-**Power:** Power to Stun - Forces opponent to play lowest encounter card
-
-**Statistics:**
-- Overall Win Rate: 26.8%
-- Total Games: 828
-- 2P: 55.4% (56/101)
-- 3P: 37.8% (42/111)
-- 4P: 24.9% (42/169)
-- 5P: 18.4% (41/223)
-- 6P: 18.3% (41/224)
-
-### Muckraker
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Expose - Reveals hidden information
-
-**Statistics:**
-- Overall Win Rate: 26.8%
-- Total Games: 821
-- 2P: 36.8% (28/76)
-- 3P: 34.4% (45/131)
-- 4P: 26.1% (46/176)
-- 5P: 24.3% (43/177)
-- 6P: 22.2% (58/261)
-
-### Masochist
-
-**Set:** Base Game
-
-**Power:** Power to Enjoy Pain - Benefits from losing ships
-
-**Statistics:**
-- Overall Win Rate: 26.7%
-- Total Games: 857
-- 2P: 47.0% (39/83)
-- 3P: 31.2% (39/125)
-- 4P: 31.7% (51/161)
-- 5P: 23.0% (53/230)
-- 6P: 18.2% (47/258)
-
-### Hate
-
-**Set:** Base Game
-
-**Power:** Power of Vengeance - Gets stronger against players who attacked them
-
-**Statistics:**
-- Overall Win Rate: 26.6%
-- Total Games: 867
-- 2P: 49.4% (44/89)
-- 3P: 31.2% (43/138)
-- 4P: 31.6% (50/158)
-- 5P: 21.3% (43/202)
-- 6P: 18.2% (51/280)
-
-### Laser
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Focus - Concentrated attacks
-
-**Statistics:**
-- Overall Win Rate: 26.6%
-- Total Games: 804
-- 2P: 59.4% (57/96)
-- 3P: 34.9% (44/126)
-- 4P: 19.5% (32/164)
-- 5P: 20.2% (35/173)
-- 6P: 18.8% (46/245)
-
-### Outlaw
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Break Rules - Ignores certain restrictions
-
-**Statistics:**
-- Overall Win Rate: 26.6%
-- Total Games: 885
-- 2P: 52.7% (49/93)
-- 3P: 32.5% (41/126)
-- 4P: 26.2% (43/164)
-- 5P: 21.1% (51/242)
-- 6P: 19.6% (51/260)
-
-### Filth
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Reek - Opponents disgusted and weakened
-
-**Statistics:**
-- Overall Win Rate: 26.5%
-- Total Games: 868
-- 2P: 51.4% (38/74)
-- 3P: 43.7% (52/119)
-- 4P: 24.8% (39/157)
-- 5P: 23.1% (51/221)
-- 6P: 16.8% (50/297)
-
-### Relic
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Antiquity - Uses ancient artifacts
-
-**Statistics:**
-- Overall Win Rate: 26.5%
-- Total Games: 857
-- 2P: 49.5% (47/95)
-- 3P: 27.3% (33/121)
-- 4P: 28.3% (41/145)
-- 5P: 26.5% (62/234)
-- 6P: 16.8% (44/262)
-
-### Tide
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Ebb and Flow - Power varies cyclically
-
-**Statistics:**
-- Overall Win Rate: 26.5%
-- Total Games: 854
-- 2P: 55.6% (50/90)
-- 3P: 38.5% (45/117)
-- 4P: 25.9% (43/166)
-- 5P: 20.6% (49/238)
-- 6P: 16.0% (39/243)
-
-### The Meek
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Win by Losing - Different victory path
-
-**Statistics:**
-- Overall Win Rate: 26.5%
-- Total Games: 824
-- 2P: 44.8% (39/87)
-- 3P: 42.1% (51/121)
-- 4P: 28.5% (49/172)
-- 5P: 20.8% (44/212)
-- 6P: 15.1% (35/232)
-
-### Miser
-
-**Set:** Base Game
-
-**Power:** Power to Hoard - Keeps best card from each hand
-
-**Statistics:**
-- Overall Win Rate: 26.4%
-- Total Games: 836
-- 2P: 63.3% (57/90)
-- 3P: 35.2% (50/142)
-- 4P: 24.1% (41/170)
-- 5P: 15.5% (32/207)
-- 6P: 18.1% (41/227)
+- Overall Win Rate: 27.8%
+- Total Games: 8,345
+- 2P: 59.2% (523/883)
+- 3P: 38.3% (476/1243)
+- 4P: 26.4% (452/1711)
+- 5P: 21.3% (442/2076)
+- 6P: 17.5% (425/2432)
 
 ### Masochist_Alt
 
 **Set:** Cosmic Odyssey
 
 **Statistics:**
-- Overall Win Rate: 26.4%
-- Total Games: 814
-- 2P: 60.0% (51/85)
-- 3P: 33.6% (43/128)
-- 4P: 28.6% (44/154)
-- 5P: 18.8% (37/197)
-- 6P: 16.0% (40/250)
+- Overall Win Rate: 27.7%
+- Total Games: 8,372
+- 2P: 59.5% (510/857)
+- 3P: 37.0% (463/1253)
+- 4P: 28.7% (473/1650)
+- 5P: 20.5% (422/2063)
+- 6P: 17.7% (450/2549)
 
-### Sting
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Strike - Quick painful attacks
-
-**Statistics:**
-- Overall Win Rate: 26.4%
-- Total Games: 837
-- 2P: 44.0% (37/84)
-- 3P: 35.4% (40/113)
-- 4P: 25.9% (44/170)
-- 5P: 23.1% (48/208)
-- 6P: 19.8% (52/262)
-
-### Cavalry
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Reinforce - Adds ships after cards revealed
-
-**Statistics:**
-- Overall Win Rate: 26.4%
-- Total Games: 834
-- 2P: 49.4% (39/79)
-- 3P: 43.8% (57/130)
-- 4P: 23.9% (47/197)
-- 5P: 18.1% (38/210)
-- 6P: 17.9% (39/218)
-
-### Void
-
-**Set:** Base Game
-
-**Power:** Power to Eradicate - Sends ships to void instead of warp
-
-**Statistics:**
-- Overall Win Rate: 26.4%
-- Total Games: 846
-- 2P: 46.8% (36/77)
-- 3P: 30.8% (40/130)
-- 4P: 19.5% (36/185)
-- 5P: 24.6% (51/207)
-- 6P: 24.3% (60/247)
-
-### Ghoul
-
-**Set:** Cosmic Incursion
-
-**Power:** Power to Feast - Takes cards from discards when ships go to warp
-
-**Statistics:**
-- Overall Win Rate: 26.3%
-- Total Games: 863
-- 2P: 48.3% (43/89)
-- 3P: 29.3% (36/123)
-- 4P: 33.3% (53/159)
-- 5P: 20.5% (49/239)
-- 6P: 18.2% (46/253)
-
-### Extortionist
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Extort - Demands payment for cooperation
-
-**Statistics:**
-- Overall Win Rate: 26.3%
-- Total Games: 845
-- 2P: 50.5% (52/103)
-- 3P: 35.6% (53/149)
-- 4P: 23.8% (34/143)
-- 5P: 20.5% (43/210)
-- 6P: 16.7% (40/240)
-
-### Zombie
-
-**Set:** Base Game
-
-**Power:** Power of Immortality - Ships never go to warp
-
-**Statistics:**
-- Overall Win Rate: 26.2%
-- Total Games: 855
-- 2P: 53.1% (43/81)
-- 3P: 39.0% (53/136)
-- 4P: 22.1% (43/195)
-- 5P: 19.4% (42/217)
-- 6P: 19.0% (43/226)
-
-### Bully
-
-**Set:** Cosmic Incursion
-
-**Power:** Power to Intimidate - Forces weaker opponents to negotiate
-
-**Statistics:**
-- Overall Win Rate: 26.2%
-- Total Games: 855
-- 2P: 45.1% (32/71)
-- 3P: 37.1% (49/132)
-- 4P: 30.4% (52/171)
-- 5P: 20.4% (46/226)
-- 6P: 17.6% (45/255)
-
-### Surgeon
+### Hunger
 
 **Set:** Cosmic Eons
 
-**Power:** Power to Operate - Precise manipulations
+**Power:** Power to Consume - Must feed on resources
 
 **Statistics:**
-- Overall Win Rate: 26.2%
-- Total Games: 829
-- 2P: 45.2% (42/93)
-- 3P: 32.1% (36/112)
-- 4P: 27.2% (44/162)
-- 5P: 22.1% (49/222)
-- 6P: 19.2% (46/240)
+- Overall Win Rate: 27.5%
+- Total Games: 8,411
+- 2P: 53.6% (444/829)
+- 3P: 41.2% (509/1236)
+- 4P: 25.9% (434/1675)
+- 5P: 20.4% (429/2100)
+- 6P: 19.3% (495/2571)
 
-### FireDancer
+### Lightning
 
-**Set:** Cosmic Eons
+**Set:** Cosmic Alliance
+
+**Power:** Power to Strike - Fast, unexpected attacks
 
 **Statistics:**
-- Overall Win Rate: 26.2%
-- Total Games: 856
-- 2P: 54.0% (54/100)
-- 3P: 40.3% (56/139)
-- 4P: 22.4% (36/161)
-- 5P: 17.9% (35/195)
-- 6P: 16.5% (43/261)
+- Overall Win Rate: 27.5%
+- Total Games: 8,444
+- 2P: 56.9% (495/870)
+- 3P: 39.6% (501/1264)
+- 4P: 25.8% (420/1629)
+- 5P: 21.4% (449/2098)
+- 6P: 17.5% (453/2583)
+
+### Tyrant
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Oppress - Controls other players
+
+**Statistics:**
+- Overall Win Rate: 27.4%
+- Total Games: 8,407
+- 2P: 54.3% (458/843)
+- 3P: 35.2% (442/1256)
+- 4P: 27.5% (480/1748)
+- 5P: 22.1% (458/2075)
+- 6P: 18.7% (464/2485)
+
+### Angler
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Fish - Draws specific cards
+
+**Statistics:**
+- Overall Win Rate: 27.4%
+- Total Games: 8,403
+- 2P: 55.1% (494/896)
+- 3P: 37.5% (483/1288)
+- 4P: 28.2% (474/1682)
+- 5P: 20.9% (425/2032)
+- 6P: 16.9% (424/2505)
 
 ### Patriot
 
@@ -1278,131 +603,28 @@
 **Power:** Power of Loyalty - Stronger on home turf
 
 **Statistics:**
-- Overall Win Rate: 26.1%
-- Total Games: 871
-- 2P: 51.0% (49/96)
-- 3P: 40.2% (41/102)
-- 4P: 28.7% (46/160)
-- 5P: 20.1% (47/234)
-- 6P: 15.8% (44/279)
+- Overall Win Rate: 27.3%
+- Total Games: 8,372
+- 2P: 58.4% (502/860)
+- 3P: 39.6% (468/1182)
+- 4P: 26.3% (439/1669)
+- 5P: 21.1% (457/2170)
+- 6P: 16.9% (422/2491)
 
-### Force
+### Invader
 
-**Set:** Cosmic Odyssey
+**Set:** Cosmic Conflict
 
-**Power:** Power of Strength - Raw power
-
-**Statistics:**
-- Overall Win Rate: 26.0%
-- Total Games: 845
-- 2P: 47.2% (42/89)
-- 3P: 36.9% (45/122)
-- 4P: 27.7% (43/155)
-- 5P: 19.2% (40/208)
-- 6P: 18.5% (50/271)
-
-### Bride
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Wed - Joins with other players
+**Power:** Power of Invasion - Always attacks, never defends
 
 **Statistics:**
-- Overall Win Rate: 26.0%
-- Total Games: 792
-- 2P: 46.2% (42/91)
-- 3P: 38.2% (52/136)
-- 4P: 20.9% (33/158)
-- 5P: 19.3% (38/197)
-- 6P: 19.5% (41/210)
-
-### Love
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Attract - Draws others to them
-
-**Statistics:**
-- Overall Win Rate: 26.0%
-- Total Games: 827
-- 2P: 53.0% (44/83)
-- 3P: 41.0% (48/117)
-- 4P: 23.9% (38/159)
-- 5P: 21.3% (44/207)
-- 6P: 15.7% (41/261)
-
-### BleedingHeart
-
-**Set:** Cosmic Eons
-
-**Statistics:**
-- Overall Win Rate: 26.0%
-- Total Games: 828
-- 2P: 44.9% (35/78)
-- 3P: 31.9% (43/135)
-- 4P: 31.9% (52/163)
-- 5P: 21.1% (41/194)
-- 6P: 17.1% (44/258)
-
-### Insect
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power of Swarm - Many small ships
-
-**Statistics:**
-- Overall Win Rate: 26.0%
-- Total Games: 859
-- 2P: 53.3% (49/92)
-- 3P: 36.9% (38/103)
-- 4P: 26.6% (49/184)
-- 5P: 19.8% (44/222)
-- 6P: 16.7% (43/258)
-
-### Aura
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power of Presence - Passive area effects
-
-**Statistics:**
-- Overall Win Rate: 25.9%
-- Total Games: 829
-- 2P: 44.3% (35/79)
-- 3P: 28.7% (37/129)
-- 4P: 28.7% (54/188)
-- 5P: 21.2% (41/193)
-- 6P: 20.0% (48/240)
-
-### Tourist
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Visit - Benefits from visiting
-
-**Statistics:**
-- Overall Win Rate: 25.8%
-- Total Games: 770
-- 2P: 45.9% (28/61)
-- 3P: 31.6% (36/114)
-- 4P: 27.5% (47/171)
-- 5P: 22.6% (45/199)
-- 6P: 19.1% (43/225)
-
-### Assessor
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Evaluate - Determines values
-
-**Statistics:**
-- Overall Win Rate: 25.8%
-- Total Games: 833
-- 2P: 53.2% (42/79)
-- 3P: 36.3% (53/146)
-- 4P: 23.5% (35/149)
-- 5P: 19.9% (39/196)
-- 6P: 17.5% (46/263)
+- Overall Win Rate: 27.3%
+- Total Games: 8,364
+- 2P: 52.2% (439/841)
+- 3P: 36.7% (453/1233)
+- 4P: 28.4% (479/1689)
+- 5P: 23.0% (476/2072)
+- 6P: 17.2% (435/2529)
 
 ### Gorgon
 
@@ -1411,43 +633,43 @@
 **Power:** Power to Petrify - Freezes opponent actions
 
 **Statistics:**
-- Overall Win Rate: 25.8%
-- Total Games: 865
-- 2P: 49.4% (39/79)
-- 3P: 41.8% (46/110)
-- 4P: 27.2% (46/169)
-- 5P: 17.2% (40/232)
-- 6P: 18.9% (52/275)
+- Overall Win Rate: 27.1%
+- Total Games: 8,245
+- 2P: 57.7% (474/822)
+- 3P: 36.3% (427/1175)
+- 4P: 28.5% (469/1648)
+- 5P: 20.0% (412/2055)
+- 6P: 17.9% (455/2545)
 
-### Cosmos
+### Cyborg
 
-**Set:** Cosmic Odyssey
+**Set:** Cosmic Alliance
 
-**Power:** Power of the Universe - Universal effects
+**Power:** Power of Bionics - Enhanced mechanical abilities
 
 **Statistics:**
-- Overall Win Rate: 25.8%
-- Total Games: 823
-- 2P: 49.4% (40/81)
-- 3P: 38.2% (42/110)
-- 4P: 29.5% (52/176)
-- 5P: 18.8% (39/207)
-- 6P: 15.7% (39/249)
+- Overall Win Rate: 27.0%
+- Total Games: 8,493
+- 2P: 56.7% (478/843)
+- 3P: 36.6% (444/1213)
+- 4P: 27.7% (470/1695)
+- 5P: 21.3% (470/2205)
+- 6P: 17.0% (432/2537)
 
-### Roach
+### Brute
 
 **Set:** Cosmic Storm
 
-**Power:** Power to Survive - Hard to eliminate
+**Power:** Power to Smash - Raw strength attacks
 
 **Statistics:**
-- Overall Win Rate: 25.7%
-- Total Games: 825
-- 2P: 43.0% (34/79)
-- 3P: 40.3% (48/119)
-- 4P: 21.3% (38/178)
-- 5P: 22.6% (47/208)
-- 6P: 18.7% (45/241)
+- Overall Win Rate: 26.9%
+- Total Games: 8,399
+- 2P: 51.0% (425/833)
+- 3P: 37.1% (462/1244)
+- 4P: 26.0% (445/1714)
+- 5P: 23.3% (482/2070)
+- 6P: 17.5% (444/2538)
 
 ### Voyager
 
@@ -1456,41 +678,279 @@
 **Power:** Power to Travel - Movement advantages
 
 **Statistics:**
-- Overall Win Rate: 25.7%
-- Total Games: 868
-- 2P: 61.7% (50/81)
-- 3P: 36.3% (49/135)
-- 4P: 24.7% (39/158)
-- 5P: 18.8% (41/218)
-- 6P: 15.9% (44/276)
+- Overall Win Rate: 26.8%
+- Total Games: 8,365
+- 2P: 53.8% (428/796)
+- 3P: 36.6% (477/1304)
+- 4P: 26.3% (449/1708)
+- 5P: 20.8% (426/2044)
+- 6P: 18.4% (462/2513)
 
-### Inferno
+### Outlaw
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Break Rules - Ignores certain restrictions
+
+**Statistics:**
+- Overall Win Rate: 26.8%
+- Total Games: 8,377
+- 2P: 50.0% (439/878)
+- 3P: 37.0% (464/1253)
+- 4P: 26.8% (433/1617)
+- 5P: 21.9% (463/2114)
+- 6P: 17.7% (446/2515)
+
+### Guerrilla
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Attrition - Slowly erodes opponent's forces
+
+**Statistics:**
+- Overall Win Rate: 26.8%
+- Total Games: 8,372
+- 2P: 53.1% (448/844)
+- 3P: 38.2% (468/1224)
+- 4P: 26.0% (422/1622)
+- 5P: 21.5% (471/2187)
+- 6P: 17.3% (432/2495)
+
+### Citadel
+
+**Set:** Base Game
+
+**Power:** Power to Fortify - Ships on home planets count double
+
+**Statistics:**
+- Overall Win Rate: 26.5%
+- Total Games: 8,358
+- 2P: 58.0% (505/870)
+- 3P: 37.7% (453/1202)
+- 4P: 25.6% (429/1677)
+- 5P: 20.9% (433/2075)
+- 6P: 15.7% (397/2534)
+
+### Reactor
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Respond - Reactive abilities
+
+**Statistics:**
+- Overall Win Rate: 26.4%
+- Total Games: 8,327
+- 2P: 58.5% (504/862)
+- 3P: 35.4% (441/1246)
+- 4P: 27.6% (470/1701)
+- 5P: 19.5% (396/2033)
+- 6P: 15.5% (384/2485)
+
+### Cavalry
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Reinforce - Adds ships after cards revealed
+
+**Statistics:**
+- Overall Win Rate: 26.2%
+- Total Games: 8,282
+- 2P: 54.3% (418/770)
+- 3P: 34.6% (420/1215)
+- 4P: 25.5% (438/1715)
+- 5P: 21.4% (450/2104)
+- 6P: 18.1% (448/2478)
+
+### Engineer
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Build - Constructs advantages
+
+**Statistics:**
+- Overall Win Rate: 26.2%
+- Total Games: 8,405
+- 2P: 52.0% (431/829)
+- 3P: 36.0% (457/1268)
+- 4P: 27.0% (459/1697)
+- 5P: 20.2% (423/2089)
+- 6P: 17.2% (435/2522)
+
+### Void
+
+**Set:** Base Game
+
+**Power:** Power to Eradicate - Sends ships to void instead of warp
+
+**Statistics:**
+- Overall Win Rate: 26.1%
+- Total Games: 8,353
+- 2P: 51.7% (435/841)
+- 3P: 34.5% (424/1229)
+- 4P: 25.7% (431/1676)
+- 5P: 20.9% (454/2172)
+- 6P: 18.0% (439/2435)
+
+### Porcupine
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Bristle - Hurts those who attack
+
+**Statistics:**
+- Overall Win Rate: 26.1%
+- Total Games: 8,454
+- 2P: 52.6% (439/835)
+- 3P: 36.0% (440/1223)
+- 4P: 25.9% (457/1764)
+- 5P: 20.3% (434/2137)
+- 6P: 17.4% (435/2495)
+
+### Reincarnator
+
+**Set:** Base Game
+
+**Power:** Power to be Reborn - Gets new alien when loses all bases
+
+**Statistics:**
+- Overall Win Rate: 26.0%
+- Total Games: 8,390
+- 2P: 52.8% (441/835)
+- 3P: 35.7% (470/1318)
+- 4P: 25.2% (423/1677)
+- 5P: 20.4% (429/2104)
+- 6P: 17.2% (422/2456)
+
+### Hurtz
 
 **Set:** Cosmic Odyssey
 
-**Power:** Power of Fire - Burning attacks
+**Power:** Power to Pain - Inflicts damage
+
+**Statistics:**
+- Overall Win Rate: 26.0%
+- Total Games: 8,421
+- 2P: 51.9% (445/858)
+- 3P: 33.8% (419/1241)
+- 4P: 28.4% (491/1727)
+- 5P: 20.3% (412/2032)
+- 6P: 16.5% (422/2563)
+
+### Sheriff
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Enforce - Punishes rule violations
+
+**Statistics:**
+- Overall Win Rate: 25.9%
+- Total Games: 8,418
+- 2P: 55.9% (458/819)
+- 3P: 34.5% (428/1242)
+- 4P: 27.0% (459/1700)
+- 5P: 19.7% (422/2139)
+- 6P: 16.5% (416/2518)
+
+### Reborn
+
+**Set:** Cosmic Alliance
+
+**Power:** Power of Rebirth - Returns from defeat
+
+**Statistics:**
+- Overall Win Rate: 25.8%
+- Total Games: 8,475
+- 2P: 52.1% (464/890)
+- 3P: 35.9% (456/1269)
+- 4P: 25.8% (432/1672)
+- 5P: 19.7% (426/2163)
+- 6P: 16.5% (410/2481)
+
+### Grumpus_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 25.8%
+- Total Games: 8,359
+- 2P: 50.3% (408/811)
+- 3P: 34.0% (407/1196)
+- 4P: 26.1% (448/1714)
+- 5P: 22.7% (470/2071)
+- 6P: 16.4% (422/2567)
+
+### Healer
+
+**Set:** Base Game
+
+**Power:** Power to Heal - May save ships from going to warp
+
+**Statistics:**
+- Overall Win Rate: 25.8%
+- Total Games: 8,442
+- 2P: 52.7% (422/801)
+- 3P: 37.3% (463/1242)
+- 4P: 26.4% (446/1691)
+- 5P: 20.0% (436/2177)
+- 6P: 16.1% (407/2531)
+
+### FireDancer
+
+**Set:** Cosmic Eons
 
 **Statistics:**
 - Overall Win Rate: 25.7%
-- Total Games: 818
-- 2P: 49.4% (39/79)
-- 3P: 32.5% (37/114)
-- 4P: 25.0% (38/152)
-- 5P: 21.2% (48/226)
-- 6P: 19.4% (48/247)
+- Total Games: 8,453
+- 2P: 48.2% (384/797)
+- 3P: 35.0% (450/1284)
+- 4P: 26.1% (458/1753)
+- 5P: 21.0% (438/2087)
+- 6P: 17.4% (441/2532)
 
-### Brute_Alt
+### Remora
 
-**Set:** Cosmic Odyssey
+**Set:** Base Game
+
+**Power:** Power to Suck - Takes compensation whenever anyone receives cards
+
+**Statistics:**
+- Overall Win Rate: 25.7%
+- Total Games: 8,387
+- 2P: 48.0% (414/862)
+- 3P: 33.6% (436/1297)
+- 4P: 26.0% (434/1671)
+- 5P: 20.7% (427/2065)
+- 6P: 17.8% (443/2492)
+
+### Laser
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Focus - Concentrated attacks
 
 **Statistics:**
 - Overall Win Rate: 25.6%
-- Total Games: 862
-- 2P: 56.6% (47/83)
-- 3P: 33.3% (47/141)
-- 4P: 22.5% (40/178)
-- 5P: 22.7% (47/207)
-- 6P: 15.8% (40/253)
+- Total Games: 8,258
+- 2P: 55.1% (440/799)
+- 3P: 34.3% (433/1264)
+- 4P: 22.9% (377/1643)
+- 5P: 21.4% (440/2058)
+- 6P: 17.0% (425/2494)
+
+### Greenhorn
+
+**Set:** Cosmic Dominion
+
+**Power:** Power of Inexperience - Benefits from being new
+
+**Statistics:**
+- Overall Win Rate: 25.6%
+- Total Games: 8,506
+- 2P: 49.3% (433/879)
+- 3P: 34.8% (455/1306)
+- 4P: 27.3% (461/1687)
+- 5P: 19.2% (410/2140)
+- 6P: 16.7% (417/2494)
 
 ### Dictator
 
@@ -1500,231 +960,12 @@
 
 **Statistics:**
 - Overall Win Rate: 25.6%
-- Total Games: 804
-- 2P: 45.8% (44/96)
-- 3P: 37.3% (41/110)
-- 4P: 26.1% (42/161)
-- 5P: 18.9% (38/201)
-- 6P: 17.4% (41/236)
-
-### Wormhole
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Transport - Instant movement across galaxy
-
-**Statistics:**
-- Overall Win Rate: 25.6%
-- Total Games: 851
-- 2P: 53.9% (48/89)
-- 3P: 34.6% (45/130)
-- 4P: 24.4% (40/164)
-- 5P: 25.3% (56/221)
-- 6P: 11.7% (29/247)
-
-### Magician
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Prestidigitation - Makes cards disappear and reappear
-
-**Statistics:**
-- Overall Win Rate: 25.6%
-- Total Games: 832
-- 2P: 47.1% (49/104)
-- 3P: 30.1% (40/133)
-- 4P: 24.8% (38/153)
-- 5P: 24.4% (47/193)
-- 6P: 15.7% (39/249)
-
-### Pentaform
-
-**Set:** Cosmic Dominion
-
-**Power:** Power of Five - Five different abilities
-
-**Statistics:**
-- Overall Win Rate: 25.6%
-- Total Games: 821
-- 2P: 47.3% (43/91)
-- 3P: 40.5% (51/126)
-- 4P: 26.9% (43/160)
-- 5P: 19.4% (40/206)
-- 6P: 13.9% (33/238)
-
-### Pretender
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Pretend - Fakes having powers
-
-**Statistics:**
-- Overall Win Rate: 25.6%
-- Total Games: 868
-- 2P: 55.2% (48/87)
-- 3P: 37.1% (56/151)
-- 4P: 26.9% (46/171)
-- 5P: 18.9% (43/228)
-- 6P: 12.6% (29/231)
-
-### Void_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 25.6%
-- Total Games: 845
-- 2P: 57.1% (56/98)
-- 3P: 36.1% (53/147)
-- 4P: 19.2% (30/156)
-- 5P: 19.9% (36/181)
-- 6P: 15.6% (41/263)
-
-### Doppelganger
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Impersonate - Copies other players
-
-**Statistics:**
-- Overall Win Rate: 25.6%
-- Total Games: 900
-- 2P: 50.0% (44/88)
-- 3P: 34.8% (49/141)
-- 4P: 29.1% (53/182)
-- 5P: 20.0% (41/205)
-- 6P: 15.1% (43/284)
-
-### Daredevil
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Risk - High-risk high-reward plays
-
-**Statistics:**
-- Overall Win Rate: 25.5%
-- Total Games: 830
-- 2P: 48.0% (49/102)
-- 3P: 32.3% (41/127)
-- 4P: 22.6% (36/159)
-- 5P: 20.5% (41/200)
-- 6P: 18.6% (45/242)
-
-### Barbarian
-
-**Set:** Base Game
-
-**Power:** Power to Pillage - Takes rewards even when losing
-
-**Statistics:**
-- Overall Win Rate: 25.5%
-- Total Games: 839
-- 2P: 48.5% (48/99)
-- 3P: 39.7% (48/121)
-- 4P: 21.3% (37/174)
-- 5P: 24.8% (50/202)
-- 6P: 12.8% (31/243)
-
-### Booster
-
-**Set:** Promo
-
-**Power:** Power to Boost - Enhances other effects
-
-**Statistics:**
-- Overall Win Rate: 25.5%
-- Total Games: 843
-- 2P: 51.5% (51/99)
-- 3P: 32.6% (43/132)
-- 4P: 27.4% (43/157)
-- 5P: 20.3% (39/192)
-- 6P: 14.8% (39/263)
-
-### Demon_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 25.5%
-- Total Games: 797
-- 2P: 62.0% (49/79)
-- 3P: 31.2% (35/112)
-- 4P: 22.2% (35/158)
-- 5P: 19.8% (42/212)
-- 6P: 17.8% (42/236)
-
-### Engineer
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Build - Constructs advantages
-
-**Statistics:**
-- Overall Win Rate: 25.5%
-- Total Games: 852
-- 2P: 53.9% (48/89)
-- 3P: 27.7% (38/137)
-- 4P: 22.1% (36/163)
-- 5P: 24.5% (53/216)
-- 6P: 17.0% (42/247)
-
-### Hunger
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Consume - Must feed on resources
-
-**Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 841
-- 2P: 62.7% (47/75)
-- 3P: 32.8% (38/116)
-- 4P: 26.0% (50/192)
-- 5P: 18.6% (34/183)
-- 6P: 16.4% (45/275)
-
-### Claw
-
-**Set:** Cosmic Conflict
-
-**Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 798
-- 2P: 45.6% (41/90)
-- 3P: 29.9% (35/117)
-- 4P: 27.0% (38/141)
-- 5P: 20.3% (37/182)
-- 6P: 19.4% (52/268)
-
-### Porcupine
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Bristle - Hurts those who attack
-
-**Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 846
-- 2P: 53.9% (48/89)
-- 3P: 36.7% (44/120)
-- 4P: 28.1% (45/160)
-- 5P: 17.5% (37/211)
-- 6P: 15.4% (41/266)
-
-### Hacker
-
-**Set:** Base Game
-
-**Power:** Power to Peek - Looks at opponent's hand and selects card
-
-**Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 867
-- 2P: 46.7% (35/75)
-- 3P: 31.9% (44/138)
-- 4P: 27.8% (50/180)
-- 5P: 22.7% (47/207)
-- 6P: 16.5% (44/267)
+- Total Games: 8,398
+- 2P: 50.5% (420/832)
+- 3P: 33.7% (410/1216)
+- 4P: 25.6% (431/1682)
+- 5P: 20.3% (428/2109)
+- 6P: 17.9% (458/2559)
 
 ### Squee
 
@@ -1733,161 +974,189 @@
 **Power:** Power to Annoy - Irritates opponents
 
 **Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 820
-- 2P: 47.9% (46/96)
-- 3P: 29.5% (33/112)
-- 4P: 21.0% (33/157)
-- 5P: 22.2% (48/216)
-- 6P: 20.1% (48/239)
+- Overall Win Rate: 25.6%
+- Total Games: 8,384
+- 2P: 47.2% (380/805)
+- 3P: 32.3% (401/1241)
+- 4P: 26.6% (457/1721)
+- 5P: 22.7% (475/2088)
+- 6P: 17.0% (430/2529)
 
-### Anarchist
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Chaos - Ignores rules
-
-**Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 832
-- 2P: 51.4% (37/72)
-- 3P: 29.5% (44/149)
-- 4P: 30.4% (49/161)
-- 5P: 20.3% (42/207)
-- 6P: 16.0% (39/243)
-
-### Daredevil_Alt
+### Gremlin
 
 **Set:** Cosmic Odyssey
 
-**Statistics:**
-- Overall Win Rate: 25.4%
-- Total Games: 781
-- 2P: 50.6% (40/79)
-- 3P: 38.6% (44/114)
-- 4P: 26.5% (45/170)
-- 5P: 18.0% (33/183)
-- 6P: 15.3% (36/235)
-
-### Seeker
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Truth - Forces honest answers to questions
+**Power:** Power to Sabotage - Causes malfunctions
 
 **Statistics:**
-- Overall Win Rate: 25.3%
-- Total Games: 793
-- 2P: 56.1% (46/82)
-- 3P: 27.7% (33/119)
-- 4P: 23.3% (38/163)
-- 5P: 24.0% (49/204)
-- 6P: 15.6% (35/225)
+- Overall Win Rate: 25.6%
+- Total Games: 8,401
+- 2P: 47.9% (426/890)
+- 3P: 33.8% (403/1192)
+- 4P: 27.2% (472/1738)
+- 5P: 21.1% (443/2102)
+- 6P: 16.3% (403/2479)
 
-### Schizoid
+### Chrysalis
 
 **Set:** Cosmic Alliance
 
-**Power:** Power to Alter Reality - Changes win conditions
+**Power:** Power to Emerge - Transforms during game
 
 **Statistics:**
-- Overall Win Rate: 25.3%
-- Total Games: 817
-- 2P: 63.3% (57/90)
-- 3P: 28.6% (32/112)
-- 4P: 26.6% (42/158)
-- 5P: 20.3% (42/207)
-- 6P: 13.6% (34/250)
+- Overall Win Rate: 25.5%
+- Total Games: 8,393
+- 2P: 48.8% (411/843)
+- 3P: 32.2% (413/1282)
+- 4P: 27.4% (464/1693)
+- 5P: 20.2% (416/2062)
+- 6P: 17.4% (438/2513)
 
-### Oracle
+### Claw
+
+**Set:** Cosmic Conflict
+
+**Statistics:**
+- Overall Win Rate: 25.5%
+- Total Games: 8,394
+- 2P: 54.0% (475/879)
+- 3P: 33.4% (413/1235)
+- 4P: 25.8% (432/1677)
+- 5P: 19.4% (404/2087)
+- 6P: 16.6% (418/2516)
+
+### Warpish
 
 **Set:** Base Game
 
-**Power:** Power to Foresee - Forces opponent to play card first
+**Power:** Power of Warp Speed - Uses ships in warp for encounters
 
 **Statistics:**
-- Overall Win Rate: 25.3%
-- Total Games: 814
-- 2P: 56.1% (46/82)
-- 3P: 29.8% (34/114)
-- 4P: 31.1% (50/161)
-- 5P: 20.0% (42/210)
-- 6P: 13.8% (34/247)
+- Overall Win Rate: 25.5%
+- Total Games: 8,457
+- 2P: 52.8% (439/832)
+- 3P: 33.6% (422/1256)
+- 4P: 24.7% (413/1674)
+- 5P: 21.2% (452/2131)
+- 6P: 16.8% (432/2564)
 
-### Leviathan
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Worldships - Home planets can move
-
-**Statistics:**
-- Overall Win Rate: 25.3%
-- Total Games: 830
-- 2P: 57.7% (45/78)
-- 3P: 33.3% (44/132)
-- 4P: 23.2% (35/151)
-- 5P: 20.6% (42/204)
-- 6P: 16.6% (44/265)
-
-### Animal
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Tame - Controls wild game elements
-
-**Statistics:**
-- Overall Win Rate: 25.2%
-- Total Games: 836
-- 2P: 44.3% (35/79)
-- 3P: 33.8% (45/133)
-- 4P: 24.8% (37/149)
-- 5P: 19.8% (44/222)
-- 6P: 19.8% (50/253)
-
-### Emperor
+### Cloak
 
 **Set:** Cosmic Eons
 
-**Power:** Power to Rule - Commands others
+**Power:** Power to Hide - Conceals information
 
 **Statistics:**
-- Overall Win Rate: 25.2%
-- Total Games: 801
-- 2P: 50.6% (45/89)
-- 3P: 34.1% (46/135)
-- 4P: 17.9% (27/151)
-- 5P: 23.9% (45/188)
-- 6P: 16.4% (39/238)
+- Overall Win Rate: 25.5%
+- Total Games: 8,432
+- 2P: 48.7% (415/852)
+- 3P: 36.7% (465/1267)
+- 4P: 26.6% (429/1614)
+- 5P: 19.6% (420/2138)
+- 6P: 16.3% (417/2561)
 
-### Fury
+### Phantom
 
-**Set:** Cosmic Incursion
+**Set:** Cosmic Odyssey
 
-**Power:** Power of Vengeance - Gets stronger when attacked
+**Power:** Power to Phase - Intangible presence
 
 **Statistics:**
-- Overall Win Rate: 25.2%
-- Total Games: 819
-- 2P: 41.3% (31/75)
-- 3P: 34.7% (43/124)
-- 4P: 25.9% (43/166)
-- 5P: 21.1% (39/185)
-- 6P: 18.6% (50/269)
+- Overall Win Rate: 25.4%
+- Total Games: 8,479
+- 2P: 51.4% (439/854)
+- 3P: 34.4% (446/1296)
+- 4P: 26.5% (430/1625)
+- 5P: 20.8% (452/2171)
+- 6P: 15.4% (390/2533)
 
-### Diplomat
+### Trickster
+
+**Set:** Cosmic Conflict
+
+**Power:** Power of Deception - Plays cards face-down
+
+**Statistics:**
+- Overall Win Rate: 25.4%
+- Total Games: 8,484
+- 2P: 50.8% (438/862)
+- 3P: 34.9% (448/1282)
+- 4P: 26.6% (470/1766)
+- 5P: 19.3% (385/1993)
+- 6P: 16.1% (416/2581)
+
+### Wrack
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Damage - Causes ongoing harm
+
+**Statistics:**
+- Overall Win Rate: 25.4%
+- Total Games: 8,406
+- 2P: 48.5% (401/826)
+- 3P: 34.8% (430/1235)
+- 4P: 26.2% (447/1706)
+- 5P: 20.5% (435/2119)
+- 6P: 16.8% (424/2520)
+
+### The Meek
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Win by Losing - Different victory path
+
+**Statistics:**
+- Overall Win Rate: 25.4%
+- Total Games: 8,392
+- 2P: 52.0% (452/870)
+- 3P: 33.5% (433/1294)
+- 4P: 24.2% (403/1667)
+- 5P: 20.0% (413/2060)
+- 6P: 17.2% (431/2501)
+
+### EvilTwin
+
+**Set:** Cosmic Eons
+
+**Statistics:**
+- Overall Win Rate: 25.4%
+- Total Games: 8,342
+- 2P: 52.6% (472/898)
+- 3P: 32.6% (415/1272)
+- 4P: 25.4% (408/1607)
+- 5P: 18.9% (393/2080)
+- 6P: 17.3% (431/2485)
+
+### Pentaform
 
 **Set:** Cosmic Dominion
 
-**Power:** Power of Diplomacy - Negotiates advantageous deals
+**Power:** Power of Five - Five different abilities
 
 **Statistics:**
-- Overall Win Rate: 25.1%
-- Total Games: 840
-- 2P: 46.5% (40/86)
-- 3P: 32.8% (42/128)
-- 4P: 22.7% (40/176)
-- 5P: 23.6% (47/199)
-- 6P: 16.7% (42/251)
+- Overall Win Rate: 25.4%
+- Total Games: 8,547
+- 2P: 49.3% (426/864)
+- 3P: 34.3% (440/1283)
+- 4P: 25.9% (447/1727)
+- 5P: 20.0% (418/2087)
+- 6P: 16.9% (438/2586)
+
+### Crusher
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Crush - Overwhelming force
+
+**Statistics:**
+- Overall Win Rate: 25.4%
+- Total Games: 8,419
+- 2P: 49.9% (435/871)
+- 3P: 33.7% (428/1271)
+- 4P: 26.0% (432/1662)
+- 5P: 20.7% (443/2142)
+- 6P: 16.1% (398/2473)
 
 ### Cryo
 
@@ -1896,28 +1165,262 @@
 **Power:** Power to Preserve - Ships frozen instead of going to warp
 
 **Statistics:**
-- Overall Win Rate: 25.1%
-- Total Games: 785
-- 2P: 50.0% (40/80)
-- 3P: 35.9% (42/117)
-- 4P: 25.3% (41/162)
-- 5P: 17.9% (38/212)
-- 6P: 16.8% (36/214)
+- Overall Win Rate: 25.4%
+- Total Games: 8,294
+- 2P: 51.5% (433/840)
+- 3P: 33.9% (446/1315)
+- 4P: 24.7% (412/1668)
+- 5P: 20.7% (432/2092)
+- 6P: 16.0% (381/2379)
 
-### Mirage
+### Amoeba
+
+**Set:** Base Game
+
+**Power:** Power to Ooze - Adds ships from other colonies to encounters
+
+**Statistics:**
+- Overall Win Rate: 25.4%
+- Total Games: 8,449
+- 2P: 50.7% (425/839)
+- 3P: 34.6% (434/1253)
+- 4P: 25.7% (431/1679)
+- 5P: 19.9% (425/2137)
+- 6P: 16.8% (427/2541)
+
+### Judge
 
 **Set:** Cosmic Dominion
 
-**Power:** Power of Illusion - Creates false appearances
+**Power:** Power to Rule - Makes binding decisions
 
 **Statistics:**
-- Overall Win Rate: 25.1%
-- Total Games: 805
-- 2P: 46.3% (44/95)
-- 3P: 29.5% (33/112)
-- 4P: 25.3% (39/154)
-- 5P: 20.0% (37/185)
-- 6P: 18.9% (49/259)
+- Overall Win Rate: 25.3%
+- Total Games: 8,345
+- 2P: 46.7% (386/826)
+- 3P: 35.5% (481/1354)
+- 4P: 23.9% (411/1719)
+- 5P: 20.1% (411/2040)
+- 6P: 17.7% (426/2406)
+
+### Roach
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Survive - Hard to eliminate
+
+**Statistics:**
+- Overall Win Rate: 25.3%
+- Total Games: 8,385
+- 2P: 49.3% (399/810)
+- 3P: 33.8% (417/1234)
+- 4P: 24.8% (422/1702)
+- 5P: 21.5% (440/2043)
+- 6P: 17.2% (447/2596)
+
+### YinYang
+
+**Set:** Cosmic Dominion
+
+**Statistics:**
+- Overall Win Rate: 25.3%
+- Total Games: 8,384
+- 2P: 52.0% (435/836)
+- 3P: 35.5% (446/1258)
+- 4P: 25.7% (428/1668)
+- 5P: 18.7% (393/2105)
+- 6P: 16.8% (422/2517)
+
+### BleedingHeart
+
+**Set:** Cosmic Eons
+
+**Statistics:**
+- Overall Win Rate: 25.3%
+- Total Games: 8,358
+- 2P: 49.6% (416/839)
+- 3P: 34.0% (435/1281)
+- 4P: 26.5% (428/1618)
+- 5P: 20.2% (437/2160)
+- 6P: 16.3% (401/2460)
+
+### Micron
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Tiny - Extremely small ships
+
+**Statistics:**
+- Overall Win Rate: 25.3%
+- Total Games: 8,187
+- 2P: 48.6% (410/844)
+- 3P: 35.1% (426/1214)
+- 4P: 25.0% (415/1660)
+- 5P: 20.5% (422/2060)
+- 6P: 16.5% (397/2409)
+
+### Locust
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Devour - Consumes colonies for benefits
+
+**Statistics:**
+- Overall Win Rate: 25.3%
+- Total Games: 8,298
+- 2P: 49.7% (426/858)
+- 3P: 34.2% (416/1218)
+- 4P: 25.8% (439/1704)
+- 5P: 20.7% (421/2037)
+- 6P: 16.0% (396/2481)
+
+### Brute_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 25.3%
+- Total Games: 8,448
+- 2P: 49.2% (424/862)
+- 3P: 34.2% (421/1232)
+- 4P: 25.2% (429/1703)
+- 5P: 19.0% (398/2100)
+- 6P: 18.1% (462/2551)
+
+### Chosen
+
+**Set:** Base Game
+
+**Power:** Power of Destiny - May choose encounter target instead of drawing destiny
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,322
+- 2P: 48.7% (403/827)
+- 3P: 33.1% (415/1254)
+- 4P: 25.5% (432/1697)
+- 5P: 19.8% (415/2096)
+- 6P: 17.8% (436/2448)
+
+### Nanny
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Protect - Guards weaker players
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,498
+- 2P: 49.1% (423/861)
+- 3P: 34.6% (440/1270)
+- 4P: 24.8% (413/1666)
+- 5P: 21.2% (455/2149)
+- 6P: 16.2% (414/2552)
+
+### Lizard
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Regenerate - Recovers from losses
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,358
+- 2P: 52.0% (443/852)
+- 3P: 35.3% (427/1208)
+- 4P: 22.7% (379/1669)
+- 5P: 21.3% (456/2136)
+- 6P: 16.2% (404/2493)
+
+### Assistant
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Help - Aids other players
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,478
+- 2P: 46.8% (400/855)
+- 3P: 34.9% (441/1262)
+- 4P: 25.7% (452/1758)
+- 5P: 20.2% (424/2099)
+- 6P: 16.9% (422/2504)
+
+### Horde
+
+**Set:** Cosmic Alliance
+
+**Power:** Power of Numbers - Overwhelms with quantity
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,451
+- 2P: 53.0% (442/834)
+- 3P: 34.7% (426/1227)
+- 4P: 23.5% (410/1741)
+- 5P: 21.1% (442/2093)
+- 6P: 16.1% (411/2556)
+
+### Muckraker
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Expose - Reveals hidden information
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,590
+- 2P: 49.7% (429/864)
+- 3P: 34.1% (467/1368)
+- 4P: 27.0% (453/1676)
+- 5P: 20.1% (427/2121)
+- 6P: 15.2% (390/2561)
+
+### Hacker
+
+**Set:** Base Game
+
+**Power:** Power to Peek - Looks at opponent's hand and selects card
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,461
+- 2P: 51.3% (424/826)
+- 3P: 36.0% (453/1258)
+- 4P: 25.2% (424/1680)
+- 5P: 19.0% (400/2107)
+- 6P: 16.6% (431/2590)
+
+### Genius
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Outwit - Predicts opponent's card and benefits if right
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,606
+- 2P: 50.6% (424/838)
+- 3P: 34.3% (456/1328)
+- 4P: 23.3% (404/1732)
+- 5P: 21.1% (462/2185)
+- 6P: 16.7% (421/2523)
+
+### Sadist
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Torment - Benefits from opponent's suffering
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,520
+- 2P: 51.6% (447/866)
+- 3P: 34.4% (450/1310)
+- 4P: 25.9% (429/1657)
+- 5P: 20.1% (424/2107)
+- 6P: 15.3% (395/2580)
 
 ### Bandit
 
@@ -1926,13 +1429,386 @@
 **Power:** Power to Ambush - Attacks from hiding
 
 **Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,337
+- 2P: 49.3% (397/806)
+- 3P: 31.9% (401/1259)
+- 4P: 26.5% (440/1658)
+- 5P: 20.3% (420/2068)
+- 6P: 17.3% (440/2546)
+
+### TheCult
+
+**Set:** Cosmic Eons
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,443
+- 2P: 48.6% (412/847)
+- 3P: 33.8% (433/1282)
+- 4P: 25.3% (434/1714)
+- 5P: 20.1% (416/2067)
+- 6P: 16.9% (429/2533)
+
+### Filth
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Reek - Opponents disgusted and weakened
+
+**Statistics:**
+- Overall Win Rate: 25.2%
+- Total Games: 8,206
+- 2P: 50.3% (415/825)
+- 3P: 33.3% (395/1187)
+- 4P: 26.9% (438/1626)
+- 5P: 19.9% (428/2153)
+- 6P: 16.1% (388/2415)
+
+### Saboteur
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Booby Trap - Plants traps on planets
+
+**Statistics:**
 - Overall Win Rate: 25.1%
-- Total Games: 874
-- 2P: 47.1% (40/85)
-- 3P: 31.5% (45/143)
-- 4P: 27.5% (44/160)
-- 5P: 18.3% (40/219)
-- 6P: 18.7% (50/267)
+- Total Games: 8,455
+- 2P: 48.8% (423/866)
+- 3P: 32.9% (411/1250)
+- 4P: 25.7% (440/1709)
+- 5P: 20.0% (412/2063)
+- 6P: 17.1% (440/2567)
+
+### Miser
+
+**Set:** Base Game
+
+**Power:** Power to Hoard - Keeps best card from each hand
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,416
+- 2P: 50.4% (433/859)
+- 3P: 31.9% (405/1270)
+- 4P: 25.7% (425/1653)
+- 5P: 20.9% (433/2068)
+- 6P: 16.3% (419/2566)
+
+### Xenophile
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Love - Benefits from having diverse allies
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,384
+- 2P: 49.6% (401/809)
+- 3P: 33.1% (433/1307)
+- 4P: 24.7% (402/1625)
+- 5P: 19.9% (428/2155)
+- 6P: 17.8% (442/2488)
+
+### Gambler
+
+**Set:** Base Game
+
+**Power:** Power to Risk - May draw random card to replace played card
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,347
+- 2P: 53.7% (447/833)
+- 3P: 31.9% (388/1216)
+- 4P: 25.2% (445/1766)
+- 5P: 20.0% (409/2049)
+- 6P: 16.4% (407/2483)
+
+### Mite
+
+**Set:** Base Game
+
+**Power:** Power of the Small - Can't ally normally but has other advantages
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,515
+- 2P: 52.2% (467/895)
+- 3P: 32.5% (415/1275)
+- 4P: 25.3% (424/1676)
+- 5P: 20.8% (447/2153)
+- 6P: 15.3% (385/2516)
+
+### Ethic
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Guilt - Opponents must help or feel guilty
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,384
+- 2P: 53.0% (412/778)
+- 3P: 34.1% (433/1271)
+- 4P: 24.8% (414/1669)
+- 5P: 20.1% (432/2152)
+- 6P: 16.5% (414/2514)
+
+### Magician
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Prestidigitation - Makes cards disappear and reappear
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,284
+- 2P: 50.2% (432/861)
+- 3P: 33.3% (442/1327)
+- 4P: 25.7% (422/1645)
+- 5P: 19.6% (398/2029)
+- 6P: 15.9% (384/2422)
+
+### Negator
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Negate - Cancels effects
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,443
+- 2P: 48.5% (413/851)
+- 3P: 33.2% (412/1242)
+- 4P: 25.4% (423/1668)
+- 5P: 18.9% (394/2087)
+- 6P: 18.3% (475/2595)
+
+### Anarchist
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Chaos - Ignores rules
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,409
+- 2P: 50.3% (435/864)
+- 3P: 31.6% (378/1197)
+- 4P: 22.4% (389/1737)
+- 5P: 22.2% (464/2090)
+- 6P: 17.5% (441/2521)
+
+### Macron
+
+**Set:** Base Game
+
+**Power:** Power of Mass - Ships worth 4 each instead of 1
+
+**Statistics:**
+- Overall Win Rate: 25.1%
+- Total Games: 8,459
+- 2P: 49.8% (430/863)
+- 3P: 32.0% (391/1222)
+- 4P: 25.4% (425/1675)
+- 5P: 19.4% (420/2165)
+- 6P: 17.9% (453/2534)
+
+### Wormhole
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Transport - Instant movement across galaxy
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,376
+- 2P: 51.5% (397/771)
+- 3P: 34.2% (434/1270)
+- 4P: 24.8% (399/1610)
+- 5P: 19.5% (420/2155)
+- 6P: 17.4% (446/2570)
+
+### Animal
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Tame - Controls wild game elements
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,380
+- 2P: 48.5% (410/846)
+- 3P: 34.9% (430/1233)
+- 4P: 25.5% (425/1664)
+- 5P: 19.1% (415/2172)
+- 6P: 16.9% (417/2465)
+
+### Oracle
+
+**Set:** Base Game
+
+**Power:** Power to Foresee - Forces opponent to play card first
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,373
+- 2P: 50.2% (424/844)
+- 3P: 34.0% (442/1301)
+- 4P: 25.0% (398/1590)
+- 5P: 19.8% (408/2064)
+- 6P: 16.4% (423/2574)
+
+### Sorcerer
+
+**Set:** Base Game
+
+**Power:** Power to Switch - May swap encounter cards with opponent
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,302
+- 2P: 49.1% (410/835)
+- 3P: 31.1% (390/1254)
+- 4P: 26.1% (425/1629)
+- 5P: 20.6% (438/2122)
+- 6P: 16.8% (414/2462)
+
+### Observer
+
+**Set:** Base Game
+
+**Power:** Power to Watch - Gains cards when not in encounter
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,335
+- 2P: 51.6% (408/791)
+- 3P: 33.1% (432/1307)
+- 4P: 25.0% (422/1689)
+- 5P: 20.3% (419/2061)
+- 6P: 16.2% (404/2487)
+
+### Surgeon
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Operate - Precise manipulations
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,224
+- 2P: 50.7% (419/826)
+- 3P: 33.1% (411/1242)
+- 4P: 23.8% (382/1602)
+- 5P: 20.5% (427/2083)
+- 6P: 16.9% (418/2471)
+
+### Lemming
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Follow - Copies others' actions
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,281
+- 2P: 49.8% (407/817)
+- 3P: 31.1% (385/1239)
+- 4P: 26.3% (441/1678)
+- 5P: 19.6% (396/2019)
+- 6P: 17.5% (442/2528)
+
+### Moocher
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Mooch - Takes from others freely
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,354
+- 2P: 48.5% (400/824)
+- 3P: 37.8% (484/1280)
+- 4P: 24.3% (409/1683)
+- 5P: 18.4% (373/2023)
+- 6P: 16.6% (422/2544)
+
+### Warhawk
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Escalate - Increases conflict intensity
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,659
+- 2P: 47.6% (408/857)
+- 3P: 31.9% (425/1333)
+- 4P: 28.2% (492/1744)
+- 5P: 18.8% (406/2157)
+- 6P: 16.9% (433/2568)
+
+### Sycophant
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Flatter - Gains favor through flattery
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,386
+- 2P: 47.4% (398/839)
+- 3P: 33.8% (441/1306)
+- 4P: 24.7% (416/1685)
+- 5P: 20.2% (419/2078)
+- 6P: 17.0% (421/2478)
+
+### Fungus
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Adhere - Ships stick together across encounters
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,567
+- 2P: 47.1% (407/865)
+- 3P: 34.1% (438/1283)
+- 4P: 26.2% (467/1781)
+- 5P: 19.4% (409/2108)
+- 6P: 16.6% (419/2530)
+
+### Oligarch
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Wealth - Buys advantages
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,503
+- 2P: 44.9% (386/860)
+- 3P: 34.4% (444/1290)
+- 4P: 25.2% (440/1746)
+- 5P: 20.2% (428/2114)
+- 6P: 17.1% (426/2493)
+
+### Architect
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Design - Plans complex strategies
+
+**Statistics:**
+- Overall Win Rate: 25.0%
+- Total Games: 8,432
+- 2P: 52.9% (460/870)
+- 3P: 32.5% (410/1262)
+- 4P: 24.2% (412/1701)
+- 5P: 19.7% (410/2083)
+- 6P: 16.5% (414/2516)
 
 ### Witch
 
@@ -1942,673 +1818,42 @@
 
 **Statistics:**
 - Overall Win Rate: 25.0%
-- Total Games: 840
-- 2P: 46.5% (40/86)
-- 3P: 32.0% (40/125)
-- 4P: 24.5% (38/155)
-- 5P: 23.9% (49/205)
-- 6P: 16.0% (43/269)
-
-### Lunatic
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Lunacy - Randomly changes game rules
-
-**Statistics:**
-- Overall Win Rate: 25.0%
-- Total Games: 832
-- 2P: 44.3% (35/79)
-- 3P: 31.9% (43/135)
-- 4P: 22.3% (35/157)
-- 5P: 22.7% (47/207)
-- 6P: 18.9% (48/254)
-
-### Lizard
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Regenerate - Recovers from losses
-
-**Statistics:**
-- Overall Win Rate: 25.0%
-- Total Games: 861
-- 2P: 51.8% (43/83)
-- 3P: 38.2% (55/144)
-- 4P: 21.8% (34/156)
-- 5P: 19.1% (42/220)
-- 6P: 15.9% (41/258)
-
-### Tick-Tock
-
-**Set:** Base Game
-
-**Power:** Power of Time - Wins if game reaches certain turn count
-
-**Statistics:**
-- Overall Win Rate: 25.0%
-- Total Games: 845
-- 2P: 43.2% (38/88)
-- 3P: 34.2% (41/120)
-- 4P: 27.0% (47/174)
-- 5P: 16.6% (32/193)
-- 6P: 19.6% (53/270)
-
-### Trickster
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Deception - Plays cards face-down
-
-**Statistics:**
-- Overall Win Rate: 24.9%
-- Total Games: 850
-- 2P: 50.0% (39/78)
-- 3P: 31.0% (39/126)
-- 4P: 22.5% (36/160)
-- 5P: 19.8% (45/227)
-- 6P: 20.5% (53/259)
-
-### Pickpocket
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Pilfer - Steals from others
-
-**Statistics:**
-- Overall Win Rate: 24.9%
-- Total Games: 840
-- 2P: 41.6% (37/89)
-- 3P: 31.8% (41/129)
-- 4P: 27.0% (44/163)
-- 5P: 21.1% (40/190)
-- 6P: 17.5% (47/269)
-
-### Sneak
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Sneak - Hidden movements
-
-**Statistics:**
-- Overall Win Rate: 24.9%
-- Total Games: 796
-- 2P: 44.7% (34/76)
-- 3P: 28.9% (33/114)
-- 4P: 29.4% (45/153)
-- 5P: 19.0% (39/205)
-- 6P: 19.0% (47/248)
-
-### Sadist_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 24.8%
-- Total Games: 829
-- 2P: 45.9% (39/85)
-- 3P: 32.1% (36/112)
-- 4P: 29.2% (49/168)
-- 5P: 18.9% (42/222)
-- 6P: 16.5% (40/242)
-
-### Spiff
-
-**Set:** Base Game
-
-**Power:** Power to Crash Land - Ships survive even on lost encounters
-
-**Statistics:**
-- Overall Win Rate: 24.8%
-- Total Games: 907
-- 2P: 55.3% (52/94)
-- 3P: 37.5% (51/136)
-- 4P: 22.7% (40/176)
-- 5P: 20.3% (47/231)
-- 6P: 13.0% (35/270)
-
-### Glutton
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Gorge - Consumes cards for power
-
-**Statistics:**
-- Overall Win Rate: 24.8%
-- Total Games: 867
-- 2P: 45.6% (36/79)
-- 3P: 39.1% (50/128)
-- 4P: 21.9% (41/187)
-- 5P: 21.6% (44/204)
-- 6P: 16.4% (44/269)
-
-### Lloyd
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Protect - Guards player assets
-
-**Statistics:**
-- Overall Win Rate: 24.8%
-- Total Games: 832
-- 2P: 41.0% (32/78)
-- 3P: 35.1% (47/134)
-- 4P: 26.5% (40/151)
-- 5P: 19.9% (42/211)
-- 6P: 17.4% (45/258)
-
-### Invader
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Invasion - Always attacks, never defends
-
-**Statistics:**
-- Overall Win Rate: 24.7%
-- Total Games: 865
-- 2P: 51.2% (41/80)
-- 3P: 30.3% (36/119)
-- 4P: 26.1% (43/165)
-- 5P: 20.9% (46/220)
-- 6P: 17.1% (48/281)
-
-### Whirligig
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Spin - Rotates positions/cards
-
-**Statistics:**
-- Overall Win Rate: 24.7%
-- Total Games: 878
-- 2P: 55.6% (50/90)
-- 3P: 26.7% (36/135)
-- 4P: 27.0% (53/196)
-- 5P: 20.2% (42/208)
-- 6P: 14.5% (36/249)
-
-### Explorer
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Discover - Finds hidden opportunities
-
-**Statistics:**
-- Overall Win Rate: 24.7%
-- Total Games: 858
-- 2P: 47.1% (41/87)
-- 3P: 36.0% (45/125)
-- 4P: 26.1% (42/161)
-- 5P: 21.6% (50/232)
-- 6P: 13.4% (34/253)
-
-### Zombie_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 24.7%
-- Total Games: 827
-- 2P: 47.5% (38/80)
-- 3P: 32.5% (38/117)
-- 4P: 27.8% (49/176)
-- 5P: 18.6% (33/177)
-- 6P: 16.6% (46/277)
-
-### Loser
-
-**Set:** Base Game
-
-**Power:** Power to Win by Losing - Wins encounters when would normally lose
-
-**Statistics:**
-- Overall Win Rate: 24.6%
-- Total Games: 821
-- 2P: 53.1% (51/96)
-- 3P: 32.2% (38/118)
-- 4P: 30.9% (50/162)
-- 5P: 18.2% (37/203)
-- 6P: 10.7% (26/242)
-
-### Oligarch
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Wealth - Buys advantages
-
-**Statistics:**
-- Overall Win Rate: 24.6%
-- Total Games: 801
-- 2P: 46.5% (40/86)
-- 3P: 35.2% (44/125)
-- 4P: 24.1% (39/162)
-- 5P: 18.4% (34/185)
-- 6P: 16.5% (40/243)
-
-### Particle
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Smallness - Tiny but significant
-
-**Statistics:**
-- Overall Win Rate: 24.6%
-- Total Games: 875
-- 2P: 55.3% (47/85)
-- 3P: 31.4% (43/137)
-- 4P: 23.5% (43/183)
-- 5P: 17.1% (36/210)
-- 6P: 17.7% (46/260)
-
-### Grudge
-
-**Set:** Base Game
-
-**Power:** Power of Vendetta - Gains tokens marking enemies, bonuses against them
-
-**Statistics:**
-- Overall Win Rate: 24.6%
-- Total Games: 847
-- 2P: 50.5% (47/93)
-- 3P: 33.9% (43/127)
-- 4P: 21.7% (39/180)
-- 5P: 21.8% (44/202)
-- 6P: 14.3% (35/245)
-
-### Chosen
-
-**Set:** Base Game
-
-**Power:** Power of Destiny - May choose encounter target instead of drawing destiny
-
-**Statistics:**
-- Overall Win Rate: 24.5%
-- Total Games: 872
-- 2P: 59.1% (55/93)
-- 3P: 30.0% (36/120)
-- 4P: 26.0% (45/173)
-- 5P: 15.8% (37/234)
-- 6P: 16.3% (41/252)
-
-### Amoeba
-
-**Set:** Base Game
-
-**Power:** Power to Ooze - Adds ships from other colonies to encounters
-
-**Statistics:**
-- Overall Win Rate: 24.5%
-- Total Games: 841
-- 2P: 52.3% (46/88)
-- 3P: 35.4% (34/96)
-- 4P: 23.7% (37/156)
-- 5P: 18.9% (43/227)
-- 6P: 16.8% (46/274)
-
-### Joker
-
-**Set:** Cosmic Dominion
-
-**Power:** Power of Jest - Unpredictable card effects
-
-**Statistics:**
-- Overall Win Rate: 24.5%
-- Total Games: 825
-- 2P: 51.3% (40/78)
-- 3P: 40.9% (54/132)
-- 4P: 29.8% (48/161)
-- 5P: 12.8% (26/203)
-- 6P: 13.5% (34/251)
-
-### Reserve
-
-**Set:** Base Game
-
-**Power:** Power to Reserve - May call for allies before playing card
-
-**Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 855
-- 2P: 56.6% (60/106)
-- 3P: 29.3% (43/147)
-- 4P: 28.1% (48/171)
-- 5P: 15.4% (29/188)
-- 6P: 11.9% (29/243)
-
-### Nightmare
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Terrify - Fear-based attacks
-
-**Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 896
-- 2P: 49.4% (43/87)
-- 3P: 30.5% (43/141)
-- 4P: 25.6% (51/199)
-- 5P: 17.8% (38/213)
-- 6P: 17.2% (44/256)
-
-### Genius
+- Total Games: 8,381
+- 2P: 48.0% (420/875)
+- 3P: 33.0% (415/1259)
+- 4P: 24.9% (429/1723)
+- 5P: 20.2% (417/2062)
+- 6P: 16.7% (412/2462)
+
+### Leviathan
 
 **Set:** Cosmic Incursion
 
-**Power:** Power to Outwit - Predicts opponent's card and benefits if right
+**Power:** Power of Worldships - Home planets can move
 
 **Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 876
-- 2P: 50.0% (39/78)
-- 3P: 30.9% (43/139)
-- 4P: 26.7% (47/176)
-- 5P: 17.3% (37/214)
-- 6P: 17.8% (48/269)
+- Overall Win Rate: 25.0%
+- Total Games: 8,495
+- 2P: 51.5% (424/823)
+- 3P: 33.3% (408/1226)
+- 4P: 24.9% (435/1750)
+- 5P: 20.3% (435/2142)
+- 6P: 16.4% (419/2554)
 
-### Angler
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Fish - Draws specific cards
-
-**Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 816
-- 2P: 59.5% (44/74)
-- 3P: 35.2% (45/128)
-- 4P: 20.4% (30/147)
-- 5P: 19.8% (45/227)
-- 6P: 14.6% (35/240)
-
-### Perfectionist_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 972
-- 2P: 51.9% (54/104)
-- 3P: 29.9% (41/137)
-- 4P: 22.2% (46/207)
-- 5P: 16.7% (41/246)
-- 6P: 19.8% (55/278)
-
-### Schizoid_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 796
-- 2P: 50.6% (40/79)
-- 3P: 27.3% (35/128)
-- 4P: 23.9% (38/159)
-- 5P: 20.6% (43/209)
-- 6P: 17.2% (38/221)
-
-### YinYang
-
-**Set:** Cosmic Dominion
-
-**Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 862
-- 2P: 46.6% (34/73)
-- 3P: 36.8% (46/125)
-- 4P: 26.6% (50/188)
-- 5P: 13.5% (28/208)
-- 6P: 19.4% (52/268)
-
-### Fungus
+### Deuce
 
 **Set:** Cosmic Incursion
 
-**Power:** Power to Adhere - Ships stick together across encounters
+**Power:** Power of Duality - May play two encounter cards
 
 **Statistics:**
-- Overall Win Rate: 24.4%
-- Total Games: 809
-- 2P: 46.8% (36/77)
-- 3P: 33.6% (40/119)
-- 4P: 24.9% (43/173)
-- 5P: 17.5% (37/211)
-- 6P: 17.9% (41/229)
-
-### Grumpus_Alt
-
-**Set:** Cosmic Odyssey
-
-**Statistics:**
-- Overall Win Rate: 24.3%
-- Total Games: 838
-- 2P: 52.9% (37/70)
-- 3P: 30.6% (33/108)
-- 4P: 24.2% (45/186)
-- 5P: 20.6% (44/214)
-- 6P: 17.3% (45/260)
-
-### Wrack
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Damage - Causes ongoing harm
-
-**Statistics:**
-- Overall Win Rate: 24.3%
-- Total Games: 827
-- 2P: 54.1% (40/74)
-- 3P: 31.5% (40/127)
-- 4P: 25.9% (43/166)
-- 5P: 19.8% (41/207)
-- 6P: 14.6% (37/253)
-
-### Mirror
-
-**Set:** Base Game
-
-**Power:** Power to Copy - Uses opponent's power
-
-**Statistics:**
-- Overall Win Rate: 24.3%
-- Total Games: 886
-- 2P: 35.4% (34/96)
-- 3P: 30.4% (45/148)
-- 4P: 28.7% (56/195)
-- 5P: 20.0% (41/205)
-- 6P: 16.1% (39/242)
-
-### Lemming
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Follow - Copies others' actions
-
-**Statistics:**
-- Overall Win Rate: 24.3%
-- Total Games: 783
-- 2P: 43.3% (42/97)
-- 3P: 25.2% (33/131)
-- 4P: 29.1% (41/141)
-- 5P: 17.5% (37/212)
-- 6P: 18.3% (37/202)
-
-### Extractor
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Extract - Removes specific elements
-
-**Statistics:**
-- Overall Win Rate: 24.3%
-- Total Games: 837
-- 2P: 51.1% (46/90)
-- 3P: 33.0% (37/112)
-- 4P: 18.4% (32/174)
-- 5P: 22.4% (47/210)
-- 6P: 16.3% (41/251)
-
-### Chronos
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Time Travel - May undo and redo encounters
-
-**Statistics:**
-- Overall Win Rate: 24.2%
-- Total Games: 850
-- 2P: 51.8% (43/83)
-- 3P: 29.1% (43/148)
-- 4P: 22.5% (41/182)
-- 5P: 19.9% (41/206)
-- 6P: 16.5% (38/231)
-
-### General
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Command - Controls allied ship placement
-
-**Statistics:**
-- Overall Win Rate: 24.2%
-- Total Games: 817
-- 2P: 43.8% (35/80)
-- 3P: 42.5% (51/120)
-- 4P: 24.4% (39/160)
-- 5P: 19.3% (41/212)
-- 6P: 13.1% (32/245)
-
-### Horde
-
-**Set:** Cosmic Alliance
-
-**Power:** Power of Numbers - Overwhelms with quantity
-
-**Statistics:**
-- Overall Win Rate: 24.2%
-- Total Games: 838
-- 2P: 48.1% (37/77)
-- 3P: 36.1% (44/122)
-- 4P: 22.5% (41/182)
-- 5P: 17.2% (35/204)
-- 6P: 18.2% (46/253)
-
-### Vulch
-
-**Set:** Base Game
-
-**Power:** Power to Scrounge - Takes artifacts played by others
-
-**Statistics:**
-- Overall Win Rate: 24.2%
-- Total Games: 860
-- 2P: 43.0% (40/93)
-- 3P: 30.1% (34/113)
-- 4P: 25.6% (43/168)
-- 5P: 20.9% (46/220)
-- 6P: 16.9% (45/266)
-
-### Greenhorn
-
-**Set:** Cosmic Dominion
-
-**Power:** Power of Inexperience - Benefits from being new
-
-**Statistics:**
-- Overall Win Rate: 24.2%
-- Total Games: 857
-- 2P: 45.1% (37/82)
-- 3P: 29.9% (41/137)
-- 4P: 24.0% (41/171)
-- 5P: 20.8% (47/226)
-- 6P: 17.0% (41/241)
-
-### Vox
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Speak - Voice affects gameplay
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 762
-- 2P: 58.9% (43/73)
-- 3P: 31.5% (29/92)
-- 4P: 26.9% (42/156)
-- 5P: 18.3% (35/191)
-- 6P: 14.0% (35/250)
-
-### Perfectionist
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Perfection - Demands exact outcomes
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 783
-- 2P: 46.3% (38/82)
-- 3P: 31.9% (38/119)
-- 4P: 24.1% (41/170)
-- 5P: 16.1% (31/192)
-- 6P: 18.6% (41/220)
-
-### Cloak
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Hide - Conceals information
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 866
-- 2P: 42.3% (41/97)
-- 3P: 36.1% (44/122)
-- 4P: 25.6% (45/176)
-- 5P: 24.1% (49/203)
-- 6P: 11.2% (30/268)
-
-### Pirate
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Plunder - Takes from encounters
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 887
-- 2P: 48.6% (51/105)
-- 3P: 25.4% (31/122)
-- 4P: 25.4% (43/169)
-- 5P: 16.7% (34/203)
-- 6P: 19.1% (55/288)
-
-### EvilTwin
-
-**Set:** Cosmic Eons
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 858
-- 2P: 42.9% (33/77)
-- 3P: 30.7% (42/137)
-- 4P: 25.5% (39/153)
-- 5P: 20.0% (44/220)
-- 6P: 18.1% (49/271)
-
-### Mesmer
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Hypnotize - Controls opponent choices
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 829
-- 2P: 51.5% (35/68)
-- 3P: 30.1% (41/136)
-- 4P: 23.4% (41/175)
-- 5P: 20.1% (41/204)
-- 6P: 17.1% (42/246)
+- Overall Win Rate: 25.0%
+- Total Games: 8,324
+- 2P: 52.9% (414/782)
+- 3P: 31.3% (387/1238)
+- 4P: 25.2% (414/1645)
+- 5P: 18.9% (408/2154)
+- 6P: 18.2% (455/2505)
 
 ### Boomerang
 
@@ -2617,296 +1862,324 @@
 **Power:** Power to Return - Actions come back
 
 **Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 850
-- 2P: 41.2% (33/80)
-- 3P: 32.0% (39/122)
-- 4P: 24.3% (44/181)
-- 5P: 23.5% (52/221)
-- 6P: 15.0% (37/246)
+- Overall Win Rate: 25.0%
+- Total Games: 8,490
+- 2P: 52.0% (455/875)
+- 3P: 32.9% (415/1263)
+- 4P: 24.4% (415/1701)
+- 5P: 20.7% (436/2108)
+- 6P: 15.7% (398/2543)
 
-### Antimatter
-
-**Set:** Base Game
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 846
-- 2P: 54.1% (46/85)
-- 3P: 28.0% (45/161)
-- 4P: 29.5% (46/156)
-- 5P: 21.1% (42/199)
-- 6P: 10.2% (25/245)
-
-### Geek
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power of Knowledge - Obscure information
-
-**Statistics:**
-- Overall Win Rate: 24.1%
-- Total Games: 789
-- 2P: 44.6% (37/83)
-- 3P: 30.7% (39/127)
-- 4P: 23.9% (33/138)
-- 5P: 22.0% (45/205)
-- 6P: 15.3% (36/236)
-
-### Warhawk
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Escalate - Increases conflict intensity
-
-**Statistics:**
-- Overall Win Rate: 24.0%
-- Total Games: 828
-- 2P: 43.4% (33/76)
-- 3P: 31.8% (41/129)
-- 4P: 24.6% (42/171)
-- 5P: 20.3% (42/207)
-- 6P: 16.7% (41/245)
-
-### Kamikaze
+### Vacuum
 
 **Set:** Base Game
 
-**Power:** Power of Self-Destruction - Ships count for more if willing to die
+**Power:** Power to Suck In - Takes losing ships prisoner
 
 **Statistics:**
-- Overall Win Rate: 24.0%
-- Total Games: 816
-- 2P: 45.6% (36/79)
-- 3P: 36.8% (43/117)
-- 4P: 22.1% (38/172)
-- 5P: 20.4% (42/206)
-- 6P: 15.3% (37/242)
+- Overall Win Rate: 25.0%
+- Total Games: 8,291
+- 2P: 48.3% (403/834)
+- 3P: 34.8% (426/1224)
+- 4P: 25.4% (411/1621)
+- 5P: 19.9% (420/2114)
+- 6P: 16.4% (409/2498)
 
-### Moocher
+### Virus
+
+**Set:** Base Game
+
+**Power:** Power to Multiply - Multiplies card value by ships instead of adding
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,457
+- 2P: 48.4% (403/833)
+- 3P: 35.7% (439/1229)
+- 4P: 24.4% (416/1703)
+- 5P: 20.3% (439/2162)
+- 6P: 16.3% (413/2530)
+
+### Emperor
 
 **Set:** Cosmic Eons
 
-**Power:** Power to Mooch - Takes from others freely
+**Power:** Power to Rule - Commands others
 
 **Statistics:**
-- Overall Win Rate: 24.0%
-- Total Games: 818
-- 2P: 45.3% (34/75)
-- 3P: 40.7% (50/123)
-- 4P: 21.5% (34/158)
-- 5P: 19.1% (38/199)
-- 6P: 15.2% (40/263)
+- Overall Win Rate: 24.9%
+- Total Games: 8,317
+- 2P: 49.9% (405/811)
+- 3P: 35.5% (461/1298)
+- 4P: 24.9% (415/1666)
+- 5P: 20.0% (417/2089)
+- 6P: 15.4% (377/2453)
 
-### Crystal
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Reflect - Reflects attacks back
-
-**Statistics:**
-- Overall Win Rate: 23.9%
-- Total Games: 832
-- 2P: 51.1% (45/88)
-- 3P: 36.2% (42/116)
-- 4P: 29.9% (47/157)
-- 5P: 13.5% (30/223)
-- 6P: 14.1% (35/248)
-
-### Ethic
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Guilt - Opponents must help or feel guilty
-
-**Statistics:**
-- Overall Win Rate: 23.9%
-- Total Games: 817
-- 2P: 51.3% (40/78)
-- 3P: 29.4% (37/126)
-- 4P: 28.8% (47/163)
-- 5P: 21.5% (45/209)
-- 6P: 10.8% (26/241)
-
-### Coward
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Flee - Avoids confrontation
-
-**Statistics:**
-- Overall Win Rate: 23.8%
-- Total Games: 781
-- 2P: 47.0% (39/83)
-- 3P: 35.1% (39/111)
-- 4P: 21.4% (34/159)
-- 5P: 17.8% (35/197)
-- 6P: 16.9% (39/231)
-
-### Magnet
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Attract - Draws things to it
-
-**Statistics:**
-- Overall Win Rate: 23.8%
-- Total Games: 837
-- 2P: 47.1% (33/70)
-- 3P: 33.1% (49/148)
-- 4P: 23.8% (40/168)
-- 5P: 19.5% (38/195)
-- 6P: 15.2% (39/256)
-
-### Sycophant
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Flatter - Gains favor through flattery
-
-**Statistics:**
-- Overall Win Rate: 23.7%
-- Total Games: 785
-- 2P: 50.7% (37/73)
-- 3P: 25.6% (30/117)
-- 4P: 18.8% (31/165)
-- 5P: 28.1% (56/199)
-- 6P: 13.9% (32/231)
-
-### Mite
-
-**Set:** Base Game
-
-**Power:** Power of the Small - Can't ally normally but has other advantages
-
-**Statistics:**
-- Overall Win Rate: 23.7%
-- Total Games: 816
-- 2P: 41.3% (38/92)
-- 3P: 35.1% (46/131)
-- 4P: 25.6% (42/164)
-- 5P: 19.6% (40/204)
-- 6P: 12.0% (27/225)
-
-### Reactor
+### Mirage
 
 **Set:** Cosmic Dominion
 
-**Power:** Power to Respond - Reactive abilities
+**Power:** Power of Illusion - Creates false appearances
 
 **Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 859
-- 2P: 48.9% (45/92)
-- 3P: 31.4% (38/121)
-- 4P: 23.5% (38/162)
-- 5P: 20.7% (46/222)
-- 6P: 13.7% (36/262)
+- Overall Win Rate: 24.9%
+- Total Games: 8,383
+- 2P: 49.2% (418/849)
+- 3P: 33.2% (410/1234)
+- 4P: 24.7% (412/1670)
+- 5P: 20.4% (434/2126)
+- 6P: 16.7% (417/2504)
 
-### Filch
+### Particle
 
-**Set:** Base Game
+**Set:** Cosmic Eons
 
-**Power:** Power to Steal - Takes random card from opponent before encounter
-
-**Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 834
-- 2P: 52.8% (38/72)
-- 3P: 36.3% (45/124)
-- 4P: 21.2% (40/189)
-- 5P: 19.4% (36/186)
-- 6P: 14.4% (38/263)
-
-### Gremlin
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Sabotage - Causes malfunctions
+**Power:** Power of Smallness - Tiny but significant
 
 **Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 851
-- 2P: 46.6% (34/73)
-- 3P: 28.9% (33/114)
-- 4P: 23.5% (42/179)
-- 5P: 22.2% (54/243)
-- 6P: 15.7% (38/242)
+- Overall Win Rate: 24.9%
+- Total Games: 8,313
+- 2P: 51.0% (422/828)
+- 3P: 34.4% (420/1222)
+- 4P: 24.9% (414/1663)
+- 5P: 19.8% (403/2039)
+- 6P: 16.2% (414/2561)
 
-### Gambler
-
-**Set:** Base Game
-
-**Power:** Power to Risk - May draw random card to replace played card
-
-**Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 856
-- 2P: 36.3% (33/91)
-- 3P: 36.2% (47/130)
-- 4P: 18.5% (33/178)
-- 5P: 19.1% (39/204)
-- 6P: 19.8% (50/253)
-
-### Zilch
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power of Nothing - Benefits from having nothing
-
-**Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 814
-- 2P: 41.5% (34/82)
-- 3P: 30.2% (39/129)
-- 4P: 21.1% (32/152)
-- 5P: 26.1% (49/188)
-- 6P: 14.4% (38/263)
-
-### Saboteur
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Booby Trap - Plants traps on planets
-
-**Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 806
-- 2P: 52.3% (45/86)
-- 3P: 28.7% (29/101)
-- 4P: 24.0% (43/179)
-- 5P: 17.4% (31/178)
-- 6P: 16.0% (42/262)
-
-### Brute
+### Grumpus
 
 **Set:** Cosmic Storm
 
-**Power:** Power to Smash - Raw strength attacks
+**Power:** Power to Complain - Benefits from bad situations
 
 **Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 802
-- 2P: 44.8% (39/87)
-- 3P: 36.8% (46/125)
-- 4P: 29.5% (49/166)
-- 5P: 14.5% (29/200)
-- 6P: 11.6% (26/224)
+- Overall Win Rate: 24.9%
+- Total Games: 8,544
+- 2P: 47.9% (423/884)
+- 3P: 33.9% (429/1265)
+- 4P: 24.0% (383/1599)
+- 5P: 18.9% (400/2111)
+- 6P: 18.4% (495/2685)
 
-### Healer
+### Sadist_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,336
+- 2P: 49.3% (409/830)
+- 3P: 34.8% (440/1265)
+- 4P: 24.8% (411/1654)
+- 5P: 18.8% (390/2073)
+- 6P: 17.0% (428/2514)
+
+### Grudge
 
 **Set:** Base Game
 
-**Power:** Power to Heal - May save ships from going to warp
+**Power:** Power of Vendetta - Gains tokens marking enemies, bonuses against them
 
 **Statistics:**
-- Overall Win Rate: 23.6%
-- Total Games: 828
-- 2P: 56.4% (44/78)
-- 3P: 35.4% (45/127)
-- 4P: 19.4% (35/180)
-- 5P: 16.8% (33/197)
-- 6P: 15.4% (38/246)
+- Overall Win Rate: 24.9%
+- Total Games: 8,369
+- 2P: 53.2% (462/868)
+- 3P: 33.7% (427/1268)
+- 4P: 23.6% (379/1603)
+- 5P: 19.3% (412/2140)
+- 6P: 16.3% (406/2490)
+
+### Vulch
+
+**Set:** Base Game
+
+**Power:** Power to Scrounge - Takes artifacts played by others
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,330
+- 2P: 49.3% (406/824)
+- 3P: 34.3% (422/1231)
+- 4P: 26.1% (429/1644)
+- 5P: 20.9% (438/2100)
+- 6P: 15.1% (381/2531)
+
+### Poison
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Toxify - Weakens opponents over time
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,427
+- 2P: 51.7% (422/817)
+- 3P: 32.7% (425/1298)
+- 4P: 23.7% (397/1673)
+- 5P: 20.5% (443/2160)
+- 6P: 16.7% (413/2479)
+
+### Ace
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Triumph - Exceptional at winning
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,278
+- 2P: 50.1% (400/799)
+- 3P: 34.9% (439/1259)
+- 4P: 24.8% (399/1612)
+- 5P: 20.1% (423/2103)
+- 6P: 16.0% (401/2505)
+
+### Extortionist
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Extort - Demands payment for cooperation
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,447
+- 2P: 49.4% (427/864)
+- 3P: 35.4% (438/1238)
+- 4P: 23.9% (387/1622)
+- 5P: 19.5% (427/2186)
+- 6P: 16.8% (425/2537)
+
+### Tentacle
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Grasp - Grabs multiple things
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,593
+- 2P: 50.4% (431/856)
+- 3P: 31.8% (398/1252)
+- 4P: 24.5% (427/1742)
+- 5P: 20.4% (435/2133)
+- 6P: 17.2% (449/2610)
+
+### Inferno
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Fire - Burning attacks
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,237
+- 2P: 50.6% (432/853)
+- 3P: 33.7% (439/1304)
+- 4P: 23.4% (370/1579)
+- 5P: 20.7% (430/2074)
+- 6P: 15.7% (380/2427)
+
+### Schizoid
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Alter Reality - Changes win conditions
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,272
+- 2P: 49.3% (414/839)
+- 3P: 34.6% (416/1204)
+- 4P: 24.9% (414/1661)
+- 5P: 19.8% (412/2084)
+- 6P: 16.2% (403/2484)
+
+### Seeker
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Truth - Forces honest answers to questions
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,341
+- 2P: 48.3% (416/861)
+- 3P: 33.3% (413/1240)
+- 4P: 23.3% (384/1646)
+- 5P: 21.6% (444/2053)
+- 6P: 16.5% (419/2541)
+
+### Aristocrat
+
+**Set:** Cosmic Dominion
+
+**Power:** Power of Nobility - Superior status benefits
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,289
+- 2P: 51.3% (417/813)
+- 3P: 32.1% (380/1184)
+- 4P: 24.6% (415/1685)
+- 5P: 20.1% (419/2087)
+- 6P: 17.1% (432/2520)
+
+### Sloth
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Delay - Slows down game pace
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,378
+- 2P: 49.6% (405/817)
+- 3P: 33.1% (428/1295)
+- 4P: 26.3% (441/1674)
+- 5P: 19.0% (404/2130)
+- 6P: 16.5% (407/2462)
+
+### Mesmer
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Hypnotize - Controls opponent choices
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,415
+- 2P: 50.2% (431/859)
+- 3P: 32.3% (408/1265)
+- 4P: 24.4% (408/1675)
+- 5P: 20.3% (406/2004)
+- 6P: 16.9% (441/2612)
+
+### Daredevil_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,411
+- 2P: 51.3% (436/850)
+- 3P: 32.5% (413/1272)
+- 4P: 24.8% (417/1679)
+- 5P: 20.9% (440/2107)
+- 6P: 15.5% (387/2503)
+
+### Diplomat
+
+**Set:** Cosmic Dominion
+
+**Power:** Power of Diplomacy - Negotiates advantageous deals
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,476
+- 2P: 51.0% (444/871)
+- 3P: 34.2% (412/1206)
+- 4P: 25.4% (448/1763)
+- 5P: 19.2% (405/2114)
+- 6P: 15.9% (400/2522)
 
 ### Quartermaster
 
@@ -2915,43 +2188,41 @@
 **Power:** Power to Supply - Provides resources
 
 **Statistics:**
-- Overall Win Rate: 23.5%
-- Total Games: 888
-- 2P: 50.5% (46/91)
-- 3P: 33.3% (49/147)
-- 4P: 18.7% (34/182)
-- 5P: 18.0% (37/206)
-- 6P: 16.4% (43/262)
+- Overall Win Rate: 24.9%
+- Total Games: 8,497
+- 2P: 51.6% (439/850)
+- 3P: 32.2% (421/1309)
+- 4P: 23.7% (398/1676)
+- 5P: 19.6% (407/2074)
+- 6P: 17.3% (449/2588)
 
-### Will
+### Schizoid_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.9%
+- Total Games: 8,421
+- 2P: 46.4% (407/877)
+- 3P: 31.6% (392/1240)
+- 4P: 24.3% (402/1654)
+- 5P: 21.8% (469/2147)
+- 6P: 17.0% (425/2503)
+
+### Mind
 
 **Set:** Base Game
 
-**Power:** Power of Willfulness - May force same card to be played
+**Power:** Power of Foresight - Knows opponent's card before playing own
 
 **Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 845
-- 2P: 44.3% (39/88)
-- 3P: 31.1% (37/119)
-- 4P: 22.4% (37/165)
-- 5P: 19.6% (44/224)
-- 6P: 16.5% (41/249)
-
-### Citadel
-
-**Set:** Base Game
-
-**Power:** Power to Fortify - Ships on home planets count double
-
-**Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 845
-- 2P: 56.5% (39/69)
-- 3P: 27.0% (34/126)
-- 4P: 23.2% (43/185)
-- 5P: 16.4% (34/207)
-- 6P: 18.6% (48/258)
+- Overall Win Rate: 24.9%
+- Total Games: 8,594
+- 2P: 48.3% (420/870)
+- 3P: 33.5% (442/1321)
+- 4P: 24.1% (404/1676)
+- 5P: 20.9% (446/2137)
+- 6P: 16.4% (426/2590)
 
 ### Alchemist
 
@@ -2960,43 +2231,13 @@
 **Power:** Power of Transmutation - Changes card values
 
 **Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 842
-- 2P: 39.5% (32/81)
-- 3P: 35.2% (45/128)
-- 4P: 24.0% (41/171)
-- 5P: 19.5% (39/200)
-- 6P: 15.3% (40/262)
-
-### Alien
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Otherness - Different from all others
-
-**Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 834
-- 2P: 48.8% (39/80)
-- 3P: 29.5% (36/122)
-- 4P: 24.7% (41/166)
-- 5P: 22.5% (46/204)
-- 6P: 12.6% (33/262)
-
-### Clone
-
-**Set:** Base Game
-
-**Power:** Power to Replicate - Gets played encounter card back to hand
-
-**Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 830
-- 2P: 34.6% (27/78)
-- 3P: 33.1% (39/118)
-- 4P: 24.7% (43/174)
-- 5P: 20.8% (45/216)
-- 6P: 16.4% (40/244)
+- Overall Win Rate: 24.8%
+- Total Games: 8,364
+- 2P: 47.7% (430/901)
+- 3P: 31.1% (385/1239)
+- 4P: 26.2% (431/1642)
+- 5P: 18.9% (394/2081)
+- 6P: 17.5% (438/2501)
 
 ### Fodder
 
@@ -3005,26 +2246,1488 @@
 **Power:** Power to Throw - May use ships as card substitutes
 
 **Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 830
-- 2P: 50.0% (45/90)
-- 3P: 31.1% (37/119)
-- 4P: 16.0% (26/162)
-- 5P: 20.2% (40/198)
-- 6P: 17.6% (46/261)
+- Overall Win Rate: 24.8%
+- Total Games: 8,319
+- 2P: 50.4% (426/845)
+- 3P: 34.0% (405/1191)
+- 4P: 24.1% (401/1662)
+- 5P: 20.2% (420/2084)
+- 6P: 16.3% (414/2537)
 
-### TheCult
+### Alien
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Otherness - Different from all others
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,253
+- 2P: 50.9% (412/809)
+- 3P: 34.7% (421/1213)
+- 4P: 24.4% (408/1671)
+- 5P: 17.9% (367/2046)
+- 6P: 17.5% (441/2514)
+
+### Plant
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Grafting - Roots ships on planets
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,617
+- 2P: 48.7% (404/829)
+- 3P: 34.4% (453/1318)
+- 4P: 22.9% (393/1718)
+- 5P: 20.5% (453/2212)
+- 6P: 17.2% (436/2540)
+
+### Assessor
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Evaluate - Determines values
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,393
+- 2P: 48.7% (399/819)
+- 3P: 35.8% (429/1200)
+- 4P: 24.7% (415/1680)
+- 5P: 19.9% (431/2164)
+- 6P: 16.2% (409/2530)
+
+### Relic
+
+**Set:** Cosmic Conflict
+
+**Power:** Power of Antiquity - Uses ancient artifacts
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,409
+- 2P: 51.9% (434/836)
+- 3P: 31.9% (414/1298)
+- 4P: 25.3% (417/1646)
+- 5P: 19.0% (399/2099)
+- 6P: 16.7% (422/2530)
+
+### Will
+
+**Set:** Base Game
+
+**Power:** Power of Willfulness - May force same card to be played
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,245
+- 2P: 48.9% (419/856)
+- 3P: 31.5% (399/1265)
+- 4P: 25.0% (413/1650)
+- 5P: 20.7% (418/2020)
+- 6P: 16.1% (396/2454)
+
+### Zilch
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Nothing - Benefits from having nothing
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,307
+- 2P: 47.1% (396/840)
+- 3P: 34.1% (442/1295)
+- 4P: 23.8% (394/1654)
+- 5P: 19.8% (407/2058)
+- 6P: 17.1% (421/2460)
+
+### Perfectionist
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Perfection - Demands exact outcomes
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,420
+- 2P: 49.0% (404/824)
+- 3P: 32.9% (392/1190)
+- 4P: 25.1% (436/1738)
+- 5P: 20.4% (429/2098)
+- 6P: 16.6% (427/2570)
+
+### Sting
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Strike - Quick painful attacks
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,288
+- 2P: 49.5% (429/867)
+- 3P: 32.4% (407/1256)
+- 4P: 24.8% (422/1701)
+- 5P: 20.6% (409/1983)
+- 6P: 15.6% (388/2481)
+
+### Merchant
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Hire - Buys ships and cards
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,566
+- 2P: 47.9% (413/862)
+- 3P: 33.3% (418/1256)
+- 4P: 24.3% (418/1722)
+- 5P: 20.7% (456/2200)
+- 6P: 16.5% (417/2526)
+
+### Siren
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Lure - Draws ships to bad situations
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,570
+- 2P: 50.6% (423/836)
+- 3P: 33.7% (452/1341)
+- 4P: 26.0% (457/1755)
+- 5P: 18.0% (381/2120)
+- 6P: 16.2% (409/2518)
+
+### Nightmare
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Terrify - Fear-based attacks
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,482
+- 2P: 47.3% (404/854)
+- 3P: 33.6% (416/1237)
+- 4P: 24.8% (418/1683)
+- 5P: 19.8% (429/2163)
+- 6P: 17.0% (433/2545)
+
+### PackRat
 
 **Set:** Cosmic Eons
 
 **Statistics:**
-- Overall Win Rate: 23.4%
-- Total Games: 826
-- 2P: 48.3% (42/87)
-- 3P: 29.5% (39/132)
-- 4P: 23.8% (41/172)
-- 5P: 15.5% (32/207)
-- 6P: 17.1% (39/228)
+- Overall Win Rate: 24.8%
+- Total Games: 8,470
+- 2P: 50.2% (416/829)
+- 3P: 33.5% (425/1270)
+- 4P: 24.9% (428/1722)
+- 5P: 19.8% (418/2108)
+- 6P: 16.1% (410/2541)
+
+### Chronos
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Time Travel - May undo and redo encounters
+
+**Statistics:**
+- Overall Win Rate: 24.8%
+- Total Games: 8,394
+- 2P: 50.7% (443/873)
+- 3P: 33.1% (423/1279)
+- 4P: 23.5% (382/1626)
+- 5P: 19.9% (421/2113)
+- 6P: 16.3% (409/2503)
+
+### Tourist
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Visit - Benefits from visiting
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,561
+- 2P: 51.2% (455/889)
+- 3P: 33.5% (445/1329)
+- 4P: 25.1% (420/1673)
+- 5P: 19.7% (416/2108)
+- 6P: 14.9% (382/2562)
+
+### Decoy
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Distract - Misleads opponents
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,417
+- 2P: 47.9% (397/828)
+- 3P: 32.2% (400/1244)
+- 4P: 24.7% (431/1745)
+- 5P: 19.3% (408/2115)
+- 6P: 17.9% (446/2485)
+
+### Host
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Entertain - Benefits from hosting encounters
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,333
+- 2P: 47.5% (395/832)
+- 3P: 32.6% (403/1238)
+- 4P: 26.8% (446/1666)
+- 5P: 20.3% (429/2115)
+- 6P: 15.6% (388/2482)
+
+### Fido
+
+**Set:** Base Game
+
+**Power:** Power to Retrieve - May retrieve cards from discard pile
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,404
+- 2P: 49.6% (417/840)
+- 3P: 31.6% (388/1226)
+- 4P: 25.7% (433/1682)
+- 5P: 19.2% (405/2111)
+- 6P: 17.1% (435/2545)
+
+### Mimic
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Mimic - Copies other alien powers
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,476
+- 2P: 46.3% (402/869)
+- 3P: 32.6% (409/1253)
+- 4P: 27.1% (472/1743)
+- 5P: 19.8% (407/2053)
+- 6P: 15.8% (405/2558)
+
+### Swindler
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Cheat - Bends rules for benefit
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,460
+- 2P: 52.2% (460/881)
+- 3P: 32.5% (396/1218)
+- 4P: 24.3% (431/1772)
+- 5P: 17.9% (377/2103)
+- 6P: 17.2% (427/2486)
+
+### Empath
+
+**Set:** Cosmic Conflict
+
+**Power:** Power of Harmony - Both sides benefit when using negotiate
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,481
+- 2P: 49.8% (411/826)
+- 3P: 31.7% (410/1295)
+- 4P: 26.8% (451/1681)
+- 5P: 19.3% (401/2073)
+- 6P: 16.2% (423/2606)
+
+### Mirror
+
+**Set:** Base Game
+
+**Power:** Power to Copy - Uses opponent's power
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,413
+- 2P: 50.4% (411/816)
+- 3P: 32.3% (411/1271)
+- 4P: 24.7% (422/1709)
+- 5P: 20.0% (421/2108)
+- 6P: 16.5% (414/2509)
+
+### Extractor
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Extract - Removes specific elements
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,396
+- 2P: 48.0% (406/845)
+- 3P: 35.4% (453/1280)
+- 4P: 24.5% (408/1662)
+- 5P: 19.8% (420/2119)
+- 6P: 15.5% (385/2490)
+
+### Tide
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Ebb and Flow - Power varies cyclically
+
+**Statistics:**
+- Overall Win Rate: 24.7%
+- Total Games: 8,310
+- 2P: 48.9% (394/806)
+- 3P: 32.3% (405/1253)
+- 4P: 24.6% (408/1657)
+- 5P: 20.9% (436/2085)
+- 6P: 16.2% (406/2509)
+
+### Zombie_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,261
+- 2P: 47.3% (420/888)
+- 3P: 32.6% (402/1232)
+- 4P: 24.7% (415/1683)
+- 5P: 20.0% (399/1994)
+- 6P: 16.2% (400/2464)
+
+### AI
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Compute - Calculates optimal outcomes
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,331
+- 2P: 49.1% (407/829)
+- 3P: 34.5% (416/1207)
+- 4P: 24.2% (428/1766)
+- 5P: 19.1% (399/2084)
+- 6P: 16.5% (403/2445)
+
+### Hate
+
+**Set:** Base Game
+
+**Power:** Power of Vengeance - Gets stronger against players who attacked them
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,439
+- 2P: 51.7% (423/818)
+- 3P: 33.0% (398/1205)
+- 4P: 25.1% (422/1678)
+- 5P: 18.3% (398/2172)
+- 6P: 17.1% (438/2566)
+
+### Daredevil
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Risk - High-risk high-reward plays
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,380
+- 2P: 49.7% (395/794)
+- 3P: 32.3% (402/1244)
+- 4P: 25.6% (437/1707)
+- 5P: 18.4% (387/2104)
+- 6P: 17.5% (443/2531)
+
+### Filch
+
+**Set:** Base Game
+
+**Power:** Power to Steal - Takes random card from opponent before encounter
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,369
+- 2P: 48.4% (384/794)
+- 3P: 34.2% (445/1301)
+- 4P: 26.9% (461/1714)
+- 5P: 17.6% (362/2052)
+- 6P: 16.3% (409/2508)
+
+### Pretender
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Pretend - Fakes having powers
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,459
+- 2P: 50.1% (454/906)
+- 3P: 33.3% (432/1297)
+- 4P: 24.1% (406/1687)
+- 5P: 18.2% (381/2096)
+- 6P: 16.5% (409/2473)
+
+### Reserve
+
+**Set:** Base Game
+
+**Power:** Power to Reserve - May call for allies before playing card
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,411
+- 2P: 49.5% (420/849)
+- 3P: 32.4% (401/1237)
+- 4P: 24.6% (404/1640)
+- 5P: 19.9% (422/2123)
+- 6P: 16.5% (422/2562)
+
+### Coward
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Flee - Avoids confrontation
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,162
+- 2P: 48.5% (400/825)
+- 3P: 35.1% (418/1190)
+- 4P: 25.0% (399/1598)
+- 5P: 18.9% (393/2080)
+- 6P: 16.1% (397/2469)
+
+### Shadow
+
+**Set:** Base Game
+
+**Power:** Power to Shadow - May join winning side after cards revealed
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,337
+- 2P: 49.0% (420/858)
+- 3P: 33.1% (415/1255)
+- 4P: 24.0% (399/1664)
+- 5P: 19.7% (405/2055)
+- 6P: 16.4% (410/2505)
+
+### Ghoul
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Feast - Takes cards from discards when ships go to warp
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,312
+- 2P: 47.1% (409/869)
+- 3P: 31.4% (387/1234)
+- 4P: 25.8% (441/1709)
+- 5P: 20.1% (416/2065)
+- 6P: 16.0% (389/2435)
+
+### Warrior
+
+**Set:** Base Game
+
+**Power:** Power of Bonus - Gets +1 for each ship in warp
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,286
+- 2P: 49.4% (400/809)
+- 3P: 34.0% (437/1284)
+- 4P: 23.7% (380/1604)
+- 5P: 18.8% (396/2101)
+- 6P: 17.0% (422/2488)
+
+### Calculator
+
+**Set:** Base Game
+
+**Power:** Power to Calculate - Announces encounter total before cards played
+
+**Statistics:**
+- Overall Win Rate: 24.6%
+- Total Games: 8,366
+- 2P: 49.6% (411/828)
+- 3P: 33.7% (425/1260)
+- 4P: 24.9% (422/1695)
+- 5P: 17.3% (361/2088)
+- 6P: 17.4% (435/2495)
+
+### Trader
+
+**Set:** Base Game
+
+**Power:** Power to Trade - May swap hands with any player
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,453
+- 2P: 51.1% (418/818)
+- 3P: 33.5% (434/1294)
+- 4P: 23.6% (409/1730)
+- 5P: 19.4% (402/2072)
+- 6P: 16.2% (411/2539)
+
+### Skeptic
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Doubt - Denies other powers
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,434
+- 2P: 51.8% (446/861)
+- 3P: 31.6% (393/1244)
+- 4P: 24.3% (424/1742)
+- 5P: 18.9% (391/2070)
+- 6P: 16.5% (415/2517)
+
+### Maven
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Expertise - Master of specific domain
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,424
+- 2P: 47.5% (417/877)
+- 3P: 33.2% (426/1285)
+- 4P: 25.3% (422/1669)
+- 5P: 19.7% (417/2121)
+- 6P: 15.5% (384/2472)
+
+### Sapient
+
+**Set:** Cosmic Alliance
+
+**Power:** Power of Intelligence - Knows optimal plays
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,349
+- 2P: 48.4% (399/824)
+- 3P: 31.8% (393/1236)
+- 4P: 26.5% (454/1715)
+- 5P: 18.1% (377/2079)
+- 6P: 17.0% (424/2495)
+
+### Converter
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Convert - Changes card types
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,401
+- 2P: 47.6% (402/844)
+- 3P: 31.4% (382/1216)
+- 4P: 24.5% (402/1641)
+- 5P: 20.5% (435/2126)
+- 6P: 17.0% (438/2574)
+
+### Force
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Strength - Raw power
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,502
+- 2P: 48.2% (405/840)
+- 3P: 32.7% (413/1262)
+- 4P: 24.8% (422/1701)
+- 5P: 18.6% (410/2210)
+- 6P: 17.4% (433/2489)
+
+### Zombie
+
+**Set:** Base Game
+
+**Power:** Power of Immortality - Ships never go to warp
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,271
+- 2P: 46.8% (360/770)
+- 3P: 32.3% (414/1283)
+- 4P: 24.4% (403/1655)
+- 5P: 20.2% (422/2093)
+- 6P: 17.3% (427/2470)
+
+### Lunatic
+
+**Set:** Cosmic Conflict
+
+**Power:** Power of Lunacy - Randomly changes game rules
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,313
+- 2P: 48.6% (420/864)
+- 3P: 32.5% (414/1272)
+- 4P: 23.2% (381/1642)
+- 5P: 20.0% (403/2017)
+- 6P: 16.6% (417/2518)
+
+### Barbarian
+
+**Set:** Base Game
+
+**Power:** Power to Pillage - Takes rewards even when losing
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,425
+- 2P: 47.4% (385/812)
+- 3P: 32.6% (407/1249)
+- 4P: 23.8% (409/1717)
+- 5P: 21.0% (444/2114)
+- 6P: 16.5% (417/2533)
+
+### Clone
+
+**Set:** Base Game
+
+**Power:** Power to Replicate - Gets played encounter card back to hand
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,193
+- 2P: 46.4% (366/789)
+- 3P: 34.1% (410/1204)
+- 4P: 24.1% (409/1697)
+- 5P: 20.1% (402/1998)
+- 6P: 16.7% (418/2505)
+
+### Void_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,549
+- 2P: 48.2% (419/870)
+- 3P: 32.7% (412/1261)
+- 4P: 24.6% (410/1664)
+- 5P: 19.9% (437/2195)
+- 6P: 16.2% (414/2559)
+
+### Delegator
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Delegate - Assigns tasks to others
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,542
+- 2P: 50.6% (429/847)
+- 3P: 32.6% (420/1289)
+- 4P: 24.9% (424/1706)
+- 5P: 19.3% (411/2135)
+- 6P: 15.8% (406/2565)
+
+### Perfectionist_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,354
+- 2P: 47.8% (391/818)
+- 3P: 32.8% (419/1278)
+- 4P: 25.2% (428/1699)
+- 5P: 19.5% (405/2075)
+- 6P: 16.1% (401/2484)
+
+### Booster
+
+**Set:** Promo
+
+**Power:** Power to Boost - Enhances other effects
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,295
+- 2P: 48.9% (394/805)
+- 3P: 32.9% (409/1245)
+- 4P: 24.8% (414/1670)
+- 5P: 18.0% (373/2072)
+- 6P: 17.5% (439/2503)
+
+### Human
+
+**Set:** Base Game
+
+**Power:** Power of Humanity - Gets +4 combat bonus
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,430
+- 2P: 49.1% (390/794)
+- 3P: 34.6% (448/1295)
+- 4P: 23.8% (400/1679)
+- 5P: 19.9% (416/2094)
+- 6P: 15.9% (408/2568)
+
+### Fury
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Vengeance - Gets stronger when attacked
+
+**Statistics:**
+- Overall Win Rate: 24.5%
+- Total Games: 8,413
+- 2P: 49.9% (420/842)
+- 3P: 34.0% (425/1249)
+- 4P: 24.2% (424/1755)
+- 5P: 19.2% (394/2049)
+- 6P: 15.6% (394/2518)
+
+### Remote
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Control - Operates from distance
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,356
+- 2P: 47.0% (385/820)
+- 3P: 30.7% (399/1301)
+- 4P: 24.6% (408/1658)
+- 5P: 20.6% (422/2048)
+- 6P: 17.0% (429/2529)
+
+### Masochist
+
+**Set:** Base Game
+
+**Power:** Power to Enjoy Pain - Benefits from losing ships
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,459
+- 2P: 48.1% (390/810)
+- 3P: 35.0% (452/1293)
+- 4P: 24.8% (417/1682)
+- 5P: 19.5% (409/2100)
+- 6P: 15.5% (399/2574)
+
+### Visionary
+
+**Set:** Cosmic Conflict
+
+**Power:** Power of Vision - Sees future card draws
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,321
+- 2P: 48.4% (402/830)
+- 3P: 33.8% (436/1289)
+- 4P: 22.9% (381/1661)
+- 5P: 21.6% (447/2071)
+- 6P: 14.9% (367/2470)
+
+### Tick-Tock
+
+**Set:** Base Game
+
+**Power:** Power of Time - Wins if game reaches certain turn count
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,424
+- 2P: 48.8% (419/859)
+- 3P: 33.0% (425/1287)
+- 4P: 23.1% (373/1612)
+- 5P: 20.6% (430/2084)
+- 6P: 15.9% (411/2582)
+
+### Bride
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Wed - Joins with other players
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,331
+- 2P: 47.9% (388/810)
+- 3P: 33.3% (430/1291)
+- 4P: 25.6% (418/1634)
+- 5P: 19.7% (419/2128)
+- 6P: 15.4% (380/2468)
+
+### Demon_Alt
+
+**Set:** Cosmic Odyssey
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,460
+- 2P: 47.4% (407/858)
+- 3P: 32.0% (402/1256)
+- 4P: 25.2% (422/1677)
+- 5P: 20.0% (432/2159)
+- 6P: 16.1% (403/2510)
+
+### Vector
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Direction - Controls movement
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,427
+- 2P: 47.7% (416/873)
+- 3P: 34.1% (412/1207)
+- 4P: 24.5% (416/1699)
+- 5P: 19.4% (402/2072)
+- 6P: 16.0% (411/2576)
+
+### Glutton
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Gorge - Consumes cards for power
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,544
+- 2P: 50.4% (413/819)
+- 3P: 34.6% (430/1241)
+- 4P: 24.8% (426/1719)
+- 5P: 19.3% (420/2179)
+- 6P: 15.3% (396/2586)
+
+### Multitude
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Many - Represents multiple beings
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,581
+- 2P: 47.8% (415/868)
+- 3P: 31.5% (420/1332)
+- 4P: 25.1% (425/1691)
+- 5P: 18.3% (386/2104)
+- 6P: 17.3% (448/2586)
+
+### Explorer
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Discover - Finds hidden opportunities
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,537
+- 2P: 50.6% (409/809)
+- 3P: 33.5% (432/1289)
+- 4P: 24.6% (419/1701)
+- 5P: 19.6% (425/2164)
+- 6P: 15.5% (398/2574)
+
+### Coordinator
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Organize - Coordinates ally actions
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,597
+- 2P: 48.4% (432/892)
+- 3P: 32.9% (445/1352)
+- 4P: 24.2% (406/1676)
+- 5P: 18.7% (393/2100)
+- 6P: 16.3% (420/2577)
+
+### Bubble
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Protect - Shields from harm
+
+**Statistics:**
+- Overall Win Rate: 24.4%
+- Total Games: 8,275
+- 2P: 49.8% (396/795)
+- 3P: 32.7% (405/1240)
+- 4P: 22.8% (370/1621)
+- 5P: 20.6% (443/2150)
+- 6P: 16.3% (402/2469)
+
+### Cosmos
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of the Universe - Universal effects
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,369
+- 2P: 48.5% (396/817)
+- 3P: 33.1% (448/1354)
+- 4P: 25.7% (420/1634)
+- 5P: 18.1% (374/2072)
+- 6P: 16.0% (398/2492)
+
+### Crystal
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Reflect - Reflects attacks back
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,468
+- 2P: 48.2% (419/870)
+- 3P: 32.8% (413/1259)
+- 4P: 22.3% (379/1697)
+- 5P: 20.4% (435/2136)
+- 6P: 16.5% (413/2506)
+
+### Peddler
+
+**Set:** Cosmic Eons
+
+**Power:** Power to Sell - Trades for advantage
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,383
+- 2P: 47.3% (410/866)
+- 3P: 33.3% (427/1282)
+- 4P: 25.5% (421/1651)
+- 5P: 19.1% (390/2040)
+- 6P: 15.3% (389/2544)
+
+### Hypochondriac
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Illness - Benefits from perceived weakness
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,375
+- 2P: 49.2% (380/772)
+- 3P: 33.6% (443/1317)
+- 4P: 24.2% (408/1689)
+- 5P: 19.6% (404/2065)
+- 6P: 15.8% (400/2532)
+
+### Throwback
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Nostalgia - Uses old mechanics
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,445
+- 2P: 50.4% (418/829)
+- 3P: 30.6% (380/1243)
+- 4P: 25.6% (423/1653)
+- 5P: 18.6% (402/2164)
+- 6P: 16.8% (429/2556)
+
+### Magnet
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Attract - Draws things to it
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,400
+- 2P: 47.5% (416/875)
+- 3P: 33.2% (415/1249)
+- 4P: 25.4% (416/1636)
+- 5P: 18.6% (399/2140)
+- 6P: 15.8% (394/2500)
+
+### Doppelganger
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Impersonate - Copies other players
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,428
+- 2P: 50.2% (452/900)
+- 3P: 31.7% (393/1240)
+- 4P: 24.1% (395/1639)
+- 5P: 19.1% (405/2119)
+- 6P: 15.8% (401/2530)
+
+### Mercenary
+
+**Set:** Cosmic Incursion
+
+**Power:** Power of Bounty Hunting - Paid to join encounters
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,473
+- 2P: 47.1% (397/843)
+- 3P: 30.5% (378/1239)
+- 4P: 26.5% (464/1748)
+- 5P: 19.6% (414/2114)
+- 6P: 15.9% (403/2529)
+
+### Butler
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Serve - Helps others but secretly benefits
+
+**Statistics:**
+- Overall Win Rate: 24.3%
+- Total Games: 8,362
+- 2P: 48.7% (395/811)
+- 3P: 34.3% (416/1213)
+- 4P: 22.9% (382/1668)
+- 5P: 19.8% (418/2107)
+- 6P: 16.3% (418/2563)
+
+### Klutz
+
+**Set:** Cosmic Eons
+
+**Power:** Power of Clumsiness - Accidents help them
+
+**Statistics:**
+- Overall Win Rate: 24.2%
+- Total Games: 8,508
+- 2P: 49.8% (408/819)
+- 3P: 31.4% (412/1312)
+- 4P: 25.0% (421/1685)
+- 5P: 18.7% (393/2098)
+- 6P: 16.5% (427/2594)
+
+### Insect
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Swarm - Many small ships
+
+**Statistics:**
+- Overall Win Rate: 24.2%
+- Total Games: 8,429
+- 2P: 49.7% (430/865)
+- 3P: 32.8% (439/1337)
+- 4P: 24.1% (402/1668)
+- 5P: 18.5% (379/2047)
+- 6P: 15.6% (391/2512)
+
+### Silencer
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Quiet - Stops powers/effects
+
+**Statistics:**
+- Overall Win Rate: 24.2%
+- Total Games: 8,451
+- 2P: 50.1% (413/825)
+- 3P: 33.3% (413/1240)
+- 4P: 24.1% (402/1670)
+- 5P: 19.2% (407/2118)
+- 6P: 15.6% (406/2598)
+
+### General
+
+**Set:** Cosmic Alliance
+
+**Power:** Power to Command - Controls allied ship placement
+
+**Statistics:**
+- Overall Win Rate: 24.1%
+- Total Games: 8,459
+- 2P: 50.0% (429/858)
+- 3P: 32.7% (423/1294)
+- 4P: 24.6% (433/1757)
+- 5P: 19.0% (394/2074)
+- 6P: 14.7% (363/2476)
+
+### Pickpocket
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Pilfer - Steals from others
+
+**Statistics:**
+- Overall Win Rate: 24.1%
+- Total Games: 8,359
+- 2P: 48.1% (407/846)
+- 3P: 30.4% (375/1234)
+- 4P: 24.9% (424/1706)
+- 5P: 19.2% (394/2052)
+- 6P: 16.5% (415/2521)
+
+### Prophet
+
+**Set:** Cosmic Conflict
+
+**Power:** Power of Prophecy - Predicts encounter outcomes
+
+**Statistics:**
+- Overall Win Rate: 24.1%
+- Total Games: 8,438
+- 2P: 49.7% (415/835)
+- 3P: 30.0% (397/1323)
+- 4P: 24.9% (415/1664)
+- 5P: 19.0% (396/2088)
+- 6P: 16.2% (410/2528)
+
+### Aura
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Presence - Passive area effects
+
+**Statistics:**
+- Overall Win Rate: 24.1%
+- Total Games: 8,506
+- 2P: 48.2% (424/879)
+- 3P: 32.2% (402/1250)
+- 4P: 25.4% (428/1687)
+- 5P: 18.2% (390/2141)
+- 6P: 15.9% (405/2549)
+
+### Love
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Attract - Draws others to them
+
+**Statistics:**
+- Overall Win Rate: 24.1%
+- Total Games: 8,664
+- 2P: 46.4% (397/855)
+- 3P: 32.7% (426/1303)
+- 4P: 25.1% (435/1732)
+- 5P: 19.0% (419/2211)
+- 6P: 16.0% (410/2563)
+
+### Bully
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Intimidate - Forces weaker opponents to negotiate
+
+**Statistics:**
+- Overall Win Rate: 24.1%
+- Total Games: 8,451
+- 2P: 48.0% (405/844)
+- 3P: 31.5% (397/1262)
+- 4P: 25.0% (416/1662)
+- 5P: 19.6% (396/2020)
+- 6P: 15.7% (419/2663)
+
+### Guardian
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Guard - Protects assets
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,414
+- 2P: 49.8% (424/852)
+- 3P: 31.8% (403/1266)
+- 4P: 24.0% (404/1681)
+- 5P: 20.3% (418/2064)
+- 6P: 14.7% (374/2551)
+
+### Sniveler
+
+**Set:** Cosmic Incursion
+
+**Power:** Power to Whine - Complains to get benefits
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,366
+- 2P: 46.6% (375/804)
+- 3P: 33.4% (438/1310)
+- 4P: 22.8% (381/1674)
+- 5P: 20.5% (425/2078)
+- 6P: 15.6% (391/2500)
+
+### Pirate
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Plunder - Takes from encounters
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,479
+- 2P: 47.8% (410/858)
+- 3P: 31.0% (388/1252)
+- 4P: 24.1% (403/1674)
+- 5P: 20.0% (431/2152)
+- 6P: 15.9% (405/2543)
+
+### Whirligig
+
+**Set:** Cosmic Dominion
+
+**Power:** Power to Spin - Rotates positions/cards
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,314
+- 2P: 47.7% (384/805)
+- 3P: 30.5% (377/1235)
+- 4P: 23.9% (388/1625)
+- 5P: 19.7% (424/2149)
+- 6P: 17.0% (424/2500)
+
+### Cudgel
+
+**Set:** Base Game
+
+**Power:** Power to Stun - Forces opponent to play lowest encounter card
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,393
+- 2P: 46.5% (374/804)
+- 3P: 29.6% (372/1256)
+- 4P: 25.3% (432/1706)
+- 5P: 20.1% (427/2127)
+- 6P: 16.4% (410/2500)
+
+### Philanthropist
+
+**Set:** Base Game
+
+**Power:** Power to Give - Must give cards away, benefits from it
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,574
+- 2P: 46.8% (389/831)
+- 3P: 32.1% (420/1307)
+- 4P: 25.8% (451/1747)
+- 5P: 18.5% (402/2170)
+- 6P: 15.7% (395/2519)
+
+### Demon
+
+**Set:** Promo
+
+**Power:** Power to Possess - Takes control of opponents
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,262
+- 2P: 48.4% (388/801)
+- 3P: 34.2% (406/1186)
+- 4P: 23.8% (404/1699)
+- 5P: 19.5% (403/2071)
+- 6P: 15.2% (381/2505)
+
+### Worm
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Burrow - Underground movement
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,407
+- 2P: 50.7% (403/795)
+- 3P: 31.6% (392/1240)
+- 4P: 25.0% (428/1712)
+- 5P: 19.5% (409/2099)
+- 6P: 15.0% (383/2561)
+
+### Phantasm
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Haunt - Ghostly presence affects play
+
+**Statistics:**
+- Overall Win Rate: 24.0%
+- Total Games: 8,255
+- 2P: 48.0% (409/852)
+- 3P: 33.0% (403/1222)
+- 4P: 23.0% (365/1589)
+- 5P: 19.6% (407/2080)
+- 6P: 15.7% (394/2512)
+
+### Geek
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power of Knowledge - Obscure information
+
+**Statistics:**
+- Overall Win Rate: 23.9%
+- Total Games: 8,397
+- 2P: 46.5% (402/864)
+- 3P: 32.1% (403/1255)
+- 4P: 23.6% (392/1661)
+- 5P: 18.9% (400/2114)
+- 6P: 16.5% (414/2503)
+
+### Lloyd
+
+**Set:** Cosmic Odyssey
+
+**Power:** Power to Protect - Guards player assets
+
+**Statistics:**
+- Overall Win Rate: 23.9%
+- Total Games: 8,318
+- 2P: 49.6% (411/828)
+- 3P: 29.9% (378/1263)
+- 4P: 23.6% (388/1642)
+- 5P: 20.2% (414/2049)
+- 6P: 15.7% (398/2536)
+
+### Spiff
+
+**Set:** Base Game
+
+**Power:** Power to Crash Land - Ships survive even on lost encounters
+
+**Statistics:**
+- Overall Win Rate: 23.9%
+- Total Games: 8,360
+- 2P: 48.8% (422/864)
+- 3P: 32.6% (421/1291)
+- 4P: 23.0% (379/1648)
+- 5P: 18.3% (370/2017)
+- 6P: 16.0% (407/2540)
+
+### Sneak
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Sneak - Hidden movements
+
+**Statistics:**
+- Overall Win Rate: 23.9%
+- Total Games: 8,398
+- 2P: 52.9% (411/777)
+- 3P: 32.6% (398/1220)
+- 4P: 23.7% (398/1679)
+- 5P: 19.3% (416/2150)
+- 6P: 15.0% (385/2572)
+
+### Changeling
+
+**Set:** Cosmic Conflict
+
+**Power:** Power to Change Form - Becomes different alien each encounter
+
+**Statistics:**
+- Overall Win Rate: 23.9%
+- Total Games: 8,460
+- 2P: 51.6% (437/847)
+- 3P: 30.4% (368/1211)
+- 4P: 23.7% (404/1705)
+- 5P: 18.8% (395/2098)
+- 6P: 16.0% (416/2599)
+
+### Joker
+
+**Set:** Cosmic Dominion
+
+**Power:** Power of Jest - Unpredictable card effects
+
+**Statistics:**
+- Overall Win Rate: 23.9%
+- Total Games: 8,303
+- 2P: 48.3% (402/832)
+- 3P: 32.9% (402/1221)
+- 4P: 23.5% (388/1654)
+- 5P: 18.5% (390/2109)
+- 6P: 16.0% (399/2487)
+
+### Vox
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Speak - Voice affects gameplay
+
+**Statistics:**
+- Overall Win Rate: 23.8%
+- Total Games: 8,406
+- 2P: 47.5% (431/907)
+- 3P: 32.7% (400/1225)
+- 4P: 25.2% (407/1617)
+- 5P: 18.8% (397/2114)
+- 6P: 14.5% (369/2543)
+
+### Mouth
+
+**Set:** Cosmic Storm
+
+**Power:** Power to Talk - Convinces others through speech
+
+**Statistics:**
+- Overall Win Rate: 23.8%
+- Total Games: 8,413
+- 2P: 45.7% (358/784)
+- 3P: 33.2% (420/1265)
+- 4P: 23.8% (404/1696)
+- 5P: 19.5% (402/2066)
+- 6P: 16.1% (418/2602)
+
+### Tripler
+
+**Set:** Base Game
+
+**Power:** Power to Triple - Encounter card value tripled
+
+**Statistics:**
+- Overall Win Rate: 23.3%
+- Total Games: 8,382
+- 2P: 45.0% (367/816)
+- 3P: 33.3% (436/1308)
+- 4P: 25.3% (419/1654)
+- 5P: 18.3% (389/2127)
+- 6P: 13.9% (345/2477)
 
 ### Scavenger
 
@@ -3034,758 +3737,55 @@
 
 **Statistics:**
 - Overall Win Rate: 23.3%
-- Total Games: 811
-- 2P: 44.7% (42/94)
-- 3P: 32.2% (38/118)
-- 4P: 20.8% (36/173)
-- 5P: 15.8% (32/203)
-- 6P: 18.4% (41/223)
+- Total Games: 8,539
+- 2P: 44.4% (354/797)
+- 3P: 30.3% (381/1256)
+- 4P: 25.3% (441/1746)
+- 5P: 18.9% (400/2111)
+- 6P: 15.8% (416/2629)
 
-### Coordinator
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Organize - Coordinates ally actions
-
-**Statistics:**
-- Overall Win Rate: 23.3%
-- Total Games: 833
-- 2P: 45.8% (38/83)
-- 3P: 29.8% (36/121)
-- 4P: 23.2% (38/164)
-- 5P: 20.3% (44/217)
-- 6P: 15.3% (38/248)
-
-### Reincarnator
+### Kamikaze
 
 **Set:** Base Game
 
-**Power:** Power to be Reborn - Gets new alien when loses all bases
-
-**Statistics:**
-- Overall Win Rate: 23.3%
-- Total Games: 803
-- 2P: 41.9% (31/74)
-- 3P: 33.0% (36/109)
-- 4P: 17.8% (31/174)
-- 5P: 22.4% (43/192)
-- 6P: 18.1% (46/254)
-
-### Xenophile
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Love - Benefits from having diverse allies
-
-**Statistics:**
-- Overall Win Rate: 23.3%
-- Total Games: 821
-- 2P: 50.0% (43/86)
-- 3P: 26.4% (34/129)
-- 4P: 25.0% (46/184)
-- 5P: 17.1% (32/187)
-- 6P: 15.3% (36/235)
-
-### Reborn
-
-**Set:** Cosmic Alliance
-
-**Power:** Power of Rebirth - Returns from defeat
-
-**Statistics:**
-- Overall Win Rate: 23.3%
-- Total Games: 873
-- 2P: 45.7% (37/81)
-- 3P: 27.1% (42/155)
-- 4P: 29.1% (50/172)
-- 5P: 18.4% (38/206)
-- 6P: 13.9% (36/259)
-
-### Skeptic
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Doubt - Denies other powers
-
-**Statistics:**
-- Overall Win Rate: 23.2%
-- Total Games: 835
-- 2P: 47.4% (36/76)
-- 3P: 27.8% (32/115)
-- 4P: 22.3% (40/179)
-- 5P: 22.9% (50/218)
-- 6P: 14.6% (36/247)
-
-### Philanthropist
-
-**Set:** Base Game
-
-**Power:** Power to Give - Must give cards away, benefits from it
-
-**Statistics:**
-- Overall Win Rate: 23.2%
-- Total Games: 866
-- 2P: 50.6% (42/83)
-- 3P: 36.0% (50/139)
-- 4P: 22.9% (41/179)
-- 5P: 17.1% (36/210)
-- 6P: 12.5% (32/255)
-
-### Mercenary
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Bounty Hunting - Paid to join encounters
-
-**Statistics:**
-- Overall Win Rate: 23.2%
-- Total Games: 850
-- 2P: 52.9% (46/87)
-- 3P: 33.3% (42/126)
-- 4P: 23.2% (38/164)
-- 5P: 16.1% (37/230)
-- 6P: 14.0% (34/243)
-
-### Sorcerer
-
-**Set:** Base Game
-
-**Power:** Power to Switch - May swap encounter cards with opponent
-
-**Statistics:**
-- Overall Win Rate: 23.2%
-- Total Games: 850
-- 2P: 58.7% (44/75)
-- 3P: 34.4% (43/125)
-- 4P: 23.2% (39/168)
-- 5P: 14.7% (32/217)
-- 6P: 14.7% (39/265)
-
-### Butler
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Serve - Helps others but secretly benefits
-
-**Statistics:**
-- Overall Win Rate: 23.1%
-- Total Games: 809
-- 2P: 45.8% (38/83)
-- 3P: 36.6% (45/123)
-- 4P: 21.3% (38/178)
-- 5P: 15.5% (30/193)
-- 6P: 15.5% (36/232)
-
-### Grumpus
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Complain - Benefits from bad situations
-
-**Statistics:**
-- Overall Win Rate: 23.1%
-- Total Games: 863
-- 2P: 60.0% (45/75)
-- 3P: 30.4% (45/148)
-- 4P: 22.7% (39/172)
-- 5P: 15.9% (37/232)
-- 6P: 14.0% (33/236)
-
-### Demon
-
-**Set:** Promo
-
-**Power:** Power to Possess - Takes control of opponents
-
-**Statistics:**
-- Overall Win Rate: 23.0%
-- Total Games: 833
-- 2P: 39.2% (29/74)
-- 3P: 37.2% (54/145)
-- 4P: 24.8% (39/157)
-- 5P: 14.2% (30/212)
-- 6P: 16.3% (40/245)
-
-### Host
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Entertain - Benefits from hosting encounters
-
-**Statistics:**
-- Overall Win Rate: 23.0%
-- Total Games: 833
-- 2P: 41.0% (32/78)
-- 3P: 37.5% (42/112)
-- 4P: 22.9% (38/166)
-- 5P: 19.5% (43/221)
-- 6P: 14.5% (37/256)
-
-### Changeling
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Change Form - Becomes different alien each encounter
-
-**Statistics:**
-- Overall Win Rate: 22.9%
-- Total Games: 855
-- 2P: 47.0% (39/83)
-- 3P: 27.4% (32/117)
-- 4P: 24.4% (38/156)
-- 5P: 21.4% (49/229)
-- 6P: 14.1% (38/270)
-
-### Mind
-
-**Set:** Base Game
-
-**Power:** Power of Foresight - Knows opponent's card before playing own
-
-**Statistics:**
-- Overall Win Rate: 22.9%
-- Total Games: 864
-- 2P: 56.9% (41/72)
-- 3P: 28.6% (34/119)
-- 4P: 24.4% (41/168)
-- 5P: 16.2% (37/228)
-- 6P: 16.2% (45/277)
-
-### Assistant
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Help - Aids other players
-
-**Statistics:**
-- Overall Win Rate: 22.9%
-- Total Games: 847
-- 2P: 44.3% (39/88)
-- 3P: 30.2% (39/129)
-- 4P: 22.6% (37/164)
-- 5P: 17.5% (38/217)
-- 6P: 16.5% (41/249)
-
-### Remora
-
-**Set:** Base Game
-
-**Power:** Power to Suck - Takes compensation whenever anyone receives cards
-
-**Statistics:**
-- Overall Win Rate: 22.9%
-- Total Games: 861
-- 2P: 47.5% (38/80)
-- 3P: 33.3% (45/135)
-- 4P: 23.0% (40/174)
-- 5P: 18.7% (42/225)
-- 6P: 13.0% (32/247)
-
-### Hypochondriac
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Illness - Benefits from perceived weakness
-
-**Statistics:**
-- Overall Win Rate: 22.9%
-- Total Games: 857
-- 2P: 41.8% (38/91)
-- 3P: 30.2% (39/129)
-- 4P: 26.6% (51/192)
-- 5P: 17.5% (34/194)
-- 6P: 13.5% (34/251)
-
-### Delegator
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Delegate - Assigns tasks to others
-
-**Statistics:**
-- Overall Win Rate: 22.8%
-- Total Games: 816
-- 2P: 41.6% (32/77)
-- 3P: 34.1% (46/135)
-- 4P: 21.7% (33/152)
-- 5P: 18.7% (38/203)
-- 6P: 14.9% (37/249)
-
-### Sadist
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Torment - Benefits from opponent's suffering
-
-**Statistics:**
-- Overall Win Rate: 22.8%
-- Total Games: 813
-- 2P: 43.0% (37/86)
-- 3P: 33.3% (37/111)
-- 4P: 24.0% (35/146)
-- 5P: 19.0% (40/210)
-- 6P: 13.8% (36/260)
-
-### Nanny
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Protect - Guards weaker players
-
-**Statistics:**
-- Overall Win Rate: 22.7%
-- Total Games: 849
-- 2P: 45.7% (37/81)
-- 3P: 32.7% (36/110)
-- 4P: 24.5% (39/159)
-- 5P: 19.8% (46/232)
-- 6P: 13.1% (35/267)
-
-### Empath
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Harmony - Both sides benefit when using negotiate
-
-**Statistics:**
-- Overall Win Rate: 22.7%
-- Total Games: 895
-- 2P: 46.0% (40/87)
-- 3P: 31.0% (48/155)
-- 4P: 19.3% (32/166)
-- 5P: 19.4% (43/222)
-- 6P: 15.1% (40/265)
-
-### Mimic
-
-**Set:** Cosmic Conflict
-
-**Power:** Power to Mimic - Copies other alien powers
-
-**Statistics:**
-- Overall Win Rate: 22.7%
-- Total Games: 869
-- 2P: 48.7% (37/76)
-- 3P: 29.3% (36/123)
-- 4P: 24.5% (40/163)
-- 5P: 16.7% (43/257)
-- 6P: 16.4% (41/250)
-
-### Poison
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Toxify - Weakens opponents over time
-
-**Statistics:**
-- Overall Win Rate: 22.7%
-- Total Games: 847
-- 2P: 46.1% (41/89)
-- 3P: 26.7% (35/131)
-- 4P: 22.5% (38/169)
-- 5P: 18.2% (36/198)
-- 6P: 16.2% (42/260)
-
-### Sniveler
-
-**Set:** Cosmic Incursion
-
-**Power:** Power to Whine - Complains to get benefits
-
-**Statistics:**
-- Overall Win Rate: 22.7%
-- Total Games: 852
-- 2P: 56.5% (39/69)
-- 3P: 26.9% (36/134)
-- 4P: 23.5% (40/170)
-- 5P: 19.9% (41/206)
-- 6P: 13.6% (37/273)
-
-### Prophet
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Prophecy - Predicts encounter outcomes
+**Power:** Power of Self-Destruction - Ships count for more if willing to die
 
 **Statistics:**
 - Overall Win Rate: 22.6%
-- Total Games: 850
-- 2P: 51.7% (45/87)
-- 3P: 32.0% (40/125)
-- 4P: 25.7% (39/152)
-- 5P: 14.1% (35/248)
-- 6P: 13.9% (33/238)
+- Total Games: 8,412
+- 2P: 48.6% (397/817)
+- 3P: 30.4% (373/1226)
+- 4P: 21.3% (359/1687)
+- 5P: 18.6% (395/2122)
+- 6P: 14.9% (381/2560)
 
-### Locust_Alt
+### Loser
 
-**Set:** Cosmic Odyssey
+**Set:** Base Game
 
-**Statistics:**
-- Overall Win Rate: 22.5%
-- Total Games: 861
-- 2P: 42.0% (34/81)
-- 3P: 36.5% (46/126)
-- 4P: 21.7% (38/175)
-- 5P: 18.1% (39/216)
-- 6P: 14.1% (37/263)
-
-### Bubble
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Protect - Shields from harm
-
-**Statistics:**
-- Overall Win Rate: 22.5%
-- Total Games: 901
-- 2P: 44.8% (43/96)
-- 3P: 27.5% (36/131)
-- 4P: 21.1% (38/180)
-- 5P: 19.7% (49/249)
-- 6P: 15.1% (37/245)
-
-### Klutz
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Clumsiness - Accidents help them
-
-**Statistics:**
-- Overall Win Rate: 22.4%
-- Total Games: 834
-- 2P: 48.8% (40/82)
-- 3P: 30.8% (33/107)
-- 4P: 26.4% (39/148)
-- 5P: 17.7% (40/226)
-- 6P: 12.9% (35/271)
-
-### Architect
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Design - Plans complex strategies
-
-**Statistics:**
-- Overall Win Rate: 22.4%
-- Total Games: 871
-- 2P: 40.0% (30/75)
-- 3P: 36.6% (48/131)
-- 4P: 20.2% (37/183)
-- 5P: 18.2% (42/231)
-- 6P: 15.1% (38/251)
-
-### Peddler
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Sell - Trades for advantage
-
-**Statistics:**
-- Overall Win Rate: 22.4%
-- Total Games: 827
-- 2P: 40.0% (32/80)
-- 3P: 31.0% (39/126)
-- 4P: 24.2% (36/149)
-- 5P: 17.0% (35/206)
-- 6P: 16.2% (43/266)
-
-### Visionary
-
-**Set:** Cosmic Conflict
-
-**Power:** Power of Vision - Sees future card draws
-
-**Statistics:**
-- Overall Win Rate: 22.3%
-- Total Games: 839
-- 2P: 36.7% (29/79)
-- 3P: 29.1% (34/117)
-- 4P: 27.0% (50/185)
-- 5P: 16.5% (34/206)
-- 6P: 15.9% (40/252)
-
-### Sapient
-
-**Set:** Cosmic Alliance
-
-**Power:** Power of Intelligence - Knows optimal plays
-
-**Statistics:**
-- Overall Win Rate: 22.2%
-- Total Games: 845
-- 2P: 42.4% (42/99)
-- 3P: 23.4% (29/124)
-- 4P: 22.7% (39/172)
-- 5P: 19.9% (44/221)
-- 6P: 14.8% (34/229)
-
-### PackRat
-
-**Set:** Cosmic Eons
-
-**Statistics:**
-- Overall Win Rate: 22.2%
-- Total Games: 869
-- 2P: 48.2% (40/83)
-- 3P: 26.5% (35/132)
-- 4P: 18.5% (32/173)
-- 5P: 21.7% (48/221)
-- 6P: 14.6% (38/260)
-
-### AI
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Compute - Calculates optimal outcomes
-
-**Statistics:**
-- Overall Win Rate: 22.1%
-- Total Games: 850
-- 2P: 45.3% (43/95)
-- 3P: 34.5% (41/119)
-- 4P: 19.6% (31/158)
-- 5P: 14.9% (33/221)
-- 6P: 15.6% (40/257)
-
-### Maven
-
-**Set:** Cosmic Eons
-
-**Power:** Power of Expertise - Master of specific domain
-
-**Statistics:**
-- Overall Win Rate: 22.1%
-- Total Games: 869
-- 2P: 47.9% (34/71)
-- 3P: 32.6% (44/135)
-- 4P: 24.3% (42/173)
-- 5P: 12.3% (26/211)
-- 6P: 16.5% (46/279)
-
-### Judge
-
-**Set:** Cosmic Dominion
-
-**Power:** Power to Rule - Makes binding decisions
+**Power:** Power to Win by Losing - Wins encounters when would normally lose
 
 **Statistics:**
 - Overall Win Rate: 22.0%
-- Total Games: 861
-- 2P: 48.6% (36/74)
-- 3P: 23.6% (30/127)
-- 4P: 23.3% (40/172)
-- 5P: 18.6% (42/226)
-- 6P: 15.6% (41/262)
+- Total Games: 8,485
+- 2P: 51.6% (447/866)
+- 3P: 29.3% (381/1299)
+- 4P: 25.5% (430/1685)
+- 5P: 17.4% (378/2172)
+- 6P: 9.5% (233/2463)
 
-### Remote
-
-**Set:** Cosmic Alliance
-
-**Power:** Power to Control - Operates from distance
-
-**Statistics:**
-- Overall Win Rate: 21.9%
-- Total Games: 812
-- 2P: 48.8% (39/80)
-- 3P: 30.5% (40/131)
-- 4P: 17.7% (28/158)
-- 5P: 16.8% (35/208)
-- 6P: 15.3% (36/235)
-
-### Dragon
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Devastate - Powerful destruction
-
-**Statistics:**
-- Overall Win Rate: 21.9%
-- Total Games: 882
-- 2P: 38.7% (29/75)
-- 3P: 33.6% (46/137)
-- 4P: 21.4% (37/173)
-- 5P: 17.6% (40/227)
-- 6P: 15.2% (41/270)
-
-### Decoy
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Distract - Misleads opponents
-
-**Statistics:**
-- Overall Win Rate: 21.8%
-- Total Games: 857
-- 2P: 44.3% (39/88)
-- 3P: 29.2% (40/137)
-- 4P: 20.2% (37/183)
-- 5P: 17.7% (36/203)
-- 6P: 14.2% (35/246)
-
-### Micron
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power of Tiny - Extremely small ships
-
-**Statistics:**
-- Overall Win Rate: 21.6%
-- Total Games: 878
-- 2P: 51.3% (40/78)
-- 3P: 25.0% (35/140)
-- 4P: 19.9% (29/146)
-- 5P: 18.1% (43/238)
-- 6P: 15.6% (43/276)
-
-### Hurtz
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power to Pain - Inflicts damage
-
-**Statistics:**
-- Overall Win Rate: 21.6%
-- Total Games: 778
-- 2P: 47.0% (31/66)
-- 3P: 34.3% (37/108)
-- 4P: 22.9% (36/157)
-- 5P: 17.7% (37/209)
-- 6P: 11.3% (27/238)
-
-### Crusher
-
-**Set:** Cosmic Eons
-
-**Power:** Power to Crush - Overwhelming force
-
-**Statistics:**
-- Overall Win Rate: 21.5%
-- Total Games: 809
-- 2P: 43.5% (40/92)
-- 3P: 24.8% (27/109)
-- 4P: 23.6% (41/174)
-- 5P: 17.5% (34/194)
-- 6P: 13.3% (32/240)
-
-### Observer
+### Antimatter
 
 **Set:** Base Game
 
-**Power:** Power to Watch - Gains cards when not in encounter
-
 **Statistics:**
-- Overall Win Rate: 21.5%
-- Total Games: 829
-- 2P: 41.9% (39/93)
-- 3P: 31.2% (43/138)
-- 4P: 17.4% (30/172)
-- 5P: 13.6% (25/184)
-- 6P: 16.9% (41/242)
-
-### Plant
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Grafting - Roots ships on planets
-
-**Statistics:**
-- Overall Win Rate: 21.4%
-- Total Games: 851
-- 2P: 45.9% (39/85)
-- 3P: 28.1% (34/121)
-- 4P: 21.6% (40/185)
-- 5P: 18.3% (37/202)
-- 6P: 12.4% (32/258)
-
-### Swindler
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Cheat - Bends rules for benefit
-
-**Statistics:**
-- Overall Win Rate: 21.2%
-- Total Games: 817
-- 2P: 39.8% (37/93)
-- 3P: 27.6% (34/123)
-- 4P: 20.6% (33/160)
-- 5P: 17.7% (37/209)
-- 6P: 13.8% (32/232)
-
-### Fido
-
-**Set:** Base Game
-
-**Power:** Power to Retrieve - May retrieve cards from discard pile
-
-**Statistics:**
-- Overall Win Rate: 21.1%
-- Total Games: 825
-- 2P: 44.9% (35/78)
-- 3P: 21.2% (24/113)
-- 4P: 22.8% (38/167)
-- 5P: 23.4% (47/201)
-- 6P: 11.3% (30/266)
-
-### Deuce
-
-**Set:** Cosmic Incursion
-
-**Power:** Power of Duality - May play two encounter cards
-
-**Statistics:**
-- Overall Win Rate: 21.1%
-- Total Games: 811
-- 2P: 41.3% (31/75)
-- 3P: 28.6% (34/119)
-- 4P: 19.5% (37/190)
-- 5P: 21.0% (39/186)
-- 6P: 12.4% (30/241)
-
-### Throwback
-
-**Set:** Cosmic Odyssey
-
-**Power:** Power of Nostalgia - Uses old mechanics
-
-**Statistics:**
-- Overall Win Rate: 21.0%
-- Total Games: 856
-- 2P: 36.4% (28/77)
-- 3P: 30.1% (41/136)
-- 4P: 21.6% (42/194)
-- 5P: 14.6% (30/205)
-- 6P: 16.0% (39/244)
-
-### Worm
-
-**Set:** Cosmic Storm
-
-**Power:** Power to Burrow - Underground movement
-
-**Statistics:**
-- Overall Win Rate: 20.3%
-- Total Games: 852
-- 2P: 45.5% (35/77)
-- 3P: 35.1% (39/111)
-- 4P: 18.3% (35/191)
-- 5P: 14.8% (31/210)
-- 6P: 12.5% (33/263)
-
-### Locust
-
-**Set:** Cosmic Incursion
-
-**Power:** Power to Devour - Consumes colonies for benefits
-
-**Statistics:**
-- Overall Win Rate: 16.8%
-- Total Games: 875
-- 2P: 0.0% (0/87)
-- 3P: 29.8% (42/141)
-- 4P: 18.1% (27/149)
-- 5P: 16.0% (35/219)
-- 6P: 15.4% (43/279)
+- Overall Win Rate: 22.0%
+- Total Games: 8,413
+- 2P: 49.9% (401/804)
+- 3P: 33.3% (415/1245)
+- 4P: 27.1% (467/1722)
+- 5P: 17.1% (358/2095)
+- 6P: 8.3% (211/2547)
 
 ### Graviton
 
@@ -3794,10 +3794,10 @@
 **Power:** Power of Gravity - Pulls ships to encounters
 
 **Statistics:**
-- Overall Win Rate: 12.6%
-- Total Games: 827
-- 2P: 22.9% (22/96)
-- 3P: 13.9% (17/122)
-- 4P: 15.0% (25/167)
-- 5P: 11.1% (23/208)
-- 6P: 7.3% (17/234)
+- Overall Win Rate: 13.4%
+- Total Games: 8,555
+- 2P: 19.8% (167/842)
+- 3P: 18.4% (232/1263)
+- 4P: 17.2% (297/1730)
+- 5P: 11.3% (253/2231)
+- 6P: 8.0% (200/2489)
