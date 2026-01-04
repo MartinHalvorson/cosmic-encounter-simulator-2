@@ -143,7 +143,7 @@ DEFENSE TOTAL = Card Value + Ship Count + Kickers + Power Mods + Reinforcements 
 | Skip Encounters | ✅ Full | Automatic pass hazards |
 
 
-### Space Stations (Cosmic Alliance)
+### Space Stations (Cosmic Storm)
 
 | Station | Effect | Status |
 |---------|--------|--------|
@@ -193,7 +193,7 @@ DEFENSE TOTAL = Card Value + Ship Count + Kickers + Power Mods + Reinforcements 
 | Role Restrictions | ✅ Full | Powers can restrict to offense/defense/ally/not-involved |
 | Power Zapping | ✅ Full | Cosmic Zap disables powers for encounter |
 | Power Loss | ✅ Full | Lose all home colonies = power deactivates |
-| Total Powers | ✅ Full | 4509+ implemented (50 official base + expansions + custom) |
+| Total Powers | ✅ Full | 238 official FFG aliens implemented |
 
 ---
 
