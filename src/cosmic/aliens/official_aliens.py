@@ -3,16 +3,16 @@ Official Cosmic Encounter aliens organized by expansion.
 
 This file documents all official Fantasy Flight Games aliens from:
 - Base Game (2008): 50 aliens
-- Cosmic Incursion (2009): 20 aliens
+- Cosmic Incursion (2010): 20 aliens
 - Cosmic Conflict (2011): 20 aliens
 - Cosmic Alliance (2012): 20 aliens
 - Cosmic Storm (2013): 25 aliens
 - Cosmic Dominion (2014): 30 aliens
 - Cosmic Eons (2016): 30 aliens
-- Cosmic Odyssey (2022): 42 aliens (includes 12 alternate timeline versions)
-- Promos: 2 aliens
+- Cosmic Odyssey (2022): 42 aliens (31 new + 11 alternate timeline versions)
+- Promos: 1 alien (Demon)
 
-Total official: ~238 aliens (some are alternate versions)
+Total official: 238 aliens
 
 Sources:
 - https://cosmicencounter.fandom.com/wiki/Cosmic_Encounter_(FFG)
@@ -110,8 +110,9 @@ OFFICIAL_ALIENS: Dict[str, List[str]] = {
     ],
 
     "Promo": [
-        "Demon",  # CosmicCon 2014, later in 42nd Anniversary Edition
-        "Booster"  # Escape Velocity convention promo
+        "Demon"  # CosmicCon 2014, later in 42nd Anniversary Edition
+        # Note: Booster was originally an Escape Velocity convention promo
+        # but is now officially included in Cosmic Odyssey expansion
     ]
 }
 
