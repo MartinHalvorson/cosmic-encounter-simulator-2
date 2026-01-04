@@ -306,7 +306,7 @@ class GameConfig:
     use_flares: bool = False
     use_tech: bool = False
     use_hazards: bool = False
-    use_space_stations: bool = False  # Cosmic Incursion expansion
+    use_space_stations: bool = False  # Cosmic Storm expansion
     use_lux: bool = False  # Cosmic Odyssey expansion (currency system)
     use_rifts: bool = False  # Cosmic Odyssey expansion (trap cards)
     starting_lux: int = 5  # Lux each player starts with

@@ -117,8 +117,8 @@ DEFENSE TOTAL = Card Value + Ship Count + Kickers + Power Mods + Reinforcements 
 | **Base Game** | ✅ Full | 50 official aliens, all core rules |
 | **Cosmic Incursion** | ⚠️ Partial | Tech deck ✅, 20 aliens ✅ |
 | **Cosmic Conflict** | ⚠️ Partial | Hazard deck ✅, 20 aliens ✅ |
-| **Cosmic Alliance** | ⚠️ Partial | Space Stations (Alpha, Beta, Delta, Gamma, Omega, Sigma, Theta, Kappa) ✅, 20 aliens ✅ |
-| **Cosmic Storm** | ⚠️ Partial | Hazards ✅, 25 aliens ✅ |
+| **Cosmic Alliance** | ⚠️ Partial | Team rules framework, 20 aliens ✅ |
+| **Cosmic Storm** | ⚠️ Partial | Space Stations (Alpha, Beta, Delta, Gamma, Omega, Sigma, Theta, Kappa) ✅, 25 aliens ✅ |
 | **Cosmic Dominion** | ⚠️ Partial | 30 aliens ✅ |
 | **Cosmic Eons** | ⚠️ Partial | 30 aliens ✅ |
 | **Cosmic Odyssey** | ⚠️ Partial | 42 aliens ✅, Lux/Rifts framework only |
@@ -133,7 +133,7 @@ DEFENSE TOTAL = Card Value + Ship Count + Kickers + Power Mods + Reinforcements 
 | Tech Cards | ✅ Full | 22+ cards with costs 2-4 research points |
 
 
-### Hazard Deck (Cosmic Storm)
+### Hazard Deck (Cosmic Conflict)
 
 | Feature | Status | Notes |
 |---------|--------|-------|

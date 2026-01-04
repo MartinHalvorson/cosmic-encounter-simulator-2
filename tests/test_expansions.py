@@ -80,7 +80,7 @@ class TestTechCards:
 
 
 class TestHazards:
-    """Tests for Hazard Deck (Cosmic Storm expansion)."""
+    """Tests for Hazard Deck (Cosmic Conflict expansion)."""
 
     def test_hazard_deck_initialized_when_enabled(self):
         """Hazard deck should be created when use_hazards is True."""
@@ -177,7 +177,7 @@ class TestCombinedExpansions:
 
 
 class TestSpaceStations:
-    """Tests for Space Stations (Cosmic Incursion expansion)."""
+    """Tests for Space Stations (Cosmic Storm expansion)."""
 
     def test_stations_initialized_when_enabled(self):
         """Players should receive station markers when use_space_stations is True."""

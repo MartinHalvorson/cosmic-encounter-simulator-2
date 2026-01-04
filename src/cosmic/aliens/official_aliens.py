@@ -3,7 +3,7 @@ Official Cosmic Encounter aliens organized by expansion.
 
 This file documents all official Fantasy Flight Games aliens from:
 - Base Game (2008): 50 aliens
-- Cosmic Incursion (2009): 20 aliens
+- Cosmic Incursion (2010): 20 aliens
 - Cosmic Conflict (2011): 20 aliens
 - Cosmic Alliance (2012): 20 aliens
 - Cosmic Storm (2013): 25 aliens

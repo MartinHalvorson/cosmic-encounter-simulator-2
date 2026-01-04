@@ -366,7 +366,7 @@ class Game:
         if self.config.use_tech and self.tech_deck:
             self._deal_starting_tech()
 
-        # Initialize space stations (Cosmic Incursion expansion)
+        # Initialize space stations (Cosmic Storm expansion)
         if self.config.use_space_stations:
             self._initialize_space_stations()
 
@@ -478,7 +478,7 @@ class Game:
 
     def _initialize_space_stations(self) -> None:
         """
-        Initialize space stations for all players (Cosmic Incursion expansion).
+        Initialize space stations for all players (Cosmic Storm expansion).
         Each player gets 3 stations they can place during the game.
         """
         station_types = [
@@ -1028,7 +1028,7 @@ class Game:
         if def_tech_bonus > 0:
             self._log(f"{self.defense.name} tech bonus: +{def_tech_bonus}")
 
-        # Apply space station bonus (Cosmic Incursion expansion)
+        # Apply space station bonus (Cosmic Storm expansion)
         if self.config.use_space_stations and self.defense_planet:
             station_bonus = self._get_station_defense_bonus(
                 self.defense, self.defense_planet.planet_id

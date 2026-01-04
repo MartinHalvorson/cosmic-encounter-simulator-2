@@ -19,7 +19,7 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
 - **Multiple AI strategies** (5+ personalities) with power-aware decision making
 - **ELO rating system** with persistent statistics
 - **Tech Cards system** integrated (Cosmic Incursion expansion)
-- **Hazard Deck system** integrated (Cosmic Storm expansion)
+- **Hazard Deck system** integrated (Cosmic Conflict expansion)
 - **2-player variant** with dual power support
 - **66 unit tests** with pytest framework
 
@@ -93,7 +93,7 @@ Build out a comprehensive Cosmic Encounter simulator to simulate games under var
   - Starting tech card distribution
   - Research progress on encounter wins
   - Combat bonuses from completed techs
-- Integrated Hazard Deck system (Cosmic Storm expansion)
+- Integrated Hazard Deck system (Cosmic Conflict expansion)
   - Hazard drawing at encounter start
   - Immediate and timed hazard effects
   - Skip encounter hazards

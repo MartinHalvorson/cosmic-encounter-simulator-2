@@ -738,7 +738,7 @@ From official FFG rules and BoardGameGeek:
 - **All official FFG aliens implemented (239/239)**
 
 **Session 21 Evening Progress (2025-12-31):**
-- **Added Space Station expansion mechanics (Cosmic Incursion):**
+- **Added Space Station expansion mechanics (Cosmic Storm):**
   - StationType enum: ALPHA (+2 defense), GAMMA (+1 regroup), DELTA (colony presence)
   - SpaceStation dataclass for tracking station placement
   - Player methods: place_station(), get_station_defense_bonus()

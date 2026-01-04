@@ -43,7 +43,7 @@ class Player:
     # Technology research state (Cosmic Incursion expansion)
     tech_state: PlayerTechState = field(default_factory=PlayerTechState)
 
-    # Space stations (Cosmic Incursion expansion)
+    # Space stations (Cosmic Storm expansion)
     space_stations: List[SpaceStation] = field(default_factory=list)
     available_stations: List[StationType] = field(default_factory=list)  # Unplaced stations
 

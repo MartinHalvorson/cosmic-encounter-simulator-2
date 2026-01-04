@@ -1,5 +1,5 @@
 """
-Hazard Deck - Random events from Cosmic Storm expansion.
+Hazard Deck - Random events from Cosmic Conflict expansion.
 
 Hazards are dangerous cosmic events that affect the game in unpredictable ways.
 A hazard is drawn at the start of each encounter and affects that encounter.
