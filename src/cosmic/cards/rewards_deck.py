@@ -46,8 +46,9 @@ class RewardsDeck:
         for value in reinforcement_values:
             cards.append(ReinforcementCard(value=value, _from_rewards_deck=True))
 
-        # Kicker cards
-        kicker_values = [-1, 0, 1, 2, 2, 3, 4]
+        # Kicker cards - multipliers per official FFG Cosmic Incursion
+        # x2 (2 copies), x3 (1 copy), x4 (1 copy), x-1 (1 copy - inverts for Loser)
+        kicker_values = [2, 2, 3, 4, -1]
         for value in kicker_values:
             cards.append(KickerCard(value=value, _from_rewards_deck=True))
 

@@ -285,10 +285,7 @@ FLARE_EFFECTS: Dict[str, Dict[str, str]] = {
         "wild": "Wild: Play a card from your stash without revealing.",
         "super": "Super: Your entire stash adds to your total."
     },
-    "Mutant": {
-        "wild": "Wild: Draw 2 cards, keep 1, discard 1.",
-        "super": "Super: Draw 4 cards, keep 2, discard 2."
-    },
+    # Note: Mutant flare defined earlier in file
     "Observer": {
         "wild": "Wild: Look at all face-down cards in the encounter.",
         "super": "Super: Look at all hands and choose your card last."
@@ -305,18 +302,7 @@ FLARE_EFFECTS: Dict[str, Dict[str, str]] = {
         "wild": "Wild: Search deck for any attack card.",
         "super": "Super: Search deck for any card."
     },
-    "Tick-Tock": {
-        "wild": "Wild: Add 2 tokens to your doom counter.",
-        "super": "Super: Win immediately if at 8+ tokens."
-    },
-    "Tripler": {
-        "wild": "Wild: Triple a single digit on your attack card.",
-        "super": "Super: Triple your entire attack card value."
-    },
-    "Warpish": {
-        "wild": "Wild: Send 2 opponent ships to the warp.",
-        "super": "Super: Send 4 opponent ships to the warp."
-    },
+    # Note: Tick-Tock, Tripler, Warpish flares defined earlier in file
     "Will": {
         "wild": "Wild: Use your power even when zapped.",
         "super": "Super: Your power cannot be zapped this encounter."
@@ -330,10 +316,7 @@ FLARE_EFFECTS: Dict[str, Dict[str, str]] = {
         "wild": "Wild: Steal 1 card from encounter winner.",
         "super": "Super: Steal 3 cards from encounter winner."
     },
-    "Cudgel": {
-        "wild": "Wild: Force opponent to commit all ships.",
-        "super": "Super: Opponent's ships count as half."
-    },
+    # Note: Cudgel flare defined earlier in file
     "Daredevil": {
         "wild": "Wild: Double your attack card if you committed 4 ships.",
         "super": "Super: Triple attack if you committed 4 ships."
@@ -411,10 +394,7 @@ FLARE_EFFECTS: Dict[str, Dict[str, str]] = {
         "wild": "Wild: Freeze 1 opponent ship (can't be used).",
         "super": "Super: Freeze up to 3 opponent ships."
     },
-    "Ethic": {
-        "wild": "Wild: Force fair play - all must reveal cards.",
-        "super": "Super: All players must use lowest attack cards."
-    },
+    # Note: Ethic flare defined earlier in file
     "Fungus": {
         "wild": "Wild: Spread to 1 additional colony.",
         "super": "Super: Spread to all opponent colonies."

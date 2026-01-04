@@ -57,9 +57,21 @@ class AttackCard(EncounterCard):
         return f"Attack {self.value}"
 
     def mirrored_value(self) -> int:
-        """Returns the value when Mirror alien power is used (digits reversed)."""
-        if self.value < 10:
-            return self.value * 10
+        """Returns the value when Mirror alien power is used (digits reversed).
+
+        Per FFG rules, attack cards are displayed as two digits (00-40).
+        Mirror swaps the tens and ones digits:
+        - 06 becomes 60
+        - 12 becomes 21
+        - 40 becomes 04
+        """
+        # Handle negative values (from rewards deck) - just swap digits of absolute value
+        if self.value < 0:
+            abs_val = abs(self.value)
+            tens = abs_val // 10
+            ones = abs_val % 10
+            return -(ones * 10 + tens)
+        # For values 0-9, treat as 0X where X is the value, so swap gives X0
         tens = self.value // 10
         ones = self.value % 10
         return ones * 10 + tens
