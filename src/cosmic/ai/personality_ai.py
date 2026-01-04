@@ -421,17 +421,14 @@ class OpportunisticAI(AIStrategy):
         player: "Player",
         defense: "Player"
     ) -> "Planet":
-        """Attack based on strategic value."""
+        """Attack based on strategic value - prefer weak or undefended planets."""
         planets = defense.home_planets
         if not planets:
             return None
 
-        # Prefer planets where we can establish foothold
-        # (fewer ships but not empty)
-        return min(
-            planets,
-            key=lambda p: p.get_ships(defense.name) if p.get_ships(defense.name) > 0 else 100
-        )
+        # Prefer planets with fewest ships - undefended planets are ideal targets
+        # (easier to win and establish colony)
+        return min(planets, key=lambda p: p.get_ships(defense.name))
 
     def negotiate_deal(
         self,

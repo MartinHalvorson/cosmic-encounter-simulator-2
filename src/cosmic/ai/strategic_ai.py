@@ -770,7 +770,8 @@ class StrategicAI(AIStrategy):
             # Accept if we need colonies or they're likely to win
             if my_colonies < 3 or off_strength > 0.5:
                 return Side.OFFENSE
-            return Side.OFFENSE
+            # We have enough colonies and offense isn't strong - decline
+            return None
 
         if invited_by_defense:
             # Defensive alliance - guaranteed cards if we win
