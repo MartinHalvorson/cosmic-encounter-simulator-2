@@ -1869,3 +1869,28 @@ print(AlienRegistry.get_expansion_summary())
 - Each expansion can be individually enabled/disabled
 - Custom/homebrew aliens completely removed
 - Documentation provided for expansion features
+
+### Session 45 Progress
+
+**Rule Accuracy Fixes Made:**
+
+1. **Fixed Morph Card Counts:**
+   - Cosmic deck: Reduced from 2 to 1 morph card (official base game has 1)
+   - Rewards deck: Added missing morph card (each expansion reward deck has 1)
+   - Total cosmic deck now correctly has 72 cards (was 73)
+
+2. **Fixed Documentation Errors:**
+   - README.md: Fixed Space Stations attribution from "Cosmic Alliance" to "Cosmic Storm"
+   - README.md: Updated alien count from outdated 4509+ to correct 238 official aliens
+
+3. **Fixed Second Encounter Eligibility:**
+   - Added `deal_successful` flag to Game dataclass
+   - Card trade deals now correctly allow a second encounter
+   - Previously only deals establishing colonies triggered second encounters
+   - Per FFG rules: ANY successful deal should allow second encounter
+
+**Session 45 Final Statistics:**
+- **All tests passing (267 tests)**
+- **Cosmic deck: 72 cards (correct)**
+- **Rewards deck: 34 cards (includes morph)**
+- **All changes committed and pushed**
