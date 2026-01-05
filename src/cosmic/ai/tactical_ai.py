@@ -123,7 +123,7 @@ class TacticalAI(AIStrategy):
         self,
         attack_cards: List["AttackCard"],
         negotiate_cards: List
-    ) -> "EncounterCard":
+    ) -> Optional["EncounterCard"]:
         """Select highest attack card to close out the game."""
         if attack_cards:
             return max(attack_cards, key=lambda c: c.value)
@@ -135,7 +135,7 @@ class TacticalAI(AIStrategy):
         self,
         attack_cards: List["AttackCard"],
         negotiate_cards: List
-    ) -> "EncounterCard":
+    ) -> Optional["EncounterCard"]:
         """Select high-value card to stop opponent from winning."""
         if attack_cards:
             # Use highest card to maximize win chance
@@ -152,7 +152,7 @@ class TacticalAI(AIStrategy):
         is_offense: bool,
         game: "Game",
         win_pressure: float
-    ) -> "EncounterCard":
+    ) -> Optional["EncounterCard"]:
         """
         Select card that maximizes expected game value.
 
