@@ -546,9 +546,18 @@ class Game:
             for player in [self.offense, self.defense]:
                 if player.power == "Loser" and player.power_active:
                     min_card = player.select_min()
-                    if min_card.value <= 4:
+                    if min_card and min_card.value <= 4:
                         self.is_Loser_active = True
-                    player.hand.append(min_card)
+                    if min_card:
+                        player.hand.append(min_card)
+
+            # Final check: ensure both players have encounter cards before selection
+            for player in [self.offense, self.defense]:
+                while not player.has_encounter_card():
+                    for card in list(player.hand):
+                        self.discard(card)
+                    player.hand = []
+                    self.deal_hand(player)
 
             # Each main player selects his/her encounter card
             self.offense_card = self.select_offense_encounter_card()
