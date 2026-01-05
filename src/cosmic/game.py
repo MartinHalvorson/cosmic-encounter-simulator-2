@@ -131,6 +131,7 @@ class Game:
     zapped_powers: List[Player] = field(default_factory=list)  # Players whose powers are zapped this encounter
     encounter_cancelled: bool = False  # Force Field was played
     deal_made: bool = False  # Track if a successful deal was made (for second encounter eligibility)
+    _permanent_loss_mode: bool = False  # Ships are destroyed instead of going to warp (hazard effect)
 
     # Combat totals (set during resolution for powers that need them)
     offense_total: int = 0
@@ -912,8 +913,9 @@ class Game:
         def_card = self.defense_card
 
         # Handle different card combinations
-        off_is_attack = isinstance(off_card, AttackCard)
-        def_is_attack = isinstance(def_card, AttackCard)
+        # MorphCard counts as an attack card (copies opponent's attack value)
+        off_is_attack = isinstance(off_card, (AttackCard, MorphCard))
+        def_is_attack = isinstance(def_card, (AttackCard, MorphCard))
         off_is_neg = isinstance(off_card, NegotiateCard)
         def_is_neg = isinstance(def_card, NegotiateCard)
 
@@ -949,9 +951,34 @@ class Game:
         off_card = self.offense_card
         def_card = self.defense_card
 
-        # Get base values
-        off_value = off_card.value if isinstance(off_card, AttackCard) else 0
-        def_value = def_card.value if isinstance(def_card, AttackCard) else 0
+        # Get base values (MorphCard copies opponent's attack value)
+        off_is_morph = isinstance(off_card, MorphCard)
+        def_is_morph = isinstance(def_card, MorphCard)
+
+        # Determine base values first (before morph resolution)
+        if isinstance(off_card, AttackCard):
+            off_base = off_card.value
+        else:
+            off_base = 0
+
+        if isinstance(def_card, AttackCard):
+            def_base = def_card.value
+        else:
+            def_base = 0
+
+        # Apply morph: copies opponent's base attack value
+        # If both play morph, both get 0 (they copy each other's morph)
+        if off_is_morph and def_is_morph:
+            off_value = 0
+            def_value = 0
+        elif off_is_morph:
+            off_value = def_base
+        elif def_is_morph:
+            def_value = off_base
+            off_value = off_base
+        else:
+            off_value = off_base
+            def_value = def_base
 
         # Apply kicker multipliers
         if self.offense_kicker:
@@ -1053,6 +1080,12 @@ class Game:
                     reverse_winner = True
                     break
 
+        # Apply hazard resolution effects (swap_outcome from Dimensional Rift, etc.)
+        swap_outcome, permanent_loss = self._apply_hazard_resolution_effects()
+        if swap_outcome:
+            reverse_winner = not reverse_winner
+        self._permanent_loss_mode = permanent_loss
+
         # Determine winner
         if reverse_winner:
             if off_total < def_total:
@@ -1069,7 +1102,7 @@ class Game:
         """Handle offense winning the encounter."""
         self._log("Offense wins!")
 
-        # Defense ships go to warp
+        # Defense ships go to warp (or are permanently lost if hazard effect active)
         for name, count in self.defense_ships.items():
             player = self.get_player_by_name(name)
             if player:
@@ -1078,7 +1111,10 @@ class Game:
                     ships_to_warp = player.alien.on_ships_to_warp(
                         self, player, ships_to_warp, "encounter_loss"
                     )
-                player.send_ships_to_warp(ships_to_warp)
+                if self._permanent_loss_mode:
+                    self._log(f"{player.name} loses {ships_to_warp} ships permanently!")
+                else:
+                    player.send_ships_to_warp(ships_to_warp)
 
         # Clear defense ships from planet
         self.defense_planet.set_ships(self.defense.name, 0)
@@ -1104,7 +1140,7 @@ class Game:
         """Handle defense winning the encounter."""
         self._log("Defense wins!")
 
-        # Offense ships go to warp
+        # Offense ships go to warp (or are permanently lost if hazard effect active)
         for name, count in self.offense_ships.items():
             player = self.get_player_by_name(name)
             if player:
@@ -1113,7 +1149,10 @@ class Game:
                     ships_to_warp = player.alien.on_ships_to_warp(
                         self, player, ships_to_warp, "encounter_loss"
                     )
-                player.send_ships_to_warp(ships_to_warp)
+                if self._permanent_loss_mode:
+                    self._log(f"{player.name} loses {ships_to_warp} ships permanently!")
+                else:
+                    player.send_ships_to_warp(ships_to_warp)
 
         # Defensive allies get rewards (choice: cards OR ships from warp)
         for ally in self.defense_allies:
@@ -1446,6 +1485,7 @@ class Game:
         self.zapped_powers = []
         self.encounter_cancelled = False
         self.deal_made = False
+        self._permanent_loss_mode = False
 
     def _check_artifact_opportunity(self, phase: str, context: Dict[str, Any]) -> Optional[ArtifactCard]:
         """
