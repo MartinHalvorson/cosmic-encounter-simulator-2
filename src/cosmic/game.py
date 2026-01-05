@@ -973,9 +973,10 @@ class Game:
             def_value = 0
         elif off_is_morph:
             off_value = def_base
+            def_value = def_base
         elif def_is_morph:
-            def_value = off_base
             off_value = off_base
+            def_value = off_base
         else:
             off_value = off_base
             def_value = def_base
@@ -1392,8 +1393,11 @@ class Game:
                 self.cosmic_deck.discard(card)
             player.hand.clear()
 
-            # Draw new hand
-            cards = self.cosmic_deck.draw_multiple(self.config.starting_hand_size)
+            # Draw new hand (apply tech bonus for extra draw)
+            hand_size = self.config.starting_hand_size
+            if self.config.use_tech:
+                hand_size += player.tech_state.get_extra_draw()
+            cards = self.cosmic_deck.draw_multiple(hand_size)
             player.add_cards(cards)
             self._log(f"{player.name} draws a new hand")
 
@@ -1449,15 +1453,21 @@ class Game:
 
     def _check_game_end(self) -> None:
         """Check if any player has won the game."""
-        # Use reduced colonies for 2-player mode
-        colonies_needed = (
+        # Base colonies needed (5 for standard, 4 for 2-player)
+        base_colonies_needed = (
             self.config.two_player_colonies_to_win
             if self.config.two_player_mode
             else self.config.colonies_to_win
         )
 
         for player in self.players:
-            # Standard win: colonies (5 for standard, 4 for 2-player)
+            # Check for Victory Core tech (reduces required colonies)
+            colonies_needed = player.tech_state.get_reduced_win_condition()
+            if colonies_needed >= base_colonies_needed:
+                # No tech bonus, use base
+                colonies_needed = base_colonies_needed
+
+            # Standard win: colonies
             colonies = player.count_foreign_colonies(self.planets)
             if colonies >= colonies_needed:
                 if player not in self.winners:

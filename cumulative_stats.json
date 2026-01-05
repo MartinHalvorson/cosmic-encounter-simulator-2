@@ -1,21 +1,21 @@
 {
-  "total_games": 22298330,
-  "solo_victories": 21676546,
-  "shared_victories": 368560,
+  "total_games": 22298478,
+  "solo_victories": 21676692,
+  "shared_victories": 368562,
   "timeouts": 3224,
   "errors": 0,
-  "total_turns": 111970510,
+  "total_turns": 111971172,
   "min_game_length": 1,
   "max_game_length": 200,
   "games_by_player_count": {
-    "3": 4688063,
-    "4": 4737135,
-    "5": 4933504,
-    "6": 4682593,
-    "2": 3257035
+    "3": 4688087,
+    "4": 4737167,
+    "5": 4933535,
+    "6": 4682625,
+    "2": 3257064
   },
-  "last_updated": "2025-12-31T21:50:48.806343",
-  "simulation_runs": 49,
+  "last_updated": "2026-01-05T00:23:33.790789",
+  "simulation_runs": 51,
   "alien_stats": {
     "Knight": {
       "name": "Knight",
@@ -63,12 +63,12 @@
     },
     "Coordinator": {
       "name": "Coordinator",
-      "games_played": 238040,
-      "games_won": 55024,
+      "games_played": 238044,
+      "games_won": 55026,
       "win_rate": 23.12,
-      "solo_wins": 52990,
+      "solo_wins": 52992,
       "shared_wins": 2034,
-      "elo_rating": 116.8,
+      "elo_rating": 131.9,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -107,7 +107,7 @@
     },
     "Brute": {
       "name": "Brute",
-      "games_played": 236995,
+      "games_played": 236997,
       "games_won": 54927,
       "win_rate": 23.18,
       "solo_wins": 53083,
@@ -151,10 +151,10 @@
     },
     "Genius": {
       "name": "Genius",
-      "games_played": 238096,
-      "games_won": 55104,
+      "games_played": 238100,
+      "games_won": 55105,
       "win_rate": 23.14,
-      "solo_wins": 53135,
+      "solo_wins": 53136,
       "shared_wins": 1969,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -162,7 +162,7 @@
     },
     "Prophet": {
       "name": "Prophet",
-      "games_played": 238829,
+      "games_played": 238832,
       "games_won": 59069,
       "win_rate": 24.73,
       "solo_wins": 57025,
@@ -173,7 +173,7 @@
     },
     "Negator": {
       "name": "Negator",
-      "games_played": 238391,
+      "games_played": 238396,
       "games_won": 55168,
       "win_rate": 23.14,
       "solo_wins": 53255,
@@ -184,18 +184,18 @@
     },
     "Virus": {
       "name": "Virus",
-      "games_played": 238007,
-      "games_won": 69887,
+      "games_played": 238011,
+      "games_won": 69888,
       "win_rate": 29.36,
-      "solo_wins": 67722,
+      "solo_wins": 67723,
       "shared_wins": 2165,
-      "elo_rating": 106.7,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 4.01
     },
     "Masochist": {
       "name": "Masochist",
-      "games_played": 238136,
+      "games_played": 238138,
       "games_won": 56031,
       "win_rate": 23.53,
       "solo_wins": 53738,
@@ -206,20 +206,20 @@
     },
     "Dictator": {
       "name": "Dictator",
-      "games_played": 238472,
-      "games_won": 55261,
+      "games_played": 238474,
+      "games_won": 55262,
       "win_rate": 23.17,
-      "solo_wins": 53314,
+      "solo_wins": 53315,
       "shared_wins": 1947,
-      "elo_rating": 113.2,
+      "elo_rating": 112.6,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Witch": {
       "name": "Witch",
-      "games_played": 237947,
+      "games_played": 237952,
       "games_won": 55264,
-      "win_rate": 23.23,
+      "win_rate": 23.22,
       "solo_wins": 53311,
       "shared_wins": 1953,
       "elo_rating": 100,
@@ -239,7 +239,7 @@
     },
     "Dragon": {
       "name": "Dragon",
-      "games_played": 238163,
+      "games_played": 238167,
       "games_won": 55275,
       "win_rate": 23.21,
       "solo_wins": 53358,
@@ -261,23 +261,23 @@
     },
     "Gambler": {
       "name": "Gambler",
-      "games_played": 238482,
-      "games_won": 55317,
+      "games_played": 238483,
+      "games_won": 55318,
       "win_rate": 23.2,
-      "solo_wins": 53379,
+      "solo_wins": 53380,
       "shared_wins": 1938,
-      "elo_rating": 100,
+      "elo_rating": 116.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
     "Phantom": {
       "name": "Phantom",
-      "games_played": 237557,
-      "games_won": 55894,
+      "games_played": 237558,
+      "games_won": 55895,
       "win_rate": 23.53,
-      "solo_wins": 53948,
+      "solo_wins": 53949,
       "shared_wins": 1946,
-      "elo_rating": 100,
+      "elo_rating": 116.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -327,7 +327,7 @@
     },
     "Fido": {
       "name": "Fido",
-      "games_played": 238526,
+      "games_played": 238527,
       "games_won": 55732,
       "win_rate": 23.37,
       "solo_wins": 53851,
@@ -338,10 +338,10 @@
     },
     "Decoy": {
       "name": "Decoy",
-      "games_played": 238670,
-      "games_won": 55236,
+      "games_played": 238675,
+      "games_won": 55237,
       "win_rate": 23.14,
-      "solo_wins": 53288,
+      "solo_wins": 53289,
       "shared_wins": 1948,
       "elo_rating": 100,
       "peak_elo": 1531.2,
@@ -371,23 +371,23 @@
     },
     "Visionary": {
       "name": "Visionary",
-      "games_played": 238092,
-      "games_won": 54998,
+      "games_played": 238094,
+      "games_won": 54999,
       "win_rate": 23.1,
-      "solo_wins": 53066,
+      "solo_wins": 53067,
       "shared_wins": 1932,
-      "elo_rating": 100,
+      "elo_rating": 116.9,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Antimatter": {
       "name": "Antimatter",
-      "games_played": 237756,
+      "games_played": 237759,
       "games_won": 49069,
       "win_rate": 20.64,
       "solo_wins": 44610,
       "shared_wins": 4459,
-      "elo_rating": 116.4,
+      "elo_rating": 100,
       "peak_elo": 1514.9,
       "avg_colonies": 3.97
     },
@@ -404,7 +404,7 @@
     },
     "Diplomat": {
       "name": "Diplomat",
-      "games_played": 237803,
+      "games_played": 237806,
       "games_won": 54943,
       "win_rate": 23.1,
       "solo_wins": 52974,
@@ -415,7 +415,7 @@
     },
     "Cyborg": {
       "name": "Cyborg",
-      "games_played": 237649,
+      "games_played": 237650,
       "games_won": 62278,
       "win_rate": 26.21,
       "solo_wins": 60247,
@@ -426,7 +426,7 @@
     },
     "Healer": {
       "name": "Healer",
-      "games_played": 236834,
+      "games_played": 236835,
       "games_won": 54879,
       "win_rate": 23.17,
       "solo_wins": 52846,
@@ -437,12 +437,12 @@
     },
     "Leviathan": {
       "name": "Leviathan",
-      "games_played": 238806,
-      "games_won": 53007,
+      "games_played": 238807,
+      "games_won": 53008,
       "win_rate": 22.2,
-      "solo_wins": 52022,
+      "solo_wins": 52023,
       "shared_wins": 985,
-      "elo_rating": 131.8,
+      "elo_rating": 146.6,
       "peak_elo": 1500.0,
       "avg_colonies": 3.8
     },
@@ -481,7 +481,7 @@
     },
     "Clone": {
       "name": "Clone",
-      "games_played": 236979,
+      "games_played": 236981,
       "games_won": 55443,
       "win_rate": 23.4,
       "solo_wins": 53496,
@@ -492,12 +492,12 @@
     },
     "Scavenger": {
       "name": "Scavenger",
-      "games_played": 238511,
+      "games_played": 238515,
       "games_won": 55319,
       "win_rate": 23.19,
       "solo_wins": 53412,
       "shared_wins": 1907,
-      "elo_rating": 132.2,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -514,29 +514,29 @@
     },
     "Deuce": {
       "name": "Deuce",
-      "games_played": 238218,
-      "games_won": 55165,
+      "games_played": 238223,
+      "games_won": 55166,
       "win_rate": 23.16,
       "solo_wins": 53221,
-      "shared_wins": 1944,
-      "elo_rating": 135.9,
+      "shared_wins": 1945,
+      "elo_rating": 100.4,
       "peak_elo": 1529.1,
       "avg_colonies": 3.81
     },
     "Philanthropist": {
       "name": "Philanthropist",
-      "games_played": 237787,
+      "games_played": 237791,
       "games_won": 55080,
       "win_rate": 23.16,
       "solo_wins": 53179,
       "shared_wins": 1901,
-      "elo_rating": 146.5,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Symbiote": {
       "name": "Symbiote",
-      "games_played": 237656,
+      "games_played": 237658,
       "games_won": 79702,
       "win_rate": 33.54,
       "solo_wins": 77128,
@@ -591,12 +591,12 @@
     },
     "Warpish": {
       "name": "Warpish",
-      "games_played": 237676,
+      "games_played": 237678,
       "games_won": 83433,
       "win_rate": 35.1,
       "solo_wins": 80925,
       "shared_wins": 2508,
-      "elo_rating": 115.1,
+      "elo_rating": 100,
       "peak_elo": 1513.9,
       "avg_colonies": 4.07
     },
@@ -613,12 +613,12 @@
     },
     "Chosen": {
       "name": "Chosen",
-      "games_played": 238663,
-      "games_won": 55239,
+      "games_played": 238665,
+      "games_won": 55240,
       "win_rate": 23.15,
-      "solo_wins": 53253,
+      "solo_wins": 53254,
       "shared_wins": 1986,
-      "elo_rating": 103.7,
+      "elo_rating": 102.6,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -635,12 +635,12 @@
     },
     "Remora": {
       "name": "Remora",
-      "games_played": 238889,
-      "games_won": 55270,
+      "games_played": 238892,
+      "games_won": 55271,
       "win_rate": 23.14,
-      "solo_wins": 53268,
+      "solo_wins": 53269,
       "shared_wins": 2002,
-      "elo_rating": 100,
+      "elo_rating": 116.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -668,18 +668,18 @@
     },
     "Mutant": {
       "name": "Mutant",
-      "games_played": 238179,
-      "games_won": 68454,
+      "games_played": 238182,
+      "games_won": 68455,
       "win_rate": 28.74,
-      "solo_wins": 67462,
+      "solo_wins": 67463,
       "shared_wins": 992,
-      "elo_rating": 100,
+      "elo_rating": 100.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.93
     },
     "Nightmare": {
       "name": "Nightmare",
-      "games_played": 237525,
+      "games_played": 237528,
       "games_won": 54972,
       "win_rate": 23.14,
       "solo_wins": 53067,
@@ -690,12 +690,12 @@
     },
     "Laser": {
       "name": "Laser",
-      "games_played": 237551,
+      "games_played": 237553,
       "games_won": 55095,
       "win_rate": 23.19,
       "solo_wins": 53247,
       "shared_wins": 1848,
-      "elo_rating": 118.9,
+      "elo_rating": 100,
       "peak_elo": 1500.9,
       "avg_colonies": 3.83
     },
@@ -723,12 +723,12 @@
     },
     "Barbarian": {
       "name": "Barbarian",
-      "games_played": 237526,
-      "games_won": 55102,
+      "games_played": 237530,
+      "games_won": 55104,
       "win_rate": 23.2,
-      "solo_wins": 53103,
+      "solo_wins": 53105,
       "shared_wins": 1999,
-      "elo_rating": 106.7,
+      "elo_rating": 106.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -767,10 +767,10 @@
     },
     "Magician": {
       "name": "Magician",
-      "games_played": 238515,
-      "games_won": 55156,
+      "games_played": 238519,
+      "games_won": 55157,
       "win_rate": 23.12,
-      "solo_wins": 53319,
+      "solo_wins": 53320,
       "shared_wins": 1837,
       "elo_rating": 100,
       "peak_elo": 1514.5,
@@ -822,23 +822,23 @@
     },
     "Architect": {
       "name": "Architect",
-      "games_played": 238456,
+      "games_played": 238459,
       "games_won": 62347,
       "win_rate": 26.15,
       "solo_wins": 60151,
       "shared_wins": 2196,
-      "elo_rating": 134.2,
+      "elo_rating": 100,
       "peak_elo": 1515.3,
       "avg_colonies": 3.88
     },
     "Fury": {
       "name": "Fury",
-      "games_played": 237166,
-      "games_won": 57439,
+      "games_played": 237168,
+      "games_won": 57440,
       "win_rate": 24.22,
-      "solo_wins": 55395,
+      "solo_wins": 55396,
       "shared_wins": 2044,
-      "elo_rating": 104.9,
+      "elo_rating": 104.3,
       "peak_elo": 1530.2,
       "avg_colonies": 3.85
     },
@@ -855,7 +855,7 @@
     },
     "Aura": {
       "name": "Aura",
-      "games_played": 238064,
+      "games_played": 238066,
       "games_won": 55157,
       "win_rate": 23.17,
       "solo_wins": 53272,
@@ -866,23 +866,23 @@
     },
     "Tripler": {
       "name": "Tripler",
-      "games_played": 237852,
+      "games_played": 237855,
       "games_won": 73566,
       "win_rate": 30.93,
       "solo_wins": 71111,
       "shared_wins": 2455,
-      "elo_rating": 135.9,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 4.03
     },
     "Cudgel": {
       "name": "Cudgel",
-      "games_played": 237244,
+      "games_played": 237245,
       "games_won": 59768,
       "win_rate": 25.19,
       "solo_wins": 58252,
       "shared_wins": 1516,
-      "elo_rating": 116.5,
+      "elo_rating": 100.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.85
     },
@@ -932,12 +932,12 @@
     },
     "Observer": {
       "name": "Observer",
-      "games_played": 237751,
+      "games_played": 237752,
       "games_won": 55034,
       "win_rate": 23.15,
       "solo_wins": 53118,
       "shared_wins": 1916,
-      "elo_rating": 147.2,
+      "elo_rating": 129.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -965,7 +965,7 @@
     },
     "Mite": {
       "name": "Mite",
-      "games_played": 237911,
+      "games_played": 237913,
       "games_won": 55148,
       "win_rate": 23.18,
       "solo_wins": 53220,
@@ -998,40 +998,40 @@
     },
     "Macron": {
       "name": "Macron",
-      "games_played": 237863,
-      "games_won": 74063,
+      "games_played": 237866,
+      "games_won": 74064,
       "win_rate": 31.14,
-      "solo_wins": 71838,
+      "solo_wins": 71839,
       "shared_wins": 2225,
-      "elo_rating": 100,
+      "elo_rating": 100.3,
       "peak_elo": 1500.0,
       "avg_colonies": 4.02
     },
     "Seeker": {
       "name": "Seeker",
-      "games_played": 237337,
+      "games_played": 237340,
       "games_won": 54781,
       "win_rate": 23.08,
       "solo_wins": 52921,
       "shared_wins": 1860,
-      "elo_rating": 150.2,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Cavalry": {
       "name": "Cavalry",
-      "games_played": 237616,
-      "games_won": 57999,
+      "games_played": 237621,
+      "games_won": 58000,
       "win_rate": 24.41,
-      "solo_wins": 56038,
+      "solo_wins": 56039,
       "shared_wins": 1961,
-      "elo_rating": 100,
+      "elo_rating": 120.4,
       "peak_elo": 1527.3,
       "avg_colonies": 3.86
     },
     "Citadel": {
       "name": "Citadel",
-      "games_played": 237753,
+      "games_played": 237755,
       "games_won": 57758,
       "win_rate": 24.29,
       "solo_wins": 55739,
@@ -1064,7 +1064,7 @@
     },
     "Oracle": {
       "name": "Oracle",
-      "games_played": 237000,
+      "games_played": 237001,
       "games_won": 55076,
       "win_rate": 23.24,
       "solo_wins": 53135,
@@ -1086,7 +1086,7 @@
     },
     "Usurper": {
       "name": "Usurper",
-      "games_played": 237877,
+      "games_played": 237882,
       "games_won": 55167,
       "win_rate": 23.19,
       "solo_wins": 53195,
@@ -1097,7 +1097,7 @@
     },
     "Trader": {
       "name": "Trader",
-      "games_played": 237673,
+      "games_played": 237676,
       "games_won": 68175,
       "win_rate": 28.68,
       "solo_wins": 66245,
@@ -1119,12 +1119,12 @@
     },
     "Zombie": {
       "name": "Zombie",
-      "games_played": 238211,
+      "games_played": 238214,
       "games_won": 55598,
       "win_rate": 23.34,
       "solo_wins": 53588,
       "shared_wins": 2010,
-      "elo_rating": 166.4,
+      "elo_rating": 118.3,
       "peak_elo": 1530.8,
       "avg_colonies": 3.83
     },
@@ -1141,18 +1141,18 @@
     },
     "Reserve": {
       "name": "Reserve",
-      "games_played": 237768,
-      "games_won": 55028,
+      "games_played": 237771,
+      "games_won": 55030,
       "win_rate": 23.14,
-      "solo_wins": 53101,
+      "solo_wins": 53103,
       "shared_wins": 1927,
-      "elo_rating": 100,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Spiff": {
       "name": "Spiff",
-      "games_played": 237515,
+      "games_played": 237516,
       "games_won": 55417,
       "win_rate": 23.33,
       "solo_wins": 53500,
@@ -1163,21 +1163,21 @@
     },
     "Parasite": {
       "name": "Parasite",
-      "games_played": 237314,
-      "games_won": 109559,
+      "games_played": 237317,
+      "games_won": 109560,
       "win_rate": 46.17,
-      "solo_wins": 107993,
+      "solo_wins": 107994,
       "shared_wins": 1566,
-      "elo_rating": 178.8,
+      "elo_rating": 154.2,
       "peak_elo": 1500.0,
       "avg_colonies": 4.12
     },
     "Boomerang": {
       "name": "Boomerang",
-      "games_played": 237849,
-      "games_won": 54860,
-      "win_rate": 23.07,
-      "solo_wins": 52915,
+      "games_played": 237857,
+      "games_won": 54861,
+      "win_rate": 23.06,
+      "solo_wins": 52916,
       "shared_wins": 1945,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -1185,12 +1185,12 @@
     },
     "Silencer": {
       "name": "Silencer",
-      "games_played": 238466,
-      "games_won": 55395,
+      "games_played": 238468,
+      "games_won": 55397,
       "win_rate": 23.23,
-      "solo_wins": 53495,
+      "solo_wins": 53497,
       "shared_wins": 1900,
-      "elo_rating": 100,
+      "elo_rating": 132.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -1207,23 +1207,23 @@
     },
     "Chronos": {
       "name": "Chronos",
-      "games_played": 237986,
-      "games_won": 55167,
+      "games_played": 237990,
+      "games_won": 55168,
       "win_rate": 23.18,
-      "solo_wins": 53263,
+      "solo_wins": 53264,
       "shared_wins": 1904,
-      "elo_rating": 115.0,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Horde": {
       "name": "Horde",
-      "games_played": 238447,
-      "games_won": 55075,
+      "games_played": 238449,
+      "games_won": 55076,
       "win_rate": 23.1,
-      "solo_wins": 53242,
+      "solo_wins": 53243,
       "shared_wins": 1833,
-      "elo_rating": 100,
+      "elo_rating": 100.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -1251,7 +1251,7 @@
     },
     "Pickpocket": {
       "name": "Pickpocket",
-      "games_played": 237595,
+      "games_played": 237599,
       "games_won": 57690,
       "win_rate": 24.28,
       "solo_wins": 56346,
@@ -1273,7 +1273,7 @@
     },
     "Roach": {
       "name": "Roach",
-      "games_played": 237757,
+      "games_played": 237758,
       "games_won": 55192,
       "win_rate": 23.21,
       "solo_wins": 53253,
@@ -1306,18 +1306,18 @@
     },
     "Converter": {
       "name": "Converter",
-      "games_played": 237788,
-      "games_won": 55051,
+      "games_played": 237791,
+      "games_won": 55053,
       "win_rate": 23.15,
-      "solo_wins": 53091,
+      "solo_wins": 53093,
       "shared_wins": 1960,
-      "elo_rating": 100,
+      "elo_rating": 132.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Butler": {
       "name": "Butler",
-      "games_played": 238679,
+      "games_played": 238681,
       "games_won": 55168,
       "win_rate": 23.11,
       "solo_wins": 53179,
@@ -1339,7 +1339,7 @@
     },
     "Hacker": {
       "name": "Hacker",
-      "games_played": 239173,
+      "games_played": 239175,
       "games_won": 58807,
       "win_rate": 24.59,
       "solo_wins": 56889,
@@ -1350,10 +1350,10 @@
     },
     "Miser": {
       "name": "Miser",
-      "games_played": 238392,
-      "games_won": 64197,
+      "games_played": 238395,
+      "games_won": 64198,
       "win_rate": 26.93,
-      "solo_wins": 62878,
+      "solo_wins": 62879,
       "shared_wins": 1319,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -1383,7 +1383,7 @@
     },
     "Judge": {
       "name": "Judge",
-      "games_played": 237316,
+      "games_played": 237318,
       "games_won": 54820,
       "win_rate": 23.1,
       "solo_wins": 52879,
@@ -1394,7 +1394,7 @@
     },
     "Amoeba": {
       "name": "Amoeba",
-      "games_played": 237826,
+      "games_played": 237827,
       "games_won": 55221,
       "win_rate": 23.22,
       "solo_wins": 53262,
@@ -1405,23 +1405,23 @@
     },
     "Fungus": {
       "name": "Fungus",
-      "games_played": 237873,
+      "games_played": 237879,
       "games_won": 55192,
       "win_rate": 23.2,
       "solo_wins": 53291,
       "shared_wins": 1901,
-      "elo_rating": 131.8,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
     "Hate": {
       "name": "Hate",
-      "games_played": 237393,
+      "games_played": 237397,
       "games_won": 55027,
       "win_rate": 23.18,
       "solo_wins": 53087,
       "shared_wins": 1940,
-      "elo_rating": 116.5,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -1438,10 +1438,10 @@
     },
     "Patriot": {
       "name": "Patriot",
-      "games_played": 238430,
-      "games_won": 59229,
+      "games_played": 238432,
+      "games_won": 59230,
       "win_rate": 24.84,
-      "solo_wins": 57123,
+      "solo_wins": 57124,
       "shared_wins": 2106,
       "elo_rating": 100,
       "peak_elo": 1515.8,
@@ -1449,7 +1449,7 @@
     },
     "Ethic": {
       "name": "Ethic",
-      "games_played": 238027,
+      "games_played": 238029,
       "games_won": 55318,
       "win_rate": 23.24,
       "solo_wins": 53373,
@@ -1460,23 +1460,23 @@
     },
     "Reincarnator": {
       "name": "Reincarnator",
-      "games_played": 238271,
-      "games_won": 54955,
+      "games_played": 238275,
+      "games_won": 54958,
       "win_rate": 23.06,
-      "solo_wins": 52973,
+      "solo_wins": 52976,
       "shared_wins": 1982,
-      "elo_rating": 117.9,
+      "elo_rating": 147.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
     "Tyrant": {
       "name": "Tyrant",
-      "games_played": 238166,
-      "games_won": 55551,
-      "win_rate": 23.32,
-      "solo_wins": 53718,
+      "games_played": 238168,
+      "games_won": 55553,
+      "win_rate": 23.33,
+      "solo_wins": 53720,
       "shared_wins": 1833,
-      "elo_rating": 132.2,
+      "elo_rating": 161.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -1493,12 +1493,12 @@
     },
     "Ghoul": {
       "name": "Ghoul",
-      "games_played": 237926,
-      "games_won": 69844,
+      "games_played": 237930,
+      "games_won": 69845,
       "win_rate": 29.36,
-      "solo_wins": 68507,
+      "solo_wins": 68508,
       "shared_wins": 1337,
-      "elo_rating": 116.9,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.93
     },
@@ -1515,7 +1515,7 @@
     },
     "Glutton": {
       "name": "Glutton",
-      "games_played": 238206,
+      "games_played": 238209,
       "games_won": 55405,
       "win_rate": 23.26,
       "solo_wins": 53461,
@@ -1526,12 +1526,12 @@
     },
     "Claw": {
       "name": "Claw",
-      "games_played": 237495,
+      "games_played": 237496,
       "games_won": 55274,
       "win_rate": 23.27,
       "solo_wins": 53360,
       "shared_wins": 1914,
-      "elo_rating": 124.0,
+      "elo_rating": 107.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -1581,7 +1581,7 @@
     },
     "Engineer": {
       "name": "Engineer",
-      "games_played": 237564,
+      "games_played": 237567,
       "games_won": 60607,
       "win_rate": 25.51,
       "solo_wins": 58598,
@@ -1592,7 +1592,7 @@
     },
     "Kamikaze": {
       "name": "Kamikaze",
-      "games_played": 238374,
+      "games_played": 238378,
       "games_won": 55082,
       "win_rate": 23.11,
       "solo_wins": 53213,
@@ -1603,12 +1603,12 @@
     },
     "Aristocrat": {
       "name": "Aristocrat",
-      "games_played": 237294,
+      "games_played": 237297,
       "games_won": 63437,
       "win_rate": 26.73,
       "solo_wins": 61376,
       "shared_wins": 2061,
-      "elo_rating": 176.8,
+      "elo_rating": 122.0,
       "peak_elo": 1516.0,
       "avg_colonies": 3.87
     },
@@ -1636,32 +1636,32 @@
     },
     "Pacifist": {
       "name": "Pacifist",
-      "games_played": 236843,
+      "games_played": 236845,
       "games_won": 75870,
       "win_rate": 32.03,
       "solo_wins": 73619,
       "shared_wins": 2251,
-      "elo_rating": 132.3,
+      "elo_rating": 100,
       "peak_elo": 1500.7,
       "avg_colonies": 4.01
     },
     "Invader": {
       "name": "Invader",
-      "games_played": 237756,
-      "games_won": 60792,
+      "games_played": 237758,
+      "games_won": 60793,
       "win_rate": 25.57,
-      "solo_wins": 58881,
+      "solo_wins": 58882,
       "shared_wins": 1911,
-      "elo_rating": 113.0,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.87
     },
     "Bully": {
       "name": "Bully",
-      "games_played": 238109,
-      "games_won": 59346,
+      "games_played": 238114,
+      "games_won": 59348,
       "win_rate": 24.92,
-      "solo_wins": 57390,
+      "solo_wins": 57392,
       "shared_wins": 1956,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -1680,12 +1680,12 @@
     },
     "Shadow": {
       "name": "Shadow",
-      "games_played": 238535,
-      "games_won": 68758,
+      "games_played": 238538,
+      "games_won": 68760,
       "win_rate": 28.83,
-      "solo_wins": 67622,
-      "shared_wins": 1136,
-      "elo_rating": 100,
+      "solo_wins": 67623,
+      "shared_wins": 1137,
+      "elo_rating": 115.5,
       "peak_elo": 1500.0,
       "avg_colonies": 3.92
     },
@@ -1713,23 +1713,23 @@
     },
     "Insect": {
       "name": "Insect",
-      "games_played": 237808,
-      "games_won": 63646,
+      "games_played": 237809,
+      "games_won": 63647,
       "win_rate": 26.76,
-      "solo_wins": 61488,
+      "solo_wins": 61489,
       "shared_wins": 2158,
-      "elo_rating": 100,
+      "elo_rating": 116.0,
       "peak_elo": 1515.3,
       "avg_colonies": 3.91
     },
     "Guardian": {
       "name": "Guardian",
-      "games_played": 238568,
-      "games_won": 54984,
+      "games_played": 238571,
+      "games_won": 54986,
       "win_rate": 23.05,
-      "solo_wins": 53079,
+      "solo_wins": 53081,
       "shared_wins": 1905,
-      "elo_rating": 100,
+      "elo_rating": 116.0,
       "peak_elo": 1515.9,
       "avg_colonies": 3.82
     },
@@ -1779,12 +1779,12 @@
     },
     "Sheriff": {
       "name": "Sheriff",
-      "games_played": 238484,
-      "games_won": 55303,
+      "games_played": 238485,
+      "games_won": 55304,
       "win_rate": 23.19,
-      "solo_wins": 53400,
+      "solo_wins": 53401,
       "shared_wins": 1903,
-      "elo_rating": 100,
+      "elo_rating": 116.6,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -1801,7 +1801,7 @@
     },
     "Grudge": {
       "name": "Grudge",
-      "games_played": 238733,
+      "games_played": 238734,
       "games_won": 55143,
       "win_rate": 23.1,
       "solo_wins": 53183,
@@ -1845,12 +1845,12 @@
     },
     "Extortionist": {
       "name": "Extortionist",
-      "games_played": 237622,
-      "games_won": 54992,
+      "games_played": 237626,
+      "games_won": 54993,
       "win_rate": 23.14,
-      "solo_wins": 53061,
+      "solo_wins": 53062,
       "shared_wins": 1931,
-      "elo_rating": 100,
+      "elo_rating": 116.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -1889,18 +1889,18 @@
     },
     "Machine": {
       "name": "Machine",
-      "games_played": 237315,
+      "games_played": 237316,
       "games_won": 137001,
       "win_rate": 57.73,
       "solo_wins": 132943,
       "shared_wins": 4058,
-      "elo_rating": 169.0,
+      "elo_rating": 149.9,
       "peak_elo": 1515.8,
       "avg_colonies": 4.28
     },
     "Changeling": {
       "name": "Changeling",
-      "games_played": 237546,
+      "games_played": 237547,
       "games_won": 55282,
       "win_rate": 23.27,
       "solo_wins": 53332,
@@ -1911,7 +1911,7 @@
     },
     "Pentaform": {
       "name": "Pentaform",
-      "games_played": 238156,
+      "games_played": 238158,
       "games_won": 55103,
       "win_rate": 23.14,
       "solo_wins": 53177,
@@ -1922,34 +1922,34 @@
     },
     "Warrior": {
       "name": "Warrior",
-      "games_played": 237805,
-      "games_won": 65075,
-      "win_rate": 27.36,
-      "solo_wins": 63005,
-      "shared_wins": 2070,
-      "elo_rating": 100,
+      "games_played": 237810,
+      "games_won": 65077,
+      "win_rate": 27.37,
+      "solo_wins": 63006,
+      "shared_wins": 2071,
+      "elo_rating": 116.1,
       "peak_elo": 1516.0,
       "avg_colonies": 3.9
     },
     "Delegator": {
       "name": "Delegator",
-      "games_played": 238377,
-      "games_won": 55364,
+      "games_played": 238380,
+      "games_won": 55365,
       "win_rate": 23.23,
-      "solo_wins": 53410,
+      "solo_wins": 53411,
       "shared_wins": 1954,
-      "elo_rating": 117.2,
+      "elo_rating": 116.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Sorcerer": {
       "name": "Sorcerer",
-      "games_played": 237576,
-      "games_won": 55082,
+      "games_played": 237579,
+      "games_won": 55083,
       "win_rate": 23.19,
-      "solo_wins": 53174,
+      "solo_wins": 53175,
       "shared_wins": 1908,
-      "elo_rating": 116.0,
+      "elo_rating": 100.2,
       "peak_elo": 1500.7,
       "avg_colonies": 3.81
     },
@@ -1977,23 +1977,23 @@
     },
     "Calculator": {
       "name": "Calculator",
-      "games_played": 236905,
-      "games_won": 54895,
+      "games_played": 236907,
+      "games_won": 54897,
       "win_rate": 23.17,
-      "solo_wins": 52992,
+      "solo_wins": 52994,
       "shared_wins": 1903,
-      "elo_rating": 100,
+      "elo_rating": 135.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Pirate": {
       "name": "Pirate",
-      "games_played": 237694,
-      "games_won": 55403,
+      "games_played": 237695,
+      "games_won": 55404,
       "win_rate": 23.31,
-      "solo_wins": 53482,
+      "solo_wins": 53483,
       "shared_wins": 1921,
-      "elo_rating": 100,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -2021,12 +2021,12 @@
     },
     "Filch": {
       "name": "Filch",
-      "games_played": 238114,
-      "games_won": 55315,
+      "games_played": 238118,
+      "games_won": 55316,
       "win_rate": 23.23,
-      "solo_wins": 53363,
+      "solo_wins": 53364,
       "shared_wins": 1952,
-      "elo_rating": 116.4,
+      "elo_rating": 100,
       "peak_elo": 1531.1,
       "avg_colonies": 3.83
     },
@@ -2054,12 +2054,12 @@
     },
     "Vacuum": {
       "name": "Vacuum",
-      "games_played": 238110,
-      "games_won": 62927,
+      "games_played": 238113,
+      "games_won": 62928,
       "win_rate": 26.43,
-      "solo_wins": 60893,
+      "solo_wins": 60894,
       "shared_wins": 2034,
-      "elo_rating": 100,
+      "elo_rating": 116.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.89
     },
@@ -2076,10 +2076,10 @@
     },
     "Human": {
       "name": "Human",
-      "games_played": 237639,
-      "games_won": 65882,
+      "games_played": 237646,
+      "games_won": 65884,
       "win_rate": 27.72,
-      "solo_wins": 63793,
+      "solo_wins": 63795,
       "shared_wins": 2089,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -2109,10 +2109,10 @@
     },
     "Sniveler": {
       "name": "Sniveler",
-      "games_played": 238555,
-      "games_won": 55122,
+      "games_played": 238559,
+      "games_won": 55123,
       "win_rate": 23.11,
-      "solo_wins": 53164,
+      "solo_wins": 53165,
       "shared_wins": 1958,
       "elo_rating": 100,
       "peak_elo": 1500.4,
@@ -2120,12 +2120,12 @@
     },
     "Empath": {
       "name": "Empath",
-      "games_played": 237295,
-      "games_won": 55089,
+      "games_played": 237299,
+      "games_won": 55090,
       "win_rate": 23.22,
-      "solo_wins": 53187,
+      "solo_wins": 53188,
       "shared_wins": 1902,
-      "elo_rating": 100,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -2142,12 +2142,12 @@
     },
     "Crystal": {
       "name": "Crystal",
-      "games_played": 237374,
-      "games_won": 54942,
+      "games_played": 237377,
+      "games_won": 54944,
       "win_rate": 23.15,
-      "solo_wins": 52908,
+      "solo_wins": 52910,
       "shared_wins": 2034,
-      "elo_rating": 112.9,
+      "elo_rating": 131.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -2164,23 +2164,23 @@
     },
     "Siren": {
       "name": "Siren",
-      "games_played": 238884,
-      "games_won": 54945,
+      "games_played": 238888,
+      "games_won": 54948,
       "win_rate": 23.0,
-      "solo_wins": 53100,
+      "solo_wins": 53103,
       "shared_wins": 1845,
-      "elo_rating": 100,
+      "elo_rating": 129.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
     "Schizoid": {
       "name": "Schizoid",
-      "games_played": 237341,
-      "games_won": 59287,
+      "games_played": 237346,
+      "games_won": 59288,
       "win_rate": 24.98,
-      "solo_wins": 57305,
+      "solo_wins": 57306,
       "shared_wins": 1982,
-      "elo_rating": 100,
+      "elo_rating": 108.1,
       "peak_elo": 1515.1,
       "avg_colonies": 3.86
     },
@@ -2274,7 +2274,7 @@
     },
     "Quartermaster": {
       "name": "Quartermaster",
-      "games_played": 167957,
+      "games_played": 167961,
       "games_won": 40051,
       "win_rate": 23.85,
       "solo_wins": 38695,
@@ -2307,7 +2307,7 @@
     },
     "Gremlin": {
       "name": "Gremlin",
-      "games_played": 168577,
+      "games_played": 168580,
       "games_won": 40010,
       "win_rate": 23.73,
       "solo_wins": 38533,
@@ -2395,12 +2395,12 @@
     },
     "Xenophile": {
       "name": "Xenophile",
-      "games_played": 136912,
-      "games_won": 33408,
+      "games_played": 136915,
+      "games_won": 33409,
       "win_rate": 24.4,
-      "solo_wins": 32303,
+      "solo_wins": 32304,
       "shared_wins": 1105,
-      "elo_rating": 119.8,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -2637,10 +2637,10 @@
     },
     "Cryo": {
       "name": "Cryo",
-      "games_played": 102494,
-      "games_won": 25262,
+      "games_played": 102497,
+      "games_won": 25263,
       "win_rate": 24.65,
-      "solo_wins": 24458,
+      "solo_wins": 24459,
       "shared_wins": 804,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -2725,12 +2725,12 @@
     },
     "Relic": {
       "name": "Relic",
-      "games_played": 102797,
+      "games_played": 102798,
       "games_won": 25180,
       "win_rate": 24.49,
       "solo_wins": 24432,
       "shared_wins": 748,
-      "elo_rating": 114.5,
+      "elo_rating": 100,
       "peak_elo": 1523.6,
       "avg_colonies": 3.81
     },
@@ -2758,12 +2758,12 @@
     },
     "Inferno": {
       "name": "Inferno",
-      "games_played": 103157,
-      "games_won": 25334,
+      "games_played": 103161,
+      "games_won": 25335,
       "win_rate": 24.56,
-      "solo_wins": 24509,
+      "solo_wins": 24510,
       "shared_wins": 825,
-      "elo_rating": 123.0,
+      "elo_rating": 100.1,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -2934,7 +2934,7 @@
     },
     "Animal": {
       "name": "Animal",
-      "games_played": 102865,
+      "games_played": 102868,
       "games_won": 24892,
       "win_rate": 24.2,
       "solo_wins": 24148,
@@ -2967,10 +2967,10 @@
     },
     "Warhawk": {
       "name": "Warhawk",
-      "games_played": 103263,
-      "games_won": 25316,
+      "games_played": 103269,
+      "games_won": 25317,
       "win_rate": 24.52,
-      "solo_wins": 24531,
+      "solo_wins": 24532,
       "shared_wins": 785,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -2978,21 +2978,21 @@
     },
     "Reborn": {
       "name": "Reborn",
-      "games_played": 103271,
+      "games_played": 103272,
       "games_won": 25320,
       "win_rate": 24.52,
       "solo_wins": 24512,
       "shared_wins": 808,
-      "elo_rating": 100.4,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
     "Remote": {
       "name": "Remote",
-      "games_played": 103469,
-      "games_won": 25309,
+      "games_played": 103474,
+      "games_won": 25310,
       "win_rate": 24.46,
-      "solo_wins": 24483,
+      "solo_wins": 24484,
       "shared_wins": 826,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -3077,12 +3077,12 @@
     },
     "Winner": {
       "name": "Winner",
-      "games_played": 102858,
-      "games_won": 25367,
+      "games_played": 102862,
+      "games_won": 25368,
       "win_rate": 24.66,
-      "solo_wins": 24534,
+      "solo_wins": 24535,
       "shared_wins": 833,
-      "elo_rating": 100,
+      "elo_rating": 116.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -3165,7 +3165,7 @@
     },
     "Locust": {
       "name": "Locust",
-      "games_played": 102972,
+      "games_played": 102973,
       "games_won": 19294,
       "win_rate": 18.74,
       "solo_wins": 18585,
@@ -3407,12 +3407,12 @@
     },
     "Merchant": {
       "name": "Merchant",
-      "games_played": 102976,
+      "games_played": 102977,
       "games_won": 26121,
       "win_rate": 25.37,
       "solo_wins": 25321,
       "shared_wins": 800,
-      "elo_rating": 120.3,
+      "elo_rating": 103.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -3429,12 +3429,12 @@
     },
     "Mercenary": {
       "name": "Mercenary",
-      "games_played": 103259,
-      "games_won": 27590,
+      "games_played": 103260,
+      "games_won": 27591,
       "win_rate": 26.72,
-      "solo_wins": 26903,
+      "solo_wins": 26904,
       "shared_wins": 687,
-      "elo_rating": 100,
+      "elo_rating": 116.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.86
     },
@@ -3792,12 +3792,12 @@
     },
     "Sadist": {
       "name": "Sadist",
-      "games_played": 103280,
-      "games_won": 25277,
+      "games_played": 103283,
+      "games_won": 25278,
       "win_rate": 24.47,
-      "solo_wins": 24468,
+      "solo_wins": 24469,
       "shared_wins": 809,
-      "elo_rating": 100,
+      "elo_rating": 120.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -3836,12 +3836,12 @@
     },
     "Guerrilla": {
       "name": "Guerrilla",
-      "games_played": 103143,
-      "games_won": 25427,
+      "games_played": 103149,
+      "games_won": 25430,
       "win_rate": 24.65,
-      "solo_wins": 24622,
+      "solo_wins": 24625,
       "shared_wins": 805,
-      "elo_rating": 100,
+      "elo_rating": 115.1,
       "peak_elo": 1509.3,
       "avg_colonies": 3.82
     },
@@ -3891,12 +3891,12 @@
     },
     "Cosmos": {
       "name": "Cosmos",
-      "games_played": 102894,
-      "games_won": 25321,
+      "games_played": 102900,
+      "games_won": 25324,
       "win_rate": 24.61,
-      "solo_wins": 24497,
+      "solo_wins": 24500,
       "shared_wins": 824,
-      "elo_rating": 116.2,
+      "elo_rating": 130.7,
       "peak_elo": 1508.0,
       "avg_colonies": 3.83
     },
@@ -3913,7 +3913,7 @@
     },
     "Graviton": {
       "name": "Graviton",
-      "games_played": 102957,
+      "games_played": 102958,
       "games_won": 13904,
       "win_rate": 13.5,
       "solo_wins": 13210,
@@ -4133,12 +4133,12 @@
     },
     "Reactor": {
       "name": "Reactor",
-      "games_played": 103495,
-      "games_won": 25333,
+      "games_played": 103500,
+      "games_won": 25336,
       "win_rate": 24.48,
-      "solo_wins": 24549,
+      "solo_wins": 24552,
       "shared_wins": 784,
-      "elo_rating": 131.5,
+      "elo_rating": 142.8,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -4188,12 +4188,12 @@
     },
     "Bandit": {
       "name": "Bandit",
-      "games_played": 103752,
-      "games_won": 25307,
+      "games_played": 103755,
+      "games_won": 25308,
       "win_rate": 24.39,
-      "solo_wins": 24553,
+      "solo_wins": 24554,
       "shared_wins": 754,
-      "elo_rating": 146.5,
+      "elo_rating": 127.5,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -4320,9 +4320,9 @@
     },
     "Multitude": {
       "name": "Multitude",
-      "games_played": 103039,
+      "games_played": 103042,
       "games_won": 25394,
-      "win_rate": 24.65,
+      "win_rate": 24.64,
       "solo_wins": 24562,
       "shared_wins": 832,
       "elo_rating": 100,
@@ -4518,12 +4518,12 @@
     },
     "Sting": {
       "name": "Sting",
-      "games_played": 103327,
-      "games_won": 25552,
+      "games_played": 103328,
+      "games_won": 25553,
       "win_rate": 24.73,
-      "solo_wins": 24758,
+      "solo_wins": 24759,
       "shared_wins": 794,
-      "elo_rating": 132.3,
+      "elo_rating": 148.1,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -4639,12 +4639,12 @@
     },
     "Skeptic": {
       "name": "Skeptic",
-      "games_played": 102808,
-      "games_won": 28876,
+      "games_played": 102810,
+      "games_won": 28878,
       "win_rate": 28.09,
-      "solo_wins": 28019,
+      "solo_wins": 28021,
       "shared_wins": 857,
-      "elo_rating": 100,
+      "elo_rating": 131.9,
       "peak_elo": 1504.5,
       "avg_colonies": 3.91
     },
@@ -4716,12 +4716,12 @@
     },
     "Lunatic": {
       "name": "Lunatic",
-      "games_played": 103872,
-      "games_won": 25728,
+      "games_played": 103875,
+      "games_won": 25729,
       "win_rate": 24.77,
-      "solo_wins": 24920,
+      "solo_wins": 24921,
       "shared_wins": 808,
-      "elo_rating": 104.2,
+      "elo_rating": 116.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -4760,7 +4760,7 @@
     },
     "Wormhole": {
       "name": "Wormhole",
-      "games_played": 102825,
+      "games_played": 102831,
       "games_won": 25160,
       "win_rate": 24.47,
       "solo_wins": 24340,
@@ -4771,12 +4771,12 @@
     },
     "Alchemist": {
       "name": "Alchemist",
-      "games_played": 103246,
+      "games_played": 103247,
       "games_won": 37523,
       "win_rate": 36.34,
       "solo_wins": 36508,
       "shared_wins": 1015,
-      "elo_rating": 116.0,
+      "elo_rating": 100,
       "peak_elo": 1509.2,
       "avg_colonies": 4.12
     },
@@ -4903,12 +4903,12 @@
     },
     "General": {
       "name": "General",
-      "games_played": 102850,
-      "games_won": 25085,
+      "games_played": 102852,
+      "games_won": 25086,
       "win_rate": 24.39,
-      "solo_wins": 24256,
+      "solo_wins": 24257,
       "shared_wins": 829,
-      "elo_rating": 100,
+      "elo_rating": 101.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -4925,12 +4925,12 @@
     },
     "Gorgon": {
       "name": "Gorgon",
-      "games_played": 103387,
-      "games_won": 25412,
+      "games_played": 103390,
+      "games_won": 25413,
       "win_rate": 24.58,
-      "solo_wins": 24618,
+      "solo_wins": 24619,
       "shared_wins": 794,
-      "elo_rating": 100,
+      "elo_rating": 116.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
@@ -4958,12 +4958,12 @@
     },
     "Pygmy": {
       "name": "Pygmy",
-      "games_played": 103065,
+      "games_played": 103068,
       "games_won": 28914,
       "win_rate": 28.05,
       "solo_wins": 28068,
       "shared_wins": 846,
-      "elo_rating": 105.1,
+      "elo_rating": 100,
       "peak_elo": 1510.5,
       "avg_colonies": 3.91
     },
@@ -5068,10 +5068,10 @@
     },
     "Sapient": {
       "name": "Sapient",
-      "games_played": 103092,
-      "games_won": 25558,
+      "games_played": 103096,
+      "games_won": 25560,
       "win_rate": 24.79,
-      "solo_wins": 24746,
+      "solo_wins": 24748,
       "shared_wins": 812,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -5101,7 +5101,7 @@
     },
     "Tide": {
       "name": "Tide",
-      "games_played": 103284,
+      "games_played": 103286,
       "games_won": 25400,
       "win_rate": 24.59,
       "solo_wins": 24570,
@@ -5178,7 +5178,7 @@
     },
     "Saboteur": {
       "name": "Saboteur",
-      "games_played": 103410,
+      "games_played": 103416,
       "games_won": 25542,
       "win_rate": 24.7,
       "solo_wins": 24700,
@@ -5222,12 +5222,12 @@
     },
     "Industrialist": {
       "name": "Industrialist",
-      "games_played": 103500,
+      "games_played": 103504,
       "games_won": 51797,
-      "win_rate": 50.05,
+      "win_rate": 50.04,
       "solo_wins": 50543,
       "shared_wins": 1254,
-      "elo_rating": 104.1,
+      "elo_rating": 100,
       "peak_elo": 1506.2,
       "avg_colonies": 4.47
     },
@@ -5255,7 +5255,7 @@
     },
     "Plant": {
       "name": "Plant",
-      "games_played": 102934,
+      "games_played": 102937,
       "games_won": 25048,
       "win_rate": 24.33,
       "solo_wins": 24274,
@@ -5343,7 +5343,7 @@
     },
     "Mind": {
       "name": "Mind",
-      "games_played": 103575,
+      "games_played": 103577,
       "games_won": 25327,
       "win_rate": 24.45,
       "solo_wins": 24515,
@@ -6179,9 +6179,9 @@
     },
     "Hypochondriac": {
       "name": "Hypochondriac",
-      "games_played": 4029,
+      "games_played": 4031,
       "games_won": 863,
-      "win_rate": 21.42,
+      "win_rate": 21.41,
       "solo_wins": 836,
       "shared_wins": 27,
       "elo_rating": 100,
@@ -6355,9 +6355,9 @@
     },
     "Sloth": {
       "name": "Sloth",
-      "games_played": 4081,
+      "games_played": 4084,
       "games_won": 941,
-      "win_rate": 23.06,
+      "win_rate": 23.04,
       "solo_wins": 907,
       "shared_wins": 34,
       "elo_rating": 100,
@@ -6421,9 +6421,9 @@
     },
     "Crusher": {
       "name": "Crusher",
-      "games_played": 3862,
+      "games_played": 3864,
       "games_won": 885,
-      "win_rate": 22.92,
+      "win_rate": 22.9,
       "solo_wins": 850,
       "shared_wins": 35,
       "elo_rating": 100,
@@ -6520,9 +6520,9 @@
     },
     "Klutz": {
       "name": "Klutz",
-      "games_played": 4061,
+      "games_played": 4064,
       "games_won": 909,
-      "win_rate": 22.38,
+      "win_rate": 22.37,
       "solo_wins": 875,
       "shared_wins": 34,
       "elo_rating": 100,
@@ -6553,10 +6553,10 @@
     },
     "Squee": {
       "name": "Squee",
-      "games_played": 3928,
-      "games_won": 867,
-      "win_rate": 22.07,
-      "solo_wins": 838,
+      "games_played": 3934,
+      "games_won": 870,
+      "win_rate": 22.11,
+      "solo_wins": 841,
       "shared_wins": 29,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -6652,12 +6652,12 @@
     },
     "Tortoise": {
       "name": "Tortoise",
-      "games_played": 4091,
-      "games_won": 947,
-      "win_rate": 23.15,
-      "solo_wins": 917,
+      "games_played": 4094,
+      "games_won": 948,
+      "win_rate": 23.16,
+      "solo_wins": 918,
       "shared_wins": 30,
-      "elo_rating": 100,
+      "elo_rating": 116.2,
       "peak_elo": 1508.6,
       "avg_colonies": 3.79
     },
@@ -6674,20 +6674,20 @@
     },
     "FireDancer": {
       "name": "FireDancer",
-      "games_played": 3986,
-      "games_won": 856,
-      "win_rate": 21.48,
-      "solo_wins": 831,
+      "games_played": 3988,
+      "games_won": 857,
+      "win_rate": 21.49,
+      "solo_wins": 832,
       "shared_wins": 25,
-      "elo_rating": 100,
+      "elo_rating": 116.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.74
     },
     "Pretender": {
       "name": "Pretender",
-      "games_played": 3956,
+      "games_played": 3960,
       "games_won": 904,
-      "win_rate": 22.85,
+      "win_rate": 22.83,
       "solo_wins": 875,
       "shared_wins": 29,
       "elo_rating": 100,
@@ -6740,23 +6740,23 @@
     },
     "Bride": {
       "name": "Bride",
-      "games_played": 3980,
-      "games_won": 913,
-      "win_rate": 22.94,
-      "solo_wins": 887,
+      "games_played": 3981,
+      "games_won": 914,
+      "win_rate": 22.96,
+      "solo_wins": 888,
       "shared_wins": 26,
-      "elo_rating": 100,
+      "elo_rating": 116.7,
       "peak_elo": 1508.0,
       "avg_colonies": 3.8
     },
     "Oligarch": {
       "name": "Oligarch",
-      "games_played": 4023,
-      "games_won": 907,
-      "win_rate": 22.55,
-      "solo_wins": 881,
+      "games_played": 4026,
+      "games_won": 909,
+      "win_rate": 22.58,
+      "solo_wins": 883,
       "shared_wins": 26,
-      "elo_rating": 100,
+      "elo_rating": 131.5,
       "peak_elo": 1500.0,
       "avg_colonies": 3.78
     },
@@ -6861,23 +6861,23 @@
     },
     "BleedingHeart": {
       "name": "BleedingHeart",
-      "games_played": 4038,
+      "games_played": 4040,
       "games_won": 870,
-      "win_rate": 21.55,
+      "win_rate": 21.53,
       "solo_wins": 839,
       "shared_wins": 31,
-      "elo_rating": 120.3,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.78
     },
     "Porcupine": {
       "name": "Porcupine",
-      "games_played": 3960,
+      "games_played": 3962,
       "games_won": 967,
-      "win_rate": 24.42,
+      "win_rate": 24.41,
       "solo_wins": 940,
       "shared_wins": 27,
-      "elo_rating": 100.0,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.84
     },
@@ -6905,12 +6905,12 @@
     },
     "PackRat": {
       "name": "PackRat",
-      "games_played": 3962,
-      "games_won": 915,
-      "win_rate": 23.09,
-      "solo_wins": 891,
+      "games_played": 3965,
+      "games_won": 916,
+      "win_rate": 23.1,
+      "solo_wins": 892,
       "shared_wins": 24,
-      "elo_rating": 123.3,
+      "elo_rating": 116.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -6927,12 +6927,12 @@
     },
     "Grumpus": {
       "name": "Grumpus",
-      "games_played": 3970,
-      "games_won": 846,
+      "games_played": 3974,
+      "games_won": 847,
       "win_rate": 21.31,
-      "solo_wins": 811,
+      "solo_wins": 812,
       "shared_wins": 35,
-      "elo_rating": 100.2,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
@@ -6971,10 +6971,10 @@
     },
     "Moocher": {
       "name": "Moocher",
-      "games_played": 3975,
-      "games_won": 901,
-      "win_rate": 22.67,
-      "solo_wins": 879,
+      "games_played": 3977,
+      "games_won": 902,
+      "win_rate": 22.68,
+      "solo_wins": 880,
       "shared_wins": 22,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -6982,12 +6982,12 @@
     },
     "Arcade": {
       "name": "Arcade",
-      "games_played": 3970,
+      "games_played": 3971,
       "games_won": 860,
       "win_rate": 21.66,
       "solo_wins": 830,
       "shared_wins": 30,
-      "elo_rating": 114.3,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
@@ -7004,9 +7004,9 @@
     },
     "Peddler": {
       "name": "Peddler",
-      "games_played": 3948,
+      "games_played": 3950,
       "games_won": 872,
-      "win_rate": 22.09,
+      "win_rate": 22.08,
       "solo_wins": 833,
       "shared_wins": 39,
       "elo_rating": 100,
@@ -7037,12 +7037,12 @@
     },
     "Particle": {
       "name": "Particle",
-      "games_played": 3990,
+      "games_played": 3994,
       "games_won": 898,
-      "win_rate": 22.51,
+      "win_rate": 22.48,
       "solo_wins": 865,
       "shared_wins": 33,
-      "elo_rating": 121.5,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.78
     },
@@ -7202,10 +7202,10 @@
     },
     "Hunger": {
       "name": "Hunger",
-      "games_played": 3891,
-      "games_won": 877,
+      "games_played": 3895,
+      "games_won": 878,
       "win_rate": 22.54,
-      "solo_wins": 849,
+      "solo_wins": 850,
       "shared_wins": 28,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -7301,12 +7301,12 @@
     },
     "Anarchist": {
       "name": "Anarchist",
-      "games_played": 3976,
+      "games_played": 3977,
       "games_won": 3208,
-      "win_rate": 80.68,
+      "win_rate": 80.66,
       "solo_wins": 3175,
       "shared_wins": 33,
-      "elo_rating": 116.5,
+      "elo_rating": 100.0,
       "peak_elo": 1500.0,
       "avg_colonies": 1.51
     },
@@ -7345,12 +7345,12 @@
     },
     "Coward": {
       "name": "Coward",
-      "games_played": 3843,
-      "games_won": 857,
-      "win_rate": 22.3,
-      "solo_wins": 823,
+      "games_played": 3846,
+      "games_won": 860,
+      "win_rate": 22.36,
+      "solo_wins": 826,
       "shared_wins": 34,
-      "elo_rating": 100,
+      "elo_rating": 147.0,
       "peak_elo": 1507.3,
       "avg_colonies": 3.77
     },
@@ -7521,23 +7521,23 @@
     },
     "Outlaw": {
       "name": "Outlaw",
-      "games_played": 4037,
-      "games_won": 960,
-      "win_rate": 23.78,
-      "solo_wins": 913,
+      "games_played": 4041,
+      "games_won": 962,
+      "win_rate": 23.81,
+      "solo_wins": 915,
       "shared_wins": 47,
-      "elo_rating": 100,
+      "elo_rating": 116.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
     "Maven": {
       "name": "Maven",
-      "games_played": 3925,
-      "games_won": 879,
-      "win_rate": 22.39,
-      "solo_wins": 850,
+      "games_played": 3929,
+      "games_won": 880,
+      "win_rate": 22.4,
+      "solo_wins": 851,
       "shared_wins": 29,
-      "elo_rating": 115.5,
+      "elo_rating": 116.9,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
@@ -7565,7 +7565,7 @@
     },
     "Nanny": {
       "name": "Nanny",
-      "games_played": 3979,
+      "games_played": 3980,
       "games_won": 897,
       "win_rate": 22.54,
       "solo_wins": 877,
@@ -7598,10 +7598,10 @@
     },
     "Surgeon": {
       "name": "Surgeon",
-      "games_played": 4034,
-      "games_won": 887,
-      "win_rate": 21.99,
-      "solo_wins": 860,
+      "games_played": 4037,
+      "games_won": 888,
+      "win_rate": 22.0,
+      "solo_wins": 861,
       "shared_wins": 27,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -7609,12 +7609,12 @@
     },
     "Assistant": {
       "name": "Assistant",
-      "games_played": 3865,
+      "games_played": 3866,
       "games_won": 906,
       "win_rate": 23.44,
       "solo_wins": 873,
       "shared_wins": 33,
-      "elo_rating": 132.1,
+      "elo_rating": 114.9,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
@@ -7642,12 +7642,12 @@
     },
     "Mouth": {
       "name": "Mouth",
-      "games_played": 4005,
-      "games_won": 869,
-      "win_rate": 21.7,
-      "solo_wins": 840,
+      "games_played": 4007,
+      "games_won": 871,
+      "win_rate": 21.74,
+      "solo_wins": 842,
       "shared_wins": 29,
-      "elo_rating": 102.6,
+      "elo_rating": 134.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.79
     },
@@ -7752,9 +7752,9 @@
     },
     "Perfectionist": {
       "name": "Perfectionist",
-      "games_played": 3988,
+      "games_played": 3993,
       "games_won": 953,
-      "win_rate": 23.9,
+      "win_rate": 23.87,
       "solo_wins": 918,
       "shared_wins": 35,
       "elo_rating": 100,
@@ -7763,10 +7763,10 @@
     },
     "Neighbor": {
       "name": "Neighbor",
-      "games_played": 3354,
-      "games_won": 1091,
+      "games_played": 3357,
+      "games_won": 1092,
       "win_rate": 32.53,
-      "solo_wins": 1060,
+      "solo_wins": 1061,
       "shared_wins": 31,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -7774,12 +7774,12 @@
     },
     "YinYang": {
       "name": "YinYang",
-      "games_played": 3402,
-      "games_won": 746,
-      "win_rate": 21.93,
-      "solo_wins": 719,
+      "games_played": 3408,
+      "games_won": 748,
+      "win_rate": 21.95,
+      "solo_wins": 721,
       "shared_wins": 27,
-      "elo_rating": 142.7,
+      "elo_rating": 102.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
@@ -7829,12 +7829,12 @@
     },
     "Lizard": {
       "name": "Lizard",
-      "games_played": 3294,
-      "games_won": 2653,
-      "win_rate": 80.54,
-      "solo_wins": 2633,
+      "games_played": 3297,
+      "games_won": 2654,
+      "win_rate": 80.5,
+      "solo_wins": 2634,
       "shared_wins": 20,
-      "elo_rating": 107.0,
+      "elo_rating": 116.8,
       "peak_elo": 1503.2,
       "avg_colonies": 1.54
     },
@@ -7873,12 +7873,12 @@
     },
     "Whirligig": {
       "name": "Whirligig",
-      "games_played": 3433,
-      "games_won": 790,
-      "win_rate": 23.01,
-      "solo_wins": 760,
+      "games_played": 3435,
+      "games_won": 791,
+      "win_rate": 23.03,
+      "solo_wins": 761,
       "shared_wins": 30,
-      "elo_rating": 137.5,
+      "elo_rating": 135.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.78
     },
@@ -7917,12 +7917,12 @@
     },
     "Explorer": {
       "name": "Explorer",
-      "games_played": 3356,
+      "games_played": 3359,
       "games_won": 815,
-      "win_rate": 24.28,
+      "win_rate": 24.26,
       "solo_wins": 778,
       "shared_wins": 37,
-      "elo_rating": 134.9,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.8
     },
@@ -7983,7 +7983,7 @@
     },
     "Joker": {
       "name": "Joker",
-      "games_played": 3324,
+      "games_played": 3325,
       "games_won": 769,
       "win_rate": 23.13,
       "solo_wins": 739,
@@ -8038,23 +8038,23 @@
     },
     "Mesmer": {
       "name": "Mesmer",
-      "games_played": 3393,
+      "games_played": 3395,
       "games_won": 813,
-      "win_rate": 23.96,
+      "win_rate": 23.95,
       "solo_wins": 792,
       "shared_wins": 21,
-      "elo_rating": 116.0,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.79
     },
     "Tourist": {
       "name": "Tourist",
-      "games_played": 3247,
-      "games_won": 722,
+      "games_played": 3251,
+      "games_won": 723,
       "win_rate": 22.24,
-      "solo_wins": 699,
+      "solo_wins": 700,
       "shared_wins": 23,
-      "elo_rating": 131.4,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
@@ -8104,20 +8104,20 @@
     },
     "Love": {
       "name": "Love",
-      "games_played": 3357,
+      "games_played": 3359,
       "games_won": 766,
-      "win_rate": 22.82,
+      "win_rate": 22.8,
       "solo_wins": 728,
       "shared_wins": 38,
-      "elo_rating": 104.7,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
     "Angler": {
       "name": "Angler",
-      "games_played": 3266,
+      "games_played": 3270,
       "games_won": 726,
-      "win_rate": 22.23,
+      "win_rate": 22.2,
       "solo_wins": 700,
       "shared_wins": 26,
       "elo_rating": 100,
@@ -8137,20 +8137,20 @@
     },
     "Host": {
       "name": "Host",
-      "games_played": 3399,
-      "games_won": 835,
-      "win_rate": 24.57,
-      "solo_wins": 807,
+      "games_played": 3400,
+      "games_won": 836,
+      "win_rate": 24.59,
+      "solo_wins": 808,
       "shared_wins": 28,
-      "elo_rating": 119.2,
+      "elo_rating": 134.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.81
     },
     "Muckraker": {
       "name": "Muckraker",
-      "games_played": 3290,
+      "games_played": 3293,
       "games_won": 777,
-      "win_rate": 23.62,
+      "win_rate": 23.6,
       "solo_wins": 752,
       "shared_wins": 25,
       "elo_rating": 100,
@@ -8181,12 +8181,12 @@
     },
     "Greenhorn": {
       "name": "Greenhorn",
-      "games_played": 3396,
+      "games_played": 3398,
       "games_won": 745,
-      "win_rate": 21.94,
+      "win_rate": 21.92,
       "solo_wins": 726,
       "shared_wins": 19,
-      "elo_rating": 105.5,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
@@ -8247,10 +8247,10 @@
     },
     "Daredevil": {
       "name": "Daredevil",
-      "games_played": 3397,
-      "games_won": 779,
-      "win_rate": 22.93,
-      "solo_wins": 746,
+      "games_played": 3400,
+      "games_won": 780,
+      "win_rate": 22.94,
+      "solo_wins": 747,
       "shared_wins": 33,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -8258,12 +8258,12 @@
     },
     "Mirage": {
       "name": "Mirage",
-      "games_played": 3358,
+      "games_played": 3359,
       "games_won": 782,
-      "win_rate": 23.29,
+      "win_rate": 23.28,
       "solo_wins": 755,
       "shared_wins": 27,
-      "elo_rating": 136.5,
+      "elo_rating": 119.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.8
     },
@@ -8687,12 +8687,12 @@
     },
     "Will": {
       "name": "Will",
-      "games_played": 3094,
+      "games_played": 3096,
       "games_won": 694,
-      "win_rate": 22.43,
+      "win_rate": 22.42,
       "solo_wins": 674,
       "shared_wins": 20,
-      "elo_rating": 115.4,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.79
     },
@@ -8841,12 +8841,12 @@
     },
     "Demon": {
       "name": "Demon",
-      "games_played": 3058,
-      "games_won": 694,
-      "win_rate": 22.69,
-      "solo_wins": 669,
+      "games_played": 3061,
+      "games_won": 695,
+      "win_rate": 22.7,
+      "solo_wins": 670,
       "shared_wins": 25,
-      "elo_rating": 100,
+      "elo_rating": 116.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.75
     },
@@ -8940,9 +8940,9 @@
     },
     "Magnet": {
       "name": "Magnet",
-      "games_played": 3044,
+      "games_played": 3045,
       "games_won": 712,
-      "win_rate": 23.39,
+      "win_rate": 23.38,
       "solo_wins": 698,
       "shared_wins": 14,
       "elo_rating": 100,
@@ -9281,12 +9281,12 @@
     },
     "Zilch": {
       "name": "Zilch",
-      "games_played": 2963,
-      "games_won": 685,
-      "win_rate": 23.12,
-      "solo_wins": 656,
+      "games_played": 2965,
+      "games_won": 686,
+      "win_rate": 23.14,
+      "solo_wins": 657,
       "shared_wins": 29,
-      "elo_rating": 100,
+      "elo_rating": 100.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
@@ -9666,12 +9666,12 @@
     },
     "Phantasm": {
       "name": "Phantasm",
-      "games_played": 2507,
-      "games_won": 648,
+      "games_played": 2511,
+      "games_won": 649,
       "win_rate": 25.85,
-      "solo_wins": 626,
+      "solo_wins": 627,
       "shared_wins": 22,
-      "elo_rating": 147.1,
+      "elo_rating": 110.5,
       "peak_elo": 1500.0,
       "avg_colonies": 3.83
     },
@@ -9688,21 +9688,21 @@
     },
     "Tentacle": {
       "name": "Tentacle",
-      "games_played": 2568,
-      "games_won": 575,
-      "win_rate": 22.39,
-      "solo_wins": 546,
+      "games_played": 2570,
+      "games_won": 576,
+      "win_rate": 22.41,
+      "solo_wins": 547,
       "shared_wins": 29,
-      "elo_rating": 100,
+      "elo_rating": 103.9,
       "peak_elo": 1500.0,
       "avg_colonies": 3.74
     },
     "Dervish": {
       "name": "Dervish",
-      "games_played": 2543,
-      "games_won": 702,
-      "win_rate": 27.61,
-      "solo_wins": 698,
+      "games_played": 2547,
+      "games_won": 704,
+      "win_rate": 27.64,
+      "solo_wins": 700,
       "shared_wins": 4,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -9765,12 +9765,12 @@
     },
     "Throwback": {
       "name": "Throwback",
-      "games_played": 2544,
-      "games_won": 592,
+      "games_played": 2548,
+      "games_won": 593,
       "win_rate": 23.27,
-      "solo_wins": 566,
+      "solo_wins": 567,
       "shared_wins": 26,
-      "elo_rating": 112.5,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
@@ -9798,12 +9798,12 @@
     },
     "Worm": {
       "name": "Worm",
-      "games_played": 2529,
-      "games_won": 566,
-      "win_rate": 22.38,
-      "solo_wins": 547,
+      "games_played": 2530,
+      "games_won": 567,
+      "win_rate": 22.41,
+      "solo_wins": 548,
       "shared_wins": 19,
-      "elo_rating": 107.1,
+      "elo_rating": 123.3,
       "peak_elo": 1500.0,
       "avg_colonies": 3.78
     },
@@ -9875,9 +9875,9 @@
     },
     "The Meek": {
       "name": "The Meek",
-      "games_played": 2478,
+      "games_played": 2482,
       "games_won": 1697,
-      "win_rate": 68.48,
+      "win_rate": 68.37,
       "solo_wins": 1661,
       "shared_wins": 36,
       "elo_rating": 100,
@@ -9908,12 +9908,12 @@
     },
     "Lloyd": {
       "name": "Lloyd",
-      "games_played": 2545,
-      "games_won": 589,
-      "win_rate": 23.14,
-      "solo_wins": 556,
+      "games_played": 2547,
+      "games_won": 590,
+      "win_rate": 23.16,
+      "solo_wins": 557,
       "shared_wins": 33,
-      "elo_rating": 116.7,
+      "elo_rating": 114.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
@@ -9996,23 +9996,23 @@
     },
     "Alien": {
       "name": "Alien",
-      "games_played": 2510,
+      "games_played": 2511,
       "games_won": 562,
-      "win_rate": 22.39,
+      "win_rate": 22.38,
       "solo_wins": 542,
       "shared_wins": 20,
-      "elo_rating": 100.6,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
     "Booster": {
       "name": "Booster",
-      "games_played": 2508,
+      "games_played": 2509,
       "games_won": 602,
-      "win_rate": 24.0,
+      "win_rate": 23.99,
       "solo_wins": 583,
       "shared_wins": 19,
-      "elo_rating": 100.3,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
@@ -10051,10 +10051,10 @@
     },
     "Micron": {
       "name": "Micron",
-      "games_played": 2445,
-      "games_won": 587,
+      "games_played": 2449,
+      "games_won": 588,
       "win_rate": 24.01,
-      "solo_wins": 568,
+      "solo_wins": 569,
       "shared_wins": 19,
       "elo_rating": 100,
       "peak_elo": 1503.2,
@@ -10117,23 +10117,23 @@
     },
     "Lemming": {
       "name": "Lemming",
-      "games_played": 2568,
+      "games_played": 2570,
       "games_won": 589,
-      "win_rate": 22.94,
+      "win_rate": 22.92,
       "solo_wins": 567,
       "shared_wins": 22,
-      "elo_rating": 145.6,
+      "elo_rating": 110.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
     "Geek": {
       "name": "Geek",
-      "games_played": 2534,
-      "games_won": 583,
-      "win_rate": 23.01,
-      "solo_wins": 565,
+      "games_played": 2537,
+      "games_won": 584,
+      "win_rate": 23.02,
+      "solo_wins": 566,
       "shared_wins": 18,
-      "elo_rating": 104.5,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
@@ -10150,12 +10150,12 @@
     },
     "Bubble": {
       "name": "Bubble",
-      "games_played": 2455,
+      "games_played": 2457,
       "games_won": 525,
-      "win_rate": 21.38,
+      "win_rate": 21.37,
       "solo_wins": 509,
       "shared_wins": 16,
-      "elo_rating": 116.7,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.73
     },
@@ -10227,12 +10227,12 @@
     },
     "Wrack": {
       "name": "Wrack",
-      "games_played": 2520,
-      "games_won": 570,
-      "win_rate": 22.62,
-      "solo_wins": 549,
+      "games_played": 2524,
+      "games_won": 573,
+      "win_rate": 22.7,
+      "solo_wins": 552,
       "shared_wins": 21,
-      "elo_rating": 100,
+      "elo_rating": 130.1,
       "peak_elo": 1500.0,
       "avg_colonies": 3.75
     },
@@ -10249,23 +10249,23 @@
     },
     "Extractor": {
       "name": "Extractor",
-      "games_played": 2552,
-      "games_won": 570,
-      "win_rate": 22.34,
-      "solo_wins": 546,
+      "games_played": 2554,
+      "games_won": 571,
+      "win_rate": 22.36,
+      "solo_wins": 547,
       "shared_wins": 24,
-      "elo_rating": 128.4,
+      "elo_rating": 128.5,
       "peak_elo": 1500.0,
       "avg_colonies": 3.75
     },
     "Cloak": {
       "name": "Cloak",
-      "games_played": 2556,
+      "games_played": 2558,
       "games_won": 582,
-      "win_rate": 22.77,
+      "win_rate": 22.75,
       "solo_wins": 558,
       "shared_wins": 24,
-      "elo_rating": 107.4,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.79
     },
@@ -10315,12 +10315,12 @@
     },
     "Assessor": {
       "name": "Assessor",
-      "games_played": 2658,
-      "games_won": 605,
+      "games_played": 2663,
+      "games_won": 606,
       "win_rate": 22.76,
-      "solo_wins": 585,
+      "solo_wins": 586,
       "shared_wins": 20,
-      "elo_rating": 100,
+      "elo_rating": 116.0,
       "peak_elo": 1500.0,
       "avg_colonies": 3.79
     },
@@ -10381,12 +10381,12 @@
     },
     "AI": {
       "name": "AI",
-      "games_played": 2523,
-      "games_won": 587,
-      "win_rate": 23.27,
-      "solo_wins": 560,
+      "games_played": 2524,
+      "games_won": 588,
+      "win_rate": 23.3,
+      "solo_wins": 561,
       "shared_wins": 27,
-      "elo_rating": 131.2,
+      "elo_rating": 146.4,
       "peak_elo": 1500.0,
       "avg_colonies": 3.78
     },
@@ -10447,12 +10447,12 @@
     },
     "Vector": {
       "name": "Vector",
-      "games_played": 2608,
+      "games_played": 2612,
       "games_won": 601,
-      "win_rate": 23.04,
+      "win_rate": 23.01,
       "solo_wins": 578,
       "shared_wins": 23,
-      "elo_rating": 147.2,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.76
     },
@@ -10502,10 +10502,10 @@
     },
     "Force": {
       "name": "Force",
-      "games_played": 2536,
-      "games_won": 541,
-      "win_rate": 21.33,
-      "solo_wins": 520,
+      "games_played": 2542,
+      "games_won": 542,
+      "win_rate": 21.32,
+      "solo_wins": 521,
       "shared_wins": 21,
       "elo_rating": 100,
       "peak_elo": 1500.0,
@@ -10535,12 +10535,12 @@
     },
     "Sycophant": {
       "name": "Sycophant",
-      "games_played": 2485,
-      "games_won": 561,
-      "win_rate": 22.58,
-      "solo_wins": 538,
+      "games_played": 2490,
+      "games_won": 564,
+      "win_rate": 22.65,
+      "solo_wins": 541,
       "shared_wins": 23,
-      "elo_rating": 100,
+      "elo_rating": 147.8,
       "peak_elo": 1500.0,
       "avg_colonies": 3.75
     },
@@ -10557,31 +10557,31 @@
     },
     "Locust_Alt": {
       "name": "Locust_Alt",
-      "games_played": 2441,
-      "games_won": 569,
-      "win_rate": 23.31,
-      "solo_wins": 542,
+      "games_played": 2442,
+      "games_won": 570,
+      "win_rate": 23.34,
+      "solo_wins": 543,
       "shared_wins": 27,
-      "elo_rating": 148.9,
+      "elo_rating": 162.7,
       "peak_elo": 1500.0,
       "avg_colonies": 3.75
     },
     "Sadist_Alt": {
       "name": "Sadist_Alt",
-      "games_played": 2569,
+      "games_played": 2571,
       "games_won": 586,
-      "win_rate": 22.81,
+      "win_rate": 22.79,
       "solo_wins": 564,
       "shared_wins": 22,
-      "elo_rating": 116.1,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.75
     },
     "Brute_Alt": {
       "name": "Brute_Alt",
-      "games_played": 2422,
+      "games_played": 2424,
       "games_won": 568,
-      "win_rate": 23.45,
+      "win_rate": 23.43,
       "solo_wins": 548,
       "shared_wins": 20,
       "elo_rating": 100,
@@ -10590,64 +10590,64 @@
     },
     "Grumpus_Alt": {
       "name": "Grumpus_Alt",
-      "games_played": 2510,
+      "games_played": 2511,
       "games_won": 590,
-      "win_rate": 23.51,
+      "win_rate": 23.5,
       "solo_wins": 566,
       "shared_wins": 24,
-      "elo_rating": 110.7,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.79
     },
     "Zombie_Alt": {
       "name": "Zombie_Alt",
-      "games_played": 2448,
-      "games_won": 549,
-      "win_rate": 22.43,
+      "games_played": 2450,
+      "games_won": 550,
+      "win_rate": 22.45,
       "solo_wins": 525,
-      "shared_wins": 24,
-      "elo_rating": 100,
+      "shared_wins": 25,
+      "elo_rating": 100.2,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
     "Schizoid_Alt": {
       "name": "Schizoid_Alt",
-      "games_played": 2481,
-      "games_won": 575,
-      "win_rate": 23.18,
-      "solo_wins": 558,
+      "games_played": 2484,
+      "games_won": 576,
+      "win_rate": 23.19,
+      "solo_wins": 559,
       "shared_wins": 17,
-      "elo_rating": 116.0,
+      "elo_rating": 100,
       "peak_elo": 1500.0,
       "avg_colonies": 3.82
     },
     "Demon_Alt": {
       "name": "Demon_Alt",
-      "games_played": 2438,
-      "games_won": 570,
-      "win_rate": 23.38,
-      "solo_wins": 550,
+      "games_played": 2443,
+      "games_won": 573,
+      "win_rate": 23.45,
+      "solo_wins": 553,
       "shared_wins": 20,
-      "elo_rating": 150.0,
+      "elo_rating": 158.9,
       "peak_elo": 1500.0,
       "avg_colonies": 3.77
     },
     "Masochist_Alt": {
       "name": "Masochist_Alt",
-      "games_played": 2493,
+      "games_played": 2494,
       "games_won": 650,
-      "win_rate": 26.07,
+      "win_rate": 26.06,
       "solo_wins": 627,
       "shared_wins": 23,
-      "elo_rating": 100.0,
+      "elo_rating": 100,
       "peak_elo": 1500.1,
       "avg_colonies": 3.85
     },
     "Daredevil_Alt": {
       "name": "Daredevil_Alt",
-      "games_played": 2513,
+      "games_played": 2514,
       "games_won": 552,
-      "win_rate": 21.97,
+      "win_rate": 21.96,
       "solo_wins": 529,
       "shared_wins": 23,
       "elo_rating": 100,
@@ -59195,7 +59195,7 @@
       "shared_wins": 1,
       "elo_rating": 116.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "Mealybug": {
       "name": "Mealybug",
@@ -59855,7 +59855,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.8
+      "avg_colonies": 3.78
     },
     "Pioneer_5K": {
       "name": "Pioneer_5K",
@@ -60691,7 +60691,7 @@
       "shared_wins": 0,
       "elo_rating": 430.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.75
     },
     "Acrylic": {
       "name": "Acrylic",
@@ -60801,7 +60801,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.89
+      "avg_colonies": 3.87
     },
     "Gold_Color": {
       "name": "Gold_Color",
@@ -62979,7 +62979,7 @@
       "shared_wins": 0,
       "elo_rating": 100.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.75
     },
     "Roadster": {
       "name": "Roadster",
@@ -63562,7 +63562,7 @@
       "shared_wins": 1,
       "elo_rating": 125.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.61
+      "avg_colonies": 3.59
     },
     "Viperfish": {
       "name": "Viperfish",
@@ -63815,7 +63815,7 @@
       "shared_wins": 3,
       "elo_rating": 117.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.65
+      "avg_colonies": 3.63
     },
     "Slippery_Texture": {
       "name": "Slippery_Texture",
@@ -63881,7 +63881,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.68
+      "avg_colonies": 3.66
     },
     "Kingly_5K": {
       "name": "Kingly_5K",
@@ -65267,7 +65267,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.59
+      "avg_colonies": 3.58
     },
     "Slug": {
       "name": "Slug",
@@ -65828,7 +65828,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.67
+      "avg_colonies": 3.66
     },
     "Tart_Dessert": {
       "name": "Tart_Dessert",
@@ -66334,7 +66334,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.93
     },
     "Linebacker_Sport": {
       "name": "Linebacker_Sport",
@@ -66411,7 +66411,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.9
+      "avg_colonies": 3.89
     },
     "Airplane_Transport": {
       "name": "Airplane_Transport",
@@ -66444,7 +66444,7 @@
       "shared_wins": 0,
       "elo_rating": 108.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.87
+      "avg_colonies": 3.86
     },
     "Musical": {
       "name": "Musical",
@@ -66455,7 +66455,7 @@
       "shared_wins": 1,
       "elo_rating": 116.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.69
     },
     "Bicycle_Transport": {
       "name": "Bicycle_Transport",
@@ -66554,7 +66554,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1502.9,
-      "avg_colonies": 3.66
+      "avg_colonies": 3.65
     },
     "Khepri": {
       "name": "Khepri",
@@ -66587,7 +66587,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.59
+      "avg_colonies": 3.58
     },
     "Quarterback_Sport": {
       "name": "Quarterback_Sport",
@@ -66763,7 +66763,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.56
     },
     "Mexican_Food": {
       "name": "Mexican_Food",
@@ -66785,7 +66785,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.69
+      "avg_colonies": 3.67
     },
     "Train_Transport": {
       "name": "Train_Transport",
@@ -66807,7 +66807,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.83
     },
     "Marines": {
       "name": "Marines",
@@ -66829,7 +66829,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.68
+      "avg_colonies": 3.67
     },
     "Tank_Corps": {
       "name": "Tank_Corps",
@@ -66950,7 +66950,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.7
     },
     "Nephthys": {
       "name": "Nephthys",
@@ -67005,7 +67005,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.77
     },
     "Patent_Attorney": {
       "name": "Patent_Attorney",
@@ -67016,7 +67016,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "Breastplate": {
       "name": "Breastplate",
@@ -67038,7 +67038,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.75
     },
     "Sausage": {
       "name": "Sausage",
@@ -67060,7 +67060,7 @@
       "shared_wins": 1,
       "elo_rating": 160.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Turquoise_Gem": {
       "name": "Turquoise_Gem",
@@ -67104,7 +67104,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.63
+      "avg_colonies": 3.61
     },
     "Root_Beer": {
       "name": "Root_Beer",
@@ -67137,7 +67137,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Oort_Cloud": {
       "name": "Oort_Cloud",
@@ -67159,7 +67159,7 @@
       "shared_wins": 4,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.75
+      "avg_colonies": 3.73
     },
     "Superlative": {
       "name": "Superlative",
@@ -67247,7 +67247,7 @@
       "shared_wins": 1,
       "elo_rating": 116.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.85
+      "avg_colonies": 3.83
     },
     "Hamster": {
       "name": "Hamster",
@@ -67269,7 +67269,7 @@
       "shared_wins": 0,
       "elo_rating": 103.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.59
+      "avg_colonies": 3.57
     },
     "Arbitrator_Legal": {
       "name": "Arbitrator_Legal",
@@ -67280,7 +67280,7 @@
       "shared_wins": 2,
       "elo_rating": 139.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "Chain_Mail": {
       "name": "Chain_Mail",
@@ -67335,7 +67335,7 @@
       "shared_wins": 2,
       "elo_rating": 109.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.69
     },
     "Lawyer_Office": {
       "name": "Lawyer_Office",
@@ -67357,7 +67357,7 @@
       "shared_wins": 2,
       "elo_rating": 116.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.8
     },
     "Assembly_Line": {
       "name": "Assembly_Line",
@@ -67368,7 +67368,7 @@
       "shared_wins": 4,
       "elo_rating": 162.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.01
+      "avg_colonies": 4.0
     },
     "Bacon": {
       "name": "Bacon",
@@ -67445,7 +67445,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.95
+      "avg_colonies": 3.93
     },
     "Morgan_Le_Fay": {
       "name": "Morgan_Le_Fay",
@@ -67467,7 +67467,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.85
     },
     "Mixer_Kitchen": {
       "name": "Mixer_Kitchen",
@@ -67533,7 +67533,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.82
     },
     "Horror_Movie": {
       "name": "Horror_Movie",
@@ -67588,7 +67588,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Tristan": {
       "name": "Tristan",
@@ -67621,7 +67621,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Refactor": {
       "name": "Refactor",
@@ -67687,7 +67687,7 @@
       "shared_wins": 2,
       "elo_rating": 138.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.79
     },
     "Like": {
       "name": "Like",
@@ -67698,7 +67698,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.55
     },
     "Petra_Wonder": {
       "name": "Petra_Wonder",
@@ -67709,7 +67709,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "App_Store": {
       "name": "App_Store",
@@ -67731,7 +67731,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Azathoth": {
       "name": "Azathoth",
@@ -67764,7 +67764,7 @@
       "shared_wins": 2,
       "elo_rating": 145.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.51
+      "avg_colonies": 3.5
     },
     "Toaster_Kitchen": {
       "name": "Toaster_Kitchen",
@@ -67797,7 +67797,7 @@
       "shared_wins": 1,
       "elo_rating": 131.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Bailiff_Legal": {
       "name": "Bailiff_Legal",
@@ -67808,7 +67808,7 @@
       "shared_wins": 3,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.59
+      "avg_colonies": 3.58
     },
     "Frigga_Mother": {
       "name": "Frigga_Mother",
@@ -67841,7 +67841,7 @@
       "shared_wins": 0,
       "elo_rating": 116.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Coat": {
       "name": "Coat",
@@ -67863,7 +67863,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.51
+      "avg_colonies": 3.5
     },
     "Kettle_Kitchen": {
       "name": "Kettle_Kitchen",
@@ -67885,7 +67885,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.7
     },
     "Mars_Base": {
       "name": "Mars_Base",
@@ -67907,7 +67907,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.82
     },
     "Data_Center": {
       "name": "Data_Center",
@@ -67918,7 +67918,7 @@
       "shared_wins": 3,
       "elo_rating": 116.1,
       "peak_elo": 1504.9,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "Shub_Niggurath": {
       "name": "Shub_Niggurath",
@@ -67951,7 +67951,7 @@
       "shared_wins": 3,
       "elo_rating": 133.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.8
     },
     "Fenrir_Wolf": {
       "name": "Fenrir_Wolf",
@@ -67984,7 +67984,7 @@
       "shared_wins": 0,
       "elo_rating": 131.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.79
     },
     "Ferret": {
       "name": "Ferret",
@@ -67995,7 +67995,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.62
+      "avg_colonies": 3.61
     },
     "Mint_Candy": {
       "name": "Mint_Candy",
@@ -68028,7 +68028,7 @@
       "shared_wins": 1,
       "elo_rating": 102.8,
       "peak_elo": 1516.0,
-      "avg_colonies": 3.95
+      "avg_colonies": 3.93
     },
     "Pancake": {
       "name": "Pancake",
@@ -68072,7 +68072,7 @@
       "shared_wins": 0,
       "elo_rating": 103.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "Grill_Kitchen": {
       "name": "Grill_Kitchen",
@@ -68094,7 +68094,7 @@
       "shared_wins": 0,
       "elo_rating": 120.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.72
     },
     "Loki_Trickster": {
       "name": "Loki_Trickster",
@@ -68116,7 +68116,7 @@
       "shared_wins": 0,
       "elo_rating": 116.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Fantasy_Movie": {
       "name": "Fantasy_Movie",
@@ -68171,7 +68171,7 @@
       "shared_wins": 2,
       "elo_rating": 122.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.7
     },
     "Zenith_Achievement": {
       "name": "Zenith_Achievement",
@@ -68325,7 +68325,7 @@
       "shared_wins": 0,
       "elo_rating": 103.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.59
+      "avg_colonies": 3.57
     },
     "Green_Tea": {
       "name": "Green_Tea",
@@ -68347,7 +68347,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.94
     },
     "Cream_Soda": {
       "name": "Cream_Soda",
@@ -68380,7 +68380,7 @@
       "shared_wins": 0,
       "elo_rating": 137.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.93
     },
     "Hauberk": {
       "name": "Hauberk",
@@ -68391,7 +68391,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.87
+      "avg_colonies": 3.86
     },
     "HR_Rep": {
       "name": "HR_Rep",
@@ -68424,7 +68424,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.77
     },
     "Colossus_Rhodes": {
       "name": "Colossus_Rhodes",
@@ -68435,7 +68435,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.82
     },
     "Gorget": {
       "name": "Gorget",
@@ -68446,7 +68446,7 @@
       "shared_wins": 0,
       "elo_rating": 116.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.63
+      "avg_colonies": 3.61
     },
     "Cryptocurrency": {
       "name": "Cryptocurrency",
@@ -68457,7 +68457,7 @@
       "shared_wins": 1,
       "elo_rating": 125.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.88
+      "avg_colonies": 3.86
     },
     "Milestone_Master": {
       "name": "Milestone_Master",
@@ -68479,7 +68479,7 @@
       "shared_wins": 2,
       "elo_rating": 103.2,
       "peak_elo": 1502.6,
-      "avg_colonies": 3.63
+      "avg_colonies": 3.61
     },
     "Deep_Space_Probe": {
       "name": "Deep_Space_Probe",
@@ -68490,7 +68490,7 @@
       "shared_wins": 1,
       "elo_rating": 125.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.79
     },
     "Hashbrown": {
       "name": "Hashbrown",
@@ -68501,7 +68501,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.7
     },
     "Yog_Sothoth": {
       "name": "Yog_Sothoth",
@@ -68512,7 +68512,7 @@
       "shared_wins": 1,
       "elo_rating": 106.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.55
     },
     "Cotton_Textile": {
       "name": "Cotton_Textile",
@@ -68534,7 +68534,7 @@
       "shared_wins": 0,
       "elo_rating": 116.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.75
     },
     "Astronaut_Space": {
       "name": "Astronaut_Space",
@@ -68545,7 +68545,7 @@
       "shared_wins": 0,
       "elo_rating": 146.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.81
     },
     "Laureate": {
       "name": "Laureate",
@@ -68556,7 +68556,7 @@
       "shared_wins": 1,
       "elo_rating": 105.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.9
+      "avg_colonies": 3.88
     },
     "Sage_6K": {
       "name": "Sage_6K",
@@ -68578,7 +68578,7 @@
       "shared_wins": 2,
       "elo_rating": 111.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.67
+      "avg_colonies": 3.65
     },
     "Open_Source": {
       "name": "Open_Source",
@@ -68600,7 +68600,7 @@
       "shared_wins": 1,
       "elo_rating": 142.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.01
+      "avg_colonies": 4.0
     },
     "Grape_Soda": {
       "name": "Grape_Soda",
@@ -68611,7 +68611,7 @@
       "shared_wins": 1,
       "elo_rating": 103.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.84
     },
     "Angkor_Wat": {
       "name": "Angkor_Wat",
@@ -68655,7 +68655,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.93
+      "avg_colonies": 3.91
     },
     "Darjeeling": {
       "name": "Darjeeling",
@@ -68666,7 +68666,7 @@
       "shared_wins": 0,
       "elo_rating": 121.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.98
+      "avg_colonies": 3.96
     },
     "Block_Social": {
       "name": "Block_Social",
@@ -68699,7 +68699,7 @@
       "shared_wins": 0,
       "elo_rating": 116.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.77
     },
     "Scale_Mail": {
       "name": "Scale_Mail",
@@ -68710,7 +68710,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.52
+      "avg_colonies": 3.5
     },
     "Paragon": {
       "name": "Paragon",
@@ -68721,7 +68721,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Silk_Textile": {
       "name": "Silk_Textile",
@@ -68743,7 +68743,7 @@
       "shared_wins": 0,
       "elo_rating": 116.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.69
     },
     "Dishwasher_Kitchen": {
       "name": "Dishwasher_Kitchen",
@@ -68765,7 +68765,7 @@
       "shared_wins": 0,
       "elo_rating": 103.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.06
+      "avg_colonies": 4.04
     },
     "Boots": {
       "name": "Boots",
@@ -68787,7 +68787,7 @@
       "shared_wins": 3,
       "elo_rating": 147.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.88
+      "avg_colonies": 3.86
     },
     "Vambrace": {
       "name": "Vambrace",
@@ -68798,7 +68798,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1510.2,
-      "avg_colonies": 3.7
+      "avg_colonies": 3.68
     },
     "Chinchilla": {
       "name": "Chinchilla",
@@ -68820,7 +68820,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.61
+      "avg_colonies": 3.6
     },
     "Eggs": {
       "name": "Eggs",
@@ -68831,7 +68831,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.79
     },
     "Search_Engine": {
       "name": "Search_Engine",
@@ -68842,7 +68842,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.75
+      "avg_colonies": 3.73
     },
     "Container_Software": {
       "name": "Container_Software",
@@ -68853,7 +68853,7 @@
       "shared_wins": 0,
       "elo_rating": 118.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.72
     },
     "Ginger_Tea": {
       "name": "Ginger_Tea",
@@ -68875,7 +68875,7 @@
       "shared_wins": 1,
       "elo_rating": 117.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.77
     },
     "Romance_Movie": {
       "name": "Romance_Movie",
@@ -68963,7 +68963,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Denim_Textile": {
       "name": "Denim_Textile",
@@ -68974,7 +68974,7 @@
       "shared_wins": 2,
       "elo_rating": 116.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.72
     },
     "Flat_White": {
       "name": "Flat_White",
@@ -69073,7 +69073,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.46
+      "avg_colonies": 3.44
     },
     "Exemplar": {
       "name": "Exemplar",
@@ -69106,7 +69106,7 @@
       "shared_wins": 0,
       "elo_rating": 178.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Cereal": {
       "name": "Cereal",
@@ -69128,7 +69128,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.61
+      "avg_colonies": 3.6
     },
     "Pie": {
       "name": "Pie",
@@ -69150,7 +69150,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.84
     },
     "Kay": {
       "name": "Kay",
@@ -69194,7 +69194,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "SciFi_Movie": {
       "name": "SciFi_Movie",
@@ -69205,7 +69205,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.9
+      "avg_colonies": 3.88
     },
     "Hel_Death": {
       "name": "Hel_Death",
@@ -69216,7 +69216,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.9
+      "avg_colonies": 3.88
     },
     "Accolade": {
       "name": "Accolade",
@@ -69227,7 +69227,7 @@
       "shared_wins": 0,
       "elo_rating": 117.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Kevlar_Textile": {
       "name": "Kevlar_Textile",
@@ -69249,7 +69249,7 @@
       "shared_wins": 3,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.8
     },
     "Cola": {
       "name": "Cola",
@@ -69260,7 +69260,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.71
     },
     "Ginger_Ale": {
       "name": "Ginger_Ale",
@@ -69282,7 +69282,7 @@
       "shared_wins": 1,
       "elo_rating": 131.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Njord_Sea": {
       "name": "Njord_Sea",
@@ -69315,7 +69315,7 @@
       "shared_wins": 2,
       "elo_rating": 118.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Mediator_Legal": {
       "name": "Mediator_Legal",
@@ -69348,7 +69348,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.8
     },
     "Defense_Attorney": {
       "name": "Defense_Attorney",
@@ -69359,7 +69359,7 @@
       "shared_wins": 0,
       "elo_rating": 111.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.61
+      "avg_colonies": 3.59
     },
     "CTO": {
       "name": "CTO",
@@ -69370,7 +69370,7 @@
       "shared_wins": 0,
       "elo_rating": 100.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Thor_God": {
       "name": "Thor_God",
@@ -69381,7 +69381,7 @@
       "shared_wins": 0,
       "elo_rating": 117.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Triumph_Achievement": {
       "name": "Triumph_Achievement",
@@ -69392,7 +69392,7 @@
       "shared_wins": 0,
       "elo_rating": 100.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Tart": {
       "name": "Tart",
@@ -69403,7 +69403,7 @@
       "shared_wins": 0,
       "elo_rating": 116.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.67
+      "avg_colonies": 3.66
     },
     "Freezer_Kitchen": {
       "name": "Freezer_Kitchen",
@@ -69414,7 +69414,7 @@
       "shared_wins": 2,
       "elo_rating": 119.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.69
     },
     "Sparkling_Water": {
       "name": "Sparkling_Water",
@@ -69425,7 +69425,7 @@
       "shared_wins": 3,
       "elo_rating": 149.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Lemon_Lime": {
       "name": "Lemon_Lime",
@@ -69436,7 +69436,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.7
+      "avg_colonies": 3.68
     },
     "Trojan_Asteroid": {
       "name": "Trojan_Asteroid",
@@ -69469,7 +69469,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.6
+      "avg_colonies": 3.58
     },
     "Leather_Armor": {
       "name": "Leather_Armor",
@@ -69491,7 +69491,7 @@
       "shared_wins": 1,
       "elo_rating": 117.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Dog_Pet": {
       "name": "Dog_Pet",
@@ -69513,7 +69513,7 @@
       "shared_wins": 0,
       "elo_rating": 116.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Chocolate": {
       "name": "Chocolate",
@@ -69557,7 +69557,7 @@
       "shared_wins": 2,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.98
+      "avg_colonies": 3.96
     },
     "War_Movie": {
       "name": "War_Movie",
@@ -69601,7 +69601,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.71
     },
     "Oatmeal": {
       "name": "Oatmeal",
@@ -69634,7 +69634,7 @@
       "shared_wins": 0,
       "elo_rating": 110.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.89
+      "avg_colonies": 3.87
     },
     "Uranium": {
       "name": "Uranium",
@@ -69645,7 +69645,7 @@
       "shared_wins": 1,
       "elo_rating": 118.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.8
     },
     "Rover_Space": {
       "name": "Rover_Space",
@@ -69667,7 +69667,7 @@
       "shared_wins": 1,
       "elo_rating": 119.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Vienna_Coffee": {
       "name": "Vienna_Coffee",
@@ -69678,7 +69678,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.94
     },
     "Prosecutor_Legal": {
       "name": "Prosecutor_Legal",
@@ -69722,7 +69722,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.67
+      "avg_colonies": 3.65
     },
     "Kuiper_Belt": {
       "name": "Kuiper_Belt",
@@ -69744,7 +69744,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.42
+      "avg_colonies": 3.4
     },
     "Marketing": {
       "name": "Marketing",
@@ -69755,7 +69755,7 @@
       "shared_wins": 0,
       "elo_rating": 118.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.55
+      "avg_colonies": 3.53
     },
     "Milestone_6000": {
       "name": "Milestone_6000",
@@ -69766,7 +69766,7 @@
       "shared_wins": 0,
       "elo_rating": 146.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.89
+      "avg_colonies": 3.87
     },
     "Railroad": {
       "name": "Railroad",
@@ -69777,7 +69777,7 @@
       "shared_wins": 0,
       "elo_rating": 125.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Gawain": {
       "name": "Gawain",
@@ -69821,7 +69821,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.77
     },
     "Steamboat": {
       "name": "Steamboat",
@@ -69854,7 +69854,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.84
     },
     "Summit_Achievement": {
       "name": "Summit_Achievement",
@@ -69964,7 +69964,7 @@
       "shared_wins": 0,
       "elo_rating": 100,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Truffle": {
       "name": "Truffle",
@@ -69997,7 +69997,7 @@
       "shared_wins": 1,
       "elo_rating": 100,
       "peak_elo": 1501.2,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Magistrate": {
       "name": "Magistrate",
@@ -70019,7 +70019,7 @@
       "shared_wins": 0,
       "elo_rating": 116.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.67
+      "avg_colonies": 3.65
     },
     "Garnet_Gem": {
       "name": "Garnet_Gem",
@@ -70030,7 +70030,7 @@
       "shared_wins": 2,
       "elo_rating": 121.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.68
+      "avg_colonies": 3.66
     },
     "Tertiary_Force": {
       "name": "Tertiary_Force",
@@ -70052,7 +70052,7 @@
       "shared_wins": 2,
       "elo_rating": 995.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.91
+      "avg_colonies": 3.87
     },
     "Robin_Bird": {
       "name": "Robin_Bird",
@@ -70074,7 +70074,7 @@
       "shared_wins": 0,
       "elo_rating": 912.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.03
+      "avg_colonies": 4.0
     },
     "Theta_Letter": {
       "name": "Theta_Letter",
@@ -70085,7 +70085,7 @@
       "shared_wins": 1,
       "elo_rating": 772.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.14
+      "avg_colonies": 4.09
     },
     "Kendo_Martial": {
       "name": "Kendo_Martial",
@@ -70096,7 +70096,7 @@
       "shared_wins": 1,
       "elo_rating": 928.1,
       "peak_elo": 1503.2,
-      "avg_colonies": 4.06
+      "avg_colonies": 4.0
     },
     "Ivy_Garden": {
       "name": "Ivy_Garden",
@@ -70107,7 +70107,7 @@
       "shared_wins": 1,
       "elo_rating": 600.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.63
+      "avg_colonies": 3.61
     },
     "Portuguese": {
       "name": "Portuguese",
@@ -70118,7 +70118,7 @@
       "shared_wins": 0,
       "elo_rating": 803.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.83
     },
     "Romanesque_Style": {
       "name": "Romanesque_Style",
@@ -70129,7 +70129,7 @@
       "shared_wins": 1,
       "elo_rating": 684.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Ecliptic_Path": {
       "name": "Ecliptic_Path",
@@ -70140,7 +70140,7 @@
       "shared_wins": 0,
       "elo_rating": 644.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.67
     },
     "High_Jump": {
       "name": "High_Jump",
@@ -70239,7 +70239,7 @@
       "shared_wins": 1,
       "elo_rating": 825.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.89
     },
     "Aquatic": {
       "name": "Aquatic",
@@ -70283,7 +70283,7 @@
       "shared_wins": 0,
       "elo_rating": 491.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.52
+      "avg_colonies": 3.5
     },
     "Dessert_Meal": {
       "name": "Dessert_Meal",
@@ -70305,7 +70305,7 @@
       "shared_wins": 0,
       "elo_rating": 987.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.93
     },
     "Thrush_Bird": {
       "name": "Thrush_Bird",
@@ -70382,7 +70382,7 @@
       "shared_wins": 0,
       "elo_rating": 646.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.51
     },
     "Tulip_Garden": {
       "name": "Tulip_Garden",
@@ -70404,7 +70404,7 @@
       "shared_wins": 1,
       "elo_rating": 837.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.09
+      "avg_colonies": 4.03
     },
     "Carnivore": {
       "name": "Carnivore",
@@ -70426,7 +70426,7 @@
       "shared_wins": 0,
       "elo_rating": 897.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.59
+      "avg_colonies": 3.53
     },
     "Rectangle": {
       "name": "Rectangle",
@@ -70437,7 +70437,7 @@
       "shared_wins": 0,
       "elo_rating": 944.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.5
     },
     "Eta_Pulse": {
       "name": "Eta_Pulse",
@@ -70448,7 +70448,7 @@
       "shared_wins": 0,
       "elo_rating": 729.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.69
     },
     "Impressionism": {
       "name": "Impressionism",
@@ -70470,7 +70470,7 @@
       "shared_wins": 0,
       "elo_rating": 777.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.63
+      "avg_colonies": 3.6
     },
     "Bluebird_Bird": {
       "name": "Bluebird_Bird",
@@ -70481,7 +70481,7 @@
       "shared_wins": 0,
       "elo_rating": 860.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.76
     },
     "Art_Deco_Style": {
       "name": "Art_Deco_Style",
@@ -70492,7 +70492,7 @@
       "shared_wins": 0,
       "elo_rating": 656.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.56
+      "avg_colonies": 3.5
     },
     "Flux_Capacitor": {
       "name": "Flux_Capacitor",
@@ -70547,7 +70547,7 @@
       "shared_wins": 0,
       "elo_rating": 936.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.93
     },
     "Tea_Bev": {
       "name": "Tea_Bev",
@@ -70558,7 +70558,7 @@
       "shared_wins": 2,
       "elo_rating": 809.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.62
+      "avg_colonies": 3.59
     },
     "Earth": {
       "name": "Earth",
@@ -70569,7 +70569,7 @@
       "shared_wins": 1,
       "elo_rating": 587.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.19
+      "avg_colonies": 3.17
     },
     "Borscht": {
       "name": "Borscht",
@@ -70580,7 +70580,7 @@
       "shared_wins": 0,
       "elo_rating": 715.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.48
+      "avg_colonies": 3.42
     },
     "Merry_Go_Round": {
       "name": "Merry_Go_Round",
@@ -70602,7 +70602,7 @@
       "shared_wins": 0,
       "elo_rating": 759.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.69
     },
     "Cross_Country": {
       "name": "Cross_Country",
@@ -70613,7 +70613,7 @@
       "shared_wins": 0,
       "elo_rating": 756.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.92
+      "avg_colonies": 3.87
     },
     "Crescendo_Music": {
       "name": "Crescendo_Music",
@@ -70657,7 +70657,7 @@
       "shared_wins": 0,
       "elo_rating": 603.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Squid": {
       "name": "Squid",
@@ -70668,7 +70668,7 @@
       "shared_wins": 0,
       "elo_rating": 810.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.74
     },
     "Delta_Wave": {
       "name": "Delta_Wave",
@@ -70690,7 +70690,7 @@
       "shared_wins": 0,
       "elo_rating": 552.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.55
+      "avg_colonies": 3.53
     },
     "Lumen_Bright": {
       "name": "Lumen_Bright",
@@ -70701,7 +70701,7 @@
       "shared_wins": 1,
       "elo_rating": 1113.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.95
+      "avg_colonies": 3.86
     },
     "Omega_End": {
       "name": "Omega_End",
@@ -70712,7 +70712,7 @@
       "shared_wins": 0,
       "elo_rating": 1098.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.79
     },
     "Tug_Of_War": {
       "name": "Tug_Of_War",
@@ -70789,7 +70789,7 @@
       "shared_wins": 0,
       "elo_rating": 894.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.75
     },
     "Dual_Aspect": {
       "name": "Dual_Aspect",
@@ -70800,7 +70800,7 @@
       "shared_wins": 1,
       "elo_rating": 909.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.79
     },
     "Astrophysics": {
       "name": "Astrophysics",
@@ -70855,7 +70855,7 @@
       "shared_wins": 0,
       "elo_rating": 647.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Manta_Ocean": {
       "name": "Manta_Ocean",
@@ -70866,7 +70866,7 @@
       "shared_wins": 1,
       "elo_rating": 983.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.85
+      "avg_colonies": 3.78
     },
     "Xi_Vortex": {
       "name": "Xi_Vortex",
@@ -70910,7 +70910,7 @@
       "shared_wins": 0,
       "elo_rating": 839.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.78
     },
     "Aikido_Martial": {
       "name": "Aikido_Martial",
@@ -70943,7 +70943,7 @@
       "shared_wins": 0,
       "elo_rating": 652.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.71
     },
     "Fencing_Martial": {
       "name": "Fencing_Martial",
@@ -70954,7 +70954,7 @@
       "shared_wins": 0,
       "elo_rating": 681.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.97
+      "avg_colonies": 3.92
     },
     "Nebula_Cloud": {
       "name": "Nebula_Cloud",
@@ -70976,7 +70976,7 @@
       "shared_wins": 0,
       "elo_rating": 851.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.82
     },
     "Jet_Stream": {
       "name": "Jet_Stream",
@@ -71075,7 +71075,7 @@
       "shared_wins": 0,
       "elo_rating": 890.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.79
     },
     "Almond": {
       "name": "Almond",
@@ -71097,7 +71097,7 @@
       "shared_wins": 0,
       "elo_rating": 846.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.79
     },
     "Wonton": {
       "name": "Wonton",
@@ -71108,7 +71108,7 @@
       "shared_wins": 0,
       "elo_rating": 508.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.67
+      "avg_colonies": 3.65
     },
     "Industrial_Style": {
       "name": "Industrial_Style",
@@ -71141,7 +71141,7 @@
       "shared_wins": 0,
       "elo_rating": 911.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.93
     },
     "Gothic_Style": {
       "name": "Gothic_Style",
@@ -71163,7 +71163,7 @@
       "shared_wins": 1,
       "elo_rating": 632.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Adagio_Music": {
       "name": "Adagio_Music",
@@ -71240,7 +71240,7 @@
       "shared_wins": 0,
       "elo_rating": 639.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.77
     },
     "Climbing_Wall": {
       "name": "Climbing_Wall",
@@ -71251,7 +71251,7 @@
       "shared_wins": 0,
       "elo_rating": 682.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.88
+      "avg_colonies": 3.86
     },
     "Giraffe": {
       "name": "Giraffe",
@@ -71273,7 +71273,7 @@
       "shared_wins": 0,
       "elo_rating": 747.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.69
     },
     "Orbital_Ring": {
       "name": "Orbital_Ring",
@@ -71284,7 +71284,7 @@
       "shared_wins": 0,
       "elo_rating": 896.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.67
     },
     "Silver_Element": {
       "name": "Silver_Element",
@@ -71317,7 +71317,7 @@
       "shared_wins": 0,
       "elo_rating": 600.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Mustard": {
       "name": "Mustard",
@@ -71350,7 +71350,7 @@
       "shared_wins": 0,
       "elo_rating": 977.5,
       "peak_elo": 1504.0,
-      "avg_colonies": 4.03
+      "avg_colonies": 4.0
     },
     "Two_Spades": {
       "name": "Two_Spades",
@@ -71361,7 +71361,7 @@
       "shared_wins": 0,
       "elo_rating": 926.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.79
     },
     "Epsilon_Letter": {
       "name": "Epsilon_Letter",
@@ -71372,7 +71372,7 @@
       "shared_wins": 0,
       "elo_rating": 816.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.62
+      "avg_colonies": 3.59
     },
     "Vivace_Music": {
       "name": "Vivace_Music",
@@ -71383,7 +71383,7 @@
       "shared_wins": 0,
       "elo_rating": 430.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.93
+      "avg_colonies": 3.91
     },
     "Minotaur_Fantasy": {
       "name": "Minotaur_Fantasy",
@@ -71394,7 +71394,7 @@
       "shared_wins": 1,
       "elo_rating": 882.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.93
+      "avg_colonies": 3.9
     },
     "Dadaism": {
       "name": "Dadaism",
@@ -71482,7 +71482,7 @@
       "shared_wins": 0,
       "elo_rating": 766.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.51
     },
     "Phoenix_Fantasy": {
       "name": "Phoenix_Fantasy",
@@ -71493,7 +71493,7 @@
       "shared_wins": 1,
       "elo_rating": 571.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.75
     },
     "Gymnastics": {
       "name": "Gymnastics",
@@ -71548,7 +71548,7 @@
       "shared_wins": 0,
       "elo_rating": 916.6,
       "peak_elo": 1504.0,
-      "avg_colonies": 4.03
+      "avg_colonies": 4.0
     },
     "Omicron_Star": {
       "name": "Omicron_Star",
@@ -71559,7 +71559,7 @@
       "shared_wins": 1,
       "elo_rating": 703.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.78
     },
     "Libra_Zodiac": {
       "name": "Libra_Zodiac",
@@ -71570,7 +71570,7 @@
       "shared_wins": 0,
       "elo_rating": 884.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.11
+      "avg_colonies": 4.09
     },
     "Hide_And_Seek": {
       "name": "Hide_And_Seek",
@@ -71592,7 +71592,7 @@
       "shared_wins": 0,
       "elo_rating": 652.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.51
+      "avg_colonies": 3.49
     },
     "Swing_Play": {
       "name": "Swing_Play",
@@ -71603,7 +71603,7 @@
       "shared_wins": 1,
       "elo_rating": 902.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.76
     },
     "Clarinet_Wind": {
       "name": "Clarinet_Wind",
@@ -71614,7 +71614,7 @@
       "shared_wins": 0,
       "elo_rating": 624.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.69
     },
     "King_Hearts": {
       "name": "King_Hearts",
@@ -71669,7 +71669,7 @@
       "shared_wins": 0,
       "elo_rating": 758.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.97
+      "avg_colonies": 3.95
     },
     "Sandstorm_Weather": {
       "name": "Sandstorm_Weather",
@@ -71735,7 +71735,7 @@
       "shared_wins": 0,
       "elo_rating": 759.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.31
+      "avg_colonies": 3.25
     },
     "Dusk_Shadow": {
       "name": "Dusk_Shadow",
@@ -71757,7 +71757,7 @@
       "shared_wins": 1,
       "elo_rating": 672.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.48
+      "avg_colonies": 3.42
     },
     "Reptilian": {
       "name": "Reptilian",
@@ -71768,7 +71768,7 @@
       "shared_wins": 0,
       "elo_rating": 982.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.65
     },
     "Genetics_Science": {
       "name": "Genetics_Science",
@@ -71779,7 +71779,7 @@
       "shared_wins": 0,
       "elo_rating": 736.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.71
     },
     "Chocolate_Ice": {
       "name": "Chocolate_Ice",
@@ -71812,7 +71812,7 @@
       "shared_wins": 0,
       "elo_rating": 871.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.03
+      "avg_colonies": 4.0
     },
     "German_Cuisine": {
       "name": "German_Cuisine",
@@ -71867,7 +71867,7 @@
       "shared_wins": 1,
       "elo_rating": 900.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.85
+      "avg_colonies": 3.79
     },
     "Oval": {
       "name": "Oval",
@@ -71878,7 +71878,7 @@
       "shared_wins": 0,
       "elo_rating": 819.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.92
+      "avg_colonies": 3.85
     },
     "Manifestation": {
       "name": "Manifestation",
@@ -71900,7 +71900,7 @@
       "shared_wins": 1,
       "elo_rating": 912.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.29
+      "avg_colonies": 3.25
     },
     "Banquet": {
       "name": "Banquet",
@@ -71911,7 +71911,7 @@
       "shared_wins": 1,
       "elo_rating": 544.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.81
     },
     "Chimera_Fantasy": {
       "name": "Chimera_Fantasy",
@@ -71966,7 +71966,7 @@
       "shared_wins": 0,
       "elo_rating": 876.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.7
     },
     "Chili_Spice": {
       "name": "Chili_Spice",
@@ -72032,7 +72032,7 @@
       "shared_wins": 0,
       "elo_rating": 587.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.68
+      "avg_colonies": 3.66
     },
     "Cosmology_Science": {
       "name": "Cosmology_Science",
@@ -72065,7 +72065,7 @@
       "shared_wins": 0,
       "elo_rating": 785.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.75
     },
     "Aquarius_Zodiac": {
       "name": "Aquarius_Zodiac",
@@ -72098,7 +72098,7 @@
       "shared_wins": 0,
       "elo_rating": 856.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.71
     },
     "Hummus": {
       "name": "Hummus",
@@ -72109,7 +72109,7 @@
       "shared_wins": 0,
       "elo_rating": 636.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.84
     },
     "Sparrow_Bird": {
       "name": "Sparrow_Bird",
@@ -72142,7 +72142,7 @@
       "shared_wins": 0,
       "elo_rating": 970.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.7
+      "avg_colonies": 3.67
     },
     "Queen_Diamonds": {
       "name": "Queen_Diamonds",
@@ -72197,7 +72197,7 @@
       "shared_wins": 0,
       "elo_rating": 772.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.78
     },
     "Aioli": {
       "name": "Aioli",
@@ -72208,7 +72208,7 @@
       "shared_wins": 0,
       "elo_rating": 720.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Uranium_Element": {
       "name": "Uranium_Element",
@@ -72219,7 +72219,7 @@
       "shared_wins": 1,
       "elo_rating": 777.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.37
+      "avg_colonies": 3.3
     },
     "Carbon_Element": {
       "name": "Carbon_Element",
@@ -72230,7 +72230,7 @@
       "shared_wins": 0,
       "elo_rating": 787.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.48
+      "avg_colonies": 3.41
     },
     "Minimalist_Style": {
       "name": "Minimalist_Style",
@@ -72252,7 +72252,7 @@
       "shared_wins": 0,
       "elo_rating": 408.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.6
+      "avg_colonies": 3.56
     },
     "Radiant_Glow": {
       "name": "Radiant_Glow",
@@ -72285,7 +72285,7 @@
       "shared_wins": 2,
       "elo_rating": 757.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.79
     },
     "Pulsar_Star": {
       "name": "Pulsar_Star",
@@ -72318,7 +72318,7 @@
       "shared_wins": 0,
       "elo_rating": 777.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.76
     },
     "Helix_Spiral": {
       "name": "Helix_Spiral",
@@ -72329,7 +72329,7 @@
       "shared_wins": 0,
       "elo_rating": 721.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.74
     },
     "Tachyon_Burst": {
       "name": "Tachyon_Burst",
@@ -72340,7 +72340,7 @@
       "shared_wins": 0,
       "elo_rating": 946.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.65
     },
     "Leftovers": {
       "name": "Leftovers",
@@ -72351,7 +72351,7 @@
       "shared_wins": 1,
       "elo_rating": 579.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Romanticism": {
       "name": "Romanticism",
@@ -72373,7 +72373,7 @@
       "shared_wins": 0,
       "elo_rating": 755.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.9
+      "avg_colonies": 3.84
     },
     "Nanotechnology": {
       "name": "Nanotechnology",
@@ -72395,7 +72395,7 @@
       "shared_wins": 0,
       "elo_rating": 855.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.09
+      "avg_colonies": 4.03
     },
     "Brunch": {
       "name": "Brunch",
@@ -72428,7 +72428,7 @@
       "shared_wins": 0,
       "elo_rating": 817.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.75
     },
     "Oceanography": {
       "name": "Oceanography",
@@ -72461,7 +72461,7 @@
       "shared_wins": 0,
       "elo_rating": 692.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.82
     },
     "Crescent": {
       "name": "Crescent",
@@ -72472,7 +72472,7 @@
       "shared_wins": 1,
       "elo_rating": 737.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.77
     },
     "Lavender_Garden": {
       "name": "Lavender_Garden",
@@ -72483,7 +72483,7 @@
       "shared_wins": 3,
       "elo_rating": 836.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.06
+      "avg_colonies": 4.0
     },
     "Taurus_Zodiac": {
       "name": "Taurus_Zodiac",
@@ -72505,7 +72505,7 @@
       "shared_wins": 0,
       "elo_rating": 851.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.76
     },
     "Zebra": {
       "name": "Zebra",
@@ -72516,7 +72516,7 @@
       "shared_wins": 0,
       "elo_rating": 811.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.8
     },
     "Blizzard_Weather": {
       "name": "Blizzard_Weather",
@@ -72549,7 +72549,7 @@
       "shared_wins": 0,
       "elo_rating": 664.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.89
+      "avg_colonies": 3.84
     },
     "Infinite_Loop": {
       "name": "Infinite_Loop",
@@ -72560,7 +72560,7 @@
       "shared_wins": 0,
       "elo_rating": 799.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.97
+      "avg_colonies": 3.91
     },
     "Sage_Spice": {
       "name": "Sage_Spice",
@@ -72571,7 +72571,7 @@
       "shared_wins": 0,
       "elo_rating": 610.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Drought_Weather": {
       "name": "Drought_Weather",
@@ -72582,7 +72582,7 @@
       "shared_wins": 0,
       "elo_rating": 856.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.73
+      "avg_colonies": 3.65
     },
     "Threshold": {
       "name": "Threshold",
@@ -72604,7 +72604,7 @@
       "shared_wins": 0,
       "elo_rating": 992.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.46
+      "avg_colonies": 3.38
     },
     "Eight_Diamonds": {
       "name": "Eight_Diamonds",
@@ -72615,7 +72615,7 @@
       "shared_wins": 1,
       "elo_rating": 397.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.58
+      "avg_colonies": 3.56
     },
     "Hurdles": {
       "name": "Hurdles",
@@ -72659,7 +72659,7 @@
       "shared_wins": 0,
       "elo_rating": 725.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.54
+      "avg_colonies": 3.49
     },
     "Classical_Style": {
       "name": "Classical_Style",
@@ -72758,7 +72758,7 @@
       "shared_wins": 0,
       "elo_rating": 795.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.46
+      "avg_colonies": 3.43
     },
     "Chicken_Soup": {
       "name": "Chicken_Soup",
@@ -72802,7 +72802,7 @@
       "shared_wins": 1,
       "elo_rating": 836.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.74
+      "avg_colonies": 3.71
     },
     "Zeta_Letter": {
       "name": "Zeta_Letter",
@@ -72824,7 +72824,7 @@
       "shared_wins": 0,
       "elo_rating": 608.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.67
     },
     "Muay_Thai_Martial": {
       "name": "Muay_Thai_Martial",
@@ -72846,7 +72846,7 @@
       "shared_wins": 0,
       "elo_rating": 674.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.43
+      "avg_colonies": 3.4
     },
     "Iota_Signal": {
       "name": "Iota_Signal",
@@ -72857,7 +72857,7 @@
       "shared_wins": 0,
       "elo_rating": 671.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.62
+      "avg_colonies": 3.56
     },
     "Cashew": {
       "name": "Cashew",
@@ -72912,7 +72912,7 @@
       "shared_wins": 0,
       "elo_rating": 888.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.75
     },
     "Hot_Chocolate": {
       "name": "Hot_Chocolate",
@@ -72945,7 +72945,7 @@
       "shared_wins": 1,
       "elo_rating": 864.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.72
+      "avg_colonies": 3.69
     },
     "Realism_Art": {
       "name": "Realism_Art",
@@ -72967,7 +72967,7 @@
       "shared_wins": 0,
       "elo_rating": 689.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.89
+      "avg_colonies": 3.84
     },
     "Relay_Race": {
       "name": "Relay_Race",
@@ -72989,7 +72989,7 @@
       "shared_wins": 0,
       "elo_rating": 794.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.53
+      "avg_colonies": 3.5
     },
     "Virology": {
       "name": "Virology",
@@ -73000,7 +73000,7 @@
       "shared_wins": 0,
       "elo_rating": 913.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.88
+      "avg_colonies": 3.85
     },
     "Gamma_Letter": {
       "name": "Gamma_Letter",
@@ -73044,7 +73044,7 @@
       "shared_wins": 0,
       "elo_rating": 658.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.76
     },
     "Quasar_Core": {
       "name": "Quasar_Core",
@@ -73055,7 +73055,7 @@
       "shared_wins": 0,
       "elo_rating": 859.3,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.78
     },
     "Piccolo_Wind": {
       "name": "Piccolo_Wind",
@@ -73088,7 +73088,7 @@
       "shared_wins": 0,
       "elo_rating": 598.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.69
+      "avg_colonies": 3.67
     },
     "Trampoline": {
       "name": "Trampoline",
@@ -73099,7 +73099,7 @@
       "shared_wins": 1,
       "elo_rating": 952.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.79
+      "avg_colonies": 3.75
     },
     "Slide_Play": {
       "name": "Slide_Play",
@@ -73121,7 +73121,7 @@
       "shared_wins": 1,
       "elo_rating": 1078.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.12
+      "avg_colonies": 4.04
     },
     "Recorder_Wind": {
       "name": "Recorder_Wind",
@@ -73198,7 +73198,7 @@
       "shared_wins": 0,
       "elo_rating": 805.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.83
     },
     "Epsilon_Field": {
       "name": "Epsilon_Field",
@@ -73220,7 +73220,7 @@
       "shared_wins": 1,
       "elo_rating": 995.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.75
     },
     "Brazilian_Cuisine": {
       "name": "Brazilian_Cuisine",
@@ -73297,7 +73297,7 @@
       "shared_wins": 1,
       "elo_rating": 887.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.81
+      "avg_colonies": 3.78
     },
     "Lily_Garden": {
       "name": "Lily_Garden",
@@ -73330,7 +73330,7 @@
       "shared_wins": 0,
       "elo_rating": 1061.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.76
+      "avg_colonies": 3.71
     },
     "Kickball": {
       "name": "Kickball",
@@ -73385,7 +73385,7 @@
       "shared_wins": 0,
       "elo_rating": 862.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.48
+      "avg_colonies": 3.42
     },
     "Hexagon_Prime": {
       "name": "Hexagon_Prime",
@@ -73396,7 +73396,7 @@
       "shared_wins": 1,
       "elo_rating": 816.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.91
+      "avg_colonies": 3.85
     },
     "Thermodynamics": {
       "name": "Thermodynamics",
@@ -73473,7 +73473,7 @@
       "shared_wins": 0,
       "elo_rating": 669.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.78
+      "avg_colonies": 3.76
     },
     "Accomplishment": {
       "name": "Accomplishment",
@@ -73506,7 +73506,7 @@
       "shared_wins": 0,
       "elo_rating": 1072.2,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.38
+      "avg_colonies": 3.29
     },
     "Strawberry_Ice": {
       "name": "Strawberry_Ice",
@@ -73517,7 +73517,7 @@
       "shared_wins": 2,
       "elo_rating": 784.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.92
     },
     "Taekwondo_Martial": {
       "name": "Taekwondo_Martial",
@@ -73561,7 +73561,7 @@
       "shared_wins": 0,
       "elo_rating": 851.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.71
+      "avg_colonies": 3.68
     },
     "Walnut": {
       "name": "Walnut",
@@ -73583,7 +73583,7 @@
       "shared_wins": 0,
       "elo_rating": 1029.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.95
+      "avg_colonies": 3.91
     },
     "Latin": {
       "name": "Latin",
@@ -73594,7 +73594,7 @@
       "shared_wins": 1,
       "elo_rating": 807.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.46
+      "avg_colonies": 3.38
     },
     "Lark_Bird": {
       "name": "Lark_Bird",
@@ -73671,7 +73671,7 @@
       "shared_wins": 0,
       "elo_rating": 937.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.75
     },
     "Graviton_Field": {
       "name": "Graviton_Field",
@@ -73704,7 +73704,7 @@
       "shared_wins": 0,
       "elo_rating": 950.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.11
+      "avg_colonies": 4.06
     },
     "Tuba_Wind": {
       "name": "Tuba_Wind",
@@ -73715,7 +73715,7 @@
       "shared_wins": 0,
       "elo_rating": 809.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.89
     },
     "Sigma_Letter": {
       "name": "Sigma_Letter",
@@ -73726,7 +73726,7 @@
       "shared_wins": 0,
       "elo_rating": 807.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.89
     },
     "Moroccan_Cuisine": {
       "name": "Moroccan_Cuisine",
@@ -73792,7 +73792,7 @@
       "shared_wins": 1,
       "elo_rating": 960.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.88
     },
     "Hazelnut": {
       "name": "Hazelnut",
@@ -73880,7 +73880,7 @@
       "shared_wins": 0,
       "elo_rating": 718.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.84
     },
     "Omega_Letter": {
       "name": "Omega_Letter",
@@ -73891,7 +73891,7 @@
       "shared_wins": 0,
       "elo_rating": 1003.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.26
+      "avg_colonies": 4.22
     },
     "Eel_Ocean": {
       "name": "Eel_Ocean",
@@ -73913,7 +73913,7 @@
       "shared_wins": 0,
       "elo_rating": 579.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.84
     },
     "Materialization": {
       "name": "Materialization",
@@ -74023,7 +74023,7 @@
       "shared_wins": 1,
       "elo_rating": 1002.0,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.92
+      "avg_colonies": 3.85
     },
     "Quadrant_Alpha": {
       "name": "Quadrant_Alpha",
@@ -74078,7 +74078,7 @@
       "shared_wins": 0,
       "elo_rating": 609.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.84
+      "avg_colonies": 3.82
     },
     "Blue_Supergiant": {
       "name": "Blue_Supergiant",
@@ -74089,7 +74089,7 @@
       "shared_wins": 0,
       "elo_rating": 695.6,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.86
+      "avg_colonies": 3.81
     },
     "Septuple_Core": {
       "name": "Septuple_Core",
@@ -74177,7 +74177,7 @@
       "shared_wins": 1,
       "elo_rating": 511.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.82
+      "avg_colonies": 3.77
     },
     "Ace_Spades": {
       "name": "Ace_Spades",
@@ -74199,7 +74199,7 @@
       "shared_wins": 0,
       "elo_rating": 722.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.55
+      "avg_colonies": 3.53
     },
     "Toad": {
       "name": "Toad",
@@ -74232,7 +74232,7 @@
       "shared_wins": 0,
       "elo_rating": 927.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.83
+      "avg_colonies": 3.75
     },
     "Kraken_Fantasy": {
       "name": "Kraken_Fantasy",
@@ -74309,7 +74309,7 @@
       "shared_wins": 1,
       "elo_rating": 883.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.06
+      "avg_colonies": 4.0
     },
     "Squid_Ocean": {
       "name": "Squid_Ocean",
@@ -74320,7 +74320,7 @@
       "shared_wins": 0,
       "elo_rating": 1000.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.12
+      "avg_colonies": 4.04
     },
     "Tanager_Bird": {
       "name": "Tanager_Bird",
@@ -74342,7 +74342,7 @@
       "shared_wins": 1,
       "elo_rating": 572.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.57
+      "avg_colonies": 3.51
     },
     "Mercury_Element": {
       "name": "Mercury_Element",
@@ -74353,7 +74353,7 @@
       "shared_wins": 1,
       "elo_rating": 1076.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.07
+      "avg_colonies": 4.04
     },
     "Breakfast": {
       "name": "Breakfast",
@@ -74397,7 +74397,7 @@
       "shared_wins": 0,
       "elo_rating": 703.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.42
+      "avg_colonies": 3.36
     },
     "Hot_Sauce": {
       "name": "Hot_Sauce",
@@ -74463,7 +74463,7 @@
       "shared_wins": 0,
       "elo_rating": 749.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.94
+      "avg_colonies": 3.89
     },
     "Chi_Force": {
       "name": "Chi_Force",
@@ -74507,7 +74507,7 @@
       "shared_wins": 0,
       "elo_rating": 945.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.96
+      "avg_colonies": 3.88
     },
     "Jellyfish_Ocean": {
       "name": "Jellyfish_Ocean",
@@ -74518,7 +74518,7 @@
       "shared_wins": 1,
       "elo_rating": 957.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 4.13
+      "avg_colonies": 4.07
     },
     "Futurist_Style": {
       "name": "Futurist_Style",
@@ -74529,7 +74529,7 @@
       "shared_wins": 1,
       "elo_rating": 808.5,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.93
+      "avg_colonies": 3.9
     },
     "Seahorse_Ocean": {
       "name": "Seahorse_Ocean",
@@ -74540,7 +74540,7 @@
       "shared_wins": 1,
       "elo_rating": 962.1,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.52
+      "avg_colonies": 3.48
     },
     "Cetacean": {
       "name": "Cetacean",
@@ -74573,7 +74573,7 @@
       "shared_wins": 0,
       "elo_rating": 943.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.54
+      "avg_colonies": 3.5
     },
     "Four_Hearts": {
       "name": "Four_Hearts",
@@ -74584,7 +74584,7 @@
       "shared_wins": 0,
       "elo_rating": 643.7,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.56
+      "avg_colonies": 3.5
     },
     "Ball_Pit": {
       "name": "Ball_Pit",
@@ -74617,7 +74617,7 @@
       "shared_wins": 0,
       "elo_rating": 964.4,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.65
+      "avg_colonies": 3.61
     },
     "Indian_Cuisine": {
       "name": "Indian_Cuisine",
@@ -74683,7 +74683,7 @@
       "shared_wins": 0,
       "elo_rating": 649.8,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.77
+      "avg_colonies": 3.71
     },
     "Mexican_Cuisine": {
       "name": "Mexican_Cuisine",
@@ -74705,7 +74705,7 @@
       "shared_wins": 0,
       "elo_rating": 714.9,
       "peak_elo": 1500.0,
-      "avg_colonies": 3.62
+      "avg_colonies": 3.56
     },
     "Cross_Shape": {
       "name": "Cross_Shape",
@@ -74717,6 +74717,17 @@
       "elo_rating": 1123.7,
       "peak_elo": 1500.0,
       "avg_colonies": 4.0
+    },
+    "TickTock": {
+      "name": "TickTock",
+      "games_played": 4,
+      "games_won": 1,
+      "win_rate": 25.0,
+      "solo_wins": 1,
+      "shared_wins": 0,
+      "elo_rating": 1404.0,
+      "peak_elo": 1500.0,
+      "avg_colonies": 4.25
     }
   }
 }
