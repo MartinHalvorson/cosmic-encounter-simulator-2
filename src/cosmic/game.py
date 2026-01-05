@@ -2440,12 +2440,12 @@ class Game:
                         p.remove_card(best)
                         player.add_card(best)
 
-        # Negator Super: Cancel all alien powers this encounter
+        # Negator Super: Cancel all alien powers this encounter (except user's)
         elif alien_name == "Negator":
             for p in self.players:
-                if p not in self.zapped_powers:
+                if p != player and p not in self.zapped_powers:
                     self.zapped_powers.append(p)
-            self._log("Negator Super cancels ALL alien powers!")
+            self._log("Negator Super cancels ALL other alien powers!")
 
         # Anarchist Super: You make the rules this encounter (+10 bonus as approximation)
         elif alien_name == "Anarchist":

@@ -399,18 +399,6 @@ FLARE_EFFECTS: Dict[str, Dict[str, str]] = {
         "wild": "Wild: Spread to 1 additional colony.",
         "super": "Super: Spread to all opponent colonies."
     },
-    "Gambler": {
-        "wild": "Wild: Flip for double or nothing on attack value.",
-        "super": "Super: Choose the coin flip result."
-    },
-    "Grudge": {
-        "wild": "Wild: +4 against someone who attacked you.",
-        "super": "Super: +8 against anyone who has attacked you."
-    },
-    "Hate": {
-        "wild": "Wild: +5 against your nemesis.",
-        "super": "Super: +10 against your nemesis."
-    },
     "Kamikaze": {
         "wild": "Wild: Sacrifice ships for +4 each.",
         "super": "Super: Sacrifice all ships for instant win."
@@ -588,10 +576,6 @@ FLARE_EFFECTS: Dict[str, Dict[str, str]] = {
     "Expert": {
         "wild": "Wild: Reroll any die or flip.",
         "super": "Super: Choose any die/flip result."
-    },
-    "Grudge": {
-        "wild": "Wild: +4 against prior attackers.",
-        "super": "Super: +8 against all who wronged you."
     },
     "Inflator": {
         "wild": "Wild: All attack cards +5.",
