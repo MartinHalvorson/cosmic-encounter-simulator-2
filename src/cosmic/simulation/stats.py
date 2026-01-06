@@ -61,6 +61,13 @@ class AlienStats:
     # Power activation tracking
     total_power_activations: int = 0
     total_encounters_as_main: int = 0  # Opportunities to use power
+    # Encounter statistics
+    encounters_as_offense: int = 0
+    encounters_as_defense: int = 0
+    encounters_won_as_offense: int = 0
+    encounters_won_as_defense: int = 0
+    encounters_with_deal: int = 0  # Times a deal was made
+    encounters_with_allies: int = 0  # Times allies joined
 
     @property
     def win_rate(self) -> float:
@@ -99,6 +106,28 @@ class AlienStats:
         if self.games_played == 0:
             return 0.0
         return self.total_power_activations / self.games_played
+
+    @property
+    def offense_encounter_win_rate(self) -> float:
+        """Win rate when playing as offense."""
+        if self.encounters_as_offense == 0:
+            return 0.0
+        return self.encounters_won_as_offense / self.encounters_as_offense
+
+    @property
+    def defense_encounter_win_rate(self) -> float:
+        """Win rate when playing as defense."""
+        if self.encounters_as_defense == 0:
+            return 0.0
+        return self.encounters_won_as_defense / self.encounters_as_defense
+
+    @property
+    def deal_rate(self) -> float:
+        """Rate of deals made (as percentage of encounters as main player)."""
+        total_encounters = self.encounters_as_offense + self.encounters_as_defense
+        if total_encounters == 0:
+            return 0.0
+        return self.encounters_with_deal / total_encounters
 
     def confidence_interval(self, confidence: float = 0.95) -> Tuple[float, float]:
         """
@@ -190,6 +219,12 @@ class AlienStats:
             "total_power_activations": self.total_power_activations,
             "avg_activations_per_game": round(self.avg_activations_per_game, 2),
             "power_activation_rate": round(self.power_activation_rate * 100, 1),
+            # Encounter statistics
+            "encounters_as_offense": self.encounters_as_offense,
+            "encounters_as_defense": self.encounters_as_defense,
+            "offense_win_rate": round(self.offense_encounter_win_rate * 100, 1),
+            "defense_win_rate": round(self.defense_encounter_win_rate * 100, 1),
+            "deal_rate": round(self.deal_rate * 100, 1),
         }
 
 
@@ -240,7 +275,8 @@ class Statistics:
         timed_out: bool = False,
         errored: bool = False,
         power_activations: Optional[Dict[str, int]] = None,
-        encounters_as_main: Optional[Dict[str, int]] = None
+        encounters_as_main: Optional[Dict[str, int]] = None,
+        encounter_stats: Optional[Dict[str, Dict[str, int]]] = None
     ) -> None:
         """
         Record statistics from a completed game.
@@ -256,6 +292,7 @@ class Statistics:
             errored: Whether the game had an error
             power_activations: Mapping of player name to power activation count
             encounters_as_main: Mapping of player name to encounters as main player
+            encounter_stats: Per-player encounter statistics (offense/defense/wins/deals)
         """
         self.total_games += 1
         self.turn_counts.append(turn_count)
@@ -296,6 +333,16 @@ class Statistics:
                 stats.total_power_activations += power_activations[player_name]
             if encounters_as_main and player_name in encounters_as_main:
                 stats.total_encounters_as_main += encounters_as_main[player_name]
+
+            # Track encounter statistics if provided
+            if encounter_stats and player_name in encounter_stats:
+                player_enc = encounter_stats[player_name]
+                stats.encounters_as_offense += player_enc.get("as_offense", 0)
+                stats.encounters_as_defense += player_enc.get("as_defense", 0)
+                stats.encounters_won_as_offense += player_enc.get("won_as_offense", 0)
+                stats.encounters_won_as_defense += player_enc.get("won_as_defense", 0)
+                stats.encounters_with_deal += player_enc.get("deals", 0)
+                stats.encounters_with_allies += player_enc.get("with_allies", 0)
 
             if player_name in winners:
                 stats.games_won += 1
