@@ -186,22 +186,35 @@ class Player:
             planets: All planets in the game
             exclude_last_ship: If True, won't take the last ship from a colony
         """
-        taken = 0
-        # Prefer taking from planets with more ships
-        player_planets = [p for p in planets if p.has_colony(self.name)]
-        player_planets.sort(key=lambda p: p.get_ships(self.name), reverse=True)
+        if count <= 0:
+            return 0
 
-        for planet in player_planets:
-            while taken < count:
-                current = planet.get_ships(self.name)
-                min_ships = 1 if exclude_last_ship else 0
-                if current > min_ships:
-                    planet.remove_ships(self.name, 1)
-                    taken += 1
-                else:
+        # Calculate available ships per planet in one pass
+        min_reserve = 1 if exclude_last_ship else 0
+        available = []
+        for p in planets:
+            ships = p.get_ships(self.name)
+            avail = ships - min_reserve
+            if avail > 0:
+                available.append((p, avail))
+
+        if not available:
+            return 0
+
+        # Sort by available ships descending (prefer planets with more ships)
+        available.sort(key=lambda x: x[1], reverse=True)
+
+        # Take ships in batches instead of one at a time
+        taken = 0
+        remaining = count
+        for planet, avail_ships in available:
+            take_from_here = min(remaining, avail_ships)
+            if take_from_here > 0:
+                planet.remove_ships(self.name, take_from_here)
+                taken += take_from_here
+                remaining -= take_from_here
+                if remaining <= 0:
                     break
-            if taken >= count:
-                break
 
         return taken
 
