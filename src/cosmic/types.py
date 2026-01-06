@@ -192,32 +192,42 @@ class ShipCount:
             self.counts[player_name] = count
 
     def add(self, player_name: str, count: int) -> None:
-        current = self.get(player_name)
-        self.set(player_name, current + count)
+        """Add ships - optimized to avoid extra dict lookups."""
+        if count <= 0:
+            return
+        current = self.counts.get(player_name, 0)
+        self.counts[player_name] = current + count
 
     def remove(self, player_name: str, count: int) -> int:
-        """Remove ships, returns actual number removed."""
-        current = self.get(player_name)
+        """Remove ships, returns actual number removed. Optimized."""
+        current = self.counts.get(player_name, 0)
+        if current <= 0:
+            return 0
         to_remove = min(current, count)
-        self.set(player_name, current - to_remove)
+        new_count = current - to_remove
+        if new_count <= 0:
+            self.counts.pop(player_name, None)
+        else:
+            self.counts[player_name] = new_count
         return to_remove
 
     def total(self) -> int:
         return sum(self.counts.values())
 
     def players_present(self) -> List[str]:
-        return [name for name, count in self.counts.items() if count > 0]
+        """Get list of players with ships. Uses dict keys directly."""
+        return list(self.counts.keys())
 
     def copy(self) -> "ShipCount":
-        return ShipCount(counts=dict(self.counts))
+        return ShipCount(counts=self.counts.copy())
 
     def __contains__(self, player_name: str) -> bool:
         """Support 'in' operator: check if player has ships."""
-        return self.get(player_name) > 0
+        return player_name in self.counts
 
     def __getitem__(self, player_name: str) -> int:
         """Support bracket notation: ships[player_name]."""
-        return self.get(player_name)
+        return self.counts.get(player_name, 0)
 
 
 class StationType(Enum):
