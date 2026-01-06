@@ -41,6 +41,16 @@ class Amoeba(AlienPower):
     expansion: Expansion = field(default=Expansion.BASE, init=False)
     usable_as: List[PlayerRole] = field(default_factory=lambda: [PlayerRole.OFFENSE, PlayerRole.DEFENSE], init=False)
 
+    def modify_ship_count(self, game: "Game", player: "Player", base_count: int, side: Side) -> int:
+        """Add up to 4 extra ships from other colonies."""
+        # Get ships from other colonies (up to 4 extra)
+        extra_ships = min(4, player.total_ships_in_play(game.planets) - base_count)
+        if extra_ships > 0:
+            # Actually remove ships from colonies
+            taken = player.get_ships_from_colonies(extra_ships, game.planets)
+            return base_count + taken
+        return base_count
+
 
 @dataclass
 class Antimatter(AlienPower):
@@ -66,6 +76,18 @@ class Barbarian(AlienPower):
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     expansion: Expansion = field(default=Expansion.BASE, init=False)
     usable_as: List[PlayerRole] = field(default_factory=lambda: [PlayerRole.OFFENSE], init=False)
+
+    def on_lose_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        """Collect compensation from defense when losing as offense."""
+        if as_main_player and game.offense == player and game.defense:
+            # Get ships lost count for compensation
+            ships_lost = game.offense_ships.get(player.name, 0)
+            if ships_lost > 0 and len(game.defense.hand) > 0:
+                compensation = min(ships_lost, len(game.defense.hand))
+                cards = game._rng.sample(game.defense.hand, compensation)
+                for card in cards:
+                    game.defense.hand.remove(card)
+                player.add_cards(cards)
 
 
 @dataclass
@@ -203,6 +225,19 @@ class Fodder(AlienPower):
     expansion: Expansion = field(default=Expansion.BASE, init=False)
     usable_as: List[PlayerRole] = field(default_factory=lambda: [PlayerRole.OFFENSE], init=False)
 
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        """Sacrifice ships for +1 each (AI decides to sacrifice half, rounded down)."""
+        if side != Side.OFFENSE:
+            return base_total
+        ships_in_encounter = game.offense_ships.get(player.name, 0)
+        # AI strategy: sacrifice half of ships if losing
+        to_sacrifice = ships_in_encounter // 2
+        if to_sacrifice > 0:
+            game.offense_ships[player.name] = ships_in_encounter - to_sacrifice
+            player.send_ships_to_warp(to_sacrifice)
+            return base_total + to_sacrifice
+        return base_total
+
 
 @dataclass
 class Gambler(AlienPower):
@@ -229,6 +264,22 @@ class Grudge(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     expansion: Expansion = field(default=Expansion.BASE, init=False)
 
+    def on_lose_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        """Place a grudge token on the player who defeated Grudge."""
+        if as_main_player:
+            opponent = game.defense if game.offense == player else game.offense
+            if opponent:
+                if not hasattr(player, 'grudge_tokens'):
+                    player.grudge_tokens = set()
+                player.grudge_tokens.add(opponent.name)
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        """Add +4 against players with grudge tokens."""
+        opponent = game.defense if game.offense == player else game.offense
+        if opponent and hasattr(player, 'grudge_tokens') and opponent.name in player.grudge_tokens:
+            return base_total + 4
+        return base_total
+
 
 @dataclass
 class Hacker(AlienPower):
@@ -253,6 +304,24 @@ class Hate(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     expansion: Expansion = field(default=Expansion.BASE, init=False)
+
+    def on_lose_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        """Track ships lost to each opponent."""
+        if as_main_player:
+            opponent = game.defense if game.offense == player else game.offense
+            ships_lost = game.offense_ships.get(player.name, 0) if game.offense == player else game.defense_ships.get(player.name, 0)
+            if opponent and ships_lost > 0:
+                if not hasattr(player, 'hate_ships_lost'):
+                    player.hate_ships_lost = {}
+                player.hate_ships_lost[opponent.name] = player.hate_ships_lost.get(opponent.name, 0) + ships_lost
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        """Add +1 per ship previously lost to current opponent."""
+        opponent = game.defense if game.offense == player else game.offense
+        if opponent and hasattr(player, 'hate_ships_lost'):
+            ships_lost = player.hate_ships_lost.get(opponent.name, 0)
+            return base_total + ships_lost
+        return base_total
 
 
 @dataclass
@@ -530,6 +599,18 @@ class Remora(AlienPower):
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     expansion: Expansion = field(default=Expansion.BASE, init=False)
 
+    def on_draw_card(self, game: "Game", player: "Player", card: Any) -> Any:
+        """When any other player draws, Remora gets a card too.
+        Note: This is called when Remora draws - game.py handles Remora logic."""
+        return card
+
+    def on_compensation(self, game: "Game", player: "Player", from_player: "Player", count: int) -> int:
+        """Draw an extra card when receiving compensation."""
+        extra = game.cosmic_deck.draw()
+        if extra:
+            player.add_cards([extra])
+        return count
+
 
 @dataclass
 class Reserve(AlienPower):
@@ -701,6 +782,14 @@ class Warpish(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     expansion: Expansion = field(default=Expansion.BASE, init=False)
 
+    def modify_ship_count(self, game: "Game", player: "Player", base_count: int, side: Side) -> int:
+        """Add ships from warp to encounter (up to 4 extra)."""
+        warp_ships = min(4, player.ships_in_warp)
+        if warp_ships > 0:
+            player.ships_in_warp -= warp_ships
+            return base_count + warp_ships
+        return base_count
+
 
 @dataclass
 class Warrior(AlienPower):
@@ -792,6 +881,21 @@ class Cryo(AlienPower):
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     expansion: Expansion = field(default=Expansion.COSMIC_INCURSION, init=False)
 
+    def on_ships_to_warp(self, game: "Game", player: "Player", count: int, source: str) -> int:
+        """Freeze ships instead of sending to warp."""
+        if count > 0:
+            if not hasattr(player, 'frozen_ships'):
+                player.frozen_ships = 0
+            player.frozen_ships += count
+        return 0  # No ships go to warp
+
+    def on_win_encounter(self, game: "Game", player: "Player", as_main_player: bool) -> None:
+        """Thaw frozen ships when winning."""
+        frozen = getattr(player, 'frozen_ships', 0)
+        if frozen > 0:
+            player.return_ships_to_colonies(frozen, player.home_planets)
+            player.frozen_ships = 0
+
 
 @dataclass
 class Deuce(AlienPower):
@@ -854,6 +958,19 @@ class Fury(AlienPower):
     category: PowerCategory = field(default=PowerCategory.YELLOW, init=False)
     expansion: Expansion = field(default=Expansion.COSMIC_INCURSION, init=False)
 
+    def on_ships_to_warp(self, game: "Game", player: "Player", count: int, source: str) -> int:
+        """Gain +2 rage each time ships go to warp."""
+        if count > 0:
+            if not hasattr(player, 'fury_rage'):
+                player.fury_rage = 0
+            player.fury_rage += 2
+        return count
+
+    def modify_total(self, game: "Game", player: "Player", base_total: int, side: Side) -> int:
+        """Add accumulated rage to total."""
+        rage = getattr(player, 'fury_rage', 0)
+        return base_total + rage
+
 
 @dataclass
 class Genius(AlienPower):
@@ -877,6 +994,21 @@ class Ghoul(AlienPower):
     power_type: PowerType = field(default=PowerType.MANDATORY, init=False)
     category: PowerCategory = field(default=PowerCategory.GREEN, init=False)
     expansion: Expansion = field(default=Expansion.COSMIC_INCURSION, init=False)
+
+    def on_encounter_end(self, game: "Game", player: "Player") -> None:
+        """Draw cards based on ships that went to warp this encounter.
+        Note: Ghoul triggers on any ships going to warp, tracked at encounter end."""
+        # Count total ships in warp from all players at end of encounter
+        total_to_warp = 0
+        for p in game.players:
+            # Track ships sent to warp during this encounter
+            if hasattr(p, '_ships_to_warp_this_encounter'):
+                total_to_warp += p._ships_to_warp_this_encounter
+                p._ships_to_warp_this_encounter = 0
+        cards_to_draw = total_to_warp // 3
+        if cards_to_draw > 0:
+            cards = game.cosmic_deck.draw_multiple(cards_to_draw)
+            player.add_cards(cards)
 
 
 @dataclass
