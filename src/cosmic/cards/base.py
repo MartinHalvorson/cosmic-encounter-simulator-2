@@ -14,6 +14,7 @@ if TYPE_CHECKING:
 
 class Card(ABC):
     """Base class for all cards."""
+    __slots__ = ()
 
     @property
     @abstractmethod
@@ -39,10 +40,10 @@ class Card(ABC):
 
 class EncounterCard(Card):
     """Base class for encounter cards (Attack, Negotiate, Morph)."""
-    pass
+    __slots__ = ()
 
 
-@dataclass
+@dataclass(slots=True)
 class AttackCard(EncounterCard):
     """An attack card with a numeric value."""
     value: int
@@ -65,7 +66,7 @@ class AttackCard(EncounterCard):
         return ones * 10 + tens
 
 
-@dataclass
+@dataclass(slots=True)
 class NegotiateCard(EncounterCard):
     """A negotiate card (value 0 for combat, but triggers deal phase)."""
     _from_rewards_deck: bool = False
@@ -83,7 +84,7 @@ class NegotiateCard(EncounterCard):
         return "Negotiate"
 
 
-@dataclass
+@dataclass(slots=True)
 class MorphCard(EncounterCard):
     """A morph card that copies the opponent's card."""
     _from_rewards_deck: bool = False
@@ -102,7 +103,7 @@ class MorphCard(EncounterCard):
         return "Morph"
 
 
-@dataclass
+@dataclass(slots=True)
 class ReinforcementCard(Card):
     """A reinforcement card that adds to encounter totals."""
     value: int
@@ -117,7 +118,7 @@ class ReinforcementCard(Card):
         return f"Reinforcement +{self.value}"
 
 
-@dataclass
+@dataclass(slots=True)
 class KickerCard(Card):
     """A kicker card that multiplies encounter card value."""
     value: int  # Can be negative (like -1) or positive multiplier
@@ -134,7 +135,7 @@ class KickerCard(Card):
         return f"Kicker x{self.value}"
 
 
-@dataclass
+@dataclass(slots=True)
 class ArtifactCard(Card):
     """An artifact card with a special effect."""
     artifact_type: ArtifactType
@@ -150,7 +151,7 @@ class ArtifactCard(Card):
         return f"Artifact: {name}"
 
 
-@dataclass
+@dataclass(slots=True)
 class FlareCard(Card):
     """A flare card associated with an alien power."""
     alien_name: str

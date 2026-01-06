@@ -165,7 +165,7 @@ EXPANSION_FEATURES = {
 }
 
 
-@dataclass
+@dataclass(slots=True)
 class EncounterResult:
     """Result of an encounter."""
     winner: Side
@@ -177,7 +177,7 @@ class EncounterResult:
     deal_successful: bool = False
 
 
-@dataclass
+@dataclass(slots=True)
 class ShipCount:
     """Ships on a planet or in an encounter."""
     counts: Dict[str, int] = field(default_factory=dict)
