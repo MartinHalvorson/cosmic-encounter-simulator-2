@@ -326,7 +326,7 @@ python update_stats.py --sort source --order asc
 """
 
     # Read current README
-    readme_content = README_FILE.read_text()
+    readme_content = README_FILE.read_text(encoding='utf-8')
 
     # Find and replace the stats section, or insert before Legacy Version
     marker_start = "## Alien Power Rankings"
@@ -348,7 +348,7 @@ python update_stats.py --sort source --order asc
         else:
             readme_content += "\n" + stats_section
 
-    README_FILE.write_text(readme_content)
+    README_FILE.write_text(readme_content, encoding='utf-8')
     print(f"\nREADME.md updated!")
 
 
