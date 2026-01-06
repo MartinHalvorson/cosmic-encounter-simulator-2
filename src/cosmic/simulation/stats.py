@@ -282,6 +282,47 @@ class Statistics:
     def max_game_length(self) -> int:
         return max(self.turn_counts) if self.turn_counts else 0
 
+    @property
+    def most_common_player_count(self) -> int:
+        """Get the most common number of players across all games."""
+        if not self.games_by_player_count:
+            return 5  # Default
+        return max(self.games_by_player_count, key=self.games_by_player_count.get)
+
+    @property
+    def expected_win_rate(self) -> float:
+        """Get expected win rate based on most common player count."""
+        return 1.0 / self.most_common_player_count
+
+    def get_significantly_strong(self, min_games: int = 100) -> List[AlienStats]:
+        """Get aliens that are statistically significantly stronger than expected."""
+        expected = self.expected_win_rate
+        return [
+            stats for stats in self.alien_stats.values()
+            if stats.games_played >= min_games and
+               stats.is_significantly_different(expected)[0] and
+               stats.is_significantly_different(expected)[1] == "above"
+        ]
+
+    def get_significantly_weak(self, min_games: int = 100) -> List[AlienStats]:
+        """Get aliens that are statistically significantly weaker than expected."""
+        expected = self.expected_win_rate
+        return [
+            stats for stats in self.alien_stats.values()
+            if stats.games_played >= min_games and
+               stats.is_significantly_different(expected)[0] and
+               stats.is_significantly_different(expected)[1] == "below"
+        ]
+
+    def get_balanced(self, min_games: int = 100) -> List[AlienStats]:
+        """Get aliens whose win rate is not significantly different from expected."""
+        expected = self.expected_win_rate
+        return [
+            stats for stats in self.alien_stats.values()
+            if stats.games_played >= min_games and
+               not stats.is_significantly_different(expected)[0]
+        ]
+
     def get_rankings(self, by: str = "win_rate") -> List[AlienStats]:
         """
         Get alien powers ranked by a metric.
@@ -317,60 +358,120 @@ class Statistics:
 
         return result
 
-    def summary(self) -> str:
-        """Generate a text summary of statistics."""
+    def summary(self, show_significance: bool = True) -> str:
+        """Generate a text summary of statistics with statistical significance.
+
+        Args:
+            show_significance: Whether to show statistical significance indicators
+        """
+        expected = self.expected_win_rate
+        player_count = self.most_common_player_count
+
         lines = [
-            "=" * 60,
+            "=" * 70,
             "COSMIC ENCOUNTER SIMULATION RESULTS",
-            "=" * 60,
+            "=" * 70,
             "",
-            f"Total Games: {self.total_games}",
-            f"Solo Victories: {self.solo_victory_count}",
-            f"Shared Victories: {self.shared_victory_count}",
-            f"Timeouts: {self.timeout_count}",
-            f"Errors: {self.error_count}",
+            f"Total Games: {self.total_games:,}",
+            f"Most Common Player Count: {player_count} (expected win rate: {expected*100:.1f}%)",
+            f"Solo Victories: {self.solo_victory_count:,}",
+            f"Shared Victories: {self.shared_victory_count:,}",
+            f"Timeouts: {self.timeout_count:,}",
+            f"Errors: {self.error_count:,}",
             "",
             f"Average Game Length: {self.avg_game_length:.1f} turns",
             f"Shortest Game: {self.min_game_length} turns",
             f"Longest Game: {self.max_game_length} turns",
             "",
-            "-" * 60,
-            "ALIEN POWER WIN RATES",
-            "-" * 60,
         ]
+
+        if show_significance and self.total_games >= 100:
+            strong = self.get_significantly_strong()
+            weak = self.get_significantly_weak()
+            balanced = self.get_balanced()
+
+            lines.extend([
+                "-" * 70,
+                "STATISTICAL SIGNIFICANCE (95% confidence)",
+                "-" * 70,
+                f"Significantly STRONGER than expected: {len(strong)} aliens",
+                f"Significantly WEAKER than expected: {len(weak)} aliens",
+                f"Balanced (not significantly different): {len(balanced)} aliens",
+                "",
+            ])
+
+        lines.extend([
+            "-" * 70,
+            "ALIEN POWER WIN RATES (with 95% CI)",
+            "-" * 70,
+        ])
+
+        if show_significance:
+            lines.append(
+                f"{'Rank':>4} {'Alien':20} {'Win%':>6} {'95% CI':^15} {'Rating':>6} {'Sig':>4}"
+            )
+            lines.append("-" * 70)
 
         # Rank by win rate
         rankings = self.get_rankings("win_rate")
         for i, stats in enumerate(rankings, 1):
-            lines.append(
-                f"{i:3}. {stats.name:20} {stats.win_rate*100:5.1f}% "
-                f"({stats.games_won}/{stats.games_played})"
-            )
+            if show_significance and stats.games_played >= 30:
+                ci = stats.confidence_interval()
+                is_sig, direction = stats.is_significantly_different(expected)
+                rating = stats.power_rating(expected)
+
+                # Significance indicator
+                if is_sig:
+                    sig = "+" if direction == "above" else "-"
+                else:
+                    sig = "="
+
+                lines.append(
+                    f"{i:3}. {stats.name:20} {stats.win_rate*100:5.1f}% "
+                    f"[{ci[0]*100:4.1f}-{ci[1]*100:4.1f}%] "
+                    f"{rating:5.2f}x {sig:>3}"
+                )
+            else:
+                lines.append(
+                    f"{i:3}. {stats.name:20} {stats.win_rate*100:5.1f}% "
+                    f"({stats.games_won}/{stats.games_played})"
+                )
 
         lines.append("")
-        lines.append("=" * 60)
+        lines.append("Legend: + = significantly above expected, - = below, = = balanced")
+        lines.append("=" * 70)
 
         return "\n".join(lines)
 
     def to_csv(self) -> str:
-        """Export statistics to CSV format."""
+        """Export statistics to CSV format with statistical significance data."""
         output = StringIO()
         writer = csv.writer(output)
+        expected = self.expected_win_rate
 
         # Header
         writer.writerow([
             "Alien", "Games Played", "Games Won", "Win Rate %",
-            "Solo Wins", "Shared Wins", "Alternate Wins",
-            "Avg Colonies"
+            "CI Lower %", "CI Upper %", "Margin of Error %",
+            "Power Rating", "Significantly Different", "Direction",
+            "Solo Wins", "Shared Wins", "Alternate Wins", "Avg Colonies"
         ])
 
         # Data
         for stats in self.get_rankings("win_rate"):
+            ci = stats.confidence_interval()
+            is_sig, direction = stats.is_significantly_different(expected)
             writer.writerow([
                 stats.name,
                 stats.games_played,
                 stats.games_won,
                 round(stats.win_rate * 100, 2),
+                round(ci[0] * 100, 2),
+                round(ci[1] * 100, 2),
+                round(stats.margin_of_error() * 100, 2),
+                round(stats.power_rating(expected), 3),
+                is_sig,
+                direction,
                 stats.solo_wins,
                 stats.shared_wins,
                 stats.alternate_wins,
@@ -380,7 +481,12 @@ class Statistics:
         return output.getvalue()
 
     def to_json(self) -> str:
-        """Export statistics to JSON format."""
+        """Export statistics to JSON format with statistical significance data."""
+        expected = self.expected_win_rate
+        strong = self.get_significantly_strong()
+        weak = self.get_significantly_weak()
+        balanced = self.get_balanced()
+
         data = {
             "summary": {
                 "total_games": self.total_games,
@@ -389,9 +495,18 @@ class Statistics:
                 "timeouts": self.timeout_count,
                 "errors": self.error_count,
                 "avg_game_length": round(self.avg_game_length, 2),
+                "most_common_player_count": self.most_common_player_count,
+                "expected_win_rate": round(expected * 100, 2),
+            },
+            "statistical_significance": {
+                "significantly_strong_count": len(strong),
+                "significantly_weak_count": len(weak),
+                "balanced_count": len(balanced),
+                "significantly_strong": [s.name for s in strong],
+                "significantly_weak": [s.name for s in weak],
             },
             "alien_stats": [
-                stats.to_dict()
+                stats.to_dict(expected)
                 for stats in self.get_rankings("win_rate")
             ],
             "games_by_player_count": self.games_by_player_count,
