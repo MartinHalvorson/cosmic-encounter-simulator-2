@@ -58,6 +58,9 @@ class AlienStats:
     alternate_wins: int = 0
     total_turns: int = 0
     total_colonies_at_end: int = 0
+    # Power activation tracking
+    total_power_activations: int = 0
+    total_encounters_as_main: int = 0  # Opportunities to use power
 
     @property
     def win_rate(self) -> float:
@@ -82,6 +85,20 @@ class AlienStats:
         if self.games_played == 0:
             return 0.0
         return self.total_colonies_at_end / self.games_played
+
+    @property
+    def power_activation_rate(self) -> float:
+        """Rate of power activations per encounter as main player."""
+        if self.total_encounters_as_main == 0:
+            return 0.0
+        return self.total_power_activations / self.total_encounters_as_main
+
+    @property
+    def avg_activations_per_game(self) -> float:
+        """Average number of power activations per game."""
+        if self.games_played == 0:
+            return 0.0
+        return self.total_power_activations / self.games_played
 
     def confidence_interval(self, confidence: float = 0.95) -> Tuple[float, float]:
         """
@@ -170,6 +187,9 @@ class AlienStats:
             "shared_wins": self.shared_wins,
             "alternate_wins": self.alternate_wins,
             "avg_colonies": round(self.avg_colonies, 2),
+            "total_power_activations": self.total_power_activations,
+            "avg_activations_per_game": round(self.avg_activations_per_game, 2),
+            "power_activation_rate": round(self.power_activation_rate * 100, 1),
         }
 
 
@@ -204,7 +224,9 @@ class Statistics:
         final_colonies: Dict[str, int],
         alternate_win: bool = False,
         timed_out: bool = False,
-        errored: bool = False
+        errored: bool = False,
+        power_activations: Optional[Dict[str, int]] = None,
+        encounters_as_main: Optional[Dict[str, int]] = None
     ) -> None:
         """
         Record statistics from a completed game.
@@ -218,6 +240,8 @@ class Statistics:
             alternate_win: Whether the win was via alternate condition
             timed_out: Whether the game timed out
             errored: Whether the game had an error
+            power_activations: Mapping of player name to power activation count
+            encounters_as_main: Mapping of player name to encounters as main player
         """
         self.total_games += 1
         self.turn_counts.append(turn_count)
@@ -252,6 +276,12 @@ class Statistics:
             stats.games_played += 1
             stats.total_turns += turn_count
             stats.total_colonies_at_end += final_colonies.get(player_name, 0)
+
+            # Track power activations if provided
+            if power_activations and player_name in power_activations:
+                stats.total_power_activations += power_activations[player_name]
+            if encounters_as_main and player_name in encounters_as_main:
+                stats.total_encounters_as_main += encounters_as_main[player_name]
 
             if player_name in winners:
                 stats.games_won += 1
