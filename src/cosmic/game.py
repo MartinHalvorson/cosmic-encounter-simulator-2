@@ -629,11 +629,18 @@ class Game:
         """Handle the regroup phase."""
         self.phase = GamePhase.REGROUP
 
-        # Offense can retrieve 1 ship from warp
+        # Offense can retrieve 1 ship from warp to ANY colony they have
+        # Per official rules: "One ship back from warp to any colony"
         if self.offense.ships_in_warp > 0:
             retrieved = self.offense.retrieve_ships_from_warp(1)
             if retrieved > 0:
-                self.offense.return_ships_to_colonies(retrieved, self.offense.home_planets)
+                # Get ALL colonies (home + foreign) where player has ships
+                all_colonies = [p for p in self.planets if p.has_colony(self.offense.name)]
+                if all_colonies:
+                    self.offense.return_ships_to_colonies(retrieved, all_colonies)
+                else:
+                    # Fallback to home planets if no colonies (shouldn't happen normally)
+                    self.offense.return_ships_to_colonies(retrieved, self.offense.home_planets)
                 self._log(f"{self.offense.name} retrieves 1 ship from warp")
 
         # Power hooks
@@ -916,6 +923,39 @@ class Game:
         def_is_attack = isinstance(def_card, AttackCard)
         off_is_neg = isinstance(off_card, NegotiateCard)
         def_is_neg = isinstance(def_card, NegotiateCard)
+        off_is_morph = isinstance(off_card, MorphCard)
+        def_is_morph = isinstance(def_card, MorphCard)
+
+        # Handle Morph cards - they copy the opponent's card
+        # Per official rules: "If either player reveals a morph card, that card
+        # becomes a duplicate of the other revealed encounter card."
+        if off_is_morph and def_is_morph:
+            # Both Morph: Both sides lose, all ships to warp
+            self._log("Both players reveal Morph - both sides lose!")
+            self._resolve_double_morph()
+            return
+
+        if off_is_morph:
+            # Offense Morph copies defense card
+            if def_is_attack:
+                self._log(f"Offense Morph copies Attack {def_card.value}")
+                off_is_attack = True
+                off_is_morph = False
+            elif def_is_neg:
+                self._log("Offense Morph copies Negotiate")
+                off_is_neg = True
+                off_is_morph = False
+
+        if def_is_morph:
+            # Defense Morph copies offense card
+            if off_is_attack:
+                self._log(f"Defense Morph copies Attack {off_card.value}")
+                def_is_attack = True
+                def_is_morph = False
+            elif off_is_neg:
+                self._log("Defense Morph copies Negotiate")
+                def_is_neg = True
+                def_is_morph = False
 
         # Both negotiate -> deal
         if off_is_neg and def_is_neg:
@@ -945,13 +985,26 @@ class Game:
         self._resolve_attack_vs_attack()
 
     def _resolve_attack_vs_attack(self) -> None:
-        """Resolve when both sides play attack cards."""
+        """Resolve when both sides play attack cards (or Morph copying attack)."""
         off_card = self.offense_card
         def_card = self.defense_card
 
-        # Get base values
-        off_value = off_card.value if isinstance(off_card, AttackCard) else 0
-        def_value = def_card.value if isinstance(def_card, AttackCard) else 0
+        # Get base values - handle Morph copying opponent's attack value
+        # Per official rules: "The Morph duplicates everything that is printed on
+        # the opponent's card" (the base value, before modifications)
+        if isinstance(off_card, AttackCard):
+            off_value = off_card.value
+        elif isinstance(off_card, MorphCard) and isinstance(def_card, AttackCard):
+            off_value = def_card.value  # Morph copies opponent's attack value
+        else:
+            off_value = 0
+
+        if isinstance(def_card, AttackCard):
+            def_value = def_card.value
+        elif isinstance(def_card, MorphCard) and isinstance(off_card, AttackCard):
+            def_value = off_card.value  # Morph copies opponent's attack value
+        else:
+            def_value = 0
 
         # Apply kicker multipliers
         if self.offense_kicker:
@@ -1173,6 +1226,42 @@ class Game:
         # Discard encounter cards
         self._discard_encounter_cards()
 
+    def _resolve_double_morph(self) -> None:
+        """
+        Handle when both players reveal Morph cards.
+        Per official rules: Both sides lose and all ships go to warp.
+        """
+        # All offense ships go to warp
+        for name, count in self.offense_ships.items():
+            player = self.get_player_by_name(name)
+            if player:
+                ships_to_warp = count
+                if player.alien and self.is_power_active(player):
+                    ships_to_warp = player.alien.on_ships_to_warp(
+                        self, player, ships_to_warp, "double_morph"
+                    )
+                player.send_ships_to_warp(ships_to_warp)
+
+        # All defense ships go to warp
+        for name, count in self.defense_ships.items():
+            player = self.get_player_by_name(name)
+            if player:
+                ships_to_warp = count
+                if player.alien and self.is_power_active(player):
+                    ships_to_warp = player.alien.on_ships_to_warp(
+                        self, player, ships_to_warp, "double_morph"
+                    )
+                player.send_ships_to_warp(ships_to_warp)
+
+        # Both main players are considered to have lost
+        if self.offense.alien:
+            self.offense.alien.on_lose_encounter(self, self.offense, True)
+        if self.defense.alien:
+            self.defense.alien.on_lose_encounter(self, self.defense, True)
+
+        # Discard encounter cards
+        self._discard_encounter_cards()
+
     def _resolve_deal(self) -> None:
         """Handle deal negotiation when both play negotiate."""
         self._log("Deal phase!")
@@ -1339,12 +1428,20 @@ class Game:
         return all_reinforcements
 
     def _give_compensation(self, receiver: Player, giver: Player) -> None:
-        """Give compensation to player who played negotiate."""
-        # Number of cards = ships lost
+        """
+        Give compensation to player who played negotiate.
+        Per official rules: "For each ship the player lost to the warp as a result
+        of the encounter, the player steals one card at random from his or her
+        opponent's hand."
+        Note: If no ships went to warp (e.g., due to Zombie power), no compensation.
+        """
+        # Number of cards = ships the receiver committed (which went to warp)
         count = self.offense_ships.get(receiver.name, 0) if receiver == self.offense else self.defense_ships.get(receiver.name, 0)
 
+        # Per official rules: no compensation if no ships were lost to warp
         if count == 0:
-            count = 1
+            self._log(f"{receiver.name} receives no compensation (no ships lost)")
+            return
 
         # Check for Hacker power
         if receiver.alien and receiver.alien.name == "Hacker" and receiver.power_active:
@@ -1353,11 +1450,16 @@ class Game:
                 return  # Hacker handled it
 
         # Take random cards from giver
+        cards_taken = 0
         for _ in range(min(count, len(giver.hand))):
             if giver.hand:
                 card = self._rng.choice(giver.hand)
                 giver.remove_card(card)
                 receiver.add_card(card)
+                cards_taken += 1
+
+        if cards_taken > 0:
+            self._log(f"{receiver.name} takes {cards_taken} card(s) as compensation")
 
     def _discard_encounter_cards(self) -> None:
         """Discard the played encounter cards."""
