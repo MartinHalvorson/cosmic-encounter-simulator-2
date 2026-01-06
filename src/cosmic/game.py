@@ -1099,23 +1099,47 @@ class Game:
         self._log(f"Defense total: {def_total} ({def_value} + {sum(self.defense_ships.values())} ships{f' + {def_reinforce_bonus} reinforcement' if def_reinforce_bonus else ''})")
 
         # Check for Loser/Antimatter - these powers reverse the winner determination
-        # If both are present, the effects cancel out (toggle twice = no change)
-        reverse_winner = False
+        # Per official rules:
+        #   - Loser: "If you would lose an encounter, you win instead (and vice versa)"
+        #   - Antimatter: "The lower total wins instead of the higher"
+        # Both powers effectively reverse who wins.
+        # If BOTH players have a reversal power, the effects cancel out (double reversal = normal)
+        reversal_count = 0
+        reversal_powers = []
         for player in [self.offense, self.defense]:
             if player.alien and self.is_power_active(player):
                 if player.alien.name in ["Loser", "Antimatter"]:
-                    reverse_winner = not reverse_winner  # Toggle instead of set
+                    reversal_count += 1
+                    reversal_powers.append(f"{player.name} ({player.alien.name})")
 
-        # Determine winner
+        # Log reversal powers if any are active
+        if reversal_powers:
+            self._log(f"Reversal power(s) active: {', '.join(reversal_powers)}")
+            if reversal_count == 2:
+                self._log("Double reversal - effects cancel out!")
+
+        # Determine winner:
+        # - Normal: higher total wins, ties go to defense
+        # - Reversed (odd number of reversal powers): lower total wins, ties go to offense
+        reverse_winner = (reversal_count % 2) == 1
+
         if reverse_winner:
+            # Reversed: lower total wins
             if off_total < def_total:
                 self._resolve_offense_wins()
-            else:
+            elif def_total < off_total:
                 self._resolve_defense_wins()
+            else:
+                # Tie with reversal: offense wins (opposite of normal)
+                self._resolve_offense_wins()
         else:
+            # Normal: higher total wins
             if off_total > def_total:
                 self._resolve_offense_wins()
+            elif def_total > off_total:
+                self._resolve_defense_wins()
             else:
+                # Tie: defense wins (per official rules)
                 self._resolve_defense_wins()
 
     def _resolve_offense_wins(self) -> None:
@@ -1123,6 +1147,7 @@ class Game:
         self._log("Offense wins!")
 
         # Check if Graviton's power is active (main player destroys ships instead of warping)
+        # Also check for Void (winner destroys losing ships)
         graviton_active = False
         for main_player in [self.offense, self.defense]:
             if main_player and main_player.alien and main_player.alien.name == "Graviton":
@@ -1130,8 +1155,13 @@ class Game:
                     graviton_active = True
                     self._log("Graviton's gravity destroys losing ships!")
                     break
+        # Void destroys losing ships when Void wins
+        if self.offense and self.offense.alien and self.offense.alien.name == "Void":
+            if self.is_power_active(self.offense):
+                graviton_active = True
+                self._log("Void eradicates losing ships!")
 
-        # Defense ships go to warp (or are destroyed if Graviton is active)
+        # Defense ships go to warp (or are destroyed if Graviton/Void is active)
         for name, count in self.defense_ships.items():
             player = self.get_player_by_name(name)
             if player:
@@ -1171,6 +1201,7 @@ class Game:
         self._log("Defense wins!")
 
         # Check if Graviton's power is active (main player destroys ships instead of warping)
+        # Also check for Void (winner destroys losing ships)
         graviton_active = False
         for main_player in [self.offense, self.defense]:
             if main_player and main_player.alien and main_player.alien.name == "Graviton":
@@ -1178,8 +1209,13 @@ class Game:
                     graviton_active = True
                     self._log("Graviton's gravity destroys losing ships!")
                     break
+        # Void destroys losing ships when Void wins
+        if self.defense and self.defense.alien and self.defense.alien.name == "Void":
+            if self.is_power_active(self.defense):
+                graviton_active = True
+                self._log("Void eradicates losing ships!")
 
-        # Offense ships go to warp (or are destroyed if Graviton is active)
+        # Offense ships go to warp (or are destroyed if Graviton/Void is active)
         for name, count in self.offense_ships.items():
             player = self.get_player_by_name(name)
             if player:
