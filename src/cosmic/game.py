@@ -532,8 +532,8 @@ class Game:
         return self._player_by_name.get(name)
 
     def get_home_planets(self, player: Player) -> List[Planet]:
-        """Get home planets for a player."""
-        return [p for p in self.planets if p.owner == player]
+        """Get home planets for a player. Uses player's cached home_planets list."""
+        return player.home_planets
 
     def get_foreign_colonies(self, player: Player) -> List[Planet]:
         """Get foreign colonies for a player."""
@@ -657,8 +657,8 @@ class Game:
         # 2-player mode: offense chooses target (no destiny deck)
         if self.config.two_player_mode and self.config.two_player_choose_target:
             # In 2-player, offense can only attack the other player
-            other_players = [p for p in self.players if p != self.offense]
-            self.defense = other_players[0] if other_players else self.offense
+            # Use generator to avoid building full list for single element
+            self.defense = next((p for p in self.players if p != self.offense), self.offense)
             self._log(f"Target: {self.defense.name}")
         else:
             # Draw destiny
