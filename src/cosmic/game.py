@@ -2627,6 +2627,47 @@ class Game:
             return False
         return player.power_active
 
+    def is_power_timing_valid(self, player: Player) -> bool:
+        """
+        Check if a player's power timing is valid for the current game phase.
+
+        Some powers can only be used during specific phases (ALLIANCE, REVEAL, etc.)
+        while others are CONSTANT or ANY timing.
+
+        Returns:
+            True if the power timing matches the current phase
+        """
+        from .types import PowerTiming
+
+        if not player.alien:
+            return False
+
+        timing = player.alien.timing
+
+        # These timings are always valid
+        if timing in (PowerTiming.CONSTANT, PowerTiming.ANY):
+            return True
+
+        # Map phase to valid power timings
+        phase_timing_map = {
+            GamePhase.START_TURN: [PowerTiming.START_TURN, PowerTiming.START_ENCOUNTER],
+            GamePhase.REGROUP: [PowerTiming.REGROUP],
+            GamePhase.DESTINY: [PowerTiming.DESTINY],
+            GamePhase.LAUNCH: [PowerTiming.LAUNCH],
+            GamePhase.ALLIANCE: [PowerTiming.ALLIANCE],
+            GamePhase.PLANNING: [PowerTiming.PLANNING],
+            GamePhase.REVEAL: [PowerTiming.REVEAL],
+            GamePhase.RESOLUTION: [
+                PowerTiming.RESOLUTION,
+                PowerTiming.WIN_ENCOUNTER,
+                PowerTiming.LOSE_ENCOUNTER,
+                PowerTiming.SHIPS_TO_WARP,
+            ],
+        }
+
+        valid_timings = phase_timing_map.get(self.phase, [])
+        return timing in valid_timings
+
     def get_active_powers(self, player: Player) -> list:
         """
         Get all active alien powers for a player.
