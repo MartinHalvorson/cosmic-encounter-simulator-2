@@ -61,6 +61,13 @@ from .benchmark import (
     compare_player_counts as benchmark_player_counts,
     print_comparison_table,
 )
+from .checkpoint import (
+    SimulationCheckpoint,
+    CheckpointMetadata,
+    save_checkpoint,
+    load_checkpoint,
+    checkpoint_info,
+)
 
 __all__ = [
     "Simulator",
@@ -120,4 +127,10 @@ __all__ = [
     "run_quick_benchmark",
     "benchmark_player_counts",
     "print_comparison_table",
+    # Checkpoint
+    "SimulationCheckpoint",
+    "CheckpointMetadata",
+    "save_checkpoint",
+    "load_checkpoint",
+    "checkpoint_info",
 ]
