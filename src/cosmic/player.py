@@ -2,6 +2,7 @@
 Player representation for Cosmic Encounter.
 """
 
+import sys
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict, Any, Tuple, TYPE_CHECKING
 
@@ -51,6 +52,8 @@ class Player:
     _home_planets: List["Planet"] = field(default_factory=list)
 
     def __post_init__(self):
+        # Intern player name for memory efficiency (names are used as dict keys)
+        self.name = sys.intern(self.name)
         # Validate color
         if isinstance(self.color, str):
             self.color = Color(self.color)
