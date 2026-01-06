@@ -843,30 +843,20 @@ class Game:
             if player.alien and self.is_power_active(player):
                 player.alien.on_planning(self, player, role)
 
-        # Select cards
+        # Select cards with validation
         off_ai = self.offense.ai_strategy or BasicAI()
-        self.offense_card = off_ai.select_encounter_card(self, self.offense, True)
-        # Validate card is in hand (AI might return invalid card)
-        if self.offense_card and self.offense.has_card(self.offense_card):
-            self.offense.remove_card(self.offense_card)
-        else:
-            # Fallback: use first encounter card
-            encounter_cards = self.offense.get_encounter_cards()
-            if encounter_cards:
-                self.offense_card = encounter_cards[0]
-                self.offense.remove_card(self.offense_card)
+        self.offense_card = self._validate_and_select_card(
+            off_ai.select_encounter_card(self, self.offense, True),
+            self.offense,
+            "offense"
+        )
 
         def_ai = self.defense.ai_strategy or BasicAI()
-        self.defense_card = def_ai.select_encounter_card(self, self.defense, False)
-        # Validate card is in hand
-        if self.defense_card and self.defense.has_card(self.defense_card):
-            self.defense.remove_card(self.defense_card)
-        else:
-            # Fallback: use first encounter card
-            encounter_cards = self.defense.get_encounter_cards()
-            if encounter_cards:
-                self.defense_card = encounter_cards[0]
-                self.defense.remove_card(self.defense_card)
+        self.defense_card = self._validate_and_select_card(
+            def_ai.select_encounter_card(self, self.defense, False),
+            self.defense,
+            "defense"
+        )
 
         # Select kicker cards (optional)
         if isinstance(self.offense_card, AttackCard):
@@ -1522,6 +1512,53 @@ class Game:
             cards = self.cosmic_deck.draw_multiple(self.config.starting_hand_size)
             player.add_cards(cards)
             self._log(f"{player.name} draws a new hand")
+
+    def _validate_and_select_card(
+        self,
+        ai_selection: Optional[EncounterCard],
+        player: Player,
+        role_name: str
+    ) -> Optional[EncounterCard]:
+        """
+        Validate AI's card selection and remove from player's hand.
+
+        If the AI returns an invalid card (not in hand), falls back to
+        the first available encounter card with a debug log.
+
+        Args:
+            ai_selection: The card selected by AI (may be invalid)
+            player: The player whose card is being selected
+            role_name: "offense" or "defense" for logging
+
+        Returns:
+            The validated encounter card, or None if no valid card available
+        """
+        # Valid selection - remove and return
+        if ai_selection and player.has_card(ai_selection):
+            player.remove_card(ai_selection)
+            return ai_selection
+
+        # Invalid selection - log and fallback
+        if ai_selection:
+            self._log(f"Warning: {role_name} AI selected invalid card, using fallback")
+
+        # Fallback: use first encounter card available
+        attacks, negotiates, morphs = player.categorize_encounter_cards()
+        fallback_card = None
+        if attacks:
+            fallback_card = attacks[0]
+        elif negotiates:
+            fallback_card = negotiates[0]
+        elif morphs:
+            fallback_card = morphs[0]
+
+        if fallback_card:
+            player.remove_card(fallback_card)
+            return fallback_card
+
+        # No valid encounter cards (should not happen after _ensure_encounter_card)
+        self._log(f"Error: {player.name} has no encounter cards!")
+        return None
 
     def _get_player_role(self, player: Player) -> PlayerRole:
         """Get a player's role in the current encounter."""
