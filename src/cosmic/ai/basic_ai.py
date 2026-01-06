@@ -35,34 +35,42 @@ class BasicAI(AIStrategy):
         - Offense: Play high cards to win
         - Defense: Play mid-range cards (save best for offense)
         """
-        cards = player.get_encounter_cards()
-        if not cards:
+        # Single-pass categorization of encounter cards
+        attack_cards, negotiate_cards, morph_cards = player.categorize_encounter_cards()
+        if not attack_cards and not negotiate_cards and not morph_cards:
             raise ValueError(f"{player.name} has no encounter cards!")
-
-        attack_cards = player.get_attack_cards()
-        negotiate_cards = player.get_negotiate_cards()
 
         # Check for Tripler power
         if player.alien and player.alien.name == "Tripler" and player.power_active:
             return player.select_encounter_card_for_tripler()
+
+        # Helper to get any encounter card (prefer attack, then negotiate, then morph)
+        def any_encounter_card():
+            if attack_cards:
+                return attack_cards[0]
+            elif negotiate_cards:
+                return negotiate_cards[0]
+            else:
+                return morph_cards[0]
 
         if is_offense:
             # Offense: Play highest attack card
             if attack_cards:
                 return max(attack_cards, key=lambda c: c.value)
             # Fallback to negotiate
-            return cards[0]
+            return any_encounter_card()
         else:
             # Defense: Play 3rd highest (save top 2 for offense)
-            best = player.select_nth_highest_attack(3)
-            if best:
-                return best
-            # Consider negotiate if we have weak hand
-            if negotiate_cards and attack_cards:
-                max_attack = max(c.value for c in attack_cards)
-                if max_attack < 10:
+            if attack_cards:
+                # Sort and get 3rd highest (or lowest if fewer than 3)
+                sorted_attacks = sorted(attack_cards, key=lambda c: c.value, reverse=True)
+                idx = min(2, len(sorted_attacks) - 1)  # 0-indexed, so 3rd = index 2
+                return sorted_attacks[idx]
+            # Consider negotiate if we have weak hand or no attacks
+            if negotiate_cards:
+                if not attack_cards or max(c.value for c in attack_cards) < 10:
                     return negotiate_cards[0]
-            return cards[0]
+            return any_encounter_card()
 
     def select_ships_for_encounter(
         self,

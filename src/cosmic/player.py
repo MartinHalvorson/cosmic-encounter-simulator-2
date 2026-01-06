@@ -3,7 +3,7 @@ Player representation for Cosmic Encounter.
 """
 
 from dataclasses import dataclass, field
-from typing import List, Optional, Dict, Any, TYPE_CHECKING
+from typing import List, Optional, Dict, Any, Tuple, TYPE_CHECKING
 
 from .types import Color, PlayerRole, SpaceStation, StationType
 from .cards.base import Card, EncounterCard, AttackCard, NegotiateCard, MorphCard
@@ -118,6 +118,24 @@ class Player:
     def get_negotiate_cards(self) -> List[NegotiateCard]:
         """Get all negotiate cards in hand."""
         return [card for card in self.hand if isinstance(card, NegotiateCard)]
+
+    def categorize_encounter_cards(self) -> Tuple[List[AttackCard], List[NegotiateCard], List[MorphCard]]:
+        """
+        Categorize encounter cards in a single pass.
+        Returns (attack_cards, negotiate_cards, morph_cards) tuple.
+        More efficient than calling get_attack_cards() and get_negotiate_cards() separately.
+        """
+        attacks: List[AttackCard] = []
+        negotiates: List[NegotiateCard] = []
+        morphs: List[MorphCard] = []
+        for card in self.hand:
+            if isinstance(card, AttackCard):
+                attacks.append(card)
+            elif isinstance(card, NegotiateCard):
+                negotiates.append(card)
+            elif isinstance(card, MorphCard):
+                morphs.append(card)
+        return attacks, negotiates, morphs
 
     def hand_size(self) -> int:
         """Number of cards in hand."""
