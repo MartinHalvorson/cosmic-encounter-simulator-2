@@ -6,7 +6,45 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple, Any
 import json
 import csv
+import math
 from io import StringIO
+
+
+def wilson_score_interval(wins: int, n: int, z: float = 1.96) -> Tuple[float, float]:
+    """
+    Calculate Wilson score interval for a proportion.
+
+    This is more accurate than normal approximation for proportions,
+    especially with small sample sizes or extreme proportions.
+
+    Args:
+        wins: Number of successes
+        n: Total trials
+        z: Z-score for confidence level (1.96 = 95%, 2.58 = 99%)
+
+    Returns:
+        Tuple of (lower_bound, upper_bound) for the confidence interval
+    """
+    if n == 0:
+        return (0.0, 0.0)
+
+    p = wins / n
+    denominator = 1 + z * z / n
+
+    centre_adjusted_probability = p + z * z / (2 * n)
+    adjusted_standard_deviation = math.sqrt((p * (1 - p) + z * z / (4 * n)) / n)
+
+    lower = (centre_adjusted_probability - z * adjusted_standard_deviation) / denominator
+    upper = (centre_adjusted_probability + z * adjusted_standard_deviation) / denominator
+
+    return (max(0.0, lower), min(1.0, upper))
+
+
+def standard_error(p: float, n: int) -> float:
+    """Calculate standard error for a proportion."""
+    if n == 0:
+        return 0.0
+    return math.sqrt(p * (1 - p) / n)
 
 
 @dataclass
@@ -45,12 +83,89 @@ class AlienStats:
             return 0.0
         return self.total_colonies_at_end / self.games_played
 
-    def to_dict(self) -> Dict[str, Any]:
+    def confidence_interval(self, confidence: float = 0.95) -> Tuple[float, float]:
+        """
+        Calculate confidence interval for win rate using Wilson score interval.
+
+        Args:
+            confidence: Confidence level (0.95 = 95%)
+
+        Returns:
+            Tuple of (lower_bound, upper_bound) as proportions (0-1)
+        """
+        # Map confidence level to z-score
+        z_scores = {0.90: 1.645, 0.95: 1.96, 0.99: 2.576}
+        z = z_scores.get(confidence, 1.96)
+        return wilson_score_interval(self.games_won, self.games_played, z)
+
+    def margin_of_error(self) -> float:
+        """Calculate margin of error for 95% confidence interval."""
+        ci = self.confidence_interval()
+        return (ci[1] - ci[0]) / 2
+
+    def is_significantly_different(
+        self,
+        expected_rate: float,
+        confidence: float = 0.95
+    ) -> Tuple[bool, str]:
+        """
+        Test if win rate is significantly different from expected.
+
+        Args:
+            expected_rate: Expected win rate (e.g., 0.2 for 5 players)
+            confidence: Confidence level for the test
+
+        Returns:
+            Tuple of (is_significant, direction) where direction is
+            "above", "below", or "neutral"
+        """
+        ci = self.confidence_interval(confidence)
+
+        if expected_rate < ci[0]:
+            return (True, "above")
+        elif expected_rate > ci[1]:
+            return (True, "below")
+        else:
+            return (False, "neutral")
+
+    def power_rating(self, expected_rate: float) -> float:
+        """
+        Calculate a power rating relative to expected win rate.
+
+        Rating > 1.0 means alien wins more than expected
+        Rating < 1.0 means alien wins less than expected
+        Rating = 1.0 means alien wins at expected rate
+
+        Args:
+            expected_rate: Expected win rate (e.g., 0.2 for 5 players)
+
+        Returns:
+            Power rating as a multiplier
+        """
+        if expected_rate == 0 or self.games_played == 0:
+            return 1.0
+        return self.win_rate / expected_rate
+
+    def to_dict(self, expected_rate: float = 0.2) -> Dict[str, Any]:
+        """Convert to dictionary with statistical info.
+
+        Args:
+            expected_rate: Expected win rate for comparison (default 0.2 for 5 players)
+        """
+        ci = self.confidence_interval()
+        is_sig, direction = self.is_significantly_different(expected_rate)
+
         return {
             "name": self.name,
             "games_played": self.games_played,
             "games_won": self.games_won,
             "win_rate": round(self.win_rate * 100, 2),
+            "win_rate_ci_lower": round(ci[0] * 100, 2),
+            "win_rate_ci_upper": round(ci[1] * 100, 2),
+            "margin_of_error": round(self.margin_of_error() * 100, 2),
+            "power_rating": round(self.power_rating(expected_rate), 3),
+            "significantly_different": is_sig,
+            "direction": direction,
             "solo_wins": self.solo_wins,
             "shared_wins": self.shared_wins,
             "alternate_wins": self.alternate_wins,
